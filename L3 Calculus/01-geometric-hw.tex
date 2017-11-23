@@ -1,0 +1,72 @@
+\input{stdinclude.tex}
+
+\begin{document}
+
+\mainHeaderDiffHw{1}{The Derivative}
+\subsection*{Reading}
+\textit{From \textit{Calculus Made Easy}, by Silvanus P. Thompson and revised by Martin Gardner}
+
+Considering how many fools can calculate, it is surprising that it should be thought a difficult or
+a tedious task for any other fool to learn how to master the same tricks.
+
+Some calculus-tricks are quite easy. Some are enormously difficult. The fools who write the text-books
+of advanced mathematics --- and they are mostly clever fools --- seldom take the time to show you how
+easy the easy calculations are. On the contrary, they seem to desire to impress you with their tremendous
+cleverness by going about it in the most difficult way.
+
+Being myself a remarkably stupid fellow, I have had to unteach myself the difficulties, and now beg
+to present to my fellow fool the parts that are not hard. Master these thoroughly, and the rest will
+follow. What one fool can do, another can.
+
+The preliminary terror, which chokes off most high school students from even attempting to learn
+how to calculate, can be abolished once and for all by simply stating what is the meaning --- in
+common-sense terms --- of the two principal symbols that are used in calculating.
+
+These dreadful symbols are:
+
+(1) $ \dif{} $, which merely means "a little bit of".
+
+Thus $ \dif{x} $ meas a little bit of $ x $;
+or $ \dif{u} $ means a little bit of $ u $. Ordinary mathematicians think it more polite to say
+"an element of", instead of "a little bit of". Just as you please. But you will find that these
+little bits (or elements) may be considered to be infinitesimally small.
+
+(2) $ \rint $, which is merely a long $ S $, and may be called (if you like) "the sum of".
+
+Thus $ \rint \dif{x} $ means the sum of all the little bits of $ x $; or $ \rint \dif{t} $ means
+the sum of all the little bits of $ t $. Ordinary mathematicians call this symbol "the integral of".
+Now any fool can see that if $ x $ is considered to be made up of a lot of little bits, each of
+which is called $ \dif{x} $, if you add them all up together you get the sum of all the $ \dif{x}$'s (which
+is simply the same thing as the whole of $ x $). The word "integral" simply means "the whole". If you think
+of the duration of time for one hour, you may  (if you like) think of it cut up into 3600 little bits
+called seconds. The whole of the 3600 little bits added up together make one hour.
+
+When you see an expression that begins with this terrifying symbol, you will henceforth know that it is put
+there merely to give you instructions that you are now to perform the operation (if you can) of totalling up
+all the little bits that are indicated by the symbols that follow.
+
+That's all.
+
+\clearpage
+\subsection*{Questions}
+\begin{questions}
+  \question Given that the following graph is the derivative of a function passing through $ (0,0) $, draw the original function.
+      \begin{center}
+        \fbox{\begin{tikzpicture}
+          \begin{axis}[
+            axis lines = center,
+            xlabel = $ x $,
+            ylabel = $ y $
+          ]
+            \addplot[domain = -5:5, color = green, samples=100] {sin(deg(x)) + cos(deg(x))};
+          \end{axis}
+        \end{tikzpicture}}
+      \end{center}
+  \question
+    \begin{parts}
+      \part At a maxima or minima, what value $ m $ does the derivative of a function take? Explain this geometrically.
+      \part Show, by example (i.e. draw a graph), that there exist functions such that they have a derivative
+            equal to $ m $ at a point but not a minimum or maximum at that point.
+    \end{parts}
+\end{questions}
+\end{document}

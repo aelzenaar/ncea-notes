@@ -1,0 +1,145 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderDiff{6}{Tangent and Normal Lines}
+Last year, we defined the tangent line of a function at a point to be the unique line
+passing through that point such that the line has the same slope as the function at that
+point. More formally, if we have some function $ f $ which is differentiable at a point $ (x_0, y_0) $
+then the tangent line to the function at that point is
+\begin{displaymath}
+  (y - y_0) = f'(x_0) (x - x_0).
+\end{displaymath}
+
+\begin{ex}
+  Consider $ f : x \mapsto 2x^3 $. Then $ f' : x \mapsto 6x^2 $, and the tangent line
+  to the function at $ (2, 16) $ is $ (y - 16) = 24(x - 2) $, or in slope-intercept
+  form $ y = 24x - 32 $.
+
+  \begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[axis lines=center]
+      \addplot[color=red]{2*x^3};
+      \addplot[color=green]{24*x - 32};
+      \addplot[color=green, mark=halfcircle*, mark size=2.9pt]coordinates{(2,16)};
+    \end{axis}
+  \end{tikzpicture}
+  \end{center}
+\end{ex}
+
+The tangent line of a function at a point is the best linear approximation to the function at that point.
+
+We further defined the normal line of a function at a point to be the unique line passing through
+the point at right angles to the tangent line. If the gradient of the tangent line is $ m $,
+then the gradient of the normal line is $ m^\perp = -\frac{1}{m} $.
+
+\begin{ex}
+  The slope of the normal line of the function $ f $ defined above at the given point is $ -\frac{1}{24} $.
+\end{ex}
+
+\begin{ex}
+  Consider the function $ y = \sin \tan x $. The derivative of this function is $ y' = \sec^2 x \cos \tan x $;
+  at the point $ P(\frac{3\pi}{8}, 0.6649) $, the slope is $ -5.1 $.
+  \begin{center}
+    \includegraphics[width=0.35\textwidth]{tangentex}
+  \end{center}
+
+  The tangent line at $ P $ is $ y = \sin(\sqrt{2} + 1) + \cos(\sqrt{2} + 1)((\sqrt{2} + 1)^2 + 1)(x - \frac{3\pi}{8}) $, or
+  (approximately) $ y = -5.1(x - 1.178) + 0.6649 $.
+\end{ex}
+
+\clearpage
+\subsection*{Questions}
+\begin{questions}
+  \questioA Draw the tangent and normal lines to each function at the indicated points.
+
+    \begin{multicols}{2}
+    \begin{parts}
+      \part
+        \begin{center}
+        \begin{tikzpicture}
+          \begin{axis}[axis lines=center, width=0.4\textwidth]
+            \addplot[color=red]{x^2};
+            \addplot[color=green, mark=halfcircle*, mark size=2.9pt]coordinates{(1,1)};
+          \end{axis}
+        \end{tikzpicture}
+        \end{center}
+      \part
+        \begin{center}
+        \begin{tikzpicture}
+          \begin{axis}[axis lines=center, width=0.4\textwidth]
+            \addplot[color=red, samples=100, domain=0:2*pi]{sin(deg(x^2))};
+            \addplot[color=green, mark=halfcircle*, mark size=2.9pt]coordinates{(sqrt(5*pi/3),-0.86603)};
+          \end{axis}
+        \end{tikzpicture}
+        \end{center}
+      \part
+        \begin{center}
+        \begin{tikzpicture}
+          \begin{axis}[axis lines=center, width=0.4\textwidth, axis equal]
+            \addplot[color=red, samples=100]{sqrt(1-x^2)};
+            \addplot[color=green, mark=halfcircle*, mark size=2.9pt]coordinates{(-0.707,0.707)};
+          \end{axis}
+        \end{tikzpicture}
+        \end{center}
+      \part
+        \begin{center}
+        \begin{tikzpicture}
+          \begin{axis}[axis lines=center, width=0.4\textwidth]
+            \addplot[color=red, samples=100, domain=-pi:pi]{(x+1)*(x+2)*(x-2)};
+            \addplot[color=green, mark=halfcircle*, mark size=2.9pt]coordinates{(1,-6)};
+          \end{axis}
+        \end{tikzpicture}
+        \end{center}
+    \end{parts}
+    \end{multicols}
+  \questioA When is the tangent line a good approximation to a function?
+  \questioM Find the tangent and normal lines to the following functions at the given points.
+    \begin{parts}
+      \part $ x \mapsto \sin x $ at $ (0, 0) $
+      \part $ x \mapsto \sin x $ at $ (\pi, 0) $
+      \part $ x \mapsto e^x $ at $ (0, 1) $
+      \part $ x \mapsto \sec x $ at $ (0, 0) $
+      \part $ x \mapsto x^2 $ at $ (1, 1) $
+      \part $ x \mapsto \sqrt{x} $ at $ (1, 1) $
+      \part $ x \mapsto (x^4 - 3x^2 + 5)^3 $ at $ (0, 125) $
+      \part $ x \mapsto \cos \tan x $ at $ (\pi, 1) $
+      \part $ x \mapsto \left( x + \frac{1}{x^2} \right)^{\sqrt{7}} $ at $ (1, 2^{\sqrt{7}}) $.
+    \end{parts}
+  \questioS Consider the surface $ S : (x,y) \mapsto z = x^2 + 2\sin(y^2 + 1) + 2 $.
+    \begin{parts}
+      \part Differentiate $ S $ with respect to $ x $, and find the tangent line in the $ x $ direction at $ (0,0) $.
+      \part Differentiate $ S $ with respect to $ y $, and find the tangent line in the $ y $ direction at $ (0,0) $.
+      \part Hence describe the tangent \textit{plane} of the surface $ S $ at $ (0,0) $.
+    \end{parts}
+  \questioM Find the equation of the tangent line to $ y = x + \tan x $ at $ (\pi, \pi) $.
+  \questioM Find an equation for the normal line to the curve $ y = \frac{1}{\sqrt{x^2 - x}} $ at $ (2, \frac{1}{\sqrt{2}}) $.
+  \question Consider the curve $ y = \tan(2\sin x) $.
+    \begin{parts}
+      \parA Show that $ \od{y}{x} = 2\cos x \sec^2 (2 \sin x) $.
+      \parM Find the equation of:
+        \begin{subparts}
+          \subpart The tangent to the curve at $ (\pi, 0) $
+          \subpart The normal to the curve at $ (0, 0) $
+        \end{subparts}
+    \end{parts}
+  \questioM Find the best linear approximation to $ y = 3x^3 + 2x + 4 $ around $ x = 2 $.
+  \questioM Find the point(s) on the graph of the function $ y = x^2 $ such that the slope of the normal to the curve at that point is $ m^\perp = -1 $.
+  \questioE The tangents to the curve $ y = \frac{1}{4}(x - 2)^2 $ at points $ P $ and $ Q(6,4) $ are perpendicular. What is the $ x$-ordinate of $ P $?
+  \question Consider the function $ y = \sin x $.
+    \begin{parts}
+      \parM Find the best linear approximation to this function around $ (0,0) $.
+      \parM Find the percentage error of this approximation to 1dp when $ x = \pi $.
+      \parE At what point on the curve ($ x \geq 0 $) does the percentage error of the approximation rise above $ 100\% $?
+    \end{parts}
+  \question Consider the quartic polynomial $ p(x) = 2x^4 -4x^3 - 23x^2 + 84x - 61 $.
+    \begin{parts}
+      \parM Find the best linear approximation to $ p $ around the point $ (2, 15) $.
+      \parS Find the unique quadratic polynomial $ q(x) $ such that $ q(2) = p(2) $, $ q'(2) = p'(2) $, and $ q''(2) = p''(2) $.
+            This is the best quadratic approximation to $ p $ at the point $ (2, 15) $.
+      \parO Show that the best quadratic approximation to a function $ f $ at the point $ (x_0, y_0) $ is given by
+            \begin{displaymath}
+              T_2(x) = f(x_0) + f'(x_0) (x - x_0) + \frac{1}{2} f''(x_0) (x - x_0)^2.
+            \end{displaymath}
+    \end{parts}
+\end{questions}
+\end{document}

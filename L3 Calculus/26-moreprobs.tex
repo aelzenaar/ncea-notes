@@ -1,0 +1,133 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderIntg{26}{More Interesting Problems}
+These problems do not just concern integration.
+\subsection*{Questions}
+\begin{questions}
+  \questioE Find the equation of the line through the point $ (3,5) $ which cuts off the least area from the first quadrant.
+  \questioE The area of a square is increasing at a constant rate of $ k~\si{\metre\squared} $ per second. A tetrahedron (equilateral triangular pyramid),
+            has a side length that is the same as that of the square at each instant. The initial volume of the tetrahedron was \SI{1}{\metre\cubed}.
+            In terms of $ k $, what is the volume of the tetrahedron three seconds after that?
+  \questioS Consider the tetrahedron inscribed inside a cube, as in the figure.
+            \begin{center}
+              \includegraphics[width=0.2\textwidth]{tetrahedron}
+            \end{center}
+            The volume $ V $ of the cube at any instant $ t $ is increasing at a rate proportional to the value of $ V $ at that instant. The
+            initial volume of the cube at $ t = 0 $ was 8 cubic units. What is the volume of the tetrahedron at time $ t = 20 $?
+  \questioS If $ x \sin \pi x = \rint^{x^2}_0 f(t) \dif{t} $, where $ f $ is continuous, find $ f(4) $. [\textit{Hint: you need not perform any integration.}]
+  \questioS If $ f $ and $ g $ are differentiable functions with $ f(0) = g(0) = 0 $ and $ g'(0) \neq 0 $, show that
+            \begin{displaymath}
+              \lim_{x \to 0} \frac{f(x)}{g(x)} = \frac{f'(0)}{g'(0)}.
+            \end{displaymath}
+            Hence, or otherwise, evaluate
+            \begin{displaymath}
+              \lim_{x \to 0} \frac{\sin(a + 2x) - 2\sin(a + x) + \sin a}{x^2}.
+            \end{displaymath}
+  \question
+    \begin{parts}
+      \parS Consider the differential equation
+            \begin{displaymath}
+              \od[2]{\Phi}{t} + 5\od{\Phi}{t} + 6\Phi(t) = 0.
+            \end{displaymath}
+            Let $ f $ and $ g $ be the functions defined by $ f(x) = e^{-2x} $ and $ g(x) = e^{-3x} $.
+            \begin{subparts}
+              \subpart Show that all linear combinations of $ f $ and $ g $ are solutions to the differential equation.
+              \subpart Find the (unique) solution passing through $ (0,1) $ and $ (1,1) $.
+            \end{subparts}
+      \parO More generally, consider the differential equation $ a\od[2]{y}{x} + b\od{y}{x} + cy = 0 $. Let
+            the zeroes of the quadratic polynomial $ p(D) = aD^2 + bD + c $ be $ \alpha $ and $ \beta $. Show
+            that all the linear combinations of $ e^{\alpha x} $ and $ e^{\beta x} $ are solutions to the differential
+            equation.
+    \end{parts}
+  \questioS Compute the following definite integral. [\textit{Hint: begin with a substitution.}]
+            \begin{displaymath}
+              \rint_0^{\pi/6} \sqrt{\tan \theta} \dif{\theta}
+            \end{displaymath}
+  \question
+    \begin{parts}
+      \parE Consider the two functions $ p(x) = 3x^5 - 5x^3 + 2x $ and $ q(x) = 3x^5 $. Show that their ratio approaches
+            1 as $ x \to \infty $.
+      \parS Let $ p(x) $ and $ q(x) \neq 0 $ be polynomials. Recall that the degree of a polynomial is the highest $ n $ such that $ x^n $
+            has a non-zero coefficient. Compute the limit
+            \begin{displaymath}
+              \lim_{x \to \infty} \frac{p(x)}{q(x)}
+            \end{displaymath}
+            if:
+        \begin{subparts}
+          \subpart the degree of $ p(x) $ is less than that of $ q(x) $.
+          \subpart the degree of $ p(x) $ is greater than that of $ q(x) $.
+        \end{subparts}
+    \end{parts}
+  \questioS A definite integral calculates the between a curve and straight line, the $ x$-axis. In a similar way, it is possible
+            to use integration to calculate the area above a curved line and below a surface $ z = f(x,y) $, like that in the figure.
+            \begin{center}
+              \includegraphics[width=0.3\textwidth]{contourintegral}
+            \end{center}
+            If the curve $ C $ is defined parametrically, that is $ C(t) = (x(t), y(t)) $, then the contour integral can be
+            calculated with the formula
+            \begin{displaymath}
+              \rint_a^b f(x(t), y(t)) \sqrt{\left(\dod{x}{t}\right)^2 + \left(\dod{y}{t}\right)^2} \dif{t}.
+            \end{displaymath}
+            Compute the line integral of the function $ f(x,y) = 2 + x^2 y $ around the upper half of the unit circle.
+  \questioS The \textbf{sine integral} function is defined by
+            \begin{displaymath}
+              \mathrm{Si}(x) =
+              \begin{cases}
+                \rint^x_0 \frac{\sin t}{t} \dif{t}, &\text{for $ x \neq 0 $;}\\
+                1, &\text{for $ x = 0 $.}
+              \end{cases}
+            \end{displaymath}
+    \begin{parts}
+      \part Recall that $ \rint^b_a f'(t) \dif{t} = f(b) - f(a) $. Use this to show that $ \od{}{x} \rint^x_0 f'(t) \dif{t} = f'(x) $.
+      \part Find the $ x$-coordinate of the first local maximum of $ \textrm{Si} $ to the right of the origin. Carefully prove that you have
+            found a maximum.
+      \part Use the result in (a) to find an expression for the integral
+            \begin{displaymath}
+              \od{}{x} \rint^{h(x)}_{g(x)} f(t) \dif{t},
+            \end{displaymath}
+            where $ f $ is continuous and $ g $ and $ h $ are differentiable.
+    \end{parts}
+  \questioE Minimise the function $ f(x) = b\log_b N $ with respect to $ b $, and show that the result is independent of the
+            constant $ N $.\footnote{~Dudley, \textit{Mathematical Cranks}, p.52.}
+  \questioS We can calculate \textbf{improper integrals} (those where the bounds are infinite) as follows:
+            \begin{displaymath}
+              \rint^{\infty}_a f(x) \dif{x} = \lim_{b \to \infty} \rint^b_a f(x) \dif{x}.
+            \end{displaymath}
+            Decide whether each of the integrals given below exists. If so, calculate its value; if not, explain why.
+    \begin{parts}
+      \part $ \displaystyle \rint^{\infty}_1 \frac{1}{x} \dif{x} $
+      \part $ \displaystyle \rint^{\infty}_1 \frac{1}{x^2} \dif{x} $
+      \part $ \displaystyle \rint^{\infty}_1 \sin x \dif{x} $
+    \end{parts}
+  \question
+    \begin{parts}
+      \parS Show that $ F(x) = \tan^{-1} x $ is an anti-derivative of $ f(x) = \frac{1}{1 + x^2} $ in the following ways:
+        \begin{subparts}
+          \subpart Differentiate $ F(x) $ and simplify to give $ f(x) $.
+          \subpart Use the substitution $ x = \tan \theta $ to integrate $ f(x) $ and simplify to give $ F(x) $.
+        \end{subparts}
+      \parO Recall that $ 22/7 $ is often given as a rough approximation to $ \pi $. Consider the integral
+            \begin{displaymath}
+              I = \rint^1_0 \frac{x^4(1-x)^4}{1 + x^2} \dif{x},
+            \end{displaymath}
+            and hence show that $ 22/7 > \pi $.\footnote{~Nahin, \textit{Inside Interesting Integrals}, pp.23-4.}
+    \end{parts}
+  \questioS Consider the operator $ \mathcal{L} $ defined by
+            \begin{displaymath}
+              \mathcal{L} f(x) = \od{}{x} \ln\left[f\left(e^x\right)\right].
+            \end{displaymath}
+    \begin{parts}
+      \part Show that $ \mathcal{L} x^n = n $ and that $ \mathcal{L} [u(x)]^n = n \mathcal{L} u(x) $.
+      \part Find an expression for $ \mathcal{L} [u(x) v(x)] $ and $ \mathcal{L} [u(x)/v(x)] $.
+      \part Find an expression for $ \mathcal{L} [u(x) + v(x)] $.
+      \part For which $ y $ is $ \mathcal{L} y = y $?
+    \end{parts}
+  \questioS Compute the following indefinite integrals:
+    \begin{parts}
+      \part $ \displaystyle \rint \frac{\sin \frac{1}{x}}{x^2} \dif{x} $
+      \part $ \displaystyle \rint \frac{\ln x \cos x - \frac{\sin x}{x}}{(\ln x)^2} \dif{x} $
+    \end{parts}
+\end{questions}
+
+\end{document}

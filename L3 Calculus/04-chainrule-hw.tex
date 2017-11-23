@@ -1,0 +1,55 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderDiffHw{4}{The Chain Rule}
+\subsection*{Reading}
+Suppose we have the function $ y = \sin(x^2) $ which we saw in the tutorial. Consider
+what happens if we let $ x $ change by a small amount, to $ x + \dif{x} $. Then $ y $
+will change to $ y + \dif{y} $, and we have
+\begin{displaymath}
+  y + \dif{y} = \sin((x + \dif{x})^2) = \sin(x^2 + 2 x\dif{x} + \dif{x}^2).
+\end{displaymath}
+Let's let $ \dif{x} $ become really small; so $ \dif{x}^2 $ becomes even smaller. In fact, we
+will take $ \dif{x} $ to be so small that $ \dif{x}^2 \to 0 $. Then we can basically ignore
+it, and continue computing:
+\begin{displaymath}
+  \sin(x^2 + 2 x\dif{x} + \dif{x}^2) = \sin(x^2 + 2 x\dif{x}) = \sin(x^2) \cos(2x\dif{x}) + \cos(x^2) \sin(2x \dif{x}).
+\end{displaymath}
+Now, when $ t $ is small, $ \sin(t) \approx t $. Similarly, $ \cos(t) \approx 1 $. Since $ \dif{x} $ is small,
+we apply these approximations:
+\begin{displaymath}
+  \sin(x^2) \cos(2x\dif{x}) + \cos(x^2) \sin(2x \dif{x}) = \sin(x^2) + 2x\dif{x} \cos(x^2).
+\end{displaymath}
+But recall that this is equal to $ y + \dif{y} $; so
+\begin{align*}
+  y + \dif{y} &= \sin(x^2) + 2x\dif{x} \cos(x^2)\\
+  \dif{y} &= 2x \dif{x} \cos(x^2)\\
+  \od{y}{x} &= 2x \cos(x^2).
+\end{align*}
+
+Note that this computation is most definitely \textbf{not rigorous} --- we don't justify why we can
+ignore $ \dif{x}^2 $ but not $ \dif{x} $, and we don't define what it even means to be "small enough
+to ignore"! However, it does at least suggest that, intuitively, the chain rule does what we expect it
+to do.
+
+This calculation can be made rigorous if we define infinitesimals and rules for calculating with them,
+and this branch of mathematics is known as non-standard analysis. However, for the remainder of this
+year we will continue to base our discussions of calculus on limits and inequalities because they are
+easier to make rigorous, despite the initial barriers to intuition.
+
+\subsection*{Questions}
+\begin{questions}
+  \question If $ y = \sqrt{\cot x} - \sqrt{\cot a} $ (where $ a $ is constant), find $ \od{y}{x} $.
+  \question
+    \begin{parts}
+      \part Show that if $ y = f(g(h(x))) $ then $ \od{y}{x} = h'(x) \cdot g'(h(x)) \cdot f'(g(h(x))) $.
+      \part Calculate the derivative of $ y = \sin \cos \sin \cos \sin x^5 $.
+    \end{parts}
+  \question We will prove the double angle formula for cosine from the double angle formula for sine.
+            Suppose $ f(\theta) = \cos 2\theta $, and $ g(\theta) =  1 - 2\sin^2 \theta $.
+    \begin{parts}
+      \part Show that $ f' = g' $. (You may assume that $ \sin 2\theta = 2\sin \theta \cos \theta $.)
+      \part Verify that $ f $ and $ g $ agree at $ \theta = 0 $, and conclude that $ f = g $.
+    \end{parts}
+\end{questions}
+\end{document}

@@ -1,0 +1,52 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderIntgHw{20}{Partial Fractions}
+\subsection*{Reading}
+Perhaps I can best describe my journey of doing mathematics in terms of a journey through a dark unexplored
+mansion. You enter the first room of the mansion and it's completely dark. You stumble around bumping into
+the furniture, but eventually you learn where each piece of furniture is. Finally after six months or so,
+you find the light switch, you turn it on, and suddenly it's all illuminated. You can see exactly where you
+were. Then you move into the next room and spend another six months in the dark. So each of these breakthroughs,
+while sometimes they're momentary, sometimes over a period of a day or two, they are the culmination of --- and
+couldn't exist without --- the many months of stumbling around in the dark that precede them.
+
+\textit{From an interview by Nova of Andrew Wiles}
+
+\textbf{Note:} For the interested, a proof that one can always expand a rational function into partial fractions
+is outlined as exercise 11.1.13 in Artin (p. 441).
+
+\subsection*{Questions}
+\begin{questions}
+  \question The \textit{logistic equation} is used when modelling populations:
+            \begin{displaymath}
+              \od{P}{t} = rP(1-P)
+            \end{displaymath}
+    \begin{parts}
+      \part Find $ P(t) $ explicitly.
+      \part Examine the behaviour of the population as $ t \to \infty $. Graph the function.
+      \part Examine the behaviour of the population over time if you vary $ r $ (check $ r = 0 $, and $ r < 0 $ for example).
+      \part Do you think the logistic equation is a good model? Why/why not?
+    \end{parts}
+  \question In the following, let $ t = \tan \frac{x}{2} $ (where $ \abs{x} < \pi $).
+    \begin{parts}
+      \part Show that:
+        \begin{displaymath}
+          \cos\left( \frac{x}{2} \right) = \frac{1}{\sqrt{1 + t^2}} \quad\text{and}\quad \sin\left(\frac{x}{2}\right) = \frac{t}{\sqrt{1 + t^2}}
+        \end{displaymath}
+      \part Show that:
+        \begin{displaymath}
+          \cos x = \frac{1 - t^2}{1 + t^2} \quad\text{and}\quad \sin x = \frac{2t}{1 + t^2}
+        \end{displaymath}
+      \part Show that:
+        \begin{displaymath}
+          \od{x}{t} = \frac{2}{1 + t^2}
+        \end{displaymath}
+      \part Use the substitution $ t $ to evaluate:
+        \begin{subparts}
+          \subpart $ \rint (1 - \cos x)^{-1} \dif{x} $
+          \subpart $ \rint (3\sin x - 4\cos x)^{-1} \dif{x} $
+        \end{subparts}
+    \end{parts}
+\end{questions}
+\end{document}

@@ -1,0 +1,116 @@
+\documentclass[a4paper]{report}
+
+\usepackage{commath}
+\usepackage{siunitx}
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+
+\title{Solutions to L3 Calculus Differentiation Exam 1}
+\author{Alexander Elzenaar}
+\date{3 September 2017}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question One}
+\subsection*{Part (a)}
+\begin{displaymath}
+  \od{y}{x} = 2x + 1 - \frac{1}{x^2} - \frac{2}{x^3}
+\end{displaymath}
+(1 mark)
+
+\subsection*{Part (b)}
+We have $ \od{r}{t} = 0.5 $. Since $ A = \pi r^2 $, we can write $ \od{A}{t} = \od{r}{t} \times 2\pi r = \pi r $.
+After 10 seconds, the radius will be 5 metres and so $ \eval{\od{A}{t}}_{t = 10} = 5\pi $.
+(3 marks)
+
+\subsection*{Part (c)}
+Noting that an equilateral triangle has angles of $ \frac{\pi}{3} $, the height of the rectangle must
+be $ \frac{L - x}{2} \tan \frac{\pi}{3} = \frac{\sqrt{3}}{2}(L - x) $. Hence the area of the rectangle is
+\begin{displaymath}
+  A = \frac{\sqrt{3}}{2}(L - x)x = \frac{\sqrt{3}}{2}(Lx - x^2)
+\end{displaymath}
+and, taking the derivative,
+\begin{displaymath}
+  A' = \frac{L\sqrt{3}}{2} - x\sqrt{3}
+\end{displaymath}
+The area will be maximised when $ A' = 0 $, which is exactly when $ x = L/2 $.
+(4 marks)
+
+\section*{Question Two}
+\subsection*{Part (a)}
+\paragraph{(i)}
+\begin{align*}
+  f'(x) &= -2\sin(2x) + \frac{1}{2} e^{x/2}\\
+  f''(x) &= -4\cos(2x) + \frac{1}{4} e^{x/2}
+\end{align*}
+(2 marks)
+
+\paragraph{(ii)}
+We have $ f''(0) = -4 + \frac{1}{4} < 0 $, so the function is concave down and the point is a minimum.
+(1 mark)
+
+\subsection*{Part (b)}
+\paragraph{(i)}
+$ g(3) = 9 $ (1 mark)
+
+\paragraph{(ii)}
+The function approaches a value near $ y = 5.5 $ on the left, but a value near $ y = 9 $ from
+the right. Hence the left and right limits are different, and the limit of the function at $ x = 3 $
+does not exist.
+(2 marks)
+
+\paragraph{(iii)}
+$ \lim\limits_{x \to 5} = 7 $ (1 mark)
+
+\subsection*{Part (c)}
+\begin{align*}
+  \od{}{t} (x^2 - 5x) &= \lim_{h \to 0} \frac{[(x + h)^2 -  5(x + h)] - (x^2 - 5x) }{h}\\
+                      &= \lim_{h \to 0} \frac{x^2 + 2xh + h^2 - 5x - 5h - x^2 + 5x}{h}\\
+                      &= \lim_{h \to 0} \frac{2xh + h^2 - 5h}{h}\\
+                      &= \lim_{h \to 0} 2x - 5 + h\\
+                      &= 2x - 5.
+\end{align*}
+(3 marks)
+
+\section*{Question Three}
+\subsection*{Part (a)}
+\begin{align*}
+  \od{x}{t} &= \frac{(1 + \tan t)(\sec t)' - (\sec t)(1 + \tan t)'}{(1 + \tan t)^2}\\
+            &= \frac{(1 + \tan t)(\sec t \tan t) - (\sec t)(\sec^2 t)}{1 + 2\tan t + \tan^2 t}\\
+            &= \frac{\sec t \tan t + \sec t \tan^2 t - \sec^3 t}{1 + 2\tan t + \tan^2 t}
+\end{align*}
+(2 marks)
+
+\subsection*{Part (b)}
+\paragraph{(i)}
+We have $ y'(t) = 4t $ and $ x'(t) = 4 $. Hence $ \od{y}{x} = t = \frac{x}{4} $. (2 marks)
+
+\paragraph{(ii)}
+Suppose that $ B = (x,y) $. Then the distance we wish to minimise is
+\begin{displaymath}
+  D = \sqrt{(x + 8)^2 + (y - 2)^2} = \sqrt{(4t + 8)^2 + (2t^2 - 2)^2} = \sqrt{4t^4 + 8t^2 + 64t + 68}
+\end{displaymath}
+Then we can take the derivative and set it to zero:
+\begin{align*}
+  \od{D}{t} &= \frac{1}{2(4t^4 + 8t^2 + 64t + 68)} \times 16t^3 + 16t + 64\\
+  0 &= 16t^3 + 16t + 64\\
+    &= t^3 + t + 4\\
+  t &\approx -1.3788.
+\end{align*}
+(4 marks)
+
+\subsection*{Part (c)}
+Taking the derivative:
+\begin{align*}
+  y &= \frac{1}{m} [\sec(m \ln \theta)]^2\\
+  \od{y}{\theta} &= \frac{1}{m} \cdot 2 \cdot \sec (m \ln \theta) \cdot \sec(m \ln \theta) \tan(m \ln \theta) \cdot \frac{m}{\theta}\\
+                 &= \frac{2}{\theta} \cdot \sec^2(m \ln \theta) \cdot \tan(m \ln \theta).
+\end{align*}
+Plugging in $ \theta = 1 $, we have $ \frac{2}{1} \cdot \sec^2(m \ln 1) \cdot \tan(m \ln 1) = 2 \cdot 1 \cdot 0 = 0 $.
+(2 marks)
+
+\end{document}

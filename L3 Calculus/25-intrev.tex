@@ -1,0 +1,145 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderIntg{25}{Integration Revision}
+\subsection*{Questions}
+\begin{questions}
+  \questioA True or false:
+    \begin{parts}
+      \part $ \rint^b_a \od{y}{x} \dif{x} = y(b) - y(a) $
+      \part $ \rint^1_0 f(x) \dif{x} + \rint^1_0 g(x) \dif{x} = \rint^1_0 f(x) + g(x) \dif{x} $
+      \part $ \rint^2_0 f(x) \dif{x} + \rint^1_0 f(x) \dif{x} = \rint^2_1 f(x) \dif{x} $
+      \part $ \rint \sin(x) \dif{x} \rint \cos(x) \dif{x} = \rint \sin(x) \cos(x) \dif{x} $
+      \part $ \rint \frac{1}{u} \dif{u} = \rint \frac{1}{x} \dif{x} $
+      \part A definite integral always represents the area under a curve.
+      \part If $ u = 2x $ then $ \rint \sqrt{2x} \dif{x} = \rint \sqrt{u} \dif{u} $.
+      \part The indefinite integral of $ \ln x $ is just $ \ln x $.
+    \end{parts}
+  \questioA Compute the following indefinite integrals:
+    \begin{parts}
+      \part $ \rint \sin x \dif{x} $
+      \part $ \rint \sec 3x \tan 3x \dif{x}$
+      \part $ \rint \frac{2x^4 - x^2}{x^3} \dif{x} $
+      \part $ \rint \sin x \cos x \dif{x} $
+      \part $ \rint \sin^2 x \dif{x} $
+      \part $ \rint \frac{1}{2u} \dif{u} $
+      \part $ \rint \frac{2x + \sec^2 x}{2\sqrt{x^2 + \tan x}} \dif{x} $
+      \part $ \rint \frac{t^4 - 1}{t - 1} \dif{t} $
+      \part $ \rint \frac{t^{2017} + \sqrt{t^{2017}} + \sqrt[3]{t^{2017}}}{\sqrt[2017]{t^2}} \dif{t} $
+      \part $ \rint \sec \theta \dif{\theta} $ (hint: multiply through by $ \frac{\sec x + \tan x}{\sec x + \tan x} $)
+      \part $ \rint \sec x \tan x + \sec^2 x \tan x \dif{x} $
+    \end{parts}
+  \questioA Compute the definite integrals:
+    \begin{parts}
+      \part $ \rint_0^1 x^2 \dif{x} $
+      \part $ \rint_0^{\pi/2} \tan(x/2) \dif{x} $
+      \part $ \rint^4_0 x^3 + x^2 + \sqrt{x} \dif{x} $
+      \part $ \rint_1^e \frac{1}{t} \dif{t} $
+    \end{parts}
+  \questioM Suppose $ f'(x) + \frac{f(x)}{x} = 0 $, and $ f(1) = 1 $. Find $ f(x) $ explicitly.
+  \questioM If $ \rint^B_A f(x) \dif{x} = 3 $ and $ \rint^C_A f(x) \dif{x} = 4 $, find $ \rint^C_B f(x) \dif{x} $.
+  \questioM A function $ \phi $, whose graph passes through the origin, is such that the slope of $ \phi $ at any given
+            point $ x $ is exactly $ 2\phi(x) $. Find $ \phi $ exactly.
+  \questioE Find $ A $ such that $ \rint^A_0 \sin x \dif{x} $ is maximised.
+  \questioE Find $ B $ such that $ \rint_B^{B^2} x^2 - 4x - 4 \dif{x} $ is maximised.
+  \questioM Find the area of the region bounded by $ y = 1 + x^2 $, $ y = - 1 - x^2 $, $ x = 1 $, and $ x = -1 $.
+  \questioM Use integration to find the area enclosed between the curve $ y = e^{2x} - \frac{1}{e^{3x}} $ and the
+            lines $ y = 0 $, $ x = 0 $, and $ x = 1.2 $.
+  \questioM A function $ f $ is \textit{even} if $ f(-x) = f(x) $ for all $ x $ in its domain.
+    \begin{parts}
+      \part What geometric property does the graph of an even function have?
+      \part Suppose $ f $ is an even function with $ \rint^7_0 f(x) \dif{x} = 20 $. Find:
+        \begin{subparts}
+          \subpart $ \rint^7_{-7} f(x) \dif{x} $
+          \subpart $ \rint^7_0 3f(x) + 2 \dif{x} $
+        \end{subparts}
+    \end{parts}
+  \questioM A function $ y $ is implicitly defined in terms of $ x $ in each case; find $ y(x) $ explicitly.
+    \begin{parts}
+      \part $ \od{y}{x} = xy^2 $, $ y(1) = 0 $.
+      \part $ \od{y}{x} = \frac{\cos x}{3y} $, $ y(\pi/6) = 1 $.
+    \end{parts}
+  \questioM Use integration to find the area enclosed between $ y = 1-0.2x^4 $ and $ y = 0.4x^4 $.
+  \questioE Mr Leibniz has a continer of oil and places it in the garage. Unfortunately, he puts the container on
+            top of a sharp nail and it begins to leak. The rate of decrease of the volume of oil in the container is
+            given by the differential equation $ \od{V}{t} = -kVt $, where $ V $ is the remaining volume of oil remaining
+            after $ t $ hours have passed. The volume of oil in the container when it was placed in the garage
+            was \SI{3000}{\milli\litre}; after twenty hours have passed, the volume remaining is \SI{2400}{\milli\litre}.
+            How much (if any) oil will remain in the container after 96 hours have passed?
+  \questioM An object has acceleration (in one dimension) $ a(t) = 0.2t + 0.3\sqrt{t} $ for $ 0 \leq t \leq 10 $. At $ t = 4 $,
+            the velocity of the object is \SI{5}{\metre\per\second}. How far has the object travelled after nine seconds?
+  \questioS The formula for integration by parts is $ \rint f(x) g'(x) \dif{x} = f(x) g(x) - \rint f'(x) g(x) \dif{x} $.
+    \begin{parts}
+      \part Find $ \rint \ln x \dif{x} $ explicitly.
+      \part Hence, or otherwise, find $ \rint^2_1 4x \ln x \dif{x} $.
+    \end{parts}
+  \question
+    \begin{parts}
+      \part
+        \begin{subparts}
+          \subparE Show that $ \frac{3}{x + 1} - \frac{4}{x - 2} = \frac{-x - 10}{x^2 - x - 2} $.
+          \subparE Hence, or otherwise, compute $ \rint^1_0 \frac{-x - 10}{x^2 - x - 2} \dif{x} $.
+        \end{subparts}
+      \parS Find $ \beta $ such that $ \rint^{2\beta}_{\beta} \frac{1}{x^2 + 5x + 6} \dif{x} = 1 $.
+    \end{parts}
+  \questioA Use the trapezium rule to approximate the value of $ \rint^{4}_{1} x^x \dif{x} $. This function cannot
+            be integrated in terms of elementary functions.
+  \questioM The indefinite integral $ \rint e^{-x^2} \dif{x} $ cannot be integrated in terms of elementary
+            functions, but it can be shown that the definite integral $ \rint^{\infty}_{-\infty} e^{-x^2} \dif{x} $
+            has the value $ \sqrt{\pi} $. Most of the curve lies within the bounds $ -2 \leq x \leq 2 $. Use Simpson's
+            rule to approximate the value of $ \rint^{2}_{-2} e^{-x^2} $, and compare this with the expected value.
+  \questioM Consider the function implicitly defined by $ y(x) = x + \rint^{\sqrt{2}}_0 y(x) \dif{x} $. If the graph
+            of the function includes the point $ (0,1) $, find $ y(x) $ explicitly.
+  \questioE An object is at \SI{4}{\degree} in a refrigerator. It is removed and placed on a shelf with an ambient
+            temperature of \SI{20}{\degree}. After two minutes, the object has warmed to \SI{5}{\degree}. How long will
+            it take for the object to reach \SI{10}{\degree}? [\textit{Use Newton's law of cooling.}]
+  \questioE A property owner assumes that the rate of increase of the value of his property at any time is proportional
+            to the value, \$$V$, of the property at that time.
+    \begin{parts}
+      \part Write the differential equation that expresses this statement.
+      \part The property was valued at \$365 000 in May 2012, and at \$382 000 in November 2013. Solve the differential
+            equation from (a) to find the price that the owner paid for the property in May 2007 when he purchased the property,
+            given his assumption is accurate.
+    \end{parts}
+  \questioM Find $ x $ such that $ \rint_1^x \frac{\ln u}{u} \dif{u} = 1 $.
+  \questioE The formula for surface area of the volume of revolution of $ y = f(x) $ is $ 2\pi \rint^b_a f(x) \sqrt{f'(x) + 1} \dif{x} $.
+            Find the area of the surface obtained by rotating about the $ x$-axis the part of the curve $ x = \frac{1}{4}y^2 - \frac{1}{2}\ln y $
+            that lies between $ y = 1 $ and $ y = e $.
+  \questioE The base of a solid is the region bounded by the parabolae $ y = x^2 $ and $ y = 2 - x^2 $. Find the volume of the solid,
+            if cross-sections perpendicular to the $ x$-axis are squares with one side lying along the base.
+  \questioS Find the volume of the ellipsoid $ \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1 $.
+  \questioO Scholarship 2016: Consider $ I_n = \rint^{\pi/2}_0 \frac{\sin 2nx}{\sin x} \dif{x} $, where $ n \geq 0 $. Show
+            that $ I_n - I_{n-1} = \frac{2(-1)^{n-1}}{2n - 1} $.
+  \questioS Scholarship 2010:
+            A flower pattern is constructed by using a sinusoidal function $ r(\theta) $ to define the distance from the origin to the
+            curve at a radial angle $ \theta $. The $ x $ and $ y $ coordinates of a point on the curve are given by the following equations,
+            where $ 0 \leq b \leq a $ and $ n $ is a positive integer (the number of petals).
+            \begin{align*}
+              r(\theta) = a + b \sin (n\theta) && x(\theta) = r(\theta) \cos (\theta) && y(\theta) = r(\theta) \sin(\theta)
+            \end{align*}
+    \begin{parts}
+      \part The area inside such a function is given by
+            \begin{displaymath}
+              A = \frac{1}{2} \rint^{2\pi}_0 (r(\theta))^2 \dif{\theta}
+            \end{displaymath}
+            when $ r(\theta) \geq 0 $.
+
+            \textbf{Show} that the area of a flower pattern is $ \pi \left( a^2 + \frac{1}{2}b^2 \right) $.
+      \part A lemon squeezer with base radius $ a_0 $ and height $ H $ is made to the following specifications.
+
+            At a height $ h $ (where $ 0 \leq h \leq H $) the cross-section is a flower pattern with
+            \begin{displaymath}
+              a(h) = \frac{H - h}{H} a_0 \text{ and } b(h) = \frac{h}{H} a(h).
+            \end{displaymath}
+
+            Use integration with respect to $ h $ to show that the volume of a lemon squeezer is \textbf{exactly $5\%$ greater than} the
+            volume of a cone with the same base and height.
+    \end{parts}
+  \questioO Evaluate the following:
+            \begin{displaymath}
+              \od[2]{}{x} \rint^x_0 \left( \rint^{\sin t}_0 \sqrt{1 + u^4} \dif{u} \right) \dif{t}
+            \end{displaymath}
+            [\textit{Hint: no integration is required. Use the FTC and the (differentiation) chain rule.}]
+\end{questions}
+
+\end{document}

@@ -1,0 +1,58 @@
+\documentclass[answers]{exam}
+\usepackage[utf8]{inputenc}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{microtype}
+\usepackage{siunitx}
+\DeclareSIUnit\year{yr}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{commath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{wasysym}
+\usepackage[parfill]{parskip}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{iden}{Identity}
+\newtheorem*{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{ex}{Example}
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+
+% \qformat{Question \thequestion: \thequestiontitle\hfill}
+
+\begin{document}
+
+\section*{NCEA Level 3 Physics (Modern Physics)}
+\subsection*{Reading}
+\url{https://www.youtube.com/watch?v=XYcw8nV_GTs}
+
+\subsection*{Questions}
+Useful data: $ c \approx \SI{2.99e8}{\metre\per\second} $, $ h \approx \SI{6.63e-34}{\joule\second} $,
+$ e \approx \SI{1.6e-19}{\coulomb} $, $ \SI{1}{\electronvolt} \approx \SI{1.6e-19}{\joule} $, $ \SI{1}{\amu} \approx \SI{1.661e-27}{\kilo\gram} $,
+$ m_\text{proton} = \SI{1.007283}{\amu} $, $ m_\text{neutron} = \SI{1.008665}{\amu} $.
+
+\begin{questions}
+  \question Find the binding energy per nucleon of erbium-167.
+  \question Find the total energy released if three $ ^4\mathrm{He} $ nuclei fuse together to form one $ ^{12}\mathrm{C} $ nucleus.
+  \question The binding energy of the electron in a hydrogen atom is \SI{13.6}{\electronvolt}. By how much does the mass decrease
+            when a hydrogen atom is formed from a proton and an electron, as a percentage of the mass of the hydrogen atom?
+\end{questions}
+
+\end{document}

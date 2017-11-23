@@ -1,0 +1,124 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderDiff{7}{Higher Derivatives and the Geometry of a Function}
+Back in the homework on limits, I gave you the following definitions:
+\subsubsection*{Properties of Functions}
+\begin{itemize}
+  \item A function is \textbf{increasing} if its derivative is positive.
+  \item A function is \textbf{decreasing} if its derivative is negative.
+  \item A function is \textbf{concave down} if its derivative is decreasing.
+  \item A function is \textbf{concave up} if its derivative is increasing.
+  \item A function $ f $ is \textbf{continuous} at a point $ a $ if $ \lim_{x \to a} f(x) = f(a) $.
+\end{itemize}
+
+\begin{ex}
+  The function $ x \mapsto x^2 $ is concave up everywhere.
+\end{ex}
+\begin{ex}
+  The function $ x \mapsto \sin x $ is concave down when $ (2n)\pi < x < (2n + 1)\pi $, and concave up when $ (2n + 1)\pi < x < (2n + 2)\pi $
+  (for all integers $ n $). Draw a diagram to see this.
+\end{ex}
+
+We can tell if a function is increasing (getting larger) or decreasing (getting smaller) around a point by looking at the derivative
+at that point. However, in order to look for concavity we must look at the derivative of the derivative (the second derivative). If
+a function is concave up (curving up), the second derivative is positive; if a function is concave down at a point, then the second
+derivative is negative.
+
+A point where a function changes from concave up to concave down (or vice versa) is known as an \textbf{inflection point}.
+\begin{ex}
+  The function $ x \mapsto x^3 $ has an inflection point at $ (0,0) $; to the left of this point, the function is concave
+  down (the second derivative is negative) and to the right the function is concave up (the second derivative is positive).
+\end{ex}
+
+We call the value of the first derivative the \textit{slope} or \textit{gradient} of the function at a point; similarly,
+the second derivative measures how "curvy" a function is and we call its value the \textit{concavity} of a function
+at a point.
+
+Unfortunately, there is no nice method for checking for continuity involving the derivatives. At this level, however, it
+should be fairly obvious at which points a function is discontinuous.
+
+\begin{ex}
+  \textit{Question.} Consider the function defined by $ f(x) = x^4 - 2x^2 + 3 $. (a) Find the intervals on which $ f $
+  is increasing or decreasing. (b) Find the intervals of concavity and the inflection points.
+
+  \textit{Solution.} We have $ f'(x) = 4x^3 - 4x $. This function is zero at $ x \in \{-1, 0, 1\} $, and so (since the function
+  is a positive cubic) $ f $ will be decreasing when $ x < -1 $, increasing when $ -1 < x < 0 $, decreasing when $ 0 < x < 1 $,
+  and increasing when $ 1 < x $. We also have $ f''(x) = 12x^2 - 4 $ and so $ f''(x) = 0 $ when $ x = \pm \frac{1}{\sqrt{3}} $.
+  Hence the function is concave up when $ x < -\frac{1}{\sqrt{3}} $, concave down when $ \abs{x} < \frac{1}{\sqrt{3}} $, and concave
+  up when $ x > \frac{1}{\sqrt{3}} $. The inflection points will be $ x = \pm{1}{\sqrt{3}} $.
+  \begin{center}
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        scale = 0.5,
+        axis lines = center,
+        xlabel = $ x $,
+        ylabel = {$ y = f(x) $}
+      ]
+        \addplot[domain=-2:2, color=red, samples=200] {x^4 - 2*x^2 + 3};
+      \end{axis}
+    \end{tikzpicture}}
+  \end{center}
+\end{ex}
+
+\clearpage
+\subsection*{Questions}
+\begin{questions}
+  \questioA Find the second derivative of the following functions.
+    \begin{parts}
+      \part $ y = x^2 + x $
+      \part $ f(x) = \sin x $
+      \part $ g(x) = \cot(3x^2 + 5) $
+      \part $ y = \frac{\sin mx}{x} $
+      \part $ y = 4 \sin^2 x $
+      \part $ y = \tan^2 (\sin \theta) $
+      \part $ y = \tan \sqrt{1 - x} $
+    \end{parts}
+  \questioA Find the concavity of the function $ y = \frac{x^2 - 1}{x^2 + 1} $ at $ (0, -1) $.
+  \questioM Find the intervals on which the following functions are increasing or decreasing, and
+            find their intervals of concavity.
+    \begin{parts}
+      \part $ y = x^2 + 1 $
+      \part $ y = 2x^3+ 3x^2 - 36x $
+      \part $ G(x) = x - 4\sqrt{x} $
+    \end{parts}
+  \questioA The following function is known as the \textit{logistic curve} and is used for population modelling. Find the intervals of
+            concavity, and label any inflection points.
+            \begin{center}
+              \includegraphics[width=0.4\textwidth]{logistic}
+            \end{center}
+  \questioM Sketch a function satisfying the given criteria.
+    \begin{parts}
+      \part
+        \begin{subparts}
+          \subpart Vertical asymptote at $ x = 0 $,
+          \subpart $ f'(x) > 0 $ if $ x < -2 $,
+          \subpart $ f'(x) < 0 $ if $ x > -2 $ ($ x \neq 0 $),
+          \subpart $ f''(x) < 0 $ if $ x < 0 $, $ f''(x) > 0 $ if $ x > 0 $.
+        \end{subparts}
+      \part
+        \begin{subparts}
+          \subpart $ f'(0) = f'(2) = f'(4) = 0 $,
+          \subpart $ f'(x) > 0 $ if $ x < 0 $ or $ 2 < x < 4 $,
+          \subpart $ f'(x) < 0 $ if $ 0 < x < 2 $ or $ x > 4 $,
+          \subpart $ f''(x) > 0 $ if $ 1 < x < 3 $,
+          \subpart $ f''(x) < 0 $ if $ x < 1 $ or $ x > 3 $.
+        \end{subparts}
+    \end{parts}
+  \questioE A curve is defined by the function $ f(x) = e^{-(x-k)^2} $. Find, in terms of $ k $, the $ x$-ordinates for which $ f''(x) = 0 $.
+  \questioS Scholarship 2010: Recall that the points of inflection of a curve are places where the second derivative
+            changes sign. These are typically, \textbf{but not always}, points at which the second derivative is zero.
+
+            Consider the curve $ y = \sqrt[3]{x} e^{-x^2} $.
+
+            Write the second derivative in the form $ \od[2]{y}{x} = (ax^4 + bx^2 + x)e^{-x^2} x^{-5/3} $, and hence
+            find the $ x$-ordinates of the points of inflection of the curve.
+  \questioS Scholarship 2004: (You may wish to remind yourself how to perform long division of polynomials.) Consider the function
+            \begin{displaymath}
+              y = \frac{x^2}{1 + x^2},
+            \end{displaymath}
+            where $ -1 \leq x \leq 1 $. The gradient at the point $ x = 1 $ is $ \frac{1}{2} $.
+
+            Hence show that there is a point with $ \frac{1}{4} \leq x \leq \frac{1}{2} $ where the gradient is also $ \frac{1}{2} $.
+\end{questions}
+\end{document}

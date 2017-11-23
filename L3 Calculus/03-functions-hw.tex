@@ -1,0 +1,57 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderDiffHw{3}{Derivatives of Common Functions}
+\subsection*{Reading}
+
+\begin{thm}
+  Suppose $ f $ and $ g $ are functions which are differentiable at some point $ x $, and
+  suppose that $ \lambda $ is a real constant. Then:
+  \begin{enumerate}
+    \item $ (\lambda)'(x) = 0 $,
+    \item $ (f + g)'(x) = f'(x) + g'(x) $, and
+    \item $ (\lambda f)'(x) = \lambda f'(x) $.
+  \end{enumerate}
+\end{thm}
+
+\begin{proof}
+  We prove these using the properties of the limits.
+  \begin{enumerate}
+    \item\begin{align*}
+      (\lambda)'(x) = \lim_{h \to 0} \frac{\lambda - \lambda}{h} = 0.
+    \end{align*}
+    \item\begin{align*}
+      (f + g)'(x) &= \lim_{h \to 0} \frac{(f + g)(x + h) - (f + g)(x)}{h}\\
+                  &= \lim_{h \to 0} \frac{f(x + h) - f(x) + g(x + h) - g(x)}{h}\\
+                  &= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} + \lim_{h \to 0} \frac{g(x + h) - g(x)}{h}\\
+                  &= f'(x) + g'(x).
+    \end{align*}
+    \item\begin{align*}
+      (\lambda f)'(x) &= \lim_{h \to 0} \frac{(\lambda f)(x + h) - (\lambda f)(x)}{h}\\
+                      &= \lim_{h \to 0} \frac{\lambda (f(x + h) - f(x))}{h}\\
+                      &= \lambda \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}\\
+                      &= \lambda f'(x).
+    \end{align*}
+  \end{enumerate}
+\end{proof}
+
+\clearpage
+\subsection*{Questions}
+\begin{questions}
+  \question Differentiate with respect to $ x $:
+    \begin{parts}
+      \part $ x^2 + \ln x $
+      \part $ tx^t $
+      \part $ \sin x - \cos x $
+      \part $ \sqrt[5]{x^4} $
+    \end{parts}
+  \question Explain why you cannot use the power rule to find the derivative of $ x^x $.
+  \question Find the $ n$th derivative of $ \frac{1}{x^n} $.
+  \question (More difficult!) Suppose a population grows exponentially with time, such that after $ t $ years the population $ P = P_0 + 10^t $.
+    \begin{parts}
+      \part Given that the derivative of $ e^{cx} $ is $ ce^{cx} $ when $ c $ is constant,
+            find the rate of change of the population at $ t = 100 $.
+      \part Explain why this population model is unrealistic.
+    \end{parts}
+\end{questions}
+\end{document}

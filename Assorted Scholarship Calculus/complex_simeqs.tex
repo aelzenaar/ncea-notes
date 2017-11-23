@@ -1,0 +1,176 @@
+\documentclass{exam}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{siunitx}
+\DeclareSIUnit\year{yr}
+
+\qformat{Question \thequestion: \thequestiontitle\hfill}
+
+\begin{document}
+\begin{questions}
+
+\section*{Scholarship Calculus}
+
+\titledquestion{Complex Numbers}
+  \begin{parts}
+    \part
+      \begin{subparts}
+        \subpart
+          Find all eighth roots of 256.
+
+        \subpart
+          Find the polar form of $ \alpha = 2-3i $.
+
+        \subpart
+          If $ \beta = 3+7i $, and $ \gamma = 9+11i $, find the unique
+          fourth-degree polynomial with real coefficients that has both
+          $ \beta $ and $ \gamma $ as roots.
+
+        \subpart
+          Solve for $ x $ if $ x^4 + i = 0 $.
+      \end{subparts}
+
+    \part
+      If $ \zeta = \sqrt{\frac{1}{2}(a+\sqrt{a^2+b^2})} + i\sqrt{\frac{1}{2}(-a+\sqrt{a^2+b^2})} $
+      is a complex number (with $ i = \sqrt{-1} $ and $ b,c \in \mathbb{R} $), find $ \zeta^2 $
+      in the form $ p + iq $.
+  \end{parts}
+
+\titledquestion{Systems of Equations}
+  \begin{parts}
+    \part
+      Solve the following systems of equations:
+      \begin{subparts}
+        \subpart
+          $ \left\{ \begin{aligned}
+            &x + y = 8\\
+            &x - y = 0
+          \end{aligned} \right. $
+
+        \subpart
+          $ \left\{ \begin{aligned}
+            &2x-5y = 6\\
+            &5x-2y = 12
+          \end{aligned} \right. $
+
+        \subpart
+          $ \left\{ \begin{aligned}
+            &x-2y+z  = 7\\
+            &x-y+z   = 4\\
+            &2x+y-3z = -4
+          \end{aligned} \right. $
+
+        \subpart
+          $ \left\{ \begin{aligned}
+            &3x+3y              = 2\\
+            &\frac{x^2+y^2}{xy} = -2
+          \end{aligned} \right. $
+      \end{subparts}
+
+      \part
+        A teacher sets 99 homework problems for her Calculus class each week, of
+        three different types. The number of questions of each type given in
+        week $ n $ are represented by $ x_n $, $ y_n $, and $ z_n $ respectively.
+
+        Suppose that this techer uses the following system of linear equations
+        to vary the number of questions of each type given each week:
+        \begin{align*}
+          x_{n+1} &= 0.8x_n + 0.7y_n + 0.6z_n\\
+          y_{n+1} &= 0.1x_n + 0.2y_n + 0.4z_n\\
+          z_{n+1} &= 0.1x_n + 0.1y_n &
+        \end{align*}
+        Her class notice that the number of questions of each type stabilises after
+        several weeks - in the long run, they notice that $ x_{n+1} = x_n $,
+        $ y_{n+1} = y_n $, and $ z_{n+1} = z_n $.
+
+        How many questions of each type will the teacher give each week once the
+        numbers stabilise?
+
+      \part
+        Find $ c $ such that $ x-y+2=0 $, $ 3x-3y+7=0 $, and $ 3x+2y+x= 0 $ shall
+        meet at a single point.
+  \end{parts}
+
+\titledquestion{Derivatives}
+  \begin{parts}
+    \part
+      A lighthouse is located on a small island \SI{3}{\kilo\metre} away from the
+      nearest point $P$ on a straight shoreline and its light makes four
+      revolutions per minute. How fast is the beam of light moving along the
+      shoreline when it is \SI{1}{\kilo\metre} away from $P$?
+
+    \part
+      If $ f $ and $ g $ are differential functions with $ f(0) = g(0) = 0 $ and
+      $ g'(0) \neq 0 $, show that
+      \begin{displaymath}
+        \lim_{x \to 0} \frac{f(x)}{g(x)} = \frac{f'(0)}{g'(0)}
+      \end{displaymath}
+      \emph{Note: you may wish to start from the right hand side and expand the derivatives
+      using first principles.}
+
+    \part
+      Brain weight $ B $ as a function of body weight $ W $ in fish has been
+      modelled by the function $ B = 0.007W^{\frac{2}{3}} $, where $ B $ and $ W $
+      are measured in grams. A model for body weight as a function of body length
+      $ L $ (measured in centimetres) is $ W = 0.12L^{2.53} $. If, over \SI{10}{\mega\year}
+      the average length of a certain species of fish evolved from \SI{15}{\centi\metre} to
+      \SI{20}{\centi\metre} at a constant rate, how fast has this species' brain
+      growing when the average length was \SI{18}{\centi\metre}?
+  \end{parts}
+
+\titledquestion{Conic Sections}
+  \begin{parts}
+    \part
+      Determine equations of three different lines, all of which pass through
+      the point $ (2, -6) $.
+    \part
+      Determine the locus of a point which is always as far from the $ x $ axis
+      as it is from the point $ (1, 3) $.
+    \part
+      The earth moves in an elliptical path about the sun with the sun at one focus
+      of the ellipse. If the distance of the earth from the sun varies from
+      \SI{4.6e7}{\kilo\metre} to \SI{6.98e7}{\kilo\metre}, find the equation of
+      the ellipse.
+    \part
+      A satellite, P, is travelling anticlockwise around an elliptical orbit with
+      centre O. The elliptical orbit may be represented by $ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $,
+      where the satellite P is represented by the point $ (a \cos \theta, b \sin \theta) $.
+
+      \begin{subparts}
+        \subpart
+          Draw a diagram showing P, $ \theta $, $ a $, and $ b $, where $ \mathrm{O} = (0,0) $.
+        \subpart
+          The satellite P shines a microwave beam in the directions perpendicular
+          to its direction of motion. Show that, when $ \theta = \frac{\pi}{4} $,
+          the beam cuts the vertical plane (the $y$-axis) at a vertical distance
+          $ \frac{\sqrt{2}a^2}{2b} $ below the level of the satellite.
+      \end{subparts}
+  \end{parts}
+
+\titledquestion{Functions}
+  \textbf{Definition:} A function $ f $ is called \emph{even} if for all $ x $ in
+  the domain of $ f $, $ f(-x) = f(x) $ - i.e. the function is symmetric about the
+  $y$-axis. A function $ f $ is called \emph{odd} if for all $ x $ in the domain of
+  $ f $, $ f(-x) = -f(x) $.
+
+  \begin{parts}
+    \part
+      Decide if each of the following function is even, odd, or neither:
+      \begin{subparts}
+        \subpart
+          $ f(x) = x^3 + x $
+        \subpart
+          $ g(x) = 1-x^2 $
+        \subpart
+          $ h(x) = 2x-x^2 $
+      \end{subparts}
+    \part
+      \textbf{Definition:} Given some function $ f $ which sends $ x $ to $ y $,
+      we can define a function $ f^{-1}(x) $ which sends $ y $ to $ x $. This function
+      is the \emph{inverse} of $ f $.
+
+      Prove that the inverse of an odd function is itself odd.
+  \end{parts}
+\end{questions}
+\end{document}

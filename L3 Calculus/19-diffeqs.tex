@@ -1,0 +1,153 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderIntg{19}{Differential Equations}
+Suppose $ \od{y}{x} = f(x) g(y) $. It would be nice if we could find $ y $ in terms of $ x $ only. This
+is in fact possible, using substitution:
+\begin{align*}
+  \od{y}{x} &= f(x) g(y) \\
+  \Rightarrow \frac{1}{g(y)} \od{y}{x} &= f(x)\\
+  \Rightarrow \rint \frac{1}{g(y)} \od{y}{x} \dif{x} &= \rint f(x) \dif{x}.
+\end{align*}
+Now, let $ G(y) $ be an antiderivative of $ \frac{1}{g(y)} $ (with respect to $ y $). By the chain rule, then,
+\begin{displaymath}
+  \od{}{x} G(y) = \frac{1}{g(y)} \od{y}{x}
+\end{displaymath}
+and so
+\begin{displaymath}
+  \rint \frac{1}{g(y)} \od{y}{x} \dif{x} = G(y) = \rint \frac{1}{g(y)} \dif{y}.
+\end{displaymath}
+Hence we have
+\begin{displaymath}
+  \rint \frac{1}{g(y)} \dif{y} = \rint f(x) \dif{x}
+\end{displaymath}
+This way of solving \textit{differential equations} is called \textit{separation of variables}.
+
+\begin{ex}
+  Suppose we know that $ y\od{y}{x} = e^x $. Then we can separate the variables:
+  \begin{align*}
+    \rint y \dif{y} &= \rint e^x \dif{x}\\
+    \Rightarrow \frac{1}{2} y^2 &= e^x + C\\
+    \Rightarrow y^2 &= 2e^x + C.
+  \end{align*}
+  If we know that the curve passes through $ (0,0) $, then $ 0 = 2e^0 + C $ and $ C = -2 $, so $ y^2 = 2e^x - 2 $.
+
+  To check our answer, let us now use implicit differentiation to differentiate this curve. We have $ 2y \od{y}{x} = 2e^x $ and $ y \od{y}{x} = e^x $
+  as expected so our solution is correct.
+\end{ex}
+
+\begin{ex}
+  Suppose that $ r(\theta) $ is implicitly defined by $ \od{r}{\theta} = r \sin \theta $ with the condition $ r(\pi) = e $.
+  Graph $ r(\theta) $.
+
+  Separating variables, we have $ \rint \frac{\dif{r}}{r} = \rint \sin \theta \dif{\theta} $; so $ \ln \abs{r} = -\cos \theta + C $
+  and therefore $ r = Ke^{-\cos \theta} $ for some constant $ K $. But $ e = Ke^{-\cos \pi} = Ke^0 = K $; so $ r(\theta) = e e^{-\cos \theta} = e^{1 - \cos \theta} $.
+  Graphing this:
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{polaraxis}[width=0.4\textwidth]
+        \addplot[domain=0:360,samples=360,color=Dandelion,style=ultra thick]{e^(1-cos(x))};
+      \end{polaraxis}
+    \end{tikzpicture}
+  \end{center}
+\end{ex}
+
+\subsection*{Questions}
+\begin{questions}
+  \questioM Find $ y $ in terms of $ x $ in each case, if each curve passes through $ (1,1) $:
+    \begin{parts}
+      \part $ \od{y}{x} = yx $
+      \part $ \od{y}{x} + x = yx $
+      \part $ \od{y}{x} + y = yx $
+      \part $ \sqrt{y} \od{y}{x} = \frac{1}{x} $
+      \part $ \od{y}{x} = (x + 2)^2 $
+      \part $ \od{y}{x} = \frac{y^2 + 1}{2y} e^x $
+      \part $ \od{y}{x} = x\cos^2 y $
+      \part $ \od{y}{x} = \sin x \tan y $
+      \part $ 2y \od{y}{x} = x^3 + 2x + 1 $
+      \part $ \sin y \od{y}{x} = 3x $
+      \part $ \od{y}{x} = \frac{x(e^{x^2} + 2)}{6y^2} $
+    \end{parts}
+  \questioE
+    \begin{parts}
+      \part Show that one antiderivative of $ f(x) = x \sin x \dif{x} $ is $ F(x) = \sin x - x \cos x $.
+      \part Find $ y(\pi) $ if $ y(0) = \pi $ and
+        \begin{displaymath}
+          \od{y}{\theta} = \theta y \sin \theta.
+        \end{displaymath}
+    \end{parts}
+  \questioE Newton's law of cooling states that the rate of heat loss of a body is directly proportional to the difference in the
+            temperatures between the body and its surroundings; in other words, if the temperature of the body at time $ t $ is $ T $
+            and the ambient temperature is $ T_{\infty} $ then $ \od{T}{t} = -k(T - T_{\infty}) $ (where $ k $ is some constant.)
+    \begin{parts}
+      \part A loaf of bread is taken from the oven at a temperature of \SI{400}{\celsius} and is set down on a bench in an area
+            with an ambient temperature of \SI{20}{\celsius}. It is found that it takes ten minutes for the loaf to cool to half
+            its initial temperature. How many minutes will it take for the loaf to cool to \SI{30}{\celsius}?
+      \part A detective is called to the scene of a crime where a dead body has just been found. She arrives on the scene at
+            10:23 pm and begins her investigation. Immediately, the temperature of the body is taken and is found to be \SI{24}{\celsius}.
+            The detective checks the programmable thermostat and finds that the room has been kept at a constant \SI{20}{\celsius} for
+            the past 3 days.
+
+            After evidence from the crime scene is collected, the temperature of the body is taken once more and found to be \SI{22}{\celsius}.
+            This last temperature reading was taken exactly one hour after the first one. Assuming that the victim’s body temperature was
+            normal (\SI{37.5}{\celsius}) prior to death, at what time did the victim die?
+    \end{parts}
+  \questioE We will apply calculus concepts to chemical rates of reaction.
+    \begin{parts}
+      \part A \textit{first-order reaction} is one whose rate depends linearly on the concentration of one reactant $ A $; in
+            other words, $ -\od{[A]}{t} = k[A] $.
+
+            One example of a first-order reaction is the decomposition of hydrogen peroxide:
+            \begin{displaymath}
+              \ce{2H2O2(aq) -> 2H2O + O2(g)}
+            \end{displaymath}
+            What percentage of hydrogen peroxide will have decomposed after 600 seconds, if the reaction constant is $ k = \SI{6.40e-5}{\per\second} $?
+      \part If a reaction depends linearly on the concentrations of two reactants, $ A $ and $ B $ (as in \ce{A + B -> C}) then the rate
+            of reaction is given by
+            \begin{displaymath}
+              -\od{[A]}{t} = -\od{[B]}{t} = \od{[C]}{t} = k[A][B].
+            \end{displaymath}
+
+            If we consider the reaction \ce{NO2 + CO -> CO2 + NO}, the rate is experimentally found to be \textit{second-order} in the
+            reactant \ce{NO2} and independent of the concentration of carbon monoxide. It follows that the rate of reaction is
+            \begin{displaymath}
+              \od{[\ce{NO2}]}{t} = -k[\ce{NO2}]^2
+            \end{displaymath}
+            where $ k $ is some constant.
+
+            Initially, the concentration of \ce{NO2} is \SI{2.0}{\mole\per\litre}; after ten minutes, the concentration has decreased to \SI{1.0}{\mole\per\litre}. How
+            long will it take for the concentration to become \SI{0.5}{\mole\per\litre}?
+    \end{parts}
+  \questioM It is known that the motion of a particle is described by the differential equation
+            \begin{displaymath}
+              v = \frac{4\sin(2t)}{x}.
+            \end{displaymath}
+            Initially, the particle is two metres away from the origin in the positive $x-$direction.
+            Find the particle's position after ten seconds.
+  \questioM Suppose that $ y'(x) = e^{x + 2y} $, and $ y(0) = 0 $. Find $ y(x) $ explicitly.
+  \questioM Recall from physics that \textbf{simple harmonic motion} occurs when the force $ F $ on an object is proportional to (and opposite
+            in direction to) its displacement $ k $ from some zero point ($ F = -kx $). Recall also that Newton's second law tells us that the
+            acceleration felt by an object of mass $ m $ is given by $ \od[2]{x}{t} = \frac{F}{m} $. We wish to find a formula for $ x $, the
+            displacement of the object, at time $ t $. We have:
+            \begin{displaymath}
+              \od[2]{x}{t} = -\frac{kx}{m}
+            \end{displaymath}
+            Show that $ x = A \cos(\sqrt{k/m} \thinspace\cdot t) $ is a solution of the given differential equation.
+  \questioS Consider the general wave equation, $ y = A\sin(kx -\omega t) $ (where $A$, $ k $, and $ \omega $ are constant). We
+            write $ \pd{y}{x} $ for the derivative of $ y $ with respect to $ x $ holding $ t $ constant, and $ \pd{y}{t} $ for
+            the derivative of $ y $ with respect to $ t $ keeping $ x $ constant.
+
+            Show that $ \pd[2]{y}{t} = c^2 \pd[2]{y}{x} $ for some constant $ c $.
+  \questioS Physics: Write down a differential equation modelling the charge on the capacitor in an RC circuit over time. Solve the equation.
+  \questioS Scholarship 2000: The piriform is the curve defined by the equation $ 16y^2 = x^3(8-x) $ where $ x \geq 0 $.
+            By solving the differential equation
+            \begin{displaymath}
+              \dod{y}{x} = \frac{x^2(6-x)}{8y}
+            \end{displaymath}
+            ($ y = 0 $ when $ x = 0 $), show the piriform is the solution.
+  \questioS Scholarship 2015: Determine all differentiable equations of the form $ y = f(x) $ which have the properties:
+    \begin{displaymath}
+      f'(x) = (f(x))^3 \text{ and } f(0) = 2
+    \end{displaymath}
+\end{questions}
+\end{document}

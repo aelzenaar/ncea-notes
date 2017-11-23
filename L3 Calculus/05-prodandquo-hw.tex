@@ -1,0 +1,48 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderDiffHw{5}{The Product and Quotient Rules}
+\subsection*{Reading}
+\begin{center}
+  \includegraphics[height=0.2\textheight]{leibniz}
+\end{center}
+
+The German polymath Gottfried Wilhelm Leibniz occupies a grand place in the history of philosophy. He was, along with René Descartes and Baruch Spinoza, one of the three great 17th Century rationalists, and his work anticipated modern logic and analytic philosophy. Like many great thinkers before and after him, Leibniz was a child prodigy and a contributor in many different fields of endeavour.
+
+But, between his work on philosophy and logic and his day job as a politician and representative of the royal house of Hanover, Leibniz still found time to work on mathematics. He was perhaps the first to explicitly employ the mathematical notion of a function to denote geometric concepts derived from a curve, and he developed a system of infinitesimal calculus, independently of his contemporary Sir Isaac Newton. He also revived the ancient method of solving equations using matrices, invented a practical calculating machine and pioneered the use of the binary system.
+
+Like Newton, Leibniz was a member of the Royal Society in London, and was almost certainly aware of Newton’s work on calculus. During the 1670s (slightly later than Newton’s early work), Leibniz developed a very similar theory of calculus, apparently completely independently. Within the short period of about two months he had developed a complete theory of differential calculus and integral calculus (see the section on Newton for a brief description and explanation of the development of calculus).
+
+Unlike Newton, however, he was more than happy to publish his work, and so Europe first heard about calculus from Leibniz in 1684, and not from Newton (who published nothing on the subject until 1693). When the Royal Society was asked to adjudicate between the rival claims of the two men over the development of the theory of calculus, they gave credit for the first discovery to Newton, and credit for the first publication to Leibniz. However, the Royal Society, by then under the rather biassed presidency of Newton himself, later also accused Leibniz of plagiarism, a slur from which Leibniz never really recovered.
+
+Ironically, it was Leibniz’s mathematics that eventually triumphed, and his notation and his way of writing calculus, not Newton’s more clumsy notation, is the one still used in mathematics today.
+
+In addition to calculus, Leibniz re-discovered a method of arranging linear equations into an array, now called a matrix, which could then be manipulated to find a solution. A similar method had been pioneered by Chinese mathematicians almost two millennia earlier, but had long fallen into disuse. Leibniz paved the way for later work on matrices and linear algebra by Carl Friedrich Gauss. He also introduced notions of self-similarity and the principle of continuity which foreshadowed an area of mathematics which would come to be called topology.
+
+\textit{From \url{http://www.storyofmathematics.com/17th_leibniz.html}}
+
+\clearpage
+\subsection*{Questions}
+\begin{questions}
+  \question Find the derivatives:
+    \begin{parts}
+      \part $ \od{y}{x} $ if $ y = \sin x \ln x $.
+      \part $ \od{y}{x} $ if $ y = x \sec kx $ ($ k $ constant).
+      \part $ \od{f}{\theta} $ if $ f(\theta) = \frac{\cos \pi \theta}{\sin \pi \theta + \cos \pi \theta} $.
+      \part $ \od{y}{t} $ if $ y = \cos^4 (\sin^3 t) $.
+    \end{parts}
+  \question The force $ F $ acting on a body with mass $ m $ and velocity $ v $ is the rate
+            of change of momentum, $ F = \od{}{t} [mv] $. If $ m $ is constant, this becomes $ F = ma $,
+            where $ a = \od{v}{t} $ is the acceleration of the body. However, due to relativistic
+            effects, the mass of a particle varies with $ v $ as
+            \begin{displaymath}
+              m = \frac{m_0}{\sqrt{1 - \dfrac{v^2}{c^2}}},
+            \end{displaymath}
+            where $ m_0 $ is the rest mass of the body and $ c $ is the speed of light. Show that
+            \begin{displaymath}
+              F = \frac{m_0 a}{\left(1 - \dfrac{v^2}{c^2}\right)^{\frac{3}{2}}}.
+            \end{displaymath}
+  \question Recall that if $ \theta $ is given in degrees, then $ \frac{\pi \theta}{180} $ is the equivalent angle in radians.
+            Find the derivative of $ \sin \theta $ if $ \theta $ is given in degrees.
+\end{questions}
+\end{document}

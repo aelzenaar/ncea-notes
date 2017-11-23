@@ -1,0 +1,130 @@
+\documentclass[a4paper]{report}
+
+\usepackage{commath}
+\usepackage{siunitx}
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+
+\title{Solutions to L3 Calculus Integration Exam 2}
+\author{Alexander Elzenaar}
+\date{7 September 2017}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question One}
+\subsection*{Part (a)}
+\paragraph{(i)}
+\begin{align*}
+  \rint^{\pi/2}_{\pi/4} 2\csc 2x \cot 2x \dif{x} &= \eval{-\csc 2x}^{\pi/2}_{\pi/4}
+                                                 &= \frac{-1}{\sin \pi} - \frac{-1}{\sin \frac{\pi}{2}}
+                                                 &= 1.
+\end{align*}
+(2 marks)
+
+\paragraph{(ii)}
+\begin{align*}
+  \rint^{4}_1 t \left( \frac{1.5}{\sqrt{t}} + 12 \right) \dif{t} &= \rint^4_1 1.5 t^{0.5} + 12t \dif{t}\\
+                                                                 &= \eval{t^{1.5} + 6t^2}_1^4\\
+                                                                 &= \eval{t\sqrt{t} + 6t^2}_1^4\\
+                                                                 &= (4 \cdot 2 + 6 \cdot 16) - (1 + 6) = 97.
+\end{align*}
+(2 marks)
+
+\subsection*{Part (b)}
+\begin{displaymath}
+  V = \rint \frac{k}{t + 1} \dif{t} = k\ln(t + 1) + C.
+\end{displaymath}
+Now, when $ t = 0 $ we have $ V = 0.5 $. So $ 0.5 = k \ln 1 + C = C $, and $ V = k\ln(t + 1) + 0.5 $.
+We also know that $ 2V_0 = V_3 $ so $ 1 = k(\ln 4) + 0.5 $ and $ k = \frac{1}{2\ln 4} = \frac{1}{4\ln 2} $.
+Therefore $ V = \frac{\ln(t + 1)}{4\ln 2} + 0.5 $; we want $ t $ when $ V = 2 $ and L2 algebra shows
+that $ t = 63 $ minutes.
+(4 marks)
+
+\subsection*{Part (c)}
+\begin{align*}
+  \rint^2_1 (-\frac{1}{2}x^2 + \frac{3}{2}x) - (\frac{1}{2}x^2 - \frac{3}{2}x + 2) \dif{x} &= \rint^2_1 -x^2 + 3x - 2 \dif{x}\\
+    &= \eval{-\frac{1}{3} x^3 + \frac{3}{2} x^2 - 2x}_1^2
+    &= \frac{8}{3} + 6 - 4 + \frac{1}{3} - \frac{3}{2} + 2\\
+    &= 5.5.
+\end{align*}
+The area between the curves is 5.5 square units.
+(3 marks)
+
+\section*{Question Two}
+\subsection*{Part (a)}
+\paragraph{(i)}
+\begin{displaymath}
+  \rint \frac{2x + 1}{x^2 + x} \dif{x} = \ln(x^2 + x) + C
+\end{displaymath}
+(1 mark)
+
+\paragraph{(ii)}
+\begin{align*}
+  \rint \cos^4 \theta \dif{\theta} &= \rint (\cos^2 \theta)^2 \dif{\theta}\\
+                                   &= \frac{1}{4} \rint (\cos 2\theta + 1)^2 \dif{\theta}\\
+                                   &= \frac{1}{4} \rint \cos^2 2\theta + 2\cos 2\theta + 1 \dif{\theta}\\
+                                   &= \frac{1}{8} \rint \cos 4\theta + 4\cos 2\theta + 3 \dif{\theta}\\
+                                   &= \frac{1}{8} \left( \frac{1}{4} \sin 4\theta + 2\sin 2\theta + 3\theta \right) + C\\
+                                   &= \frac{\sin 4\theta}{32} + \frac{\sin 2\theta}{4} + \frac{3\theta}{8} + C.
+\end{align*}
+(3 marks)
+
+\subsection*{Part (b)}
+\begin{align*}
+  A &= \rint_A^B f(x) - g(x) \dif{x} + \rint_B^C g(x) - f(x) \dif{x} + \rint_C^D f(x) - g(x) \dif{x}\\
+  32 &= 2 + \rint_B^C g(x) - f(x) \dif{x} + 10\\
+  20 &= \rint_B^C g(x) - f(x) \dif{x}\\
+  -20 &= \rint_B^C f(x) - g(x) \dif{x}
+\end{align*}
+(3 marks)
+
+\subsection*{Part (c)}
+\begin{align*}
+  \rint \frac{\dif{y}}{y + 1} &= \rint \sin 2\pi t \dif{t}\\
+  \ln(y + 1) &= -\frac{1}{2\pi} \cos 2\pi t + C\\
+  y &= Ke^{-\frac{\cos 2\pi t}{2\pi}} - 1.
+\end{align*}
+At $ t = 0 $, $ y = 1 $. Hence $ 2 = Ke^{-\frac{1}{2\pi}} $ and $ K = 2e^{\frac{1}{2\pi}} $. So:
+\begin{align*}
+  y &= 2e^{\frac{1 - \cos 2\pi t}{2\pi}} - 1\\
+    &= 2e^{\frac{1 - \cos \pi}{2\pi}} - 1\\
+    &= 2e^{\frac{1}{\pi}} - 1\\
+    &\approx 1.796...
+\end{align*}
+(4 marks)
+
+\section*{Question Three}
+\subsection*{Part (a)}
+\begin{align*}
+  \pi \rint^1_0 (e^{-x} + 1)^2 \dif{x} &= \pi \rint^1_0 e^{-2x} + 2e^{-x} + 1 \dif{x}\\
+                                       &= \pi \eval{-\frac{1}{2} e^{-2x} - 2e^{-x} + x}_0^1\\
+                                       &= \pi [(-\frac{1}{2} e^{-2} - 2e^{-1} + 1) - (-\frac{1}{2} - 2)]\\
+                                       &= \pi\left( \frac{7}{2} - \frac{1}{2e^2} - \frac{2}{e} \right)\\
+                                       &\approx 8.4715.
+\end{align*}
+(3 marks)
+
+\subsection*{Part (b)}
+Finding velocity $ \rint 12t + 12 \dif{t} = 6t^2 + 12t + C $; at $ t = 0 $, $ v = 0 $ so $ C = 0 $ and $ \od{x}{t} = 6t^2 + 12t $.
+Then $ \rint 6t^2 + 12t \dif{t} = 2t^3 + 6t + C' $; at $ t = 0 $, $ x = 3 $ so $ C' = 3 $ and $ x = 2t^3 + 6t^2 + 3 $. Hence $ x(10) = 2603 $.
+(3 marks)
+
+\subsection*{Part (c)}
+\begin{align*}
+  \rint \frac{\dif{T}}{T - T_0} &= \rint -k \dif{t}\\
+  \ln (T - T_0) &= -kt + C\\
+  T = Ke^{-kt} + T_0
+\end{align*}
+When $ t = 0 $, $ 230 = T = K $. Since $ T_0 = 18 $, $ 30 = 230e^{-kt} + 18 $
+and $ t \approx \frac{2.95}{k} $.
+(4 marks)
+
+\subsection*{Part (d)}
+The integration bounds include two asymptotes, at $ x = \frac{\pi}{2} $ and $ x =\frac{3\pi}{2} $.
+(1 mark)
+
+\end{document}

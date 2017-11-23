@@ -1,0 +1,112 @@
+\documentclass[a4paper]{article}
+
+\binoppenalty=9999
+\relpenalty=9999
+\widowpenalty=9999
+\clubpenalty=9999
+
+\usepackage{lmodern}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{microtype}
+\usepackage[parfill]{parskip}
+\usepackage{exercises}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage[british]{babel}
+\usepackage[autostyle, english = british]{csquotes}
+\MakeOuterQuote{"}
+
+\usepackage{enumitem}
+
+\usepackage[hang]{footmisc}
+\setlength\footnotemargin{10pt}
+
+\usepackage[capitalise,noabbrev]{cleveref}
+
+\usepackage{geometry}
+\geometry{
+  includeheadfoot,
+  margin=2.54cm
+}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+
+\usetikzlibrary{external}\tikzexternalize
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\author{Alexander Elzenaar\\Upper Hutt College}
+\date{\today}
+\title{Assignment: Mathematical Writing Practice II}
+
+\begin{document}
+
+\maketitle
+
+\section{Task}
+A tank contains \SI{1000}{\liter} of pure water. Brine that contains \SI{0.05}{\kilo\gram} of
+salt per litre of water enters the tank at a rate of \SI{5}{\liter\per\minute}. Brine that contains
+\SI{0.04}{\kilo\gram} of salt per litre of water enters the tank at a rate of \SI{10}{\liter\per\minute}.
+The solution is kept thoroughly mixed and drains from the tank at a rate of \SI{15}{\liter\per\minute}.
+How much salt is in the tank after one hour?
+
+\textit{Ensure that you write "properly". That means using complete sentences, justifying
+all logic, and aiming for clarity!}
+
+\section{Hints}
+A list of things to think about:
+\begin{itemize}
+  \item What information are you given?
+  \item How can you model the amount of salt remaining?
+  \item What will be your strategy for working out an answer?
+\end{itemize}
+
+\newpage
+\section{Example Answer}
+This problem is very similar to a problem that appeared in the 2015 scholarship paper.
+
+We begin by attempting to write a DE to model the situation. We will use $ t $ to denote
+the time since initial conditions (\SI{0}{\kilo\gram} of salt in the tank), $ S $ to denote
+the mass of salt in the tank, and $ C $ to denote the concentration of salt in the tank.
+Immediately, we see that $ C = \frac{S}{1000} $.
+
+We notice that we have two inputs of salt: an input of $ \SI{0.05}{\kilo\gram\per\liter} \times \SI{5}{\liter\per\minute} = \SI{0.25}{\kilo\gram\per\minute} $,
+and an input of $ \SI{0.04}{\kilo\gram\per\liter} \times \SI{10}{\liter\per\minute} = \SI{0.4}{\kilo\gram\per\minute} $. We have a single output of
+$ C\,\si{\kilo\gram\per\liter} \times \SI{15}{\liter\per\minute} = 15C\,\si{\kilo\gram\per\minute} $.
+
+Since $ \od{S}{t} = \text{rate in} - \text{rate out} $, we have that
+\begin{displaymath}
+  \od{S}{t} = 0.25 + 0.4 - 15C = 0.65 - 15C.
+\end{displaymath}
+
+From the result above, we can substitute in order to obtain a separable DE in $ S $,
+\begin{displaymath}
+  \od{S}{t} = 0.65 - \frac{15S}{1000}.
+\end{displaymath}
+
+Solving this for $ S $, we find that
+\begin{align*}
+              && \rint \frac{\dif{S}}{0.65 - \frac{15S}{1000}}      &= \rint \dif{t} &&\\
+  \Rightarrow &&-\frac{1000}{15} \ln{\abs{0.65 - \frac{15S}{1000}}} &= t + K && \text{(where $ K $ is an arbitrary constant)}  \\
+  \Rightarrow &&\ln{\abs{0.65 - \frac{15S}{1000}}}                  &= -\frac{15t}{1000} + K' && \text{(where $ K' = -\frac{15K}{1000}$)} \\
+  \Rightarrow && S                                                  &= \abs{Re^{-\frac{15t}{1000}} - \frac{650}{15}} && \text{(where $ R = \frac{1000}{15}e^{K'} $)}
+\end{align*}
+
+Remembering that our initial condition was that $ S(0) = \SI{0}{\kilo\gram} $, we see that $ R = \frac{650}{15} $. Hence, after \SI{60}{\minute},
+we have $ S(60) = \abs{\frac{650}{15}e^{-\frac{15\times 60}{1000}} - \frac{650}{15}} = \SI{25.715}{\kilo\gram}$.
+
+\end{document}

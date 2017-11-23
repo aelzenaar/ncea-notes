@@ -1,0 +1,134 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderDiff{14}{Differentiation Revision}
+Halfway there! Let's do a bit of revision.
+\subsection*{Questions}
+\begin{questions}
+  \questioA True or False:
+    \begin{parts}
+      \part If a function $ f $ is continuous around a point, then it is differentiable at that point.
+      \part If a function $ f $ is differentiable around a point, then it is continuous at that point.
+      \part If $ f $ and $ g $ are differentiable, then $ \od{}{x} [f(x) + g(x)] = f'(x) + g'(x) $.
+      \part If $ f $ and $ g $ are differentiable, then $ \od{}{x} [f(x)g(x)] = f'(x) g'(x) $.
+      \part $ \od{}{x} (x + 3)^2 = 2(x + 3) $.
+      \part $ \od{}{x} (x^2 + 3)^2 = 2(x^2 + 3) $.
+      \part $ \od{}{x} \tan^2 x = \od{}{x} \sec^2 x $.
+      \part $ \od[2]{y}{x} = \left( \od{y}{x} \right)^2 $.
+      \part If $ A = \pi r^2 $, then $ \dif{A} \pi = 0 $.
+    \end{parts}
+  \questioA Find $ \od{y}{t} $ in each case.
+    \begin{parts}
+      \part $ y = t^2 + 3t $
+      \part $ y = \frac{4 - t}{3 + t} $
+      \part $ y = (t^4 - 3t^2 + 5)^2 $
+      \part $ y = (t + 1)^{2017} $
+      \part $ y = \frac{3t + 4t^2}{\sqrt{t}} $
+      \part $ y = \sin 2t $
+      \part $ y = \sin^2 t $
+      \part $ y = \sin t^2 $
+      \part $ y = \cos \tan t $
+      \part $ y = (27t + 3)^{2017} (t^2 - \sqrt{t})^{2020} $
+      \part $ y = \left( t + \frac{1}{t^2} \right)^{\sqrt{7}} $
+    \end{parts}
+  \questioM Find the equation of the tangent line to the curve $ \sqrt{1 + 4\sin x} $ at the point $ (0, 1) $.
+  \questioA Find $ y'' $ in each case:
+    \begin{parts}
+      \part $ y = 3x^3 + 2x + \sqrt{2x} + \frac{1}{x^2} $
+      \part $ y = e^{2x} $
+      \part $ y = \sqrt{4t + 1} $
+      \part $ y = 4 \sin^2 x $
+    \end{parts}
+  \questioM Find the $ n$th derivative of $ e^{2x} $ (where $ n $ is a natural (counting) number).
+  \questioE The height of a projectile after $ t $ seconds can be modelled by $ h = 3t(t - 10) $. At what time
+            is the height of the projectile at a maximum? Use the second-derivative test to prove that you have
+            found a maximum.
+  \questioM Find $ f'(x) $ if:
+    \begin{parts}
+      \part $ f(x) = \frac{1}{3} \ln \abs{\frac{x - 1}{x + 2}} + 3 $
+      \part $ f(x) = 2\ln \abs{\frac{x - 2}{x}} + \frac{2}{x} + 7 $
+    \end{parts}
+  \questioM In each case, find $ y' $ in terms of $ x $ and $ y $:
+    \begin{parts}
+      \part $ x^2 + y^2 = 4 $
+      \part $ x^2 + 4xy + y^2 = 13 $
+      \part $ xy^4 + x^2y = x + 3y $
+      \part $ x^2 \cos y + \sin 2y = xy $
+    \end{parts}
+  \questioM By differentiating the double-angle formula for cosine,
+            \begin{displaymath}
+              \cos 2x = \cos^2 x - \sin^2 x,
+            \end{displaymath}
+            obtain the double-angle formula for the sine function.
+  \questioM Find $ f' $ in terms of $ g' $ if $ f(x) = x^2 g(x) $.
+  \questioM The volume of a cube is increasing at a rate of \SI{10}{\centi\metre\cubed\per\minute}. How fast is the surface
+            area increasing when the length of an edge is \SI{30}{\centi\metre}?
+  \questioM The volume of a right circular cone is $ V = \frac{1}{3} \pi r^2 h $.
+    \begin{parts}
+      \part Find the rate of change of volume with respect to height if the radius is constant.
+      \part Find the rate of change of volume with respect to radius if the height is constant.
+    \end{parts}
+  \questioM A particle moves along a horizontal line such that its coordinate at time $ t $ is $ x = \sqrt{b^2 + c^2 t^2} $ ($ t \geq 0 $),
+            where $ b $ and $ c $ are positive constants. Find its velocity and acceleration functions.
+  \questioM From first principles, show that:
+    \begin{parts}
+      \part $ \od{}{x} x^2 = 2x $
+      \part $ \od{}{x} [2x^3 + 2x] = 6x^2 + 2 $
+    \end{parts}
+  \questioE Find the derivative of $ f(x) = \frac{4}{\sqrt{1 - x}} $ from first principles.
+  \questioE Each limit represents the derivative of a function $ f $ at a point $ a $. Identify each function and point.
+    \begin{parts}
+      \part $ \lim_{h \to 0} \frac{\cos(\pi + h) + 1}{h} $
+      \part $ \lim_{t \to 1} \frac{t^4 + t - 2}{t - 1} $
+    \end{parts}
+  \questioM Find the best linear approximation to $ f(x) = \sqrt{25 - x^2} $ near $ x = 3 $.
+  \questioM A balloon is rising at a constant speed of \SI{2}{\metre\per\second}. A girl is cycling along a straight
+            road at a speed of \SI{5}{\metre\per\second}. When she passes under the balloon, it is \SI{15}{\metre} above
+            her. How fast is the distance between the person and the balloon increasing 3 seconds later?
+  \questioE On a straight shoreline there is a tree and exactly opposite it, \SI{100}{\metre} away in the sea, stands a lighthouse.
+            A strong and thin spotlight on its top revolves at the rate of one revolution per 4 seconds, its light
+            creating a running light spot on the shore. You stand on the shore \SI{100}{\metre} from the tree. How fast does this
+            spot move when it goes past you?
+  \questioM Find $ \od{y}{x} $ in terms of $ t $ for the following parametrically-defined curves.
+    \begin{parts}
+      \part $ t \mapsto (1 + e^{2t}, e^t) $
+      \part $ x = \tan t $, $ y = \sec 2t $
+      \part $ x = \frac{t^2 - 10}{t^2 + 1} $, $ y = tx $
+    \end{parts}
+  \questioE Find the lowest point on the curve $ \gamma : t \mapsto (t^3 - 3t, t^2 + t + 1) $. Prove you have found a minimum.
+  \questioM Find the acceleration of a particle at time $ t $ if its displacement from the origin at time $ t $ is $ -t^6 + 5t^4 + \sin t $.
+  \questioE A piece of wire \SI{10}{\metre} long is cut into two pieces; one is bent into a square and the other into a circle. Where
+            should the wire be cut to ensure the total area of the enclosed shapes is (a) a minimum and (b) a maximum?
+  \questioM A cone is made by cutting a sector out of a circle of paper of radius $ R $ and gluing together the edges of the cut. Find
+            the maximum possible volume of the cone.
+  \questioE Find the dimensions of the rectangle of largest area that can be inscribed in a circle of radius $ r $.
+  \questioE At which points does the `bouncing wagon' curve $ 2y^3 + y^2 - y^5 = x^4 - 2x^3 + x^2 $ have horizontal tangents?
+  \questioE Salt forms a cone as it falls from a conveyor belt. The slant of the cone forms an angle of \SI{30}{\degree} with
+            the horizontal. The belt delivers salt at a rate of \SI{2}{\metre\per\cubed} per minute. When the radius of the cone
+            is ten metres, what is the rate of increase of the slant height (measured along the surface of the cone)?
+  \questioS Suppose we take a circle of radius $ r $, and inscribe within it a triangle such that each corner of the triangle is
+            located on the circle. What is the maximum possible area of the triangle?
+  \questioE Take derivatives of the following functions with respect to $ x $:
+    \begin{parts}
+      \part $ f(x) = 2^x $
+      \part $ g(x) = \log_{\log x} x $
+    \end{parts}
+  \questioS Scholarship 2015 (adapted): A car is driving along a road shaped like a parabola at night. The parabola has a vertex at the origin,
+            and the car starts at a point 100 m west and 100 m north of the origin.
+    \begin{parts}
+      \part Write an equation modelling the road as a parabola.
+      \part Find the general equation for the tangent line to the parabola at some point $ (x_0, y_0) $, and substitute into it
+            the parabola equation to obtain an equation only in $ x $, $ x_0 $, and $ y_0 $.
+      \part Suppose there is a statue of the Roman emperor Augustus located 100 m east and 50 m north of the origin. Write the
+            equation for the tangent line of the parabola passing through the statue (so that it only depends on a value $ x $
+            on the parabola).
+      \part Hence find the single point $ (x,y) $ on the road where the headlights of the car illuminate the statue.
+    \end{parts}
+
+  \questioO (Difficult) Find the two points on the curve $ y = x^4 - 2x^2 - x $ that have a common tangent line.
+  \questioS (Difficult) A cone of radius $ r $ centimetres and height $ h $ centimetres is lowered point first
+            at a rate of \SI{1}{\centi\metre\squared} into a cylinder of radius $ R $ centimetres that is partially filled with
+            water. How fast is the water level rising at the instant that the cone is fully submerged?
+\end{questions}
+
+\end{document}

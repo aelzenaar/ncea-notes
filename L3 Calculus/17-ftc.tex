@@ -1,0 +1,117 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderIntg{17}{The Fundamental Theorem of Calculus}
+\begin{bthm}[First Fundamental Theorem]
+  Suppose $ f $ is a continuous function, and suppose $ F $ is any antiderivative of $ f $ (so $ F' = f $). Then:
+  \begin{displaymath}
+    \rint^b_a f(x) \dif{x} = F(b) - F(a) = \eval{F(x)}_a^b
+  \end{displaymath}
+\end{bthm}
+
+In other words, the definite integral of a function can be found by evaluating the indefinite integrals at
+the endpoints.
+
+\begin{bthm}[Second Fundamental Theorem]
+  Suppose $ f $ is a continuous function. Then:
+  \begin{displaymath}
+    \od{}{x} \rint^x_a f(t) \dif{t} = f(x)
+  \end{displaymath}
+\end{bthm}
+
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{ftc1}
+\end{center}
+
+The rate of change of the area under a curve is simply the height of the curve.
+
+We also have the following theorem:
+\begin{thm}
+  Suppose $ f,g $ are functions and $ \lambda $ is a real constant. Then:
+  \begin{enumerate}
+    \item $ \lambda \rint_a^b f(x) \dif{x} = \rint_a^b \lambda f(x) \dif{x} $.
+    \item $ \rint_a^b f(x) \dif{x} + \rint_a^b g(x) \dif{x} = \rint_a^b f(x) + g(x) \dif{x} $.
+    \item $ \rint_a^a f(x) \dif{x} = 0 $.
+    \item $ \rint_a^b f(x) \dif{x} + \rint_b^c f(x) \dif{x} = \rint_a^c f(x) \dif{x} $.
+  \end{enumerate}
+\end{thm}
+
+Note that the areas below a curve are assigned \textbf{\textcolor{RubineRed}{NEGATIVE AREA}}.
+
+\begin{ex}
+  Note that the definite integral $ \rint^\pi_0 \cos(x) \dif{x} $ is equal to 0; this is because the (negative) area under the $ x-$axis exactly
+  cancels the (positive) area above the $ x-$axis. (Draw a picture.)
+\end{ex}
+
+\subsection*{Questions}
+\begin{questions}
+  \questioA Compute the following definite integrals.
+    \begin{parts}
+      \part $ \rint_0^1 \dif{x} $
+      \part $ \rint_{-1}^{1} e^x \dif{x} $
+      \part $ \rint_3^4 x^2 + 3x - 1 \dif{x} $
+      \part $ \rint_0^1 x^n \dif{x} $ for integer values of $ n $.
+    \end{parts}
+  \questioA Find the area underneath the given curves between the given bounds:
+    \begin{parts}
+      \part $ y = 6x^2 + 4x + 9 $ between $ x = 0 $ and $ x = 4 $
+      \part $ y = \sin x $ between $ x = 0 $ and $ x = \pi $
+      \part $ y = \sin x $ between $ x = -\pi $ and $ x = \pi $
+      \part $ y = \cos x $ between $ x = -\pi $ and $ x = \pi $
+      \part $ y = \frac{1}{x} $ between $ x = 1 $ and $ x = 2 $
+    \end{parts}
+  \questioA Find all the problems in the following working.
+            \begin{align*}
+              \rint^{-1}_1 \frac{\dif{x}}{x} = \ln \abs{-1} - \ln \abs{1} = 0
+            \end{align*}
+  \questioA Show that $ \rint \ln x \dif{x} = x\ln x - x + C $.
+  \questioM Let $ f $ be a function such that for all $ x $, $ f(-x) = -f(x) $. Such a function is called \textit{odd}. Show that for all $ a $,
+            \begin{displaymath}
+              \rint^a_{-a} f(x) \dif{x} = 0.
+            \end{displaymath}
+            What does this mean geometrically?
+  \questioM Let $ f $ be an odd function with period 2 such that $ \rint^{1}_0 f(x) \dif{x} = k $. Compute:
+    \begin{parts}
+      \part $ \rint^{1}_{-1} f(x) \dif{x} $
+      \part $ \rint^{-1}_0 f(x) \dif{x} $
+    \end{parts}
+  \questioA Let $ f $ be a function such that for all $ x $, $ f(-x) = f(x) $. Such a function is called \textit{even}. Show that for all $ a $,
+            \begin{displaymath}
+              \rint^a_{-a} f(x) \dif{x} = 2\rint^a_0 f(x) \dif{x}.
+            \end{displaymath}
+            What does this mean geometrically?
+  \questioM If $ \rint^1_{-2} f(x) \dif{x} = 2 $ and $ \rint^3_1 f(x) \dif{x} = -6 $, what is the value of $ \rint_{-2}^3 f(x) \dif{x} $?
+  \clearpage
+  \questioM Find the area between the curves $ y = x^2 + x $ and $ y = -x^2 - x $ shaded here.
+            \begin{center}
+              \includegraphics[width=0.3\textwidth]{int1}
+            \end{center}
+  \questioM Find the area between the two curves $ y = 1 + x^2 $ and $ y = 3 + x $.
+  \questioM Find the area of the region bounded by $ f(x) = 4 $, $ g(x) = \frac{e^x}{5} $, and $ x = 0 $.
+  \questioM What is the area of the region between the graphs of $ f(x) = 2x^2  + 5x $ and $ g(x) = -x^2 - 6x + 4 $ from $ x = -4 $ to $ x = 0 $?
+  \questioE Find the area bounded by the curves $ y = \sin x $ and $ y = \cos x $ and the $ x-$axis graphed here.
+            \begin{center}
+              \includegraphics[width=0.2\textwidth]{int2}
+            \end{center}
+  \questioA Consider the function $ f $ graphed below; the total \textbf{unsigned} area between the curve and the $ x-$axis is 10 square units.
+            Find $ \rint^D_A f(x) \dif{x} $.
+            \begin{center}
+              \includegraphics[width=0.3\textwidth]{int3}
+            \end{center}
+  \questioM
+    \begin{parts}
+      \part Sketch the graph of $ y = \abs{\sin x} $.
+      \part Compute $ \rint^{\pi/2}_0 y \dif{x} $ using the FTC.
+      \part Hence, without doing any anti-differentiation, compute $ \rint^{2\pi}_0 y \dif{x} $.
+    \end{parts}
+  \questioM Define $ F(x) $ by
+            \begin{displaymath}
+              F(x) = \rint^x_{\frac{\pi}{4}} \cos(2t) \dif{t}.
+            \end{displaymath}
+    \begin{parts}
+      \part Use the Second Fundamental Theorem of Calculus to find $ F'(x) $.
+      \part Verify part (a) by integration and differentiation.
+    \end{parts}
+  \questioM Compute $ \od{}{x} \rint^{x}_{2} t^t \dif{t} $.
+\end{questions}
+\end{document}

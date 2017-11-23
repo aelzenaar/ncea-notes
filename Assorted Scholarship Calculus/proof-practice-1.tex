@@ -1,0 +1,108 @@
+\documentclass[a4paper]{article}
+
+\binoppenalty=9999
+\relpenalty=9999
+\widowpenalty=9999
+\clubpenalty=9999
+
+\usepackage{lmodern}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{commath}
+\usepackage{microtype}
+\usepackage[parfill]{parskip}
+\usepackage{exercises}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
+\usepackage{float}
+\usepackage{siunitx}
+\usepackage[british]{babel}
+\usepackage[autostyle, english = british]{csquotes}
+\MakeOuterQuote{"}
+
+\usepackage{enumitem}
+
+\usepackage[hang]{footmisc}
+\setlength\footnotemargin{10pt}
+
+\usepackage[capitalise,noabbrev]{cleveref}
+
+\usepackage{geometry}
+\geometry{
+  includeheadfoot,
+  margin=2.54cm
+}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+
+\usetikzlibrary{external}\tikzexternalize
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\author{Alexander Elzenaar\\Upper Hutt College}
+\date{\today}
+\title{Assignment: Mathematical Writing Practice}
+
+\begin{document}
+
+\maketitle
+
+\section{Task}
+A glucose solution is administered intravenously into the bloodstream at a constant
+rate $ r $. As the glucose is added, it is converted into other substances and removed
+from the bloodstream at a rate that is proportional to the concentration at that time. Thus
+a model for the concentration $ C = C(t) $ of the glucose solution in the bloodstream is
+\begin{equation}
+    \od{C}{t} = \text{rate in} - \text{rate out} = r - kC
+\end{equation}
+where $ k $ is a positive constant.
+
+\begin{enumerate}[label=(\alph*)]
+  \item Suppose that the concentration at time $ t = 0 $ is $ C_0 $. Determine the
+        concentration at any time $ t $ by solving the differential equation.
+  \item Assuming that $ C_0 < \frac{r}{k} $, find $ \lim_{t\to\infty} C(t) $ and
+        interpret your answer.
+\end{enumerate}
+
+\textit{Ensure that you write "properly". That means using complete sentences, justifying
+all logic, and aiming for clarity!}
+
+\section{Hints}
+A list of things to think about:
+\begin{itemize}
+  \item What kind of equation is it? What technique(s) are you going to use?
+  \item What kind of answer are you expecting for (b)? Why?
+  \item What might be the use of finding the limit in (b)?
+\end{itemize}
+
+\newpage
+\section{Example Answer}
+This is a simple separable DE, and so we can write that:
+\begin{align*}
+                   & \od{C}{t} = r - kC \\
+  \Rightarrow\quad & \rint \frac{\dif{C}}{r - kC} = \rint \dif{t} \\
+  \Rightarrow\quad & \frac{-1}{k} \ln{\abs{r - kC}} = t + K && \text{(where $ K $ is an arbitrary constant)}\\
+  \Rightarrow\quad & \ln{\abs{r - kC}} = -kt + K'           && \text{(where $ K' = -kK $).}\\
+  \intertext{Rearranging this to obtain an expression for $ C $, we obtain that}
+                   & C = \frac{r - Re^{-kt}}{k} && \text{(where $ R = e^{K'} $).}\\
+  \intertext{Using the initial condition that $ C_0 = C(0) $, we can find that $ R = r - kC_0 $. Hence,}
+                   & C = \frac{r - (r - kC_0)e^{-kt}}{k} = \frac{r}{k} - \frac{r}{k} e^{-kt} + C_0 e^{-kt}.
+\end{align*}
+
+We can therefore see that the limit as $ t $ increases without bound is $ \frac{r}{k} $ (since $ \lim_{t\to\infty} e^{-kt} = 0 $).
+This makes sense -- if we let the process carry on for a long time, the concentration tends to the ratio of the input rate
+to the output rate. It is also interesting to note that the limit does not depend on the initial concentration. This is because
+a higher initial concentration simply leads to a higher initial outflow, and so the total concentration tends to the same ratio at
+equilibrium.
+
+\end{document}

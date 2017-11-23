@@ -1,0 +1,65 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderIntg{24}{Formal Definitions of $ \exp $ and $ \ln $}
+Today we will write down formal definitions of the natural exponential and logarithm functions.
+
+\subsection*{The Natural Logarithm}
+We can integrate $ x^3 $, $ x^2 $, $ x^{-2017} $, and $ x^{0} $ easily using the reverse power rule
+(respectively, they become $ x^4/4 $, $ x^3/3 $, $ -x^{-2016}/2016 $, and $ 0 $). However, we cannot
+integrate $ x^{-1} $:
+\begin{displaymath}
+  \rint x^{-1} \dif{x} = \frac{1}{-1 + 1} x^{-1 + 1} = \frac{1}{0} x^0 =\thinspace ???
+\end{displaymath}
+But we know that the indefinite integral of $ x^{-1} $ must exist, since there is obviously a
+finite area beneath the curve $ y = x^{-1} $ over (for example) the interval $ [1,2] $. We therefore
+make the following \textbf{definition}:
+\begin{displaymath}
+  \ln x := \rint^x_1 \frac{1}{t} \dif{t}.
+\end{displaymath}
+
+\paragraph{How does one pronounce `$ ln $'?} \texttt{log}.
+
+We can prove the log rules using this definition; as a sampler, we prove that $ \ln x + \ln y = \ln xy $:
+\begin{align*}
+  \ln x + \ln y &= \rint^x_1 \frac{1}{t} \dif{t} + \rint^y_1 \frac{1}{t} \dif{t}\\
+                &= \rint^x_1 \frac{1}{t} \dif{t} + \rint^{xy}_{x} \frac{1}{u/x} \frac{1}{x} \dif{u} \quad\text{($u = tx $)}\\
+                &= \rint^x_1 \frac{1}{t} \dif{t} + \rint^{xy}_{x} \frac{1}{u} \dif{u}\\
+                &= \rint^x_1 \frac{1}{t} \dif{t} + \rint^{xy}_{x} \frac{1}{t} \dif{t}\\
+                &= \rint^{xy}_1 \frac{1}{t} \dif{t}\\
+                &= \ln xy.
+\end{align*}
+
+\newpage
+\subsection*{The Exponential Function}
+We define the exponential function to be the function implicitly defined by $ \exp(x) = y \iff \ln(y) = x $. Consider the following (where $ y = \exp(x) $):
+\begin{align*}
+  \od{y}{x} = \frac{1}{\od{x}{y}} = \frac{1}{1/y} = y
+\end{align*}
+So $ \od{}{x} \exp(x) = \exp(x). $
+
+We can also write $ \exp(x) \equiv e^x $.
+
+Note that $ e $ is the unique number such that $ \ln(e) =  1 $:
+\begin{displaymath}
+  \ln(e) = \ln(e^1) = \ln(\exp(1)) = 1.
+\end{displaymath}
+
+\subsection*{Questions}
+\begin{questions}
+  \questioS Prove the following:
+    \begin{parts}
+      \part $ \ln 1 = 0 $
+      \part $ \ln x > 0 $ for all $ x > 1 $.
+      \part $ \ln x < 0 $ for all $ 0 < x < 1 $.
+      \part $ a\ln x = \ln(x^a) $ (Remember, multiplication is just repeated addition.)
+      \part $ \ln x - \ln y = \ln(x/y) $
+      \part $ e^{x + y} = e^x e^y $
+      \part $ e^{x - y} = e^x / e^y $
+      \part $ e^0 = 1 $
+      \part $ (e^{x})^y = e^{xy} $
+    \end{parts}
+\end{questions}
+
+\end{document}
+

@@ -1,0 +1,49 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderIntgHw{19}{Differential Equations}
+\subsection*{Reading}
+So far, we have looked at equations where the unknown is either a number or a point in $ n$-dimensional space (that is, a sequence of $ n $ numbers).
+In order to generate these equations, we took various combinations of the basic arithmetical operations and applied them to our unknowns.
+
+Here, for comparison, are two well-known differential equations, the first ``ordinary'' and the second ``partial'':
+\begin{gather*}
+  \dod[2]{x}{t} + k^2 x = 0,\\
+  \dpd{T}{t} = \kappa\left( \dpd[2]{T}{x} + \dpd[2]{T}{y} + \dpd[2]{T}{z} \right).
+\end{gather*}
+The first is the equation for simple harmonic motion, which has the general solution $ x(t) = A\sin kt + B\cos kt $;
+the second is the heat equation which describes the way that the distribution of heat in a physical medium changes with
+time.
+
+For many reasons, differential equations represent a jump in sophistication. One is that the unknowns are \emph{functions},
+which are much more complicated objects than numbers or $ n$-dimensional points. (For example, the first equation above
+asks what function $ x $ of $ t $ has the property that if you differentiate it twice then you get $ -k^2 $ times the original
+function.) A second is that the basic operations one performs on functions include differentiation and integration, which are
+considerably less ``basic'' than addition and multiplication. A third is that differential equations which can be solved
+in ``closed form,'' that is, by means of a formula for the unknown function $ f $, are the exception rather than the rule, even
+when the equations are natural and important.
+
+\textit{From `The Princeton Companion to Mathematics', I.4 \S 1.5}
+
+\subsection*{Questions}
+\begin{questions}
+  \question Solve the following equations for $ y(t) $:
+    \begin{parts}
+      \part $ e^{y - t} \od{y}{t} = 1 $
+      \part $ \od{y}{t} = ty^2 $
+      \part $ \od{y}{t} = \frac{1}{\sec^2 y} $
+      \part $ \od{y}{t} = -\frac{t}{\sec t \sin y} $ (\textit{Hint: first show that} $ \od{}{x} [\cos x - x\sin x] = -x\cos x $)
+    \end{parts}
+  \question A copper ball with temperature \SI{100}{\celsius} is dropped into a basin of water with constant temperature
+            \SI{30}{\celsius}. After 3 minutes the temperature of the ball has decreased to \SI{70}{\celsius}. When will
+            it reach a temperature of \SI{31}{\celsius}?
+  \question Consider a tank of water. The rate of flow of water into the tank is a constant \SI{3}{\litre\per\second};
+            the flow out is directly proportional to the volume of water in the tank. Initially, the volume of water
+            in the tank is \SI{100}{\litre}; after five minutes, this volume has increased to \SI{120}{\litre\per\second}.
+            and the rate of water flow out exactly balances the rate of water flow in.
+            \begin{parts}
+              \part Form a differential equation and find the volume of water after ten minutes.
+              \part Does the outward rate of flow ever become greater than the incoming rate of flow?
+            \end{parts}
+\end{questions}
+\end{document}

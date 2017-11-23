@@ -1,0 +1,81 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderDiff{5}{The Product and Quotient Rules}
+Two weeks ago we saw that the derivative of a product is not simply the product of the derivatives;
+for example, take $ (x)(x) $. If we differentiate each term and multiply, we obtain 1; however,
+the derivative of $ x^2 $ is (of course) $ 2x $.
+
+Suppose $ f $ and $ g $ are functions; then the \textit{real} product rule is
+\begin{displaymath}
+  (fg)' = gf' + fg'.
+\end{displaymath}
+
+\begin{ex}
+  Consider $ y = 2t \sin t $. Then $ \od{y}{t} = 2 \sin t + 2t \cos t $.
+\end{ex}
+
+We can also write a rule for the derivative of a quotient of functions. You will be asked to
+prove it as an exercise, using the product rule.
+\begin{displaymath}
+  \left( \frac{f}{g} \right)' = \frac{gf' - fg'}{g^2}
+\end{displaymath}
+
+\begin{ex}
+  Consider $ f(s) = \sqrt{\frac{s^2 + 1}{s^2 + 4}} $. Then
+  \begin{align*}
+    f'(s) &= \od{}{s} \left[ \frac{s^1 + 1}{s^2 + 4} \right] \cdot \frac{1}{2\sqrt{\frac{s^2 + 1}{s^2 + 4}}}\\
+          &= \frac{(s^2 + 4)(2s) - (s^2 + 1)(2s)}{(s^2 + 4)^2} \cdot \frac{\sqrt{s^2 + 4}}{2\sqrt{s^2 + 1}}\\
+          &= \frac{6s}{(s^2 + 4)^{\frac{3}{2}} (s^2 + 1)^{\frac{1}{2}}}
+  \end{align*}
+\end{ex}
+
+\clearpage
+\subsection*{Questions}
+\begin{questions}
+  \questioA In each case, find $ \od{y}{t} $.
+    \begin{parts}
+      \part $ y = \left(3 + 2t^2\right)^4 $
+      \part $ y = \frac{t^3}{\ln t} $
+      \part $ y = t\sqrt{t} $
+      \part $ y = 2t \sin t - (t^2 - 2) \cos t $
+      \part $ y = \frac{t}{\sqrt{a^2 - t^2}} $ ($ a $ constant)
+      \part $ y = \frac{1}{8} t^8 \left(1 - t^2\right)^{-4} $
+      \part $ y = e^t \ln t $
+      \part $ y = \log \left[1 + \frac{t^2 + 3t + 17}{t^{17}}\right] $
+      \part $ y = \sin \left[e^{\tan t} \ln \tan t\right] $
+      \part $ y = \frac{3t - 2}{\sqrt{2t + 1}} $
+      \part $ y = \frac{\sec 2t}{1 + \tan 2t} $
+      \part $ y = \frac{(t - 1)(t - 4)}{(t - 2)(t - 3)} $
+      \part $ y = t \sin^2(\cos \sqrt{\sin \pi t}) $
+      \part $ y = \sqrt[5]{t \tan t} $
+      \part $ y = \dfrac{(t + \lambda)^4}{t^4 + \lambda^4} $
+    \end{parts}
+  \questioA If $ f(x) = e^{-x} $, find $ f(0) + xf'(0) $.
+  \questioM Suppose $ f $ and $ g $ are functions ($ g $ not the zero function). Write $ \frac{f}{g} = fg^{-1} $ and
+            prove the quotient rule from the product rule.
+  \questioM Show that if $ f $, $ g $, and $ h $ are functions then $ (fgh)' = f'gh + fg'h + fgh' $.
+  \questioE Suppose $ f(x) = f(-x) $ for all $ x $ in the domain of $ f $. Prove that $ f'(x) = f'(-x) $ for all $ x $
+            in the domain of $ f'(x) $.
+  \questioE Consider the function defined by $ f(x) = x^x $.
+    \begin{parts}
+      \part Rewrite $ f $ in the form $ f(x) = e^{x \ln x} $, and hence find $ f'(x) $.
+      \part Find $ \od{y}{t} $ if $ y = (t^2 + 3)^{(t^2 + 3)} $.
+    \end{parts}
+  \questioE A circle that closely fits points on a local section of a curve can be drawn for any continuous curve. The
+            radius of curvature of the curve is defined as the radius of the approximating circle, which changes as
+            we move around the curve.
+            \begin{displaymath}
+              \textrm{radius of curvature} = \frac{\left[1 +  \left(\od{y}{x}\right)^2 \right]^{\frac{3}{2}}}{\abs{\od[2]{y}{x}}}
+            \end{displaymath}
+            Find the radius of curvature of the curve $ y = e^{-x} \sin x $ at the point $ (0, 0) $.
+  \questioM Show that $ y = xe^{-x} $ satisfies the differential equation $ xy' = (1-x)y $.
+  \questioM If $ y = \ln \frac{1 + \sqrt{\sin x}}{1 - \sqrt{\sin x}} $, find $ y'' $.
+  \questioM Find the equation of the tangent line to the graph of $ y = \ln \cos \frac{x - 1}{x} $ at
+            the point $(1, 0)$.
+  \questioM Show that $ y = (1 + x + \ln x)^{-1} $ satisfies the differential equation $ xy' = y(y \ln x - 1) $.
+  \questioE Find the angle at which $ y = x^2 \ln [(x - 2)^2] $ cuts the $ x$-axis at the point $ (0,0) $.
+  \questioM When $ x = 0 $, is the curve $ y = (x + 20)^2 (2x^2 - 3)^6 - \ln \sin (x - \frac{\pi}{2}) $ concave up or concave down?
+  \questioM If $ y = \frac{e^x}{\sin x} $, show that $ \od{y}{x} = y(1 - \cot x) $.
+\end{questions}
+\end{document}
