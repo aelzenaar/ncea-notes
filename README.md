@@ -19,17 +19,20 @@ The L2 maths material is a bit of a mess.
    in difficulty from achieved to outstanding scholarship.
  * Assorted other scholarship worksheets: some have already been amalgamated into the calculus notes, others have not.
 
-In progress: geometry notes and replacement Scholarship practice exams.
+In progress: geometry notes (similar in style to _Solutions_ for scholarship students) and replacement Scholarship practice exams. I am not intending to write
+any material on the L3 path analysis standard.
 
 ## Physics
 ### Level Two
  * Waves (91170), mechanics (91171), and electromagnetism (91172): full set of notes, including many diagrams and links to youtube videos,
    but (by design) with limited exercises. To be used with a workbook or similar set of problems.
 
+I do not intend to write modern physics notes for L2 at this point in time.
+
 ### Level Three
  * Modern physics (91525): notes on atomic spectra, the photoelectric effect, and atomic physics.
 
-In progress: set of notes on L3 externals, plus notes on relativity and quantum mechanics for the modern physics standard.
+In progress: set of notes on L3 externals (I have written the section on waves so far), plus notes on relativity and quantum mechanics for the modern physics standard.
 
 ## Other in progress
 I hope to have a reading course for scholarship classical studies written at some point, as well as specific notes for scholarship physics. I
