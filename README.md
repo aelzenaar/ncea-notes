@@ -30,13 +30,19 @@ any material on the L3 path analysis standard.
 I do not intend to write modern physics notes for L2 at this point in time.
 
 ### Level Three
- * Modern physics (91525): notes on atomic spectra, the photoelectric effect, and atomic physics.
+ * Waves (91523), mechanics (91524), modern physics (91525), and electromagnetism (91526): full set of notes, much terser and much longer than level 2,
+   ideal for motivated students for self-study. A large amount of interest material in modern physics is included.
 
-In progress: set of notes on L3 externals (I have written the section on waves so far), plus notes on relativity and quantum mechanics for the modern physics standard.
+I have removed the old modern physics sheets as they are now part of the above notes.
+
+## Classical Studies
+### Scholarship
+ * Aristophanes: practice questions and timeline.
+
+In progress: exam advice, homeworks for Alexander. Final plan is to have a full reading course written.
 
 ## Other in progress
-I hope to have a reading course for scholarship classical studies written at some point, as well as specific notes for scholarship physics. I
-tend to like the ESA study guide for chemistry so currently have no notes planned (except perhaps for scholarship, but I do not feel that I know
-the material well enough to write that any time soon).
+I hope to begin work on specific notes for scholarship physics at some point in 2018. I tend to like the ESA study guide for chemistry so currently
+have no notes planned (except perhaps for scholarship, but I do not feel that I know the material well enough to write that any time soon).
 
 Level 1 maths notes would also be nice but I am not sure that I am the right person to write them!
