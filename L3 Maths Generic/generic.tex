@@ -371,6 +371,18 @@ The proof of the following theorem is quite cute.
   Compute 6!.
 \end{exercise}
 
+\begin{thm}
+  There are infinitely many primes.
+\end{thm}
+The idea of the proof is to assume that there are finitely many, and then multiply them together.
+\begin{proof}
+  Suppose that there is a largest prime $ p $. Then consider the number $ p! + 1 $; since it is one
+  greater than a multiple of all primes less than or equal to $ p $, none of those primes can divide it.
+  But $ p! + 1 $ has at least one prime divisor; thus either $ p! + 1 $ is prime, or there is a prime
+  dividing it that is greater than $ p $. Either way, $ p $ cannot be the largest prime. This is a contradiction,
+  so there is no largest prime, and there are therefore an infinite number of primes.
+\end{proof}
+
 \section{Induction}
 The natural numbers have the following important property.
 \begin{defn}[Axiom of induction]
