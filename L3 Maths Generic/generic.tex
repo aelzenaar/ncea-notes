@@ -357,6 +357,29 @@ The proof of the following theorem is quite cute.
   Calculate $ \sum_{n = 1}^{100} n $.
 \end{exercise}
 
+\begin{thm}
+  Let $ S(n) $ denote the sum of the first $ n $ natural numbers. Then a formula for this is $ S(n) = \sum_{k = 0}^n k = \frac{n(n+1)}{2} $.
+\end{thm}
+\begin{proof}
+  We write down the following:
+  \begin{displaymath}
+    S(n) \begin{array}{cccccccccc}
+           = & 1 &+& 2 &+& 3 &+& \cdots &+& n\\
+           = & n &+& n-1 &+& n-2 &+& \cdots &+& 1
+         \end{array}
+  \end{displaymath}
+  Adding the two lines, $ 2S(n) = n(n+1) $ and so we immediately have the required result.
+\end{proof}
+
+\begin{rem}
+  We prove this result again in two different ways: \cref{ex:w1}, and \cref{ex:w2}.
+\end{rem}
+
+\begin{exercise}
+  The author knows of at least two graphical proofs of the closed-form formula for $ S(n) $. Try to devise one. [\emph{Hint}: what other formulae
+  have the form $ \frac{1}{2} ab $?]
+\end{exercise}
+
 \begin{defn}
   If $ n \in \mathbb{Z}^+ $, then the \textbf{factorial} of $ n $ is defined to be
   \begin{displaymath}
@@ -413,7 +436,7 @@ The natural numbers have the following important property.
   Since the theorem holds for $ n = 1 $, and the result for $ n $ implies the result for $ n + 1 $, the theorem holds for all natural numbers.
 \end{proof}
 
-\begin{exercise}
+\begin{exercise}\label{ex:w1}
   Show that $ \sum_{k = 0}^n k = \frac{n(n+1)}{2} $ using induction.
 \end{exercise}
 
@@ -457,6 +480,31 @@ The natural numbers have the following important property.
 \begin{exercise}
   Compute $ \binom{3}{4} $, $ \binom{5}{2} $, and $ \binom{2}{5} $.
 \end{exercise}
+
+Binomial coefficients have a practical application: $ \binom{n}{k} $ is the number of different ways to choose subsets of size $ k $
+out of a set of size $ n $ (ignoring order).
+
+\begin{thm}[And another time!]\label{ex:w2}
+  The sum of the first $ n $ natural numbers is $ S(n) = \frac{n(n+1)}{2} $.
+\end{thm}
+\begin{proof}
+  Consider the set $ X = \{1, 2, ..., n-1\} $; let us list the possible subsets of this set in a systematic way, in the form $ \{i,j\} $
+  for $ 1 \leq i \leq n - 2 $ and $ i < j \leq n - 1 $. Then:
+  \begin{itemize}
+    \item The sets with least element 1 are $ \{1, 2\} $, $ \{1, 3\} $, $ \{1, 4\} $, ..., $ \{1, n-1\} $ --- a total of $ n - 2 $.
+    \item The sets with least element 2 are $ \{2, 3\} $, $ \{2, 4\} $, $ \{2, 5\} $, ..., $ \{2, n-1\} $ --- a total of $ n - 3 $.
+    \item ...
+    \item The sets with least element $ n - 2 $ are $ \{n - 2, n - 1\} $ --- a total of 1.
+  \end{itemize}
+
+  Hence, the number of cardinality 2 subsets of $ X $ is $ (n - 2) + (n - 3) + \cdots + 1 = 1 + 2 + \cdots + (n - 2) $. But the number
+  of subsets of size 2 of $ X $ is given by
+  \begin{displaymath}
+    \binom{n - 1}{2} = \frac{(n - 1)!}{2(n - 3)!} = \frac{(n-1)(n-2)}{2}.
+  \end{displaymath}
+
+  Hence $ S(n - 2) = \frac{(n-1)(n-2)}{2} $, and so $ S(n) = \frac{(n - 1 + 2)(n - 2 + 2)}{2} = \frac{n(n+1)}{2} $.
+\end{proof}
 
 Before we can prove the binomial theorem, we need the following technical lemma. Try to prove it
 by yourself before reading the proof --- it is a simple bit of computation.
