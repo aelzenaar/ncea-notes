@@ -66,13 +66,21 @@ Since $ \varphi(x) $ is undefined for all $ x < 0 $, we cannot take the limit $ 
 function cannot tend to a single value from both sides. (2 marks)
 
 \subsection*{Part (b)}
-Let the three sides of the triangle be $ x $, $ \frac{1}{2}(P - x) $, and $ \frac{1}{2}(P - x) $. Then the area of the
-triangle is $ A = \frac{x}{4}\sqrt{\frac{1}{4}(P - x)^2 - x^2} = \frac{x}{8} \sqrt{P^2 - 2Px - 8x^2} $. It follows
-that $ \od{A}{x} = \frac{1}{8}\sqrt{P^2 - 2Px - 8x^2} + \frac{-2P - 16x}{2\sqrt{P^2 - 2Px - 8x^2}} $. Looking for stationary
-points, we have $ \frac{1}{8}\sqrt{P^2 - 2Px - 8x^2} = \frac{2P + 16x}{2\sqrt{P^2 - 2Px - 8x^2}} $ and $ P^2 - 2Px - 8x^2 = 8P + 64 $; hence
+Let the three sides of the triangle be $ x $, $ \frac{1}{2}(P - x) $, and $ \frac{1}{2}(P - x) $. Then the height of the triangle is given by
 \begin{displaymath}
-  x = -\frac{2P \pm \sqrt{4P^2 + 32(P^2 - 8P - 64)}}{16} = -\frac{P \pm \sqrt{9P^2 -64P - 256)}}{8}
+  h = \sqrt{\left(\frac{P - x}{2}\right)^2 - \left(\frac{x}{2}\right)^2} = \frac{1}{2}\sqrt{P^2 - 2Px}
 \end{displaymath}
+and the area is
+\begin{displaymath}
+  A = \frac{1}{2} xh = \frac{1}{4} \sqrt{P^2 x^2 - 2Px^3}.
+\end{displaymath}
+We wish to maximise this, so we take the derivative:
+\begin{displaymath}
+  \od{A}{x} = \frac{P^2 x - 3P x^2}{4\sqrt{P^2 x^2 - 2Px^3}}.
+\end{displaymath}
+Setting to zero, we have $ P^2 - 3Px = 0 $ and so $ x = \frac{P}{3} $; so the triangle needs to be equilateral.
+
+
 
 \subsection*{Part (c)}
 Profit $ P $ is income minus costs. Total income is $ Dc $, total cost is $ 5 + \frac{5D}{2} $, so:
