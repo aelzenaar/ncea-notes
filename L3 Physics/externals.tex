@@ -4,6 +4,7 @@
 
 \usepackage[dvipsnames,table]{xcolor}
 \usepackage{physics}
+\usepackage[version=4]{mhchem}
 \usepackage{amssymb}
 \usepackage{siunitx}
 \DeclareSIUnit{\revolution}{rev}
@@ -25,6 +26,7 @@
 \usepackage{mathtools}
 \usepackage{commath}
 \usepackage[scaled=1.5]{dictsym}
+\usepackage{marvosym}
 \usepackage{pgfplots}
 \usepackage[europeanresistors,siunitx]{circuitikz}
 \usetikzlibrary{shapes.arrows}
@@ -97,9 +99,11 @@
 \newtheorem{exercise*}[exercise]{Exercise*}
 \numberwithin{exercise}{chapter}
 \newtheorem{trip}[exercise]{Field Trip}
+\newtheorem{experiment}[exercise]{Experiment}
 \AtEndEnvironment{exercise}{\hfill$\diamondsuit$}%
 \AtEndEnvironment{exercise*}{\hfill$\heartsuit$}%
 \AtEndEnvironment{trip}{\hfill\dsrailways}%
+\AtEndEnvironment{experiment}{\hfill\Radioactivity}%
 
 \newtheorem*{solution}{Solution}
 \AtEndEnvironment{solution}{\hfill$\spadesuit$}%
@@ -243,6 +247,22 @@ own motivation (perhaps the beauty of the theory) then you will struggle.
 
 On the other hand, despite the terse and unforgiving nature of the notes, I hope you enjoy forging your
 own path into a slightly better understanding of the natural world!
+
+\clearpage
+\section*{What material is examinable?}
+I have included a lot of extension and interest material (especially in the modern physics topic); however, I have made
+the conscious decision to not explicitly mark it (except in a couple of cases). This is because context is very important
+for understanding of physics, even at level three.
+
+\emph{When I write practice scholarship exams, I pull freely from the interest material as well as the formal NCEA material. I
+      am not so mean as to examine on the details, but I may (read: will) ask questions that use the extension material as a context.}
+
+In other words, the answer to the title question is `your entire life until this point'. What will be on the test, then? Ink.
+
+\section*{Special exercises}
+I have decided to put in some field trips (\dsrailways) around Greater Wellington, and some experiments (\Radioactivity)
+that you can perform on your own. Obviously these are not required, and your school may do some of them with you anyway.
+However, they should be interesting!
 
 \section*{Note on the chapter order}
 I have decided to cover waves after mechanics and modern physics after electromagnetism since it is, to my mind,
@@ -469,6 +489,13 @@ The centre of mass of a 2D system of discrete particles is simply at the interse
   [\emph{Hint: the moon is much closer to the earth than to the sun.}]
 \end{exercise}
 
+\begin{experiment}
+  Cut out some irregular shapes from a sheet of cardboard, some with holes in them; find the centre of mass (balance point) of each one. Can
+  you come up with a general experimental method that allows you to find the centre of mass of any 2D
+  object?\footnote{~For the `standard' way of doing this, search for `plumb line centre of mass' on the
+  internet --- but try to come up with your own method first!}
+\end{experiment}
+
 \section{Conservation of Momentum}
 Momentum is a quantity that is always preserved --- in a closed system, $ p_i = p_f $. We need to be careful when working in two dimensions,
 however, since momentum is a \emph{vector quantity}; it is not just the \emph{amount} of momentum that is conserved, but the \emph{direction}
@@ -532,11 +559,9 @@ and the centripetal force acting (if the particle has mass $ m $) is:
   F_c = \frac{mv^2}{r},
 \end{equation}
 
-We can derive the centripetal acceleration in an intuitive way as follows.\footnote{~dmckee (https://physics.stackexchange.com/users/520/dmckee),
-A simple derivation of the Centripetal Acceleration Formula?, URL (version: 2015-07-12): https://physics.stackexchange.com/q/193623} Consider
-an object of mass $ m $ moving at a constant speed $ v $ around a circle of radius $ r $. The position of the object can be represented by a
-rotating vector (a \textbf{phasor}); the total distance covered by the end of the vector after one cycle is $ 2 \pi r $. This is the total amount that
-the position of the particle changes in one cycle.
+We can derive the centripetal acceleration in an intuitive way as follows. Consider an object of mass $ m $ moving at a constant speed $ v $ around a
+circle of radius $ r $. The position of the object can be represented by a rotating vector (a \textbf{phasor}); the total distance covered by the end
+of the vector after one cycle is $ 2 \pi r $. This is the total amount that the position of the particle changes in one cycle.
 
 We can also represent the velocity of this object in the same way: as the particle moves around the circle, the velocity
 vector of the particle makes a complete circle as well. Hence the total amount that the velocity of the particle changes
@@ -985,6 +1010,12 @@ and the frequency is given by
   \end{enumerate}
 \end{exercise}
 
+\begin{experiment}
+  Make a pendulum and try to figure out how high the maximum displacement of the pendulum
+  has to be for SHM to no longer be an accurate predictor of frequency. (You will first need
+  to come up with a viable definition of `accurate'.)
+\end{experiment}
+
 \begin{figure}
   \centering
   \includegraphics[width=0.4\textwidth]{multipend}
@@ -1051,8 +1082,7 @@ and phasors for those too (with the same angular frequency but different amplitu
 
 \textbf{\textcolor{red}{You should take the time to understand phasors now, or you will have an absolute nightmare when we discuss AC electricity later!}}
 
-Note that energy conservation still applies for simple harmonic motion!
-
+It is obvious that energy conservation still applies for simple harmonic motion.
 \begin{exercise}
   Give an expression for the kinetic energy of a pendulum of mass $ m $ at a time $ t $ after it is released from maximum displacement $ A $.
   Hence find the gravitation potential energy of the pendulum mass three seconds after it is released.
@@ -1077,6 +1107,11 @@ These phenomena are best seen in a diagram, like \cref{fig:damping}.
 
 In order to counteract damping effects, most real-world systems are \textbf{driven}: an external force is provided to counteract the damping.
 This is obviously most effective if the driving force is in phase with the natural frequency of the oscillator.
+
+Fun fact: one of the reasons that aircraft floors are carpeted rather than hard is to dampen the vibration of the floor due to engine or
+pump vibration. It is actually possible for the floor panels to resonate if some equipment vibrates at the right frequency, and this is
+uncomforable for passengers! (One of the other reasons is that it distributes the load from small-heeled shoes; with just a bare aluminium
+or composite floor, it is very possible that a high-heeled shoe could puncture the surface and cause a decompression!)
 
 
 %%%%%%%%%%%%%%%%%%%%
@@ -1151,17 +1186,19 @@ and $ \omega = 2\pi f $ is the \textbf{angular frequency} of the wave.
 Secondly, the displacement of each point $ x $ metres along the wave at a given instant is given by $ y = A\sin(\frac{2\pi}{\lambda} t + \phi) $
 (or setting $ \nu = 1/\lambda $ to be the \textbf{wavenumber}) $ y = A\sin(2\pi\nu t + \phi) $.
 
-\paragraph{Example} Consider a wave of frequency \SI{2}{\hertz} with an amplitude of \SI{2}{\metre}. Initially, a particle on
-this wave  is at a displacement of \SI{2}{\metre} in the positive $ y$-direction. We can therefore derive a description of the
-wave mathematically: $ A = 2 $, $ f = 2 $ so $ \omega = 4\pi $ and we have
-\begin{displaymath}
-  y = 2 \sin(4\pi t + \phi).
-\end{displaymath}
-But at $ t = 0 $, $ y = 2 $; so $ 1 = \sin(\phi) $, and $ \phi = \pi/2 $. Hence
-\begin{displaymath}
-  y = 2\sin\left(4\pi t + \frac{\pi}{2}\right)
-\end{displaymath}
-is a description of the given point over time.
+\begin{example}
+  Consider a wave of frequency \SI{2}{\hertz} with an amplitude of \SI{2}{\metre}. Initially, a particle on
+  this wave  is at a displacement of \SI{2}{\metre} in the positive $ y$-direction. We can therefore derive a description of the
+  wave mathematically: $ A = 2 $, $ f = 2 $ so $ \omega = 4\pi $ and we have
+  \begin{displaymath}
+    y = 2 \sin(4\pi t + \phi).
+  \end{displaymath}
+  But at $ t = 0 $, $ y = 2 $; so $ 1 = \sin(\phi) $, and $ \phi = \pi/2 $. Hence
+  \begin{displaymath}
+    y = 2\sin\left(4\pi t + \frac{\pi}{2}\right)
+  \end{displaymath}
+  is a description of the given point over time.
+\end{example}
 
 \begin{exercise}
   The wavefronts of a wave appear to be travelling at a rate of \SI{3.0}{\metre\per\second}; a point which is a
@@ -1227,6 +1264,11 @@ frequencies of waves will produce a standing wave.
   fundamental standing wave of the string?
 \end{exercise}
 
+\begin{experiment}
+  Using a friend, measure the fundamental frequency of a skipping rope (or other type of rope). Use this to calculate the speed
+  of a wave in the rope.
+\end{experiment}
+
 \begin{exercise}
   Draw the 3rd harmonic of a standing wave in a pipe open at both ends.
 \end{exercise}
@@ -1281,10 +1323,24 @@ destructive interference; these lines are \textbf{nodal lines}. Similarly, where
 of the wavelength, total constructive interference will occur and we will obtain lines of maximal movement (\textbf{antinodal lines},
 red in the figure).
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{localiser}
+  \caption{The Wellington VFR system at the threshold of runway 16.}\label{fig:localiser}
+\end{figure}
 \begin{exercise}
   One variety of guidance system for airports involves two radio towers at the end of a runway, one on each side. By modelling
   each as a point source, explain how the aircraft can track the centreline of the runway.
 \end{exercise}
+
+\begin{trip}
+  More modern systems use a set of side-by-side transmitters, as in \cref{fig:localiser}. This allows the aircraft to determine whether
+  it is not only on a correct heading, but also if it is descending at the correct rate. Visit as many other radio-related facilities around
+  the airport as legally possible, and determine the role of each (and the physics behind them). As well as the two ends of the runway, there
+  are publicly accessible facilities in Strathmore Park (at the end of bus routes 43/44) and at Hawkins Hill (a nice walk from the wind turbine,
+  but my preferred route is from a gully on the south coast walkway to Red Rocks that travels over the hills to the south and passes via an old
+  military observation post overlooking Cook Strait. Bring a packed lunch and plenty of water.)
+\end{trip}
 
 \begin{figure}
   \centering
@@ -1295,7 +1351,12 @@ red in the figure).
 The result of Young's double slit experiment that we looked at last year (\cref{fig:young}) can be explained using interference --- simply cut \cref{fig:int2d}
 with a line parallel to the line joining two slits. (In fact, this effect is seen with particles, like electrons, that are not classically wave-like. This
 experiment is one of the first that suggested that classical theories, like those of Newton, would not predict the correct results when lengths become
-too small.)
+too small. We explore this in more detail in Part Four.)
+
+\begin{experiment}
+  You can carry out Young's experiment yourself --- take a piece of overexposed film and scratch two slits very close to each other, and then shine a laser
+  pointer through them onto a piece of paper.
+\end{experiment}
 
 \goandwatch{https://www.youtube.com/watch?v=A9tKncAdlHQ}
 
@@ -1451,6 +1512,49 @@ Similarly, if the source is moving away from the observer it can be shown that t
   differ by around 0.3\%. The terminal velocity of a cat is around \SI{97}{\kilo\metre\per\hour}.
 \end{exercise}
 
+\section{Waves in Drums}
+By applying Newton's laws to a small section of string,\footnote{~See, for example, pages 452-455 of Knight.} it is possible to show that a
+1D wave function satisfies the following \textbf{partial differential equation}
+\begin{equation}
+  \pd[2]{y}{x} = \frac{1}{v^2} \od[2]{y}{t},
+\end{equation}
+where $ \partial $ (read \textit{dabba}) is used in the derivatives to signify that $ y $ is a function of both time and space. The exact
+details of the equation are not important; the main point of introducing it here is to show how we can extend our mathematical models of waves to
+higher dimensions. It should be a relatively easy exercise for you to show that
+\begin{equation}
+  D(x, t) = A\sin(kx - \omega t + \phi_0)
+\end{equation}
+is a solution to the 1D equation, and that the sum of any two possible solutions is itself a solution.\footnote{~I believe, although I do not want
+to check right now, that this exercise is somewhere in my calculus notes.}
+
+Now, the form of these two equations suggest that we can simply `add another dimension' as follows to obtain the general wave equation in 2D:
+\begin{equation}
+  \pd[2]{z}{x} + \pd[2]{z}{y} = \frac{1}{v^2} \od[2]{z}{t},
+\end{equation}
+with corresponding solution
+\begin{equation}
+  D(x, y, t) = A\sin(kx + \ell y - \omega t + \phi_0).
+\end{equation}
+
+We can even go to a wave in three dimensions that oscillates in some fourth dimension (perhaps it is an oscillation in the electromagnetic
+field rather than a mechanical oscillation) in the obvious way:
+\begin{equation}
+  \pd[2]{f}{x} + \pd[2]{f}{y} + \pd[2]{f}{z} = \frac{1}{v^2} \od[2]{f}{t}.
+\end{equation}
+It is my fond hope that you can guess a solution to this based on the hopefully obvious pattern.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{2dstandingwave}
+  \caption{A standing wave on a drum.}\label{fig:2dstandingwave}
+\end{figure}
+We have already seen too that it is possible to obtain complicated waveforms in 1D by superimposing simpler waveforms (for
+example, \cref{fig:superposition}). In 2D, it is possible to obtain even more complicated waveforms; one example which extends
+our analysis of wind and string instruments above is that of a drum (\cref{fig:2dstandingwave}). The physical analysis of waves
+in a drum is very difficult, due to the chaotic nature of the interactions between the different waves that are created when the drum
+is struck. Hitting the drum in a slightly different place may create a significantly different waveform.
+
+\goandwatch{https://www.youtube.com/watch?v=v4ELxKKT5Rw}
 
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%
@@ -1605,6 +1709,24 @@ In particular, we can model a battery as a cell together with a resistance:
 
 By Ohm's law, $ V_{\text{terminal}} = \varepsilon - Ir $, where $ \varepsilon $ is the \textbf{EMF} of the battery (voltage with no curent)
 and $ r $ is the internal resistance.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{bushchem}
+  \caption{A bush chemist's battery setup.}\label{fig:bushchem}
+\end{figure}
+
+\begin{experiment}
+  (For chemists.) Using your knowledge of L3 redox reactions, you can make a battery using the following standard electrode potentials:
+  \begin{gather}
+    \ce{Fe^{2+}(aq) + 2e^- <=> Fe(s)} \qquad E^\circ = \SI{-0.44}{\volt}\\
+    \ce{C(s) + 4H^+ + 4e^- <=> CH_4 (g)} \qquad E^\circ = \SI{+0.13}{\volt}
+  \end{gather}
+  (You can use a non-galvanised nail as the iron source, and lemon juice for the hydronium source (and a graphite pencil works as the carbon electrode in the
+  acid). Remember the salt bridge; you can use a coffee filter soaked in \ce{NaOH} solution for this. See \cref{fig:bushchem}.) The theoretical EMF
+  of this battery is \SI{0.57}{\volt} (neglecting the formation of iron(III) ions that also occurs). Measure the actual terminal voltage of your battery
+  when it is connected across a known resistance, and hence calculate its internal resistance.
+\end{experiment}
 
 \section{Capacitance}
 \begin{figure}
@@ -1999,6 +2121,10 @@ to studying this kind of current in some detail, and will eventually come back t
 and resonance.
 
 \goandwatch{https://www.youtube.com/watch?v=Mq-PF1vo9QA}
+
+\begin{exercise}
+  Design a practical circuit to measure one second of time accurately.
+\end{exercise}
 
 \chapter{AC Circuit Analysis}
 \begin{aquote}{Heinrich Hertz}
@@ -2485,6 +2611,58 @@ the circuit and so are not amplified.
   over long distances. Finally, we briefly look at quantum mechanics.
 }
 \part{Modern Physics}
+
+\bookmarksetup{level=1, keeplevel}
+\chapter*{A Word on Pseudoscience}
+\begin{aquote}{Gerard 't Hooft\footnotemark}
+  You may consider the option of connecting your work with mystery topics such as telepathy and consciousness. Make outrageous claims
+  of having solved long standing problems. Of course, you expect that you will become famous, but unfortunately, only a few really good
+  theoretical physicists have equations and effects named after them. This is because colleagues recognize their importance and since
+  they want to give names to equations and effects anyway, they bestow the discoverers with that honor.  The bad theoretical physicist,
+  in anticipation, names his own equations and effects, and even his entire theories, after himself right away.
+\end{aquote}\footnotetext{~From \emph{How to become a bad theoretical physicist}, \url{http://www.staff.science.uu.nl/~hooft101/theoristbad.html}}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{moon_landing}
+  \caption{Most pseudoscience is less sophisticated than this.}\label{fig:moon_landing}
+\end{figure}
+
+
+Before we start talking about more modern and ``cool'' physics, I feel obliged to take a step
+back and remind you that \emph{physics is a science}; that is, physical theories must:\footnote{~Shamelessly copied from my level 1 notes.}
+\begin{itemize}
+  \item Be based on empirical evidence. Empirical evidence is evidence based on, concerned with, or verifiable by observation or
+        experience rather than theory or pure logic.
+  \item Make testable, useful predictions.
+  \item Be falsifiable --- i.e. it is possible to conceive of an experiment which could prove it wrong.
+\end{itemize}
+
+In particular, the following is a non-exhaustive list of pseudoscientific theories (i.e. points of view which do not meet the criteria
+above for being scientific theories but are still paraded around as if they were scientific):
+\begin{itemize}
+  \item `Dianetics' (fails all three criteria, and in addition is championed by that great source of reliable science, the cult of scientology)
+  \item `Simulation theory' (does not make testable predictions)
+  \item Most things you find on the internet talking about `quantum consciousness' (fails all three criteria)
+  \item Intelligent design (not based on empirical evidence, and not falsifiable)
+  \item Cryptozoology (not based on empirical evidence)
+  \item Ufology (not based on empirical evidence)
+  \item The `2012 phenomenon' (not based on empirical evidence, especially as the year is now 2017 and the universe is still in existance)
+  \item Homeopathy (not based on empirical evidence)
+\end{itemize}
+I have intentionally named these examples without description, as I believe that it is really a waste of space to discuss them. Unfortunately,
+pseudoscientific theories are becoming easier to find (by means of the internet), and most of them just want your money --- by all means research
+them on your own, but there are better things to spend your time on.
+
+When researching the topics we are about to discuss on your own, take care that you:
+\begin{enumerate}
+  \item Ensure that the resources you use reference actual, repeatable experiments that have been (or could conceivably be) performed; and
+  \item Are not `too good to be true'.
+\end{enumerate}
+
+Some reputable physics sources on YouTube include the Fermilab channel (popular videos by physicist Don Lincoln), the Royal Society channel, and
+lectures by physicists like Brian Cox.
+
 \chapter{Atomic Physics}
 \begin{aquote}{Richard Feynman}
   Energy is a very subtle concept. It is very, very difficult to get right.
@@ -2632,6 +2810,7 @@ of proportionality $ h \approx \SI{6.63e-34}{\joule\second} $ known as \textbf{P
 \begin{equation}
   E = hf.
 \end{equation}
+It is interesting that here in the microscopic world a particle's energy is related to the \emph{frequency} rather than its associated wave amplitude.
 
 If we apply this to the photoelectric effect, we can calculate that the energy of emitted photoelectrons
 when light of frequency $ f $ is incident on a metal with work function $ \phi $ is given by
@@ -3286,6 +3465,8 @@ Practical consequence: if you move at \SI{2.8e8}{\metre\per\second} towards a be
 speed of \SI{3e8}{\metre\per\second} than it would if you were stationary. For the next few pages, we will explore the physical
 ramifications of this fact, which contradicts classical Newtonian physics.
 
+\goandwatch{https://www.youtube.com/watch?v=A2JCoIGyGxc}
+
 \begin{exercise}
   For each of the following, decide whether or not the two people are in the same reference frame. Identify any inertial frames.
   \begin{itemize}
@@ -3315,6 +3496,7 @@ Because we cannot treat either observer as having a `more correct' viewpoint (wh
 thing as a universally simultaneous event} --- simultaneity depends on the observer.
 
 \goandwatch{https://www.youtube.com/watch?v=wteiuxyqtoM}
+
 
 \begin{exercise}
   Consider the following objection to our reasoning above. `A is midway between the flashes when they arrive. But B is right
