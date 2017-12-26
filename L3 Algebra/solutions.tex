@@ -1,4 +1,3 @@
-\RequirePackage{snapshot}
 \documentclass[a4paper,10pt,titlepage]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -6,6 +5,9 @@
 
 \usepackage[backend=biber]{biblatex}
 \bibliography{solutions_bibliography}
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+
 
 \usepackage[dvipsnames]{xcolor}
 \usepackage{amsmath}
@@ -72,6 +74,11 @@
 \author{Alex Elzenaar}%\\Upper Hutt College}
 \date{\today}
 \titlepic{\includegraphics[width=\textwidth]{problem.png}}
+
+% \makeatletter
+% \let\runauthor\@author
+% \renewcommand{\rightmark}{\runauthor}
+% \makeatother
 
 \begin{document}
 
@@ -362,6 +369,8 @@ into factors is known as \textit{factorising}.
   \hard Prove that $ ax^2 + bx + c = Ax^2 + Bx + C $ implies that $ a = A $, $ b = B $, and $ c = C $.
         This result allows us to \textit{match coefficients}, an important tool which we can use to
         reason about the symmetries of polynomials.
+  \item Show that if $ \alpha $ and $ \beta $ are the two solutions of $ x^2 + bx + c = 0 $, then
+        we have $ -b = \alpha + \beta $ and $ c = \alpha\beta $.
   \item Factorise $ x^2 - 3x - 40 $ by inspecting the coefficients and using the
         identity that a quadratic with the two solutions $ a $ and $ b $ is given
         by $ (x-a)(x-b) = x^2 -(a+b)x + ab $ (note the change of sign in the factors).
@@ -558,6 +567,9 @@ by $ (x - 4) $ and taking the remainder.
           \item Find the $ x$-intercepts of $ y^2 = x^3 - 2x $.
           \item Find the $ z$-intercepts of $ y^2 = x^3 - \frac{4}{3} x - \frac{16}{27} $,
                 given that $ z = x - \frac{1}{3} $.
+          \item Consider an elliptic curve $ \mathcal{E} $, and let $ P $ and $ Q $ be two rational points (i.e. points whose coordinates
+                are rational) which are lying on the curve. Let $ \mathcal{L} $ be the chord line uniquely determined by $ P $ and $ Q $. Show
+                that if $ \mathcal{L} $ and $ \mathcal{E} $ intersect at a third point $ R $, then this third point is rational.
         \end{enumerate}
   \harder The polynomial $ x^3 + px - 1 $ has three real non-zero roots, $ \alpha $,
         $ \beta $, and~$ \gamma $.

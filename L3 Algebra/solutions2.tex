@@ -322,6 +322,12 @@ agree at $ x = -1 $ and so $ a - b = A - B $. Adding, $ 2a = 2A \implies a = A $
 by subtraction, $ 2b = 2B \implies b = B $.
 
 \filbreak\begin{enumerate}[resume]
+  \answer Show that if $ \alpha $ and $ \beta $ are the two solutions of $ x^2 + bx + c = 0 $, then
+        we have $ -b = \alpha + \beta $ and $ c = \alpha\beta $.
+\end{enumerate}
+We simply match coefficients: $ x^2 + bx + c = (x - \alpha)(x - \beta) = x^2 - (\alpha + \beta)x + \alpha\beta $.
+
+\filbreak\begin{enumerate}[resume]
   \answer Factorise $ x^2 - 3x - 40 $ by inspecting the coefficients and using the
         identity that a quadratic with the two solutions $ a $ and $ b $ is given
         by $ (x-a)(x-b) = x^2 -(a+b)x + ab $ (note the change of sign in the factors).
@@ -645,12 +651,14 @@ and $ \alpha\beta $ are \textbf{distinct} roots.)
 
 Similarly, the three roots 0, 1, and $ -1 $ of $ x^3 - x = 0 $ are closed under multiplication and inversion.
 
+\vspace{3pt}
 
 \begin{mdframed}[hidealllines=true,backgroundcolor=Emerald!20]
 \textit{Since the roots of the equation $ x^{n} - x =  0 $ are simply the $ n-1$th roots of unity together with
 zero, exercise 6.\ref{ex:grpdefn} makes this exercise trivial. If we restrict $ n $ to be a prime power (i.e. $ n = p^m $ for some
-integer $ m $), then it is also the case that $ \alpha + \beta $ and $ \alpha - \beta $ are roots (the roots of $ x^{p^m} - x = 0 $ form
-the (unique) finite field of order $ p^m $ denoted $ GF(p^m) $ --- the Galois field of order $ p^m $).}
+integer $ m $), then it is possible to impose an addition structure on the roots as well if $ \alpha + \beta $ is reduced
+modulo $ p $. In fact, the roots of $ x^{p^m} - x = 0 $ form the (unique) finite field of order $ p^m $
+denoted $ GF(p^m) $ --- the Galois field of order $ p^m $).}
 \end{mdframed}
 
 \filbreak\begin{enumerate}[resume]
@@ -659,6 +667,9 @@ the (unique) finite field of order $ p^m $ denoted $ GF(p^m) $ --- the Galois fi
           \answerb Find the $ x$-intercepts of $ y^2 = x^3 - 2x $.
           \answerb Find the $ z$-intercepts of $ y^2 = x^3 - \frac{4}{3} x - \frac{16}{27} $,
                 given that $ z = x - \frac{1}{3} $.
+          \answerb Consider an elliptic curve $ \mathcal{E} $, and let $ P $ and $ Q $ be two rational points (i.e. points whose coordinates
+                are rational) which are lying on the curve. Let $ \mathcal{L} $ be the chord line uniquely determined by $ P $ and $ Q $. Show
+                that if $ \mathcal{L} $ and $ \mathcal{E} $ intersect at a third point $ R $, then this third point is rational.
         \end{enumerate}
 \end{enumerate}
 
@@ -671,7 +682,7 @@ by $ x $ and find that the other two solutions are $ x = \pm \sqrt{2} $.
   \includegraphics[width=0.5\textwidth]{elliptical}
 }\end{center}
 
-\paragraph{(a)}
+\paragraph{(b)}
 For the second, we first substitute for $ x $, obtaining $ y^2 = (z + \frac{1}{3})^3 - \frac{4}{3}(z + \frac{1}{3}) - \frac{16}{27} $. This
 simplifies to $ y^2 = z^3 + z^2 - z - 1 $. Noticing that one solution to this is $ z = 1 $, we divide:
 
@@ -687,6 +698,16 @@ At the time of writing, WolframAlpha only finds a single solution ($ x = -\frac{
 
 The substitution $ z = x - \frac{b}{3a} $ is a standard one to remove the quadratic term from
 a cubic equation $ az^3 + bz^2 + cz + d = 0 $; see exercise \ref{ex:UnpronouncableTransvestite}.
+
+\paragraph{(c)}
+Let $ \mathcal{E} $ be the curve $ y^2 = x^3 + ax + c $, and let $ \mathcal{L} $ be the line $ y = mx + c $. Then we wish to
+find the solutions to $ (mx + c)^2 = x^3 + ax + b $. Expanding and rearranging, we find that
+\begin{displaymath}
+  0 = x^3 + m^2 x^2 + (a + 2mc)x + b + c^2.
+\end{displaymath}
+We know that two solutions to this equation are rational. However, note that $ m^2 $ is the sum of the
+three solutions (why?) and is itself rational; hence the third solution must also be rational (and so the two
+coordinates of the corresponding point on $ \mathcal{E} $ are rational).
 
 \clearpage
 \filbreak\begin{enumerate}[resume]
@@ -1534,25 +1555,14 @@ To this end, consider the following:
 \end{displaymath}
 So one of $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $ is true.
 
-\paragraph{Case I: $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $}
+\paragraph{Case I: $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $}\mbox{}\\
 Evidently
 \begin{displaymath}
   f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
 \end{displaymath}
 and so $ (x_\star, y_\star) \in \mathcal{M} $. (The same argument works with $ \mathcal{M} $ and $ \mathcal{L} $ swapped.)
 
-\paragraph{Case II: $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) \neq 0 $}
-We must show that $ f = 0 $. Notice that we have $ ax_0 = -by_0 $ and $ ax_1 = -by_1 $, so we have $ \frac{x_0}{x_1} = \frac{y_0}{y_1} $. Hence
-there is some $ m $ such that $ x_0 = m x_1 $ and $ y_0 = m y_1 $. It follows that
-\begin{align*}
-  dmx_1 + emy_1 + f = 0&\\
-  dx_1 + ey_1 + f = 0 &\Rightarrow x_1 = \frac{-f - ey_1}{d}\\
-                       &\Rightarrow dm \frac{-f - ey_1}{d} + emy_1 + f = 0\\
-                       &\Rightarrow m (-f - ey_1) + emy_1 + f = 0\\
-                       &\Rightarrow f(1 - m) = 0
-\end{align*}
-Now, we know $ m \neq 1 $ since the points are distinct; hence $ f = 0 $ as required,
-
+\paragraph{Case II: $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) \neq 0 $}\mbox{}\\
 In both cases,
 \begin{displaymath}
   f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
@@ -1563,7 +1573,7 @@ so $ \mathcal{M} = \mathcal{L} $.
 \section{Roots of Unity}
 \begin{mdframed}[hidealllines=true,backgroundcolor=Emerald!20]
 \textit{Many of the results here follow from basic results in number theory. The interested reader is directed
-        towards `Elementary Number Theory' by Underwood Dudley. More generally, the material in this chapter
+        towards `Elementary Number Theory' by Underwood Dudley~\cite{Dud08}. More generally, the material in this chapter
         develops the theory of finite cyclic groups (the $ n$th roots of unity under multiplication form a group isomorphic to
         the finite cyclic group of order $ n $).}
 \end{mdframed}
