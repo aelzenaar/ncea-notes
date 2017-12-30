@@ -4,10 +4,12 @@
 \usepackage{microtype}
 
 \usepackage{commath}
-\usepackage[noabbrev]{cleveref}
 
 \usepackage{tikz}
 \usepackage{graphicx}
+
+\usepackage{hyperref}
+\usepackage[noabbrev]{cleveref}
 
 \def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
   \hbox{}\nobreak\hfil(#1)%
@@ -26,6 +28,7 @@
 \newtheorem{exercise}[thm]{Exercise}
 \theoremstyle{remark}
 \newtheorem{rem}[thm]{Remark}
+
 
 \title[Generic Skills in Maths]{A Journey Through Generic Skills\\for Level Three and Scholarship Calculus}
 \author{Alex Elzenaar}
@@ -394,10 +397,12 @@ The proof of the following theorem is quite cute.
   Compute 6!.
 \end{exercise}
 
-\begin{thm}
+The following theorem is usually attributed to Euclid; we give a proof by contradiction here, which is similar in spirit to Euclid's more direct proof.
+
+\begin{thm}[Euclid]
   There are infinitely many primes.
 \end{thm}
-The idea of the proof is to assume that there are finitely many, and then multiply them together.
+The idea of the proof is to assume that there are finitely many, and then multiply them together; see also \url{https://xkcd.com/622/}.
 \begin{proof}
   Suppose that there is a largest prime $ p $. Then consider the number $ p! + 1 $; since it is one
   greater than a multiple of all primes less than or equal to $ p $, none of those primes can divide it.
@@ -575,6 +580,10 @@ by yourself before reading the proof --- it is a simple bit of computation.
 
 \begin{exercise}
   Show that $ \binom{n}{k}/n $ is an integer for all $ 1 \leq k \leq n - 1 $. [\emph{Hint: use induction.}]
+\end{exercise}
+
+\begin{exercise}
+  Find an analagous theorem to the binomial theorem for expanding $ (x + y + z)^n $ for integer $ n $.
 \end{exercise}
 
 \section{A Little Graph Theory}
