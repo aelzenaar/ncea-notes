@@ -13,31 +13,35 @@ The L2 maths material is a bit of a mess.
  * Probability (91267): worksheet with basic material only.
 
 ### Level Three and Scholarship Calculus
- * Generic skills: a set of notes covering (naive) sets, (rudimentary) proofs, sigma and pi notation, induction, the Binomial theorem, and very basic graph theory.
- * Algebra (91577): a set of notes entitled _Solutions_ designed for self-study for scholarship students (with full solutions).
- * Differentiation (91578) and integration (91579): a set of notes containing both tutorial session material and homeworks with material ranging
+ * Generic skills: a [set of notes](L3 Maths Generic/generic.pdf) covering (naive) sets, (rudimentary) proofs, sigma and pi notation, induction,
+   the Binomial theorem, and very basic graph theory.
+ * Algebra (91577): a set of notes entitled [_Solutions_](L3 Algebra/solutions.pdf) designed for self-study for scholarship students
+   (with [full answers to exercises](L3 Algebra/solutions2.pdf)).
+ * Differentiation (91578) and integration (91579): a [set of notes](L3 Calculus/bookform.pdf) containing both tutorial session material
+   and homeworks with material ranging
    in difficulty from achieved to outstanding scholarship.
  * Assorted other scholarship worksheets: some have already been amalgamated into the calculus notes, others have not.
 
-In progress: geometry notes (similar in style to _Solutions_ for scholarship students) and replacement Scholarship practice exams. I am not intending to write
-any material on the L3 path analysis standard.
+In progress: geometry notes (similar in style to _Solutions_ for scholarship students), notes on the two linear algebra standards, and replacement
+Scholarship practice exams. I am not intending to write any material on the L3 path analysis standard.
 
 ## Physics
 ### Level Two
- * Waves (91170), mechanics (91171), and electromagnetism (91172): full set of notes, including many diagrams and links to youtube videos,
+ * Waves (91170), mechanics (91171), and electromagnetism (91172): [full set of notes](L2 Physics/externals.pdf), including many diagrams and links to youtube videos,
    but (by design) with limited exercises. To be used with a workbook or similar set of problems.
+ * Practice exams: [mechanics](L2 Physics/Exams/mech.pdf), [electromagnetism](L2 Physics/Exams/edyn.pdf), and [waves](L2 Physics/Exams/waves.pdf).
 
-I do not intend to write modern physics notes for L2 at this point in time.
+I do not intend to write modern physics notes for L2 at this point in time; my L3 notes revise this material and so can be used for this purpose.
 
 ### Level Three
- * Waves (91523), mechanics (91524), modern physics (91525), and electromagnetism (91526): full set of notes, much terser and much longer than level 2,
-   ideal for motivated students for self-study. A large amount of interest material in modern physics is included.
+ * Waves (91523), mechanics (91524), modern physics (91525), and electromagnetism (91526): [full set of notes](L3 Physics/externals.pdf), much terser and much
+   longer than level 2, ideal for motivated students for self-study. A large amount of interest material in modern physics is included.
 
 I have removed the old modern physics sheets as they are now part of the above notes.
 
 ## Classical Studies
 ### Scholarship
- * Aristophanes: practice questions and timeline.
+ * Aristophanes: [practice questions](Scholarship Classics/aristophanes questions.odt) and [timeline](Scholarship Classics/aristophanes timeline.odt).
 
 In progress: exam advice, homeworks for Alexander. Final plan is to have a full reading course written.
 
