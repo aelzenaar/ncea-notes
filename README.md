@@ -12,6 +12,8 @@ The L2 maths material is a bit of a mess.
  * Calculus (91262): full worksheets with questions, homeworks, four practice exams.
  * Probability (91267): worksheet with basic material only.
 
+If I end up tutoring this subject in 2018, I will likely rewrite everything.
+
 ### Level Three and Scholarship Calculus
  * Generic skills: a [set of notes](L3%20Maths%20Generic/generic.pdf) covering (naive) sets, (rudimentary) proofs, sigma and pi notation, induction,
    the Binomial theorem, and very basic graph theory.
@@ -22,8 +24,15 @@ The L2 maths material is a bit of a mess.
    in difficulty from achieved to outstanding scholarship.
  * Assorted other scholarship worksheets: some have already been amalgamated into the calculus notes, others have not.
 
-In progress: geometry notes (similar in style to _Solutions_ for scholarship students), notes on the two linear algebra standards, and replacement
-Scholarship practice exams. I am not intending to write any material on the L3 path analysis standard.
+**In progress:**
+ * Notes on the two linear algebra standards (systems of equations and linear programming).
+ * Geometry notes (similar in style to _Solutions_ for scholarship students, and may be from L1 upwards). In the meantime, I highly recommend
+   Lang and Murrow's book _Geometry: A High School Course_ (published by Springer) --- the first edition is available in the University of
+   Auckland library at 516 L27 (or online).
+ * Replacement scholarship notes and exams. The notes themselves are already part of the more general L3 material, and I have written one
+   replacement exam.
+
+I am not intending to write any material on the L3 path analysis standard.
 
 ## Physics
 ### Level Two
@@ -43,10 +52,11 @@ I have removed the old modern physics sheets as they are now part of the above n
 ### Scholarship
  * Aristophanes: [practice questions](Scholarship%20Classics/aristophanes%20questions.odt) and [timeline](Scholarship%20Classics/aristophanes%20timeline.odt).
 
-In progress: exam advice, homeworks for Alexander. Final plan is to have a full reading course written.
+**In progress:** exam advice, homeworks for Alexander. Final plan is to have a full reading course written.
 
 ## Other in progress
 I hope to begin work on specific notes for scholarship physics at some point in 2018. I tend to like the ESA study guide for chemistry so currently
-have no notes planned (except perhaps for scholarship, but I do not feel that I know the material well enough to write that any time soon).
+have no notes planned (except perhaps for scholarship, but I do not feel that I know the material well enough to write that any time soon). I am taking
+a course in spectroscopy next semester so I may write more detailed notes for that topic.
 
 Level 1 maths notes would also be nice but I am not sure that I am the right person to write them!
