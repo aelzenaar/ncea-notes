@@ -28,20 +28,23 @@ Now, letting $ u = \cos \theta $ we obtain
 Here is a table of trig substitutions:
 
 \begin{center}
-\begin{tabular}{|c|c|c|}\hline
-  \textbf{Integrand} & \textbf{Substitution} & \textbf{Identity}\\\hline
-  $ \sqrt{a^2 - x^2} $ & $ x = a \sin \theta $ & $ 1 - \sin^2 \theta = \cos^2 \theta $\\\hline
-  $ \sqrt{a^2 + x^2} $ & $ x = a \tan \theta $ & $ 1 + \tan^2 \theta = \sec^2 \theta $\\\hline
-  $ \sqrt{x^2 - a^2} $ & $ x = a \sec \theta $ & $ \sec^2 \theta - 1 = \tan^2 \theta $\\\hline
-\end{tabular}
+  \def\arraystretch{1.5}
+  \begin{tabular}{|c|c|c|}\hline
+    \textbf{Integrand} & \textbf{Substitution} & \textbf{Identity}\\\hline
+    $ \sqrt{a^2 - x^2} $ & $ x = a \sin \theta $ & $ 1 - \sin^2 \theta = \cos^2 \theta $\\\hline
+    $ \sqrt{a^2 + x^2} $ & $ x = a \tan \theta $ & $ 1 + \tan^2 \theta = \sec^2 \theta $\\\hline
+    $ \sqrt{x^2 - a^2} $ & $ x = a \sec \theta $ & $ \sec^2 \theta - 1 = \tan^2 \theta $\\\hline
+  \end{tabular}
 \end{center}
 
 
 \begin{ex}
-  Consider $ I = \rint \frac{\dif{\theta}}{\sqrt{9 + x^2}} $. Let $ x = 3\tan\theta $ so $ \dif{x} = 3\sec^2\theta \dif{\theta} $ and:
-  \begin{displaymath}
-    I = \rint \frac{3\sec^2 \theta}{3\sqrt{1 + \tan^2 \theta}} \dif{\theta} = \rint \dif{\theta} = \theta + C = \tan^{-1} \frac{x}{3}.
-  \end{displaymath}
+  Consider $ I = \rint \frac{\dif{x}}{\sqrt{9 + x^2}} $. Let $ x = 3\tan\theta $ so $ \dif{x} = 3\sec^2\theta \dif{\theta} $ and:
+  \begin{align*}
+    I &= \rint \frac{3\sec^2 \theta}{3\sqrt{1 + \tan^2 \theta}} \dif{\theta} = \rint \sec \theta \dif{\theta}\\
+      &= \ln(\sec \theta + \tan \theta) + C = \ln(\sec \tan^{-1} (x/3) + x/3) + C\\
+      &= \ln\left( \sqrt{\left(\frac{x}{3}\right)^2 + 1} + \frac{x}{3} \right) + C.
+  \end{align*}
 \end{ex}
 
 \clearpage
