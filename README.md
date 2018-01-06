@@ -50,9 +50,11 @@ I have removed the old modern physics sheets as they are now part of the above n
 
 ## Classical Studies
 ### Scholarship
+ * [General exam advice](Scholarship%20Classics/examadvice.pdf).
+ * [Basic reading list for a Greek focus](Scholarship%20Classics/reading%20lists.odt).
  * Aristophanes: [practice questions](Scholarship%20Classics/aristophanes%20questions.odt) and [timeline](Scholarship%20Classics/aristophanes%20timeline.odt).
 
-**In progress:** exam advice, homeworks for Alexander. Final plan is to have a full reading course written.
+**In progress:** Homeworks (and some other notes) for Alexander, general bibliography. Final plan is to have a full reading course written.
 
 ## Other in progress
 I hope to begin work on specific notes for scholarship physics at some point in 2018. I tend to like the ESA study guide for chemistry so currently
