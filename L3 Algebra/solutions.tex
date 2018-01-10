@@ -17,8 +17,8 @@
 \usepackage{adjustbox}
 \usepackage[hidelinks]{hyperref}
 \usepackage[parfill]{parskip}
-\usepackage{exercises}
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
 \usepackage{graphicx}
 \usepackage{sidecap}
 \sidecaptionvpos{figure}{c}
@@ -219,7 +219,7 @@ solutions since they are not satisfied by \emph{any} value of $ x $.
 \end{figure*}
 Several ancient clay tablets from the Old Babylonian period (1800 - 1600 BC)
 contain mathematical problems and solutions. Such a problem, given on the tablet
-illustrated, is (translated of course):
+illustrated, is (translated of course):\footnote{~Translation from \cite{Ste08}.}
 
 \begin{quote}
   I have added up seven times the side of my square and eleven times the area,
@@ -342,8 +342,7 @@ into factors is known as \textit{factorising}.
           \item $ x^2 + 5x + 9 = 0 $
           \item $ x^2 - \frac{14x}{3} + \frac{49}{9} = 0 $
         \end{enumerate}
-  \item An important identity (known as the \emph{difference of two squares})
-        is that $ x^2 - b^2 = (x-b)(x+b) $. Use this to factorise and therefore
+  \item Use the \emph{difference of two squares} identity $ x^2 - b^2 = (x-b)(x+b) $ to factorise and hence
         solve the following equations for $ x $:
         \begin{enumerate}
           \item $ x^2 - 9 = 0 $
@@ -396,7 +395,7 @@ into factors is known as \textit{factorising}.
           \item Show that $ \alpha^2 + \beta^2 = b^2 - 2c $.
           \item Show that $ \Delta_2 \left[x^2 + bx + c\right] = (\alpha - \beta)^2 $.
         \end{enumerate}
-  \hard Flesh out the following alternative proof of the quadratic formula.\footnote{~See Edwards (1984).} Let
+  \hard Flesh out the following alternative proof of the quadratic formula from \cite{Edw84}. Let
         $ \alpha $ and $ \beta $ be the two roots of the equation $ x^2 + bx + c = 0 $. \label{ex:quadratificational}
         \begin{enumerate}
           \item Then $ x = \frac{1}{2} \left( (\alpha + \beta) + (\alpha - \beta) \right)
@@ -583,7 +582,7 @@ by $ (x - 4) $ and taking the remainder.
         will give a cubic in $ y $ with no quadratic term (this is known as a Tschirnhaus substitution and is
         often the first step to create a general formula to solve the cubic).
   \item Show that $ \sqrt{2} + \sqrt{3} = \sqrt{5 + \sqrt{6}} $.
-  \harder Prove the following identity.\footnote{~See chapter 1 of Stewart (2004) for historical context,
+  \harder Prove the following identity.\footnote{~See chapter 1 of \cite{Ste15} for historical context,
         but note that the identity as stated there is in error (and not listed in errata).}
         \begin{displaymath}
           \sqrt[3]{-18 + \sqrt{325}} + \sqrt[3]{-18 - \sqrt{325}} = -3
@@ -596,64 +595,104 @@ by $ (x - 4) $ and taking the remainder.
 \end{enumerate}
 
 \section{Complex Numbers}
-There are some polynomials which do not have real solutions. All linear equations have
-solutions (as seen above, all those which do not pass through the $x$-axis are of
-the form $ 1 = 0 $) --- but a simple example of a quadratic that is unsolvable \emph{in
-the reals} is $ x^2 + 1 = 0 $ (where $ \Delta_2 < 0 $). The solutions to this
-equation would be $ \pm\sqrt{-1} $, and we can't take the square root of a negative number.
+Now that we have somewhat developed the theory of polynomial equations, a sensible question to ask ourselves is the following.
+\begin{center}
+  \emph{When do polynomial equations have solutions?}
+\end{center}
+The answer to this simple question is actually quite nuanced, and occupied mathematicians in Europe for centuries.
 
-As mathematicians, we will now define our way out of this problem.
+Consider, for example, the simple quadratic equation
+\begin{displaymath}
+  x^2 - 2 = 0.
+\end{displaymath}
+Notice that the coefficients of this equation are integers, but the solutions are not --- in fact, the solutions ($ \pm \sqrt{2} $)
+are not even rational! Notice also that the number of solutions is 2, the same as the degree of the polynomial.
 
-If we define a new number $ i $ which satisfies the equation $ i^2 = -1 $ (engineers often use $ j $; they are wrong), we can
-now solve \emph{all} polynomials for solutions in the form $ a + ib$ for $ a, b \in \mathbb{R} $
-(i.e. $ a $ and $ b $ being real numbers)! These numbers are known as the \emph{complex numbers}, and a number
-involving $ i $ is \emph{imaginary}. The name is a misnomer, however --- the complex numbers are just as real
-as the real numbers.
+Let us take a look at another example,
+\begin{displaymath}
+  x^3 - x = 0.
+\end{displaymath}
+Again, the degree of this polynomial is three --- as is the number of solutions that we obtain from it.
 
-This is similar to the way we extend the natural numbers to the integers (in order to make subtraction
-well-defined), the integers to the rationals (in order to make division well-defined), and the rationals
-to the reals (to fill in the `gaps' of the former). The complex numbers are generally considered to have
-been formally born in Girolamo Cardano's \emph{Ars Magna} in 1545, where he introduces them only to dismiss
-them as `as subtle as they are useless'.
+These two examples, as well as our previous work, suggest that the number of solutions of a polynomial is the same as its degree. There
+is one problem with this, illustrated by another simple equation:
+\begin{displaymath}
+  x^2 + 1 = 0.
+\end{displaymath}
 
-We say that two complex numbers are equal \textbf{if and only if both the real and imaginary
-parts of those numbers are equal}, and we perform arithmetic on complex numbers in the same
-way that we perform arithmetic on the reals, remembering that $ i^2 = -1 $.
+If we try to solve this equation, we end up with a seemingly nonsense result: that $ x = \pm \sqrt{-1} $. Since there is no real
+number with a negative square, it seems like we need to throw out our pretty result. However, remember that we have already seen
+an example of an equation where the solution is out of reach if we only look for solutions that are the `same kind' as the coefficients.
 
-The set of all complex numbers is usually denoted by $ \mathbb{C} $.
+Just as we extend the natural numbers to the integers, the integers to the rationals, and the rationals to the reals, we can
+extend our number system further so that the equation $ x^2 + 1 = 0 $ has a solution. We begin by defining $ i $ to be a square
+root of $ -1 $ (and setting $ -i $ to be the other square root); then the set of all numbers of the form $ a + bi $ (for any real
+numbers $ a $ and $ b $) is called the set of \emph{complex numbers}; this system of writing them is called \emph{rectangular form}.
 
-\subsection*{Argand diagrams}
-We can interpet complex numbers geometrically by plotting them on a Cartesian plane
-where the $ x $-axis is the real part of the number and the $y$-axis the imaginary
-part. This is known as an \emph{Argand diagram} after Jean-Robert Argand, a French mathematician who was the
-first to publish a geometric interpretation of the complex numbers and rigorously prove the Fundamental Theorem
-of Algebra (that an $n$th degree polynomial with complex coefficients has at least one complex root).
+The complex numbers are generally considered to have been formally born in Girolamo Cardano's \emph{Ars Magna} in 1545, where he
+introduces them only to dismiss them as `as subtle as they are useless'. Despite this, modern mathematics has fully accepted the
+existance of complex numbers for two main reasons: firstly they do not introduce any contradictions into basic arithmetic or
+any theory that we care about, and secondly they allow us to state the following historic theorem.
+
+\begin{thm}[Fundamental Theorem of Algebra]
+  Let $ p(x) $ be a polynomial with degree $ d $. Then, counting repeated roots, there are exactly $ d $ complex roots of $ p(x) $.
+\end{thm}
+
+The proof of the Fundamental Theorem unfortunately requires concepts and techniques far beyond the scope of this book (Stewart
+gives a proof in \cite{Ste15}, and Artin gives two(!) proofs in \cite{Art91} \S 9.9). All proofs (that I am aware
+of) require the use of analysis (i.e. there is no pure-algebra proof).
+
+The first rigorous proof of this theorem was published by French mathematician Jean-Robert Argand in 1814; the name is somewhat
+incorrect in the modern era as the study of algebra is no longer purely devoted to the properties of the complex number field.
+An analogue of the theorem in a more modern context is Kronecker's Theorem, which states that a polynomial with coefficients
+in set of numbers in which we can add, subtract, multiply, and divide has at least one solution in a `bigger' set of numbers that
+contains the original set.
+
+Given a complex number $ z = a + bi $, we call $ a $ the \emph{real part} of $ z $ and $ b $ the \emph{imaginary part}
+of $ z $ (writing $ \realp{z} $ and $ \imagp{z} $ respectively). The term `imaginary' is purely historical --- the complex numbers
+exist in exactly the same way that a number like $ \pi = 3.14159... $ or $ e = 2.718... $ exists.
+
+We say that two complex numbers are equal \textbf{if and only if both the real and imaginary parts of those numbers are equal}, and
+we perform arithmetic on complex numbers in the same way that we perform arithmetic on the reals, remembering that $ i^2 = -1 $.
+
+Complex numbers also have a geometric interpretation. If we set up a mapping $ a + bi \mapsto (a, b) $ it is easy to see that we
+have an exact correspondence between complex numbers and points on a Cartesian plane. This kind of diagram is called an \emph{Argand
+diagram}, named after French mathematician Jean-Robert Argand.
+
+For convenience, we also often associate with each complex number the unique \emph{vector} pointing from the origin to the location
+of the point on the Argand plane. Given a complex number $ z = a + bi $, the length of its associated vector is called its \emph{modulus};
+this is written $ \abs{z} $, and (by the Pythagorean theorem) we have the simple result that $ \abs{z} = \sqrt{a^2 + b^2} $. The meaning
+of this is exactly the same as that of the absolute value of a real number (and in fact the modulus of a real number is exactly its absolute
+value) --- despite this, note that while there is a natural ordering on the real numbers (for example, $ -2 < 0 < \pi < \sqrt{17} $) there
+can be no such ordering on the complex numbers. It is completely nonsensical to talk about any complex number being `bigger' than any other.
 
 \begin{center}\fbox{
 \begin{tikzpicture}
   \begin{axis}[
+    xmin = -4, xmax = 4,
+    ymin = -4, ymax = 4,
     xlabel=$\realp{z}$,
     ylabel={$\imagp{z}$},
     axis lines=middle,
     scale=.8
   ]
-    \addplot[color=Emerald, mark=o]
+    \addplot[color=BurntOrange, mark=*, thick]
     coordinates {
       (0, 1)
     };
-    \addplot[color=Emerald, mark=o]
+    \addplot[color=ForestGreen, mark=*, thick]
     coordinates {
       (1, 0)
     };
-    \addplot[color=Emerald, mark=o]
+    \addplot[color=NavyBlue, mark=*, thick]
     coordinates {
       (3,2)
     };
-    \addplot[color=Emerald, mark=o]
+    \addplot[color=Red, mark=*, thick]
     coordinates {
       (-1,-1)
     };
-    \addplot[color=Emerald, mark=o]
+    \addplot[color=Mulberry, mark=*, thick]
     coordinates {
       (-1,2)
     };
@@ -661,30 +700,136 @@ of Algebra (that an $n$th degree polynomial with complex coefficients has at lea
 \end{tikzpicture}
 }\end{center}
 
-The five points marked on this Argand diagram are $ i $, 1, $ 3+2i $, $ -1 - i $,
-and $ 2i - 1 $. See if you can label each point on the diagram itself.
+The five points marked on this Argand diagram are $ i $, 1, $ 3+2i $, $ -1 - i $, and $ 2i - 1 $. See if you can label each point on the diagram itself.
 
-\subsection*{Complex Conjugates}
-One useful operation is complex conjugation --- if $ z = a+bi $, the
-\emph{complex conjugate} of $ z $ is $ \overline z = a-bi $. If a polynomial has
-real coefficents, any complex roots must come in conjugate pairs (and so any
-polynomial of odd order must have at least one real root). This last idea can be
-demonstrated by noting that odd polynomials must cross the $ x$-axis at at least
-one point, while even polynomials need not cross the $ x$-axis at all.
-
-The complex conjugate of a complex number is its reflection across the $ x$-axis
-of an Argand diagram.
-
-\subsection*{Arithmetic of Complex Numbers}
-Suppose we have two complex numbers, $ x = a + bi $ and $ y = c + di $. We have
-the following rules for addition and subtraction by collecting the real and imaginary
-terms together:
+Due to the way we constructed the complex numbers, there are natural rules for arithmetic. Suppose we have two complex numbers, $ u = a + bi $
+and $ v = c + di $. We have the following rules for addition and subtraction by collecting the real and imaginary terms together:
 \begin{align*}
-  x + y &= (a + c) + (b + d)i, \text{ and} \\
-  x - y &= (a - c) + (b - d)i.
+  u + v &= (a + c) + (b + d)i, \text{ and} \\
+  u - v &= (a - c) + (b - d)i.
 \end{align*}
 
-\subsection*{Exercises I}
+Geometrically, we are simply taking the vectors associated with each point and adding them.
+\begin{center}\fbox{
+\begin{tikzpicture}
+  \begin{axis}[
+    xmin = 0, xmax = 5,
+    ymin = 0, ymax = 6,
+    xlabel=$\realp{z}$,
+    ylabel={$\imagp{z}$},
+    axis lines=middle,
+    scale=.8
+  ]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (3,2);
+    \coordinate (B) at (1,3);
+    \coordinate (S) at (4,5);
+    \draw[very thick, BurntOrange, ->] (O)--(A);
+    \draw[very thick, dotted, Mulberry, ->] (A)--(S);
+    \draw[very thick, dotted, BurntOrange, ->] (B)--(S);
+    \draw[very thick, Mulberry, ->] (O)--(B);
+  \end{axis}
+\end{tikzpicture}
+}\end{center}
+
+Before we discuss multiplication of complex numbers, we will discuss one more simple but important operation: that of complex conjugation. Our intent
+is to take the geometric property of reflection (across the real axis), and give it an algebraic meaning; in particular, the \emph{complex conjugate}
+of $ z = a + bi $ is $ \overline z = a-bi $. An initial application of this concept is the simple result that if a polynomial has real coefficents,
+any complex roots must come in conjugate pairs (you are asked to prove this in the special case of quadratic polynomials as exercise \ref{ex:conjquadratic},
+and in the general case as exercise 9.\ref{ex:solutiongenerator}).
+
+There is a rule for multiplying complex numbers that is similar to the rules for addition; we simply collect like
+terms and remember that $ i^2 = -1 $ in order to obtain the result
+\begin{displaymath}
+  (a+bi)(c+di) = ac + adi + bci + bdi^2 = (ac - bd) + (ad + bc)i.
+\end{displaymath}
+
+This way of writing the result is a little esoteric and has no nice geometric meaning. In order to remedy this problem, we rewrite our
+complex numbers in \emph{polar form}. Instead of writing the number in the form $ z = a + bi $, where $ a $ and $ b $
+are the distances from the two axes, we write $ z = r \cis \theta $, where $ r $ is the distance of the number from the
+origin (simply the modulus $ \abs{z} $ again) and $ \theta $ is the angle that number's vector makes with the $ x$-axis
+(known as the \emph{argument} of $ z $, and written as $ \carg(z) $).
+
+\begin{center}\fbox{
+\begin{tikzpicture}
+  \begin{axis}[
+    xmin = 0, xmax = 4,
+    ymin = 0, ymax = 3,
+    xticklabels = {,,},
+    yticklabels = {,,},
+    ticks=none,
+    xlabel=$\realp{z}$,
+    ylabel={$\imagp{z}$},
+    axis lines=middle
+  ]
+    \coordinate (O) at (0,0);
+    \node[circle, fill=ForestGreen, inner sep=0pt, minimum size=5pt, label=above right:{$ z = a + bi $}] (A) at (3,2) {};
+    \coordinate (B) at (3,0);
+    \draw[black, ->] (O)--(A) node[midway, sloped, above left] {$ r $};
+    \draw[black] (O) +(0:.8cm) arc (0:33.69:.9cm);
+    \draw[black] (O) +(15:.6) node[rotate=0] {$ \theta $};
+    \draw[black] (B) -- (A) node[midway, right] {$ b $};
+    \draw[black] (O) -- (B) node[midway, above] {$ a $};
+  \end{axis}
+\end{tikzpicture}
+}\end{center}
+
+It is simple to see that $ \theta = \tan^{-1}{\frac{b}{a}} $; we have already got a formula for $ r $.
+
+This new notation simplifies multiplication significantly, because you will show as an exercise that
+\begin{displaymath}
+  (r \cis \theta)(t \cis \varphi) = (rt) \cis (\theta + \varphi).
+\end{displaymath}
+
+For example, if we were to multiply $ 3 \cis \pi $ by $ 4 \cis \pi $, we would obtain $ 12 \cis 2\pi = 12 $. This is as expected,
+as $ p \cis \pi = -p $, and $ -3 \times -4 = 12 $.
+
+Note that any complex number has an infinite number of different representations in polar form, simply by adding $ 2\pi $ (an entire
+rotation around the origin) to its argument. This fact comes into play later on when we try to solve equations involving powers of complex
+numbers.
+
+It is possible to make a sensible definition for complex exponents using \emph{Euler's formula},
+\begin{displaymath}
+  \cis \theta = e^{i\theta}.
+\end{displaymath}
+From this we obtain the following equation, which relates five fundamental mathematical constants
+in one expression and which some have called the most beautiful equation in mathematics:
+\begin{equation}
+  \tag{Euler's Identity}
+  e^{i\pi} + 1 = 0.
+\end{equation}
+
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{stars}\\
+  \small{\textit{From \url{http://brownsharpie.courtneygibbons.org/?p=848}}}
+\end{center}
+
+A simple proof of Euler's formula, using calculus, is presented here.
+\begin{proof}
+  We wish to show that $ \frac{e^{i\theta}}{\cos\theta+i\sin\theta} = 1 $. Note that $ \cis\theta \neq 0 $ for all $ \theta $.
+
+  Suppose $ f $ is a function of $ \theta $, defined by $ f(\theta) = \frac{e^{i\theta}}{\cos\theta+i\sin\theta} $.
+  Then, taking the derivative, we have
+  \begin{align*}
+    \od{f}{\theta} &= \frac{(\cos \theta + i\sin \theta) \cdot i e^{i\theta} - e^{i\theta} \cdot (-\sin \theta + i \cos \theta)}{\cis^2 \theta}\\
+                   &= \frac{ie^{i\theta}\cos\theta - e^{i\theta}\sin\theta + e^{i\theta}\sin\theta - ie^{i\theta}\cos\theta}{\cis^2\theta}\\
+                   &= 0.
+  \end{align*}
+  So $ f $ is a constant function, and so has the same value for all $ \theta $. But $ f(0) = \frac{e^{i\cdot 0}}{\cos 0 + i\sin 0} = 1 $;
+  so $ \frac{e^{i\theta}}{\cos\theta+i\sin\theta} = 1 $ for all $ \theta $.
+\end{proof}
+
+As a short aside, we have already seen that we can view the complex numbers as points in the plane, $ \mathbb{R}^2 $. This means
+that we can carry out geometric operations algebraically using complex numbers. For example, the length of the line joining two
+points $ z_1 $ and $ z_2 $ is simply $ \abs{z_1 - z_2} $.
+
+We define the \textit{locus} of an equation to be the set of all points satisfying that equation; for example, the locus
+of $ x^2 + y^2 = 1 $ is the set of all points making up the unit circle. We can use our correspondence between points on
+a plane and complex numbers to reason about the locus of a complex equation; for example, the locus of the equation $ \abs{z} = 1 $
+is the set of all points at a unit distance from the origin: it is another way of talking about the unit circle. (If you
+write $ z = x + iy $, then $ \abs{z} = x^2 + y^2 $ and the comparison becomes even more obvious.)
+
+\subsection*{Exercises}
 \begin{enumerate}
   \item Evaluate the following expressions, and plot the answers on an Argand diagram:
         \begin{enumerate}
@@ -709,92 +854,12 @@ terms together:
     \end{enumerate}
   \item Find $ i^{957} $.
   \item Show that $ \abs{a + bi} \geq \abs{a} $ and $ \abs{a + bi} \geq \abs{b} $.
-\end{enumerate}
-
-\subsection*{Polar Form}
-Multiplication of complex numbers is more involved than addition or subtraction
-because each complex number consists of two terms.
-\begin{displaymath}
-  (a+bi)(c+di) = ac + adi + bci + bdi^2 = (ac - bd) + (ad + bc)i
-\end{displaymath}
-
-Multiplication and division of complex numbers can be made much simpler by rewriting them
-in \emph{polar form}. Instead of writing the number in the form $ z = x + yi $, where $ x $ and $ y $
-are the distances from the two axes, we write $ z = r \cis \theta $, where $ r $ is the distance
-of the number from the origin (known as the \emph{modulus} and written as $ \abs{z} $) and $ \theta $
-is the angle that the line connecting the number to the origin makes with the $ x$-axis (known as
-the \emph{argument} and written as $ \carg(z) $).
-
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=0.6\textwidth]{polarnew}
-  \end{center}
-\end{figure}
-
-Looking at the triangle formed, we find that $ r = \sqrt{x^2 + y^2} $ and $ \theta = \tan^{-1}{\frac{b}{a}} $.
-
-This new notation simplifies multiplication significantly, because it can be shown
-that $ (r \cis \theta)(t \cis \varphi) = (rt) \cis (\theta + \varphi) $ (the proof of this
-is an exercise). For example, if we were to multiply $ 3 \cis \pi $ by $ 4 \cis \pi $, we
-would obtain $ 12 \cis 2\pi = 12 $. This is as expected, as $ p \cis \pi = -p $, and $ -3 \times -4 = 12 $.
-
-Note that any complex number has an infinite number of different representations in polar
-form, simply by adding $ 2\pi $ (an entire rotation around the origin) to its argument. This
-fact comes into play later on when we try to solve equations involving powers of complex
-numbers.
-
-The "$ x + yi $" form which we have been using so far is known as \emph{rectangular form}.
-
-\subsection*{Euler's Identity}
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=0.5\textwidth]{stars}\\
-    \small{\textit{From \url{http://brownsharpie.courtneygibbons.org/?p=848}}}
-  \end{center}
-\end{figure}
-It is possible to calculate powers of complex numbers using \emph{Euler's formula},
-\begin{displaymath}
-  \cis \theta = e^{i\theta}.
-\end{displaymath}
-From this we obtain the following equation, which relates five fundamental mathematical constants
-in one expression and which some have called the most beautiful equation in mathematics:
-\begin{equation}
-  \tag{Euler's Identity}
-  e^{i\pi} + 1 = 0
-\end{equation}
-
-A simple proof of Euler's formula, using calculus, is presented here.
-
-\begin{proof}
-  We wish to show that $ \frac{e^{i\theta}}{\cos\theta+i\sin\theta} = 1 $. Note that $ \cis\theta \neq 0 $ for all $ \theta $.
-
-  Suppose $ f $ is a function of $ \theta $, defined by $ f(\theta) = \frac{e^{i\theta}}{\cos\theta+i\sin\theta} $.
-  Then, taking the derivative, we have
-  \begin{align*}
-    \od{f}{\theta} &= \frac{(\cos \theta + i\sin \theta) \cdot i e^{i\theta} - e^{i\theta} \cdot (-\sin \theta + i \cos \theta)}{\cis^2 \theta}\\
-                   &= \frac{ie^{i\theta}\cos\theta - e^{i\theta}\sin\theta + e^{i\theta}\sin\theta - ie^{i\theta}\cos\theta}{\cis^2\theta}\\
-                   &= 0.
-  \end{align*}
-  So $ f $ is a constant function, and so has the same value for all $ \theta $. But $ f(0) = \frac{e^{i\cdot 0}}{\cos 0 + i\sin 0} = 1 $;
-  so $ \frac{e^{i\theta}}{\cos\theta+i\sin\theta} = 1 $ for all $ \theta $.
-\end{proof}
-
-\subsection*{Coordinate Geometry}
-As mentioned above, we can view the complex numbers as points in the plane, $ \mathbb{R}^2 $. This means
-that we can carry out geometric operations algebraically using complex numbers. For example, the length
-of the line joining two points $ z_1 $ and $ z_2 $ is simply $ \abs{z_1 - z_2} $.
-
-We define the \textit{locus} of an equation to be the set of all points satisfying that equation; for example,
-the locus of $ x^2 + y^2 = 1 $ is the set of all points making up the unit circle.
-
-\subsection*{Exercises II}
-\begin{enumerate}[resume]
   \item Find $ (3 + 2i)(6 + 8i) $ in rectangular form.
   \item \begin{enumerate}
           \item Convert $ 1 + i $ into polar form.
           \item Find $ (1 + i)(\sqrt{2} \cis \frac{3\pi}{4}) $ in both polar form and rectangular form.
         \end{enumerate}
-  \item Compute $ (6 \cis \frac{23\pi}{24})(9\cis \frac{14\pi}{17}) $ in polar form.
+  \item Compute $ (6 \cis \frac{23\pi}{24})(9\cis \frac{14\pi}{17}) $, leaving your answer in polar form.
   \item \begin{enumerate}
           \item Prove that $ (r \cis \theta)(t \cis \varphi) = (rt) \cis (\theta + \varphi) $.
           \item Describe the geometric meaning of the multiplication of complex numbers.
@@ -810,7 +875,7 @@ the locus of $ x^2 + y^2 = 1 $ is the set of all points making up the unit circl
   \item Convert $ w = 1 + \sqrt{3}i $ into polar form, and calculate $ w^3 $.
   \item Show that for any complex number $ z $, the product $ z \overline z $ is both real and non-negative.
         Hence show that $ (x - z)(x - \overline z) $ has only real coeffients.
-  \item Suppose $ x $ is a real number. Show that, for all integers $ n $, $ \cis \frac{2x\pi}{n} = \cis \frac{2(x + n)\pi}{n} $.
+  \item Let $ x $ be a real number. Show that, for all integers $ n $, $ \cis \frac{2x\pi}{n} = \cis \frac{2(x + n)\pi}{n} $.
   \item For which complex numbers is $ z^2 $ real? What about $ z^3 $?
   \item Transform $ \frac{a+bi}{c+di} $ so that the only imaginary part is in the numerator.
   \item Find $ (a+bi)^{-1} $ in rectangular form.
@@ -822,14 +887,12 @@ the locus of $ x^2 + y^2 = 1 $ is the set of all points making up the unit circl
       \item Hence, or otherwise, show that $ z \overline w + w \overline z $ is always real.
       \item Show that $ z \overline w + w \overline z \leq 2 \abs{w} \abs{z} $.
     \end{enumerate}
-  \item Show that if $ z = a + ib $ then $ \sqrt{z\overline z} = \abs{z} $ where $ \abs{z} $ is
-        the modulus of $ z $.
+  \item Show that if $ z = a + ib $ then $ \sqrt{z\overline z} = \abs{z} $.
   \hard If $ \zeta = \sqrt{\frac{1}{2}(a+\sqrt{a^2+b^2})} + i\sqrt{\frac{1}{2}(-a+\sqrt{a^2+b^2})} $
-        is a complex number (with $ i^2 = -1 $ and $ a,b \in \mathbb{R} $), find $ \zeta^2 $
-        in the form $ p + iq $.
+        is a complex number, find $ \zeta^2 $ in the form $ p + iq $ (where $ a $, $ b $, $ p $, and $ q $ are real).
   \hard If $ z = x + iy $, and $ az^2 + bz + c = 0 $, show that $ a \overline z^2 + b \overline z + c = 0 $
-        if $ a,b,c \in \mathbb{R} $. (This exercise is generalised in 9.\ref{ex:solutiongenerator}.) \label{ex:conjquadratic}
-  \hard Use Euler's identity to find $ \ln (-1) $, and hence $ \ln (-x) $ for $ x \in \mathbb{R} $.
+        if $ a $, $ b $, and $ c $ are real. (This exercise is generalised in 9.\ref{ex:solutiongenerator}.) \label{ex:conjquadratic}
+  \hard Use Euler's identity to find $ \ln (-1) $, and hence $ \ln (-x) $ for real $ x $.
   \hard Prove that for every positive integer $ n $, $ (-1 + \sqrt{3}i)^{3n} + (-1 - \sqrt{3}i)^{3n} = 2^{3n+1} $.
   \item Show that $ y_1(x) = e^{ix} + e^{-ix} $ and $ y_2(x) = 2\cos x $ are both solutions of the differential equation
         \begin{displaymath}
@@ -850,25 +913,19 @@ the locus of $ x^2 + y^2 = 1 $ is the set of all points making up the unit circl
       \item Show that (b) is a root of the cubic equation $ t^3 - 15t - 4 = 0 $,
             and hence find all three solutions.
     \end{enumerate}
-  \item Suppose $ \abs{z} = 1 $. Plot all possible values of $ z $ which satisfy this
-        equation on an Argand diagram.
-  \item Show that, if $ a $ and $ b $ are fixed complex numbers, $ \abs{z - a} = \abs{z - b} $ describes a line.
+  \item Show that, if $ a $ and $ b $ are fixed complex numbers, then $ \abs{z - a} = \abs{z - b} $ describes a line.
   \hard Let $ v = 1 + i $ and $ z = x + iy $ for any real numbers $ x $ and $ y $.
     \begin{enumerate}
       \item Show that the equation $ \abs{z - v} = \abs{vz} $ represents a circle, and find its
             centre and radius.
       \item Find the point of intersection of the circle with the straight line $ \abs{z - v} = \abs{z + v} $.
     \end{enumerate}
-  \item
+  \item You do not need the fundamental theorem of algebra for this exercise.
     \begin{enumerate}
       \item Prove that all cubic equations with real coefficients must have exactly three roots in the complex numbers.
       \item Let $ p(x) $ be a polynomial of degree $ n $ such that there exists some complex number $ \zeta $ such that $ p(\zeta) = 0 $.
-            Show that $ p(x) = 0 $ has exactly $ n $ solutions (counting multiplicities).
+            Show that $ p(x) = 0 $ has exactly $ n $ solutions (counting repeated roots).
     \end{enumerate}
-  \hard A line in $ \mathbb{C}^2 $ (the plane with complex coordinates) is defined to be the locus of a linear
-        $ ax + by + c = 0 $ where $ a $, $ b $, and $ c $ are complex constant. Prove that, given two distinct points $ (x_0, y_0) $
-        and $ (x_1, y_1) $ in $ \mathbb{C}^2 $, there is a \textbf{unique} line through those two points. \textit{Hint: it is certainly \textbf{not} true
-        that there is a unique linear equation whose graph includes both points.}
 \end{enumerate}
 
 \section{Roots of Unity}
@@ -888,8 +945,8 @@ have gone `around the circle'.
 \begin{center}\fbox{
 \begin{tikzpicture}
   \begin{axis}[
-    xlabel=$Re(z)$,
-    ylabel={$Im(z)$},
+    xlabel=$\realp(z)$,
+    ylabel={$\imagp(z)$},
     axis lines=middle,
     disabledatascaling,
     xmin=-1.5,
@@ -898,15 +955,15 @@ have gone `around the circle'.
     ymax=1.5,
     axis equal
   ]
-    \addplot[color=Maroon, mark=o]
+    \addplot[color=Maroon, mark=*, thick]
     coordinates {
       (1, 0)
     };
-    \addplot[color=Maroon, mark=o]
+    \addplot[color=Maroon, mark=*, thick]
     coordinates {
       (-0.5, 0.866)
     };
-    \addplot[color=Maroon, mark=o]
+    \addplot[color=Maroon, mark=*, thick]
     coordinates {
       (-0.5, -0.866)
     };
@@ -1099,7 +1156,7 @@ solution?
 This section presents a general solution for the cubic equation similar to the solution
 of the quadratic equation given in exercise 3.\ref{ex:quadratificational}. Be sure to complete that
 exercise before reading this section. The general outline of this proof is given in \S14
-of \emph{Galois Theory} by Harold M. Edwards (Springer-Verlag,~1984).
+of \cite{Edw84}.
 
 \subsection*{Historical Background}
 \begin{figure}[h]
@@ -1208,7 +1265,7 @@ and Abel in the early 1800s, and a general study of the symmetries of the roots 
 (the beginnings of Galois theory) was first published (after being rejected twice) by the
 French Academy of Sciences in 1843 after their late author \'Evariste Galois was killed in a duel
 over a girl in 1832 (at the age of 20). For more historical details, see the introductory chapter
-of Ian Stewart's \emph{Galois Theory}.
+of \cite{Ste15}.
 
 \subsection*{Clearing Up Some Technical Points}
 How did we know that $ uv $ and $ u + v $ could be expressed in terms of the elementary
@@ -1255,7 +1312,7 @@ which is obviously symmetric in each $ \alpha_i $.
   \item Solve $ t^3 - 15t - 4 = 0 $ using the methods outlined in this section. See exercise \ref{ex:cardano}
         from the section on complex numbers.
   \item Verify that $ uv $ and $ u + v $ are symmetric in $ x $, $ y $, and $ z $.
-  \item Read the historical introduction of Ian Stewart's \textit{Galois Theory}.
+  \item Read the historical introduction of Ian Stewart's \textit{Galois Theory} \cite{Ste15}.
   \item The discriminant of the general quartic equation $ q(x) = A(x - \alpha)(x - \beta)(x - \gamma)(x - \delta) $ is
         given by the formula
         \begin{displaymath}
@@ -1297,7 +1354,7 @@ section first as they often include some content themselves.
   \item If $ z = 1+i $ and $ w = \frac{1}{z} + i $, find the argument of $ w $.
   \hard If $ \frac{z + 2i}{z-2i} $ is purely imaginary, describe the possible values of $ z $.
   \item If $ \abs{z - 1 + 2i} = \abs{z + 1} $ and $ z = x+yi $, find an expression for $ y $ in terms
-        of $ x $ (i.e. find the \emph{locus} of $ z $).
+        of $ x $ (i.e. find the locus of $ z $).
   \item Sketch the region satisfied by $ \realp{z - i \overline z} > 2 $.
   \item If $ x = 2 $ and $ x = 6 $ are solutions of $ p(x) = Ax^2 + Bx + C $ and $ p(0) = -4 $,
         find $ A $, $ B $, and $ C $.
@@ -1311,11 +1368,10 @@ section first as they often include some content themselves.
   \item Use Euler's formula to prove that $ \cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta $, and that
         $ \sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta $.
   \harder Show that $ \arctan a + \arctan b = \arctan \frac{a + b}{1 - ab} $.
-  \hard Suppose that $ \abs{z+w} = \abs{z-w} $. Show that $ \carg z - \carg w = \pm \frac{\pi}{2} $. You
-        may, if necessary, use the result from above that $ \arctan u - \arctan v = \arctan\left(\frac{u-v}{1+uv} \right) $.
-  \hard If $ 3z^3 + (2-3ai)z^2 + (6+2bi)z + 4 $ is to have exactly one real root, what value must
-        the quotient $ \frac{b}{a} $ take if $ a,b \in \mathbb{R} $? Find the real root.
-  \hard Complex numbers exist in a plane, and so can be used to solve problems in geometry. For example, multiplication
+  \hard Suppose that $ \abs{z+w} = \abs{z-w} $. Show that $ \carg z - \carg w = \pm \frac{\pi}{2} $.
+  \hard If $ 3z^3 + (2-3ai)z^2 + (6+2bi)z + 4 $ has exactly one real root, what value must
+        the quotient $ b/a $ take if both $ a $ and $ b $ are real? Find the real root.
+  \hard As we have already seen, complex numbers can be used to solve problems in geometry. For example, multiplication
         by $ i $ rotates a point by $ \frac{\pi}{2} $ around the origin. A generalisation of this allows us to rotate
         a point $ z $ around an arbitrary point $ a $ by that angle: $ z' = a + i(z-a) $.
 
@@ -1334,9 +1390,11 @@ section first as they often include some content themselves.
 
         Given that the kauri tree is at $ (0,0) $, the beech tree is at $ (10,0) $, and
         the statue is somewhere on the line $ y = 2009 $, find the location of the treasure
-        using the geometry of complex numbers and rid New Zealand of Kim Dotcom forever.\footnote{~Problem taken
-        from Kessler (2009) section 5.1.}
-
+        using the geometry of complex numbers and rid New Zealand of Kim Dotcom forever.\footnote{~Problem taken from \cite{Kes09}, section 5.1.}
+  \hard A line in $ \mathbb{C}^2 $ (the plane with complex coordinates) is defined to be the locus of a linear equation
+        $ ax + by + c = 0 $ where $ a $, $ b $, and $ c $ are complex constants. Prove that, given two distinct points $ (x_0, y_0) $
+        and $ (x_1, y_1) $ in $ \mathbb{C}^2 $, there is a \textbf{unique} line through those two points. \textit{Hint: it is certainly \textbf{not} true
+        that there is a unique linear equation whose graph includes both points.}
   \hard Find all possible values for $ \theta $ if $ \cis^2 \theta + \cis \theta + 1 = 0 $.
   \item Graph the locus of $ \carg w = \abs{w} $. What about $ \carg w + \abs {w} = 1 $?
   \item Given a quadratic equation $ x^2 + px + q $ and a root $ \alpha $, show that the other root $ \beta $ is
@@ -1344,9 +1402,7 @@ section first as they often include some content themselves.
         third.
   \item Suppose $ p $ is a quadratic (i.e. $ p(x) = ax^2 + bx + c $ for some $ a $, $ b $, and $ c $). Suppose further
         that $ p(0) = 9 $, and $ p(3) = 0 $. How many distinct roots does $ p $ have?
-  \hard An important identity (known as the \emph{sum of two squares})
-        is that $ x^2 + y^2 = (x-iy)(x+iy) $. Use this identity to prove
-        that if $ m $ and $ n $ are integers that can be written as the sum of two
+  \hard Use the identity $ x^2 + y^2 = (x-iy)(x+iy) $ to prove that if $ m $ and $ n $ are integers that can be written as the sum of two
         squares, then their product $ mn $ can also be written as a sum of two squares.
   \item Solve the following system of equations:
         \begin{align*}
@@ -1362,7 +1418,7 @@ section first as they often include some content themselves.
           y_3 = \omega^2 \sqrt[3]{\frac{1}{2}(-1 + \sqrt{5})} + \omega \sqrt[3]{\frac{1}{2}(-1 - \sqrt{5})}
         \end{displaymath}
         are complex conjugates.
-  \item Find all solutions to $ x^{n - 1} + x^{n - 2} + \cdots + 1 = 0 $, where $ n \in \mathbb{N} $.
+  \item Find all solutions to $ x^{n - 1} + x^{n - 2} + \cdots + 1 = 0 $, where $ n $ is a natural number.
   \item \label{ex:solutiongenerator}
     \begin{enumerate}
       \item Let $ p(x) = \sum^n_{r = 0} p_r x^r $ be a polynomial with real coefficients. If $ p(z) = 0 $,
@@ -1371,7 +1427,7 @@ section first as they often include some content themselves.
             If $ p(a + bi) = 0 $, then $ p(\pm a \pm bi) = 0 $ for all possible combinations of $ \pm $.
     \end{enumerate}
   \hard Under which conditions will the equation $ x^2 + a(1+i)x + b(1+i) = 0 $ have one or more
-        real solutions where $ a, b \in \mathbb{R} $?
+        real solutions if both $ a $ and $ b $ are real?
   \item Find the complex number $ z $ which satisfies $ \carg(z - 1 - i) = -\frac{\pi}{6} $ and
         $ \carg(z - 1 + i) = \frac{\pi}{6} $.
   \harder Find all integer values of $ a $ and $ b $ such that $ \frac{a^2+b^2}{ab} $ is an integer.
@@ -1394,14 +1450,14 @@ section first as they often include some content themselves.
           \item Solve $ x^2 - 1 = 2\epsilon $ in $ \mathbb{R}[\epsilon] $.
         \end{enumerate}
   \item Take the polynomial $ x^2 = 4 $ in the integers modulo 6 (i.e. the integers 0, 1, 2, 3, 4, 5
-        such that $ 4 + 1 = 0 $). Solve for all possible values of $ x $.
+        such that $ 5 + 1 = 0 $). Solve for all possible values of $ x $.
   \item \textbf{Bonus exercise I:} In general, what numbers will work in the place of $ 3 $ and $ 9 $ in the XKCD
         comic at the bottom of the bibliography?
   \item \textbf{Bonus exercise II:} Notice that $ \frac{3}{16} - \frac{3}{19} = \frac{3}{16} \cdot \frac{3}{19} $.
         For which values of $ a $, $ b $, and $ d $ is the identity $ \frac{a}{b} - \frac{a}{d} = \frac{a}{b} \cdot \frac{a}{d} $ true?
 \end{enumerate}
 
-%\newpage\null\thispagestyle{empty}
+% \newpage\null\thispagestyle{empty}
 \newpage
 \nocite{*}
 \printbibliography[title=Bibliography and Further Reading, heading=bibnumbered]

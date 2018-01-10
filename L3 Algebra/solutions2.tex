@@ -257,8 +257,7 @@ We multiply the fourth equation in (d) by 9 to clear the fractions and simplify 
 We then have $ \Delta_2 = (-42)^2 - 4\cdot9\cdot49 = 0 $, so it has one repeated real root.
 
 \filbreak\begin{enumerate}[resume]
-  \answer An important identity (known as the \emph{difference of two squares})
-        is that $ x^2 - b^2 = (x-b)(x+b) $. Use this to factorise and therefore
+  \answer Use the \emph{difference of two squares} identity $ x^2 - b^2 = (x-b)(x+b) $ to factorise and hence
         solve the following equations for $ x $:
         \begin{enumerate}
           \answerb $ x^2 - 9 = 0 $
@@ -409,8 +408,8 @@ We have $ (\alpha - \beta)^2 = \alpha^2 + \beta^2 - 2\alpha\beta = b^2 - 2c - 2c
 as required.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Flesh out the following alternative proof of the quadratic formula. Let
-        $ \alpha $ and $ \beta $ be the two roots of the equation $ x^2 + bx + c = 0 $.
+  \answer Flesh out the following alternative proof of the quadratic formula from \cite{Edw84}. Let
+        $ \alpha $ and $ \beta $ be the two roots of the equation $ x^2 + bx + c = 0 $. \label{ex:quadratificational}
         \begin{enumerate}
           \answerb Then $ x = \frac{1}{2} \left( (\alpha + \beta) + (\alpha - \beta) \right)
                          = \frac{1}{2} \left( (\alpha + \beta) + \sqrt{(\alpha - \beta)^2} \right) $.
@@ -971,7 +970,7 @@ We have $ 1 + i = \sqrt{2} \cis \frac{\pi}{4} $.
 \end{align*}
 
 \filbreak\begin{enumerate}[resume]
-  \answer Compute $ (6 \cis \frac{23\pi}{24})(9\cis \frac{14\pi}{17}) $ in polar form.
+  \answer Compute $ (6 \cis \frac{23\pi}{24})(9\cis \frac{14\pi}{17}) $, leaving your answer in polar form.
 \end{enumerate}
 \begin{displaymath}
   54 \cis \left(\frac{23\pi}{24} + \frac{14\pi}{17}\right) = 54 \cis \frac{727\pi}{408}.
@@ -1091,7 +1090,7 @@ $ (x - z)(x - \bar z) = x^2 - (z + \bar z) + z \bar z = x^2 + 2a + a^2 + b^2 $, 
 the coefficients are real.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Suppose $ x $ is a real number. Show that, for all integers $ n $, $ \cis \frac{2x\pi}{n} = \cis \frac{2(x + n)\pi}{n} $.
+  \answer Let $ x $ be a real number. Show that, for all integers $ n $, $ \cis \frac{2x\pi}{n} = \cis \frac{2(x + n)\pi}{n} $.
 \end{enumerate}
 We argue as follows:
 \begin{align*}
@@ -1177,15 +1176,13 @@ Let $ z = r \cis \theta $ and $ w = t \cis \phi $. Then we have:
 \end{align*}
 
 \filbreak\begin{enumerate}[resume]
-  \answer Show that if $ z = a + ib $ then $ \sqrt{z\bar z} = |z| $ where $ |z| $ is
-        the modulus of $ z $.
+  \answer Show that if $ z = a + ib $ then $ \sqrt{z\bar z} = \abs{z} $.
 \end{enumerate}
-From question \ref{qn:rationalise}, we have $ z\bar z = a^2 + b^2 $; hence $ \sqrt{z\bar z} = \sqrt{a^2 + b^2} = |z| $.
+From question \ref{qn:rationalise}, we have $ z\bar z = a^2 + b^2 $; hence $ \sqrt{z\bar z} = \sqrt{a^2 + b^2} = \abs{z} $.
 
 \filbreak\begin{enumerate}[resume]
   \answer If $ \zeta = \sqrt{\frac{1}{2}(a+\sqrt{a^2+b^2})} + i\sqrt{\frac{1}{2}(-a+\sqrt{a^2+b^2})} $
-        is a complex number (with $ i^2 = -1 $ and $ a,b \in \mathbb{R} $), find $ \zeta^2 $
-        in the form $ p + iq $.
+        is a complex number, find $ \zeta^2 $ in the form $ p + iq $ (where $ a $, $ b $, $ p $, and $ q $ are real).
 \end{enumerate}
 \begin{align*}
   &\left( \sqrt{\frac{1}{2}(a+\sqrt{a^2+b^2})} + i\sqrt{\frac{1}{2}(-a+\sqrt{a^2+b^2})} \right)^2\\
@@ -1197,8 +1194,8 @@ From question \ref{qn:rationalise}, we have $ z\bar z = a^2 + b^2 $; hence $ \sq
 \end{align*}
 
 \filbreak\begin{enumerate}[resume]
-  \answer If $ z = x + iy $, and $ az^2 + bz + c = 0 $, show that $ a \bar z^2 + b \bar z + c = 0 $
-        if $ a,b,c \in \mathbb{R} $. (This exercise is generalised in 9.\ref{ex:solutiongenerator}.) \label{ex:conjquadratic}
+  \answer If $ z = x + iy $, and $ az^2 + bz + c = 0 $, show that $ a \overline z^2 + b \overline z + c = 0 $
+        if $ a $, $ b $, and $ c $ are real. (This exercise is generalised in 9.\ref{ex:solutiongenerator}.) \label{ex:conjquadratic}
 \end{enumerate}
 
 See the exercise noted in the question for an easier way to prove this (which requires a bit less work).
@@ -1227,7 +1224,7 @@ But we notice that the real part of (2) must be equal to zero --- and equation
 (3) is simply twice the real part of (2), so $ K = 0 $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Use Euler's identity to find $ \ln (-1) $, and hence $ \ln (-x) $ for $ x \in \mathbb{R} $.
+  \answer Use Euler's identity to find $ \ln (-1) $, and hence $ \ln (-x) $ for real $ x $.
 \end{enumerate}
 \begin{align*}
   e^{i\pi} &= -1\\
@@ -1336,30 +1333,7 @@ By the quadratic formula, the two solutions of the quadratic factor are $ t = -2
 so the three solutions of the cubic must be $ t \in \{-2\pm\sqrt{3}, 4\} $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Suppose $ | z | = 1 $. Plot all possible values of $ z $ which satisfy this
-        equation on an Argand diagram.
-\end{enumerate}
-
-\begin{center}\fbox{
-\begin{tikzpicture}
-  \begin{axis}[
-    xlabel=$Re(z)$,
-    ylabel={$Im(z)$},
-    axis lines=middle,
-    disabledatascaling,
-    xmin=-2,
-    xmax=2,
-    ymin=-2,
-    ymax=2,
-    axis equal
-  ]
-  \path [draw=black, fill=none] (0,0) circle (1);
-  \end{axis}
-\end{tikzpicture}
-}\end{center}
-
-\filbreak\begin{enumerate}[resume]
-  \answer Show that, if $ a $ and $ b $ are fixed complex numbers, $ \abs{z - a} = \abs{z - b} $ describes a line.
+  \answer Show that, if $ a $ and $ b $ are fixed complex numbers, then $ \abs{z - a} = \abs{z - b} $ describes a line.
 \end{enumerate}
 
 Let $ z = x + iy $, $ a = \alpha + \zeta i$, and $ b = \beta + \xi i $. Then:
@@ -1378,25 +1352,25 @@ which is a linear polynomial equation in $ x $.
 \filbreak\begin{enumerate}[resume]
   \answer Let $ v = 1 + i $ and $ z = x + iy $ for any real numbers $ x $ and $ y $.
     \begin{enumerate}
-      \answerb Show that the equation $ | z - v | = | vz | $ represents a circle, and find its
+      \answerb Show that the equation $ \abs{z - v} = \abs{vz} $ represents a circle, and find its
             centre and radius.
-      \answerb Find the point of intersection of the circle with the straight line $ | z - v | = | z + v | $.
+      \answerb Find the point of intersection of the circle with the straight line $ \abs{z - v} = \abs{z + v} $.
     \end{enumerate}
 \end{enumerate}
 
 \paragraph{(a)}
 Expanding using the distance formula, we have
 \begin{align*}
-  | z - v | &= \sqrt{(x - 1)^2 + (y - 1)^2} \\
-  | vz | &= | (1 + i)(x + iy) | \\
-         &= | x + iy + ix - y | \\
-         &= | \sqrt{(x - y)^2 + (x+y)^2} \\
-         &= | \sqrt{2x^2 + 2y^2}\\
-         &\Downarrow \\
+  \abs{z - v} &= \sqrt{(x - 1)^2 + (y - 1)^2} \\
+  \abs{vz}    &= \abs{(1 + i)(x + iy)} \\
+              &= \abs{x + iy + ix - y} \\
+              &= \sqrt{(x - y)^2 + (x+y)^2} \\
+              &= \sqrt{2x^2 + 2y^2}\\
+              &\Downarrow \\
   (x - 1)^2 + (y - 1)^2 &= 2x^2 + 2y^2 \\
-         &\Downarrow  \\
-  0 &= x^2 + y^2 + 2x + 2y - 2 \\
-    &= (x+1)^2 + (y+1)^2 - 4 \text{ (completing the square)}.
+              &\Downarrow  \\
+  0           &= x^2 + y^2 + 2x + 2y - 2 \\
+              &= (x+1)^2 + (y+1)^2 - 4 \text{ (completing the square)}.
 \end{align*}
 Hence we have a circle centred on $ (-1, -1) $ with a radius of 2.
 
@@ -1438,11 +1412,11 @@ Substituting:
 So the line intersects the circle at $ (-1, 1) $ and $ (1, -1) $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer
+  \answer You do not need the fundamental theorem of algebra for this exercise.
     \begin{enumerate}
       \answerb Prove that all cubic equations with real coefficients must have exactly three roots in the complex numbers.
       \answerb Let $ p(x) $ be a polynomial of degree $ n $ such that there exists some complex number $ \zeta $ such that $ p(\zeta) = 0 $.
-               Show that $ p(x) = 0 $ has exactly $ n $ solutions (counting multiplicities).
+               Show that $ p(x) = 0 $ has exactly $ n $ solutions (counting repeated roots).
     \end{enumerate}
 \end{enumerate}
 
@@ -1474,101 +1448,6 @@ the theorem holds for polynomials of degree $ n - 1 $ then it holds for polynomi
 
 Hence, by the axiom of induction, it follows that if a polynomial of degree $ n $ has at least one complex
 root then it has exactly $ n $ complex roots.
-
-\begin{mdframed}[hidealllines=true,backgroundcolor=Emerald!20]
-\textit{It is beyond the scope of this text to completely prove the following theorem, but we state it here:}
-\end{mdframed}
-
-\begin{thm}[Fundamental Theorem of Algebra]
-  Let $ p(x) $ be a non-constant polynomial with complex coefficients (i.e. $ \partial p > 0 $). Then there
-  exists some complex number $ \zeta $ such that $ p(\zeta) = 0 $.
-\end{thm}
-
-The proof of the Fundamental Theorem unfortunately requires concepts and techniques
-far beyond the scope of this book (Stewart gives a proof in \textit{Galois Theory}, and Artin
-gives two(!) proofs in \textit{Algebra} \S 9.9). All proofs (that I am aware of) require the
-use of analysis (i.e. there is no pure-algebra proof).
-
-The first rigorous proof of this theorem was published by the amateur Swiss mathematician Jean-Robert Argand in 1814; the
-name is somewhat incorrect in the modern era as the study of algebra is no longer purely devoted to the properties of
-the complex number field. An analogue of the theorem in a more modern context is Kronecker's Theorem, which states that
-a polynomial with coefficients in any field $ F $ (number system in which we can carry out all four basic arithmetic operations)
-has a root in some field $ E $ which contains $ F $.
-
-\filbreak\begin{enumerate}[resume]
-  \answer A line in $ \mathbb{C}^2 $ (the plane with complex coordinates) is defined to be the locus of a linear
-        $ ax + by + c = 0 $ where $ a $, $ b $, and $ c $ are complex constant. Prove that, given two distinct points $ (x_0, y_0) $
-        and $ (x_1, y_1) $ in $ \mathbb{C}^2 $, there is a \textbf{unique} line through those two points. \textit{Hint: it is certainly \textbf{not} true
-        that there is a unique linear equation whose graph includes both points.}
-\end{enumerate}
-
-Let $ \mathcal{L} $ and $ \mathcal{M} $ be two lines passing through both points. (Our goal is to show
-that $ (x,y) \in \mathcal{L} \iff (x,y) \in \mathcal{M} $.) Then $ \mathcal{L} $ is the locus of some
-linear equation $ ax + by + c = 0 $, and $ \mathcal{M} $ is the locus of some other linear
-equation $ dx + ey + f = 0 $.
-
-Consider first $ \mathcal{L} $. We know that $ (x_0, y_0) \in \mathcal{L} \wedge (x_1, y_1) \in \mathcal{L} $. Hence we
-have the following system of simultaneous equations:
-\begin{align*}
-  ax_0 + by_0 + c = 0\\
-  ax_1 + by_1 + c = 0.
-\end{align*}
-
-Since we have a system of rank two with three variables, one variable must be free (a parameter); we chose it to be $ c $ as this
-simplifies the whole process. Our goal, therefore, is to rewrite $ ax + by + c = 0 $ in terms of $ c $ only (the purpose of this
-goal may not be clear at this point, but trust us). This can be done using any appropriate method (e.g. substitution); we chose to
-use linear algebra because it minimises the amount of tedious work required.
-
-\begin{mdframed}[hidealllines=true,backgroundcolor=Dandelion!20]
-\textit{Readers who do not know linear algebra should feel free to skip this portion of the solution, and are encouraged to find
-another way to derive the same result.}
-
-We have
-\begin{displaymath}
-  \begin{bmatrix} x_0 & y_0 \\ x_1 & y_1 \end{bmatrix} \begin{bmatrix} a\\b \end{bmatrix} = \begin{bmatrix} -c\\-c \end{bmatrix}.
-\end{displaymath}
-
-Inverting the coefficient matrix and solving for $ (a\ b)^t $ gives
-\begin{displaymath}
-  \begin{bmatrix} a\\b \end{bmatrix} = \frac{1}{x_0 y_1 - x_1 y_0} \begin{bmatrix} y_1 & -y_0 \\ -x_1 & x_0 \end{bmatrix} \begin{bmatrix} -c\\-c \end{bmatrix};
-\end{displaymath}
-\end{mdframed}
-
-We therefore conclude that
-\begin{align*}
-  a &= -\frac{c}{x_0 y_1 - x_1 y_0} (y_1 - y_0)\\
-  b &= -\frac{c}{x_0 y_1 - x_1 y_0} (x_0 - x_1)
-\end{align*}
-and (substituting) $ \mathcal{L} $ is the locus of
-\begin{displaymath}
-  c \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y \right) = 0.
-\end{displaymath}
-Similarly, $ \mathcal{M} $ is the locus of
-\begin{displaymath}
-  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y \right) = 0.
-\end{displaymath}
-
-Now, we must show that if a point $ (x_\star, y_\star) $ is in $ \mathcal{L} $ then it is in $ \mathcal{M} $ (and vice versa).
-To this end, consider the following:
-\begin{displaymath}
-  (x_\star, y_\star) \in \mathcal{L} \iff c \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
-\end{displaymath}
-So one of $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $ is true.
-
-\paragraph{Case I: $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $}\mbox{}\\
-Evidently
-\begin{displaymath}
-  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
-\end{displaymath}
-and so $ (x_\star, y_\star) \in \mathcal{M} $. (The same argument works with $ \mathcal{M} $ and $ \mathcal{L} $ swapped.)
-
-\paragraph{Case II: $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) \neq 0 $}\mbox{}\\
-In both cases,
-\begin{displaymath}
-  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
-\end{displaymath}
-and so $ (x_\star, y_\star) \in \mathcal{M} $. The above arguments also show that $ (x_\star, y_\star) \in \mathcal{M} \implies (x_\star, y_\star) \in \mathcal{L} $,
-so $ \mathcal{M} = \mathcal{L} $.
 
 \section{Roots of Unity}
 \begin{mdframed}[hidealllines=true,backgroundcolor=Emerald!20]
@@ -2289,7 +2168,7 @@ Using the quadratic formula, we find the roots of the quadratic factor to be
 $ z = \frac{3}{7} \pm \frac{2}{7}\sqrt{3}i $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Graph the equation $ |z| = 3 $ in the complex plane.
+  \answer Graph the equation $ \abs{z} = 3 $ in the complex plane.
 \end{enumerate}
 
 \begin{center}\fbox{
@@ -2337,11 +2216,11 @@ So in order for the fraction to be purely imaginary, $ x^2 + y^2 = 4 $ and so $ 
 lie on the circle of radius two centred on the origin.
 
 \filbreak\begin{enumerate}[resume]
-  \answer If $ | z - 1 + 2i | = | z + 1 | $ and $ z = x+yi $, find an expression for $ y $ in terms
-        of $ x $ (i.e. find the \emph{locus} of $ z $).
+  \answer If $ \abs{z - 1 + 2i} = \abs{z + 1} $ and $ z = x+yi $, find an expression for $ y $ in terms
+        of $ x $ (i.e. find the locus of $ z $).
 \end{enumerate}
 \begin{align*}
-  | (x-1) + (y+2)i | &= | (x+1) + yi |\\
+  \abs{(x-1) + (y+2)i} &= \abs{(x+1) + yi} \\
   \sqrt{(x-1)^2 + (y+2)^2} &= \sqrt{(x+1)^2 + y^2}\\
   x^2 - 2x+ 1 + y^2 + 4y + 4 &= x^2 + 2x + 1 + y^2\\
   4y &= 4x- 4\\
@@ -2452,11 +2331,10 @@ is because if $ z = \cis \theta $ then $ z = e^{i\theta} $ and so $ \carg z = \t
 hence we take $ \carg w + \carg z = \frac{1}{i}{\ln w + \ln z} = \frac{1}{i} \ln (wz) = \carg wz $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Suppose that $ | z+w | = | z-w | $. Show that $ \carg z - \carg w = \pm \frac{\pi}{2} $. You
-        may, if necessary, use the above result that $ \arctan u - \arctan v = \arctan\left(\frac{u-v}{1+uv} \right) $.
+  \answer Suppose that $ \abs{z+w} = \abs{z-w} $. Show that $ \carg z - \carg w = \pm \frac{\pi}{2} $.
 \end{enumerate}
 
-\paragraph{Proof using the $ \arctan $ result.}
+\paragraph{Proof using the $ \arctan $ result from the previous exercise.}
 Let $ z = a+bi $ and $ w = c+di $.
 \begin{align*}
   \carg z - \carg w &= \arctan \left( \frac{b}{a} \right) - \arctan \left( \frac{d}{c} \right)\\
@@ -2470,11 +2348,11 @@ imply that $ \carg z - \carg w = \pm \frac{\pi}{2} $.
 
 This can be done as follows:
 \begin{align*}
-  | z + w | = | z - w | &\Rightarrow | a + bi + c + di | = | a + bi - c - di |\\
-                        &\Rightarrow \sqrt{(a+c)^2 + (b+d)^2} = \sqrt{(a-c)^2 + (b-d)^2}\\
-                        &\Rightarrow a^2 + 2ac + c^2 + b^2 + 2bd + d^2 = a^2 - 2ac + c^2 + b^2 - 2bd + d^2\\
-                        &\Rightarrow 4ac = -4bd\\
-                        &\Rightarrow \frac{bd}{ac} = -1.
+  \abs{z + w} = \abs{z - w} &\Rightarrow \abs{a + bi + c + di} = \abs{a + bi - c - di}\\
+                            &\Rightarrow \sqrt{(a+c)^2 + (b+d)^2} = \sqrt{(a-c)^2 + (b-d)^2}\\
+                            &\Rightarrow a^2 + 2ac + c^2 + b^2 + 2bd + d^2 = a^2 - 2ac + c^2 + b^2 - 2bd + d^2\\
+                            &\Rightarrow 4ac = -4bd\\
+                            &\Rightarrow \frac{bd}{ac} = -1.
 \end{align*}
 
 \paragraph{Geometric proof.}
@@ -2488,8 +2366,8 @@ right angles, and so the angle between them will be $ \frac{\pi}{2} $.
 
 
 \filbreak\begin{enumerate}[resume]
-  \answer If $ 3z^3 + (2-3ai)z^2 + (6+2bi)z + 4 $ is to have exactly one real root, what value must
-        the quotient $ \frac{b}{a} $ take if $ a,b \in \mathbb{R} $? Find the real root.
+  \answer  If $ 3z^3 + (2-3ai)z^2 + (6+2bi)z + 4 $ has exactly one real root, what value must
+        the quotient $ b/a $ take if both $ a $ and $ b $ are real? Find the real root.
 \end{enumerate}
 
 For a real root to occur, the imaginary part of the polynomial must become zero (assuming $ z \in \mathbb{R} $).
@@ -2542,6 +2420,81 @@ The midpoint is therefore $ \left( \frac{-2009 + 2019}{2}, \frac{x_0 + 10 - x_0}
 the position of the treasure does not depend on the $ x$-coordinate of the statue!
 
 \filbreak\begin{enumerate}[resume]
+  \answer A line in $ \mathbb{C}^2 $ (the plane with complex coordinates) is defined to be the locus of a linear
+        $ ax + by + c = 0 $ where $ a $, $ b $, and $ c $ are complex constant. Prove that, given two distinct points $ (x_0, y_0) $
+        and $ (x_1, y_1) $ in $ \mathbb{C}^2 $, there is a \textbf{unique} line through those two points. \textit{Hint: it is certainly \textbf{not} true
+        that there is a unique linear equation whose graph includes both points.}
+\end{enumerate}
+
+Let $ \mathcal{L} $ and $ \mathcal{M} $ be two lines passing through both points. (Our goal is to show
+that $ (x,y) \in \mathcal{L} \iff (x,y) \in \mathcal{M} $.) Then $ \mathcal{L} $ is the locus of some
+linear equation $ ax + by + c = 0 $, and $ \mathcal{M} $ is the locus of some other linear
+equation $ dx + ey + f = 0 $.
+
+Consider first $ \mathcal{L} $. We know that $ (x_0, y_0) \in \mathcal{L} \wedge (x_1, y_1) \in \mathcal{L} $. Hence we
+have the following system of simultaneous equations:
+\begin{align*}
+  ax_0 + by_0 + c = 0\\
+  ax_1 + by_1 + c = 0.
+\end{align*}
+
+Since we have a system of rank two with three variables, one variable must be free (a parameter); we chose it to be $ c $ as this
+simplifies the whole process. Our goal, therefore, is to rewrite $ ax + by + c = 0 $ in terms of $ c $ only (the purpose of this
+goal may not be clear at this point, but trust us). This can be done using any appropriate method (e.g. substitution); we chose to
+use linear algebra because it minimises the amount of tedious work required.
+
+\begin{mdframed}[hidealllines=true,backgroundcolor=Dandelion!20]
+\textit{Readers who do not know linear algebra should feel free to skip this portion of the solution, and are encouraged to find
+another way to derive the same result.}
+
+We have
+\begin{displaymath}
+  \begin{bmatrix} x_0 & y_0 \\ x_1 & y_1 \end{bmatrix} \begin{bmatrix} a\\b \end{bmatrix} = \begin{bmatrix} -c\\-c \end{bmatrix}.
+\end{displaymath}
+
+Inverting the coefficient matrix and solving for $ (a\ b)^t $ gives
+\begin{displaymath}
+  \begin{bmatrix} a\\b \end{bmatrix} = \frac{1}{x_0 y_1 - x_1 y_0} \begin{bmatrix} y_1 & -y_0 \\ -x_1 & x_0 \end{bmatrix} \begin{bmatrix} -c\\-c \end{bmatrix};
+\end{displaymath}
+\end{mdframed}
+
+We therefore conclude that
+\begin{align*}
+  a &= -\frac{c}{x_0 y_1 - x_1 y_0} (y_1 - y_0)\\
+  b &= -\frac{c}{x_0 y_1 - x_1 y_0} (x_0 - x_1)
+\end{align*}
+and (substituting) $ \mathcal{L} $ is the locus of
+\begin{displaymath}
+  c \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y \right) = 0.
+\end{displaymath}
+Similarly, $ \mathcal{M} $ is the locus of
+\begin{displaymath}
+  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y \right) = 0.
+\end{displaymath}
+
+Now, we must show that if a point $ (x_\star, y_\star) $ is in $ \mathcal{L} $ then it is in $ \mathcal{M} $ (and vice versa).
+To this end, consider the following:
+\begin{displaymath}
+  (x_\star, y_\star) \in \mathcal{L} \iff c \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
+\end{displaymath}
+So one of $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $ is true.
+
+\paragraph{Case I: $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $}\mbox{}\\
+Evidently
+\begin{displaymath}
+  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
+\end{displaymath}
+and so $ (x_\star, y_\star) \in \mathcal{M} $. (The same argument works with $ \mathcal{M} $ and $ \mathcal{L} $ swapped.)
+
+\paragraph{Case II: $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) \neq 0 $}\mbox{}\\
+In both cases,
+\begin{displaymath}
+  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
+\end{displaymath}
+and so $ (x_\star, y_\star) \in \mathcal{M} $. The above arguments also show that $ (x_\star, y_\star) \in \mathcal{M} \implies (x_\star, y_\star) \in \mathcal{L} $,
+so $ \mathcal{M} = \mathcal{L} $.
+
+\filbreak\begin{enumerate}[resume]
   \answer Find all possible values for $ \theta $ if $ \cis^2 \theta + \cis \theta + 1 = 0 $.
 \end{enumerate}
 
@@ -2551,7 +2504,7 @@ Hence $ \cos \theta = \frac{-1}{2} $ and $ \sin \theta = \frac{\sqrt{3}}{2} $,
 so $ \theta = \frac{2\pi}{3} + 2n\pi $ for $ n \in \mathbb{N} $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Graph the locus of $ \carg w = | w | $. What about $ \carg w + | w | = 1 $?
+  \answer Graph the locus of $ \carg w = \abs{w} $. What about $ \carg w + \abs{w} = 1 $?
 \end{enumerate}
 
 The first equation (in black) is an equiangular spiral; the second (in green) is congruent to the first spiral but transformed.
@@ -2622,9 +2575,7 @@ recall that the constant term of a quadratic is simply the product of the roots;
 Hence the quadratic has a single repeated root, $ x = 3 $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer An important identity (known as the \emph{sum of two squares})
-        is that $ x^2 + y^2 = (x-iy)(x+iy) $. Use this identity to prove
-        that if $ m $ and $ n $ are integers that can be written as the sum of two
+  \answer Use the identity $ x^2 + y^2 = (x-iy)(x+iy) $ to prove that if $ m $ and $ n $ are integers that can be written as the sum of two
         squares, then their product $ mn $ can also be written as a sum of two squares.
 \end{enumerate}
 Suppose $ m = a^2 + b^2 $ and $ n = c^2 + d^2 $. Then $ m = (a + ib)(a - ib) $ and $ n = (c + id)(c - id) $.
@@ -2664,7 +2615,7 @@ It is left to the reader to check that both these solutions are in fact solution
         are complex conjugates.
 \end{enumerate}
 
-We proceed to show that $ \carg{y_2} = -\carg{y_3} $, and $ |y_2| = |y_1 | $.
+We proceed to show that $ \carg{y_2} = -\carg{y_3} $, and $ \abs{y_2} = \abs{y_1} $.
 
 When we multiply the two, we obtain
 \begin{align*}
@@ -2677,11 +2628,11 @@ When we multiply the two, we obtain
 which is real (remembering that $ \omega + \omega^2 = -1 $). Hence, we must have $ \carg{y_2} = -\carg{y_3} $
 (since the arguments must add to give zero).
 
-The fact that $ |y_2| = |y_3| $ is easily shown by drawing a diagram (remembering that $ \carg{\omega} = \frac{2\pi}{3} $ and $ |\omega| = 1 $)
+The fact that $ \abs{y_2} = \abs{y_3} $ is easily shown by drawing a diagram (remembering that $ \carg{\omega} = \frac{2\pi}{3} $ and $ \abs{\omega} = 1 $)
 and noticing the symmetry.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Find all solutions to $ x^{n - 1} + x^{n - 2} + \cdots + 1 = 0 $, where $ n \in \mathbb{N} $.
+  \answer Find all solutions to $ x^{n - 1} + x^{n - 2} + \cdots + 1 = 0 $, where $ n $ is a natural number.
 \end{enumerate}
 
 Simply note that $ (x^{n - 1} + x^{n - 2} + \cdots + 1)(x - 1) = x^n - 1 $, and so the solutions will simply
@@ -2742,8 +2693,7 @@ part (a), and since all powers of $ x $ are even the negative signs on the secon
 and they reduce to $ z $ and $ \overline{z} $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Under which conditions will the equation $ x^2 + a(1+i)x + b(1+i) = 0 $ have one or more
-        real solutions where $ a, b \in \mathbb{R} $?
+  \answer Under which conditions will the equation $ x^2 + a(1+i)x + b(1+i) = 0 $ have one or more real solutions if both $ a $ and $ b $ are real?
 \end{enumerate}
 The possible real root must satisfy $ ax + b = 0 $ in order for the imaginary part of the polynomial
 to be zero. Hence $ x = -\frac{b}{a} $.
