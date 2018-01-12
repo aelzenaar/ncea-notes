@@ -52,7 +52,8 @@ I have removed the old modern physics sheets as they are now part of the above n
 ### Scholarship
  * [General exam advice](Scholarship%20Classics/examadvice.pdf).
  * [Basic reading list for a Greek focus](Scholarship%20Classics/reading%20lists.odt).
- * Aristophanes: [practice questions](Scholarship%20Classics/aristophanes%20questions.odt) and [timeline](Scholarship%20Classics/aristophanes%20timeline.odt).
+ * Aristophanes: [practice questions](Scholarship%20Classics/Aristophanes/aristophanes%20questions.odt) and [timeline](Scholarship%20Classics/Aristophanes/aristophanes%20timeline.odt).
+ * Alexander the Great: [random notes on sources and early life](Scholarship%20Classics/Alexander%20the%20Great/sources%20and%20early%20life.odt).
 
 **In progress:** Homeworks (and some other notes) for Alexander, general bibliography. Final plan is to have a full reading course written.
 
