@@ -31,6 +31,7 @@
 \usepackage{tcolorbox}
 \usepackage{tabularx}
 \usepackage[version=4]{mhchem}
+\usepackage{changepage}
 
 \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
 
@@ -52,6 +53,8 @@
 % russian integral
 \usepackage{scalerel}
 \DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+
+% \DeclareMathOperator*{\rint}{\int}
 
 \pgfplotsset{vasymptote/.style={
     before end axis/.append code={

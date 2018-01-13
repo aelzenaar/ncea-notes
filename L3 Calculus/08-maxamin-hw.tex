@@ -3,25 +3,52 @@
 
 \mainHeaderDiffHw{8}{Optimisation}
 \subsection*{Reading}
-For the past 300 years, physics has been the soul of modern science while mathematics has been its form, or the representation. If we could draw an inference from this fascinating history, then one would argue that biology of the next century will employ more physics and mathematics. Whether this conjecture is true or false, of course, remains to be tested, as most biologists like to say, by what will really happen ahead of us and whether there are enough people willing to carry out this historical endeavor.
+Our students are not fencing in farm fields, cutting wires and folding them, or designing windows, so they are often uninspired by the
+optimization problems we give them. They seem like something that "someone, somewhere" might use, but the examples feel distant.
 
-The role mathematics played in science has two inter-related aspects: it provides a machinery to compute quantitative results and it provides a language to structure our ideas. While the former is extremely powerful in making science to contribute to our material world in terms of technology, the latter elevates science to the realm of pure logic and philosophy and transcends to a form of art.
+\textbf{What are good examples of constrained optimization problems (perhaps not simple!) that today's students might actually encounter in their lives?}
 
-I consider myself a biologist who learned enough mathematics to be a member of the applied mathematics community.
+\subsubsection*{Bad Optimization Problems}
+I thought that Jack M made an interesting comment about this question:
 
-Let me start with an observation: we all learn physics in high school, about mechanics, electricity, etc. But in college, we have to learn the same material again. However, there is a crucial difference: the college physics is taught in the language of calculus and differential equations, while in the high school physics is taught using simple algebra. The truth is that most of the problems solved in college can be solved using simple algebra - it is just much more difficult. It requires true talent. However, if one learns calculus, then many of the difficult high-school physics problems become simple calculus exercises.
+\begin{adjustwidth}{1cm}{}
+    There aren't any. There may be situations where it's possible to apply optimization to solve a problem you've encountered, but in none of these cases is it honestly worth the effort of solving the problem analytically. I optimize path lengths every day when I walk across the grass on my way to classes, but I'm not going to get out a notebook and calculate an optimal route just to save myself twelve seconds of walking every morning. Mathematics beyond basic arithmetic is simply not useful in ordinary life. But I'm not sure if that's exactly what you mean. --- JackM
+\end{adjustwidth}
 
-This example shows that mathematics is *not* just a way to compute things - that is the engineering tradition. In physics and chemistry, the more profound contribution of mathematics is that it becomes *the* language for the sciences. The narrative of physics (and chemistry) is written in a mathematical language. In fact, when we learn physics, we usually don't even realize that these are just mathematical models!
+To some extent, I agree with this comment. With few exceptions, mathematics beyond basic arithmetic is simply not useful in everyday life. Students know this, and you'll have trouble convincing them otherwise.
 
-The situation in biology today is very much like the high school physics - it is a science based on common language and simple mathematics. Biologists, as engineers, now are aware of that mathematical modeling and computations can contribute a great deal to the field - that is why NIGMS is interested in funding computational/ mathematical biology. But the objective there is still engineering - to solve problems, to make predictions, to help biologists. I think NSF Division of Mathematical Sciences should have an even more *basic* mission, that is gradually transforming the language of biology into a mathematical language. This, only this, will make the biological science in the future as rigorous as the physical sciences.
+Because of this, I've always found "everyday"-style calculus problems a little artificial. Consider the following problem from Stewart's Calculus: Concepts and Contexts.
 
-It is clear that most biologists, even many of the applied mathematicians, do not see this side of the mathematical biology. However, I consider this extremely important, if not more. It is also true that this is a much more difficult tast than modeling and computational predictions. The latter the biologists can appreciate. The "mathematicalize biological narritives", however, has to be carried out by a new generation of mathematical biologists who are *both* biologists and mathematician; and NSF could play an important role in fostering research and education along this mission.
+\begin{adjustwidth}{1cm}{}
+    A fence 8 ft tall runs parallel to a tall building at a distance of 4 ft from the building. What is the length of the shortest ladder that will reach from the ground over the fence to the wall of the building?
+\end{adjustwidth}
 
-A final comment: How to differentiate someone is talking about just mathematics without physics content, and someone is talking about physics in terms of mathematics? This is impossible for someone who is not trained in physics and mathematics. But for people trained in the mathematics and physics, this is obvious! There goes the difficulty in differentiating proposals with only mathematics without biology, and proposals talking about biology using mathematical language.
+The proper response to this question is: who cares? Is there any reason to calculate this length precisely? Why would anyone ever use calculus to compute this? If you have an actual building and an actual ladder, you could just try it and see if the ladder fits. If you don't have a specific ladder in mind (e.g. you are buying a ladder), the thing to do would be to draw the situation on paper and then use a ruler to estimate the minimum length. Of course, it's neat that you can use calculus to solve this problem precisely, but this is more of a curiosity than a legitimate application.
 
-I would like to share with you the last sentence I wrote for a book review: "In all, Keener and Sneyd's Mathematical Physiology is an ambitious and, for the most part, successful effort to open a new genre of mathematical biology. No longer mathematics is just a helpful tool in biological research; it is gradually becoming one of the possible narratives for biology science itself. It directs students to become, not merely skilled technicians in biological research, but masters of the science."
+Chris specifically mentions the farmer fence problem, the wire-cutting problem, and the Norman window problem as not relevant to the students' lives. I agree—none of these problems are relevant. But it's not because the students aren't farmers, or wire-cutters, or architects. Even in a class full of future farmers, the fence problem would still be bad, because farmers don't use calculus to plan their fences.
+Good Optimization Problems
 
-\textit{From \url{http://faculty.washington.edu/hqian/essay.html}}
+What calculus is useful for is science, economics, engineering, industrial operations, finance, and so forth. That is, it's useful for all the things that make our society run. Most students who take calculus at a university are planning to go into one of these fields, so calculus will be relevant in their lives—specifically in their future studies and in their professions.
+
+Here's something that's closer to a real-life optimization problem:
+
+\begin{adjustwidth}{1cm}{}
+  When a critically damped RLC circuit is connected to a voltage source, the current $ I $ in the circuit varies with time according to the equation
+  \begin{displaymath}
+    I = \left(\frac{V}{L}\right)te^{-Rt/(2L)}
+  \end{displaymath}
+  where $V$ is the applied voltage, $L$ is the inductance, and $R$ is the resistance (all of which are constant).
+
+  Suppose an RLC circuit with a resistance of \SI{30.0}{\ohm} and an inductance of \SI{0.400}{\henry} is attached to a \SI{12.0}{\volt} voltage source. Find the maximum current that will occur in the circuit.
+\end{adjustwidth}
+
+This is at least close to something that a physics or engineering student might actually come across in their future studies. It's real in a way that the farmer fence problem isn't, and even students who don't plan to study physics can sense that this is a legitimate application. (By the way, if you have good students, you might even ask them to come up with a formula for the maximum current, without giving them specific numbers for $ V $, $ L $ and $ R $. This has the advantage that it can't simply be solved using a graphing calculator.)
+
+Of course, this isn't actually a constrained optimization problem --- it's just an optimization problem. I'm not actually aware of any place in science that simple constrained optimization problems arise, although there are examples from economics (maximizing utility), finance (optimal portfolios), and industrial design (e.g. shape of a can type problems). When I cover constrained optimization in calculus, I usually stick to industrial-type problems (best cans, best shipping crates/boxes, best pipeline across a river, etc.), but that's probably just because I don't know enough about economics or finance to make up problems that involve them.
+
+Finally, I should mention that I've never found the optimization portion of Calculus I particularly compelling. It's good to introduce the idea of optimization, but setting the derivative equal to zero isn't actually a very useful optimization technique by itself. It only really works for simple formulas—for anything complicated it just replaces one essentially numerical problem (finding the maximum of a function) with another (finding roots of a function). I agree that it should be covered, but it's far from the most important application of calculus.
+
+\textit{From \url{https://matheducators.stackexchange.com/questions/1550}.}
 
 \subsection*{Questions}
 \begin{questions}
