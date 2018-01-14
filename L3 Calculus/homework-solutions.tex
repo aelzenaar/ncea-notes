@@ -673,8 +673,6 @@
 
 \subsection*{22. Lengths, Volumes, and Areas}
 \begin{enumerate}
-  \item The area under the parabola is $ \rint_0^{x_0} ax^2 \dif{x} = \frac{ax_0^3}{3} - \frac{a(0)^3}{3} = \frac{1}{3}ax_0^3 $; the area of
-        the rectangle is $ ax_0^3 $.
   \item We simply calculate the relevant integral:
         \begin{displaymath}
           \pi \rint_1^2 x^{-2} \dif{x} = \pi [(-2^{-1}) - (-1^{-1})] = \frac{\pi}{2}.
@@ -691,6 +689,29 @@
         \begin{displaymath}
           V = \rint_0^H \frac{L^2}{H^2}x^2 \dif{x} = \frac{1}{3} L^2 H.
         \end{displaymath}
+  \item We have $ r = a(1 - \cos \theta) $ so $ \od{r}{\theta} = a\sin \theta $. Hence:
+        \begin{align*}
+          S &= \rint^{2\pi}_0 \sqrt{a^2(1-\cos\theta)^2 + a^2\sin^2 \theta} \dif{\theta}\\
+            &= \rint^{2\pi}_0 \sqrt{a^2 - 2a^2 \cos \theta + a^2(\sin^2 \theta + \cos^2 \theta)} \dif{\theta}\\
+            &= a\sqrt{2} \rint^{2\pi}_0 \sqrt{1-\cos\theta} \dif{\theta}.
+        \end{align*}
+        We turn our attention, then, to the integral $ \rint \sqrt{1-\cos \theta} \dif{\theta} $. Let $ u = 1 - \cos \theta $;
+        then $ \dif{u} = \sin \theta \dif{\theta} $; but $ \sin \cos^{-1} (1 - u) = \sqrt{2u - u^2} $ (this can be verified by drawing
+        a suitable triangle). Hence $ \dif{u} = \sqrt{2u - u^2} \dif{\theta} $, and
+        \begin{align*}
+          \rint \sqrt{1-\cos \theta} \dif{\theta} &= \rint \frac{\sqrt{u}}{\sqrt{2u - u^2}} \dif{u}\\
+                                                  &= \rint \frac{1}{\sqrt{2 - u}}\\
+                                                  &= -2\sqrt{2 - u} + C\\
+                                                  &= -2\sqrt{1 + \cos \theta} + C.
+        \end{align*}
+        Therefore (and changing our integral to double the integral from $ 0 $ to $ \pi $ to avoid the problem of having a closed loop),
+        \begin{align*}
+          S &= 2a\sqrt{2} \rint^{\pi}_0 \sqrt{1-\cos\theta} \dif{\theta}\\
+            &= 2a\sqrt{2} \eval{\left[ -2\sqrt{1 + \cos \theta} \right]}_0^{\pi}\\
+            &= 2a\sqrt{2} \left[(-2\sqrt{1 + \cos \pi}) - (-2\sqrt{1 + \cos 0})\right]\\
+            &= 2a\sqrt{2} \left[(-2\sqrt{0}) - (-2\sqrt{2})\right]\\
+            &= 2a\sqrt{2} \times 2\sqrt{2} = 8a.
+        \end{align*}
 \end{enumerate}
 
 \subsection*{23. Trigonometric Substitution}

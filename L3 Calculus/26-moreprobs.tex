@@ -9,6 +9,12 @@ These problems do not just concern integration.
   \questioE The area of a square is increasing at a constant rate of $ k~\si{\metre\squared} $ per second. A tetrahedron (equilateral triangular pyramid),
             has a side length that is the same as that of the square at each instant. The initial volume of the tetrahedron was \SI{1}{\metre\cubed}.
             In terms of $ k $, what is the volume of the tetrahedron three seconds after that?
+  \questioS Scholarship 2017: The hyperbolic functions $ \sinh x $ and $ \cosh x $ are defined as follows:
+            \begin{gather}
+              \sinh x = \frac{1}{2} (e^x - e^{-x})\\
+              \cosh x = \frac{1}{2} (e^x + e^{-x}).
+            \end{gather}
+            Show that $ \od{}{x} \sinh^{-1} x = \frac{1}{\sqrt{x^2 + 1}} $.
   \questioS Consider the tetrahedron inscribed inside a cube, as in the figure.
             \begin{center}
               \includegraphics[width=0.2\textwidth]{tetrahedron}
@@ -64,7 +70,7 @@ These problems do not just concern integration.
             \begin{center}
               \includegraphics[width=0.3\textwidth]{contourintegral}
             \end{center}
-            If the curve $ C $ is defined parametrically, that is $ C(t) = (x(t), y(t)) $, then the contour integral can be
+            If the curve $ C $ is defined parametrically, that is $ C(t) = (x(t), y(t)) $, then the integral along the line can be
             calculated with the formula
             \begin{displaymath}
               \rint_a^b f(x(t), y(t)) \sqrt{\left(\dod{x}{t}\right)^2 + \left(\dod{y}{t}\right)^2} \dif{t}.
@@ -95,11 +101,13 @@ These problems do not just concern integration.
               \rint^{\infty}_a f(x) \dif{x} = \lim_{b \to \infty} \rint^b_a f(x) \dif{x}.
             \end{displaymath}
             Decide whether each of the integrals given below exists. If so, calculate its value; if not, explain why.
+    \begin{multicols}{3}
     \begin{parts}
       \part $ \displaystyle \rint^{\infty}_1 \frac{1}{x} \dif{x} $
       \part $ \displaystyle \rint^{\infty}_1 \frac{1}{x^2} \dif{x} $
       \part $ \displaystyle \rint^{\infty}_1 \sin x \dif{x} $
     \end{parts}
+    \end{multicols}
   \question
     \begin{parts}
       \parS Show that $ F(x) = \tan^{-1} x $ is an anti-derivative of $ f(x) = \frac{1}{1 + x^2} $ in the following ways:

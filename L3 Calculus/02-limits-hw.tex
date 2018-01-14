@@ -3,8 +3,38 @@
 
 \mainHeaderDiffHw{2}{Limits}
 \subsection*{Reading}
-Derivatives and limits allow us to classify functions and their behaviour. Consider the following:
+You may be wondering why we bother introducing the concept of limits: after all, we are simply replacing one handwavy picture-based definition (that
+of the derivative) with another! I will give the answer in two parts:
+\begin{enumerate}
+  \item Limits are a more general and hence more useful concept; and
+  \item It is much easier to formally define a limit than a derivative.
+\end{enumerate}
 
+\subsubsection*{Limits are more general}
+The obvious use of limit notation this year is to `plug gaps' in functions; however, we can also (as you have seen) take limits of things towards
+infinity. This allows us to formalise things like infinite sums: we define the value of an infinite sum to be a special kind of limit.
+
+Limiting situations come up surprisingly often in physics and chemistry as well, if we want to look at the behaviour of a system in the long term:
+say the concentration of a particular compound in solution can be modelled by $ C(t) = \frac{k}{t^2} $; then, if we wait a long time (i.e. let $ t \to \infty $),
+we predict that the concentration becomes negligible.
+
+\subsubsection*{It is easier to formally define a limit}
+Suppose that we have some function $ f $ such that
+\begin{displaymath}
+  \lim_{x \to a} f(x) = L.
+\end{displaymath}
+
+All we are saying here is (intuitively) that we can make the value of $ f $ \emph{as close as we like} to being $ L $, by taking $ x $ to be sufficiently close
+to $ a $. I will not state the formal definition here (it is easy enough to find), except to state that it is a little stricter than this intuitive statement
+suggests (i.e. for all $ x \neq a $ within the interval $ (a - \delta, a + \delta) $ we must have $ f(x) $ be within $ (L - \varepsilon, L + \varepsilon) $).
+
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{limit}
+\end{center}
+
+\clearpage
+\subsection*{Questions}
+Derivatives and limits allow us to classify functions and their behaviour. Consider the following:
 \subsubsection*{Properties of Functions}
 \begin{itemize}
   \item A function is \textbf{increasing} if its derivative is positive.
@@ -14,7 +44,6 @@ Derivatives and limits allow us to classify functions and their behaviour. Consi
   \item A function $ f $ is \textbf{continuous} at a point $ a $ if $ \lim_{x \to a} f(x) = f(a) $.
 \end{itemize}
 
-\subsection*{Questions}
 \begin{questions}
   \question Describe all the function properties given above geometrically, and give an example of each.
   \question Consider the function graphed below.
