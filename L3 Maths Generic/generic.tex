@@ -1,4 +1,4 @@
-\documentclass[a4paper, 10pt]{amsart}
+\documentclass[a4paper]{amsart}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{microtype}
@@ -8,7 +8,7 @@
 \usepackage{tikz}
 \usepackage{graphicx}
 
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage[noabbrev]{cleveref}
 
 \def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
@@ -63,10 +63,9 @@ The simplest way to write a set is to list its members (elements). We do need th
   The \textbf{cardinality} of a finite set is the number of elements that it contains --- we write $ \abs{S} $ for the cardinality of some set $ S $.
 \end{defn}
 
-\begin{rem}
-  This definition is very naive and does not stand up to much thought (we want to be able to define numbers in terms of sets, so how does it
-  make sense to talk about the `number' of elements in a set?) --- so we will avoid thinking about it.
-\end{rem}
+This definition is very naive and does not stand up to much thought (we want to be able to define numbers in terms of sets, so how does it
+make sense to talk about the `number' of elements in a set?) --- so we will avoid thinking about it. Suffice it to say that there is a more
+rigorous definition.
 
 \begin{ex}
   $ \abs{X} = 3 $, where $ X $ is as given in \cref{ex:set3} above.
@@ -81,7 +80,7 @@ The simplest way to write a set is to list its members (elements). We do need th
           integers (and $ p $ and $ q $ share no factors).
     \item The set $ \mathbb{R} $ is the set of \textbf{real numbers}: the rational numbers together with the limit of every convergent
           sequence of rationals. Examples of irrational real numbers include $ \pi $, $ \sqrt{p} $ for any
-          prime $ p $\footnote{~See \cref{thm:irrational}}, $ e $.
+          prime $ p $,\footnote{~See \cref{thm:irrational}} $ e $.
     \item The set $ \mathbb{P} $ is the set of \textbf{prime numbers}: natural numbers with exactly two factors.
     \item The set $ \mathbb{Z}^+ $ is the set of \textbf{non-negative} integers: the natural numbers together with zero.
   \end{enumerate}
@@ -135,7 +134,7 @@ The simplest way to write a set is to list its members (elements). We do need th
 
 Obviously for more complicated sets, listing the elements out is difficult.
 \begin{ex}\label{ex:sumsquare}
-  Let $ S $ be the set of all integers that cannot be written as the sum of two squares.
+  Let $ S $ be the set of all even integers that cannot be written as the sum of two exactly primes.
   It is thought that in fact it will be very simple to write out the list of elements of $ S $; in fact,
   it has been conjectured that $ S = \emptyset $. Hence, at the current time it is very difficult to
   list the elements of $ S $, as not only are their identities unknown but their existence is in doubt!
@@ -149,7 +148,7 @@ We introduce `set-builder notation' to solve this problem.
 \end{defn}
 
 \begin{ex}
-  The set $ S $ from \cref{ex:sumsquare} can be more formally written as $ S = \{ x \in \mathbb{Z}: x \neq a^2 + b^2 \text{ for any } a, b \in \mathbb{Z}\} $.
+  The set $ S $ from \cref{ex:sumsquare} can be more formally written as $ S = \{ x \in 2\mathbb{Z}: x \neq p + q \text{ for any } p, q \in \mathbb{P}\} $.
 \end{ex}
 
 \begin{exercise}
@@ -236,6 +235,10 @@ The proof of the following theorem is quite cute.
   square root of any prime is irrational.
 \end{proof}
 
+\begin{exercise}
+  Scholarship 2017: Find all integers $ x $ and $ y $ such that $ x^4 - y^2 = 71 $.
+\end{exercise}
+
 \begin{defn}
   We will formally define `oddness' and `evenness'.
   \begin{enumerate}
@@ -269,7 +272,7 @@ The proof of the following theorem is quite cute.
 \end{exercise}
 
 \begin{exercise}
-  Show that $ (100 \times 2^n) + (10 \times 2^{n + 1}) + 2^{n + 3} = 2^{n + 7} $.\footnote{~haugsire (\texttt{https://math.stackexchange.com/users/80061/haugsire}), My son's Sum of Some is beautiful! But what is the proof or explanation?, URL (version: 2013-07-31): \texttt{https://math.stackexchange.com/q/406099}}
+  Show that $ (100 \times 2^n) + (10 \times 2^{n + 1}) + 2^{n + 3} = 2^{n + 7} $.
 \end{exercise}
 
 \begin{defn}
@@ -374,9 +377,7 @@ The proof of the following theorem is quite cute.
   Adding the two lines, $ 2S(n) = n(n+1) $ and so we immediately have the required result.
 \end{proof}
 
-\begin{rem}
-  We prove this result again in two different ways: \cref{ex:w1}, and \cref{ex:w2}.
-\end{rem}
+We prove this result again in two different ways: \cref{ex:w1}, and \cref{ex:w2}.
 
 \begin{exercise}
   The author knows of at least two graphical proofs of the closed-form formula for $ S(n) $. Try to devise one. [\emph{Hint}: what other formulae
@@ -474,9 +475,7 @@ The natural numbers have the following important property.
   where $ n $ and $ k $ are non-negative integers.
 \end{defn}
 
-\begin{rem}
-  If we write $ kn! $, then this should be read as $ k(n!) $.
-\end{rem}
+If we write $ kn! $, then this should be read as $ k(n!) $.
 
 \begin{exercise}
   Show that, for all $ a \in \mathbb{N} $, $ \binom{a}{a} = 1 = \binom{a}{0} $.
@@ -573,10 +572,8 @@ by yourself before reading the proof --- it is a simple bit of computation.
   the theorem holds for all $ n \geq 0 $.
 \end{proof}
 
-\begin{rem}
-  It is an important skill to be able to summarise proofs. The main point is not the detail, but the idea. Here, we can summarise
-  the main idea of the inductive step as `rewrite the expression out and add the terms together in a different order'.
-\end{rem}
+It is an important skill to be able to summarise proofs. The main point is not the detail, but the idea. Here, we can summarise
+the main idea of the inductive step as `rewrite the expression out and add the terms together in a different order'.
 
 \begin{exercise}
   Show that $ \binom{n}{k}/n $ is an integer for all $ 1 \leq k \leq n - 1 $. [\emph{Hint: use induction.}]
@@ -715,10 +712,7 @@ The following theorem was first stated by Leonhard Euler in 1736.
   \end{itemize}
 \end{thm}
 
-\begin{rem}
-  It was proved by Carl Hierholzer that Euler's criteria is in fact \textit{sufficient}: that is,
-  any graph meeting Euler's criteria will have a Euler walk.
-\end{rem}
+It was proved by Carl Hierholzer that Euler's criteria is in fact \textit{sufficient}: that is, any graph meeting Euler's criteria will have a Euler walk.
 
 \begin{proof}[Proof of Euler's criteria]
   The requirement that the graph must be connected is obvious.
@@ -736,7 +730,7 @@ One of the most notable problems in mathematics history is the K\"onigsberg Brid
 result. The problem lead directly to the development of graph theory and topology as mathematical disciplines.
 
 \begin{ex}
-  In the city of K\"onigsberg, in Prussia\footnote{~Now Kaliningrad in Russia.}, there were four islands connected by seven bridges as
+  In the city of K\"onigsberg, in Prussia,\footnote{~Now Kaliningrad in Russia.} there were four islands connected by seven bridges as
   in the image.\footnote{~From \texttt{https://en.wikipedia.org/wiki/File:Konigsberg\_bridges.png}.}
   \begin{center}
     \includegraphics[width=0.4\textwidth]{konig1}
@@ -744,7 +738,7 @@ result. The problem lead directly to the development of graph theory and topolog
   The K\"onigsbergians wondered if there was some journey that could cross every bridge exactly once (and obviously avoiding swimming, the use of boats, or of
   other bridges outside the city).
 
-  Euler's main idea was to collapse the relevant topological features into a graph\footnote{~Image from \texttt{https://en.wikipedia.org/wiki/File:K\%C3\%B6nigsberg\_graph.svg}.}, where the nodes represent islands and the edges represent bridges.
+  Euler's main idea was to collapse the relevant topological features into a graph,\footnote{~Image from \texttt{https://en.wikipedia.org/wiki/File:K\%C3\%B6nigsberg\_graph.svg}.} where the nodes represent islands and the edges represent bridges.
   \begin{center}
     \includegraphics[width=0.3\textwidth]{konig2}
   \end{center}
@@ -754,5 +748,25 @@ result. The problem lead directly to the development of graph theory and topolog
 \begin{exercise}
   Show that there is no Euler walk on the graph of K\"onigsberg.
 \end{exercise}
+
+\section{Next Steps}
+As well as the material in the level three standards (differentiation, integration, algebra, linear systems, linear programming, path analysis,
+trigonometry, and conic sections) it is advantageous for Scholarship students to be aware of mathematics as a broader discipline. In the 2017
+paper, for example, the opening question part was on number theory.
+
+As such, I have here a list of books and topics which Scholarship students may wish to look over. I have included the University of Auckland
+library call number in brackets.
+\begin{itemize}
+  \item \textbf{Culture:} \emph{A Mathematician's Lament} by Paul Lockhart [510.71 L81].
+  \item \textbf{Proofs:} \emph{How to Think Like a Mathematician} by Kevin Houston [510 H84].
+  \item \textbf{Number theory:} \emph{Elementary Number Theory} by Underwood Dudley [512.72 D84].
+  \item \textbf{Linear algebra:} \emph{Linear Algebra: A Modern Introduction} by David Poole [512.5 P82].
+  \item \textbf{Geometry:} \emph{Geometry: A High School Course} by Serge Lang and Gene Murrow [516 L27].
+  \item \textbf{Set theory:} \emph{Naive Set Theory} by Paul Halmos [511.322 H19].
+  \item \textbf{Calculus:} \emph{Calculus} by Paul Spivak [515 S76].
+\end{itemize}
+
+I must stress that a comprehensive understanding of the content in the above books is \emph{not required}; in most cases, a read of the first three
+sections will suffice to obtain an overview of the relevant parts of the subject (not that that precludes interested students from reading further).
 
 \end{document}
