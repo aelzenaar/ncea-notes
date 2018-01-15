@@ -17,6 +17,7 @@ If I end up tutoring this subject in 2018, I will likely rewrite everything.
 ### Level Three and Scholarship Calculus
  * Generic skills: a [set of notes](L3%20Maths%20Generic/generic.pdf) covering (naive) sets, (rudimentary) proofs, sigma and pi notation, induction,
    the Binomial theorem, and very basic graph theory.
+ * Linear programming (91574) and simultaneous equations (91587): a [set of notes](L3%20Linear%20Systems/lineqs.pdf) with some problems.
  * Algebra (91577): a set of notes entitled [_Solutions_](L3%20Algebra/solutions.pdf) designed for self-study for scholarship students
    (with [full answers to exercises](L3%20Algebra/solutions2.pdf)).
  * Differentiation (91578) and integration (91579): a [set of notes](L3%20Calculus/bookform.pdf) containing both tutorial session material
