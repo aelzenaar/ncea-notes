@@ -463,6 +463,33 @@ The natural numbers have the following important property.
   that $ \abs{\mathcal{P}(X)} = 2^{\thinspace\abs{X}} $ if $ X $ is finite.
 \end{exercise}
 
+Induction is often useful when we are trying to prove statement about recursive definitions: definitions where
+the $n$th case depends on the $ n - 1$th case.
+
+\begin{exercise}
+  Consider the sequence $ T $ defined recursively by
+  \begin{align*}
+    T_0 &= 0\\
+    T_n &= 2T_{n - 1} + 1.
+  \end{align*}
+  For example, $ T_1 = 2 \times 0 + 1 = 1 $; $ T_2 = 2 \times 1 + 1 = 3 $; and $ T_3 = 2 \times 3 + 1 = 7 $. Can you find
+  a closed-form formula for $ T_n $ (i.e. a formula depending only on $ n $)?
+\end{exercise}
+
+\begin{exercise}
+  Recall that the \textbf{Fibonnacci series} is defined by
+  \begin{align*}
+    F_1 &= F_2 = 1\\
+    F_n &= F_{n - 1} + F_{n - 2}.
+  \end{align*}
+  The first few values of this sequence are $ 1, 1, 2, 3, 5, 8, 13, \dots $. At first glance, there does not seem to be
+  any simple closed-form equation for $ F_n $; it is surprising, then, that
+  \begin{displaymath}
+    F_n = \frac{\left(1 + \sqrt{5}\right)^n - \left(1 - \sqrt{5}\right)^n}{2^n \sqrt{5}}.
+  \end{displaymath}
+  Prove it.
+\end{exercise}
+
 \section{The Binomial Theorem}
 \begin{defn}
   The \textbf{binomial coefficient} $ \binom{n}{k} $ (read \textbf{$ n $ choose $ k $}) is defined to be
