@@ -58,6 +58,9 @@ I have removed the old modern physics sheets as they are now part of the above n
 
 **In progress:** Homeworks (and some other notes) for Alexander, general bibliography. Final plan is to have a full reading course written.
 
+## Geography
+ * [Key concepts](Geography/Key%20Concepts.odt).
+
 ## Other in progress
 I hope to begin work on specific notes for scholarship physics at some point in 2018. I tend to like the ESA study guide for chemistry so currently
 have no notes planned (except perhaps for scholarship, but I do not feel that I know the material well enough to write that any time soon). I am taking
