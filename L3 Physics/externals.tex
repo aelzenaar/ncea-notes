@@ -12,6 +12,7 @@
 \DeclareSIUnit{\lightyear}{ly}
 \usepackage{tabularx}
 \usepackage{commath}
+\usepackage{multicol}
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{bookmark}
@@ -226,7 +227,8 @@ We cover the four content-heavy standards (mechanical systems, wave systems, ele
 and modern physics) in some detail. I do expect a degree of mathematical maturity at least at the
 level of M/E in the two level 2 mathematics external standards (algebra and calculus), and a concurrent
 study of level 3 calculus is highly recommended. Exercises marked with a single asterisk* require
-the usage of calculus.
+the usage of calculus. Some of the mathematical results required are summarised in the mathematical
+review chapter beginning on page \pageref{chap:review}.
 
 Any person wishing to go on to study physics at university should be aiming for M/E in all four of
 the standards which we talk about, as well as the three external level 3 mathematics standards (the two
@@ -275,6 +277,95 @@ physics section. Beyond that, each part begins with a short introduction to the 
 \begin{aquote}{Norbert Wiener}
   The price of metaphor is eternal vigilance.
 \end{aquote}
+
+\chapter*{Mathematical Review}\label{chap:review}
+\begin{aquote}{Silvanus P. Thompson}
+  Considering how many fools can calculate, it is surprising that it should be thought either a difficult
+  or a tedious task for any other fool to learn how to master the same tricks.
+\end{aquote}
+
+\emph{This chapter briefly reviews the mathematics that will be applied herein. It should not be used to learn
+the skills, but merely to make sure that you are fluent in the basic computations and calculations required.}
+
+\section*{Trigonometry}
+The fundamental concept in trigonometry is the definition of the two basic trig functions (sine and cosine) based
+on the unit circle. From this, we have the following:
+\begin{multicols}{2}
+  \noindent\begin{align*}
+    \sin \theta &= \frac{\text{opposite}}{\text{hypotenuse}}\\
+    \cos \theta &= \frac{\text{adjacent}}{\text{hypotenuse}}\\
+    \tan \theta &= \frac{\sin \theta}{\cos \theta}
+  \end{align*}
+  \begin{align*}
+    \csc \theta &= \frac{1}{\sin \theta}\\
+    \sec \theta &= \frac{1}{\cos \theta}\\
+    \cot \theta &= \frac{1}{\tan \theta}
+  \end{align*}
+\end{multicols}
+
+\section*{Algebra}
+If $ ax^2 + bx + c = 0 $ is a quadratic equation ($ a \neq 0 $), then
+\begin{displaymath}
+  x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+\end{displaymath}
+
+\section*{Calculus}
+Let $ x $ be a value which changes over time. Then $ \frac{\Delta x}{\Delta t} $ is the average rate of change
+of the quantity over that time period; if we let $ \Delta t \to 0 $, then we obtain the instantaneous rate of change
+of $ x $, the \textbf{derivative of $ x $ with respect to $ t $}, denoted by $ \od{x}{t} $. The derivative of a function
+$ f $ at a point $ x $ can also be denoted by $ f'(x) $.
+
+Given the derivative $ f'(x) $, the \textbf{antiderivative} or \textbf{indefinite integral} of $ f' $ is
+\begin{displaymath}
+  \rint f'(x) \dif{x} = f(x) + C,
+\end{displaymath}
+where $ C $ is an arbitrary constant.
+
+The area under the graph of a function $ f $ between the bounds $ x = a $ and $ x = b $ is the \textbf{definite integral},
+and is denoted by
+\begin{displaymath}
+  \rint^b_a f'(x) \dif{x}.
+\end{displaymath}
+
+The \textbf{fundamental theorem of calculus} states that
+\begin{displaymath}
+  \rint^b_a f'(x) \dif{x} = f(b) - f(a).
+\end{displaymath}
+
+\section*{Tables of Derivatives}
+
+\begin{center}
+  \def\arraystretch{1.5}
+  \begin{tabular}{|c|c|}\hline
+    \textbf{Function} & \textbf{Derivative}\\\hline
+    $ x^n $ & $ nx^{n - 1} $\\\hline
+    $ e^x $ & $ e^x $\\\hline
+    $ \ln \abs{x} $ & $ \frac{1}{x} $\\\hline
+    $ \sin x $ & $ \cos x $\\\hline
+    $ \cos x $ & $ -\sin x $\\\hline
+    $ \tan x $ & $ \sec^2 x $\\\hline
+    $ \csc x $ & $ -\csc x \cot x $\\\hline
+    $ \sec x $ & $ \sec x \tan x $\\\hline
+    $ \cot x $ & $ -\csc^2 x $\\\hline
+  \end{tabular}
+  \begin{tabular}{|c|c|c|c|}\hline
+    \textbf{Function} & \textbf{Derivative} &
+    \textbf{Function} & \textbf{Derivative}\\\hline
+    $ \sin^{-1} x $ & $ \frac{1}{\sqrt{1 - x^2}} $ &
+    $ \csc^{-1} x $ & $ -\frac{1}{x\sqrt{x^2 - 1}} $ \\\hline
+    $ \cos^{-1} x $ & $ -\frac{1}{\sqrt{1 - x^2}} $ &
+    $ \sec^{-1} x $ & $ \frac{1}{x\sqrt{x^2 - 1}} $\\\hline
+    $ \tan^{-1} x $ & $ \frac{1}{1+x^2} $ &
+    $ \cot^{-1} x $ & $ -\frac{1}{x^2 + 1}$\\\hline
+  \end{tabular}
+\end{center}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{derint}
+  \caption{The derivative and the integral.}\label{fig:lewin}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%
