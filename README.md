@@ -26,14 +26,13 @@ If I end up tutoring this subject in 2018, I will likely rewrite everything.
  * Assorted other scholarship worksheets: some have already been amalgamated into the calculus notes, others have not.
 
 **In progress:**
- * Notes on the two linear algebra standards (systems of equations and linear programming).
  * Geometry notes (similar in style to _Solutions_ for scholarship students, and may be from L1 upwards). In the meantime, I highly recommend
    Lang and Murrow's book _Geometry: A High School Course_ (published by Springer) --- the first edition is available in the University of
    Auckland library at 516 L27 (or online).
  * Replacement scholarship notes and exams. The notes themselves are already part of the more general L3 material, and I have written one
    replacement exam.
 
-I am not intending to write any material on the L3 path analysis standard.
+I am not intending to write any material on the L3 path analysis standard. Some graph theory is in the general skills.
 
 ## Physics
 ### Level Two
@@ -45,9 +44,12 @@ I do not intend to write modern physics notes for L2 at this point in time; my L
 
 ### Level Three
  * Waves (91523), mechanics (91524), modern physics (91525), and electromagnetism (91526): [full set of notes](L3%20Physics/externals.pdf), much terser and much
-   longer than level 2, ideal for motivated students for self-study. A large amount of interest material in modern physics is included.
+   longer than level 2, ideal for motivated students for self-study. A large amount of interest material in modern physics is included. Recommend L2 calculus
+   with concurrent L3 calculus, but not strictly required.
 
-I have removed the old modern physics sheets as they are now part of the above notes.
+## General Science (Level One)
+ * [Scientific Investigations and the Scientific Method](L1%20Science/Scientific%20Investigations.pdf)
+ * Biology: [01 - Genetics and DNA](L1%20Science/Biology/level_1_bio_genes.pdf), [02 - Inheritance and Variation](L1%20Science/Biology/level_1_bio_inheritance.pdf)
 
 ## Classical Studies
 ### Scholarship
@@ -64,6 +66,6 @@ I have removed the old modern physics sheets as they are now part of the above n
 ## Other in progress
 I hope to begin work on specific notes for scholarship physics at some point in 2018. I tend to like the ESA study guide for chemistry so currently
 have no notes planned (except perhaps for scholarship, but I do not feel that I know the material well enough to write that any time soon). I am taking
-a course in spectroscopy next semester so I may write more detailed notes for that topic.
+a course in spectroscopy this semester so I may write more detailed notes for that topic.
 
 Level 1 maths notes would also be nice but I am not sure that I am the right person to write them!
