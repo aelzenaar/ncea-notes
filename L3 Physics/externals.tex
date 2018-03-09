@@ -425,8 +425,8 @@ about this relationship is that `a force produces a corresponding change in mome
 
 Now, suppose that a force acts on an object while the object moves a particular distance at a constant speed (perhaps we are
 providing a force against gravity). A natural question to ask is `how much force did we put into our system in order to move
-that object'? We wish to sum together all of the instantaneous forces which we apply over the distance from $ x_0 $ to $ x_1 $;
-this is just an integral:
+that object', or `how much work did it take'? We wish to sum together all of the instantaneous forces which we apply over the
+distance from $ x_0 $ to $ x_1 $; this is just an integral:
 \begin{displaymath}
   \rint_{x_0}^{x_1} F \dif{x} = \rint_{x_0}^{x_1} \od{p}{t} \dif{x}
 \end{displaymath}
@@ -448,10 +448,12 @@ If the force is constant, then $ W = F\Delta x $ and
 \end{equation}
 
 Now consider Hooke's law, where the force is directly proportional to displacement. We have $ F = kx $ for some constant $ k $; then:
-\begin{equation}
+\begin{equation}\label{eqn:elenergy}
   W = \rint_{x_0}^{x_1} kx \dif{x} = \frac{1}{2}kx_1^2 - \frac{1}{2}kx_0^2 = \Delta U_\ell.
 \end{equation}
 Again, the quantity on the right is the change in `energy': this time, \textbf{elastic potential energy}.
+
+\emph{Work and changes in energy are simply the `amount of force' that we need to put into a system to get something done.}
 
 Some common types of energy include:
 \begin{itemize}
@@ -792,7 +794,7 @@ You can use part (1) of the above exercise to calculate escape speeds using ener
   \caption{An angle in a circle cuts off a particular arc length.\label{fig:radians}}
 \end{figure}
 In this chapter, our goal is to extend our definitions of \textbf{position}, \textbf{speed}, and \textbf{acceleration} from a linear
-setting to a rotational setting.
+setting to a rotational setting; in doing so, we will see that every concept of linear motion has an exact rotational counterpart.
 
 The definition and use of \textbf{radians} as a unit of angle measure should be familiar to you; briefly, we define the
 angle $ \theta $ to be the ratio between the arc length $ s $ and the radius $ r $ (\cref{fig:radians}).
@@ -980,21 +982,21 @@ The rotational inertias of several common continuous shapes are given in the fol
 \end{exercise*}
 
 \begin{exercise}
-  Suppose we have a thin disc of radius $ R $ and uniform mass $ m $. Let us drop onto it some liquid of density $ \rho $ such that
-  the liquid covers the full disc evenly, with a depth $ d $. What is the ratio between the moment of inertia of the original disc
-  and the moment of inertia of the disc-liquid system?
-\end{exercise}
-
-\begin{exercise}
   Racing cyclists use wheels with very light tires and rims. Explain why it is an advantage to reduce the mass of
   the tires and rims rather than the spokes of the wheels.
 \end{exercise}
 
 \begin{exercise}
-  Which has the larger speed after rolling doen the same incline: a sphere, or a hoop (they have equal radius and mass)?
+  Which has the larger speed after rolling down the same incline: a sphere, or a hoop (assuming that they have equal radius and mass)?
 \end{exercise}
 
-We can write down Newton's second law for rotational motion,
+\begin{exercise}
+  Suppose we have a thin disc of radius $ R $ and uniform mass $ m $. Let us drop onto it some liquid of density $ \rho $ such that
+  the liquid covers the full disc evenly, with a depth $ d $. What is the ratio between the moment of inertia of the original disc
+  and the moment of inertia of the disc-liquid system?
+\end{exercise}
+
+We can write down a version of Newton's second law for rotational motion (force is resistance to acceleration multiplied by acceleration),
 \begin{equation}
   \tau = I \alpha,
 \end{equation}
@@ -1038,10 +1040,35 @@ then it will initially have an angular momentum of
   L = mvr = rp.
 \end{equation}
 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{spinning}
+  \caption{A spaceship spinning anticlockwise.\label{fig:spinning}}
+\end{figure}
+
+\begin{exercise} [NZQA 2017]
+  Sylvia and Sam's spaceship spins anticlockwise on its axis as it is moving through space (\cref{fig:spinning}). The astronauts can change
+  the angular velocity of the spaceship by firing two small rockets that are mounted tangentially as shown. The rockets produce a clockwise
+  torque. The rotational inertia of the spaceship is \SI{5.80e4}{\kilo\gram\metre\squared}.
+  \begin{enumerate}
+    \item Calculate the size of the torque required from each rocket to cause an angular acceleration of \SI{2.00e-2}{\per\second\squared}.
+    \item The spaceship is rotating anticlockwise at \SI{0.580}{\per\second} when the rockets are fired. Calculate the angular speed of the
+          spaceship after one rotation.
+    \item Assume that the torque produced by the rockets is constant. Explain what happens to the size of the angular acceleration as the
+          rockets gradually emit burnt fuel.
+    \item Some time later, the spaceship is rotating freely at \SI{0.450}{\per\second} with the rockets turned off. The spaceship's photo-voltaic
+          cells are then extended out from the spaceship, causing the rotational inertia to increase by \SI{2.74e3}{\kilo\gram\metre\squared}.
+      \begin{enumerate}
+        \item Explain why the period of rotation changes as the cells are extended.
+        \item Calculate the period of rotation when the cells are fully extended.
+      \end{enumerate}
+  \end{enumerate}
+\end{exercise}
+
 \section{Rotational Kinetic Energy}
 Our final rotational quantity that is analagous to a linear quantity is rotational kinetic energy. Recalling that $ E_k = \frac{1}{2} mv^2 $,
 we would guess that the rotational quantity would be given by replacing $ m $ with $ I $ and $ v $ with $ \omega $. This turns out to be
-correct:
+correct:\footnote{~We can also derive this expression by integrating torque over a distance.}
 \begin{equation}
   \ekr = \frac{1}{2} I \omega^2.
 \end{equation}
@@ -1078,6 +1105,21 @@ So, for a point particle, $ \frac{\ekr}{\ekl} = 1 $.
   \end{enumerate}
 \end{exercise}
 
+\section{Comparison of Linear and Rotational Motion}
+\begin{center}
+  \def\arraystretch{1.5}
+  \begin{tabular}{ccc}
+    \textbf{Linear} & \textbf{Concept} & \textbf{Angular}\\\hline
+    $ x $ & Displacement & $ \theta $\\\hline
+    $ v = \od{x}{t} $ & Velocity & $ \omega = \od{\theta}{t} $\\\hline
+    $ a = \od[2]{x}{t} $ & Acceleration & $ \alpha = \od[2]{\theta}{t} $\\\hline
+    $ m $ & Inertia & $ I = \sum mr^2 $\\\hline
+    $ p = mv $ & Momentum & $ L = I\omega $\\\hline
+    $ F = \od{p}{x} = ma $ & Force & $ \tau = \od{L}{\theta} = I\alpha $\\\hline
+    $ \ekl = \rint F \dif{x} = \frac{1}{2}mv^2 $ & Mechanical Energy & $ \ekr = \rint \tau \dif{\theta} = \frac{1}{2} I\omega^2 $\\\hline
+  \end{tabular}
+\end{center}
+
 \chapter{Oscillating Mechanics}
 \begin{aquote}{Aristotle}
   Knowledge of the fact differs from knowledge of the reason for the fact.
@@ -1095,7 +1137,8 @@ the displacement $ x $ of the spring (this is Hooke's Law, \cref{fig:hooke}):
   F = -kx.
 \end{equation}
 
-\marginsymbol Now, consider the following:
+\marginsymbol Suppose that we want to find the path taken by the end of the spring. We can rewrite the force side of Hooke's Law to be
+in terms of the displacement:
 \begin{displaymath}
   -kx = F = \od{p}{t} = m \od{v}{t} = m\od[2]{x}{t}.
 \end{displaymath}
@@ -1138,6 +1181,18 @@ It directly follows that (why?):
 
 You should now see that the acceleration is \textbf{in phase} with position, and velocity is exactly \textbf{out of phase}
 with position. (What does this mean? Link it back to your experiences with wave motion last year.)
+
+\begin{exercise}
+  We showed in \cref{eqn:elenergy} that $ \Delta U_{\ell} = \frac{1}{2} kx^2 $, where $ k $ is the spring constant and $ x $ is the displacement
+  of the mass on the spring. If a \SI{2}{\kilo\gram} stationary mass is attached to a spring with spring constant \SI{20}{\newton\per\metre} is
+  hit with a hammer and immediately speeds up to \SI{60}{\centi\metre\per\second}, what is the amplitude of its motion?
+\end{exercise}
+
+\begin{exercise}
+  A \SI{200}{\gram} block attacked to a horizontal spring is oscillating with amplitude \SI{2.0}{\centi\metre} and frequency \SI{2.0}{\hertz}.
+  Just as it passes through the equilibrium point towards the right, a sharp blow directed to the left exerts a force of \SI{10}{\newton} for
+  approximately \SI{1}{\milli\second}. What is the new amplitude and frequency of oscillation?
+\end{exercise}
 
 \section{Pendulums}
 \begin{figure}
@@ -1255,6 +1310,26 @@ It is obvious that energy conservation still applies for simple harmonic motion.
 \begin{exercise}
   Give an expression for the kinetic energy of a pendulum of mass $ m $ at a time $ t $ after it is released from maximum displacement $ A $.
   Hence find the gravitation potential energy of the pendulum mass three seconds after it is released.
+\end{exercise}
+
+The important thing here is that \emph{simple harmonic motion and angular motion are actually the same concept}. Given an oscillating system,
+we can find a corresponding rotating system and vice versa.
+
+\begin{exercise}
+  A \SI{100}{\gram} mass on a \SI{1.0}{\metre} string is pulled \SI{8}{\degree} to one side and released. How long does it take for the
+  mass to reach \SI{4}{\degree} on the other side?
+\end{exercise}
+
+\begin{exercise}
+  [NZQA 2017] Astronauts need to be able to measure their mass regularly so that they can monitor their health. They can do this by being strapped
+  on to a lightweight seat that is attached to a vertical spring. When Sylvia is displaced from equilibrium, she oscillates in simple harmonic motion
+  with a period of \SI{8.00}{\second}. You may assume her motion is linear, with an amplitude of \SI{0.120}{\metre}.
+  \begin{enumerate}
+    \item Use a reference circle or other method to calculate the shortest time it takes for Sylvia to move up \SI{0.080}{\metre} from her
+          equilibrium position.
+    \item To start the oscillation, Sam applies a vertical force of \SI{4.40}{\newton} to Sylvia. This force causes Sylvia to move a distance
+          of 0.120 m. Calculate Sylvia’s mass, describing any assumptions you make to simplify your calculation.
+  \end{enumerate}
 \end{exercise}
 
 \section{Resonance, Damping, and Driving}
