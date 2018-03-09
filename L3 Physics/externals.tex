@@ -462,7 +462,7 @@ Some common types of energy include:
       \item Chemical potential energy.
       \item Elastic potential energy.
     \end{itemize}
-  \item The energies associated with \textbf{motion} (called \textbf{kinetic energies}):
+  \item The energies associated with \textbf{motion} (called \textbf{mechanical energies}):
     \begin{itemize}
       \item Linear kinetic energy.
       \item Rotational kinetic energy.
@@ -471,10 +471,11 @@ Some common types of energy include:
 \end{itemize}
 In each case, we can derive formulae for the energies by integrating the respective forces.
 
-The units of energy and work are joules (J). We use the symbol $ E $ for energies associated to motion, and $ U $ for potential energies.
+The units of energy and work are joules (J). We use the symbol $ E $ for mechanical energies, and $ U $ for potential energies.
 
 Energy is always conserved in any system: we can only interact with a system through forces, and those forces are just transfers of
-energy, so at no point is energy lost or gained. Energy can only be transformed from one form to another.
+energy, so at no point is energy lost or gained. Energy can only be transformed from one form to another. \emph{Note that it is
+not necessarily the case that \emph{mechanical} energy is conserved.}
 
 \begin{exercise}
   For the following scenarios, fully describe the energy changes that occur.
@@ -617,6 +618,17 @@ Since force is the time derivative of momentum, we can write
 
 This change in momentum is called the \textbf{impulse}.
 
+\begin{exercise}
+  A rubber ball (of mass $ m $) and a sticky ball (of mass $ 2m $) are thrown at a wall with equal speeds $ v $. The
+  rubber ball bounces off, while the sticky ball sticks to the wall. Which ball delivers a greater impulse to the wall?
+\end{exercise}
+
+\begin{exercise}
+  A \SI{50}{\gram} ball moving at a speed $ v_0 $ hits and sticks to a \SI{1.0}{\kilo\gram} brick sitting at rest on
+  a frictionless surface. Compute the speed of the brick-ball mass after the collision, and decide whether the collision
+  was \textbf{elastic}.\footnote{~An elastic collision is one in which mechanical energy is conserved.}
+\end{exercise}
+
 \begin{exercise*}
   Suppose a particle has momentum \SI{30}{\kilo\gram \metre\per\second} at time $ t = 0 $, and is brought to a stop in
   a force field changing over time and described by $ F(t) = 4t - 3t^2 $. At what time $ t $ does the particle stop?
@@ -727,8 +739,12 @@ Apollo 15 astronaut David Scott repeated a similar experiment on the moon with a
   \caption{The International Space Station.\label{fig:iss}}
 \end{figure}
 \begin{exercise}
-  The International Space Station (\cref{fig:iss}) orbits at a height of around \SI{404}{\kilo\metre} above the earth's surface. How
-  fast must it be travelling?  [\emph{Hint: draw a force diagram.}]
+  Gravitational force calculations are important for calculations of escape velocities; hence, this question is literally rocket science.
+  \begin{enumerate}
+    \item The International Space Station (\cref{fig:iss}) orbits at a height of around \SI{404}{\kilo\metre} above the earth's surface. How
+          fast must it be travelling?  [\emph{Hint: draw a force diagram.}]
+    \item In general, show that the speed of a satellite in a circular orbit around some mass $ M $ at height $ r $ is exactly $ v = \sqrt{GM/r} $.
+  \end{enumerate}
 \end{exercise}
 
 \begin{exercise}
@@ -740,6 +756,30 @@ Apollo 15 astronaut David Scott repeated a similar experiment on the moon with a
   A satellite orbits the moon at a height of \SI{55}{\kilo\metre} above the surface. The radius of the moon is \SI{1.7e6}{\metre}, and the
   mass of the moon is \SI{7.3e22}{\kilo\gram}. What is the radius of the orbit of the satellite?
 \end{exercise}
+
+\begin{experiment}
+  Devise and carry out an experiment to determine the value of the gravitational constant, $ G $.
+\end{experiment}
+
+\begin{exercise}
+  This exercise is an application of the physics of this chapter to a real-life problem.
+
+  \begin{enumerate}
+    \item Suppose that we take an empty universe and add into it two masses, $ M $ and $ m $, at a distance $ r $ apart. What is the total
+            potential energy (due to gravity) in this universe? [Hint: calculate the total work required to pull them apart.]
+    \item Hence calculate the amount of kinetic energy gained by a meteor as it moves from space (\SI{100}{\kilo\metre} above the surface of Earth)
+            to the ground.
+    \item The original speed of a meteor as it enters the atmosphere ranges from \num{11} to \SI{72}{\kilo\metre\per\second}. Calculate the theoretical
+            total kinetic energy of the meteor as it hits the ground.
+    \item Let us arrange matters such that our meteor hits a giant block of solid diamond. The vapourisation energy of carbon
+            is \SI{715}{\kilo\joule\per\mole}, and the molar volume of diamond is \SI{3.42}{\centi\metre\cubed\per\mole}. What
+            volume of carbon is vapourised, and what is the radius of the crater (remember that the meteor explodes on impact, so the
+            crater will be a hemisphere not a sphere)?
+    \item Suggest a possible use for such a crater.
+  \end{enumerate}
+\end{exercise}
+
+You can use part (1) of the above exercise to calculate escape speeds using energy conservation.\footnote{~Knight, ch. 13}
 
 \chapter{Rotational Mechanics}
 \begin{aquote}{Archimedes}
@@ -925,9 +965,25 @@ The rotational inertias of several common continuous shapes are given in the fol
   \end{tabular}
 \end{center}
 
+\begin{example}
+  We will derive the formula for the moment of inertia of a solid cylinder of length $ r $ around the end point. Note first
+  that we wish to sum up all the little `pieces' of mass $ \dif{m} $; if we take a length of rod $ \dif{\rho} $, then the
+  mass of that length is $ \dif{m} = (m/r) \dif{\rho} $. Hence:
+  \begin{align*}
+    I &= \rint_0^r \frac{m}{r} \rho^2 \dif{\rho}\\
+      &= \frac{m}{3r} r^3 = \frac{1}{3} mr^2.
+  \end{align*}
+\end{example}
+
 \begin{exercise*}
-  Use integration to derive the formulae in the table.
+  Use integration to derive the other formulae in the table.
 \end{exercise*}
+
+\begin{exercise}
+  Suppose we have a thin disc of radius $ R $ and uniform mass $ m $. Let us drop onto it some liquid of density $ \rho $ such that
+  the liquid covers the full disc evenly, with a depth $ d $. What is the ratio between the moment of inertia of the original disc
+  and the moment of inertia of the disc-liquid system?
+\end{exercise}
 
 \begin{exercise}
   Racing cyclists use wheels with very light tires and rims. Explain why it is an advantage to reduce the mass of
@@ -1009,6 +1065,17 @@ So, for a point particle, $ \frac{\ekr}{\ekl} = 1 $.
 
 \begin{exercise}
   Consider a spinning uniform disc of mass $ m $ and radius $ R $, moving at a speed $ v $ along a surface due to its spin. Find $ \frac{\ekr}{\ekl} $.
+\end{exercise}
+
+\begin{exercise}
+  Often, satellites need to be in geostationary orbit: sitting in the atmosphere at a fixed position above a spot on the earth's
+  surface. Consider a satellite of mass \SI{1000}{\kilo\gram}.
+  \begin{enumerate}
+    \item Give a condition on the satellite's angular velocity for this to occur.
+    \item Hence calculate the radius of the satellite's orbit.
+    \item What is the rotational kinetic energy of the satellite at this point?
+    \item How much work must be done to boost the satellite from a low-earth orbit at \SI{300}{\kilo\metre} to a geosynchronous orbit?
+  \end{enumerate}
 \end{exercise}
 
 \chapter{Oscillating Mechanics}

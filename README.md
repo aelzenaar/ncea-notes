@@ -46,10 +46,11 @@ I do not intend to write modern physics notes for L2 at this point in time; my L
  * Waves (91523), mechanics (91524), modern physics (91525), and electromagnetism (91526): [full set of notes](L3%20Physics/externals.pdf), much terser and much
    longer than level 2, ideal for motivated students for self-study. A large amount of interest material in modern physics is included. Recommend L2 calculus
    with concurrent L3 calculus, but not strictly required.
+ * Problem sets related to the above notes can be found [in a subfolder](L3%20Physics/sheets).
 
 ## General Science (Level One)
- * [Scientific Investigations and the Scientific Method](L1%20Science/Scientific%20Investigations.pdf)
- * Biology: [01 - Genetics and DNA](L1%20Science/Biology/level_1_bio_genes.pdf), [02 - Inheritance and Variation](L1%20Science/Biology/level_1_bio_inheritance.pdf)
+ * [Scientific Investigations and the Scientific Method](L1%20Science/Scientific%20Investigations.odt)
+ * Biology (90948): [01 - Genetics and DNA](L1%20Science/Biology/level_1_bio_genes.pdf), [02 - Inheritance and Variation](L1%20Science/Biology/level_1_bio_inheritance.pdf)
 
 ## Classical Studies
 ### Scholarship
