@@ -169,7 +169,8 @@ See figure \ref{fig:sinewave}.
 
 \textit{The `energy content' of the wave is just the amplitude.}
 
-You might also see \textit{wavenumber}: this is just $ \nu\text{ (nu)} = 1/\lambda $ (the number of wavefronts per metre, measured in \si{\per\metre}).
+You might also see \textit{wavenumber}: this is just $ \tilde\nu\text{ (nu)} = 1/\lambda $ (the number of wavefronts per metre, measured
+in \si{\per\metre}). Sometimes $ \nu $ is also used to denote frequency (usually in chemistry).
 
 \subsection{Relationships Between the Parameters}
 First of all, note that the frequency is just the inverse of the period; in other words,
@@ -177,7 +178,10 @@ First of all, note that the frequency is just the inverse of the period; in othe
   f = \frac{1}{T}.
 \end{equation}
 
-The following equation relates velocity, frequency, and wavelength; it is known as the \textbf{fundamental wave equation.}
+Consider a set of waves travelling down a string. It takes a time $ T $ (where $ T $ is the period of vibration) for an entire
+wavelength $ \lambda $ to pass a given point; hence the velocity of each wavefront is $ v = \frac{\Delta x}{\Delta t} = \frac{\lambda}{T} = f \lambda $.
+
+This relation between velocity, frequency, and wavelength is known as the \textbf{fundamental wave equation}.
 \begin{equation}
   v = f \lambda
 \end{equation}
@@ -550,16 +554,19 @@ It is often much easier to remember that $ n_1 \sin \theta_1 = n_2 \sin \theta_2
 \begin{center}
 \begin{tabular}{c|c||c|c}
   \textbf{Substance} & $ n $ & \textbf{Substance} & $ n $\\\hline
-  Diamond & 2.42 & Paraffin Oil & 1.44\\
-  Ruby & 1.76 & Ethanol & 1.36\\
-  Flint Glass & 1.65 & Water & 1.33\\
-  Crown Glass & 1.52 & Ice & 1.31\\
-  Perspex & 1.49 & Air & 1.00
+  Diamond & 2.42 & Perspex & 1.49\\ 
+  Ruby & 1.76 & Paraffin Oil & 1.44\\
+  Flint Glass & 1.65 & Ethanol & 1.36\\
+  Crown Glass & 1.52 & Water & 1.33\\
+  NaCl & 1.53 & Ice & 1.31\\
+  Benzene & 1.50 & Air & 1.0003\\
 \end{tabular}
 \end{center}
 
 \paragraph{Exercise.} For a light ray passing from glass ($ n_1 = 1.52 $) to water ($ n_2 = 1.33 $), find the angle
 of refraction if the angle of incidence is \SI{35}{\degree}.
+
+\paragraph{Exercise.} Find the speed of light in benzene.
 
 \subsection{Total Internal Reflection}
 \begin{figure}
@@ -583,6 +590,10 @@ The two conditions for total internal reflection to occur are:
 \end{itemize}
 
 See figure \ref{fig:tire}, which shows a critical angle of \SI{60}{\degree}.
+
+One pretty example of total internal reflection is the sparkling of diamond; due to the high refractive index of a diamond,
+a beam of light can be trapped inside the crystal and be emitted in a random direction when it emerges. Total internal reflection
+is also the phenomenon behind fibre optic cables.
 
 \subsection{Prisms}
 \begin{figure}
@@ -782,7 +793,7 @@ being stationary under the influence of gravity, and being accelerated by some f
   \includegraphics[width=0.5\textwidth]{resultantforce}
   \caption{Examples of net forces. The second truck is in equilibrium, the first experiences an acceleration to the right. \capcite{https://cdn.miniphysics.com/wp-content/uploads/2014/11/forces-in-opposite-direction.jpg}\label{fig:resultant}}
 \end{figure}
-One of the fundamental ideas of classicalphysics is that of \textbf{force}. A force is any influence which tends to change the motion of an object
+One of the fundamental ideas of classical physics is that of \textbf{force}. A force is any influence which tends to change the motion of an object
 when unopposed. A force is a vector quantity; the \textbf{net force} on an object is the vector sum of all the forces acting on the
 object (figure \ref{fig:resultant}).
 When the net force is zero, the object is said to be in \textbf{equilibrium}; otherwise the object will accelerate in the direction of
@@ -939,13 +950,13 @@ discovered by firing electrons at the nucleus and comparing the momentum of the 
 that something inside the proton must have jiggled.
 
 A collision in which kinetic energy as well as momentum is conserved is called an \textbf{elastic collision}. Remember that it is \emph{energy in general} that
-is conserved, not kinetic energy --- energy is allowed to change forms.
+is conserved, not kinetic energy --- energy is allowed to change forms. \emph{Most collisions are inelastic}.
 
 The car crash shown in figure \ref{fig:baddriver} is inelastic, because energy gets transformed into heat and sound as the metal
 crumples. Obviously the mass of the cars doesn't change (unless the collision is either exceptionally violent, or the cars were
 travelling close to the speed of light), but both come to a halt --- so the momentum cannot have been conserved either!
 
-It is also important to remember that \textit{momentum is a vector quantity}, and so the direction of collision can be important!
+It is also important to remember that \emph{momentum is a vector quantity}, and so the direction of collision can be important!
 
 \paragraph{Example of a conservation problem (2016 paper, merit).} A red car, moving with the speed of \SI{1.5}{\metre\per\second},
 collides with a stationary blue car. The mass of the red car is \SI{0.050}{\kilo\gram}, and the mass of the blue car is
@@ -1065,7 +1076,7 @@ that the sandbag rises as it recoils with the bullet lodged inside?
   \caption{Robert Hooke. \capcite{https://i.vimeocdn.com/video/496483451_1280x720.jpg}\label{fig:hooke}}
 \end{figure}
 When compressing or stretching a string or a rubber band, work is done. Some of the energy is transformed into
-heat energy, but other energy must be stored as \textbf{electric potential energy} in the spring (since if you let go,
+heat energy, but other energy must be stored as \textbf{elastic potential energy} in the spring (since if you let go,
 it rebounds to almost its original position). It can be found experimentally that for small compressions or stretches,
 the total force required is directly proportional to the displacement from the zero point. We therefore have \textbf{Hooke's Law},
 \begin{equation}
