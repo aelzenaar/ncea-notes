@@ -5,6 +5,11 @@ LaTeX code is available for most. Any errata/feedback encouraged either via emai
 Hopefully the folder structure is relatively straightforward.
 
 ## Mathematics
+### Level One
+ * Algebra (91027) and Tables, Equations and Graphs (91028): [weekly exercises](L1%20Maths/Algebra/algebra.pdf)
+ * Trigonometry (91026): [worksheet](L1%20Maths/Trigonometry/level_1_trig.pdf), [homework](L1%20Maths/Trigonometry/level_1_trig1_hw.pdf).
+ * Practice exams: [Algebra](L1%20Maths/Algebra/algebra_paper1.pdf)
+
 ### Level Two
 The L2 maths material is a bit of a mess.
  * Trigonometry (91259): worksheet (some difficult problems) and assignment.
@@ -50,7 +55,7 @@ I do not intend to write modern physics notes for L2 at this point in time; my L
 
 ## General Science (Level One)
  * [Scientific Investigations and the Scientific Method](L1%20Science/Scientific%20Investigations.odt)
- * Biology (90948): [01 - Genetics and DNA](L1%20Science/Biology/level_1_bio_genes.pdf), [02 - Inheritance and Variation](L1%20Science/Biology/level_1_bio_inheritance.pdf)
+ * Biology (90948): [01 - Genetics and DNA](L1%20Science/Biology/level_1_bio_genes.pdf), [02 - Inheritance and Variation](L1%20Science/Biology/level_1_bio_inheritance.pdf), [03 - Reproduction and Variation](L1%20Science/Biology/level_1_bio_reprod.pdf)
 
 ## Classical Studies
 ### Scholarship
