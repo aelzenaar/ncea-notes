@@ -4,6 +4,35 @@
 \mainHeaderDiffHw{3}{Derivatives of Common Functions}
 \subsection*{Reading}
 
+Mathematics is fantastic. It is a subject where we do not have to take anyone’s word or
+opinion. The truth is not determined by a higher authority who says ‘because I say so’,
+or because they saw it in a dream, the pixies at the bottom of their garden told them, or
+it came from some ancient mystical tradition. The truth is determined and justified with a
+mathematical proof.
+
+A proof is an explanation of why a statement is true. More properly it is a convincing
+explanation of why the statement is true. By convincing I mean that it is convincing to
+a mathematician. (What that means is an important philosophical point which I am not
+going to get into; my interest is more in practical matters.)
+
+Statements are usually proved by starting with some obvious statements, and proceeding
+by using small logical steps and applying definitions, axioms and previously established
+statements until the required statement results.
+
+The mathematician’s concept of proof is different to everyday usage. In everyday usage
+or in court for instance, proof is evidence that something is likely to be true. Mathematicians
+require more than this. We like to be 100\% confident that a statement has been proved.
+We do not like to be ‘almost certain’.
+
+Having said that, how confident can we be that a theorem has been proved? Millions
+have seen a proof of Pythagoras’ Theorem; we can be certain it is true. Proofs of newer
+results, however, may contain mistakes. I know from my own experience that some proofs
+given in books and research journals are in fact wrong.
+
+\begin{flushright}
+  From \textit{How to Think Like a Mathematician}, by Kevin Houston.
+\end{flushright}
+
 \begin{thm}
   Suppose $ f $ and $ g $ are functions which are differentiable at some point $ x $, and
   suppose that $ \lambda $ is a real constant. Then:
@@ -16,26 +45,19 @@
 
 \begin{proof}
   We prove these using the properties of the limits.
-  \begin{enumerate}
-    \item\begin{align*}
-      (\lambda)'(x) = \lim_{h \to 0} \frac{\lambda - \lambda}{h} = 0.
-    \end{align*}
-    \item\begin{align*}
+  \begin{align*}
+      (\lambda)'(x) &= \lim_{h \to 0} \frac{\lambda - \lambda}{h} = 0.\\
       (f + g)'(x) &= \lim_{h \to 0} \frac{(f + g)(x + h) - (f + g)(x)}{h}\\
                   &= \lim_{h \to 0} \frac{f(x + h) - f(x) + g(x + h) - g(x)}{h}\\
                   &= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} + \lim_{h \to 0} \frac{g(x + h) - g(x)}{h}\\
-                  &= f'(x) + g'(x).
-    \end{align*}
-    \item\begin{align*}
+                  &= f'(x) + g'(x).\\
       (\lambda f)'(x) &= \lim_{h \to 0} \frac{(\lambda f)(x + h) - (\lambda f)(x)}{h}\\
                       &= \lim_{h \to 0} \frac{\lambda (f(x + h) - f(x))}{h}\\
                       &= \lambda \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}\\
-                      &= \lambda f'(x).
-    \end{align*}
-  \end{enumerate}
+                      &= \lambda f'(x).\qedhere
+  \end{align*}
 \end{proof}
 
-\clearpage
 \subsection*{Questions}
 \begin{questions}
   \question Differentiate with respect to $ x $:

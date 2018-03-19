@@ -9,10 +9,11 @@ ratio
 \begin{displaymath}
   \frac{x_1 - x_0}{\Delta t}
 \end{displaymath}
-the \textit{average velocity} of the particle; if we let $ x_1 \to x_2 $, we obtain the derivative $ \od{x}{t} = v $, the \textit{instantaneous
-velocity} of the particle at the point $ x $ (usually just abbreviated to velocity).
+the \textit{average velocity} of the particle; if we let $ x_1 \to x_2 $ (or let $ t \to 0 $), we obtain the derivative $ \od{x}{t} = v $, the
+\textit{instantaneous velocity} of the particle at the point $ x $ (usually just abbreviated to velocity).
 
-Similarly, the rate of change of velocity is called \textit{acceleration}. We have $ a = \od{v}{t} $.
+Similarly, the rate of change of velocity is called \textit{acceleration}. We have $ a = \od{v}{t} = \od[2]{x}{t} $. (Out of interest, the third
+derivative of displacement is known as \textit{jerk}, and the fourth is \textit{jounce}.)
 
 \begin{center}
   \includegraphics[width=0.5\linewidth]{vgraph}
@@ -23,7 +24,10 @@ weird --- the way to think about it is that if we increase the area under the ve
 we move in that time also increases proportionally. On the other hand, if we move a certain distance then we increase the area
 under the velocity curve because we have a non-zero velocity.
 
-Algebraically, we have $ \text{rate} = \frac{\text{change in quantity}}{\text{time}} $ and so $ \text{change in quantity} = \text{rate} \times \text{time} $.
+Algebraically, we have $ \text{rate} = \frac{\text{change in quantity}}{\text{time}} $ and
+so $ \text{change in quantity} = \text{rate} \times \text{time} $. In calculus, we are interested
+in finding the total change in a quantity over a longer period of time than just a single instant,
+by adding up infinitely many instantaneous rates.
 
 We will explore this idea in more detail in a couple of weeks when we start talking about \textit{integration}.
 
@@ -78,6 +82,15 @@ All distances are given in \si{\metre}, and all times in \si{\second}, unless ot
     \begin{parts}
       \part What is the deceleration in \si{\metre\per\second\squared}?
       \part How long does it take for the car to stop?
+    \end{parts}
+  \clearpage
+  \questioM The following is a graph of the instantaneous velocity of an object moving in one dimension over time.
+            \begin{center}
+              \includegraphics[width=0.4\linewidth]{velocity2}
+            \end{center}
+    \begin{parts}
+      \part Draw the acceleration of the object over time.
+      \part Draw the position of the object over time, if it was originally located at $ x = 0 $.
     \end{parts}
   \questioE The displacement of an object moving in a straight line on either side of a fixed origin is given by
             \begin{displaymath}
