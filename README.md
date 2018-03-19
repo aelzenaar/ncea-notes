@@ -7,15 +7,19 @@ Hopefully the folder structure is relatively straightforward.
 ## Mathematics
 ### Level One
  * Algebra (91027) and Tables, Equations and Graphs (91028): [weekly exercises](L1%20Maths/Algebra/algebra.pdf)
- * Trigonometry (91026): [worksheet](L1%20Maths/Trigonometry/level_1_trig.pdf), [homework](L1%20Maths/Trigonometry/level_1_trig1_hw.pdf).
+ * Trigonometry (91032): [worksheet](L1%20Maths/Trigonometry/level_1_trig.pdf), [homework](L1%20Maths/Trigonometry/level_1_trig1_hw.pdf).
  * Practice exams: [Algebra](L1%20Maths/Algebra/algebra_paper1.pdf)
+
+** In Progress: **
+ * Practice exams for TEG, geometry, and stats.
+ * Geometry worksheets.
 
 ### Level Two
 The L2 maths material is a bit of a mess.
- * Trigonometry (91259): worksheet (some difficult problems) and assignment.
- * Algebra (91261): worksheet with assorted exam questions.
- * Calculus (91262): full worksheets with questions, homeworks, four practice exams.
- * Probability (91267): worksheet with basic material only.
+ * [Trigonometry (91259)](L2%20Maths/Trigonometry): worksheet (some difficult problems) and assignment.
+ * [Algebra (91261)](L2%20Maths/Algebra): worksheet with assorted exam questions.
+ * [Calculus (91262)](L2%20Maths/Calculus): full worksheets with questions, homeworks, four practice exams.
+ * [Probability (91267)](L2%20Maths/Probability): worksheet with basic material only.
 
 If I end up tutoring this subject in 2018, I will likely rewrite everything.
 
