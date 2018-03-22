@@ -10,7 +10,7 @@ Hopefully the folder structure is relatively straightforward.
  * Trigonometry (91032): [worksheet](L1%20Maths/Trigonometry/level_1_trig.pdf), [homework](L1%20Maths/Trigonometry/level_1_trig1_hw.pdf).
  * Practice exams: [Algebra](L1%20Maths/Algebra/algebra_paper1.pdf)
 
-** In Progress: **
+**In Progress:**
  * Practice exams for TEG, geometry, and stats.
  * Geometry worksheets.
 
