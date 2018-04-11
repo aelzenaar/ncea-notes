@@ -84,8 +84,8 @@
       \item $ \frac{4}{5} x^{-1/5} = \dfrac{4}{5 \sqrt[5]{x}} $
     \end{enumerate}
   \item The power $ x $ is not constant.
-  \item Consider $ x^{-n} $. The first derivative is $ -n x^{-n - 1} $, the second is $ n^2 x^{-n - 2} $, and so the $ n$th
-        is $ (-1)^n n^n x^{-2n} $. [This can be proved via induction.]
+  \item Consider $ x^{-n} $. The first derivative is $ -n x^{-n - 1} $, the second is $ n(n+1) x^{-n - 2} $, and so the $ n$th
+        is $ (-1)^n n(n+1)\cdots(2n - 1)(2n) x^{-2n} = (-1)^n \frac{(2n)!}{(n-1)!} x^{-2n} $. [This can be proved via induction.]
   \item
     \begin{enumerate}
       \item Note first that $ 10^t = e^{t \ln 10} $, so $ P = P_0 + e^{t \ln 10} $ and $ \od{P}{t} = (\ln 10)e^{t \ln 10} = (\ln 10)10^t $.
@@ -551,6 +551,9 @@
             and at $ t = 10 $, $ V = 104 $ litres.
       \item The rate of water flow out is $ kV = 3 - 0.5e^{-0.025t} $, which is always less than 3 (the rate in). In fact, as $ t \to \infty $,
             the volume tends to \SI{120}{\litre} and the rate in tends to equal the rate out.
+            \includegraphics[width=0.3\textwidth]{leakybucket/01}
+            \includegraphics[width=0.3\textwidth]{leakybucket/02}
+            \includegraphics[width=0.3\textwidth]{leakybucket/03}
     \end{enumerate}
 \end{enumerate}
 
