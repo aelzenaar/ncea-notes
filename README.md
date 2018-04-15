@@ -60,6 +60,7 @@ I do not intend to write modern physics notes for L2 at this point in time; my L
 ## General Science (Level One)
  * [Scientific Investigations and the Scientific Method](L1%20Science/Scientific%20Investigations.odt)
  * Biology (90948): [01 - Genetics and DNA](L1%20Science/Biology/level_1_bio_genes.pdf), [02 - Inheritance and Variation](L1%20Science/Biology/level_1_bio_inheritance.pdf), [03 - Reproduction and Variation](L1%20Science/Biology/level_1_bio_reprod.pdf)
+ * Chemistry (90940): [Notes](L1%20Science/Chemistry/notes.pdf)
 
 ## Classical Studies
 ### Scholarship
