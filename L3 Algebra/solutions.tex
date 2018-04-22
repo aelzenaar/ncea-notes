@@ -631,16 +631,16 @@ numbers $ a $ and $ b $) is called the set of \emph{complex numbers}; this syste
 
 The complex numbers are generally considered to have been formally born in Girolamo Cardano's \emph{Ars Magna} in 1545, where he
 introduces them only to dismiss them as `as subtle as they are useless'. Despite this, modern mathematics has fully accepted the
-existance of complex numbers for two main reasons: firstly they do not introduce any contradictions into basic arithmetic or
+existence of complex numbers for two main reasons: firstly they do not introduce any contradictions into basic arithmetic or
 any theory that we care about, and secondly they allow us to state the following historic theorem.
 
 \begin{thm}[Fundamental Theorem of Algebra]
-  Let $ p(x) $ be a polynomial with degree $ d $. Then, counting repeated roots, there are exactly $ d $ complex roots of $ p(x) $.
+  Let $ p(x) $ be a polynomial with complex coefficients. Then, counting repeated roots, there are exactly $ \partial p $ complex roots of $ p(x) $.
 \end{thm}
 
 The proof of the Fundamental Theorem unfortunately requires concepts and techniques far beyond the scope of this book (Stewart
-gives a proof in \cite{Ste15}, and Artin gives two(!) proofs in \cite{Art91} \S 9.9). All proofs (that I am aware
-of) require the use of analysis (i.e. there is no pure-algebra proof).
+gives a proof in \cite{Ste15}, and Artin gives two(!) proofs in \cite{Art91} \S 9.9). All proofs (that I am aware of) require
+the use of analysis (i.e. there is no pure-algebra proof).
 
 The first rigorous proof of this theorem was published by French mathematician Jean-Robert Argand in 1814; the name is somewhat
 incorrect in the modern era as the study of algebra is no longer purely devoted to the properties of the complex number field.
@@ -748,7 +748,7 @@ This way of writing the result is a little esoteric and has no nice geometric me
 complex numbers in \emph{polar form}. Instead of writing the number in the form $ z = a + bi $, where $ a $ and $ b $
 are the distances from the two axes, we write $ z = r \cis \theta $, where $ r $ is the distance of the number from the
 origin (simply the modulus $ \abs{z} $ again) and $ \theta $ is the angle that number's vector makes with the $ x$-axis
-(known as the \emph{argument} of $ z $, and written as $ \carg(z) $).
+(known as the \emph{argument} of $ z $, and written as $ \carg(z) $). The function $ \cis \theta $ is defined to be $ \cos \theta + i\sin \theta $.
 
 \begin{center}\fbox{
 \begin{tikzpicture}
