@@ -38,7 +38,7 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
    is incredibly well-written; just take care not to get bogged down by the sections on multi-linear algebra and determinants. The exercises are actually quite
    similar to those that you should be solving for 253 anyway, just take note of his preface (some exercises are introduced before the material that makes them
    easy).
- * Sheldon Axler, _Linear Algebra Does Right_: On my list to read. Supposed to be very good.
+ * Sheldon Axler, _Linear Algebra Done Right_: On my list to read. Supposed to be very good.
  * Werner Greub, _Linear Algebra_: (Massive) step up from Halmos and Axler; I haven't read it cover to cover, but what I've read is great.
 
 ### "Proofs" (255)
@@ -74,6 +74,9 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
    example). Also very cheap. Buy this book.
  * Michael Artin, _Algebra_:This is the best introductory algebra book ever written. Lots of geometry. Maybe a little light on the proofs (make sure you do
    the exercises, or you'll miss out on stuff).
+ * John Dixon, _Problems in Group Theory_: A bit difficult, but (and?) I like it.
+ * David Bishop, _Group Theory and Chemistry_: Not actually a maths text, it's cute that he tries to prove some of the theorems of elementary group theory but
+   I'm not entirely sure why he bothers. If you want applications of the 320 material, look here (but don't look too deep, you might catch chemistry germs).
 
 ### Combinatorics (326)
  * Miklos Bona, _A Walk Through Combinatorics_: This is the only book you need for 326; it covers everything (bits with more detail than needed, bits with slightly
