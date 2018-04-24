@@ -4,7 +4,8 @@
 \mainHeaderDiff{5}{The Product and Quotient Rules}
 Two weeks ago we saw that the derivative of a product is not simply the product of the derivatives;
 for example, take $ (x)(x) $. If we differentiate each term and multiply, we obtain 1; however,
-the derivative of $ x^2 $ is (of course) $ 2x $.
+the derivative of $ x^2 $ is (of course) $ 2x $. Ensure you understand why this is a counterexample
+to the naive rule $ (fg)' = f'g' $ before continuing.
 
 Suppose $ f $ and $ g $ are functions; then the \textit{real} product rule is
 \begin{displaymath}
@@ -30,7 +31,6 @@ prove it as an exercise, using the product rule.
   \end{align*}
 \end{ex}
 
-\clearpage
 \subsection*{Questions}
 \begin{questions}
   \questioA In each case, find $ \od{y}{t} $.
@@ -79,5 +79,23 @@ prove it as an exercise, using the product rule.
   \questioE Find the angle at which $ y = x^2 \ln [(x - 2)^2] $ cuts the $ x$-axis at the point $ (0,0) $.
   \questioM When $ x = 0 $, is the curve $ y = (x + 20)^2 (2x^2 - 3)^6 - \ln \sin (x - \frac{\pi}{2}) $ concave up or concave down?
   \questioM If $ y = \frac{e^x}{\sin x} $, show that $ \od{y}{x} = y(1 - \cot x) $.
+  \questioE Find $ f'(x + 3) $ if $ f(x + 3) = (x + 5)^7 $.
+  \questioE The number $ a $ is called a \textbf{double root} of some polynomial function $ f $ if $ f(x) = (x - a)^2g(x) $ for
+            some polynomial $ g $. Prove that $ a $ is a double root of $ f $ if and only if $ a $ is a root of both $ f $ and $ f' $.
+  \questioE Show that there is no function of the form
+            \begin{displaymath}
+              f(x) = a_n x^n + a_{n - 1} x^{n - 1} \cdots + a_1 x + a_0 + \frac{b_1}{x} + \cdots + \frac{b_m}{x^m}
+            \end{displaymath}
+            such that $ f'(x) = 1/x $.
+  \questioS Let's try to generalise the product rule for $ n$th derivatives of products. Recall that the notation $ f^{(n)}(x) $ means the $ n$th derivative
+            of $ f $ with respect to $ x $. Assume in each case that the relevant derivatives exist.
+    \begin{parts}
+      \part Find a formula for $ (fg)'' = (fg)^{(2)} $ in terms of the derivatives of $ f $ and $ g $.
+      \part What about $ (fg)^{(3)} $?
+      \part If you can, prove Leibniz' formula for the $ n$th derivative of a product using \textit{induction}:
+            \begin{displaymath}
+              (fg)^{(n)}(x) = \sum_{k = 0}^n \binom{n}{k} f^{(k)}(x) g^{(n - k)}(x)
+            \end{displaymath}
+    \end{parts}
 \end{questions}
 \end{document}

@@ -1,0 +1,89 @@
+\documentclass{amsart}
+\usepackage[utf8]{inputenc}
+
+\usepackage[parfill]{parskip}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{microtype}
+\usepackage{siunitx}
+\DeclareSIUnit\year{yr}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{commath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{wasysym}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{iden}{Identity}
+\newtheorem*{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{ex}{Example}
+\newtheorem*{exercise}{Exercise}
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+
+% \qformat{Question \thequestion: \thequestiontitle\hfill}
+
+\begin{document}
+
+Here we prove the FTC for `nice' functions. We actually prove the second FTC first as it is easier.
+
+\begin{thm}[Second Fundamental Theorem]
+  Suppose that $ f $ is a continuous function on the closed interval $ [a,b] $.\footnote{i.e. $ f $ is continuous at every $ x $ such that $ a \leq x \leq b $.} Then:
+  \begin{displaymath}
+    \od{}{x} \rint^x_a f(t) \dif{t} = f(x)
+  \end{displaymath}
+\end{thm}
+
+\begin{proof}
+  Let us take the derivative in a straightforward manner.
+  \begin{displaymath}
+    \od{}{x} \rint^x_a f(t) \dif{t} = \lim_{h \to 0} \frac{\rint^{x + h}_a f(t) \dif{t} - \rint^{x}_a f(t) \dif{t}}{h}
+                                    = \lim_{h \to 0} \frac{\rint^{x + h}_x f(t) \dif{t}}{h}.
+  \end{displaymath}
+  Now, let $ f(M) $ be the maximum value obtained by $ f $ on the closed interval $ [x,x+h] $; let $ f(m) $ be the minimum value. Interpreting the integral as
+  an area, we have
+  \begin{displaymath}
+    hf(m) \leq \rint^{x + h}_x f(t) \dif{t} \leq hf(M) \implies f(m) \leq \frac{1}{h} \rint^{x + h}_x f(t) \dif{t} \leq f(M).
+  \end{displaymath}
+  Now, as $ h \to 0 $ we must have $ f(m) \to f(x) $ and $ f(M) \to f(x) $ (because as we make the interval smaller, $ m $ and $ M $ move towards $ x $). Hence
+  \begin{displaymath}
+    f(x) \leq \frac{1}{h} \rint^{x + h}_x f(t) \dif{t} \leq f(x)
+  \end{displaymath}
+  and so $ \od{}{x} \rint^x_a f(t) \dif{t} = f(x) $.
+\end{proof}
+
+\begin{thm}[First Fundamental Theorem]
+  Suppose $ f $ is continuous on the closed interval $ [a,b] $, and suppose $ F $ is any antiderivative of $ f $ (so $ F' = f $). Then:
+  \begin{displaymath}
+    \rint^b_a f(x) \dif{x} = F(b) - F(a) = \eval{F(x)}_a^b
+  \end{displaymath}
+\end{thm}
+
+\begin{proof}
+  Consider $ \od{}{x} \rint^x_a f(t) \dif{t} = f(x) $. In particular, $ \rint^x_a f(t) \dif{t} $ is an antiderivative of $ f $ and we can antidifferentiate both
+  sides, obtaining
+  \begin{equation}\label{eqn:ftc1}
+    \rint^x_a f(t) \dif{t} = F(x) + C \tag{*}
+  \end{equation}
+  (where $ C $ is some constant). Now substitute $ a $ for $ x $ in (*): we find that $ 0 = \rint^a_a f(t) \dif{t} = F(a) + C $, and in particular $ -C = F(a) $.
+  Substituting $ b $ for $ x $ in (*), we find that $ \rint^b_a f(t) \dif{t} = F(b) + C = F(b) - F(a) $; and we are done.
+\end{proof}
+
+\begin{exercise}
+  Explain why we cannot calculate $ \rint^1_0 1/x^2 \dif{x} $ via the version of the fundamental theorem proved here. Then
+  calculate $ \lim_{\alpha \to 0} \rint^1_\alpha 1/x^2 \dif{x} $; why is this allowed?
+\end{exercise}
+
+\end{document}
