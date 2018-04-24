@@ -3,6 +3,16 @@
 This list is an effort to make a list similar to the [Chicago undergrad bibliography](https://www.ocf.berkeley.edu/~abhishek/chicmath.htm), but tailored
 more towards the UoA curriculum.
 
+## Culture
+
+ * Paul Halmos, _I Want to be a Mathematician_: As he explains in the preface, this isn't an autobiography. It has a chapter entitled "how to do everything",
+   so practical life advice is included.
+ * Paul Lockhart, [_A Mathematician's Lament_](https://www.maa.org/external_archive/devlin/LockhartsLament.pdf): A complaint about the U.S. education system
+   that is somewhat relevant to NZ.
+ * Underwood Dudley, _A Budget of Trisections_ and _Mathematical Cranks_: Both very funny, quite quick to read! In _Trisections_, Dudley goes through a selection
+   of attempts to [trisect the angle](https://en.wikipedia.org/wiki/Angle_trisection) using only a straightedge and compass (proved impossible by Wantzel in 1837).
+   _Cranks_ is a short collection of random stories.
+
 ## Stage I: MATHS 150/253
 
 I don't really have opinions on stage I texts, they're all pretty rubbish!
@@ -60,11 +70,12 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
  * Paul Halmos, _Naive Set Theory_: This is *the* first set theory book that you should read. Not many exercises that are marked as such, but the proofs are
    often vague enough that you should be filling bits in on your own anyway. There is an exercises book lying around in the library somewhere if you really
    feel like you need it.
- * Judith Roitman, _Introduction to Modern Set Theory_: Begins axiomatically, quite a bit harder than Halmos; I enjoyed it.
+ * Judith Roitman, _Introduction to Modern Set Theory_: Begins axiomatically, quite a bit harder than Halmos; I would have enjoyed it if I were into logicky
+   semanticky stuff.
 
 ## Stage III
 
-### Algebra (320)
+### Algebra (320+)
  * Joseph Gallian, _Contemporary Abstract Algebra_: This is the book the course is based on. Jianbei's notes are generally a condensed version of Gallian,
    but he does prove some things differently. Lots of computational exercises. Some "topic" readings at the back (Galois theory, crystal point groups, etc).
    I can't stand this book: he spends so much time doing computational examples that he hardly gets around to the algebra! Very slow to start (like the
@@ -72,11 +83,20 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
  * Charles Pinter, _A Book of Abstract Algebra_: This is the book that 320 *should* be using. Very readable, lots of interesting exercises (both applications,
    if you're into that kind of thing, and pure mathematics: the proof of the structure theorem for abelian groups is left as a structured set of exercises, for
    example). Also very cheap. Buy this book.
- * Michael Artin, _Algebra_:This is the best introductory algebra book ever written. Lots of geometry. Maybe a little light on the proofs (make sure you do
-   the exercises, or you'll miss out on stuff).
- * John Dixon, _Problems in Group Theory_: A bit difficult, but (and?) I like it.
+ * Michael Artin, _Algebra_: This is the best introductory algebra book ever written. Lots of geometry (e.g. he classifies all of the motions of the plane).
+   Focuses heavily on linear algebra. Maybe a little light on the proofs (not that he's not rigorous, but make sure you do the exercises, or you'll miss out
+   on stuff). Highlights include a chapter on Galois theory (first edition only) and a chapter on group representations.
+ * John Dixon, _Problems in Group Theory_: A bit difficult, but (and?) I like it. Should be good for 720 and 721 as well, so well worth the 15ish dollars it
+   costs.
  * David Bishop, _Group Theory and Chemistry_: Not actually a maths text, it's cute that he tries to prove some of the theorems of elementary group theory but
    I'm not entirely sure why he bothers. If you want applications of the 320 material, look here (but don't look too deep, you might catch chemistry germs).
+ * Ian Stewart, _Galois Theory_: Once you have an OK grounding of the material in 320 (basic facts about groups, rings, and fields) then this book is a readable
+   introduction to Galois theory. Famously full of typos. Later editions (3rd and 4th) start by proving everything over *C* before moving to arbitrary fields.
+   Covers all the basic material (field extensions, proof of impossibility of general solutions to the quintic using radicals). Plenty of exercises, computational
+   ones as well. [Stewart is a semi-famous pop-maths author too, if you have family who are into that kind of book. Well worth looking into anything he's written,
+   although over the past few years he seems to have rewritten the same book multiple times under different titles!]
+ * Harold Edwards, _Galois Theory_: A GTM that is my preferred text on Galois theory. Not really good for a first intro after 320 --- read Stewart or Artin first.
+   Goes via a more classico-historical route, using proofs that Galois would have understood.
 
 ### Combinatorics (326)
  * Miklos Bona, _A Walk Through Combinatorics_: This is the only book you need for 326; it covers everything (bits with more detail than needed, bits with slightly
