@@ -33,8 +33,7 @@ If I end up tutoring this subject in 2018, I will likely rewrite everything.
  * Algebra (91577): a set of notes entitled [_Solutions_](L3%20Algebra/solutions.pdf) designed for self-study for scholarship students
    (with [full answers to exercises](L3%20Algebra/solutions2.pdf)).
  * Differentiation (91578) and integration (91579): a [set of notes](L3%20Calculus/bookform.pdf) containing both tutorial session material
-   and homeworks with material ranging
-   in difficulty from achieved to outstanding scholarship.
+   and homeworks with material ranging in difficulty from achieved to outstanding scholarship.
  * Assorted other scholarship worksheets: some have already been amalgamated into the calculus notes, others have not.
 
 **In progress:**
@@ -57,7 +56,7 @@ I do not intend to write modern physics notes for L2 at this point in time; my L
 ### Level Three
  * Waves (91523), mechanics (91524), modern physics (91525), and electromagnetism (91526): [full set of notes](L3%20Physics/externals.pdf), much terser and much
    longer than level 2, ideal for motivated students for self-study. A large amount of interest material in modern physics is included. Recommend L2 calculus
-   with concurrent L3 calculus, but not strictly required.
+   with concurrent L3 calculus, but not strictly required. (Very short summary of required mathematics in introductory chapter.)
  * Problem sets related to the above notes can be found [in a subfolder](L3%20Physics/sheets).
 
 ## General Science (Level One)
@@ -79,7 +78,7 @@ I do not intend to write modern physics notes for L2 at this point in time; my L
 
 ## Other in progress
 I hope to begin work on specific notes for scholarship physics at some point in 2018. I tend to like the ESA study guide for chemistry so currently
-have no notes planned (except perhaps for scholarship, but I do not feel that I know the material well enough to write that any time soon). I am taking
+have no L2/L3 notes planned (except perhaps for scholarship, but I do not feel that I know the material well enough to write that any time soon). I am taking
 a course in spectroscopy this semester so I may write more detailed notes for that topic.
 
-Level 1 maths notes would also be nice but I am not sure that I am the right person to write them!
+There are no L1 maths notes planned as the content is so elementary.

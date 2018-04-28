@@ -38,6 +38,9 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
    this isn't part of any course AFAIK, but is vaguely interesting). Spends a very long time on computations. Not even in the UoA library; don't bother buying a
    copy. (I had a copy given to me.) (*)
  * Howard Anton: _Elementary Linear Algebra_. Isomorphic to Venit & Bishop. (512.5 A63)
+ * Gilbert Strang: _Linear Algebra and its Applications_. I like this book, it would probably be the book I would recommend someone use during a stage I course. Lots
+   of intuition, so you can move on to something more rigorous like Halmos for stage II. He does somewhat fetishise the dimension theorem for a linear transformation
+   (he calls it the 'fundamental theorem of linear algebra') but it's not enough to ruin the book. (512.5 S89)
 
 ## Stage II
 
