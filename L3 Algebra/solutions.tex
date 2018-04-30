@@ -1449,6 +1449,17 @@ section first as they often include some content themselves.
           \item When does $ (a + b\epsilon)^{-1} $ exist?
           \item Solve $ x^2 - 1 = 2\epsilon $ in $ \mathbb{R}[\epsilon] $.
         \end{enumerate}
+  \item The following inequality, which holds for all real numbers $ a_1 $, $ a_2 $, ..., $ a_n $, $ b_1 $, ..., $ b_n $, is known as the Cauchy-Schwarz
+        inequality.
+        \begin{equation}\label{eqn:cauchy}
+          (a_1 b_1 + a_2 b_2 + \cdots + a_n b_n)^2 \leq (a_1^2 + \cdots + a_n^2)(b_1^2 + \cdots + b_n^2) \tag{Cauchy-Schwarz}
+        \end{equation}
+        The inequality is a very useful result in analysis; there are several different elementary proofs of it.
+        \begin{enumerate}
+          \item Show that if $ a > 0 $, $ ax^2 + bx + c \geq 0 $ for all $ x $ if and only if $ b^2 - 4ac \leq 0 $.
+          \item Prove the Cauchy-Schwarz inequality by considering the expression $ (a_1 x + b_1)^2 + \cdots + (a_n x + b_n)^2 $,
+                collecting terms, and applying (a).
+        \end{enumerate}
   \item Take the polynomial $ x^2 = 4 $ in the integers modulo 6 (i.e. the integers 0, 1, 2, 3, 4, 5
         such that $ 5 + 1 = 0 $). Solve for all possible values of $ x $.
   \item \textbf{Bonus exercise I:} In general, what numbers will work in the place of $ 3 $ and $ 9 $ in the XKCD

@@ -2871,6 +2871,39 @@ So $ a^2 = 1 \implies a = \pm 1 $, and $ ab = 1 $ so $ b = a $. Hence we have
 exactly two solutions: $ \pm 1 \pm \epsilon $.
 
 \filbreak\begin{enumerate}[resume]
+  \answer The following inequality, which holds for all real numbers $ a_1 $, $ a_2 $, ..., $ a_n $, $ b_1 $, ..., $ b_n $, is known as the Cauchy-Schwarz
+        inequality.
+        \begin{equation}\label{eqn:cauchy}
+          (a_1 b_1 + a_2 b_2 + \cdots + a_n b_n)^2 \leq (a_1^2 + \cdots + a_n^2)(b_1^2 + \cdots + b_n^2) \tag{Cauchy-Schwarz}
+        \end{equation}
+        The inequality is a very useful result in analysis; there are several different elementary proofs of it.
+        \begin{enumerate}
+          \answerb Show that if $ a > 0 $, $ ax^2 + bx + c \geq 0 $ for all $ x $ if and only if $ b^2 - 4ac \leq 0 $.
+          \answerb Prove the Cauchy-Schwarz inequality by considering the expression $ (a_1 x + b_1)^2 + \cdots + (a_n x + b_n)^2 $,
+                collecting terms, and applying (a).
+        \end{enumerate}
+\end{enumerate}
+
+\paragraph{(a)}
+Use the quadratic formula.
+
+\paragraph{(b)}
+We rewrite in summation notation to make matters clearer; we simply write $ \sum $ for $ \sum_{i = 1}^n $ to save space. Considering
+the suggested expression:
+\begin{displaymath}
+  \sum (a_i x + b_i)^2 = \sum (a_i^2 x^2 + 2a_i b_i x + b_i^2) = x^2 \sum a_i^2 + 2x \sum a_i b_i + \sum b_i^2.
+\end{displaymath}
+But $ \sum a_i^2 \geq 0 $ (since each $ a_i $ is real and so has non-negative square); by the same reasoning, $ \sum (a_i x + b_i)^2 $ is
+non-negative and hence so is the right-hand side of the above equality. Hence we can apply (a), and conclude that
+\begin{displaymath}
+  \left(2\sum a_i b_i\right)^2 - 4\left(\sum a_i^2\right)\left(\sum b_i^2\right) \geq 0;
+\end{displaymath}
+expanding and rearranging, we find the required result:
+\begin{displaymath}
+  \left(\sum a_i b_i\right)^2 \geq \left(\sum a_i^2\right)\left(\sum b_i^2\right).
+\end{displaymath}
+
+\filbreak\begin{enumerate}[resume]
   \answer Take the polynomial $ x^2 = 4 $ in the integers modulo 6 (i.e. the integers 0, 1, 2, 3, 4, 5
         such that $ 5 + 1 = 0 $). Solve for all possible values of $ x $.
 \end{enumerate}
