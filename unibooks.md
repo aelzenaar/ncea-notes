@@ -47,6 +47,7 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
 ### Calculus (253)
  * Peter Baxandall & Hans Liebeck, _Vector Calculus_. This book covers the same content as 253 but in much greater detail. Most of the exercises are
    computational; proofs mainly computational. Some nice examples. Nicer than Stewart, anyway. (You do need linear algebra for this book.) (151.84 B35v)
+ * Michael Spivak, _Analysis on Manifolds_.
 
 ### Linear Algebra (253/255)
  * Paul Halmos, _Finite-Dimensional Vector Spaces_. This book covers the same content as 253 but in much greater detail. Like every other Paul Halmos book, it
@@ -107,9 +108,12 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
  * Harold Edwards, _Galois Theory_. A GTM that is my preferred text on Galois theory. Not really good for a first intro after 320 --- read Stewart or Artin first.
    Goes via a more classico-historical route, using proofs that Galois would have understood. (512.32 E26)
 
+Books I want to read: Rotman, _An Introduction to the Theory of Groups_; MacLane/Birkhoff, _Algebra_.
+
 ### Combinatorics and Finite Geometry (326)
  * Miklos Bona, _A Walk Through Combinatorics_. This is the only book you need for 326; it covers everything (bits with more detail than needed, bits with slightly
-   not enough). Cute book, but a little pricey. Version in the library is an older edition without design theory. (511.6 B697)
+   not enough). Cute book, but a little pricey. Version in the library is an older edition without design theory. Perhaps a bit chatty and slow to get started, but
+   does cover a lot of random topics that should be of interest both to compscies and mathsies. (511.6 B697)
  * Robin Wilson, _Introduction to Graph Theory_. Elementary book. Easy exercises. Use to study before exam if you're into that kind of thing. (511.6 W75)
  * Rudolf and Gerda Fritsch, _The Four Colour Theorem_. Nice little book for context. (511.5 F919)
  * Robert Wilson, _Graphs, Colourings, and the Four-Colour Theorem_. Proves most of the results for planar graphs and graph colourings that are needed for 326; no
@@ -117,10 +121,19 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
  * Bela Bollobas, _Modern Graph Theory_; Reinhard Diestel, _Graph Theory_. First couple of chapters from these are good for the graph theory part of 326. Nice
    exercises, but take care that these books are harder than you need. (511.6 B69m and 511.5 D56)
  * P.J. Cameron and J.H van Lint: _Graphs, Codes and Designs_. I really like this book. It's a bit terse and denser than you need, but I like it. (511.6 C18)
- * W.D. Wallis, _Combinatorial Designs_. This book is quite good for proofs, he presents some of the arguments in a more explicit way than the lecture notes. There
-   are a bunch of explicit constructions, the exercises are fine but nothing special (not very many, often computational). (511.6 W21)
- * C.C. Lindner and C.A. Rodger, _Design Theory_. Get this out of the library for the pictures. Chapter on affine and projective planes is nice. Focus on
+ * W.D. Wallis, _Combinatorial Designs_. This book is the must-have book for the block designs section of 326, IMHO. I really like the tone, it goes through a lot
+   of different examples and explicit constructions, and it has plenty of literature references. The book is quite good for proofs, and he presents some of the
+   arguments in a more explicit way than the lecture notes. The exercises are fine but nothing special (not very many, often computational). The typesetting isn't
+   that great. (511.6 W21)
+ * C.C. Lindner and C.A. Rodger, _Design Theory_. Get this out of the library for the pictures. Chapter on affine and projective planes is nice. Focus is on
    constructions rather than theorems. (511.6 L74)
+ * D.R. Hughes and F.C. Piper, _Design Theory_. I got this out of the library but was put off by all the curly capital letters that they use so didn't end
+   up actually reading it. (511.6 H89)
  * Robin Hartshorne, _Geometry: Euclid and Beyond_. I'm almost cheating putting this book here. It covers the finite geometry part of 326, but the real reason
    you should read it is because it is amazing. Hartshorne follows Euclid, putting him on a firm axiomatic foundation. The capstone of the book is a discussion
    of polyhedra. You should have a little algebra for the last stretch, but the rest should actually be accessible to a high-school student! (516 H33)
+
+Books I want to read: Watkins, _Combinatorics with an Emphasis on the Theory of Groups_; something on matroids, maybe Wilson?
+
+### Analysis (332/333)
+Books I want to read/am in the process of reading: baby Rudin (as good as promised); Tao (very chatty and a bit slow for me).
