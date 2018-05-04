@@ -826,6 +826,20 @@ are trying to find $ p $, $ q $, $ r $, and $ s $ such that
 \end{align*}
 Hence $ r = d/2 $, $ p = a - 5r = a - \frac{5}{2}d $, $ s = \frac{b - c}{2} $, and $ q = b\left(1 - \frac{11(b-c)}{2}\right) $.
 
+\filbreak\begin{enumerate}[resume]
+  \answer Show that there are no integers $ r $ and $ s $ such that $ \sqrt{2} = \frac{r}{s} \sqrt{3} $.
+\end{enumerate}
+Suppose that such integers exist, and that they are coprime (i.e. $ r/s $ is in lowest form); then we play the familar game. In particular, we note
+that $ 3r^2 = 2s^2 $. By Euclid's lemma, $ s $ must be a multiple of $ 3 $; let's write $ s = 3^n p $ for the largest possible $ n $ (so $ p $ is not
+a multiple of 3). Substituting back in, we have $ r^2 = \frac{2(3^n p)^2}{3} = 2 \times 3^{2n - 1}p^2 $. But looking at this carefully, we have an odd power
+of 3 on the right, and all the prime powers of $ r^2 $ must be even! This is a contradiction, and so there exists no rational number $ r/s $.
+
+\begin{mdframed}[hidealllines=true,backgroundcolor=Emerald!20]
+\textit{In particular, we have shown that if we consider $ \mathbb{R} $ a vector space over the rational numbers, then $ \sqrt{2} $ and $ \sqrt{3} $
+        are linearly independent. This is a counterexample to the intuitive `theorem' that the real field has no non-identity automorphisms over
+        the rationals: simply take the function that swaps $ \sqrt{2} $ and $ \sqrt{3} $!}
+\end{mdframed}
+
 \section{Complex Numbers}
 % \begin{enumerate}
 %   \answer Discuss how the addition and subtraction of complex numbers should be defined.
