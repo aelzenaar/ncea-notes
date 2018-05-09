@@ -150,6 +150,9 @@ For example, the system
 has the solution $ (x,y,z) = (1,1,0) $.
 
 \section{Graphing Linear Systems}
+\begin{center}
+  \emph{``When I use a word," Humpty Dumpty said in a rather scornful tone, ``it means just what I choose it to mean --- neither more nor less." } --- Lewis Carroll
+\end{center}
 Since each equation is linear, we can easily graph them. We will begin by looking at systems of two variables only, since we can graph
 these on a plane.
 
@@ -327,7 +330,7 @@ We will prove this in the next section.
     \end{center}
 \end{enumerate}
 
-\section{The Main Theorem}
+\section{The Main Theorem on Linear Equalities}
 \begin{center}
   \emph{Never underestimate the power of a theorem that counts something.}  --- Unknown.
 \end{center}
@@ -471,6 +474,12 @@ solutions to get the correct constant terms.
           \end{cases}
         \end{equation*}
         Suppose further that this system has no solution. How must $ a $, $ b $, and $ c $ be related to $ a' $, $ b' $, and $ c' $?
+  \item
+    \begin{enumerate}
+      \item Suppose we have two systems of equations, each in $ n $ variables, and each with a unique solution. Write down and prove
+            necessary and sufficient conditions on the coefficients for the two systems to have identical solutions.
+      \item Extend your theorem from part (a) to the case where the systems might have infinitely many solutions.
+    \end{enumerate}
 \end{enumerate}
 
 \section{Algorithms for Solving Systems}
@@ -809,6 +818,9 @@ systems of linear equations.
 \end{enumerate}
 
 \section{Determining with Determinants}
+\begin{center}
+  \emph{Determinants are difficult, non-intuitive, and often defined without motivation.} --- Sheldon Axler
+\end{center}
 In the previous section, we solved all consistent systems of equations. However, we still cannot tell whether any given system has zero, one, or
 infinite solutions without either solving it or graphing it. In this section, we will develop a method for classifying systems into two categories:
 those with precisely one solution, and all the others. This does not actually sound like a particularly useful result: ``Surely'', (I hear you shout),
@@ -908,20 +920,20 @@ Let us now make a set of arbitrary definitions.
     \item The \df{cofactor} of an element of the determinant is the minor of that element multiplied by $ +1 $ or $ -1 $
           depending on its position in the matrix:
           \begin{equation}
-            \begin{vmatrix}
+            \begin{bmatrix}
               +1 & -1 & +1 & \cdots\\
               -1 & +1 & -1 & \cdots\\
               +1 & -1 & +1 & \cdots\\
                 \vdots & \vdots & \vdots & \ddots
-            \end{vmatrix}.
+            \end{bmatrix}.
           \end{equation}
     \item The determinant of an $ n \times n $ system, where $ n \geq 2 $, can be calculated by multiplying all the entries in any row
           or column by their cofactors, and summing the result.
   \end{enumerate}
 \end{defn}
 
-Determinants, as you can see, are horrible things (especially when we meet them here, outside of their natural habitat). The main purpose
-of introducing them is the following theorem.
+Determinants, as you can see, are horrible things (especially when we meet them here, outside of their natural habitat: they do have a natural geometric
+interpretation that you will meet when you learn linear algebra). The main purpose of introducing them is the following theorem.
 \begin{thm}[Cramer]
   Consider the generic system
   \begin{equation*}
@@ -1090,7 +1102,7 @@ We now know some things about systems of linear equations. Can we also know some
   above diagram.
 \end{ex}
 
-We should also the following definition and theorem.
+We should also state the following definition and theorem for the sake of completeness.
 \begin{defn}
   We write that $ x \geq y $ if there exists some non-negative real number $ a $ such that $ x = y + a $. If $ a \neq 0 $,
   then we write $ x > y $.
@@ -1134,8 +1146,8 @@ sign with an equality sign.
       \item John is packing apples and oranges into boxes. Each box can hold either 15 apples or 8 oranges. He needs to pack at least 40 boxes and
             at least 360 pieces of fruit.
     \end{enumerate}
-  \item During a family trip, Andr\'e Weil shared the driving with his father. At most, he was allowed to drive for three hours in total. While driving, your
-        maximum speed is eighty kilometres per hour. Write a system of inequalities describing the possible number of hours $ t $ and distance $ d $ that
+  \item During a family trip, Andr\'e Weil shared the driving with his father. At most, he was allowed to drive for three hours in total. While driving, his
+        maximum speed was eighty kilometres per hour. Write a system of inequalities describing the possible number of hours $ t $ and distance $ d $ that
         he may have driven; is it possible that he drove for 160 kilometres?
 \end{enumerate}
 
@@ -1163,11 +1175,10 @@ Our main result is the following theorem.
   and minimum values of $ \theta $ occur at the `corners' of the linear system; that is, the intersection points of the individual linear functions
   of the system.
 \end{thm}
-We will not give a proof of this here, as it is a little technical and our goal is to apply the theorem rather than to justify it.\footnote{~A proof
-can be found in most applied linear algebra textbooks, or one can be constructed with multivariate calculus.} However, we can look at a simple example
-to convince ourselves that it is reasonable.
+We will postpone the proof of this theorem to a later section as it is a little technical (in fact, we prove it in the general $ n $ variable case).
+However, we can look at a simple example to convince ourselves that it is reasonable.
 
-\begin{ex}
+\begin{ex}\label{ex:linprog2d}
   Consider the following system; it does not matter precisely what the actual linear inequations are. Suppose that we wish
   to maximise the value $ C $ given by some linear equation $ ax + by = C $. Let us graph this situation for different values of $ C $:
 
@@ -1220,7 +1231,9 @@ to convince ourselves that it is reasonable.
   of $ f $ must occur at corners. The maximum value, for example, occurs at $ (12,0) $.
 \end{ex}
 
-Since this topic is perhaps the most boring of all the L3 mathematics topics, we will not dwell further on it.
+Since this topic is perhaps the most boring of all the L3 mathematics topics, we will not dwell further on it. If the reader is a
+computer scientist and is expecting a general algorithm for solving linear programs like that given earlier for linear systems of
+equations, she is advised to either search for `simplex algorithm' or to study a real subject.
 
 \subsection*{Exercises}
 \begin{enumerate}
@@ -1326,7 +1339,96 @@ group 1, none from group 2, and 15 from group 3.
   \caption{\label{tab:linprog3d}}
 \end{table}
 
+\subsection*{Exercises}
+\begin{enumerate}
+  \item Draw a picture analagous to that in example \ref{ex:linprog2d} for the 3D case.
+  \item Maximise the function $ z = 2x_1 + x_2 + 2x_4 $, subject to
+        \begin{displaymath}
+          \begin{cases}
+             x_1 + 2x_2 - x_3 &\geq 5\\
+             x_2 + x_3 + x_4 &\leq 12\\
+             2x_1 - x_2 - 3x_3 - 2x_4 &\leq -10\\
+             x_j &\geq 0 \text{ for each } j = 1,...,4.
+          \end{cases}
+        \end{displaymath}
+\end{enumerate}
+
+\section{Proof of the Main Theorem on Linear Inequalities}
+\begin{center}
+  \emph{An engineer hears that a famous mathematician will be giving a public lecture, and always having a soft spot for math,
+        he attends. The mathematician then talks at length about all sorts of amazing phenomena that happen in 17 dimensional space.
+        The engineer, amazed at this mathematician's intuition for 17 dimensional space, goes up to him afterwards and asks `How do you
+        picture 17 dimensions?'; the mathematician answers, `Oh, it's easy. Just imagine $n$-dimensional space, and set $n$ to 17.'}
+\end{center}
+The goal of this section is to state and prove in full generality the main theorem on linear inequalities. It may be safely skipped.
+
+We need a small geometric definition:
+\begin{defn}\leavevmode
+  \begin{enumerate}
+    \item A \textbf{closed half-space} of $ n $ dimensions is the set of all points $ (x_1, \dots, x_n) $ satisfying some linear
+          inequality $ a_1 x_1 + \cdots + a_n x_n \leq b $.
+    \item The \textbf{boundary} of the closed half-space $ a_1 x_1 + \cdots + a_n x_n \leq b $ is the set of all points
+          satisfying $ a_1 x_1 + \cdots + a_n x_n = b $.
+    \item A \textbf{convex polytope} of $ n $ dimensions is an intersection of a finite number of closed half-spaces of $ n $ dimensions.
+    \item A point $ x$ is an \textbf{interior point} of a complex polytope $ P $ if there exists some real number $ \varepsilon > 0 $ such that the sphere
+          of radius $ \varepsilon $ centred at $ x $ is contained entirely within $ P $.
+    \item A convex polytope $ P $ is \textbf{bounded} if there exists some real number $ \varepsilon > 0 $ such that every point of $ P $ is contained within
+          the sphere of radius $ \varepsilon $  centred at the origin. (Intuitively, $ P $ does not go ``to infinity''.)
+    \item A \textbf{face} of a convex polytope $ P $ is any intersection of $ P $ with a closed half-space such that none of the interior points of $ P $
+          lie on the boundary of the half-space.
+    \item A \textbf{vertex} of a convex polytope is a 0-dimensional face.
+  \end{enumerate}
+\end{defn}
+
+\begin{ex}
+  A convex polygon is a convex polytope of two dimensions; a convex polyhedra is a convex polytope of three regions. In general, the
+  feasible region of some system of linear inequalities is a convex polytope.
+\end{ex}
+
+\begin{thm}[Main Theorem on Linear Inequalities]
+  Let $ \theta $ be a linear function in $ n $ variables, and let $ P $ be a bounded polytope of $ n $ dimensions. Suppose that there is some point $ x^* $
+  in $ P $ such that for all $ x $ in $ P $, $ \theta(x) \leq \theta(x^*) $. Then $ x^* $ is either a vertex of $ P $, or lies in a face of $ P $ such that
+  for every point $ x' $ in that face (in particular, including the vertices of that face) we have $ \theta(x') = \theta(x^*) $.
+\end{thm}
+\begin{proof}
+  Let $ \theta(y_1, \dots, y_n) = a_1 y_1 + \cdots + a_n y_n $, and let $ x^* = (x_1, \dots, x_n ) $. Suppose that $ x^* $ is in the interior
+  of $ P $ (i.e. $ x^* $ is not in any face of $ P $). Then there exists some $ \varepsilon > 0 $ such that the sphere $ S $ of radius $ \varepsilon $ centred
+  at $ x^* $ is contained entirely within $ P $. Note that the point
+  \begin{displaymath}
+    x^\dagger = (x_1 - \frac{\varepsilon}{2} \frac{a_1}{\sqrt{a_1^2 + \cdots + a_n^2}}, \dots, x_n - \frac{\varepsilon}{2} \frac{a_n}{\sqrt{a_1^2 + \cdots + a_n^2}})
+  \end{displaymath}
+  is still contained within $ S $ and hence within $ P $, because the distance between $ x^* $ and $ x^\dagger $ is less than $ \varepsilon $ (check this).
+
+  Now consider
+  \begin{align*}
+    \theta(x^\dagger) &= a_1 x_1 - \frac{\varepsilon}{2} \frac{a_1^2}{\sqrt{a_1^2 + \cdots + a_n^2}} + \dots
+                       + a_n x_n - \frac{\varepsilon}{2} \frac{a_n^2}{\sqrt{a_1^2 + \cdots + a_n^2}}\\
+                      &= a_1 x_1 + \cdots + a_n x_n - \frac{\varepsilon}{2} \sqrt{a_1^2 + \cdots + a_n^2}\\
+                      &= \theta(x^*) - \frac{\varepsilon}{2} \sqrt{a_1^2 + \cdots + a_n^2}.
+  \end{align*}
+  But recall that $ \varepsilon > 0 $; so in particular, $ \frac{\varepsilon}{2} \sqrt{a_1^2 + \cdots + a_n^2} > 0 $. So the value of $ \theta(x^\dagger) $ is
+  less than that of $ \theta(x^*) $; this is a contradiction and so $ x^* $ lies on a face of $ P $.
+
+  Now, suppose that $ x^* $ lies on a face of $ P $ that is not a vertex. Suppose that the face is $ m$-dimensional. Then we have a minimum value of $ \theta $ on
+  the inside of a $ m$-dimensional polytope, which is a contradiction unless $ \theta $ is constant on the face; hence the minimum value also occurs on the boundaries
+  of this face. We can repeat this argument for the boundaries (which will be polytopes of dimension less than $ m $), and in particular in at most $ m-1 $ steps
+  will reach a polytope of only one dimension; one final application of the proof above shows that $ x^* $ must occur on a vertex of the original polytope, and we
+  are done.
+\end{proof}
+
+\subsection*{Exercises}
+\begin{enumerate}
+  \item Explain why a half-space is called a half-space.
+  \item Draw a tetrahedron and indicate the 0-, 1-, and 2-dimensional faces.
+  \item Show that $ x^\dagger $ is still in $ S $.
+  \item Note that we only proved the theorem for placing the \emph{minimum} value of our objective function on a vertex of our feasible
+        region. Show that placing the maximum value on a vertex is an easy consequence of this. [Hint: consider $ -\theta $.]
+\end{enumerate}
+
 \section{More Exercises}
+\begin{center}
+  \emph{Mr. Sun came out and he smiled at me\\Said, ``It's gonna be a good one, just wait and see''}\\--- Spongebob Squarepants, S4E20
+\end{center}
 \begin{enumerate}
   \item For each of the following, describe the system graphically and solve if possible.
     \begin{center}
