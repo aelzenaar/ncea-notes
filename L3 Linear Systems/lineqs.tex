@@ -1065,15 +1065,16 @@ We now know some things about systems of linear equations. Can we also know some
 \begin{ex}\leavevmode
   \begin{center}
     \itshape\parbox{0.8\textwidth}{
-      Arthur is selling bracelets and stuffed animals in order to fund a holiday. Return flights from WLG to PVG cost \$1610 in total. He makes
-      a profit of \$2 per bracelet, and of \$5 per stuffed animal. He needs to sell more than 20 stuffed animals.
+      Arthur is selling bracelets and stuffed animals in order to fund a holiday. Return flights from WLG to PVG cost \$1610 in total, but
+      he secretly wants to make less money than this to avoid some kind of tax on fun. He makes a profit of \$2 per bracelet, and of \$5 per stuffed
+      animal. He needs to sell more than 20 stuffed animals.
     }
   \end{center}
 
   The associated system of linear inequalities is
   \begin{equation}
     \begin{cases}
-      2x + 5y \geq 1610\\
+      2x + 5y \leq 1610\\
       x > 0\\
       y > 20.
     \end{cases}
@@ -1277,7 +1278,7 @@ Our results also apply naturally to higher-dimensional cases.
   What combination of questions should the student answer for a maximum grade, assuming all answered questions are correct?
 \end{ex}
 
-Instead of having a feasible region that is geometrically a plane, we now have a feasible region that is a volume. Our constraints
+Instead of having a feasible region that is geometrically a plane region, we now have a feasible region that is a volume. Our constraints
 are (in three variables each):
 \begin{gather}
   2x_1 + 3x_2 + 4x_3 \leq 210, \tag{L1} \\
