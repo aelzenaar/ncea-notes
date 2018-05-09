@@ -6,18 +6,18 @@ more towards the UoA curriculum. Library call numbers listed in brackets after r
 ## Contents
  * [Culture](#culture)
  * [Stage I: MATHS 150/250](#stage-i-maths-150250)
-  * [Calculus](#calculus)
-  * [Linear Algebra](#linear-algebra)
+     * [Calculus](#calculus)
+     * [Linear Algebra](#linear-algebra)
  * [Stage II](#stage-ii)
-  * [Calculus (253)](#calculus-253)
-  * [Linear Algebra (253/255)](#linear-algebra-253255)
-  * ["Proofs" (255)](#proofs-255)
-  * [Number Theory (255)](#number-theory-255)
-  * [Set Theory (255)](#set-theory-255)
+     * [Calculus (253)](#calculus-253)
+     * [Linear Algebra (253/255)](#linear-algebra-253255)
+     * ["Proofs" (255)](#proofs-255)
+     * [Number Theory (255)](#number-theory-255)
+     * [Set Theory (255)](#set-theory-255)
  * [Stage III](#stage-iii)
-  * [Algebra (320 )](#algebra-320)
-  * [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)
-  * [Analysis (332/333)](#analysis-332333)
+     * [Algebra (320 )](#algebra-320)
+     * [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)
+     * [Analysis (332/333)](#analysis-332333)
 
 
 ## Culture
