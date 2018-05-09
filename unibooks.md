@@ -3,10 +3,27 @@
 This list is an effort to make a list similar to the [Chicago undergrad bibliography](https://www.ocf.berkeley.edu/~abhishek/chicmath.htm), but tailored
 more towards the UoA curriculum. Library call numbers listed in brackets after review; (*) denotes a book that the library does not own.
 
+## Contents
+ * [Culture](#culture)
+ * [Stage I: MATHS 150/250](#stage-i-maths-150250)
+  * [Calculus](#calculus)
+  * [Linear Algebra](#linear-algebra)
+ * [Stage II](#stage-ii)
+  * [Calculus (253)](#calculus-253)
+  * [Linear Algebra (253/255)](#linear-algebra-253255)
+  * ["Proofs" (255)](#proofs-255)
+  * [Number Theory (255)](#number-theory-255)
+  * [Set Theory (255)](#set-theory-255)
+ * [Stage III](#stage-iii)
+  * [Algebra (320 )](#algebra-320)
+  * [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)
+  * [Analysis (332/333)](#analysis-332333)
+
+
 ## Culture
 
  * Paul Halmos, _I Want to be a Mathematician_. As he explains in the preface, this isn't an autobiography. It has a chapter entitled "how to do everything",
-   so practical life advice is included. (510.973 H19Y)
+   so practical life advice is included. Read this book. (510.973 H19Y)
  * Paul Lockhart, [_A Mathematician's Lament_](https://www.maa.org/external_archive/devlin/LockhartsLament.pdf): A complaint about the U.S. education system
    that is somewhat relevant to NZ. (510.71 L81)
  * Underwood Dudley, _A Budget of Trisections_ and _Mathematical Cranks_. Both very funny, quite quick to read! In _Trisections_, Dudley goes through a selection
@@ -14,6 +31,8 @@ more towards the UoA curriculum. Library call numbers listed in brackets after r
    _Cranks_ is a short collection of random stories. (516.204 D84 and 510 D84)
  * Stephen Krantz, _Mathematical Apocrypha_ and _More Mathematical Apocrypha_. "If it's the quotient rule you wish to know,/It's low-de-high
    less high-de-low./Then draw the line and down below,/Denominator squared will go." (510 K897m and 510 K897ma)
+ * Carl E Linderholm, _Mathematics Made Difficult_: This book needs no introduction and no recommendation, it is a classic. (510 L74)
+ * William Frucht, _Imaginary Numbers: An Anthology..._: Poems and short stories with a mathematical or physical flavour. I enjoyed parts of it. (808.80356 F94)
 
 ## Stage I: MATHS 150/250
 
@@ -64,16 +83,17 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
  * Daniel Velleman, _How to Prove It_. Again, I don't like this kind of book in general; this book in particular I can't stand. Some people like it. (511.3 V43)
 
 ### Number Theory (255)
- * Underwood Dudley, _Elementary Number Theory_. This is a very cute book, covers a bit more than is needed for 255 but I would recommend going through it. Cheap,
-   so worth buying for just that alone. I wouldn't say that this is the best introductory number theory book, as it just skips through the highlights. Lots of
-   easy exercises, some difficult ones. For 255, get this one; if you like it, find something more substantial. (512.7 D84g)
+ * Underwood Dudley, _Elementary Number Theory_. This is a cute little introduction to number theory; the first few chapters cover the material needed for 255,
+   and the remainder are a mixture of topic chapters (on number representations, prime counting, and so on). As you might expect from this author, the book has
+   a definite sense of humour (look under `sex' in the index). My main complaint is that most of the exercises are too easy (and some are too hard). If you like
+   it, find something more substantial to read afterwards! (512.7 D84g)
  * Edmund Landau, _Foundations of Analysis_. The Chicago bibliography says that this book makes for terrible bathroom reading; I would honestly keep a copy
    of this in the bathroom just because it's so beautiful. Landau develops the theory of complex arithmetic from the Peano axioms, and it's something every
    mathematician should read at some point in their lives. (512 L253Y)
  * Kenneth Ireland and Michael Rosen: _A Classical Introduction to Modern Number Theory_. Read after doing 320. Very good book. (512.7 I65)
 
 ### Set Theory (255)
- * Paul Halmos, _Naive Set Theory_. This is *the* first set theory book that you should read. Not many exercises that are marked as such, but the proofs are
+ * Paul Halmos, _Naive Set Theory_. This is *the* set theory book that you should read. Not many exercises that are marked as such, but the proofs are
    often vague enough that you should be filling bits in on your own anyway. There is an exercises book lying around in the library somewhere if you really
    feel like you need it. (511.322 H19)
  * L.E. Sigler, _Exercises in Set Theory_. In fact, this is that book of exercises. Might be worth a look but as I remember it's a bit dry and not actually
@@ -93,7 +113,7 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
    example). Also very cheap. Buy this book. (512 P65)
  * Nathan Carter, _Visual Group Theory_. Don't get this book expecting a good textbook: it's kind of rubbish for learning algebra out of. Get this book for the
    diagrams and the intuition. (512.2 C325)
- * Michael Artin, _Algebra_. This is the best introductory algebra book ever written. Lots of geometry (e.g. he classifies all of the motions of the plane).
+ * Michael Artin, _Algebra_. **This is the best introductory algebra book ever written.** Lots of geometry (e.g. he classifies all of the motions of the plane).
    Focuses heavily on linear algebra. Maybe a little light on the proofs (not that he's not rigorous, but make sure you do the exercises, or you'll miss out
    on stuff). Highlights include a chapter on Galois theory (first edition only) and a chapter on group representations. (512 A79)
  * John Dixon, _Problems in Group Theory_. A bit difficult, but (and?) I like it. Should be good for 720 and 721 as well, so well worth the 15ish dollars it
