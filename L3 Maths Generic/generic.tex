@@ -512,8 +512,12 @@ If we write $ kn! $, then this should be read as $ k(n!) $.
   Compute $ \binom{3}{4} $, $ \binom{5}{2} $, and $ \binom{2}{5} $.
 \end{exercise}
 
-Binomial coefficients have a practical application: $ \binom{n}{k} $ is the number of different ways to choose subsets of size $ k $
+Binomial coefficients have another, more combinatorial definition: $ \binom{n}{k} $ is the number of different ways to choose subsets of size $ k $
 out of a set of size $ n $ (ignoring order).
+
+\begin{exercise}
+  Prove that this definition is equivalent to the formulaic definition above.
+\end{exercise}
 
 \begin{thm}[And another time!]\label{ex:w2}
   The sum of the first $ n $ natural numbers is $ S(n) = \frac{n(n+1)}{2} $.
@@ -554,7 +558,7 @@ by yourself before reading the proof --- it is a simple bit of computation.
 \end{proof}
 
 \begin{thm}[Binomial theorem]
-  Let the number system $ X $ be of $ \mathbb{N} $, $ \mathbb{Z} $, $ \mathbb{Q} $, or $ \mathbb{R} $. Suppose $ x, y \in X $. Then
+  Let the number system $ X $ be one of $ \mathbb{N} $, $ \mathbb{Z} $, $ \mathbb{Q} $, or $ \mathbb{R} $. Suppose $ x, y \in X $. Then
   for any $ n \in \mathbb{Z}^+ $, we have:
   \begin{displaymath}
     (x + y)^n = \sum_{k = 0}^n \binom{n}{k} x^{n - k} y^k.
@@ -601,6 +605,11 @@ by yourself before reading the proof --- it is a simple bit of computation.
 
 It is an important skill to be able to summarise proofs. The main point is not the detail, but the idea. Here, we can summarise
 the main idea of the inductive step as `rewrite the expression out and add the terms together in a different order'.
+
+\begin{exercise}
+  Find a short alternative proof of the binomial theorem by counting the number of times each combination of powers must
+  appear in the expansion of $ (x + y)^n $.
+\end{exercise}
 
 \begin{exercise}
   Show that $ \binom{n}{k}/n $ is an integer for all $ 1 \leq k \leq n - 1 $. [\emph{Hint: use induction.}]
