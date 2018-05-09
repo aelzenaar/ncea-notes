@@ -2918,6 +2918,51 @@ expanding and rearranging, we find the required result:
 \end{displaymath}
 
 \filbreak\begin{enumerate}[resume]
+  \answer In this exercise, we will prove the division theorem that we stated without proof in section \ref{section:poly}: if $ f $ and $ g \neq 0 $
+          are polynomials, then there exist unique polynomials $ q $ and $ r $ such that $ \partial r < \partial g $ and
+          \begin{displaymath}
+            f(x) = g(x) q(x) + r(x).
+          \end{displaymath}
+    \begin{enumerate}
+      \answerb Consider the set $ S $ of all polynomials of the form $ f(x) - g(x) q(x) $ for some polynomial $ q(x) $. Show that $ S $ is non-empty
+            (i.e. exhibit some polynomial in $ S $).
+      \answerb Explain why there must be some polynomial in $ S $ with minimal degree (that is, you cannot exhibit an infinite sequence of
+            polynomials $ p_1, p_2, ... $ in $ S $ such that $ \partial p_1 > \partial p_2 > \cdots > \partial p_i > \cdots $).
+      \answerb Pick such a polynomial of minimal degree; call it $ r $. Fix also the associated $ q $ (i.e. now we have $ f(x) = g(x) q(x) + r(x) $ for
+            our fixed $ r $ and $ q $). Show that if $ \partial r \geq \partial g $, then it is possible to construct another polynomial in $ S $ with
+            lower degree than $ r $. Conclude that $ \partial r < \partial g $.
+      \answerb Show that $ q $ and $ r $ are uniquely determined by $ f $ and $ g $.
+    \end{enumerate}
+\end{enumerate}
+
+\paragraph{(a)}
+The set $ S $ is non-empty, since $ f(x) = f(x) - g(x) \cdot 0 \in S $.
+
+\paragraph{(b)}
+We know that there is some polynomial $ q(x) \in S $; the set of all degrees of polynomials in $ S $ is therefore a non-empty subset of the natural numbers
+and hence has a least element.
+
+\paragraph{(c)}
+Suppose that $ \partial r \geq \partial g $; let $ m = \partial r $ and $ n = \partial g $. Suppose also that the coefficient of the $ x^m $ term in $ r $
+is $ r_m $, and suppose that the coefficient of the $ x^n $ term in $ g $ is $ g_n $. Consider, then:
+\begin{align*}
+  f(x) - g(x) \left[ q(x) + \frac{r_m}{g_n} x^{m - n} \right] &= f(x) - g(x) q(x) - \frac{r_m}{g_n} x^{m - n} g(x)\\
+                                                              &= r(x) - \frac{r_m}{g_n} x^{m - n} g(x) \\
+                                                              &= r_m x^m + r'(x) - \frac{r_m}{g_n} x^{m - n} g_n x^n - \frac{r_m}{g_n} x^{m - n} g'(x)\\
+                                                              &= r'(x) - \frac{r_m}{g_n} x^{m - n} g'(x),
+\end{align*}
+where $ r'(x) = r(x) - r_m x^m $ and $ g'(x) = g(x) - g_n x^n $; in particular, $ \partial[r'(x) - \frac{r_m}{g_n} x^{m - n} g'(x)] < \partial r(x) $. But
+by the LHS of the above manipulation, $ r'(x) - \frac{r_m}{g_n} x^{m - n} g'(x) \in S $! This is a contradiction, since $ r $ had minimal degree in $ S $,
+and hence $ \partial r < \partial g $ as required.
+
+\paragraph{(d)}
+Suppose that $ f(x) = g(x) q(x) + r(x) $ and $ f(x) = g(x) q'(x) + r'(x) $, where both $ r $ and $ r' $ satisfy the criteria. In particular, we
+have $ 0 = g(x) (q(x) - q'(x)) + (r(x) - r'(x)) $. By definition, the degrees of both $ r $ and $ r' $ are less than that of $ g $; in particular,
+the degree of $ r - r' $ is less than that of $ g $. It follows that the coefficient of the highest-degree term on the right-hand side comes
+from the $ g(q - q') $ term; but $ g \neq 0 $, so $ q - q' = 0 $ (because, comparing coefficients of the LHS and RHS the coefficient of the
+highest-degree term is zero). Immediately we also have $ r - r' = 0 $; uniqueness follows.
+
+\filbreak\begin{enumerate}[resume]
   \answer Take the polynomial $ x^2 = 4 $ in the integers modulo 6 (i.e. the integers 0, 1, 2, 3, 4, 5
         such that $ 5 + 1 = 0 $). Solve for all possible values of $ x $.
 \end{enumerate}

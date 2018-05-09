@@ -407,7 +407,7 @@ into factors is known as \textit{factorising}.
         \end{enumerate}
 \end{enumerate}
 
-\section{Higher-degree Polynomials}
+\section{Higher-degree Polynomials}\label{section:poly}
 Before we go any further, we must define the notion of a polynomial. A formal definition
 allows us to reason exactly about a mathematical object with more precision than our
 intuition.
@@ -1450,17 +1450,32 @@ section first as they often include some content themselves.
           \item When does $ (a + b\epsilon)^{-1} $ exist?
           \item Solve $ x^2 - 1 = 2\epsilon $ in $ \mathbb{R}[\epsilon] $.
         \end{enumerate}
-  \item The following inequality, which holds for all real numbers $ a_1 $, $ a_2 $, ..., $ a_n $, $ b_1 $, ..., $ b_n $, is known as the Cauchy-Schwarz
+  \hard The following inequality, which holds for all real numbers $ a_1 $, $ a_2 $, ..., $ a_n $, $ b_1 $, ..., $ b_n $, is known as the Cauchy-Schwarz
         inequality.
         \begin{equation}\label{eqn:cauchy}
           (a_1 b_1 + a_2 b_2 + \cdots + a_n b_n)^2 \leq (a_1^2 + \cdots + a_n^2)(b_1^2 + \cdots + b_n^2) \tag{Cauchy-Schwarz}
         \end{equation}
         The inequality is a very useful result in analysis; there are several different elementary proofs of it.
         \begin{enumerate}
-          \item Show that if $ a > 0 $, $ ax^2 + bx + c \geq 0 $ for all $ x $ if and only if $ b^2 - 4ac \leq 0 $.
+          \item Show that if $ a > 0 $, then $ ax^2 + bx + c \geq 0 $ for all $ x $ if and only if $ b^2 - 4ac \leq 0 $.
           \item Prove the Cauchy-Schwarz inequality by considering the expression $ (a_1 x + b_1)^2 + \cdots + (a_n x + b_n)^2 $,
                 collecting terms, and applying (a).
         \end{enumerate}
+  \harder In this exercise, we will prove the division theorem that we stated without proof in section \ref{section:poly}: if $ f $ and $ g \neq 0 $
+          are polynomials, then there exist unique polynomials $ q $ and $ r $ such that $ \partial r < \partial g $ and
+          \begin{displaymath}
+            f(x) = g(x) q(x) + r(x).
+          \end{displaymath}
+    \begin{enumerate}
+      \item Consider the set $ S $ of all polynomials of the form $ f(x) - g(x) q(x) $ for some polynomial $ q(x) $. Show that $ S $ is non-empty
+            (i.e. exhibit some polynomial in $ S $).
+      \item Explain why there must be some polynomial in $ S $ with minimal degree (that is, you cannot exhibit an infinite sequence of
+            polynomials $ p_1, p_2, ... $ in $ S $ such that $ \partial p_1 > \partial p_2 > \cdots > \partial p_i > \cdots $).
+      \item Pick such a polynomial of minimal degree; call it $ r $. Fix also the associated $ q $ (i.e. now we have $ f(x) = g(x) q(x) + r(x) $ for
+            our fixed $ r $ and $ q $). Show that if $ \partial r \geq \partial g $, then it is possible to construct another polynomial in $ S $ with
+            lower degree than $ r $. Conclude that $ \partial r < \partial g $.
+      \item Show that $ q $ and $ r $ are uniquely determined by $ f $ and $ g $.
+    \end{enumerate}
   \item Take the polynomial $ x^2 = 4 $ in the integers modulo 6 (i.e. the integers 0, 1, 2, 3, 4, 5
         such that $ 5 + 1 = 0 $). Solve for all possible values of $ x $.
   \item \textbf{Bonus exercise I:} In general, what numbers will work in the place of $ 3 $ and $ 9 $ in the XKCD
