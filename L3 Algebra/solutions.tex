@@ -13,6 +13,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{gensymb}
+\usepackage{multicol}
 \usepackage{amsthm}
 \usepackage{adjustbox}
 \usepackage[hidelinks]{hyperref}
@@ -212,11 +213,6 @@ solutions since they are not satisfied by \emph{any} value of $ x $.
 \end{enumerate}
 
 \section{Quadratic Equations}
-\begin{figure*}[p]
-  \includegraphics[width=0.9\textwidth]{babylon}
-  \captionsetup{labelformat=empty}
-  \caption{Tablet BM 13901, from \url{http://www.mat.uc.pt/~mat0703/PEZ/Matem\%C3\%A1tica\%20na\%20Babil\%C3\%B3nia.htm}}
-\end{figure*}
 Several ancient clay tablets from the Old Babylonian period (1800 - 1600 BC)
 contain mathematical problems and solutions. Such a problem, given on the tablet
 illustrated, is (translated of course):\footnote{~Translation from \cite{Ste08}.}
@@ -225,6 +221,11 @@ illustrated, is (translated of course):\footnote{~Translation from \cite{Ste08}.
   I have added up seven times the side of my square and eleven times the area,
   getting 6;15.
 \end{quote}
+
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{babylon2}\\
+  \textit{Tablet BM 13901; image from the British Museum.}
+\end{center}
 
 The number 6;15 is in sexagesimal notation; it means $ 6 + \frac{15}{60} = 6.25 $. We
 can therefore rewrite this problem as follows, where $ x $ is the length of the side
@@ -240,7 +241,8 @@ finding the zeros of $ 11x^2 + 7x - 6.25 = y $.
   \begin{axis}[
     xlabel=$x$,
     ylabel=$y$,
-    axis lines=middle
+    axis lines=middle,
+    height=7cm
   ]
     \addplot[domain=-1:1, samples=100, color=purple]{11*x^2 + 7*x - 6.25};
   \end{axis}
@@ -259,40 +261,36 @@ where $ a $, $ b $, and $ c $ are constants.
 \subsection*{The Quadratic Formula}
 In fact, there is a general formula to solve \emph{any} quadratic equation. The
 following proof of this illustrates the idea of \emph{completing the square}, which
-is a way to reduce solving a general quadratic equation (a hard problem) to a simpler
-problem: that of solving $ x^2 = m $ for $ x $ given a value for $ m $. A second
+is a way to reduce the difficult problem of solving a general quadratic equation to a simpler
+problem: that of solving $ y^2 = m $ for $ y $ given a value for $ m $. A second
 proof is given as an exercise at the end of the section.
 
 \begin{thm}[Quadratic Formula]
   A quadratic equation $ ax^2 + bx + c = 0 $ (where $ a \neq 0 $) has at most
   two solutions, which are given by
-  \begin{equation}
+  \begin{displaymath}
     x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
-  \end{equation}
+  \end{displaymath}
 \end{thm}
 
 \begin{proof}
-  We first simplify the equation by dividing through by $ a $, obtaining
-  that $ x^2 + \frac{b}{a} x + \frac{c}{a} = 0 $.
-
-  The next step is to rearrange the formula to obtain an equation of the form $ (x + p)^2 = q $.
-  This can be done by noting that $ (x + p)^2 - q = x^2 + 2px + p^2 - q $; matching coefficients,
-  we find that $ 2p = \frac{b}{a} $, and therefore that $ \frac{c}{a} = p^2 - q \Rightarrow q = (\frac{b}{2a})^2 - \frac{c}{a} $.
-
-  Substituting, we have the following equation:
+  We want to transform our equation so that it looks like $ (\cdots)^2 = d $; then we can just take the square root of both sides and
+  solve. Let us na\"ively guess that the bracket will look like $ a(x + b/2a)^2 $. If we expand this, we have
   \begin{displaymath}
-    \left(x + \frac{b}{2a}\right)^2 = \left(\frac{b}{2a}\right)^2 - \frac{c}{a}
+    a\left(x + \frac{b}{2a}\right)^2 = ax^2 + bx + \frac{b^2}{4a}.
   \end{displaymath}
-
-  This simple equation can be solved for $ x $ by taking a single square root (remembering
-  both positive and negative roots):
-  \begin{align*}
-    x &= -\frac{b}{2a} \pm \sqrt{\frac{b^2}{4a^2} - \frac{c}{a}} \\
-      &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
-  \end{align*}
+  Comparing with our original equation, we are almost there: if we add on the constant term $ c - \frac{b^2}{4a} $, all the unwanted
+  material vanishes and we are left with the correct expression. With a little bit of manipulation, we obtain the required explicit
+  formula for the solutions:
+  \begin{gather*}
+    0 = ax^2 + bx + c = a\left(x + \frac{b}{2a}\right)^2 + c - \frac{b^2}{4a}\\
+    \frac{b^2}{4a} + c = a\left(x + \frac{b}{2a}\right)^2\\
+    \pm\sqrt{\frac{b^2}{4a^2} + \frac{c}{a}} - \frac{b}{2a} = x\\
+    \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} = x.
+  \end{gather*}
 \end{proof}
 
-The expression $ \Delta_2 = b^2 - 4ac $ is known as the \textit{discriminant} of the
+The expression $ b^2 - 4ac = \Delta_2 $ is known as the \textit{discriminant} of the
 quadratic, and it determines the nature of the solutions; if $ \Delta_2 = 0 $, there is
 one repeated root, while if $ \Delta_2 > 0 $ there are two real roots. We discuss the case
 where $ \Delta_2 < 0 $ later on.
@@ -321,8 +319,21 @@ as \textit{factors} of the larger polynomial, and the process of splitting a pol
 into factors is known as \textit{factorising}.
 
 \begin{center}
-  \includegraphics[width=0.8\textwidth]{solutions-chrt}
+\begin{tikzpicture}
+  \node (A) at (-2,0) {\color{ForestGreen}\textbf{\shortstack{algebraic\\roots/zeros}}};
+  \node (B) at (0,2) {\color{Dandelion}\textbf{\shortstack{graph\\$ x $-intercepts}}};
+  \node (C) at (2,0) {\color{RubineRed}\textbf{\shortstack{polynomial\\factors}}};
+  \node () at (0,0.67) {\textbf{\textit{\shortstack{Polynomial\\Equations}}}};
+
+  \draw (A) edge[<->,bend left=90] (B);
+  \draw (B) edge[<->,bend left=90] (C);
+  \draw (C) edge[<->,bend left=90] (A);
+\end{tikzpicture}
 \end{center}
+
+% \begin{center}
+%   \includegraphics[width=0.8\textwidth]{solutions-chrt}
+% \end{center}
 
 \subsection*{Exercises}
 \begin{enumerate}
@@ -331,25 +342,29 @@ into factors is known as \textit{factorising}.
           \item $ x = 7 $ and $ x = 4 $,
           \item $ x = 7 $ and $ x = -4 $,
           \item $ x = -7 $ and $ x = -4 $, and
-          \item only $ x = 3 $
+          \item the single solution $ x = 3 $.
         \end{enumerate*}
   \item Use the discriminant $ \Delta_2 $ of the following quadratics to find the
         number of distinct real roots each one has, without explicitly calulating
         those roots.
+        \begin{multicols}{2}
         \begin{enumerate}
           \item $ 3x^2 + 6x + 3 = 0 $
           \item $ x^2 + 10x + 1 = 0 $
           \item $ x^2 + 5x + 9 = 0 $
           \item $ x^2 - \frac{14x}{3} + \frac{49}{9} = 0 $
         \end{enumerate}
+        \end{multicols}
   \item Use the \emph{difference of two squares} identity $ x^2 - b^2 = (x-b)(x+b) $ to factorise and hence
         solve the following equations for $ x $:
+        \begin{multicols}{2}
         \begin{enumerate}
           \item $ x^2 - 9 = 0 $
           \item $ x^2 - 7 = 0 $
           \item $ x^2 - 15 = 1 $
           \item $ x^2 - 2ab = a^2 + b^2 $
         \end{enumerate}
+        \end{multicols}
   \item Two cars start at the same point. One begins to travel
         due north at a constant speed of 50~kph; two hours later, the second begins
         to travel due east at a constant speed of 100~kph. How long after the first
@@ -383,6 +398,7 @@ into factors is known as \textit{factorising}.
         \end{enumerate*}
   \item Write each of the following in the form $ (x + p)^2 = q $ for some $ p $ and $ q $, and hence find their
         solutions by completing the square.
+        \begin{multicols}{2}
         \begin{enumerate}
           \item $ x^2 - 3x + 4 = 0 $
           \item $ x^2 - 6x - 10 = 0 $
@@ -390,6 +406,7 @@ into factors is known as \textit{factorising}.
           \item $ 6x^2 - 12x + 13 = 0 $
           \item $ -2x^2 + 3x + 5 = 0 $
         \end{enumerate}
+        \end{multicols}
   \item Suppose that $ x^2 + bx + c = 0 $ has two roots, $ \alpha $ and $ \beta $.
         \begin{enumerate}
           \item Show that $ \alpha^2 + \beta^2 = b^2 - 2c $.
