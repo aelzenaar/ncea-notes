@@ -436,7 +436,7 @@ We have that $ -b = \alpha + \beta $, and that $ (\alpha - \beta)^2 = (\alpha + 
 We simply substitute (c) into (a), taking into account the fact from (b) that both roots can be found
 by switching the sign of the square root.
 
-\section{Higher-degree Polynomials}
+\section{Higher-degree Polynomials}\label{section:poly}
 \begin{enumerate}
   \answer Find three different polynomials with variable $ x $ that have roots $ x = 2 $ and $ x = 3 $.
 \end{enumerate}
@@ -2850,6 +2850,22 @@ $ \cis \left( \pm \frac{7\pi}{3} \right) + \cis \left( \mp \frac{7\pi}{3} \right
 converting both terms back to rectangular form.
 
 \filbreak\begin{enumerate}[resume]
+  \answer Calculate $ i^i $.
+\end{enumerate}
+We use Euler's formula. Note first that
+\begin{displaymath}
+  e^{i\frac{\pi}{2}} = i
+\end{displaymath}
+so $ \ln i = i\frac{\pi}{2} $. Then:
+\begin{displaymath}
+  i^i = e^{\ln(i^i)} = e^{i \ln i} = e^{i i\frac{\pi}{2}} = e^{-\frac{\pi}{2}} \approx 0.208.
+\end{displaymath}
+
+Note that $ \ln $ has multiple branches since $ i = e^{i\frac{\pi}{2}} = e^{i(\frac{\pi}{2} + 2n\pi)} = e^{i\frac{(4n + 1)\pi}{2}} $,
+and so $ \ln i = i\frac{(4n + 1)\pi}{2} $ for all $ n \in \mathbb{Z} $. It is left as an exercise to the reader, then, to fix the solution
+given above.
+
+\filbreak\begin{enumerate}[resume]
   \answer Let $ \mathbb{R}[\epsilon] $ be the real numbers together with some new element $ \epsilon \neq 0 $ such that $ \epsilon^2 = 0 $.
         \begin{enumerate}
           \answerb Does there exist $ \beta $ in $ \mathbb{R}[\epsilon] $ such that $ \beta \epsilon = 1 $ (i.e. does $ \epsilon $ have a multiplicative
@@ -2918,6 +2934,21 @@ expanding and rearranging, we find the required result:
 \end{displaymath}
 
 \filbreak\begin{enumerate}[resume]
+  \answer Suppose $ p(x) = \sum_{i = 0}^n a_i x^i $ and $ q(x) = \sum_{i = 0}^m b_i x^i $ are polynomials. Show that $ p(x) q(x) = \sum_{i = 0}^{m + n} c_i x^i $,
+        where each $ c_i $ is a constant. Give an expression for $ c_i $ in terms of the coefficients of $ p(x) $ and $ q(x) $.
+\end{enumerate}
+
+\begin{align*}
+  p(x) q(x) &= \left(\sum_{i = 0}^n a_i x^i\right)\left(\sum_{i = 0}^m b_j x^j\right)\\
+            &= \sum_{i = 0}^n \left(\left(\sum_{i = 0}^m b_j x^j\right) a_i x^i\right)\\
+            &= \sum_{i = 0}^n \sum_{i = 0}^m a_i b_j x^{i+j} \\
+            &= \sum_{k = 0}^{m + n} \sum_{j = 0}^k a_{k - j} b_j x^{k} \quad\text{(where $ k = i + j $)} \\
+            &= \sum_{i = 0}^{m + n} \sum_{j = 0}^i a_{i - j} b_j x^{i} \quad\text{(renaming $ k $ to $ i $)}\\
+            &= \sum_{i = 0}^{m + n} c_i x^{i},
+\end{align*}
+where $ c_i = \sum_{j = 0}^i a_{i - j} b_j $.
+
+\filbreak\begin{enumerate}[resume]
   \answer In this exercise, we will prove the division theorem that we stated without proof in section \ref{section:poly}: if $ f $ and $ g \neq 0 $
           are polynomials, then there exist unique polynomials $ q $ and $ r $ such that $ \partial r < \partial g $ and
           \begin{displaymath}
@@ -2934,6 +2965,11 @@ expanding and rearranging, we find the required result:
       \answerb Show that $ q $ and $ r $ are uniquely determined by $ f $ and $ g $.
     \end{enumerate}
 \end{enumerate}
+
+\begin{mdframed}[hidealllines=true,backgroundcolor=Emerald!20]
+\textit{The interested reader may note that this proof is very similar to the standard proof of the division theorem for integers; it is a little more
+        fiddly (it is instructive to try to write down a concise reason for this similarity).}
+\end{mdframed}
 
 \paragraph{(a)}
 The set $ S $ is non-empty, since $ f(x) = f(x) - g(x) \cdot 0 \in S $.
@@ -2968,22 +3004,6 @@ highest-degree term is zero). Immediately we also have $ r - r' = 0 $; uniquenes
 \end{enumerate}
 
 One solution is $ x = 2 $, as $ 2^2 = 4 \mod 6 $. However, a second solution is $ x = 4 $, as $ 4^2 = 16 = 2 \times 6 + 4 = 4 \mod 6 $.
-
-\filbreak\begin{enumerate}[resume]
-  \answer Calculate $ i^i $.
-\end{enumerate}
-We use Euler's formula. Note first that
-\begin{displaymath}
-  e^{i\frac{\pi}{2}} = i
-\end{displaymath}
-so $ \ln i = i\frac{\pi}{2} $. Then:
-\begin{displaymath}
-  i^i = e^{\ln(i^i)} = e^{i \ln i} = e^{i i\frac{\pi}{2}} = e^{-\frac{\pi}{2}} \approx 0.208.
-\end{displaymath}
-
-Note that $ \ln $ has multiple branches since $ i = e^{i\frac{\pi}{2}} = e^{i(\frac{\pi}{2} + 2n\pi)} = e^{i\frac{(4n + 1)\pi}{2}} $,
-and so $ \ln i = i\frac{(4n + 1)\pi}{2} $ for all $ n \in \mathbb{Z} $. It is left as an exercise to the reader, then, to fix the solution
-given above.
 
 \filbreak\begin{enumerate}[resume]
   \answer \textbf{Bonus exercise I:} In general, what numbers will work in the place of $ 3 $ and $ 9 $ in the XKCD
