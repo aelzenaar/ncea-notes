@@ -1,0 +1,98 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderIntg{24}{Kinematics}
+Calculus was independently developed by Sir Isaac Newton to describe motion in physics. This use is known as \textit{kinematics} (from the
+Greek \textit{kinein}, `to move'). Suppose a particle moves from position $ x_0 $ to position $ x_1 $ over a time $ \Delta t $. We call the
+ratio
+\begin{displaymath}
+  \frac{x_1 - x_0}{\Delta t}
+\end{displaymath}
+the \textit{average velocity} of the particle; if we let $ x_1 \to x_2 $ (or let $ t \to 0 $), we obtain the derivative $ \od{x}{t} = v $, the
+\textit{instantaneous velocity} of the particle at the point $ x $ (usually just abbreviated to velocity).
+
+Similarly, the rate of change of velocity is called \textit{acceleration}. We have $ a = \od{v}{t} = \od[2]{x}{t} $. (Out of interest, the third
+derivative of displacement is known as \textit{jerk}, and the fourth is \textit{jounce}.)
+
+Now, suppose we know the velocity of a particle at each instant over a given time interval. Suppose we split the interval up into small intervals,
+each of length $ \Delta t $. Then the total distance travelled is approximated by $ \sum v \Delta t $, where the sum is taken for each small interval.
+If we make the intervals smaller, then clearly our approximation becomes better; and to obtain the true answer, we need only take an integral.
+
+\begin{center}
+  \def\arraystretch{1.5}
+  \begin{tabular}{|rcc|}\hline
+    \textbf{Displacement}, $ s $ && $\rint_{t_0}^{t_1} v \dif{t} $\\
+    \textbf{Velocity}, $ v $ & $ \od{s}{t} $ & $ \rint_{t_0}^{t_1} a \dif{t} $\\
+    \textbf{Acceleration}, $ a $ & $ \od{v}{t} $ &\\\hline
+  \end{tabular}
+\end{center}
+
+We can derive the following \textit{kinematic equations} if acceleration is kept constant over a time period $ \Delta t $:
+\begin{align*}
+  v_f &= v_i + a \Delta t\\
+  s &= v_i \Delta t + \frac{1}{2} a {\Delta t}^2\\
+  v_f^2 &= v_i^2 + 2a s\\
+  s &= \frac{v_f + v_i}{2} \Delta t
+\end{align*}
+
+\subsection*{Questions}
+All distances are given in \si{\metre}, and all times in \si{\second}, unless otherwise stated.
+\begin{questions}
+  \questioA A particle moves from $ x = \SI{2}{\metre} $ to $ x = \SI{3}{\metre} $ over a time \SI{3}{\second}. What is its average velocity over that time?
+  \questioM Derive the kinematic equations, by considering the integrals of a velocity function $ v(t) $ with constant derivative $ a $.
+  \questioA A particle moves from $ (3,4) $ to $ (12,-3) $ over a time \SI{10}{\second}. If the displacements are measured in metres, what is the magnitude of
+            its average velocity during that period?
+  \questioA An object $ A $ has a positive acceleration $ a $, and a second object $ B $ has a negative acceleration $ -a $. Both are moving in the
+            same direction. Which of the following is \textbf{not} true?
+    \begin{parts}
+      \part Object $ B $ is slowing down compared to object $ A $.
+      \part Object $ B $ has a lower velocity than object $ A $.
+      \part At some point, object $ B $ will reach a velocity of zero and then start moving in the opposite direction.
+      \part If object $ B $ is behind object $ A $, the two will never cross paths.
+    \end{parts}
+  \questioA Suppose a particle has a velocity of $ \SI{34}{\metre\per\second} $. How long does it take for the particle to travel \SI{150}{\metre}?
+  \question The velocity $ v $ of an object $ t $ seconds after it moves from the origin is given by
+            \begin{displaymath}
+              v(t) = 3t^2 - 6t - 24.
+            \end{displaymath}
+    \begin{parts}
+      \parA Write down the formula for the acceleration of the particle after $ t $ seconds.
+      \parA Work out the initial velocity and acceleration.
+      \parA When is the object at rest momentarily?
+      \parM When did the object return to the origin?
+      \parE What was the total distance travelled by the object before it returned to the origin?
+    \end{parts}
+  \questioA A well-wrapped food parcel is dropped from an aeroplane flying at a height of \SI{500}{\metre}
+            above the ground. The constant acceleration due to gravity is \SI{-9.81}{\metre\per\second\squared}. Air resistance
+            is negligible.
+    \begin{parts}
+      \part How long does it take for the food parcel to hit the ground?
+      \part How fast is the food parcel moving when it hits the ground?
+    \end{parts}
+  \questioA A racing car travelling at \SI{210}{\kilo\metre\per\hour} skids for a distance of \SI{150}{\metre}
+            after its brakes are applied. The brakes provide a constant deceleration.
+    \begin{parts}
+      \part What is the deceleration in \si{\metre\per\second\squared}?
+      \part How long does it take for the car to stop?
+    \end{parts}
+  \questioM The following is a graph of the instantaneous velocity of an object moving in one dimension over time.
+            \begin{center}
+              \includegraphics[width=0.4\linewidth]{velocity2}
+            \end{center}
+    \begin{parts}
+      \part Draw the acceleration of the object over time.
+      \part Draw the position of the object over time, if it was originally located at $ x = 0 $.
+    \end{parts}
+  \questioE The displacement of an object moving in a straight line on either side of a fixed origin is given by
+            \begin{displaymath}
+              s(t) = 2t^3 - 12t^2 + 18t + 3.
+            \end{displaymath}
+            Find the minimum velocity of the object. Prove that it is a minimum. Which position is it at at that time?
+  \questioM The velocity of an Olympic sprinter is modelled by
+            \begin{displaymath}
+              v_x = a(1 - e^{-bt}),
+            \end{displaymath}
+            where $ a = \SI{11.81}{\metre\per\second} $ and $ b = \SI{0.6887}{\per\second} $. Find an expression for the
+            distance travelled after time $ t $.
+\end{questions}
+\end{document}

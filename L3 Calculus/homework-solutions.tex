@@ -371,31 +371,19 @@
         Similarly, when $ x = 0 $ we obtain $ y = \sqrt{x_0 c} -  x_0 $. Their sum is therefore $ 2\sqrt{x_0 c} - x_0 = 2\sqrt{c}(\sqrt{c} - \sqrt{y_0}) - (\sqrt{c} - \sqrt{y_0})^2 = c $.
 \end{enumerate}
 
-\subsection*{12. Kinematics}
+\subsection*{12. Sequences and Series}
 \begin{enumerate}
   \item
     \begin{enumerate}
-      \item $ v = \od{h}{t} = 122.5 - 9.8t $, so the initial velocity of the flare is \SI{122.5}{\metre\per\second}.
-      \item Zero.
-      \item When $ v = 0 $, $ t = 12 $ and the height at this time is around 764 metres.
+      \item Converges to $1/2$.
+      \item Diverges: $ 9^{n + 1}/10^n = 9^{n + 1}/(9 + 1)^n = 9^{n + 1}/(9^n + \cdots) \to \infty $.
     \end{enumerate}
-  \item Let $ x $ be the distance from the point on the beach directly away from B. Then the total distance travelled
-        is simply $ D = \sqrt{600^2 + x^2} + \sqrt{800^2 + (1200-x)^2} $; taking the derivative:
-        \begin{displaymath}
-          \od{D}{x} = \frac{x}{\sqrt{600^2 + x^2}} - \frac{1200 - x}{\sqrt{800^2 + (1200 - x)^2}}
-        \end{displaymath}
-        Setting to zero, we have
-        \begin{gather*}
-          x\sqrt{800^2 + (1200 - x)^2} = (1200 - x)\sqrt{600^2 + x^2}\\
-          800^2 x^2 + (1200 - x)^2 x^2 = (1200 - x)^2 (600^2 + x^2)\\
-          0 =  1200^2 600^2 - 600^2 2400x + (600^2 - 800^2) x^2\\
-          x \in \{ -3600, 3600/7 \}.
-        \end{gather*}
-        Since $ x \geq 0 $, $ x = 3600/7 \approx 514 $. The total distance travelled is therefore around 1844 metres. By graphing $ D $ versus $ x $,
-        we see that this is indeed the required medium:
-        \begin{center}
-          \includegraphics[width=0.4\textwidth]{swamp}
-        \end{center}
+  \item
+    \begin{enumerate}
+      \item The series is $ 2/3 - 2/5 + 2/7 - 2/9 + \cdots $. It has partial sums $ 2/3,4/15,58/105, \dots $. Converges to $ \pi/2 $.
+      \item The series is $ -2/5 + 4/6 - 6/7 + 8/8 - 10/9 + \cdots $. It has partial sums $ 4/15,-62/125, \dots $. Diverges (the terms added and subtracted
+            keep growing, so partial sums become very positive and very negative alternately).
+    \end{enumerate}
 \end{enumerate}
 
 \subsection*{13. Inverse Functions}
@@ -736,8 +724,32 @@
   \item Use partial fractions.
 \end{enumerate}
 
-\subsection*{24. Formal Definitions of $ \exp $ and $ \ln $}
-$ \rint \frac{1}{\text{cabin}} \dif{(\text{cabin})} = \log \text{cabin} + \text{sea} $.
+\subsection*{24. Kinematics}
+\begin{enumerate}
+  \item
+    \begin{enumerate}
+      \item $ v = \od{h}{t} = 122.5 - 9.8t $, so the initial velocity of the flare is \SI{122.5}{\metre\per\second}.
+      \item Zero.
+      \item When $ v = 0 $, $ t = 12 $ and the height at this time is around 764 metres.
+    \end{enumerate}
+  \item Let $ x $ be the distance from the point on the beach directly away from B. Then the total distance travelled
+        is simply $ D = \sqrt{600^2 + x^2} + \sqrt{800^2 + (1200-x)^2} $; taking the derivative:
+        \begin{displaymath}
+          \od{D}{x} = \frac{x}{\sqrt{600^2 + x^2}} - \frac{1200 - x}{\sqrt{800^2 + (1200 - x)^2}}
+        \end{displaymath}
+        Setting to zero, we have
+        \begin{gather*}
+          x\sqrt{800^2 + (1200 - x)^2} = (1200 - x)\sqrt{600^2 + x^2}\\
+          800^2 x^2 + (1200 - x)^2 x^2 = (1200 - x)^2 (600^2 + x^2)\\
+          0 =  1200^2 600^2 - 600^2 2400x + (600^2 - 800^2) x^2\\
+          x \in \{ -3600, 3600/7 \}.
+        \end{gather*}
+        Since $ x \geq 0 $, $ x = 3600/7 \approx 514 $. The total distance travelled is therefore around 1844 metres. By graphing $ D $ versus $ x $,
+        we see that this is indeed the required medium:
+        \begin{center}
+          \includegraphics[width=0.4\textwidth]{swamp}
+        \end{center}
+\end{enumerate}
 
 \subsection*{25. Integration Revision}
 \begin{enumerate}
