@@ -727,7 +727,7 @@ a technical definition first:
 \begin{defn}[Row echelon form]
   A set of linear equations is in row echelon form if the first variable in each row is to the right of the leading
   variable in the row above. If a variable is the leftmost variable in some row then we call it a \df{pivot}; otherwise
-  we call it a \df{free variable}.
+  we call it a \df{free variable}. If every pivot is 1, then the matrix is in \df{row-reduced echelon form}.
 \end{defn}
 
 An example of a free variable is the variable $ z $ in our matrix example above; we are free to pick any value $ t $ for it
@@ -749,11 +749,14 @@ It is easy to see that all systems in row echelon form can be solved easily by s
 into the higher ones. We will now write down a general algorithm that can be used to solve all consistent
 systems of linear equations.
 \begin{alg}[Gaussian Elimination]
-  To solve a system of linear equations:
+  To solve a system of linear equations, write the augmented matrix of the system and then:
   \begin{enumerate}
-    \item Write the augmented matrix of the system.
-    \item Use elementary row operations to convert the matrix to row echelon form, by trying to eliminate the leftmost entry of the bottom
-          row of the matrix, and moving up to the next row when it becomes impossible to do so.
+    \item Find the leftmost column of the matrix whose entries are not all zero. Obtain a leading 1 at the top of this
+          column by interchanging rows and multiplying by scalars.
+    \item Obtain zeros in all other entries of the column by subtracting multiples of the first row.
+    \item Exchange rows such that all zero rows are at the bottom of the matrix.
+    \item Repeat step (1) for the submatrix obtained by deleting all rows containing previously obtained leading 1's; repeat
+          steps (2) and (3) for the full matrix. Repeat until the matrix is in row-reduced echelon form.
     \item Use back substitution to solve the system of linear equations corresponding to the row-reduced matrix.
   \end{enumerate}
 \end{alg}
@@ -815,6 +818,7 @@ systems of linear equations.
         and whimsical. Per piece, the price of each is (respectively) \$0.50, \$0.60, and \$0.90. Goldie wants to buy twice as many nutritious chocolate
         pieces as whimsical chocolate pieces, and wants to use up all her money so she doesn't have to pay tax to the magical pixie government. To her
         surprise, she finds that there is only one possible combination of purchases she can make. How many pieces of each type can she buy?
+  \item Write a computer subroutine to transform a given $ n \times n $ matrix into row-reduced echelon form.
 \end{enumerate}
 
 \section{Determining with Determinants}
