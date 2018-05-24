@@ -55,7 +55,7 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
    Very geometric. Like Stewart, the content of the book is almost orthogonal to the way the course is taught! (512.5 P82)
  * Stewart Venit & Wayne Bishop: _Elementary Linear Algebra_. A shorter book, same content essentially. Includes section on linear programming (missing from Poole;
    this isn't part of any course AFAIK, but is vaguely interesting). Spends a very long time on computations. Not even in the UoA library; don't bother buying a
-   copy. (I had a copy given to me.) (*)
+   copy. (I had a copy given to me.) I actually use this if I need an algorithm/computation notes. (*)
  * Howard Anton: _Elementary Linear Algebra_. Isomorphic to Venit & Bishop. (512.5 A63)
  * Gilbert Strang: _Linear Algebra and its Applications_. I like this book, it would probably be the book I would recommend someone use during a stage I course. Lots
    of intuition, so you can move on to something more rigorous like Halmos for stage II. He does somewhat fetishise the dimension theorem for a linear transformation
@@ -118,6 +118,7 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
    on stuff). Highlights include a chapter on Galois theory (first edition only) and a chapter on group representations. (512 A79)
  * John Dixon, _Problems in Group Theory_. A bit difficult, but (and?) I like it. Should be good for 720 and 721 as well, so well worth the 15ish dollars it
    costs. (512.22 D62)
+ * Grigore C\u alug\u areanu and Peter Hamburg, _Exercises in Basic Ring Theory_. Basically what it says on the tin. [512.4 C16]
  * David Bishop, _Group Theory and Chemistry_. Not actually a maths text, it's cute that he tries to prove some of the theorems of elementary group theory but
    I'm not entirely sure why he bothers. If you want applications of the 320 material, look here (but don't look too deep, you might catch chemistry germs). (*)
  * Ian Stewart, _Galois Theory_. Once you have an OK grounding of the material in 320 (basic facts about groups, rings, and fields) then this book is a readable
@@ -127,6 +128,7 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
    although over the past few years he seems to have rewritten the same book multiple times under different titles!] (512.32 S84)
  * Harold Edwards, _Galois Theory_. A GTM that is my preferred text on Galois theory. Not really good for a first intro after 320 --- read Stewart or Artin first.
    Goes via a more classico-historical route, using proofs that Galois would have understood. (512.32 E26)
+ * Lang, _Algebra_.
 
 Books I want to read: Rotman, _An Introduction to the Theory of Groups_; MacLane/Birkhoff, _Algebra_.
 
