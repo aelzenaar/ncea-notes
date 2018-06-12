@@ -31,7 +31,15 @@ In fact, it turns out that the derivative of $ f \circ g $ is $ g' (f' \circ g) 
 \begin{displaymath}
   \od{}{x} f(g(x)) = g'(x) f'(g(x)).
 \end{displaymath}
-This is known as the \textit{chain rule}, since we are "chaining" together functions.
+This is known as the \textit{chain rule}, since we are ``chaining" together functions.
+
+Before proving the chain rule, let us convince ourselves that it is plausible. We can interpret the
+derivative $ \od{g}{x} $ as the rate of change of $ g $ with respect to $ x $, and the derivative $ \od{f}{g} $
+as the derivative of $ f $ with respect to small changes in $ g $; it is intuitive that if $ g $ changes
+twice as fast as $ x $ at some point, and $ f $ changes five times as fast as $ g $, then $ f $ changes $ 2 \times 5 = 10 $
+times as fast as $ x $.
+
+A rigorous proof is given below, and it matches our intuition reasonably well.
 
 \begin{ex}
   The correct derivative of $ \sin(x^2) $ is $ 2x \cos(x^2) $.
@@ -58,33 +66,60 @@ This is known as the \textit{chain rule}, since we are "chaining" together funct
   $ \od{A}{t} = \od{r}{t} (2\pi r) = 6\pi r = 6\pi (r_0 + 3t) $ (where $ r_0 $ is the radius at $ t = 0 $).
 \end{ex}
 
+\begin{proof}[Proof of the chain rule (optional)]
+  The proof is a little fiddly, and comes in two parts. Recall that in the work on limits, we found that an alternative definition of
+  the derivative of $ f $ at $ x $ was
+  \begin{displaymath}
+    f'(x) = \lim_{k \to x} \frac{f(x) - f(k)}{x - k}.
+  \end{displaymath}
+
+  Now, suppose we wish to find the derivative of $ f \circ g $ at $ x $. In the first case, suppose that $ g $ is not constant
+  around $ x $ (in other words, we can zoom in `far enough' towards $ x $ so that for all $ k $ in the zoomed in area, $ g(k) \neq g(x) $).
+  Then:
+  \begin{align*}
+    \lim_{k \to x} \frac{f(g(x)) - f(g(k))}{x - k} &= \lim_{k \to x} \frac{f(g(x)) - f(g(k))}{g(x) - g(k)} \cdot \frac{g(x) - g(k)}{x - k}\\
+                                                   &= \lim_{k \to x} \frac{f(g(x)) - f(g(k))}{g(x) - g(k)} \cdot \lim_{k \to x} \frac{g(x) - g(k)}{x - k}\\
+                                                   &= f'(g(x)) g'(x),
+  \end{align*}
+  (noting that as $ k \to x $ , $ g(k) \to g(x) $). This calculation only works when $ g $ is not constant around $ x $, because if $ g $ \emph{is}
+  constant around $ x $ then for all $ k $ sufficiently close to $ x $, $ g(x) - g(k) = 0 $ and the limit does not exist.
+
+  To deal with this case, assume that $ g $ \emph{is} constant around $ x $. Then $ g'(x) = 0 $, and also for all $ h $ close enough
+  to zero we have $ g(x + h) = g(x) $. Then
+  \begin{displaymath}
+    (f \circ g)'(x) = \lim_{h \to 0} \frac{f(g(x + h)) - f(g(x))}{h} = \lim_{h \to 0} \frac{f(g(x)) - f(g(x))}{h} = 0 = 0 \times f'(g(x)) = g'(x) f'(g(x)).
+  \end{displaymath}
+\end{proof}
+
 \clearpage
 \subsection*{Questions}
 \begin{questions}
-   \questioA Identify the inner and outer functions, but do not attempt to differentiate.
-     \begin{parts}
-       \part $ \sqrt{\sin x} $
-       \part $ \sin \cos \tan x $
-       \part $ (2x + 3)^{17} $
-       \part $ 97(x + 2)^2 $
-       \part $ \ln \sin x $
-       \part $ \frac{1}{\sqrt{23x - x^2}} $
-     \end{parts}
-   \questioA Differentiate with respect to $ t $:
-     \begin{parts}
-       \part $ (2t + 3)^{3000} $
-       \part $ \sin \ln t $
-       \part $ \sqrt{t^3 + 10t^2 + 3} $
-       \part $ \csc e^t $
-       \part $ \sin^3 t + 14\ln (3t) $
-       \part $ \sin \sin \sin t $
-       \part $ \cot (t + \sec t) $
-       \part $ \sin^2 ((t + \sin t)^2) $
-       \part $ \ln \sqrt{t + 9} $
-       \part $ \sqrt{t} + \frac{1}{\sqrt[3]{t^4}} $
-       \part $ e^{\sec (t^2)} $
-       \part $ \sin \sqrt{t + \tan t} $
-     \end{parts}
+  \questioA Identify the inner and outer functions, but do not attempt to differentiate.
+    \begin{parts}
+      \part $ \sqrt{\sin x} $
+      \part $ \sin \cos \tan x $
+      \part $ (2x + 3)^{17} $
+      \part $ 97(x + 2)^2 $
+      \part $ \ln \sin x $
+      \part $ \frac{1}{\sqrt{23x - x^2}} $
+    \end{parts}
+  \questioA Differentiate with respect to $ t $:
+    \begin{multicols}{2}
+    \begin{parts}
+      \part $ (2t + 3)^{3000} $
+      \part $ \sin \ln t $
+      \part $ \sqrt{t^3 + 10t^2 + 3} $
+      \part $ \csc e^t $
+      \part $ \sin^3 t + 14\ln (3t) $
+      \part $ \sin \sin \sin t $
+      \part $ \cot (t + \sec t) $
+      \part $ \sin^2 ((t + \sin t)^2) $
+      \part $ \ln \sqrt{t + 9} $
+      \part $ \sqrt{t} + \frac{1}{\sqrt[3]{t^4}} $
+      \part $ e^{\sec (t^2)} $
+      \part $ \sin \sqrt{t + \tan t} $
+    \end{parts}
+    \end{multicols}
   \questioA The derivative of a function is $ 2 \cos 2x $. What could the original function be?
   \questioM Differentiate $ y = \sin^2 x + \cos^2 x $, and hence prove that $ \sin^2 x + \cos^2 x = 1 $.
   \questioA Suppose that the displacement of a particle on a vibrating spring is given by $ x(t) =  5 + \frac{1}{8} \sin(5\pi t) $,
@@ -130,10 +165,15 @@ This is known as the \textit{chain rule}, since we are "chaining" together funct
       \parA If $ W = \SI{200}{\kilo\gram} $ and $ \mu = 0.2 $, find $ \od{F}{\theta} $ when $ \theta = \frac{\pi}{6}\thinspace\si{\radian} $.
       \parM Suppose now that $ \theta $ is a function of time, so that $ \od{\theta}{t} = \SI{0.5}{\radian / \second} $. Find $ \od{F}{t} $.
     \end{parts}
-  \questioE Prove that
+  \questioE Find the 73rd derivative of $ \sin 6x $.
+  \questioE Recall that the \emph{absolute value} of $ x $, denoted $ \abs{x} $, is the value obtained by `throwing away the sign' of $ x $.
+    \begin{parts}
+      \part Prove that
             \begin{displaymath}
               \od{}{x} \abs{x} = \frac{x}{\abs{x}}.
             \end{displaymath}
             [\textit{Hint: Write $ \abs{x} = \sqrt{x^2} $.}]
+      \part If $ f(x) = \abs{\sin x} $, find $ f'(x) $ and sketch the graphs of both $ f $ and $ f' $.
+    \end{parts}
 \end{questions}
 \end{document}

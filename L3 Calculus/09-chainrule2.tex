@@ -27,6 +27,18 @@ although one must remember that derivatives are \textbf{not} fractions!
   Hence the ladder is sliding down the wall at a rate of \SI{-0.75}{\metre\per\second}.
 \end{ex}
 
+\begin{ex}
+  The radius of a sphere is increasing at a rate of $ \od{r}{t} = -\ln(t - 1) $ metres per second. At what rate will the surface area of
+  the sphere be growing at $ t = 2 $?
+
+  \textit{Solution.} We have $ \mathrm{SA} = 4\pi r^2 $, so $ \od{\mathrm{SA}}{r} = 8\pi r $ and
+    \begin{displaymath}
+      \od{\mathrm{SA}}{t} = \od{\mathrm{SA}}{r} \od{r}{t} = -\ln(t - 1) \times 8\pi r = 0.
+    \end{displaymath}
+
+    The surface area of the sphere will be momentarily constant at $ t = 2 $.
+\end{ex}
+
 \subsection*{Questions}
 \begin{questions}
   \fullwidth{For each of the following situations: (a) identify the quantities given in the problem; (b) identify the unknown;

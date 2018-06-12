@@ -10,10 +10,10 @@ These problems do not just concern integration.
             has a side length that is the same as that of the square at each instant. The initial volume of the tetrahedron was \SI{1}{\metre\cubed}.
             In terms of $ k $, what is the volume of the tetrahedron three seconds after that?
   \questioS Scholarship 2017: The hyperbolic functions $ \sinh x $ and $ \cosh x $ are defined as follows:
-            \begin{gather}
+            \begin{gather*}
               \sinh x = \frac{1}{2} (e^x - e^{-x})\\
               \cosh x = \frac{1}{2} (e^x + e^{-x}).
-            \end{gather}
+            \end{gather*}
             Show that $ \od{}{x} \sinh^{-1} x = \frac{1}{\sqrt{x^2 + 1}} $.
   \questioS Consider the tetrahedron inscribed inside a cube, as in the figure.
             \begin{center}
@@ -135,6 +135,21 @@ These problems do not just concern integration.
     \begin{parts}
       \part $ \displaystyle \rint \frac{\sin \frac{1}{x}}{x^2} \dif{x} $
       \part $ \displaystyle \rint \frac{\ln x \cos x - \frac{\sin x}{x}}{(\ln x)^2} \dif{x} $
+    \end{parts}
+  \clearpage
+  \questioO A while ago (when we talked about the product and quotient rules), I claimed that the radius of the circle best approximating a continuous
+            curve around a point $ (x,y) $ is given by
+            \begin{displaymath}
+              \textrm{radius of curvature} = \frac{\left[1 +  \left(\od{y}{x}\right)^2 \right]^{\frac{3}{2}}}{\abs{\od[2]{y}{x}}}.
+            \end{displaymath}
+            Let us attempt to prove this.
+    \begin{parts}
+      \part Let $ f $ be a continuous function at $ x $ such that the second derivative of $ f $ at $ x $ exists. By recalling our work on approximations,
+            explain why knowing up to the second derivative of $ f $ should be enough to find the `best circular approximation' of $ f $ at $ (x, f(x)) $.
+      \part Consider the circle of radius $ r $ centred at $ (x_0, y_0) $. Suppose that this circle passes through the point $ (x_1, y_1) $;
+            suppose further that the first derivative of the $ y$-ordinate of the circle with respect to the $ x$-ordinate is $ m $, and that
+            the second derivative is $ c $. Write down expressions for $ r $, $ x_0 $, and $ y_0 $ in terms of $ x_1 $, $ y_1 $, $ m $, and $ c $.
+      \part Use part (b) to write down the radius of the unique circle passing through $ (x, f(x)) $ with matching first and second derivatives to $ f $.
     \end{parts}
 \end{questions}
 

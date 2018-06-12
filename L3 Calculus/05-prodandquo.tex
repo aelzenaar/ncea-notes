@@ -12,6 +12,17 @@ Suppose $ f $ and $ g $ are functions; then the \textit{real} product rule is
   (fg)' = gf' + fg'.
 \end{displaymath}
 
+\begin{proof}
+  We simply apply the limit laws to the definition of the derivative and use a little trick (note that the expression highlighted
+  in purple is exactly zero).
+  \begin{align*}
+    (fg)'(x) &= \lim_{h\to 0} \frac{f(x + h)g(x + h) - f(x) g(x)}{h}\\
+             &= \lim_{h \to 0} \frac{f(x + h) g(x + h) \textcolor{RedViolet}{\mathbf{ {} - f(x + h)g(x) + f(x + h)g(x)}} - f(x)g(x)}{h}\\
+             &= \lim_{h \to 0} \frac{f(x + h)[g(x + h) - g(x)]}{h} + \lim_{h\to 0} \frac{[f(x + h) - f(x)]g(x)}{h}\\
+             &= f(x) \lim_{h \to 0} \frac{g(x + h) - g(x)}{h} + g(x) \lim_{h\to 0} \frac{f(x + h) - f(x)}{h} = f(x) g'(x) + g(x) f'(x).
+  \end{align*}
+\end{proof}
+
 \begin{ex}
   Consider $ y = 2t \sin t $. Then $ \od{y}{t} = 2 \sin t + 2t \cos t $.
 \end{ex}

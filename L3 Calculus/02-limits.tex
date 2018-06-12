@@ -7,7 +7,7 @@ How can we define the derivative in such a way that we can calculate with it? Re
 a function $ f $ over the interval $ a \leq x \leq b $ is defined to be $ m = \frac{\Delta y}{\Delta x} = \frac{f(b) - f(a)}{b - a} $. We wish
 to find the gradient at a single point; in order to do this, we will slowly move point $ b $ towards point $ a $, letting $ \Delta x $ get closer
 and closer to zero. However, we cannot actually let $ \Delta x = 0 $ --- and so we can only ever find an \textit{approximation} to the instantaneous
-gradient!
+gradient without a bit of trickery!
 
 Before moving on with the definition of the derivative, let's explore this idea of assigning values to a function by seeing what it looks like
 really close to the point we're interested in. We call this operation the \textit{limit}.
@@ -16,12 +16,15 @@ Consider the following function:
 \begin{center}
   \includegraphics[width=0.5\textwidth]{oslimit2}
 \end{center}
-Although the \textit{value} of the function at 2 is 6, the \textit{limit} $ \lim_{x \to 6} g(x) = 4 $ because when
+Although the \textit{value} of the function at 2 is 6, the \textit{limit} of the function at 2 is $ \lim_{x \to 2} g(x) = 4 $ because when
 taking a limit we don't care what the function does at the point --- only what it looks like it should do! Essentially, the
 limit of a function at a point is a property of the area around the point \textbf{and not a property of the point itself}.
 
+You can also think of $ \lim_{x \to x_0} f(x) $ as being the unique value that we could pick for $ f(x_0) $ such that the function
+around that point has `no gaps'.
+
 \begin{ex}
-  Here are a few algebraic examples:
+  Here are a few algebraic examples of limit finding:
   \begin{itemize}
     \item $ \lim_{x \to 0} \frac{x}{x} = 1 $ since as $ x $ gets closer and closer to $ 0 $, $ \frac{x}{x} = 1 $.
     \item $ \lim_{x \to 3} \frac{(x - 2)(x - 3)}{x - 3} = 1 $ since as $ x $ gets closer and closer to 3, the fraction gets arbitrarily close to 1.
@@ -53,7 +56,7 @@ which is equivalent to the definition above (see exercises).
 
 \subsection*{Questions}
 \begin{questions}
-  \questioA Guess the value of the following limit by evaluating it at $ x \in \{ \pm 1, \pm 0.5, \pm 0.2, \pm 0.1, \pm 0.05, \pm 0.01 \} $:
+  \questioA Guess the value of the following limit by evaluating the limuend for each $ x $ in $ \{ \pm 1, \pm 0.5, \pm 0.2, \pm 0.1, \pm 0.05, \pm 0.01 \} $:
             \begin{displaymath}
               \lim_{x \to 0} \frac{\sin x}{x + \tan x}
             \end{displaymath}

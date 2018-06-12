@@ -3,7 +3,7 @@
 
 \mainHeaderDiff{10}{Parametric Functions}
 \begin{center}
-  \includegraphics[width=0.4\textwidth]{space-curve-4}
+  \includegraphics[width=0.5\textwidth]{space-curve-4}
 \end{center}
 Some curves cannot be described simply with a function; for example, the above track of a particle is
 too complicated to analyse using any of the techniques which we have studied so far. One strategy which
@@ -15,15 +15,23 @@ example, we can \textit{parameterise} the above curve as:
   z(t) &= e^{-t}.
 \end{align*}
 
-For a simper example, consider the unit circle $ x^2 + y^2 = 1 $. By recalling the definitions
+With this example as our initial motivation, we move from discussing functions $ \mathbb{R} \rightarrow \mathbb{R} $, and turn our attention to
+functions $ \mathbb{R} \rightarrow \mathbb{R}^n $. This type of function is often called a \textit{curve}, or a \textit{parameterisation}.
+
+For a simpler example, consider the unit circle $ x^2 + y^2 = 1 $. By recalling the definitions
 of the trigonometric functions, we can parameterise the circle as $ (x, y) = (\cos \theta, \sin \theta) $
 for $ 0 \leq \theta < 2\pi $. Then $ \od{y}{t} = -\cos \theta = -x $ and $ \od{x}{t} = \sin \theta = y $,
 so by the chain rule $ \od{y}{x} = \od{y}{t} \cdot \od{t}{x} = -\frac{x}{y} $ --- a much simpler calculation
 than taking the derivative of the square root required by working directly with the circle formula.
 
-In general, we have
-\begin{displaymath}d
-  \od{y}{x} = \od{y}{t} \cdot \od{t}{x}
+\begin{center}
+  \includegraphics[width=0.2\textwidth]{circle}
+\end{center}
+
+In order to justify this in general, we note that the output of a curve is a set of ordered pairs and is therefore (locally) a function from the
+first coordinate to the second coordinate. Using the chain rule, we can justify that in general, if the induced function is differentiable, we have
+\begin{displaymath}
+  \od{y}{x} = \od{y}{t} \cdot \od{t}{x}.
 \end{displaymath}
 
 In order to find the second derivative, we replace $ y $ with $ \od{y}{x} $:
