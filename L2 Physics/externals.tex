@@ -1,5 +1,8 @@
 \documentclass[a4paper]{amsbook}
 
+\let\counterwithout\relax
+\let\counterwithin\relax
+
 \usepackage{physics}
 \usepackage{siunitx}
 \usepackage{tabularx}
@@ -554,7 +557,7 @@ It is often much easier to remember that $ n_1 \sin \theta_1 = n_2 \sin \theta_2
 \begin{center}
 \begin{tabular}{c|c||c|c}
   \textbf{Substance} & $ n $ & \textbf{Substance} & $ n $\\\hline
-  Diamond & 2.42 & Perspex & 1.49\\ 
+  Diamond & 2.42 & Perspex & 1.49\\
   Ruby & 1.76 & Paraffin Oil & 1.44\\
   Flint Glass & 1.65 & Ethanol & 1.36\\
   Crown Glass & 1.52 & Water & 1.33\\
@@ -850,10 +853,16 @@ of this law, which is summed up as the following equation:
   \includegraphics[width=0.3\textwidth]{resultantex}
   \caption{Forces acting on a hook due to a rope. \capcite{http://s3.amazonaws.com/answer-board-image/2ace727f-4377-4440-82e1-17b6311a624b.bmp}\label{fig:resultantex}}
 \end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{downhill}
+  \caption{The internet is a rich source for physics problems.\label{fig:downhill}}
+\end{figure}
 \begin{enumerate}
   \item A spacecraft moves at a constant speed in a straight line through space. What is the net force on the spacecraft?
   \item A car pulls a caravan. If there is an equal and opposite force opposing the force of the car on
         the caravan, how can the two ever start moving?
+  \item Explain the joke in figure \ref{fig:downhill}.
   \item Consider figure \ref{fig:resultantex}. What is the net force acting on the eye of the hook?
   \item A tow truck pulls a car of mass \SI{1250}{\kilo\gram} with a force of \SI{1500}{\newton}. If there is
         friction totalling \SI{600}{\newton}, calculate the car's acceleration.
