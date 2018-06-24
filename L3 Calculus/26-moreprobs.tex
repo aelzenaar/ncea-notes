@@ -11,8 +11,8 @@ These problems do not just concern integration.
             In terms of $ k $, what is the volume of the tetrahedron three seconds after that?
   \questioS Scholarship 2017: The hyperbolic functions $ \sinh x $ and $ \cosh x $ are defined as follows:
             \begin{gather*}
-              \sinh x = \frac{1}{2} (e^x - e^{-x})\\
-              \cosh x = \frac{1}{2} (e^x + e^{-x}).
+              \sinh x = \tfrac{1}{2} (e^x - e^{-x})\\
+              \cosh x = \tfrac{1}{2} (e^x + e^{-x}).
             \end{gather*}
             Show that $ \od{}{x} \sinh^{-1} x = \frac{1}{\sqrt{x^2 + 1}} $.
   \questioS Consider the tetrahedron inscribed inside a cube, as in the figure.
@@ -151,6 +151,31 @@ These problems do not just concern integration.
             the second derivative is $ c $. Write down expressions for $ r $, $ x_0 $, and $ y_0 $ in terms of $ x_1 $, $ y_1 $, $ m $, and $ c $.
       \part Use part (b) to write down the radius of the unique circle passing through $ (x, f(x)) $ with matching first and second derivatives to $ f $.
     \end{parts}
+  \questioO We prove that $ \pi $ is irrational.\footnote{~Ivan Niven, \textit{A simple proof that $ \pi $ is irrational}.} Suppose
+            that $ \pi = \frac{a}{b} $ where $ a $ and $ b $ are positive integers. Let $ n $ be a positive integer, and define
+            \begin{gather*}
+              f(x) = \frac{x^n(a - bx)^n}{n!}\\
+              F(x) = f(x) - f^{(2)}(x) + f^{(4)}(x) - \cdots + (-1)^nf^{(2n)}(x).
+            \end{gather*}
+    \begin{parts}
+      \part Show that the value of $ f $ and every derivative of $ f $ at $ x = 0 $ and $ x = a/b $ is integral. Conclude that $ F(\pi) + F(0) $ is an integer.
+      \part Show that $ \od{}{x}[F'(x) \sin x - F(x) \cos x] = f(x) \sin x $, and hence that
+            \begin{equation}
+              \rint_0^\pi f(x) \sin x = F(\pi) + F(0). \tag{*}
+            \end{equation}
+      \part Prove that $ 0 < f(x) \sin x < \frac{\pi^n a^n}{n!} $, and conclude that (*) is positive but arbitrarily small for sufficiently
+            large $ n $.
+      \part Derive a contradiction from (a) and (c).
+    \end{parts}
+\end{questions}
+
+\subsection*{Written Questions}
+It is possible for scholarship exams to include written questions; the following are some examples of the subjects and style of question.
+\begin{questions}
+  \question Discuss the significance of the fundamental theorem of calculus.
+  \question Many natural phenomena are modelled well by the differential equation $ y = \od{y}{x} $. Discuss the reasons for this.
+  \question Compare and contrast the geometric and algebraic viewpoints of the complex numbers.
+  \question One of the main ideas of calculus is the approximation of complex phenomena with simpler models. Discuss, with examples.
 \end{questions}
 
 \end{document}
