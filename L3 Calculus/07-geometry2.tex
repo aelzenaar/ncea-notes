@@ -35,8 +35,9 @@ We call the value of the first derivative the \textit{slope} or \textit{gradient
 the second derivative measures how "curvy" a function is and we call its value the \textit{concavity} of a function
 at a point.
 
-Unfortunately, there is no nice method for checking for continuity involving the derivatives. At this level, however, it
-should be fairly obvious at which points a function is discontinuous.
+Unfortunately, there is no nice method for checking for continuity involving the derivatives, beyond the fact (proved in the exercises)
+that if a function is differentiable at a point then it is continuous there. At this level, however, it should be fairly obvious at which
+points a function is discontinuous.
 
 \begin{ex}
   \textit{Question.} Consider the function defined by $ f(x) = x^4 - 2x^2 + 3 $. (a) Find the intervals on which $ f $
@@ -106,6 +107,13 @@ should be fairly obvious at which points a function is discontinuous.
         \end{subparts}
     \end{parts}
   \questioE A curve is defined by the function $ f(x) = e^{-(x-k)^2} $. Find, in terms of $ k $, the $ x$-ordinates for which $ f''(x) = 0 $.
+  \clearpage
+  \questioS We will prove that differentiability of $ f $ at $ a $ implies continuity of $ f $ at $ a $; expand the following
+            and use the limit laws to show that $ \lim_{x \to a} f(x) - f(a) = 0 $, carefully indicating where you use the existence
+            of the derivative.
+            \begin{displaymath}
+              \left[\lim_{a \to x} f(x) - f(a)\right]\left[\lim_{a \to x} \frac{x - a}{x - a}\right]
+            \end{displaymath}
   \questioS Scholarship 2010: Recall that the points of inflection of a curve are places where the second derivative
             changes sign. These are typically, \textbf{but not always}, points at which the second derivative is zero.
 

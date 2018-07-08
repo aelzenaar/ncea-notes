@@ -10,7 +10,7 @@
 \end{bthm}
 
 In other words, the definite integral of a function can be found by evaluating the indefinite integrals at
-the endpoints.
+the endpoints. This actually follows from a much more intuitive result:
 
 \begin{bthm}[Second Fundamental Theorem]
   Suppose $ f $ is a continuous function. Then:
@@ -19,11 +19,17 @@ the endpoints.
   \end{displaymath}
 \end{bthm}
 
-\begin{center}
-  \includegraphics[width=0.5\textwidth]{ftc1}
-\end{center}
+For some intuition, we can consider the following graph of $ y = f(x) $. The shaded area is the value of $ A(x) = \rint^x_a f(t) \dif{t} $;
+then we use the fact that the area of the darker shaded area is approximated by $ h f(x) $ (base times height) to see that
+\begin{displaymath}
+  \frac{A(x + h) - A(x)}{h} \approx \frac{h f(x)}{h} = f(x).
+\end{displaymath}
+If we take limits, as we do in the proof of this theorem (see supplementary sheet), then this approximation becomes exact: the rate of change of
+the area under a curve is simply the height of the curve.
 
-The rate of change of the area under a curve is simply the height of the curve.
+\begin{center}
+  \includegraphics[width=0.6\textwidth]{ftc1}
+\end{center}
 
 We also have the following theorem:
 \begin{thm}
@@ -36,10 +42,10 @@ We also have the following theorem:
   \end{enumerate}
 \end{thm}
 
-Note that the areas below a curve are assigned \textbf{\textcolor{RubineRed}{NEGATIVE AREA}}.
+Note that the areas below a curve are assigned \textbf{negative area}!
 
 \begin{ex}
-  Note that the definite integral $ \rint^\pi_0 \cos(x) \dif{x} $ is equal to 0; this is because the (negative) area under the $ x-$axis exactly
+  The definite integral $ \rint^\pi_0 \cos(x) \dif{x} $ is equal to 0; this is because the (negative) area under the $ x-$axis exactly
   cancels the (positive) area above the $ x-$axis. (Draw a picture.)
 \end{ex}
 

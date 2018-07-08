@@ -4,8 +4,6 @@
 
 \mainHeaderDiffHw{1}{The Derivative}
 \subsection*{Reading}
-\textit{From \textit{Calculus Made Easy}, by Silvanus P. Thompson and revised by Martin Gardner}
-
 Considering how many fools can calculate, it is surprising that it should be thought a difficult or
 a tedious task for any other fool to learn how to master the same tricks.
 
@@ -47,6 +45,10 @@ all the little bits that are indicated by the symbols that follow.
 
 That's all.
 
+\begin{flushright}
+  From \textit{Calculus Made Easy}, by Silvanus P. Thompson and revised by Martin Gardner.
+\end{flushright}
+
 \clearpage
 \subsection*{Questions}
 \begin{questions}
@@ -58,7 +60,7 @@ That's all.
             xlabel = $ x $,
             ylabel = $ y $
           ]
-            \addplot[domain = -5:5, color = green, samples=100] {sin(deg(x)) + cos(deg(x))};
+            \addplot[domain = -pi:pi, color = blue, samples=100] {sin(deg(x)) + cos(deg(x))};
           \end{axis}
         \end{tikzpicture}}
       \end{center}

@@ -8,34 +8,46 @@ proofs are reasonably short and can be found in the calculus notes.
 
 \begin{center}
   \def\arraystretch{1.5}
-  \begin{tabular}{c|c}
+  \begin{tabular}{|c|c|}\hline
     \textbf{Function} & \textbf{Derivative}\\\hline
-    $ x^n $ & $ nx^{n - 1} $\\
-    $ e^x $ & $ e^x $\\
-    $ \ln \abs{x} $ & $ \frac{1}{x} $\\
-    $ \sin x $ & $ \cos x $\\
-    $ \cos x $ & $ -\sin x $\\
-    $ \tan x $ & $ \sec^2 x $\\
-    $ \csc x $ & $ -\csc x \cot x $\\
-    $ \sec x $ & $ \sec x \tan x $\\
-    $ \cot x $ & $ -\csc^2 x $
+    $ x^n $ & $ nx^{n - 1} $\\\hline
+    $ e^x $ & $ e^x $\\\hline
+    $ \ln \abs{x} $ & $ \frac{1}{x} $\\\hline
+    $ \sin x $ & $ \cos x $\\\hline
+    $ \cos x $ & $ -\sin x $\\\hline
+    $ \tan x $ & $ \sec^2 x $\\\hline
+    $ \csc x $ & $ -\csc x \cot x $\\\hline
+    $ \sec x $ & $ \sec x \tan x $\\\hline
+    $ \cot x $ & $ -\csc^2 x $\\\hline
   \end{tabular}
 \end{center}
 
 Today, we also introduce several rules for finding the derivative of a more complicated function
 in terms of the derivatives of component functions. Let $ f $ and $ g $ be functions, and let $ \lambda $ be a real constant. Then:
-\begin{align*}
-  (\lambda)' = 0\\
-  (\lambda f)' &= \lambda f'\\
-  (f + g)' &= f' + g'.
-\end{align*}
+\begin{enumerate}
+  \item $ (\lambda)' = 0 $ [The slope of a constant function is zero.]
+  \item $ (\lambda f)' = \lambda f' $ [The slope of a scaled function is the scaled slope of the function.]
+  \item $ (f + g)' = f' + g' $ [The slope of the sum of two functions is the sum of the individual slopes.]
+\end{enumerate}
 In particular, the derivative is \textit{linear}: that is, for functions $ f, g $ and real constants $ \alpha, \beta $
-we have $ (\alpha f + \beta g)' = \alpha f' + \beta g' $ (formally, the derivative is a linear transformation from the
-vector space of differentiable functions to the vector space of real-valued functions).
+we have $ (\alpha f + \beta g)' = \alpha f' + \beta g' $. These formulae can all be proved using the limit definition
+of the derivative, and it is a simple exercise to check them all. For example,
+\begin{align*}
+  (f + g)'(x) = \lim_{h \to 0} \frac{(f + g)(x + h) - (f + g)(x)}{h} &= \lim_{h \to 0} \frac{f(x + h) + g(x + h) - f(x) - g(x)}{h} \\
+                                                                     &= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} + \lim_{h \to 0} \frac{g(x + h) - g(x)}{h} \\
+                                                                     &= f'(x) + g'(x).
+\end{align*}
 
 Note that the obvious product rule, $ (fg)' = f'g' $ does \textbf{not} hold. We will discuss this further soon,
 although it should be noted that Leibniz initially believed this rule to be true! A counterexample is outlined in the
 exercises for you to work out.
+
+\begin{ex}\leavevmode
+  \begin{enumerate}
+    \item $ \od{}{x} [\sin x + \cos x] = \cos x - \sin x $.
+    \item $ \od{}{x} \frac{3x^2 + 2x + 1}{x} = \od{}{x} \left[ 3x + 2 + x^{-1} \right] = 3 + 0 + (-1)x^{-2} = 3 - \frac{1}{x^2} $.
+  \end{enumerate}
+\end{ex}
 
 \clearpage
 \subsection*{Questions}
@@ -79,5 +91,6 @@ exercises for you to work out.
       \parE The volume of a sphere is given by $ V = \frac{4}{3} \pi r^3 $. Find an expression for the surface area.
     \end{parts}
   \questioE Calculate $ \od{y}{x} $ if $ y = \log_{10} x $.
+  \questioE Prove the remaining two differentiation rules using the limit definition of the derivative.
 \end{questions}
 \end{document}

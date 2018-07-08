@@ -2,9 +2,8 @@
 \begin{document}
 
 \mainHeaderIntg{24}{Kinematics}
-Calculus was independently developed by Sir Isaac Newton to describe motion in physics. This use is known as \textit{kinematics} (from the
-Greek \textit{kinein}, `to move'). Suppose a particle moves from position $ x_0 $ to position $ x_1 $ over a time $ \Delta t $. We call the
-ratio
+Calculus was independently developed by Sir Isaac Newton to describe mechanical motion in physics. This use is known as \textit{kinematics} (from
+the Greek \textit{kinein}, `to move'). Suppose a particle moves from position $ x_0 $ to position $ x_1 $ over a time $ \Delta t $. We call the ratio
 \begin{displaymath}
   \frac{x_1 - x_0}{\Delta t}
 \end{displaymath}
@@ -27,7 +26,10 @@ If we make the intervals smaller, then clearly our approximation becomes better;
   \end{tabular}
 \end{center}
 
-We can derive the following \textit{kinematic equations} if acceleration is kept constant over a time period $ \Delta t $:
+We can prove the following \textit{kinematic equations} if acceleration is kept constant over a time period $ \Delta t $. These equations
+should be familar to all of those that took level 2 physics, and they are derived by finding areas underneath a velocity-time graph: in
+short, via calculus.
+
 \begin{align*}
   v_f &= v_i + a \Delta t\\
   s &= v_i \Delta t + \frac{1}{2} a {\Delta t}^2\\
@@ -38,7 +40,7 @@ We can derive the following \textit{kinematic equations} if acceleration is kept
 \subsection*{Questions}
 All distances are given in \si{\metre}, and all times in \si{\second}, unless otherwise stated.
 \begin{questions}
-  \questioA A particle moves from $ x = \SI{2}{\metre} $ to $ x = \SI{3}{\metre} $ over a time \SI{3}{\second}. What is its average velocity over that time?
+  \questioA A particle moves from $ x = \SI{2}{\metre} $ to $ x = \SI{3}{\metre} $ over \SI{3}{\second}. What is its average velocity over that time?
   \questioM Derive the kinematic equations, by considering the integrals of a velocity function $ v(t) $ with constant derivative $ a $.
   \questioA A particle moves from $ (3,4) $ to $ (12,-3) $ over a time \SI{10}{\second}. If the displacements are measured in metres, what is the magnitude of
             its average velocity during that period?
@@ -77,7 +79,7 @@ All distances are given in \si{\metre}, and all times in \si{\second}, unless ot
     \end{parts}
   \questioM The following is a graph of the instantaneous velocity of an object moving in one dimension over time.
             \begin{center}
-              \includegraphics[width=0.4\linewidth]{velocity2}
+              \includegraphics[width=0.3\linewidth]{velocity2}
             \end{center}
     \begin{parts}
       \part Draw the acceleration of the object over time.
@@ -87,12 +89,17 @@ All distances are given in \si{\metre}, and all times in \si{\second}, unless ot
             \begin{displaymath}
               s(t) = 2t^3 - 12t^2 + 18t + 3.
             \end{displaymath}
-            Find the minimum velocity of the object. Prove that it is a minimum. Which position is it at at that time?
+    \begin{parts}
+      \part Find the minimum velocity of the object. Carefully prove that you have found a minimum.
+      \part What is the distance between the origin and the object when its velocity is at a minimum?
+    \end{parts}
   \questioM The velocity of an Olympic sprinter is modelled by
             \begin{displaymath}
               v_x = a(1 - e^{-bt}),
             \end{displaymath}
             where $ a = \SI{11.81}{\metre\per\second} $ and $ b = \SI{0.6887}{\per\second} $. Find an expression for the
             distance travelled after time $ t $.
+  \questioM The acceleration of a rocket propelled washing machine is given by $ \od{v}{t} = 9t^3 - t^4 + t^{-3/2} $, where $ 0 \leq t \leq 10 $. Find
+            the distance which it has travelled after 10 seconds if its initial velocity (at $ t = 0 $) was \SI{90}{\metre\per\second}.
 \end{questions}
 \end{document}

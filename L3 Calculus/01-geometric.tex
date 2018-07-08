@@ -4,13 +4,13 @@
 
 \mainHeaderDiff{1}{The Derivative}
 
-What is the derivative?
+Last year we met the derivative. Let us recall that the derivative of a function is:
 \begin{itemize}
   \item A way to find the slope of another function.
   \item A function giving a rate of change.
   \item A way to find maxima and minima of a function.
 \end{itemize}
-Essentially, the value of the derivative of a function at a point is the gradient/slope/rate of change of that function at that
+The value of the derivative of a function at a point is the gradient/slope/rate of change of the function at that
 point. Over the next few sections, we will make this rather vague notion precise, allowing us to transform geometric questions
 about slope, curviness and speed into questions that can be solved via algebraic manipulation.
 
@@ -18,9 +18,11 @@ If $ y = f(x) $ is a function, then the derivative is a function that takes a po
 this function, we can write $ f'(x) $ (read \emph{eff prime} of $ x $) or $ \od{y}{x} $ (read \emph{dee y over dee x}). The slope of the graph
 at $ x = 3 $ is written $ f'(3) $, or $ \eval{\od{y}{x}}_{x = 3} $ (I tend to avoid this latter notation).
 
+If a function does not have a well-defined slope at any point, it is said to be non-differentiable at that point.
+
 \begin{ex}
   Consider a function defined by $ y = 2x + 1 $. At every point, the slope of the graph of this function is 2; so
-  the value of the derivative of this function is 2 at every point.
+  the value of the derivative of this function is 2 at every point. (Hence $ \od{y}{x} = 2 $.)
 \end{ex}
 
 \begin{ex}
@@ -109,16 +111,16 @@ at $ x = 3 $ is written $ f'(3) $, or $ \eval{\od{y}{x}}_{x = 3} $ (I tend to av
       \part $ x \mapsto \tan x $
     \end{parts}
   \questioA Describe the derivative of the function $ x \mapsto \tan^{-1} x $.
-  \questioA Write down the slope of $ y = mx + c $.
+  \questioA Write down the slope of $ y = mx + c $. Hence give $ \od{y}{x} $.
   \questioA If $ f' $ is the derivative of some function $ f $, describe the meaning of $ (f')' $ in terms of rate of change (to save space, from now on we
-            will write $ f'' $ for the second derivative).
+            will write $ f'' $ for this second derivative).
   \questioA Let $ f $ be a function. Suppose that it is known that $ f'(3) = 9 $, and $ f(3) = 6 $.
     \begin{parts}
       \part What does the graph of $ y = f(x) $ look like around $ x = 3 $?
       \part Give the equation of the tangent line to $ f(x) $ at $ x = 3 $.
     \end{parts}
-  \questioM Consider the function $ f : t \mapsto \mathrm{floor}(t) $. Where is $ f $ differentiable? (Define $ \mathrm{floor}(t) $ to be the greatest integer
-            less than or equal to $ t $.)
+  \questioM The function $ \mathrm{floor} $ maps any number $ x $ to the greatest integer less than or equal to $ x $ (so $ \mathrm{floor}(\pi) = 3 $, for
+            example). Draw a graph of $ y = \mathrm{floor}(x) $. Where is $ \mathrm{floor} $ differentiable?
   \questioM When a hot water tap is turned on, the temperature $ T $ of the water depends on how long
             the water has been running.
     \begin{parts}
@@ -129,9 +131,8 @@ at $ x = 3 $ is written $ f'(3) $, or $ \eval{\od{y}{x}}_{x = 3} $ (I tend to av
   \questioM The rate of change of a population at a time $ t $ is directly proportional to the
             population $ P(t) $ at that time, such that $ \od{P}{t} = P $. Draw a graph of the
             population over time if $ P(0) \approx 1000 $.
-  \questioM Consider a continuous function $ f : \mathbb{R} \to \mathbb{R} $ which has $ n $ roots
-            (all of multiplicity one) in some interval $ I $. How many roots must its derivative have
-            in $ I $?
+  \questioM Consider a continuous real-valued function $ f $ which has $ n $ roots (all of multiplicity one) in some
+            interval $ I $. How many roots must its derivative have in $ I $?
   \questioM If a function is periodic, with a period of $ T $, what can you say about its derivative?
   \questioM Consider an ellipse, $ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $. This is not a function: since both $ (0, b) $ and $ (0, -b) $ are
             members of the function, it fails the vertical line test. However, it would be nice to reason about its

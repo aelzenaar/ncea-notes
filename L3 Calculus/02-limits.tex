@@ -3,44 +3,56 @@
 \begin{document}
 
 \mainHeaderDiff{2}{Limits}
-How can we define the derivative in such a way that we can calculate with it? Recall that the \textit{average gradient} (or average slope) of
-a function $ f $ over the interval $ a \leq x \leq b $ is defined to be $ m = \frac{\Delta y}{\Delta x} = \frac{f(b) - f(a)}{b - a} $. We wish
-to find the gradient at a single point; in order to do this, we will slowly move point $ b $ towards point $ a $, letting $ \Delta x $ get closer
-and closer to zero. However, we cannot actually let $ \Delta x = 0 $ --- and so we can only ever find an \textit{approximation} to the instantaneous
-gradient without a bit of trickery!
+Last week we looked at the derivative from the point of view of a `slope function'; how can we define the derivative in such a way that we can
+calculate with it? Recall that the \textit{average slope} (or average gradient) of a function $ f $ over the interval $ a \leq x \leq b $ is defined
+to be $ m = \frac{\Delta y}{\Delta x} = \frac{f(b) - f(a)}{b - a} $. We wish to find the gradient at a single point; in order to do this, we will
+slowly `move' point $ b $ towards point $ a $, letting $ \Delta x $ get closer and closer to zero. However, we cannot actually let $ \Delta x = 0 $ --- and
+so we can only ever find an \textit{approximation} to the instantaneous gradient without a bit of trickery!
 
-Before moving on with the definition of the derivative, let's explore this idea of assigning values to a function by seeing what it looks like
-really close to the point we're interested in. We call this operation the \textit{limit}.
+Let's explore this idea of assigning values to a function by seeing what it looks like really close to the point we're interested in. We call this
+operation the \textit{limit}; the definition we are looking for is something like
+\begin{displaymath}
+  f'(x) = \od{y}{x} = \lim_{b \to a} \frac{f(b) - f(a)}{b - a},
+\end{displaymath}
+but we will begin by looking at some more general examples.
 
 Consider the following function:
 \begin{center}
-  \includegraphics[width=0.5\textwidth]{oslimit2}
+  \includegraphics[width=0.4\textwidth]{oslimit2}
 \end{center}
-Although the \textit{value} of the function at 2 is 6, the \textit{limit} of the function at 2 is $ \lim_{x \to 2} g(x) = 4 $ because when
-taking a limit we don't care what the function does at the point --- only what it looks like it should do! Essentially, the
-limit of a function at a point is a property of the area around the point \textbf{and not a property of the point itself}.
+Although the \textit{value} of the function at 2 is 6, the \textit{limit} of the function at 2 is $ \lim_{x \to 2} g(x) = 4 $. When taking a limit we
+don't care what the function does at the point --- only what it looks like it \emph{should} do based on the points around it. The limit of a function
+at a point is a property of the area around the point \textbf{and not a property of the point itself}.
 
 You can also think of $ \lim_{x \to x_0} f(x) $ as being the unique value that we could pick for $ f(x_0) $ such that the function
-around that point has `no gaps'.
+around that point has `no gaps'. If there is no such unique value, there is no limit at the point $ x_0 $.
 
-\begin{ex}
-  Here are a few algebraic examples of limit finding:
-  \begin{itemize}
-    \item $ \lim_{x \to 0} \frac{x}{x} = 1 $ since as $ x $ gets closer and closer to $ 0 $, $ \frac{x}{x} = 1 $.
-    \item $ \lim_{x \to 3} \frac{(x - 2)(x - 3)}{x - 3} = 1 $ since as $ x $ gets closer and closer to 3, the fraction gets arbitrarily close to 1.
-    \item $ \lim_{x \to 0} \frac{1}{x} $ does not exist, since if we approach 0 from the left the function becomes arbitrarily negative
-          and if we approach 0 from the right the function becomes arbitrarily positive --- we do not approach the same value on both sides.
-    \item $ \lim_{x \to \infty} \frac{1}{x} = 0 $ since as $ x $ becomes arbitrarily large, $ \frac{1}{x} $ becomes arbitrarily small.
-    \item $ \lim_{x \to 0} \sqrt{x} $ does not exist, since $ \sqrt{x} $ is undefined for $ x < 0 $.
-  \end{itemize}
-\end{ex}
+Limits happen to have a few simple properties:
+\begin{enumerate}
+  \item $ \displaystyle \lambda \lim_{x \to x_0} f(x) = \lim_{x \to x_0} [\lambda f(x)] $
+  \item $ \displaystyle \lim_{x \to x_0} f(x) + \lim_{x \to x_0} g(x) = \lim_{x \to x_0} [f(x) + g(x)] $
+  \item $ \displaystyle (\lim_{x \to x_0} f(x))(\lim_{x \to x_0} g(x)) = \lim_{x \to x_0} [f(x)g(x)] $
+  \item $ \displaystyle \frac{\lim_{x \to x_0} f(x)}{\lim_{x \to x_0} g(x)} = \lim_{x \to x_0} \frac{f(x)}{g(x)} $ (if $ g(x) \neq 0 $ around
+        the point we take the limit)
+  \item $ \displaystyle f(\lim_{x \to x_0} g(x)) = \lim_{x \to x_0} [f(g(x))] $ (if $ f $ is continuous: that is, at every
+        point $ \lim_{x \to x_0} f(x) = f(x_0) $)
+\end{enumerate}
 
-Now, let's revisit the derivative. We will define the derivative of a function $ f $ at a point $ a $ as
-the value of the limit
+Using these limit laws, we can find some limits reasonably easily. Here are a few algebraic examples:
+\begin{itemize}
+  \item $ \lim_{x \to 0} \frac{x}{x} = 1 $ since as $ x $ gets closer and closer to $ 0 $, $ \frac{x}{x} = 1 $.
+  \item $ \lim_{x \to 3} \frac{(x - 2)(x - 3)}{x - 3} = 1 $ since as $ x $ gets closer and closer to 3, the fraction gets arbitrarily close to 1.
+  \item $ \lim_{x \to 0} \frac{1}{x} $ does not exist, since if we approach 0 from the left the function becomes arbitrarily negative
+        and if we approach 0 from the right the function becomes arbitrarily positive --- we do not approach the same value on both sides.
+  \item $ \lim_{x \to \infty} \frac{1}{x} = 0 $ since as $ x $ becomes arbitrarily large, $ \frac{1}{x} $ becomes arbitrarily small.
+  \item $ \lim_{x \to 0} \sqrt{x} $ does not exist, since $ \sqrt{x} $ is undefined for $ x < 0 $.
+\end{itemize}
+
+Now, let's revisit the derivative. We will define the derivative of a function $ f $ at a point $ a $ as the value of the limit
 \begin{displaymath}
   \lim_{h \to 0} \frac{f(a + h) - f(a)}{h},
 \end{displaymath}
-which is equivalent to the definition above (see exercises).
+which is equivalent to the definition of the average slope above (see exercises).
 
 \begin{ex}
   We will find the derivative of $ f(x) = x^3 $ at the point $ x $ using the definition.
@@ -54,6 +66,7 @@ which is equivalent to the definition above (see exercises).
   \end{align*}
 \end{ex}
 
+\clearpage
 \subsection*{Questions}
 \begin{questions}
   \questioA Guess the value of the following limit by evaluating the limuend for each $ x $ in $ \{ \pm 1, \pm 0.5, \pm 0.2, \pm 0.1, \pm 0.05, \pm 0.01 \} $:
@@ -79,7 +92,6 @@ which is equivalent to the definition above (see exercises).
           \subpart Non-differentiable?
         \end{subparts}
     \end{parts}
-  \clearpage
   \questioM Evaluate the limit or explain why it does not exist:
     \begin{multicols}{2}
     \begin{parts}
@@ -129,6 +141,16 @@ which is equivalent to the definition above (see exercises).
         \end{displaymath}
         [\textit{Hint: use the same trick as in (b).}] Is there any restriction on $ r $ for this limit to exist?
     \end{parts}
+  \questioS Last year, we defined the \emph{exponent} $ a^r $ as follows:
+            \begin{itemize}
+              \item If $ r = 0 $, then $ a^r = 1 $.
+              \item If $ r $ is a natural number, then $ a^r = a^{r - 1} \cdot r $. (So $ a^r =\underbrace{a \times \cdots \times a}_{r \text{ times}} $.)
+              \item If $ r $ is a negative integer, then $ a^r = \dfrac{1}{a^{-r}} $. (Note that $ -r $ is positive.)
+              \item If $ r $ is a rational number, so that $ r = p/q $ in lowest form, then $ a^r = a^{(p/q)} = \sqrt[q]{a^p} $ (where we take the positive root,
+                    if a choice needs to be made).
+            \end{itemize}
+            Give a reasonable definition for $ a^r $ where $ r $ is any real number. Use your definition to compute a reasonable approximation to $ 2^\pi $
+            (given that $ \pi \approx 3.14159...$).
   \clearpage
   \questioS Zeno was a Greek philosopher active in the 5th century BCE. He presented a list of `paradoxes', or apparent contradictions,
             including the following (adapted from Wikipedia):
