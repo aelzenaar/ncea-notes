@@ -34,7 +34,7 @@ My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf)
  13. (2.7) 		Optimisation
  14. (2.7) 		Functions from slope
  15. (2.7) 		Kinematics
- 16. (Stats?)		Counting
+ 16. (Stats?)	Counting
  17. (2.3) 		Sequences, series, and fractals
  18. (2.5) 		Graph theory
 

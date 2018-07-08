@@ -155,7 +155,7 @@ Books I want to read: Rotman, _An Introduction to the Theory of Groups_; MacLane
    you should read it is because it is amazing. Hartshorne follows Euclid, putting him on a firm axiomatic foundation. The capstone of the book is a discussion
    of polyhedra. You should have a little algebra for the last stretch, but the rest should actually be accessible to a high-school student! (516 H33)
 
-Books I want to read: Watkins, _Combinatorics with an Emphasis on the Theory of Groups_; something on matroids, maybe Wilson?
+Books I want to read: Watkins, _Combinatorics with an Emphasis on the Theory of Graphs_; something on matroids, maybe Wilson?
 
 ### Analysis (332/333)
 Books I want to read/am in the process of reading: baby Rudin (as good as promised); Tao (very chatty and a bit slow for me).
