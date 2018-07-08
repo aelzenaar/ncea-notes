@@ -3,7 +3,7 @@
 \usepackage{lmodern}
 \usepackage{microtype}
 
-\usepackage[parfill]{parskip}
+% \usepackage[parfill]{parskip}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -68,6 +68,13 @@
 % \pointsinrightmargin
 \boxedpoints
 \pointname{}
+
+\newcommand{\goandwatch}[1]{
+\begin{center}
+\begin{tcolorbox}[width=0.8\textwidth,colback={Dandelion!20},title={\textbf{Go and watch...}},colbacktitle=red,coltitle=White]
+  \textcolor{red}{\url{#1}}
+\end{tcolorbox}
+\end{center}}
 
 \newcommand{\questioA}{\question[\texttt{\textbf{\color{Cerulean} A}}]}
 \newcommand{\questioM}{\question[\texttt{\textbf{\color{PineGreen} M}}]}
