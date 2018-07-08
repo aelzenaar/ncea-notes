@@ -1,0 +1,194 @@
+\input{stdinclude.tex}
+
+\begin{document}
+
+\mainHeader{6}{Systems of Equations}
+Let's go back to last week, where we had the following example of a quadratic model.
+\begin{ex}
+  The following table gives the instantaneous rates of reaction for the a particular chemical reaction.
+  \begin{center}
+    \begin{tabular}{|c|c|c|}\hline
+      \textbf{Time} (min) & \textbf{Concentration of reactant} (M) & \textbf{Instantaneous reaction rate} (M/min)\\\hline
+      0 & 0.0054 &\\\hline
+      10 & 0.0044 & \num{8.0e-5}\\\hline
+      26 & 0.0034 & \num{5.0e-5}\\\hline
+      44 & 0.0027 & \num{3.1e-5}\\\hline
+      70 & 0.0020 & \num{1.8e-5}\\\hline
+      120 & 0.0014 & \num{8.0e-6}\\\hline
+    \end{tabular}
+  \end{center}
+  It is known that the reaction rate is modelled by a quadratic function of the reaction concentration. Let's call
+  the reaction rate at a particular concentration $ R(C) $; so
+  \begin{displaymath}
+    R(C) = XC^2 + YC + Z.
+  \end{displaymath}
+  By using the values in the table above, we have that
+  \begin{align*}
+    \num{8.0e-5} &= X \cdot (0.0044)^2 + Y (0.0044) + Z\\
+    \num{5.0e-5} &= X \cdot (0.0034)^2 + Y (0.0034) + Z\\
+    \num{3.1e-5} &= X \cdot (0.0027)^2 + Y (0.0027) + Z.
+  \end{align*}
+\end{ex}
+I'll leave off the end, because the point is we used a computer to solve this system of equations. This week, we'll
+learn a \emph{systematic} method for solving such systems: not because it's easier than using a computer, but because
+it's interesting to see what's going on geometrically. (In my Y13 notes, there's a lot more detail --- and proofs, which
+I'll skip this year.)
+
+The main idea to get your head around this year is that a system of equations is \textit{geometric}.
+
+\begin{ex}
+  Consider the system of equations
+  \begin{displaymath}
+    \begin{cases}
+      x + y = 7\\
+      5x + 10y = 45.
+    \end{cases}
+  \end{displaymath}
+  If we plot all the values $ (x,y) $ which satisfy these equations, we obtain:
+  \begin{center}
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        axis lines = center,
+        xlabel = $ x $,
+        ylabel = $ y $
+      ]
+        \addplot[domain = 0:5, color = green, samples=100] {7 - x};
+        \addplot[domain = 0:5, color = red, samples=100] {9 - 2*x};
+      \end{axis}
+    \end{tikzpicture}}
+  \end{center}
+  The key point here is that the point which satisfies both solutions is simply the geometric point of intersection.
+
+  In order to find this point algebraically, we can solve the first equation for $ y $: $ y = 7 - x $. We can then
+  substitute this into the other: $ 5x + 10(7 - x) = 45 $. Simplifying, we have
+  \begin{gather*}
+    5x + 70 - 10x = 45\\
+    25 = 5x\\
+    5 = x.
+  \end{gather*}
+  Let's think about this a little more explicitly: since the same pair of values $ (x,y) $ makes both equations
+  true, then if we can find $ y $ in terms of $ x $ using one equation then we can substitute it straight into
+  the other one \emph{because the symbol $ y $ represents the same thing in both}.
+\end{ex}
+
+In another situation, we might have a line and a parabola.
+
+\begin{ex}
+  [Extract from the sample L2 assessment for this topic.]
+
+  The student committee is planning the upcoming Performing Arts Showcase at your school this year. They are trying to determine how much they
+  should make the price of adult tickets this year.
+
+  Determine the price they should set the adult tickets in 2012 if they want to make a profit of \$3210 from ticket sales, given that:
+  \begin{itemize}
+    \item The cost of a child ticket is planned to be \$5 and the cost of an adult ticket is not determined yet.
+    \item The relationship between the expected number of child tickets and adult tickets to be sold can be modelled by $ 200x + y^2 = 80000 $,
+           where $x$ represents the number of child tickets and $y$ represents the number of adult tickets.
+    \item The planning committee wants to make \$3210 from ticket sales.
+    \item There needs to be only one possibility for the number of child and adult tickets to be sold.
+  \end{itemize}
+
+  \textit{Solution.} The total profit that will be made is $ 5x + my $, where $ m $ is the cost of an adult ticket (yet to be determined);
+  we therefore have three important pieces of information: $ 5x + my = 3210 $, $ 200x + y^2 = 80000 $, and the curves of these two equations
+  intersect at only one point. Solving the first for $ x $, we have $ x = \frac{3210 - my}{5} $; substituting, we have
+  \begin{gather*}
+    200\left(\frac{3210 - my}{5}\right) + y^2 = 80000\\
+    128400 - 40my + y^2 = 80000\\
+    48400 + 40my + y^2 = 0
+  \end{gather*}
+  When we learned about parabolae, we learned that we could transform them into vertex form. Let's do that here, because our goal
+  is to find a value $ m $ such that the vertex of $ 48400 + 40my + y^2 = x $ is sitting exacty on the $ y$-axis --- our parabola is flipped
+  sideways, but the idea is the same. In fact, to make it clearer let's look at the `graphy' form:\footnote{The idea of switching from looking
+  at something in an `equationy' sense and turning something into a parameter is actually quite a powerful idea that's applicable in many
+  different situations.}
+  \begin{gather*}
+    (y + 20m)^2 + 48400 - 400m^2 = x.
+  \end{gather*}
+  This parabola is sitting on the $ y$-axis when $ 48400 - 400m^2 $ is zero (because this is the $ x$-shift); hence $ m = 11 $,
+  and the committee should sell the adult tickets for \$11 each.
+\end{ex}
+
+\subsection*{Questions}
+\begin{questions}
+  \question Graph and solve the system of equations
+            \begin{displaymath}
+              \begin{cases}
+                1 = x + y,\\
+                2 = 2x - y.
+              \end{cases}
+            \end{displaymath}
+  \question Let us explore how many solutions we can obtain for simple systems. If
+            \begin{displaymath}
+              \begin{cases}
+                a = bx + cy,\\
+                p = qx + ry
+              \end{cases}
+            \end{displaymath}
+            is a system of simultaneous equations in $ x $ and $ y $ then depending on the constants we choose there are
+            three possible situations:
+            \begin{itemize}
+              \item We can have no pairs $ (x,y) $ that satisfy both equations.
+              \item We can have precisely one pair $ (x,y) $ that satisfies both equations.
+              \item We can have infinitely many pairs $ (x,y) $ that satisfy both equations.
+            \end{itemize}
+            (We will prove this next year.)
+    \begin{parts}
+      \item Draw a diagram showing each situation geometrically.
+      \item Give an example of a system for each case, taking care to show that your systems
+            have the desired number of solutions.
+    \end{parts}
+  \question Graph (using a computer or a calculator) and solve the system of equations
+            \begin{displaymath}
+              \begin{cases}
+                y = 2x + 3,\\
+                x^2 + 2xy - 1 = 0.
+              \end{cases}
+            \end{displaymath}
+  \question {[Extract from the sample L2 assessment for this topic.]} For the performing arts showcase example above, you must
+            also provide the planning committee with the change in the adult tickets sales in 2011 compared to 2010. You are
+            given that:
+            \begin{itemize}
+              \item \textbf{2010 Performing Arts Showcase}
+                \begin{itemize}
+                  \item The total number of tickets sold was 400.
+                  \item The relationship between the number of child tickets and adult tickets sold can be modelled by $ x^2 + y = 22750 $, where $x$
+                        represents the number of child tickets and $y$ represents the number of adult tickets.
+                \end{itemize}
+              \item \textbf{2011 Performing Arts Showcase}
+                \begin{itemize}
+                  \item The cost of a child ticket was \$5 and the cost of an adult ticket was \$10.
+                  \item The relationship between the number of child tickets and adult tickets sold can be modelled by $ xy = 1000 + 100x $,
+                        where $x$ represents the number of child tickets and $y$ represents the number of adult tickets.
+                  \item More than 300 tickets were sold.
+                  \item The money generated from ticket sales was \$2050.
+                \end{itemize}
+            \end{itemize}
+  \question For which values of $ c $ does the system of equations
+            \begin{displaymath}
+              \begin{cases}
+                y^2 = 2x^2 + xy\\
+                y = cx - 2
+              \end{cases}
+            \end{displaymath}
+            have precisely two solutions?
+  \question Find the parabola passing through the three points $ (0,0) $, $ (1,1) $, and $ (3,0) $.
+  \question The graph of the equation $ xy = a $ (where $ a $ is a number) is called a \emph{hyperbola}.
+    \begin{parts}
+      \part Show that $ xy = a $ and $ xy = b $ never intersect if $ a \neq b $.
+      \part Find the point of intersection between the curves
+            \begin{displaymath}
+              \begin{cases}
+                x(y+1) = 4\\
+                y = 2x - 3.
+              \end{cases}
+            \end{displaymath}
+    \end{parts}
+  \question The line $ y = 2x - 3 $ intersects the circle $ x^2 - 6x + y^2 = 0 $ precisely twice.
+    \begin{parts}
+      \part Find the coordinates of the centre of the circle.
+      \part Find the points of intersection.
+      \part How could the constant term $ 3 $ of the line be changed such that the line becomes tangent with the circle?
+    \end{parts}
+\end{questions}
+
+\end{document}

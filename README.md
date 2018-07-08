@@ -18,13 +18,25 @@ See [this page](unibooks.md). Very work-in-progress.
  * Geometry worksheets.
 
 ### Level Two
-The L2 maths material is a bit of a mess.
- * [Trigonometry (91259)](L2%20Maths/Trigonometry): worksheet (some difficult problems) and assignment.
- * [Algebra (91261)](L2%20Maths/Algebra): worksheet with assorted exam questions.
- * [Calculus (91262)](L2%20Maths/Calculus): full worksheets with questions, homeworks, four practice exams.
- * [Probability (91267)](L2%20Maths/Probability): worksheet with basic material only.
-
-If I end up tutoring this subject in 2018, I will likely rewrite everything.
+My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf). The sheets include:
+ 1. (2.1) 		Coordinate geometry
+ 2. (2.4)		Arcs and sectors of circles
+ 3. (2.4) 		The sine and cosine rules
+ 4. (2.2) 		Functions and their graphs
+ 5. (2.2/2.6) 	Linear and quadratic equations
+ 6. (2.6/2.14) 	Simultaneous equations
+ 7. (2.6/2.14) 	Linear inequations
+ 8. (2.6) 		The quadratic formula
+ 9. (2.2/2.6)	Exponential and logarithmic functions
+ 10. (2.2/2.6) 	Negative and fractional powers
+ 11. (2.7) 		Slopes of polynomials and the derivative
+ 12. (2.7) 		Tangent lines and approximation
+ 13. (2.7) 		Optimisation
+ 14. (2.7) 		Functions from slope
+ 15. (2.7) 		Kinematics
+ 16. (Stats?)		Counting
+ 17. (2.3) 		Sequences, series, and fractals
+ 18. (2.5) 		Graph theory
 
 ### Level Three and Scholarship Calculus
  * Generic skills: a [set of notes](L3%20Maths%20Generic/generic.pdf) covering (naive) sets, (rudimentary) proofs, sigma and pi notation, induction,

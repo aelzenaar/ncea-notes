@@ -1,0 +1,43 @@
+\input{stdinclude.tex}
+
+\begin{document}
+
+\mainHeaderHw{5}{Quadratic Modelling}
+\subsection*{Reading}
+\begin{center}
+\begin{tcolorbox}[width=0.8\textwidth,colback={white},title={\textbf{Go and watch...}},colbacktitle=black,coltitle=white]
+  \textcolor{black}{\url{https://www.youtube.com/watch?v=hoh4TmPzu1w}}
+\end{tcolorbox}
+\end{center}
+
+\begin{center}
+\begin{tcolorbox}[width=0.8\textwidth,colback={white},title={\textbf{What's it good for?}},colbacktitle=MidnightBlue,coltitle=white]
+  People use parabolae for...
+  \begin{itemize}
+    \item Engineering, and the sciences: modelling situations where a quantity is roughly proportional to the square of another. In physics,
+          a perfect projectile follows the path of a parabola.
+    \item Mathematics: a parabola is a specific case of a conic section (the others are the hyperbola, the circle, and the ellipse). Conic
+          sections are geometric figures that were systematically studied by the Greeks.
+  \end{itemize}
+\end{tcolorbox}
+\end{center}
+
+\subsection*{Questions}
+\begin{questions}
+  \question Show that if $ y = ax^2 + bx + c $, then
+    \begin{displaymath}
+      y = a\left(x + \frac{b}{2a}\right)^2 + \left(c - \frac{b^2}{4a}\right).
+    \end{displaymath}
+    (You might want to start with the complicated equation and simplify it, rather than going the other way.)
+  \question Explain why this shows that changing $ b $ and $ c $ only shifts the parabola around the plane rather than changing the size. In other
+            words, it is possible for us to shift any parabola anywhere we want without affecting the side.
+  \question In fact, we have shown that every quadratic can be written in the form $ y = a(x - \alpha)^2 + \beta $; since changing $ \alpha $
+            and $ \beta $ only shifts the parabola around, the only parameter that can change the size is $ a $. Therefore, if
+            we have a parabola $ y = ax^2 + bx + c $ then it has the same shape as $ y = ax^2 $. Show that if $ (x_1,y_1) $ is on the
+            parabola $ y = ax^2 $, then $ (\frac{b}{a}x_1, \frac{b}{a}y_1) $ is on the parabola $ y = bx^2 $ (where $ a $ and $ b $ are any
+            nonzero numbers).
+  \question Conclude that any parabola can be mapped onto any other parabola by shifting it around the plane (changing the location of the vertex)
+            and scaling it in both directions by an appropriate constant.
+\end{questions}
+
+\end{document}

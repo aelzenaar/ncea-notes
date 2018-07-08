@@ -1,0 +1,115 @@
+\input{stdinclude.tex}
+
+\begin{document}
+
+\mainHeader{15}{Kinematics and Rates of Change}
+The original development of calculus was as a tool for physicists to describe motion. The application itself is entirely natural,
+and there is no new mathematics involved, so this week should be nice and easy.
+
+Let $ x(t) $ be a function describing the position of some object at some time $ t $. Then the velocity of the object,
+measured by the rate of change of position, is just $ v(t) = x'(t) $. The acceleration of the object, which is just the
+rate of change of velocity, is $ a(t) = v'(t) $. This is summed up in the following table:
+\begin{center}
+  \def\arraystretch{1.5}
+  \begin{tabular}{|rcc|}\hline
+    \textbf{Displacement}, $ x $ && $\rint v(t) \dif{t} $\\
+    \textbf{Velocity}, $ v $ & $ \od{x}{t} $ & $ \rint a(t) \dif{t} $\\
+    \textbf{Acceleration}, $ a $ & $ \od{v}{t} $ &\\\hline
+  \end{tabular}
+\end{center}
+
+\begin{center}\itshape
+  There is only one fundamental concept in this topic that you must remember: the derivative is just a rate of
+  change. Velocity is rate of change of position, and acceleration is rate of change of velocity. If you slow down faster,
+  your acceleration is more negative.
+
+  \textbf{Do not try to memorise the above table, understand what it is saying physically.}
+\end{center}
+
+Note that if you are taking physics, physicists sometimes have an annoying habit of writing $ \dot x $ instead of $ \od{x}{t} $; so
+dotted variables may indicate time derivatives. While this notation is horrible and ugly, it is often forced upon us. I will not use
+it myself, and you should not expect to ever see it in a mathematics paper again; but be aware that this notation does exist.
+
+\subsection*{A note about L3 physics}
+This topic appears in L2 mathematics for two main reasons: firstly, as an easy historical application of calculus; and secondly, so
+that you are well-prepared for level three physics. While calculus is not actually required for physics until university, a solid
+understanding of this year's calculus topics will enable you to make connections next year that may be otherwise obscure. If you are
+planning to do scholarship physics next year (and I urge you to consider it if you enjoy physics), then knowledge of calculus is a
+definite advantage as it can simplify some of the problems!
+
+\subsection*{Questions}
+All distances are given in \si{\metre}, and all times in \si{\second}, unless otherwise stated.
+\begin{questions}
+  \question If a ball is thrown into the air with a velocity of \SI{10}{\metre\per\second},
+            its height $ y $ in metres after $ t $ seconds is given by
+            \begin{equation}
+              y = 10t - 4.9t^2.
+            \end{equation}
+            Find the vertical velocity of the ball when $ t = 2 $.
+  \question The velocity $ v $ \si{\metre\per\second} of an object $ t $ seconds after it passes
+            a fixed point can be modelled by the function
+            \begin{displaymath}
+              v(t) = 4t^3 - t^2 + 2t.
+            \end{displaymath}
+            Find the equation for the acceleration of the object.
+  \question A tank is being filled with water. The height of the water, $ h \si{\centi\metre} $, in the tank at any time $ t $
+            minutes after it began filling is given by $ h = t^2 + 2t $. Find the rate that the height of the water is changing
+            at three minutes after the tank begins to fill.
+  \question A balloon has an initial volume \SI{5}{\centi\metre\cubed}, and is being inflated at a rate given by $ \od{V}{t} = 4t $,
+            where $ V $ is the volume of the balloon in cubic centimetres and $ t $ is the time in seconds since the balloon began to
+            inflate. Give the volume of the balloon after ten seconds.
+  \question A projectile follows a path through space modelled by $ y = 4x - x^2 $. At what distance
+            along the ground is it at its maximum height, and what is that height?
+  \question The distance, $ s $, of a moving point from a given point $ P $ at a time $ t $ is given by
+            \begin{displaymath}
+              s(t) = \frac{1}{3}t^3 - 2t^2 - 12t.
+            \end{displaymath}
+            Fully describe the acceleration of the object beginning from time $ t = 0 $.
+  \question A car begins to roll slowly down a sloping driveway, with velocity given by $ v = 0.4t\si{\metre\per\second} $ (where $ t $ is the
+            time from the beginning of the car's roll). It is five seconds until someone notices the movement; in this time, how far
+            does the car travel?
+  \question A child moves a Buzzy Bee\textsuperscript{TM} toy forwards and backwards along a straight line. At time $ t $,
+            where $ 0 \leq t \leq 10 $, the toy's position is modelled by $ x = 3t - 1.3t^2 + 0.1t^3 $.
+    \begin{parts}
+      \part At which time(s) is the toy stationary?
+      \part What is the acceleration of the toy at $ t = 3 $?
+      \part What displacement is the toy from the origin when the velocity of the toy is most negative?
+    \end{parts}
+  \question The area of a circle varies if the radius $ r $ of the circle is changed. In this way, the area $ A $ of
+            the circle is a function of $ r $ given by $ A(r) = \pi r^2 $.
+    \begin{parts}
+      \part What is the rate of change of the area of the circle with respect to the radius?
+      \part A piece of computer graphics software is drawing a circle so that the radius changes
+            with time at a rate $ \od{r}{t} = 3t $. The initial radius of the circle is $ \SI{2}{\centi\metre} $.
+        \begin{subparts}
+          \subpart Give the radius of the circle after three seconds.
+          \subpart After how long will the area of the circle reach \SI{10}{\centi\metre\squared}?
+        \end{subparts}
+    \end{parts}
+  \question A particle is moving through space along an axis. Its displacement from the origin
+            at any time $ t > 0 $ is given by $ s(t) = t^5 - 38t^4 + 560t^3 - 3982t^2 + 13599t - 17820 $.
+    \begin{parts}
+      \part Find an expression for the velocity of the particle at time $ t $, $ v(t) $.
+      \part At what time is the particle moving with the most speed towards the origin, and how fast will it be moving at that time?
+      \part What is the acceleration of the particle at that time?
+      \part How many times does the particle change direction after $ t = 0 $?
+    \end{parts}
+  \question An object is moving on a straight line; the point $ P $ lies on this line. Initially, the object is at point $ P $ and
+            has a velocity of \SI{4}{\metre\per\second}. The acceleration of the object at a time $ t $ seconds after it leaves $ P $
+            is given by the function $ a(t) = 2 - 6t $. How far from $ P $ is the object after three seconds?
+  \question Look at the following table of trigonometric derivatives.
+            \begin{center}
+              \begin{tabular}{r|l}
+                $ f(x) $ & $ f'(x) $\\
+                \hline
+                $ \sin(x) $ & $ \cos(x) $\\
+                $ \cos(x) $ & $ -\sin(x) $\\
+                $ \tan(x) $ & $ \frac{1}{\cos^2(x)} $
+              \end{tabular}
+            \end{center}
+            A spring oscillates such that the position of its end after a length
+            of time $ t $ is given by $ x = 2\sin(t) $. What is the approximate
+            acceleration of its end at $ t = 5 $?
+\end{questions}
+
+\end{document}

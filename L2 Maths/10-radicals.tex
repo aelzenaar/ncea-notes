@@ -1,0 +1,146 @@
+\input{stdinclude.tex}
+
+\begin{document}
+
+\mainHeader{10}{Negative and Fractional Powers}
+Last week we defined the exponential function for powers which were whole numbers or zero, by
+defining $ a^n = \underbrace{a \times a \times \cdots \times a}_{n \text{ times}} $. We can make
+this definition more precise by making the following definition:\footnote{By `more precise' I mean `we make it clearer what we mean by $\cdots$'.}
+\begin{defn}
+  If $ a $ is a number, then:
+  \begin{enumerate}
+    \item $ a^0 $ is defined to be 1.
+    \item $ a^n $ is defined to be $ a \times a^{n - 1} $, for integers $ n > 0 $.
+  \end{enumerate}
+\end{defn}
+
+One might easily ask if there is a way to extend this definition for non-whole-number powers; in fact, last week we implicitly used the fact that such
+an extension exists in solving some logarithmic equations (but relying on a calculator to `know the definition' for us). Let us take inspiration from
+our recursive definition above, and try to `pull ourselves up by our bootstraps' in steps: we will begin with negative powers.
+
+So suppose we want to define what the value of $ a^{-n} $ is (where $ n $ is a positive integer). We can try to work out a plausible definition using
+the rules we want such a value to follow --- for example, we want such a definition to obey the rule $ a^b a^c = a^{b + c} $. In particular,
+\begin{displaymath}
+  a^{-n} \times a^n = a^{(-n) + n} = a^0 = 1.
+\end{displaymath}
+Hence a plausible definition for $ a^{-n} $ is $ 1/(a^n) $. This plausible definition also follows (to take another example) the rule $ (a^b)^c = a^{bc} $,
+because $ (a^{-n})^{x} = \left(\frac{1}{a^n}\right)^x = \frac{1}{a^{nx}} = a^{-nx} $ as we would expect.
+
+So now we have a definition for all $ a^x $, where $ x $ is an integer. The obvious next step is to look at rational powers; recall, a rational number
+is any number $ r $ that can be written in the form $ r = \frac{p}{q} $, where $ p $ and $ q $ are both integers. As an aside, the following theorem
+is quite deep and perfectly accessible:-
+\begin{thm}
+  There are real numbers which are not rational.
+\end{thm}
+\begin{proof}
+  In particular, we will show that any number $ x $ such that $ x^2 = 2 $ is irrational; for suppose that such an $ x $ can be
+  written in the form $ x = \frac{p}{q} $ where $ p $ and $ q $ are both positive integers. Then $ 2 = x^2 = \frac{p^2}{q^2} $, and
+  hence $ 2q^2 = p^2 $. But this implies that $ p^2 $ is even, and so $ p $ is itself even (because the squares of odd numbers are odd).
+  Therefore, there is an integer $ n $ such that $ p = 2n $. Substituting, we have $ 2q^2 = (2n)^2 = 4n^2 $, and hence $ q^2 = 2n^2 $. But
+  this means that $ q $ is even, and hence there is an integer $ m $ such that $ q = 2m $; substituting, we have $ (2m)^2 = 2n^2 $, and
+  hence $ 2m^2 = n^2 $ and $ 2 = \frac{n^2}{m^2} $.
+
+  Notice, though, that $ \frac{p^2}{q^2} = \frac{n^2}{m^2} $, but $ n $ and $ m $ were smaller than $ p $ and $ q $ respectively. Since we
+  didn't say what $ p $ and $ q $ were to start with, this implies that for any pair of positive integers $ p $ and $ q $ such that $ x = p/q $,
+  there exist smaller positive integers $ n $ and $ m $ satisfying the same equation; and so we can repeat the whole process, finding two
+  positive integers smaller than $ n $ and $ m $, and so on \emph{ad infinitum}.
+
+  But this is absurd: given any positive integer, there are only finitely many positive integers smaller than it! Thus our original assumption,
+  that such integers $ p $ and $ q $ existed in the first place, must be false; so any number $ x $ such that $ x^2 = 2 $ cannot be rational.
+\end{proof}
+Real numbers which are not rational are (rather unimaginatively) called \emph{irrational}. Other numbers which are irrational include $ \pi $,
+the square root of any prime number, and $ e $.
+
+Returning to our main theme, we want to define $ a^r $, where $ r = \frac{p}{q} $ is a rational number. Let us again work out a plausible
+definition using the rules we want such a number to follow; this time, we will use the `power multiplication' rule:
+\begin{displaymath}
+  \left(a^{p/q}\right)^q = a^{((p/q) \cdot q)} = a^p.
+\end{displaymath}
+So we can define $ a^{p/q} $ to be $ \sqrt[q]{a^p} $. (If there's any confusion, we will more precisely define it to be the \emph{positive} root; also, we
+require our rational number $ p/q $ to be written so that $ q $ is positive so that we don't have to worry about defining negative roots).
+
+Our full definition so far looks like:
+\begin{defn}
+  If $ a $ is a number, then:
+  \begin{enumerate}
+    \item $ a^0 $ is defined to be 1.
+    \item $ a^n $ is defined to be $ a \times a^{n - 1} $, for integers $ n > 1 $.
+    \item $ a^{-n} $ is defined to be $ \frac{1}{a^n} $, for integers $ n > 1 $.
+    \item $ a^{p/q} $ is defined to be $ \sqrt[q]{a^p} $, for rational numbers $ p/q $ such that $ q > 0 $.
+  \end{enumerate}
+\end{defn}
+
+Our final trick will be to define $ a^x $ for any real number $ x $. Since we don't have the necessary machinery to do it properly
+this year, our definition will be vague. We use the fact that we want $ a^x $ to be continuous: that is, we want it to `have no gaps'
+and `not jump around unexpectedly'. Since $ x $ is real, we can always write it in decimal expansion: say
+\begin{displaymath}
+  x = x_0 + 0.x_1x_2x_3\dots x_n \dots = x_0 + \frac{x_1}{10} + \frac{x_2}{100} + \cdots + \frac{x_n}{10^n} + \cdots
+\end{displaymath}
+(where the notation $ x_0 + 0.x_1x_2\dots $ means that $ x_0 $ is the `integer part' of $ x $ and $ x_1 $, $ x_2 $ and so on are the digits
+of the decimal expansion). In particular, we have
+\begin{displaymath}
+  a^x = a^{\left(x_0 + \frac{x_1}{10} + \frac{x_2}{100} + \cdots + \frac{x_n}{10^n} + \cdots\right)} = a^{x_0} \times a^{x_1/10} \times \cdots \times a^{x_n/10^n} \times \cdots,
+\end{displaymath}
+where we have already defined all the terms on the right --- so we can define $ a^x $ to be `the real number which we get closest to if we keep adding the
+terms on the right until infinity'. \emph{This is obviously not precise, but just take my word for it that (a) it is possible to make the notion precise
+with a little more work, and (b) real powers are well-defined (that is, such a number always exists).}
+
+\begin{ex}\leavevmode
+  \begin{enumerate}
+    \item $ 2^{3/2} = \sqrt[2]{2^3} = \sqrt{8} $.
+    \item $ 4^{-1/2} = \frac{1}{4^{1/2}} = \frac{1}{\sqrt{4}} = \frac{1}{2} $.
+    \item $ 27^{5/3} = \left(27^{1/3}\right)^5 = \left(\sqrt[3]{27}\right)^5 = 3^5 = 243 $.
+    \item $ 2^{\pi} \approx 2^3 \times 2^{1/10} \times 2^{4/100} \times 2^{1/1000} \times 2^{5/10000} \approx 8.8244 $. (my calculator tells me
+          that $ 2^\pi \approx 8.8249 $, so this approximation isn't even that bad!)
+  \end{enumerate}
+\end{ex}
+
+\subsection*{Questions}
+\begin{questions}
+  \question Graph the equation $ y = 2^x $ for different values of $ x $:
+            \begin{displaymath}
+              x = 10\qquad 2\qquad 1\qquad 1/2\qquad 1/10\qquad 0\qquad -1/10\qquad -1/2\qquad -1\qquad -2\qquad -10
+            \end{displaymath}
+    \begin{parts}
+      \part What do you notice? Compare and contrast the different curves. Is there any point which all 11 curves pass through?
+      \part When $ n $ is negative, the curve is an \emph{exponential decay} curve; when $ n $ is positive, the curve
+            is an \emph{exponential growth} curve. Conjecture some situations where an exponential decay or growth curve
+            might be a good model for some situation.
+    \end{parts}
+  \question Make a conjecture about the value of $ 0^0 $: should it be zero (because $ 0^n = 0 $ for all $ n $), or one (because $ n^0 = 1 $ for all $ n $)?
+            It might be helpful to graph $ y = x^x $ for very small positive and negative values of $ x $.
+  \question Justify the following statements with mathematical reasoning:
+    \begin{parts}
+      \part $ \sqrt[q]{a^p} = \left(\sqrt[q]{a}\right)^p $ (where $ p $ and $ q>0 $ are integers).
+      \part If $ r $ and $ s $ are rational numbers, then $ a^r \times a^s = a^{(r + s)} $ (recall we only proved this rule last week for integer powers).
+    \end{parts}
+  \question Simplify the following, writing your answer with positive exponents:
+    \begin{parts}
+      \part $ \frac{(4a^3)^2}{b^3} \times \frac{2b^2}{(2a)^2} $
+      \part $ \frac{5x^2y}{2} \div \frac{10x}{y^2} $
+      \part $ (2a^7 \times 50a^3)^{-1/2} $
+      \part $ \frac{6m^5}{\sqrt{9m^{16}}} $
+      \part $ \sqrt{\frac{\left(16a^{(2/3)}\right)^{(3/2)}}{a^{-1/2}}} $
+    \end{parts}
+  \question Verify that the multiplication terms further to the right in the expression
+            \begin{displaymath}
+              a^{x_0} \times a^{x_1/10} \times a^{x_2/100} \times \cdots \times a^{x_n/10^n} \times \cdots
+            \end{displaymath}
+            get closer and closer to 1. (Hint: each $ x_i $, for $ i > 0 $, is a single digit and thus less than 10.) Hence justify why only taking a few
+            of the first terms usually gives a good approximation to the `real value' of $ a^{x_0 + 0.x_1x_2\dots} $.
+  \question A graph with Cartesian equation of the form $ y = a(x - x_0)^{-1} + c $ is a \emph{hyperbola}.
+    \begin{parts}
+      \part Suppose a hyperbola passes through the points $ (-1, 0) $, $ (0, -1) $, and $ (3,2) $. Find the constants $ a $, $ x_0 $, and $ c $ and
+            give the equation of the hyperbola.
+      \part Show that there is some value $ \mu $ such that the hyperbola does not touch the line $ x = \mu $. This line is called the \emph{vertical
+            asymptote} of the hyperbola.
+      \part Show that there is some value $ \lambda $ such that the hyperbola does not touch the line $ y = \lambda $. This line is called the
+            \emph{horizontal asymptote} of the hyperbola.
+      \part Graph the hyperbola, using your graphing device of choice; describe the behaviour of the graph \emph{around} the two asymptote lines.
+      \part Graph the equation $ y = x^{-n} $ for different values of $ n $; what do you notice?
+      \part Show that the hyperbola with vertical asymptote `at infinity' is just a straight line $ y = c $. (Hint: notice that in the hyperbola
+            equation, $ x = x_0 $ is the vertical asymptote and `substitute' $ x_0 = \infty $ into the equation.) Is this what you expect intuitively?
+    \end{parts}
+\end{questions}
+
+\end{document}

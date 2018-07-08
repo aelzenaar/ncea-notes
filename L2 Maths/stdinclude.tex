@@ -1,0 +1,97 @@
+\documentclass{exam}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% \usepackage[parfill]{parskip}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{siunitx}
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\foot{ft}
+\DeclareSIUnit\litre{\liter}
+
+\usepackage{skull}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{polar}
+\pgfplotsset{compat=1.11}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{commath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{wasysym}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage[version=4]{mhchem}
+\usepackage{changepage}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\linespread{0.8}\small}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{iden}{Identity}
+\newtheorem*{lemma}{Lemma}
+\newtheorem{obs}{Observation}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{ex}{Example}
+\newtheorem{con}{Construction}
+\newtheorem*{alg}{Algorithm}
+
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem*{bthm}{Theorem}
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+
+% \DeclareMathOperator*{\rint}{\int}
+
+\pgfplotsset{vasymptote/.style={
+    before end axis/.append code={
+        \draw[densely dashed] ({rel axis cs:0,0} -| {axis cs:#1,0})
+        -- ({rel axis cs:0,1} -| {axis cs:#1,0});
+    }
+}}
+
+% \pointsinrightmargin
+\boxedpoints
+\pointname{}
+
+\newcommand{\questioA}{\question[\texttt{\textbf{\color{Cerulean} A}}]}
+\newcommand{\questioM}{\question[\texttt{\textbf{\color{PineGreen} M}}]}
+\newcommand{\questioE}{\question[\texttt{\textbf{\color{WildStrawberry} E}}]}
+\newcommand{\questioS}{\question[\texttt{\textbf{\color{Goldenrod} S}}]}
+\newcommand{\questioO}{\question[\texttt{\textbf{\color{BurntOrange} O}}]}
+
+\newcommand{\parA}{\part[\texttt{\textbf{\color{Cerulean} A}}]}
+\newcommand{\parM}{\part[\texttt{\textbf{\color{PineGreen} M}}]}
+\newcommand{\parE}{\part[\texttt{\textbf{\color{WildStrawberry} E}}]}
+\newcommand{\parS}{\part[\texttt{\textbf{\color{Goldenrod} S}}]}
+\newcommand{\parO}{\part[\texttt{\textbf{\color{BurntOrange} O}}]}
+
+\newcommand{\subparA}{\subpart[\texttt{\textbf{\color{Cerulean} A}}]}
+\newcommand{\subparM}{\subpart[\texttt{\textbf{\color{PineGreen} M}}]}
+\newcommand{\subparE}{\subpart[\texttt{\textbf{\color{WildStrawberry} E}}]}
+\newcommand{\subparS}{\subpart[\texttt{\textbf{\color{Goldenrod} S}}]}
+\newcommand{\subparO}{\subpart[\texttt{\textbf{\color{BurntOrange} O}}]}
+
+\newcommand{\mainHeader}[2]{\section*{NCEA Level 2 Mathematics\\#1. #2}}
+\newcommand{\mainHeaderHw}[2]{\section*{NCEA Level 2 Mathematics (Homework)\\#1. #2}}

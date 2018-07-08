@@ -1,0 +1,128 @@
+\input{stdinclude.tex}
+
+\begin{document}
+
+\mainHeaderHw{18}{Graphs and Networks}
+\subsection*{Reading}
+\begin{center}
+\begin{tcolorbox}[width=0.8\textwidth,colback={white},title={\textbf{Go and watch...}},colbacktitle=black,coltitle=white]
+  \textcolor{black}{\url{https://www.youtube.com/watch?v=heKK95DAKms}}
+\end{tcolorbox}
+\end{center}
+
+\begin{center}
+\begin{tcolorbox}[width=0.8\textwidth,colback={white},title={\textbf{What's it good for?}},colbacktitle=MidnightBlue,coltitle=white]
+  People use graphs and networks for...
+  \begin{itemize}
+    \item Computer science: modelling computer networks, modelling connections between objects (Google's search algorithm is based on weighted graphs).
+    \item Engineering: electrical circuits can be modelled with weighted graphs.
+    \item Linguistics: syntax trees and semantic networks are used when modelling language and the changes of languages over time.
+    \item Physics and chemistry: graphs can be used to model crystal structures or the structures of molecules (especially in organic chemistry).
+    \item Mathematics: graph theory has tight links with topology and knot theory. The four-colour theorem (the vertices of any graph that can be
+          drawn with no edge crossings can be coloured with at most four colours so no adjacent vertices have the same colour) was only proved in
+          the latter half of the 20th century, and was the first major proof to involve considerable work by computers.
+  \end{itemize}
+\end{tcolorbox}
+\end{center}
+
+\clearpage
+\subsection*{Questions}
+[This is a sample internal assessment task for this standard, based on those provided by the Ministry of Education.]
+
+This assessment activity requires you to apply graphs and networks to a real-world situation. Read the entire activity before
+beginning work.
+
+The Lower North Island Logistics Company (LNILC) wants to streamline its business by redesigning its logistics network. In Resource A, a list of
+town/city pairs in the current network and travel times by truck between them are given.
+\begin{enumerate}
+  \item Draw a weighted graph modelling the information in Resource A.
+  \item Find the shortest route (in terms of travel time) between Carterton and Marton.
+  \item The cost of providing a truck between two of the city pairs is directly proportional to the travel time.
+    \begin{enumerate}
+      \item Determine any links that will (i) be in \emph{every} minimal spanning tree, and (ii) will be in \emph{no} minimal spanning tree.
+      \item Determine the smallest possible network that covers all the destinations, and costs the least to maintain.
+    \end{enumerate}
+  \item LNILC is considering signing a deal with KiwiRail that provides rail services between the following city pairs:
+        \begin{itemize}
+          \item Wellington to Palmerston North: 135 minutes
+          \item Palmerston North to Whanganui: 50 minutes
+          \item Whanganui to New Plymouth: 50 minutes
+          \item Palmerston North to Hastings: 110 minutes
+          \item Wellington to Carterton: 80 minutes
+          \item Carterton to Masterton: 18 minutes
+          \item Masterton to Hastings: 140 minutes
+          \item Masterton to Palmerston North: 65 minutes
+        \end{itemize}
+        How do your answers above change, incorporating these new links?
+  \item Produce a final report, incorporating your findings above, that could recommend:
+        \begin{itemize}
+          \item If any truck links should not be maintained;
+          \item Which, if any, rail links should be included in the future network;
+          \item Any other changes that could be made to improve the cost-effectiveness of the entire network, and minimise the
+                time taken for packages to travel between particular major towns and cities. (For example, you may recommend that
+                a particular link be kept despite not appearing in your minimum spanning tree if it significantly reduces the distance
+                between two key destinations.) Resource B may be useful for this.
+        \end{itemize}
+\end{enumerate}
+The quality of your reasoning and how well you link this context to graph and network methods will determine the overall grade. Include calculations,
+diagrams or formulae, as appropriate. Clearly communicate your method using correct mathematical statements where appropriate.
+
+\subsection*{Resource A: town-city pairs with times}
+All links are bi-directional and all travel times are in minutes.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}\hline
+  \textbf{City 1} & \textbf{City 2} & \textbf{Travel time by road}\\\hline
+  Wellington & Porirua & 27\\
+  Wellington & Lower Hutt & 22\\
+  Lower Hutt & Wainuiomata & 12\\
+  Lower Hutt & Upper Hutt & 22\\
+  Porirua & Upper Hutt & 28\\
+  Porirua & Kapiti & 30\\
+  Kapiti & Upper Hutt & 68\\
+  Upper Hutt & Martinborough & 49\\
+  Upper Hutt & Carterton & 51\\
+  Carterton & Masterton & 15\\
+  Martinborough & Masterton & 43\\
+  Masterton & Dannevirke & 77\\
+  Masterton & Palmerston North & 79\\
+  Kapiti & Otaki & 20\\
+  Otaki & Levin & 18\\
+  Levin & Palmerston North & 40\\
+  Levin & Whanganui & 74\\
+  Palmerston North & Whanganui & 56\\
+  Palmerston North & Fielding & 16\\
+  Fielding & Marton & 25\\
+  Marton & Whanganui & 29\\
+  Palmerston North & Dannevirke & 54\\
+  Dannevirke & Napier & 89\\
+  Dannevirke & Hastings & 74\\
+  Napier & Hastings & 24\\
+  Whanganui & Hawera & 68\\
+  Hawera & Stratford & 26\\
+  Stratford & New Plymouth & 33\\
+  Hawera & New Plymouth & 90\\\hline
+\end{tabular}
+\end{center}
+
+\subsection*{Resource B: major towns and cities in the Lower North Island}
+The following urban areas served by LNILC have populations over 10,000:
+\begin{multicols}{2}
+\begin{itemize}
+  \item Wellington (207,900)*
+  \item Napier-Hastings (133,000)*
+  \item Lower Hutt (104,700)
+  \item Palmerston North (85,300)
+  \item New Plymouth (57,500)*
+  \item Porirua (55,900)
+  \item Upper Hutt (43,200)
+  \item Kapiti (42,300)
+  \item Whanganui (40,300)*
+  \item Masterton (21,800)
+  \item Levin (20,900)
+  \item Fielding (16,550)
+\end{itemize}
+\end{multicols}
+(*Urban area served by a port.)
+
+\end{document}
