@@ -9,13 +9,11 @@ See [this page](unibooks.md). Very work-in-progress.
 
 ## Mathematics
 ### Level One
+I am not currently tutoring L1, there is not much I have to add in the way of notes as most of the material
+is either revision from Y9/10 or simple calculations.
  * Algebra (91027) and Tables, Equations and Graphs (91028): [weekly exercises](L1%20Maths/Algebra/algebra.pdf)
  * Trigonometry (91032): [worksheet](L1%20Maths/Trigonometry/level_1_trig.pdf), [homework](L1%20Maths/Trigonometry/level_1_trig1_hw.pdf).
  * Practice exams: [Algebra](L1%20Maths/Algebra/algebra_paper1.pdf)
-
-**In Progress:**
- * Practice exams for TEG, geometry, and stats.
- * Geometry worksheets.
 
 ### Level Two
 My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf). The sheets include:
@@ -46,16 +44,14 @@ My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf)
    (with [full answers to exercises](L3%20Algebra/solutions2.pdf)).
  * Differentiation (91578) and integration (91579): a [set of notes](L3%20Calculus/bookform.pdf) containing both tutorial session material
    and homeworks with material ranging in difficulty from achieved to outstanding scholarship.
- * Assorted other scholarship worksheets: some have already been amalgamated into the calculus notes, others have not.
 
 **In progress:**
  * Geometry notes (similar in style to _Solutions_ for scholarship students, and may be from L1 upwards). In the meantime, I highly recommend
    Lang and Murrow's book _Geometry: A High School Course_ (published by Springer) --- the first edition is available in the University of
    Auckland library at 516 L27 (or online).
- * Replacement scholarship notes and exams. The notes themselves are already part of the more general L3 material, and I have written one
-   replacement exam.
 
-I am not intending to write any material on the L3 path analysis standard. Some graph theory is in the general skills.
+I am not intending to write any material on the L3 path analysis standard. Some graph theory is in the general skills notes,
+and there is work on weighted graphs in the L2 notes.
 
 ## Physics
 ### Level Two
@@ -87,10 +83,10 @@ I do not intend to write modern physics notes for L2 at this point in time; my L
 
 ## Geography
  * [Key concepts](Geography/Key%20Concepts.odt).
+ * Skills practice exams: Mahia: [Questions](Geography/L3-Skills-Mahia-qns.pdf), [Resources](Geography/L3-Skills-Mahia-res.pdf); Chatham Islands: [Questions](Geography/L3-Skills-Chathams-qns.pdf), [Resources](Geography/L3-Skills-Chathams-res.pdf)
 
 ## Other in progress
 I hope to begin work on specific notes for scholarship physics at some point in 2018. I tend to like the ESA study guide for chemistry so currently
-have no L2/L3 notes planned (except perhaps for scholarship, but I do not feel that I know the material well enough to write that any time soon). I am taking
-a course in spectroscopy this semester so I may write more detailed notes for that topic.
+have no L2/L3 notes planned.
 
 There are no L1 maths notes planned as the content is so elementary.
