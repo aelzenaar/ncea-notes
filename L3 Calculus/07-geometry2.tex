@@ -1,7 +1,7 @@
 \input{stdinclude.tex}
 \begin{document}
 
-\mainHeaderDiff{7}{Higher Derivatives and the Geometry of a Function}
+\mainHeaderDiff{7}{The Geometry of Functions}
 Back in the homework on limits, I gave you the following definitions:
 \subsubsection*{Properties of Functions}
 \begin{itemize}
@@ -40,7 +40,7 @@ that if a function is differentiable at a point then it is continuous there. At 
 points a function is discontinuous.
 
 \begin{ex}
-  \textit{Question.} Consider the function defined by $ f(x) = x^4 - 2x^2 + 3 $. (a) Find the intervals on which $ f $
+  Consider the function defined by $ f(x) = x^4 - 2x^2 + 3 $. (a) Find the intervals on which $ f $
   is increasing or decreasing. (b) Find the intervals of concavity and the inflection points.
 
   \textit{Solution.} We have $ f'(x) = 4x^3 - 4x $. This function is zero at $ x \in \{-1, 0, 1\} $, and so (since the function
@@ -88,6 +88,12 @@ points a function is discontinuous.
             \begin{center}
               \includegraphics[width=0.4\textwidth]{logistic}
             \end{center}
+  \questioM The graph of $ y = f(x) $ (where $ f $ is a continuous function) is concave up for all $ x < 0 $, concave down for $ x > 0 $, and decreasing everywhere.
+    \begin{parts}
+      \part Sketch the graph of $ y = f(x) $.
+      \part What can you say about $ f'(x) $ and $ f''(x) $ for $ x < 0 $ and $ x > 0 $?
+      \part What about $ x = 0 $?
+    \end{parts}
   \questioM Sketch a function satisfying the given criteria.
     \begin{parts}
       \part
@@ -114,6 +120,7 @@ points a function is discontinuous.
             \begin{displaymath}
               \left[\lim_{a \to x} f(x) - f(a)\right]\left[\lim_{a \to x} \frac{x - a}{x - a}\right]
             \end{displaymath}
+  \questioE Give an example of a function which is continuous but not differentiable at some point.
   \questioS Scholarship 2010: Recall that the points of inflection of a curve are places where the second derivative
             changes sign. These are typically, \textbf{but not always}, points at which the second derivative is zero.
 

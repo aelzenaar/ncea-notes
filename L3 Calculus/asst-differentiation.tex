@@ -15,6 +15,7 @@
 \sidecaptionvpos{figure}{c}
 \usepackage{float}
 \usepackage{gensymb}
+\usepackage[framemethod=tikz]{mdframed}
 \usepackage{tkz-euclide}
 \usetkzobj{all}
 \usepackage{commath}
@@ -87,9 +88,17 @@
   \question
     \begin{parts}
       \part[2] Compute the derivative of $ (x + 1)^3 $ using the definition of the derivative.
-      \part[3] Show that $ \lim_{x \to 0} \ln x $ does not exist.
-      \part[3] Show that $ \lim_{x \to \infty} \frac{\sin x}{x} = 0 $. [Hint: use the fact that $ -1 \leq \sin x \leq 1 $, and
-            write $ A(x) \leq \frac{\sin x}{x} \leq B(x) $ for two functions $ A $ and $ B $ that both go to zero as $ x $ grows].
+      \part[6] You may use the following lemma in answering this question. \textbf{Do not attempt to prove this lemma.}
+
+               \begin{mdframed}
+                 \textbf{Squeeze Lemma}\\
+                 If $ f $, $ g $, and $ h $ are all functions such that $ f(x) \leq g(x) \leq h(x) $ for all $ x $ in the domain
+                 of definition of the three functions, and if $ \lim_{x \to h} f(x) = \lim_{x \to h} h(x) = L $, then $ \lim_{x \to h} g(x) = L $.
+               \end{mdframed}
+        \begin{subparts}
+          \subpart Draw a sketch that displays the intuition behind the squeeze lemma.
+          \subpart Show that $ \lim_{x \to \infty} \frac{\sin x}{x} = 0 $. [Hint: use the fact that $ -1 \leq \sin x \leq 1 $.]
+        \end{subparts}
     \end{parts}
 \end{questions}
 \end{document}
