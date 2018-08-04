@@ -13,7 +13,7 @@ differentiation: given a slope function (a derivative), we will find the origina
 \end{ex}
 
 From this example, we make two main observations:
-\begin{obs}
+\begin{obs}[Inverse power rule]
   If we know a differentiation rule, like $ ax^r \mapsto arx^{r - 1} $, then we can reverse it and say that if the derivative
   looks like $ ax^r $ then the original function looks like $ \frac{a}{r + 1}x^{r + 1} $.
 \end{obs}
@@ -184,7 +184,7 @@ than it first appears. The final problems in this week's problem set are an indi
 
             Find $ B $ and $ C $.
   \question Every function which is made up of bits of the form $ ax^r $ added up can be differentiated using the power rule.
-            However, the same is not true for differentiation.
+            However, not every function of that form has an anti-derivative that can be calculated using the inverse power rule.
     \begin{parts}
       \part Show that no such function $ f $ differentiates to give $ f'(x) = \frac{1}{x} $. (Hint: try to integrate using the
             reverse power rule).
@@ -216,7 +216,7 @@ than it first appears. The final problems in this week's problem set are an indi
             derivative of $ \ln $.
         \begin{subparts}
           \subpart Write $ x = \ln y $, and give $ \od{x}{y} $.
-          \subpart Hence show that $ \od{y}{x} = x $.
+          \subpart Hence show that $ \od{y}{x} = y $.
           \subpart Conclude that, since $ x = \ln y \iff y = \mathrm{nl}\thinspace x $, it must be the case
                    that $ \od{}{x} \mathrm{nl}\thinspace x = \mathrm{nl}\thinspace x $.
         \end{subparts}

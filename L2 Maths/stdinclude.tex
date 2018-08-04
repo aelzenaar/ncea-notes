@@ -18,6 +18,7 @@
 \usepackage{pgfplots}
 \usepgfplotslibrary{polar}
 \pgfplotsset{compat=1.11}
+\usepgfplotslibrary{statistics}
 \usepackage{graphicx}
 \usepackage{sidecap}
 \sidecaptionvpos{figure}{c}
@@ -95,3 +96,6 @@
 
 \newcommand{\mainHeader}[2]{\section*{NCEA Level 2 Mathematics\\#1. #2}}
 \newcommand{\mainHeaderHw}[2]{\section*{NCEA Level 2 Mathematics (Homework)\\#1. #2}}
+\newcommand{\seealso}[1]{\begin{center}\emph{See also #1.}\end{center}}
+\newcommand{\drills}[1]{\begin{center}\emph{Drill problems: #1.}\end{center}}
+\newcommand{\basedon}[1]{\begin{center}\emph{Notes largely based on #1.}\end{center}}
