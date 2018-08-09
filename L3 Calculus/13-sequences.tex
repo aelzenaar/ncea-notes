@@ -1,0 +1,168 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderDiff{13}{Sequences and Series}
+\subsection*{Sequences}
+So far, we have looked at functions that are continuous. This week, we take a short break from this and look at sequences and series. A sequence
+is, intuitively, a list of numbers written in a definite order:
+\begin{displaymath}
+  (a_n) = (a_1, a_2, \dots, a_i, \dots).
+\end{displaymath}
+Note that we index sequences starting at 1, unless stated otherwise. Theoretical computer scientists will often start at 0 instead.
+
+Some examples of sequences include
+\begin{gather}
+  \left(n\right) = (1,2,3,\dots) \text{}\\
+  \left(\frac{n-1}{n}\right) = \left(0,\frac{1}{2},\frac{2}{3},\frac{3}{4},\dots\right)\\
+  \left(\cos \frac{n\pi}{6} \right) = \left(1, \frac{\sqrt{3}}{2}, \frac{1}{2}, 0, \dots\right)\\
+  \left(1 - 0.2^n \right) = \left(0.8, 0.96,0.992,0.9984,\dots \right)\\
+  \left(\frac{n^5}{n!}\right) = \left(0, 1, 16,40.5,42.6,26.04,10.8,\dots\right)\\
+  \left( a_n \right) = \left(1,0,1,0,0,1,0,0,0,1,\dots\right)
+\end{gather}
+Clearly some of these sequences grow forever, while others settle down and become closer and closer to a particular value.
+\begin{defn}
+  A sequence $ (a_n) $ has a limit $ L $, written $ \lim_{n\to\infty} a_n = L $, if we can make the terms $ a_i $ stay as close as we like
+  to $ L $ by taking $ i $ sufficiently large. If $ (a_n) $ has a limit, then it is called \textbf{convergent}; otherwise, it is
+  called \textbf{divergent}.
+\end{defn}
+
+Examples (2) and (4) above are clearly convergent (they both converge to 1); example (5) is convergent to 0, even though it is initially
+increasing (because factorials grow faster than powers eventually). The others are all divergent:
+\begin{enumerate}
+  \item[(1)] is clearly divergent because as $ n \to \infty $, $ a_n \to \infty $.
+  \item[(3)] is divergent because there is no number $ L $ such that $ a_i $ stays close to $ L $ as we increase $ i $ (it always jumps around).
+  \item[(6)] is divergent for the same reason as (3).
+\end{enumerate}
+
+Some sequences can be written recursively.
+\begin{gather*}
+  a_1 = 1, a_{n + 1} = 5a_n - 3 \quad (1, 2, 7, \dots)\\
+  a_1 = 2, a_{n + 1} = \frac{a_n}{1 + a_n} \quad \left(2, \frac{2}{3}, \frac{2}{5}, \frac{2}{7}, \dots\right)
+\end{gather*}
+
+\begin{ex}
+  The \textbf{Fibonacci} sequence is defined by
+  \begin{displaymath}
+    (F_i) = \begin{cases}
+      1 & \text{if $ i = 1 $ or $ i = 2 $,}\\
+      F_{i - 1} + F_{i - 2} & \text{otherwise.}
+    \end{cases}
+  \end{displaymath}
+  The first few elements of the Fibonacci sequence are 1, 1, 2, 3, 5, 8, 13, 21.
+
+  There is actually a closed-form formula for the Fibonacci sequence:
+  \begin{displaymath}
+    F_i = \frac{\left(1 + \sqrt{5}\right)^n - \left(1 - \sqrt{5}\right)^n}{2^n \sqrt{5}}.
+  \end{displaymath}
+  More information about this sequence is given in the reading for the homework.
+\end{ex}
+
+\subsection*{Series}
+From sequences, we move on to infinite sums (also known as series). Given some sequence $ (a_n) $, we have a series
+\begin{displaymath}
+  \sum_{n = 1}^\infty a_n = a_1 + a_2 + a_3 + \cdots.
+\end{displaymath}
+
+Often it does not make sense to talk about the sum of infinitely many terms; obviously $ 1 + 2 + 3 + \cdots $ will increase
+forever. On the other hand, if we add the first $ n $ terms of
+\begin{displaymath}
+  \left(\frac{1}{2}, \frac{1}{4}, \dots, \frac{1}{2^n}, \dots\right)
+\end{displaymath}
+we obtain $ 1 - 1/2^n $, which converges to 1.
+
+This suggests that we can consider the partial sums of a sequence $ (a_n) $
+\begin{align*}
+  s_1 &= a_1\\
+  s_2 &= a_1 + a_2\\
+  s_3 &= a_1 + a_2 + a_3\\
+      &\vdots\\
+  s_n &= a_1 + \cdots + a_n = \sum_{i = 1}^n a_n
+\end{align*}
+and then say that the sum $ \sum a_n $ exists if the sequence $ (s_n) $ converges.
+
+An important class of series is the geometric series
+\begin{displaymath}
+  \sum_{n = 1}^\infty ar^{n - 1} = a + ar + ar^2 + \cdots
+\end{displaymath}
+where $ a \neq 0 $ and $ r $ are constants. Clearly if $ \abs{r} \geq 1 $ then the sum becomes $ a + a + \cdots $ which converges;
+if $ \abs{r} < 1 $, then we have
+\begin{align*}
+  s_n  &= a + ar + ar^2 + \cdots + ar^{n - 1}\\
+  rs_n &= \phantom{a + {}} ar + ar^2 + ar^3 + \cdots + ar^n\\
+  s_n - rs_n &= a - ar^n\\
+  s_n = \frac{a - ar^n}{1 - r}.
+\end{align*}
+which converges to $ a/(1-r) $ as $ n \to \infty $; so the sum exists.
+
+\subsection*{Questions}
+\begin{questions}
+  \questioM Which of the following sequences are convergent (write the limit), and which are divergent (give a reason)?
+    \begin{parts}
+      \part $ ((-1)^n) $
+      \part $ (e^{1/n}) $
+      \part $ (n^2 e^{-n}) $
+      \part $ (3^n/(1+2^n)) $
+      \part $ a_1 = 6 $, $ a_{n + 1} = a_n/n $
+      \part $ (\cos 2\pi/n) $
+      \part $ (\sin n!/n^n) $
+      \part $ (\sin n^n/n!) $
+    \end{parts}
+  \questioE Find the limit of the sequence $ (\sqrt{2}, \sqrt{2\sqrt{2}}, \sqrt{2\sqrt{2\sqrt{2}}}, \dots) $.
+  \questioA Find the sum of the geometric series $ 1 + 1/2 + 1/4 + \cdots $.
+  \questioM Find the sum of the geometric series $ 5 - \frac{10}{3} + \frac{20}{9} - \frac{40}{27} + \cdots $.
+  \questioE Show that the series $ \sum_{n = 1}^{\infty} \frac{1}{n(n + 1)} $ is convergent, and find its sum. [Hint: calculate $ \frac{1}{i} - \frac{1}{1 + i} $.]
+  \questioE Determine whether $ \sum_{n =1}^\infty \ln \frac{n}{n + 1} $ is convergent or divergent. If it is convergent, find its sum.
+  \questioE Consider the harmonic series
+            \begin{displaymath}
+              \sum_{n = 1}^\infty \frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \cdots.
+            \end{displaymath}
+    \begin{parts}
+      \part Let $ s_n $ be the sequence of partial sums. Show that $ s_4 = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} > 1 + \frac{2}{2} $ [Hint: $1/3 > 1/4$.]
+      \part Show that $ s_8 > 1 + \frac{3}{2} $.
+      \part Prove that $ s_{2^n} \geq 1 + \frac{n}{2} $ in general. Conclude that the harmonic series diverges.
+    \end{parts}
+  \questioE Find $ c $ if $ \sum_{n = 1}^\infty (1 + c)^{-n} = 2 $.
+  \questioS A power series is a series of the form
+            \begin{displaymath}
+              \sum_{n = 0}^{\infty} c_n x^n = c_0 + c_1 x + c_2 x^2 + \cdots.
+            \end{displaymath}
+            You can think of a power series as a polynomial with infinitely many terms. It can be shown that the normal sum rule for differentiation holds,
+            so that $ \od{}{x} \sum_{n = 0}^{\infty} c_n x^n = \sum_{n = 0}^{\infty} \od{}{x} c_n x^n $.
+    \begin{parts}
+      \item Find the derivative of the Bessel function, $ J_0(x) = \sum^{\infty}_{n = 0} \dfrac{(-1)^n x^{2n}}{2^{2n} (n!)^2} $.
+      \item If $ \abs{x} < 1 $, show that $ \sum_{n = 0}^\infty x^n = \frac{1}{1 - x} $.
+      \item Find a power series representation for $ f(x) = 1/(1-x)^2 $. [Hint: differentiate the equation in (b).]
+      \item Find a power series representation for $ g(x) = \ln(1 + x) $. [Hint: differentiate $ g $, use (c), and antidifferentiate.]
+      \item When is the power series representation of $ g $ valid?
+    \end{parts}
+  \questioS The Cantor set is constructed as follows. Start with the closed interval $ [0,1] $ and remove the open interval $ (\frac{1}{3}, \frac{2}{3}) $. This leaves
+            the two closed intervals $ [0, \frac{1}{3}] $ and $ [\frac{2}{3},1] $; remove the open middle third of each of these. Four intervals remain; remove the
+            open middle third of each. Continue this process indefinitely, at each step removing the open middle third of each interval remaining from the previous
+            step. The Cantor set is the set of numbers remaining from the interval $ [0,1] $ after this process has been carried out.
+            \begin{center}
+              \includegraphics[width=0.8\textwidth]{cantor}
+            \end{center}
+    \begin{parts}
+      \part Show that the total length of all the removed intervals is 1.
+      \part Despite this, there are still infinitely many numbers remaining. Exhibit some members of the Cantor set.
+      \part The Sierpinski carpet is a two-dimensional version of the Cantor set; remove the centre one-ninth of a square of side 1, then the centres
+            of the eight remaining squares, and so on. Show that the sum of the areas of the removed squares approaches 1. Hence the Sierpinski carpet
+            has area zero.
+            \begin{center}
+              \includegraphics[width=0.4\textwidth]{sierpinski}
+            \end{center}
+    \end{parts}
+  \questioS Scholarship 2017: The sequence $ (a_n) $ is defined as follows:-
+            \begin{displaymath}
+            \begin{cases}
+              (a_1) = 2,\\
+              (a_2) = 7,\\
+              (a_{n + 1}) = \frac{1}{2}(a_n + a_{n + 1}) & \text{ for $ n \geq 2 $.}
+            \end{cases}
+            \end{displaymath}
+    \begin{parts}
+      \part Find an exact formula for the $ n$th term of the sequence.
+      \part What is the limit of $ a_n $ as $ n \to +\infty $?
+    \end{parts}
+\end{questions}
+\end{document}

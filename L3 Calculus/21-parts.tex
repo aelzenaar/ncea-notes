@@ -84,5 +84,10 @@ order of usefulness):
        \end{displaymath}
   \questioO Find $ I = \int e^x \cos x \dif{x} $.
   \questioS Recall that $ \od{}{x} \tan^{-1} x = \frac{1}{1 + x^2} $. Find $ \rint \tan^{-1} x \dif{x} $.
+  \questioS We integrate $ \rint 1/x \dif{x} $ by parts:
+            \begin{align*}
+              \rint \frac{1}{x} \dif{x} = \frac{1}{x} \cdot x - \rint -\frac{1}{x^2} \cdot x \dif{x} = 1 + \rint \frac{1}{x} \dif{x}
+            \end{align*}
+            Cancelling the indefinite integral from both sides, we have $ 0 = 1 $. Explain.
 \end{questions}
 \end{document}

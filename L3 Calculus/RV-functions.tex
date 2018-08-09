@@ -1,74 +1,52 @@
 \input{stdinclude.tex}
 \begin{document}
 
-\section*{NCEA Level 3 Calculus\\Prior Revision: Functions}
-\begin{center}
-  \includegraphics[width=0.8\textwidth]{hobbes}
-\end{center}
-\subsection* {What is Calculus?}
-Calculus is the study of:
-\begin{itemize}
-  \item Continuous change.
-  \item Slope, area, and volume.
-  \item Functions and relationships.
-\end{itemize}
-
-It has applications in:
-\begin{itemize}
-  \item Physics and chemistry.
-  \item Probability theory.
-  \item Population theory.
-  \item Economics (I am assured).
-\end{itemize}
-
-In pure mathematics, calculus can be seen as the computational side of a pretty
-subject called \textbf{real analysis}.
-
-\subsection*{Revision of Functions}
-Arguably, the most fundamental concept in calculus is that of a \textit{function}.
+\section*{NCEA Level 3 Calculus\\Revision: Functions}
+Before we look at calculus proper, we need to revise a few things from our previous studies. Arguably, the most fundamental
+concept from L2 is that of a function, together with its graph.
 
 \begin{defn}[Function]
-  A function is a something which takes a set of things (for example, the real numbers $ \mathbb{R} $) and assigns
-  to each one exactly one thing (which could be the same or different).
+  A \textbf{function} is a relationship between two sets of things, called the \textit{range} and the \textit{domain}, such that
+  everything in the range is related to exactly one thing in the domain. If $ f $ is a function which maps the value $ x $
+  to the value $ y $, we write $ f : x \mapsto y $, or $ f(x) = y $. If $ f $ has range $ X $ and domain $ Y $, we write $ f : X \to Y $.
+
+  Two functions $ f $ and $ g $ are called equal \emph{if and only if} the ranges of the two functions are the same \emph{and} for every $ x $ in that
+  range, $ f(x) = g(x) $.
+\end{defn}
+You can think of a function as a rule: it could be given by a formula, or by a list of inputs and outputs, or in any other way that one wants.
+
+\begin{defn}[Graph]
+  If $ f $ is a function, then the set of all points $ (x,y) $ such that $ y = f(x) $ is called the \textbf{graph} of the function.
 \end{defn}
 
-\begin{ex}
-  The map which takes a number $ x $ and spits out $ x^2 $ is a function --- for every input, there is exactly one output. If
-  we \textit{graph} this function, we plot its input on the $ x-$axis and its output on the $ y-$axis and obtain a parabola.
-\end{ex}
+\begin{exs}\leavevmode
+  \begin{enumerate}
+    \item The map which takes a number $ x $ and spits out $ x^2 $ is a function --- for every input, there is exactly one output. If
+          we plot every point in the graph of this function, by plotting each input on the $ x-$axis and the corresponding output on
+          the $ y-$axis, we obtain a parabola.
+    \item The curve graphed below is \textit{not} the graph of a function, since for some inputs (like 1) the map has more than one output. We can check this
+          by drawing vertical lines along the function, like that pictured: if a graph is a function, no vertical line can ever cross the curve
+          more than once (this is the \textit{vertical-line test}).
+          \begin{center}
+            \includegraphics[width=0.3\textwidth]{linetest}
+          \end{center}
+    \item The map $ f : x \mapsto \sin x $ is a function (and so are all the other triangle ratios). We could also define it by `the
+          function $ f $ such that $ f(x) = \sin x $'. This function $ f $ can only produce numbers between $1$ and $-1$; we say that
+          its range is the interval from $ -1 $ to 1.
+    \item On the other hand, to ensure that we obtain functions the inverse trigonometric maps must be restricted to certain inputs: to
+          take a particular example, since there are infinitely many $ x $ so that $ \sin x = 1 $, there are infinitely many possibilities
+          for the value of $ \arcsin x $. We will refrain from picking an explicit range for the inverse functions here and will generally
+          just pick the most convenient at the time: it should be reasonably obvious from context.
+    \item The map $ \iota : x \mapsto x $ is a function, called the \textit{identity function}.
+    \item The map $ \ln x $ is a function, but it is only defined when $ x > 0 $: we say that its \textit{domain} is the positive real numbers.
+    \item The following are some more non-examples of functions.
+          \begin{center}
+            \includegraphics[width=0.5\textwidth]{notfunction}
+          \end{center}
+  \end{enumerate}
+\end{exs}
 
-\begin{ex}
-  The curve graphed below is \textit{not} a function, since for some inputs (like 1) it has more than one output. We can check this
-  by drawing vertical lines along the function, like that pictured: if a graph is a function, no vertical line can ever cross the curve
-  more than once (this is the \textit{vertical-line test}).
-
-  \begin{center}
-    \includegraphics[width=0.3\textwidth]{linetest}
-  \end{center}
-\end{ex}
-
-\begin{ex}
-  The map $ f : x \mapsto \sin x $ is a function. We could also define it by `the function $ f $ such that $ f(x) = \sin x $'.
-  This function $ f $ can only produce numbers between $1$ and $-1$; we say that its \textit{range} is the interval from $ -1 $ to 1.
-\end{ex}
-
-\begin{ex}
-  The map $ \iota : x \mapsto x $ is a function, called the \textit{identity function}.
-\end{ex}
-
-\begin{ex}
-  The map $ \ln x $ is a function, but it is only defined when $ x > 0 $: we say that its \textit{domain} is the positive real numbers.
-\end{ex}
-
-\begin{ex}
-  Some more non-examples:
-
-  \begin{center}
-    \includegraphics[width=0.5\textwidth]{notfunction}
-  \end{center}
-\end{ex}
-
-\subsection*{Questions}
+\subsection*{Revision Questions}
 \begin{questions}
   \question Which of the following are functions?
     \begin{parts}
@@ -76,7 +54,7 @@ Arguably, the most fundamental concept in calculus is that of a \textit{function
       \part $ \phi : x \mapsto \frac{2}{x} $
       \part The thing which maps every person to their youngest sibling.
       \part The thing which sends every person to their youngest sibling that isn't themself.
-      \part $ x \mapsto \lfloor x \rfloor $ (the floor map).
+      \part $ x \mapsto \lfloor x \rfloor $ (where $ \lfloor x \rfloor $ is the largest integer less than or equal to $ x $).
       \part The relation that sends every person to their age.
     \end{parts}
   \question I will define two functions, $ \varphi $ and $ \vartheta $, as follows:

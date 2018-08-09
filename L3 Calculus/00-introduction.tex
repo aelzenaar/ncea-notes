@@ -7,6 +7,22 @@
   \includegraphics[width=0.8\textwidth]{hobbes}
 \end{center}
 
+\subsection* {What is Calculus?}
+I will refrain from trying to advertise the subject to you, and will simply try to explain what calculus is and what kind of
+person uses it. Calculus is the broad study of:
+\begin{itemize}
+  \item Continuous change;
+  \item Slope, area, and volume; and
+  \item Functions and relationships.
+\end{itemize}
+
+It has applications in physics, where calculus is the most natural language for Newtonian mechanics and classical electromagnetism; in chemistry
+and biology, where calculus can be used to model anything which changes over time (like rates of reaction, concentrations, and populations); in
+statistics (the study of probability distributions is just calculus); and in economics (I am assured). My own view, which I try to sprinkle throughout
+these notes, is mainly a mixture of geometric applications and physical intuition.
+
+Within mathematics itself, calculus is the computational side of \textbf{real analysis}, the study of the properties of the real number system.
+
 \subsection*{Mathematical Prerequisites}
 There are a number of things from Level 2 Mathematics that students should be
 comfortable with; generally, I assume in these notes a vague merit-level understanding
@@ -31,9 +47,12 @@ but not in so much detail that they need to be covered first:
   \item Level 3 Trigonometry: Solving trig equations (including general solutions), reciprocal trig functions, use
                               of trig identities (this latter mainly for E/S/OS-style integration problems).
 \end{itemize}
-In particular, no knowledge of complex algebra is assumed (or used) anywhere in the notes.
+In particular, no knowledge of complex algebra is assumed (or used) anywhere in the notes, and no knowledge from any L2 or L3 statistics standards is assumed.
 
-No knowledge from any L2 or L3 statistics standards is assumed.
+I also do expect the reader to be able to draw graphs various simple functions (e.g. parabolae, the three basic trig functions, logs and
+exponents, and so forth) `by eye' --- I realise that this is a little unrealistic, but at some point one must learn to become comfortable
+with the shapes and sizes of the objects we study. In order to help build this intuition, it is (very highly) recommended that the reader
+works through every example in detail, drawing pictures and so forth.
 
 \subsection*{A Note on Problem Difficulty}
 One of the main goals for these notes is that they should be useful for students at all levels, from A to OS. Accordingly, the
@@ -66,13 +85,13 @@ Some of the material goes beyond that required for NCEA Level 3; the following l
   \item[04.] The Chain Rule
   \item[05.] The Product and Quotient Rules
   \item[06.] Tangent and Normal Lines
-  \item[07.] Higher Derivatives and the Geometry of a Function
+  \item[07.] The Geometry of Functions
   \item[08.] Optimisation
-  \item[09.] Related Rates
-  \item[10.] Parametric Functions
-  \item[11.] Implicit Differentiation
-  \item[12.] $^{*\perp}$Sequences and Series
-  \item[13.] $^*$Inverse Functions
+  \item[09.] Implicit Differentiation
+  \item[10.] $^*$Inverse Functions
+  \item[11.] Related Rates of Change
+  \item[12.] Parametric Functions
+  \item[13.] $^{*\perp}$Sequences and Series
   \item[14.] $^\dagger$Differentiation Revision
 \end{enumerate}
 
@@ -92,7 +111,7 @@ Some of the material goes beyond that required for NCEA Level 3; the following l
   \item[26.] $^{*\perp\dagger\skull}$More Interesting Problems
 \end{enumerate}
 
-($^*$scholarship topic, $^\perp$interest topic, $^\dagger$revision)
+($^*$scholarship topic, $^\perp$interest topic, $^\dagger$revision, $^\skull$reader discretion advised)
 
 \subsection*{A Note on the Textbook}
 Many problems are taken from a couple of places:
@@ -122,9 +141,13 @@ but a real journey of discovery through one of humanity's great fields of human 
 this kind of mathematics --- for example, consider the non-obvious fact that $ 3 \times 5 = 5 \times 3 $. Next year you will learn that there are
 some objects which do not have this property (commutativity).
 
-There are a lot of definitions and theorems, but they allow us to capture our intuition of mathematical objects, their behaviour, and their beauty
-in a more precise (and more correct) sense. It is important to read slowly and understand the statements as you go, as every piece strengthens the
-whole. I do not tend to repeat myself, so often you will find statements from earlier used later without comment.
+There are a lot of definitions and theorems, but they allow us to capture our intuition of mathematical objects, and their behaviour in a more
+precise (and more correct) sense. It is important to read slowly and understand the statements as you go, as every piece strengthens the whole.
+I do not tend to repeat myself, so often you will find statements from earlier used later without comment.
+
+I have also included proofs of a few of the theorems that we use, but rigorous proofs of many seemingly obvious ideas (like the fact that every function
+reaches a minimum and a maximum value on any closed interval) require some subtle properties of the real numbers and so it is more important to gain a
+geometric and intuitive feeling for many of the results rather than worrying too much.
 
 \textbf{Recommended reading for the interested}: Paul Lockhart's `A Mathematician's Lament'.
 

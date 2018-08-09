@@ -6,24 +6,20 @@ Consider the integral
 \begin{displaymath}
   \rint^1_0 x^3 \sqrt{1-x^2} \dif{x}.
 \end{displaymath}
-There is no obvious easy substitution to simplify this integral and integration by parts could work but will require
+There is no obvious easy substitution to simplify this integral, and integration by parts could work but will require
 a lot of work with no guranteed payoff. However, recall that $ \sqrt{1 - \sin^2 \theta} = \cos \theta $; this identity
 suggests that we could perhaps substitute $ x = \sin \theta $ in order to obtain $ \dif{x} = \cos \theta \dif{\theta} $ and so
-\begin{displaymath}
-  \begin{aligned}
-    \rint^1_0 x^3 \sqrt{1-x^2} \dif{x} &= \rint^{\frac{\pi}{2}}_0 \sin^3 \theta \cos^2 \theta \dif{\theta}\\
-                                      &= \rint^{\frac{\pi}{2}}_0 \sin \theta (1-\cos^2 \theta)\cos \theta \dif{\theta}\\
-                                      &= \rint^{\frac{\pi}{2}}_0 (\cos^2 \theta - \cos^4 \theta) \sin \theta \dif{\theta}
-  \end{aligned}
-\end{displaymath}
+\begin{align*}
+  \rint^1_0 x^3 \sqrt{1-x^2} \dif{x} &= \rint^{\frac{\pi}{2}}_0 \sin^3 \theta \cos^2 \theta \dif{\theta}\\
+                                     &= \rint^{\frac{\pi}{2}}_0 \sin \theta (1-\cos^2 \theta)\cos \theta \dif{\theta}\\
+                                     &= \rint^{\frac{\pi}{2}}_0 (\cos^2 \theta - \cos^4 \theta) \sin \theta \dif{\theta}
+\end{align*}
 Now, letting $ u = \cos \theta $ we obtain
-\begin{displaymath}
-  \begin{aligned}
-    \rint^{\frac{\pi}{2}}_0 (\cos^2 \theta - \cos^4 \theta) \sin \theta \dif{\theta} &= -\rint^{0}_{1} u^2 - u^4 \dif{u}\\
-                                                                                    &= \eval{\frac{1}{3}u^3 - \frac{1}{5}u^5}_{u = 0}^{1}\\
-                                                                                    &= \frac{1}{3}-\frac{1}{5} = \frac{2}{15}.
-  \end{aligned}
-\end{displaymath}
+\begin{align*}
+  \rint^{\frac{\pi}{2}}_0 (\cos^2 \theta - \cos^4 \theta) \sin \theta \dif{\theta} &= -\rint^{0}_{1} u^2 - u^4 \dif{u}\\
+                                                                                   &= \eval{\frac{1}{3}u^3 - \frac{1}{5}u^5}_{u = 0}^{1}\\
+                                                                                   &= \frac{1}{3}-\frac{1}{5} = \frac{2}{15}.
+\end{align*}
 
 Here is a table of trig substitutions:
 
@@ -82,6 +78,7 @@ Here is a table of trig substitutions:
                 &= -\cot \theta - \theta = -\cot\left(\sin^{-1} (x/3)\right) - \sin (x/3)\\
                 &= \frac{\sqrt{9-x^2}}{x} - \sin(x/3).
             \end{align*}
+  \clearpage
   \questioS A water storage tank has the shape of a cylinder with diameter \SI{10}{\metre}. It is mounted so that the circular cross-sections
             are vertical. If the depth of the water is \SI{7}{\metre}, what percentage of the total capacity is being used?
   \questioS When writing this worksheet I went on the internet and found this. Find the mistake(s), and do the integral.

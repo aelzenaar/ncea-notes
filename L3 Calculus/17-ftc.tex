@@ -2,20 +2,27 @@
 \begin{document}
 
 \mainHeaderIntg{17}{The Fundamental Theorem of Calculus}
-\begin{bthm}[First Fundamental Theorem]
-  Suppose $ f $ is a continuous function, and suppose $ F $ is any antiderivative of $ f $ (so $ F' = f $). Then:
+Finally, we have the punchline. We state the theorems first, and then give the (optional) proofs at the end.
+
+\subsection*{Statements of theorems}
+\begin{center}\itshape
+  ``You can tell it's important because it has a name.\\You can tell it's \textbf{very} important because it has a \textbf{pompous} name.''
+\end{center}
+
+\begin{bthm}[First Fundamental Theorem of Calculus (FTC1)]
+  Suppose $ f $ is a continuous function, and suppose $ F $ is any antiderivative of $ f $ (so $ F' = f $). Then,
   \begin{displaymath}
-    \rint^b_a f(x) \dif{x} = F(b) - F(a) = \eval{F(x)}_a^b
+    \rint^b_a f(x) \dif{x} = F(b) - F(a) = \eval{F(x)}_a^b.
   \end{displaymath}
 \end{bthm}
 
 In other words, the definite integral of a function can be found by evaluating the indefinite integrals at
 the endpoints. This actually follows from a much more intuitive result:
 
-\begin{bthm}[Second Fundamental Theorem]
-  Suppose $ f $ is a continuous function. Then:
+\begin{bthm}[Second Fundamental Theorem of Calculus (FTC2)]
+  Suppose $ f $ is a continuous function. Then,
   \begin{displaymath}
-    \od{}{x} \rint^x_a f(t) \dif{t} = f(x)
+    \od{}{x} \rint^x_a f(t) \dif{t} = f(x).
   \end{displaymath}
 \end{bthm}
 
@@ -24,31 +31,107 @@ then we use the fact that the area of the darker shaded area is approximated by 
 \begin{displaymath}
   \frac{A(x + h) - A(x)}{h} \approx \frac{h f(x)}{h} = f(x).
 \end{displaymath}
-If we take limits, as we do in the proof of this theorem (see supplementary sheet), then this approximation becomes exact: the rate of change of
+If we take limits, as we do in the proof of this theorem (given below), then this approximation becomes exact: the rate of change of
 the area under a curve is simply the height of the curve.
 
 \begin{center}
   \includegraphics[width=0.6\textwidth]{ftc1}
 \end{center}
 
-We also have the following theorem:
+\begin{joke}
+  A mathematics professor was lecturing to a class of students. As he wrote something on the board,
+  he said to the class ``Of course, this is immediately obvious.'' Upon seeing the blank stares of
+  the students, he turned back to contemplate what he had just written. He began to pace back and
+  forth, deep in thought. After about 10 minutes, just as the silence was beginning to become uncomfortable,
+  he brightened, turned to the class and said, ``Yes, it IS obvious.''
+\end{joke}
+
+These theorems are \emph{fundamental} because they show us that the two main operations of calculus, integration and differentiation,
+are deeply related and are (in some sense) inverses of each other. To be absolutely clear, without this theorem we would have absolutely
+no justification in calling anti-derivatives `integrals' --- the second theorem tells us that if we make the upper bound of our definite integral
+vary then we obtain an anti-derivative for the expression underneath the integral sign, and the first theorem tells us that if we take the definite
+integral of the derivative of some function then we so happen to obtain anti-derivatives back out the other side! (In fact, notice that the indefinite
+integral of $ f $ is just $ \rint^x_{f^{-1}(C)} f(x) \dif{x} $, where $ C $ is just our constant of integration!)
+
+We also have the following theorem, which allows us to combine definite integrals together. In order to get some kind of geometric intuition,
+please draw a diagram or find some kind of intuitive explanation for each!
 \begin{thm}
-  Suppose $ f,g $ are functions and $ \lambda $ is a real constant. Then:
+  Suppose $ f $ and $ g $ are functions and $ \lambda $ is a real constant. Then, if the relevant integrals are defined, we have:
   \begin{enumerate}
-    \item $ \lambda \rint_a^b f(x) \dif{x} = \rint_a^b \lambda f(x) \dif{x} $.
-    \item $ \rint_a^b f(x) \dif{x} + \rint_a^b g(x) \dif{x} = \rint_a^b f(x) + g(x) \dif{x} $.
-    \item $ \rint_a^a f(x) \dif{x} = 0 $.
-    \item $ \rint_a^b f(x) \dif{x} + \rint_b^c f(x) \dif{x} = \rint_a^c f(x) \dif{x} $.
+    \item $ \displaystyle\lambda \rint_a^b f(x) \dif{x} = \rint_a^b \lambda f(x) \dif{x} $.
+    \item $ \displaystyle\rint_a^b f(x) \dif{x} + \rint_a^b g(x) \dif{x} = \rint_a^b f(x) + g(x) \dif{x} $.
+    \item $ \displaystyle\rint_a^a f(x) \dif{x} = 0 $.
+    \item $ \displaystyle\rint_a^b f(x) \dif{x} + \rint_b^c f(x) \dif{x} = \rint_a^c f(x) \dif{x} $.
   \end{enumerate}
 \end{thm}
 
-Note that the areas below a curve are assigned \textbf{negative area}!
+Note that the areas below a curve are assigned \textit{negative} area!
 
-\begin{ex}
-  The definite integral $ \rint^\pi_0 \cos(x) \dif{x} $ is equal to 0; this is because the (negative) area under the $ x-$axis exactly
-  cancels the (positive) area above the $ x-$axis. (Draw a picture.)
-\end{ex}
+\begin{exs}\leavevmode
+  \begin{enumerate}
+    \item We calculate that $ \rint^1_0 \sqrt{x} \dif{x}  = \eval{\frac{2}{3}x^{3/2}}_{x = 0}^1 = \frac{2}{3} 1^{3/2} - \frac{2}{3} 0^{3/2} = \frac{2}{3}. $
+    \item The definite integral $ \rint^\pi_0 \cos x \dif{x} $ is equal to 0; this is because the (negative) area under the $ x-$axis exactly
+          cancels the (positive) area above the $ x-$axis. (Draw a picture.)
+    \item We calculate that $ \rint^2_0 2 \dif{x} = \eval{2x}_{x = 0}^2 = 2\cdot 2 - 2 \cdot 0 = 4 $. (Thus the integral gives us the correct value if we
+          try to find the area of a square!)
+  \end{enumerate}
+\end{exs}
 
+
+\clearpage
+\subsection*{Proofs}
+We will only prove the FTC for `nice' functions. We actually prove the second FTC first as it is easier, and we will state the two theorems a little
+more carefully.
+
+\begin{thm}[FTC2]
+  Suppose that $ f $ is a continuous function on the closed interval $ [a,b] $.\footnote{i.e. $ f $ is continuous at every $ x $ such
+  that $ a \leq x \leq b $.} Then the function $ F $ defined by
+  \begin{displaymath}
+    F(x) = \rint^x_a f(t) \dif{t}
+  \end{displaymath}
+  for all $ x $ in the closed interval $ [a,b] $ is differentiable for all $ x $ such that $ a < x < b $, and
+  \begin{displaymath}
+    F'(x) = \od{}{x} \rint^x_a f(t) \dif{t} = f(x).
+  \end{displaymath}
+\end{thm}
+
+\begin{proof}
+  Let us take the derivative in a straightforward manner.
+  \begin{displaymath}
+    \od{}{x} \rint^x_a f(t) \dif{t} = \lim_{h \to 0} \frac{\rint^{x + h}_a f(t) \dif{t} - \rint^{x}_a f(t) \dif{t}}{h}
+                                    = \lim_{h \to 0} \frac{\rint^{x + h}_x f(t) \dif{t}}{h}.
+  \end{displaymath}
+  Now, let $ f(M) $ be the maximum value obtained by $ f $ on the closed interval $ [x,x+h] $; let $ f(m) $ be the minimum value. Interpreting the integral as
+  an area, we have
+  \begin{displaymath}
+    hf(m) \leq \rint^{x + h}_x f(t) \dif{t} \leq hf(M) \implies f(m) \leq \frac{1}{h} \rint^{x + h}_x f(t) \dif{t} \leq f(M).
+  \end{displaymath}
+  Now, as $ h \to 0 $ we must have $ f(m) \to f(x) $ and $ f(M) \to f(x) $ (because as we make the interval smaller, $ m $ and $ M $ move towards $ x $). Hence
+  \begin{displaymath}
+    f(x) \leq \frac{1}{h} \rint^{x + h}_x f(t) \dif{t} \leq f(x)
+  \end{displaymath}
+  and so $ \od{}{x} \rint^x_a f(t) \dif{t} = f(x) $.
+\end{proof}
+
+\begin{thm}[FTC1]
+  Suppose $ f $ is continuous on the closed interval $ [a,b] $, and suppose $ F $ is any antiderivative of $ f $ for all $ x $ such
+  that $ a < x < b $ (so $ F'(x) = f(x) $ for all such $ x $). Then,
+  \begin{displaymath}
+    \rint^b_a f(x) \dif{x} = F(b) - F(a) = \eval{F(x)}_a^b.
+  \end{displaymath}
+\end{thm}
+
+\begin{proof}
+  Consider $ \od{}{x} \rint^x_a f(t) \dif{t} = f(x) $. In particular, $ \rint^x_a f(t) \dif{t} $ is an antiderivative of $ f $ and we can antidifferentiate both
+  sides, obtaining
+  \begin{equation}\label{eqn:ftc1}
+    \rint^x_a f(t) \dif{t} = F(x) + C \tag{*}
+  \end{equation}
+  (where $ C $ is some constant). Now substitute $ a $ for $ x $ in (*): we find that $ 0 = \rint^a_a f(t) \dif{t} = F(a) + C $, and in particular $ -C = F(a) $.
+  Substituting $ b $ for $ x $ in (*), we find that $ \rint^b_a f(t) \dif{t} = F(b) + C = F(b) - F(a) $; and we are done.
+\end{proof}
+
+\clearpage
 \subsection*{Questions}
 \begin{questions}
   \questioA Compute the following definite integrals.
@@ -119,5 +202,10 @@ Note that the areas below a curve are assigned \textbf{negative area}!
       \part Verify part (a) by integration and differentiation.
     \end{parts}
   \questioM Compute $ \od{}{x} \rint^{x}_{2} t^t \dif{t} $.
+  \questioS Scholarship 2014: Find exact expressions for the areas of the three labelled regions bounded by the two curves $ y = 9\csc^2 x $
+            and $ y = 16\sin^2 x $ between $ x = \frac{\pi}{6} $ and $ x = \frac{5\pi}{6} $ shown below.
+            \begin{center}
+              \includegraphics[width=0.5\textwidth]{schol14}
+            \end{center}
 \end{questions}
 \end{document}

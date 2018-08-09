@@ -315,7 +315,48 @@
         This is the maximum area, since if we increase $ \theta $ any more it requires $ f > 1 $.
 \end{enumerate}
 
-\subsection*{9. Related Rates}
+\subsection*{9. Implicit Differentiation}
+\begin{enumerate}
+  \item
+    \begin{enumerate}
+      \item $ y' = \frac{3x^2 + 6x}{2y} $.
+      \item $ (1 + y')\sin(x + y) = 2 - 2y' \implies y' = \frac{2 - \sin(x + y)}{2 + \sin(x + y)} $.
+      \item $ y' = \frac{20x^3 - 2x}{2y} $.
+    \end{enumerate}
+  \item $ 2x + 2y + 2xy' - 2yy' + 1 = 0 \implies y' = \frac{-1 - 2x - 2y}{2x - 2y} $, so $ y'(1,2) = \frac{-1 - 2 - 4}{2 - 4} = 7/2 $; hence the
+        slope of the normal is $ -2/7 $, and the equation of the normal line is $ y - 2 = -\frac{2}{7}(x - 1) $.
+  \item We have $ \frac{1}{2\sqrt{x}} + \frac{1}{2\sqrt{y}} y' = 0 $; suppose we have a tangent line passing through $ (x_0, (\sqrt{c} - \sqrt{x_0})^2) $.
+        Then the equation of this tangent is $ y - (\sqrt{c} - \sqrt{x_0})^2 = -\frac{\sqrt{c} - \sqrt{x_0}}{\sqrt{x_0}} (x - x_0) $.
+        When $ y = 0 $ we obtain the $ x$-intercept; $ 0 = (\sqrt{c} - \sqrt{x_0})^2 -\frac{\sqrt{c} - \sqrt{x_0}}{\sqrt{x_0}} (x - x_0) $ and so $ x = \sqrt{x_0 c} $.
+        Similarly, when $ x = 0 $ we obtain $ y = \sqrt{x_0 c} -  x_0 $. Their sum is therefore $ 2\sqrt{x_0 c} - x_0 = 2\sqrt{c}(\sqrt{c} - \sqrt{y_0}) - (\sqrt{c} - \sqrt{y_0})^2 = c $.
+\end{enumerate}
+
+\subsection*{10. Inverse Functions}
+\begin{enumerate}
+  \item
+    \begin{enumerate}
+      \item $ y' = \frac{2x}{1+x^4} $.
+      \item $ f'(x) = \frac{1}{1+x^2} $.
+      \item $ g'(x) = \frac{1}{2\sqrt{x}} \frac{1}{\sqrt{1 - x}} \frac{1}{1+(\sin^{-1} \sqrt{x})^2}  $.
+    \end{enumerate}
+  \item
+    \begin{align*}
+      \od{}{x} \left( \frac{1}{2} \tan^{-1} x + \frac{1}{4} \ln\frac{(x + 1)^2}{x^2 + 1} \right)
+         &= \frac{1}{2 + 2x^2}  + \frac{1}{4} \frac{x^2 + 1}{(x + 1)^2} \frac{2-2x^2}{(x^2 + 1)^2}\\
+         &= \frac{1}{2 + 2x^2}  + \frac{1}{2} \frac{1-x^2}{(x + 1)^2(x^2 + 1)}\\
+         &= \frac{1}{2} \frac{(x + 1)^2 + 1 - x^2}{(x + 1)^2 (1 + x^2)}\\
+         &= \frac{1}{2} \frac{2x + 2}{(x + 1)^2 (1 + x^2)}\\
+         &= \frac{1}{(x + 1)(x^2 + 1)}.
+    \end{align*}
+  \item Let $ y = \cot^{-1} x $, so that $ x = \cot y $ and $ \od{x}{y} = -\csc^2 y $; hence $ \od{y}{x} = -\sin^2 y $.
+        Consider the following triangle:
+        \begin{center}
+          \includegraphics[width=0.3\textwidth]{antitriangle2}
+        \end{center}
+        So $ \sin y = \frac{1}{\sqrt{1 + x^2}} $, and $ \od{y}{x} = -\frac{1}{1 + x^2} $.
+\end{enumerate}
+
+\subsection*{11. Related Rates of Change}
 \begin{enumerate}
   \item $ V = [x(t)]^3 $, so $ \od{V}{t} = 3\od{x}{t} [x(t)]^2 $.
   \item The volume of a cone is $ \frac{\pi}{3}r^2 h $. Comparing similar triangles, if the water is at a height $ h $ then it forms a cone
@@ -327,7 +368,7 @@
         at $ y = 8 $, $ \od{y}{t} = \frac{\sqrt{65}}{8} \approx \SI{1.0078}{\metre\per\second} $.
 \end{enumerate}
 
-\subsection*{10. Parametric Functions}
+\subsection*{12. Parametric Functions}
 \begin{enumerate}
   \item
     \begin{enumerate}
@@ -355,23 +396,8 @@
     \end{enumerate}
 \end{enumerate}
 
-\subsection*{11. Implicit Differentiation}
-\begin{enumerate}
-  \item
-    \begin{enumerate}
-      \item $ y' = \frac{3x^2 + 6x}{2y} $.
-      \item $ (1 + y')\sin(x + y) = 2 - 2y' \implies y' = \frac{2 - \sin(x + y)}{2 + \sin(x + y)} $.
-      \item $ y' = \frac{20x^3 - 2x}{2y} $.
-    \end{enumerate}
-  \item $ 2x + 2y + 2xy' - 2yy' + 1 = 0 \implies y' = \frac{-1 - 2x - 2y}{2x - 2y} $, so $ y'(1,2) = \frac{-1 - 2 - 4}{2 - 4} = 7/2 $; hence the
-        slope of the normal is $ -2/7 $, and the equation of the normal line is $ y - 2 = -\frac{2}{7}(x - 1) $.
-  \item We have $ \frac{1}{2\sqrt{x}} + \frac{1}{2\sqrt{y}} y' = 0 $; suppose we have a tangent line passing through $ (x_0, (\sqrt{c} - \sqrt{x_0})^2) $.
-        Then the equation of this tangent is $ y - (\sqrt{c} - \sqrt{x_0})^2 = -\frac{\sqrt{c} - \sqrt{x_0}}{\sqrt{x_0}} (x - x_0) $.
-        When $ y = 0 $ we obtain the $ x$-intercept; $ 0 = (\sqrt{c} - \sqrt{x_0})^2 -\frac{\sqrt{c} - \sqrt{x_0}}{\sqrt{x_0}} (x - x_0) $ and so $ x = \sqrt{x_0 c} $.
-        Similarly, when $ x = 0 $ we obtain $ y = \sqrt{x_0 c} -  x_0 $. Their sum is therefore $ 2\sqrt{x_0 c} - x_0 = 2\sqrt{c}(\sqrt{c} - \sqrt{y_0}) - (\sqrt{c} - \sqrt{y_0})^2 = c $.
-\end{enumerate}
 
-\subsection*{12. Sequences and Series}
+\subsection*{13. Sequences and Series}
 \begin{enumerate}
   \item
     \begin{enumerate}
@@ -384,31 +410,6 @@
       \item The series is $ -2/5 + 4/6 - 6/7 + 8/8 - 10/9 + \cdots $. It has partial sums $ 4/15,-62/125, \dots $. Diverges (the terms added and subtracted
             keep growing, so partial sums become very positive and very negative alternately).
     \end{enumerate}
-\end{enumerate}
-
-\subsection*{13. Inverse Functions}
-\begin{enumerate}
-  \item
-    \begin{enumerate}
-      \item $ y' = \frac{2x}{1+x^4} $.
-      \item $ f'(x) = \frac{1}{1+x^2} $.
-      \item $ g'(x) = \frac{1}{2\sqrt{x}} \frac{1}{\sqrt{1 - x}} \frac{1}{1+(\sin^{-1} \sqrt{x})^2}  $.
-    \end{enumerate}
-  \item
-    \begin{align*}
-      \od{}{x} \left( \frac{1}{2} \tan^{-1} x + \frac{1}{4} \ln\frac{(x + 1)^2}{x^2 + 1} \right)
-         &= \frac{1}{2 + 2x^2}  + \frac{1}{4} \frac{x^2 + 1}{(x + 1)^2} \frac{2-2x^2}{(x^2 + 1)^2}\\
-         &= \frac{1}{2 + 2x^2}  + \frac{1}{2} \frac{1-x^2}{(x + 1)^2(x^2 + 1)}\\
-         &= \frac{1}{2} \frac{(x + 1)^2 + 1 - x^2}{(x + 1)^2 (1 + x^2)}\\
-         &= \frac{1}{2} \frac{2x + 2}{(x + 1)^2 (1 + x^2)}\\
-         &= \frac{1}{(x + 1)(x^2 + 1)}.
-    \end{align*}
-  \item Let $ y = \cot^{-1} x $, so that $ x = \cot y $ and $ \od{x}{y} = -\csc^2 y $; hence $ \od{y}{x} = -\sin^2 y $.
-        Consider the following triangle:
-        \begin{center}
-          \includegraphics[width=0.3\textwidth]{antitriangle2}
-        \end{center}
-        So $ \sin y = \frac{1}{\sqrt{1 + x^2}} $, and $ \od{y}{x} = -\frac{1}{1 + x^2} $.
 \end{enumerate}
 
 \subsection*{14. Differentiation Revision}

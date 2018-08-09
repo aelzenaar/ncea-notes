@@ -2,8 +2,9 @@
 \begin{document}
 
 \mainHeaderIntg{15}{Approximating Areas}
-We now move from finding rates of change of curves to finding areas under curves. Just as
-for differentiation, we begin by finding finite approximations to area.
+We now move from studying the geometry and shape of curves themselves to studying the geometry and shape of the areas bounded by curves. Just as
+for differentiation, we begin by finding finite approximations: in this case, of areas. We will mainly be interested in finding the areas between
+a curve and the $ x$-axis.
 
 \subsection*{Approximating area using rectangles}
 \begin{center}
@@ -43,23 +44,23 @@ the average of the area of two rectangles). When we do this, we obtain
   \includegraphics[width=0.4\linewidth]{approx-parabolae}
 \end{center}
 An even better approximation (for smooth functions) is formed when we use parabolae to estimate the area. The
-resulting formula is called \textit{Simpson's rule}. Note that $ n $ must be even to use Simpson's rule.
+resulting formula is called \textbf{Simpson's rule}. Note that $ n $ must be even to use Simpson's rule.
 \begin{displaymath}
   S_n = \frac{b - a}{3n} \left( f(x_0) + f(x_n) + 4\left[f(x_1) + f(x_3) + \cdots + f(x_{n - 1})\right] + 2\left[ f(x_2) + \cdots + f(x_{n - 2}) \right] \right).
 \end{displaymath}
 
 \subsection*{The Definite Integral}
 It is obvious that all three methods of approximating area above will approach the `real' area of the curve as $ n \to \infty $. We
-call the true area under a curve $ y = f(x) $ from $ x = a $ to $ x = b $ the \textit{definite integral} of the curve from $ a $ to $ b $,
-and we notate it as
+call the true area under a curve $ y = f(x) $ from $ x = a $ to $ x = b $ the \textbf{definite integral} of the curve from $ a $ to $ b $,
+and we notate it as\footnote{Technically, this is the \textbf{Riemann integral}; there are other kinds of integral.}
 \begin{displaymath}
   \lim_{n \to \infty} R_n = \lim_{n \to \infty} L_n = \lim_{n \to \infty} T_n = \lim_{n \to \infty} S_n = \rint^b_a f(x) \dif{x}.
 \end{displaymath}
 
-The large $ \rint $ is an elongated `S', which stands for \textbf{sum} --- we are summing all of the little areas from $ a $ to $ b $.
+The large $ \rint $ is an elongated `S', which stands for \textit{sum} --- we are summing all of the little areas from $ a $ to $ b $.
 Note the similarity to the notation above: we replace $ \sum $ with $ \rint $, $ x_i^\ast $ with $ x $, and $ \Delta x $ with $ \dif{x} $.
 
-The $ \dif{x} $ is \textbf{not a number}; it is merely a piece of notation which tells us which variable we are taking area with respect to.
+The $ \dif{x} $ is \textit{not a number}; it is merely a piece of notation which tells us which variable we are taking area with respect to.
 For example, $ \rint^b_a x^2 + y^3 \dif{x} \neq \rint^b_a x^2 + y^3 \dif{y} $. At this stage in time, you can think of the notation as a
 pair of fancy brackets: the $ \rint^{z_1}_{z_0} $ corresponds to $ \big( $, and the $ \dif{z} $ corresponds to $ \big) $. It makes no
 sense to have one without the other (or, for that matter, to have $ \rint $ without the bounds).

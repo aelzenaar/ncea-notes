@@ -2,7 +2,7 @@
 \begin{document}
 
 \mainHeaderDiff{5}{The Product and Quotient Rules}
-Two weeks ago we saw that the derivative of a product is not simply the product of the derivatives;
+Two sections ago we saw that the derivative of a product is not simply the product of the derivatives;
 for example, take $ (x)(x) $. If we differentiate each term and multiply, we obtain 1; however,
 the derivative of $ x^2 $ is (of course) $ 2x $. Ensure you understand why this is a counterexample
 to the naive rule $ (fg)' = f'g' $ before continuing.
@@ -17,7 +17,7 @@ Suppose $ f $ and $ g $ are functions; then the \textit{real} product rule is
   in purple is exactly zero).
   \begin{align*}
     (fg)'(x) &= \lim_{h\to 0} \frac{f(x + h)g(x + h) - f(x) g(x)}{h}\\
-             &= \lim_{h \to 0} \frac{f(x + h) g(x + h) \textcolor{RedViolet}{\mathbf{ {} - f(x + h)g(x) + f(x + h)g(x)}} - f(x)g(x)}{h}\\
+             &= \lim_{h \to 0} \frac{f(x + h) g(x + h) {\color{OrangeRed}{} - f(x + h)g(x) + f(x + h)g(x)} {}- f(x)g(x)}{h}\\
              &= \lim_{h \to 0} \frac{f(x + h)[g(x + h) - g(x)]}{h} + \lim_{h\to 0} \frac{[f(x + h) - f(x)]g(x)}{h}\\
              &= f(x) \lim_{h \to 0} \frac{g(x + h) - g(x)}{h} + g(x) \lim_{h\to 0} \frac{f(x + h) - f(x)}{h} = f(x) g'(x) + g(x) f'(x).
   \end{align*}
@@ -35,13 +35,22 @@ prove it as an exercise, using the product rule.
 
 \begin{ex}
   Consider $ f(s) = \sqrt{\frac{s^2 + 1}{s^2 + 4}} $. Then
-  \begin{align*}
-    f'(s) &= \od{}{s} \left[ \frac{s^1 + 1}{s^2 + 4} \right] \cdot \frac{1}{2\sqrt{\frac{s^2 + 1}{s^2 + 4}}}\\
-          &= \frac{(s^2 + 4)(2s) - (s^2 + 1)(2s)}{(s^2 + 4)^2} \cdot \frac{\sqrt{s^2 + 4}}{2\sqrt{s^2 + 1}}\\
-          &= \frac{6s}{(s^2 + 4)^{\frac{3}{2}} (s^2 + 1)^{\frac{1}{2}}}
-  \end{align*}
+  \begin{displaymath}
+    f'(s) = \dod{}{s} \left[ \frac{s^1 + 1}{s^2 + 4} \right] \cdot \frac{1}{2\sqrt{\frac{s^2 + 1}{s^2 + 4}}}
+          = \frac{(s^2 + 4)(2s) - (s^2 + 1)(2s)}{(s^2 + 4)^2} \cdot \frac{\sqrt{s^2 + 4}}{2\sqrt{s^2 + 1}}
+          = \frac{6s}{(s^2 + 4)^{\frac{3}{2}} (s^2 + 1)^{\frac{1}{2}}}.
+  \end{displaymath}
 \end{ex}
 
+With our rules (sum, chain, and product, together with our basic derivatives), we can now differentiate almost any
+combination of functions that we are currently aware of. The process of differentiation is entirely mechanical, and
+can be easily performed by a computer. As such, learning to differentiate more complicated combinations of functions
+is very similar to learning how to add, multiply, and perform long division, and is only a matter of practice.
+
+Like basic arithmetic, differentiating functions is not interesting on its own; but being able to differentiate
+will allow us to talk more clearly about the geometry and behaviour of functions.
+
+\clearpage
 \subsection*{Questions}
 \begin{questions}
   \questioA In each case, find $ \od{y}{t} $.
@@ -67,6 +76,14 @@ prove it as an exercise, using the product rule.
   \questioA If $ f(x) = e^{-x} $, find $ f(0) + xf'(0) $.
   \questioM Suppose $ f $ and $ g $ are functions ($ g $ not the zero function). Write $ \frac{f}{g} = fg^{-1} $ and
             prove the quotient rule from the product rule.
+  \questioM Show that $ y = xe^{-x} $ satisfies the differential equation $ xy' = (1-x)y $.
+  \questioM If $ y = \ln \frac{1 + \sqrt{\sin x}}{1 - \sqrt{\sin x}} $, find $ y'' $.
+  \questioM Find the equation of the tangent line to the graph of $ y = \ln \cos \frac{x - 1}{x} $ at
+            the point $(1, 0)$.
+  \questioM Show that $ y = (1 + x + \ln x)^{-1} $ satisfies the differential equation $ xy' = y(y \ln x - 1) $.
+  \questioE Find the angle at which $ y = x^2 \ln [(x - 2)^2] $ cuts the $ x$-axis at the point $ (0,0) $.
+  \questioM When $ x = 0 $, is the curve $ y = (x + 20)^2 (2x^2 - 3)^6 - \ln \sin (x - \frac{\pi}{2}) $ concave up or concave down?
+  \questioM If $ y = \frac{e^x}{\sin x} $, show that $ \od{y}{x} = y(1 - \cot x) $.
   \questioM Show that if $ f $, $ g $, and $ h $ are functions then $ (fgh)' = f'gh + fg'h + fgh' $.
   \questioE Suppose $ f(x) = f(-x) $ for all $ x $ in the domain of $ f $. Prove that $ f'(x) = -f'(-x) $ for all $ x $
             in the domain of $ f'(x) $.
@@ -82,14 +99,6 @@ prove it as an exercise, using the product rule.
               \textrm{radius of curvature} = \frac{\left[1 +  \left(\od{y}{x}\right)^2 \right]^{\frac{3}{2}}}{\abs{\od[2]{y}{x}}}
             \end{displaymath}
             Find the radius of curvature of the curve $ y = e^{-x} \sin x $ at the point $ (0, 0) $.
-  \questioM Show that $ y = xe^{-x} $ satisfies the differential equation $ xy' = (1-x)y $.
-  \questioM If $ y = \ln \frac{1 + \sqrt{\sin x}}{1 - \sqrt{\sin x}} $, find $ y'' $.
-  \questioM Find the equation of the tangent line to the graph of $ y = \ln \cos \frac{x - 1}{x} $ at
-            the point $(1, 0)$.
-  \questioM Show that $ y = (1 + x + \ln x)^{-1} $ satisfies the differential equation $ xy' = y(y \ln x - 1) $.
-  \questioE Find the angle at which $ y = x^2 \ln [(x - 2)^2] $ cuts the $ x$-axis at the point $ (0,0) $.
-  \questioM When $ x = 0 $, is the curve $ y = (x + 20)^2 (2x^2 - 3)^6 - \ln \sin (x - \frac{\pi}{2}) $ concave up or concave down?
-  \questioM If $ y = \frac{e^x}{\sin x} $, show that $ \od{y}{x} = y(1 - \cot x) $.
   \questioE Find $ f'(x + 3) $ if $ f(x + 3) = (x + 5)^7 $.
   \questioE The number $ a $ is called a \textbf{double root} of some polynomial function $ f $ if $ f(x) = (x - a)^2g(x) $ for
             some polynomial $ g $. Prove that $ a $ is a double root of $ f $ if and only if $ a $ is a root of both $ f $ and $ f' $.

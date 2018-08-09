@@ -1,0 +1,54 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderDiffHw{13}{Sequences and Series}
+\subsection*{Reading}
+Leonardo of Pisa, Italian born, grew up in North Aftica, where his father Guilielmo was working as a diplomat on behalf
+of merchants trading at Bugia (modern Algeria). He accompanied his father on his numerous travels, encountered the Arabic
+system for writing numbers and understood its importance. In his \textit{Liber Abbaci} of 1202 he writes: `When my father,
+who had been appointed by his country as public notary in the customs at Bugia acting for the Pisan merchants going there,
+was in charge, he summoned me to him while I was still a child, and having an eye to usefulness and future convenience,
+desired me to stay there and receive instruction in the school of accounting. There, when I had been introduced to the art
+of the Indian's nine symbols through remarkable teaching, knowledge of the art very soon pleased me above all else.'
+
+The book introduced the Hindu-Arabic notation to Europe, and formed a comprehensive arithmetic text, containing a wealth of
+material related to trade and currency conversion. Although it took several centuries for Hindu-Arabic notation to replace
+the traditional abacus, the advantages of a purely written system of calculation soon became apparent.
+
+Leonardo is often known by his nickname `Fibonacci', which means `son of Bonaccio', but this name is not recorded befre the
+18th century and was probably invented then by Guillaume Libri.
+
+The third section of the \textit{Liber Abbaci} contains a problem that seems to have originated with Leonardo: `A certain man
+put a pair of rabbits in a place surrounded on all sides by a wall. How many pairs of rabbits can be produced from that pair
+in a year if in every month, each pair begets a new pair, which from the second month onwards becomes productive?'
+
+This rather quirky problem leads to a curious, and famous, system of numbrs: 1, 2, 3, 5, 8, 13, 21, 34, 55, and so on. Each
+number is the sum of the preceeding two numbers. This is known as the Fibonacci sequence, and it turns up repeatedly in
+mathematics and in the natural world. In particular, many flowers have a Fibonacci number of petals. This is not a coincidence,
+but a consequence of the growth pattern of the plant and the geometry of the `primordia' --- tiny clumps of cells at the tip of
+the growing shoot that give rise to important structures, including petals.
+
+Although Fibonacci's growth rule for rabbit populations is unrealistic, more general rules of a similar kind (called Leslie models)
+are used today for certain problems in population dynamics, the study of how animal populations change in size as the animals breed
+and die.
+\begin{flushright}
+  From \textit{Taming the Infinite}, by Ian Stewart.
+\end{flushright}
+
+
+\subsection*{Questions}
+\begin{questions}
+  \item Determine whether the following sequences converge. If so, give the limit.
+    \begin{parts}
+      \item $ (a_n) = \left(\frac{2 + n^3}{1 + 2n^3}\right) $
+      \item $ (b_n) = \left(9^{n + 1}/10^n\right) $
+    \end{parts}
+  \item An alternating series is a series whose terms are alternately positive and negative. For the following alternating series, write
+        out the first few terms of the series and the first few terms of the series of partial sums. Does the series seem to converge? You
+        need not find the limit.
+    \begin{parts}
+      \item $ \sum_{n = 1}^\infty (-1)^n \frac{2}{2n + 1} $.
+      \item $ \sum_{n = 1}^\infty (-1)^{n + 1} \frac{2n}{n + 4} $.
+    \end{parts}
+\end{questions}
+\end{document}

@@ -4,7 +4,7 @@
 
 \mainHeaderDiff{1}{The Derivative}
 
-Last year we met the derivative. Let us recall that the derivative of a function is:
+Last year we met the derivative. Let us recall that the derivative of a function is, in some sense:
 \begin{itemize}
   \item A way to find the slope of another function.
   \item A function giving a rate of change.
@@ -14,11 +14,18 @@ The value of the derivative of a function at a point is the gradient/slope/rate 
 point. Over the next few sections, we will make this rather vague notion precise, allowing us to transform geometric questions
 about slope, curviness and speed into questions that can be solved via algebraic manipulation.
 
-If $ y = f(x) $ is a function, then the derivative is a function that takes a point $ x $ and gives us the slope of $ f $ at $ x $. For
-this function, we can write $ f'(x) $ (read \emph{eff prime} of $ x $) or $ \od{y}{x} $ (read \emph{dee y over dee x}). The slope of the graph
-at $ x = 3 $ is written $ f'(3) $, or $ \eval{\od{y}{x}}_{x = 3} $ (I tend to avoid this latter notation).
+If $ f $ is a function, then the derivative is a function that takes some point $ x $ and gives us the slope of $ f $ at $ x $. For this
+function, we write $ f' $ (read \emph{eff prime}), so the slope of $ f $ at $ x $ is denoted by $ f'(x) $. If we want to be explicit about the names
+of the quantities we are relating, then if $ y = f(x) $ we write $ f'(x) = \od{y}{x} $ (read \emph{dee y over dee x}); in this notation,
+the slope of the graph at $ x = x_0 $ is written as $ \eval{\od{y}{x}}_{x = x_0} $ (but I tend to avoid this latter notation).
 
-If a function does not have a well-defined slope at any point, it is said to be non-differentiable at that point.
+If a function does not have a well-defined derivative at some point, it is said to be non-differentiable at that point.
+
+\begin{rem}
+  Note that this isn't a proper definition for the derivative: all we've done is say that the derivative `is the slope' of a function. However,
+  we only have a definition of \emph{slope} for linear functions. Our solution to this will be, next week, a definition of derivatives that doesn't
+  mention slope explicitly but generalises the definition of slope.
+\end{rem}
 
 \begin{ex}
   Consider a function defined by $ y = 2x + 1 $. At every point, the slope of the graph of this function is 2; so
@@ -57,8 +64,8 @@ If a function does not have a well-defined slope at any point, it is said to be 
 \subsection*{Questions}
 \begin{questions}%\item
   \questioA Why does the derivative not depend on the $ y$-shift of a function?
-  \questioA Let $ f $ be a function. Describe the difference between $ f(x) $, $ f'(x) $, $ f(57) $, and $ f'(57) $.
-  \questioA Draw the derivative of each graphed function.
+  \questioA Let $ f $ be a function. Describe the difference between $ f $, $ f' $, $ f(57) $, and $ f'(57) $.
+  \questioA Draw the graph of the derivative of each graphed function.
     \begin{multicols}{2}
     \begin{parts}
       \part

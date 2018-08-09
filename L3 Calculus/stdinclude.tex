@@ -16,6 +16,7 @@
 \usepackage{skull}
 
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
 \usepgfplotslibrary{polar}
 \usepackage{graphicx}
 \usepackage{sidecap}
@@ -42,7 +43,11 @@
 \newtheorem*{lemma}{Lemma}
 \theoremstyle{definition}
 \newtheorem*{defn}{Definition}
+\newtheorem*{joke}{Joke}
+\newtheorem*{rem}{Technical Remark}
+\AtEndEnvironment{rem}{\hfill$\diamondsuit$}%
 \newtheorem*{ex}{Example}
+\newtheorem*{exs}{Examples}
 
 \newtheoremstyle{break}
   {\topsep}{\topsep}%
@@ -65,7 +70,7 @@
     }
 }}
 
-% \pointsinrightmargin
+\pointsinrightmargin
 \boxedpoints
 \pointname{}
 

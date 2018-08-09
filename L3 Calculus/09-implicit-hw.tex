@@ -1,0 +1,39 @@
+\input{stdinclude.tex}
+\begin{document}
+
+\mainHeaderDiffHw{9}{Implicit Differentiation}
+\subsection*{Reading}
+Underpinning all our work this week was the idea that if an implicit formula in $ x $ and $ y $ is `nice enough' then there is a way to
+find a `function' from $ x $ to $ y $ that we can differentiate. This rather vague notion is formalised by the rather important \emph{implicit
+function theorem}, which states that if an equation $ F(x,y) = 0 $ has solution $ (x,y) = (a,b) $ then, under certain conditions\footnote{~Essentially,
+that the graph of the function is not `vertical' at $ (a,b) $.}, the equation implicitly defines in some region around $ x $ a function with
+a continuous derivative that takes the value $ b $ at $ x = a $ --- in other words, there is some function whose graph is the graph of $ F(x,y) = 0 $
+for all of the points around the point $ (a,b) $ that we care about.
+
+The proof of the theorem is long and we won't attempt it here; the important thing to take away is that this notion of taking a graph and then
+looking at the function which it describes in a small region is well-defined, and well-defined in such a way that we can do calculus on it.
+
+\subsection*{Questions}
+\begin{questions}
+  \question Find $ y' $ in each case:
+    \begin{multicols}{3}
+    \begin{parts}
+      \part $ y^2 = x^3 + 3x^2 $\\(Tschirnhausen cubic)
+            \begin{center}
+              \includegraphics[width=\linewidth]{implicit10}
+            \end{center}
+      \part $ \sin(x + y) = 2x - 2y $
+            \begin{center}
+              \includegraphics[width=\linewidth]{implicit11}
+            \end{center}
+      \part $ y^2 = 5x^4 - x^2 $\\(kampyle of Eudoxus)
+            \begin{center}
+              \includegraphics[width=\linewidth]{implicit12}
+            \end{center}
+    \end{parts}
+    \end{multicols}
+  \question Find the equation of the normal line to the curve $ x^2 + 2xy - y^2 + x = 2 $ at the point $ (1, 2) $.
+  \question Show that the sum of the $ x $ and $ y $ intercepts of any tangent line to the curve $ \sqrt{x} + \sqrt{y} = \sqrt{c} $
+            is just $ c $.
+\end{questions}
+\end{document}

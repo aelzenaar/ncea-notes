@@ -2,49 +2,95 @@
 \begin{document}
 
 \mainHeaderIntg{18}{Substitution}
-Recall that the \textit{chain rule} is:
+Recall that the \textbf{chain rule} for differentiation is given by
 \begin{displaymath}
-  \od{}{x} [f(g(x))] = f'(g(x)) g'(x)
+  \od{}{x} [f(g(x))] = f'(g(x)) g'(x).
 \end{displaymath}
-Since integration is (in some sense) the inverse of differentiation, we can write:
+
+Since integration is (in some sense) the inverse of differentiation, we can write (by applying the fundamental theorem of calculus)
 \begin{displaymath}
   \rint f'(g(x)) g'(x) \dif{x} = f(g(x)) + C.
 \end{displaymath}
 
-For a mnemonic, we can let $ u = g(x) $. Then $ \dif{u} = g'(x) \dif{g} $\footnote{this is not rigorous, but it `works'},
-and then (by substitution) we have
+For a mnemonic, we can let $ u = g(x) $. Then $ \dif{u} = g'(x) \dif{g} $\footnote{This rearrangement is not rigorous, but it works.}
+and so, by the rule we just wrote down, we have
 \begin{displaymath}
   \rint f'(g(x)) g'(x) \dif{x} = \rint f'(u) \dif{u} = f(u) + C = f(g(x)) + C.
 \end{displaymath}
 
-\begin{ex}
-  Suppose we wish to find $ \rint \sin x \cos x \dif{x} $. Then let $ u = \sin x $, so $ \dif{u} = \cos x \dif{x} $
-  and
-  \begin{displaymath}
-    \rint \sin x \cos x \dif{x} = \rint u \dif{u} = \frac{1}{2} u^2 + C = \frac{1}{2} \sin^2 x + C.
-  \end{displaymath}
-  \textit{In this case, we also could have used a trigonometric identity.}
-\end{ex}
+In Leibniz notation, we have
+\begin{displaymath}
+  \rint f'(g(x)) g'(x) \dif{x} = \rint \od{f}{g} \od{g}{x} \dif{x} = \rint \od{f}{g} \dif{g} = \rint f'(g) \dif{g} = f(g) + C = f(g(x)) + C,
+\end{displaymath}
+and so one can intuitively think about this (here we substitute $ g $ out) as the cancellation of differentials underneath an integral sign.
+
+This rule, which gives us a kind of chain rule for integration, is called \textbf{substitution}, or the \textbf{inverse chain rule}. It
+can be thought of as a change in coordinate system from an $ x$-based system to one based on $ u $, and we have to `resize' our area based
+on how much $ u $ stretches the coordinate system compared to $ x $ --- and this `stretch factor' is simply $ \od{u}{x} $.
 
 \begin{ex}
-  Suppose we wish to find $ \rint xe^{x^2} \dif{x} $. We can let $ u = x^2 $, and then $ du = 2x \dif{x} \Rightarrow \dif{x} = \frac{du}{2x} $.
-  Hence:
+  For example, consider $ \rint_1^2 2x(x^2 + 1) \dif{x} $; we are finding the area shown here between the dotted lines.
+  \begin{center}
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        axis lines = center,
+        xlabel = $ x $,
+        ylabel = {$ y $},
+        ymax = 40, ymin = -40,
+      ]
+        \addplot[domain = -3:3, color = red, samples = 100] {2*x*(x^2 + 1)};
+        \draw[style=dotted] (1,-40) -- (1,40);
+        \draw[style=dotted] (2,-40) -- (2,40);
+      \end{axis}
+    \end{tikzpicture}}
+  \end{center}
+  Let us make the substitution $ u = x^2 + 1 $, so $ \od{u}{x} = 2x $ and our integral becomes
   \begin{displaymath}
-    \rint xe^{x^2} \dif{x} = \rint \frac{1}{2} e^u \dif{u} = \frac{1}{2} e^u + C = \frac{1}{2}e^{x^2} + C.
+    \rint_1^2 2x(x^2 + 1) \dif{x} = \rint_{u^{-1}(2)}^{u^{-1}(5)} \od{u}{x} u(x) \dif{x} =  \rint_2^5 u \dif{u}.
   \end{displaymath}
+  We can graph our region of integration again.
+  \begin{center}
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        axis lines = center,
+        xlabel = $ u $,
+        ylabel = {$ y $},
+        ymax = 6, ymin = -6,
+      ]
+        \addplot[domain = -6:6, color = red, samples = 100] {x};
+        \draw[style=dotted] (2,-6) -- (2,6);
+        \draw[style=dotted] (5,-6) -- (5,6);
+      \end{axis}
+    \end{tikzpicture}}
+  \end{center}
+  This new coordinate system, which is $ 2x $ times as large as the older one, is much simpler to integrate inside!
 \end{ex}
 
-\begin{ex}
-  Suppose we wish to find $ \rint \frac{4}{x} (\ln x)^3 \dif{x} $. We let $ u = \ln x $, and then $ \dif{u} = \frac{\dif{x}}{x} $.
-  Hence:
-  \begin{displaymath}
-    \rint \frac{4}{x} (\ln x)^3 \dif{x} = 4\rint u^3 \dif{u} = u^4 + C = (\ln u)^4 + C.
-  \end{displaymath}
-\end{ex}
+\begin{exs}\leavevmode
+  \begin{enumerate}
+    \item Suppose we wish to find $ \rint \sin x \cos x \dif{x} $. Then let $ u = \sin x $, so $ \dif{u} = \cos x \dif{x} $
+          and
+          \begin{displaymath}
+            \rint \sin x \cos x \dif{x} = \rint u \dif{u} = \frac{1}{2} u^2 + C = \frac{1}{2} \sin^2 x + C.
+          \end{displaymath}
+    \item In this case, we also could have used a trigonometric identity.
+          Suppose we wish to find $ \rint xe^{x^2} \dif{x} $. We can let $ u = x^2 $, and then $ du = 2x \dif{x} \Rightarrow \dif{x} = \frac{du}{2x} $.
+          Hence:
+          \begin{displaymath}
+            \rint xe^{x^2} \dif{x} = \rint \frac{1}{2} e^u \dif{u} = \frac{1}{2} e^u + C = \frac{1}{2}e^{x^2} + C.
+          \end{displaymath}
+    \item Suppose we wish to find $ \rint \frac{4}{x} (\ln x)^3 \dif{x} $. We let $ u = \ln x $, and then $ \dif{u} = \frac{\dif{x}}{x} $.
+          Hence:
+          \begin{displaymath}
+            \rint \frac{4}{x} (\ln x)^3 \dif{x} = 4\rint u^3 \dif{u} = u^4 + C = (\ln u)^4 + C.
+          \end{displaymath}
+  \end{enumerate}
+\end{exs}
 
 \subsection*{Questions}
 \begin{questions}
-  \questioA Find the following indefinite integrals:
+  \questioA Find the following indefinite integrals.
+    \begin{multicols}{2}
     \begin{parts}
       \part $ \rint \sin 2x \dif{x} $
       \part $ \rint (4x - 44)^{2019} \dif{x} $
@@ -63,6 +109,7 @@ and then (by substitution) we have
       \part $ \rint \frac{\cos x - \sin x}{\cos x + \sin x} \dif{x} $
       \part $ \rint \frac{2017}{x\ln x} \dif{x} $
     \end{parts}
+    \end{multicols}
   \questioM By using the substitution $ x = \sin \theta $, find
             \begin{displaymath}
               \rint \frac{1}{\sqrt{1 - x^2}} \dif{x}.
@@ -102,7 +149,7 @@ and then (by substitution) we have
     \end{displaymath}
   \questioM If $ y = x \sqrt{\sin x^3 + \cos x^3} $, find $ \pi \rint^1_0 y^2 \dif{x} $.
   \questioM The velocity of a particle at time $ t $ is given by $ v = \frac{\cos(\sqrt{2t + 1})}{\sqrt{2t + 1}} $.
-            What is the position of the particle at time $ t = 5 $, given that $ x(0.5) = 0 $?
+            What is the position of the particle at time $ t = 5 $, given that $ x(0.5) = 0 $? (Recall that $ v = \od{x}{t} $.)
   \questioS Evaluate $ I = \rint^{\pi/2}_0 \frac{\sqrt{\sin x}}{\sqrt{\sin x} + \sqrt{\cos x}} \dif{x} $ [\textit{Hint: use the
             substitution $ x = \frac{\pi}{2} - u $ and add the result to the original integral.}]
   \questioS Scholarship 1999:

@@ -2,6 +2,17 @@
 \begin{document}
 
 \mainHeaderIntg{19}{Differential Equations}
+Many physical problems can be expressed by writing different rates of change in terms of each other. For example,
+for a spring pulled a distance $ x $ away from its equilibrium point we have
+\begin{displaymath}
+  \od[2]{x}{t} = -kx
+\end{displaymath}
+for some constant $ k $; and for a falling stone at distance $ r $ from the centre of the Earth, we have
+\begin{displaymath}
+  \od[2]{r}{t} = -g \frac{r_0^2}{r^2}
+\end{displaymath}
+where $ r_0 $ is the radius of the Earth and $ g $ is a constant. These kinds of equations are known as \textbf{differential equations}.
+
 Suppose $ \od{y}{x} = f(x) g(y) $. It would be nice if we could find $ y $ in terms of $ x $ only. This
 is in fact possible, using substitution:
 \begin{align*}
@@ -9,6 +20,7 @@ is in fact possible, using substitution:
   \Rightarrow \frac{1}{g(y)} \od{y}{x} &= f(x)\\
   \Rightarrow \rint \frac{1}{g(y)} \od{y}{x} \dif{x} &= \rint f(x) \dif{x}.
 \end{align*}
+
 Now, let $ G(y) $ be an antiderivative of $ \frac{1}{g(y)} $ (with respect to $ y $). By the chain rule, then,
 \begin{displaymath}
   \od{}{x} G(y) = \frac{1}{g(y)} \od{y}{x}
@@ -21,7 +33,7 @@ Hence we have
 \begin{displaymath}
   \rint \frac{1}{g(y)} \dif{y} = \rint f(x) \dif{x}
 \end{displaymath}
-This way of solving \textit{differential equations} is called \textit{separation of variables}.
+This way of solving differential equations is called \textbf{separation of variables}.
 
 \begin{ex}
   Suppose we know that $ y\od{y}{x} = e^x $. Then we can separate the variables:
@@ -32,14 +44,13 @@ This way of solving \textit{differential equations} is called \textit{separation
   \end{align*}
   If we know that the curve passes through $ (0,0) $, then $ 0 = 2e^0 + C $ and $ C = -2 $, so $ y^2 = 2e^x - 2 $.
 
-  To check our answer, let us now use implicit differentiation to differentiate this curve. We have $ 2y \od{y}{x} = 2e^x $ and $ y \od{y}{x} = e^x $
-  as expected so our solution is correct.
+  To check our answer, let us now use implicit differentiation to differentiate this curve. We have $ 2y \od{y}{x} = 2e^x $ so and $ y \od{y}{x} = e^x $
+  as expected: our solution is correct.
 \end{ex}
 
+  \clearpage
 \begin{ex}
   Suppose that $ r(\theta) $ is implicitly defined by $ \od{r}{\theta} = r \sin \theta $ with the condition $ r(\pi) = e $.
-  Graph $ r(\theta) $.
-
   Separating variables, we have $ \rint \frac{\dif{r}}{r} = \rint \sin \theta \dif{\theta} $; so $ \ln \abs{r} = -\cos \theta + C $
   and therefore $ r = Ke^{-\cos \theta} $ for some constant $ K $. But $ e = Ke^{-\cos \pi} = Ke^0 = K $; so $ r(\theta) = e e^{-\cos \theta} = e^{1 - \cos \theta} $.
   Graphing this:
@@ -55,6 +66,7 @@ This way of solving \textit{differential equations} is called \textit{separation
 \subsection*{Questions}
 \begin{questions}
   \questioM Find $ y $ in terms of $ x $ in each case, if each curve passes through $ (1,1) $:
+    \begin{multicols}{2}
     \begin{parts}
       \part $ \od{y}{x} = yx $
       \part $ \od{y}{x} + x = yx $
@@ -68,6 +80,7 @@ This way of solving \textit{differential equations} is called \textit{separation
       \part $ \sin y \od{y}{x} = 3x $
       \part $ \od{y}{x} = \frac{x(e^{x^2} + 2)}{6y^2} $
     \end{parts}
+    \end{multicols}
   \questioE
     \begin{parts}
       \part Show that one antiderivative of $ f(x) = x \sin x \dif{x} $ is $ F(x) = \sin x - x \cos x $.
@@ -125,6 +138,11 @@ This way of solving \textit{differential equations} is called \textit{separation
             Initially, the particle is two metres away from the origin in the positive $x-$direction.
             Find the particle's position after ten seconds.
   \questioM Suppose that $ y'(x) = e^{x + 2y} $, and $ y(0) = 0 $. Find $ y(x) $ explicitly.
+  \questioM Assume that the rate of reproduction of some population $ P $ is proportional to the number of pairs of individuals; so
+            \begin{displaymath}
+              \od{P}{t} = kP^2.
+            \end{displaymath}
+            Show that the size of the population becomes infinitely large in a finite time.
   \questioM Recall from physics that \textbf{simple harmonic motion} occurs when the force $ F $ on an object is proportional to (and opposite
             in direction to) its displacement $ k $ from some zero point ($ F = -kx $). Recall also that Newton's second law tells us that the
             acceleration felt by an object of mass $ m $ is given by $ \od[2]{x}{t} = \frac{F}{m} $. We wish to find a formula for $ x $, the

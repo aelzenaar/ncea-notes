@@ -2,10 +2,10 @@
 \begin{document}
 
 \mainHeaderIntg{16}{Anti-differentiation}
-A few weeks ago, it was hinted that finding area was in some way the inverse to finding slope. In last
+For some time, we have been hinting that finding area was in some way the inverse to finding slope. In last
 week's questions, the curtain was pulled back a little further when we calculated an area function for a variable endpoint, took
 the derivative, and got the original function back. Next week, all will be revealed; but first, we need to do a little bit more
-work. This week, we're going to look at \textit{anti-differentiation}: finding the original function given its derivative.
+work. This week, we're going to look at \textbf{anti-differentiation}: finding the original function given its derivative.
 
 \begin{ex}
   One antiderivative of $ y' = 3x^2 + 4 $ is $ x^3 + 4x $. Another is $ x^3 + 4x + 1 $. A third is $ x^3 + 4x + 7 $. Obviously
@@ -18,42 +18,49 @@ We also call antiderivatives \textbf{indefinite integrals}, and in this notation
   \rint 3x^2 + 4 \dif{x} = x^3 + 4x + C.
 \end{displaymath}
 
-\begin{ex}
-  The most general antiderivative of $ \sin x $ is $ -\cos x + C $.
-\end{ex}
+Unfortunately, there is no `easy' way to anti-differentiate; we simply have to try to rearrange the function in some clever
+way until it looks like something that we know how to deal with.
 
-\begin{ex}
-  The most general antiderivative of $ \tan x $ is $ -\ln \abs{\cos x} + C $.
-\end{ex}
+\begin{joke}
+  Two mathematicians are in a bar. The first one says to the second that the average person knows very little about basic
+  mathematics. The second one disagrees and claims that most people can cope with a reasonable amount of maths. The first
+  mathematician goes off to the washroom, and in his absence the second calls over the waitress. He tells her that in a few
+  minutes, after his friend has returned, he will call her over and ask her a question. All she has to do is answer ``one
+  third $x$ cubed.'' She repeats ``one thir–dex cue?'' He repeats ``one third $x$ cubed.'' She asks, ``one thir dex cuebd?'' “Yes,
+  that’s right,” he says. So she agrees, and goes off mumbling to herself, ``one thir dex cuebd...''. The first guy returns
+  and the second proposes a bet to prove his point, that most people do know something about basic math. He says he will ask
+  the blonde waitress an integral, and the first laughingly agrees. The second man calls over the waitress and asks ``what is
+  the integral of $x$ squared?'' The waitress says ``one third $x$ cubed'' and while walking away, turns back and says over
+  her shoulder, ``plus a constant!''
+\end{joke}
 
-\begin{ex}
-  $ \rint \frac{1}{x + 3} \dif{x} = \ln \abs{x + 3} + C $.
-\end{ex}
-
-\begin{ex}
-  $ \rint \tan^2 \theta \dif{\theta} = \rint \sec^2 \theta - 1 \dif{\theta} = \tan \theta - \theta + C $.
-\end{ex}
-
-\begin{ex}
-  $ \rint \frac{2x}{x^2 + 1} \dif{x} = \ln \abs{x^2 + 1} + C $.
-\end{ex}
-
-\begin{ex}
-  $ \rint Ke^{Kx} \dif{x} = e^{Kx} + C $ for all constants $ K $.
-\end{ex}
+\begin{exs}\leavevmode
+  \begin{enumerate}
+    \item The most general antiderivative of $ \sin x $ is $ -\cos x + C $.
+    \item The most general antiderivative of $ \tan x $ is $ -\ln \abs{\cos x} + C $.
+    \item $ \rint \frac{1}{x + 3} \dif{x} = \ln \abs{x + 3} + C $.
+    \item $ \rint \tan^2 \theta \dif{\theta} = \rint \sec^2 \theta - 1 \dif{\theta} = \tan \theta - \theta + C $.
+    \item $ \rint \frac{2x}{x^2 + 1} \dif{x} = \ln \abs{x^2 + 1} + C $.
+    \item $ \rint Ke^{Kx} \dif{x} = e^{Kx} + C $ for all constants $ K $.
+  \end{enumerate}
+\end{exs}
 
 \subsection*{Questions}
 \begin{questions}
-  \questioA In each case, find the most general antiderivative.
+  \questioA For each expression, find the most general antiderivative with respect to $ x $.
+    \begin{multicols}{2}
     \begin{parts}
-      \part $ f(x) = 2x $
-      \part $ f(x) = x^{-3} $
-      \part $ f(x) = 0 $
-      \part $ f(x) = \sec^2 (x) + \sqrt{x} $
-      \part $ f(x) = x\sqrt{x} $
-      \part $ f(t) = \sin t - \cos t $
+      \part $ 2x $
+      \part $ x^{-3} $
+      \part $ 0 $
+      \part $ \sec^2 x + \sqrt{x} $
+      \part $ x\sqrt{x} $
+      \part $ \sin x - \cos x $
+      \part $ \frac{2x^3 + 3x - \sqrt{x}}{\sqrt[3]{x}} $
+      \part $ \frac{1}{x^2} + e^x $.
     \end{parts}
-  \questioA Verify the above examples by differentiation.
+    \end{multicols}
+  \questioA Verify the examples in the notes by differentiation.
   \questioA Show that $ \rint 3x^2 + 4x + 5 + 2e^{2x} \dif{x} = x^3 + 2x^2 + 5x + e^{2x} + C $.
   \questioA Find $ y' $ when $ y = 3 + \sin (2x + 4) $ and hence find $ \rint 2 \cos(2x + 4) \dif{x} $.
   \questioA If $ \od{y}{t} = 1.5 \sqrt{t} $ and $ y(4) = 10 $, find $ y(t) $ exactly.
@@ -63,19 +70,26 @@ We also call antiderivatives \textbf{indefinite integrals}, and in this notation
   \questioM The acceleration of a particle is given by $ a(t) = 10\sin t + 3\cos t $. At $ t = 0 $, its position is $ x = 0 $; at $ t = 2\pi $,
             its position is $ x = 12 $. Find its position at $ t = \frac{\pi}{2} $.
   \questioA Find all functions $ g $ such that $ g'(x) = 4 \sin x + \frac{2x^5 - \sqrt{x}}{x} $.
-  \clearpage
   \questioM For each function, sketch an antiderivative passing through $ (0, 0) $:
-
-    \begin{center}
-      \begin{tabular}{cc}
-        \includegraphics[width=0.4\textwidth]{anti1}&
-        \includegraphics[width=0.4\textwidth]{anti2}\\
-        \includegraphics[width=0.4\textwidth]{anti3}&
-        \includegraphics[width=0.4\textwidth]{anti4}\\
-        \includegraphics[width=0.4\textwidth]{anti5}&
-        \includegraphics[width=0.4\textwidth]{anti6}
-      \end{tabular}
-    \end{center}
+            \begin{center}
+              \begin{tabular}{ccc}
+                \includegraphics[width=0.28\textwidth]{anti1}&
+                \includegraphics[width=0.28\textwidth]{anti2}&
+                \includegraphics[width=0.28\textwidth]{anti3}\\
+                \includegraphics[width=0.28\textwidth]{anti4}&
+                \includegraphics[width=0.28\textwidth]{anti5}&
+                \includegraphics[width=0.28\textwidth]{anti6}
+              \end{tabular}
+            \end{center}
+  \questioE Show that if $ F $ is an anti-derivative of $ f $, $ G $ is an anti-derivative of $ g $, and $ \alpha $ and $ \beta $ are any constants,
+            then $ \alpha F + \beta G $ is an anti-derivative of $ \alpha f + \beta g $.
+  \questioE Give an example of functions $ f $ and $ g $ such that if $ F $ and $ G $ are anti-derivatives of $ f $ and $ g $ respectively then $ FG $
+            is \emph{not} an anti-derivative of $ fg $.
+  \questioE Note that on the formula sheet, the anti-derivative of $ 1/x $ is given as $ \ln \abs{x} $, not just $ \ln x $.
+    \begin{parts}
+      \part Compute $ \od{}{x} \ln \abs{x} $ if $ x < 0 $, and hence justify formally why $ \od{}{x} \ln \abs{x} = 1/x $.
+      \part Draw $ y = \ln \abs{x} $ and $ y = 1/x $ on the same pair of axes, and hence justify intuitively why $ \od{}{x} \ln \abs{x} = 1/x $.
+    \end{parts}
 \end{questions}
 
 \end{document}

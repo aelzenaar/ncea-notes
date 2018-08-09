@@ -7,7 +7,7 @@
     \begin{axis}[
       axis lines = center,
       xlabel = $ x $,
-      ylabel = $ y $,
+      ylabel = {$ y = \sin(x^2) $},
       vasymptote = 1.2533141373155001
     ]
       \addplot[domain = 0:6.28, color = red, samples=200] {sin(deg(x^2))};
@@ -31,7 +31,7 @@ In fact, it turns out that the derivative of $ f \circ g $ is $ g' (f' \circ g) 
 \begin{displaymath}
   \od{}{x} f(g(x)) = g'(x) f'(g(x)).
 \end{displaymath}
-This is known as the \textit{chain rule}, since we are ``chaining" together functions.
+This is known as the \textbf{chain rule}, since we are ``chaining" together functions.
 
 Before proving the chain rule, let us convince ourselves that it is plausible. We can interpret the
 derivative $ \od{g}{x} $ as the rate of change of $ g $ with respect to $ x $, and the derivative $ \od{f}{g} $
@@ -39,32 +39,21 @@ as the derivative of $ f $ with respect to small changes in $ g $; it is intuiti
 twice as fast as $ x $ at some point, and $ f $ changes five times as fast as $ g $, then $ f $ changes $ 2 \times 5 = 10 $
 times as fast as $ x $.
 
-A rigorous proof is given below, and it matches our intuition reasonably well.
+The actual proof (given below) matches this intuition quite well.
 
-\begin{ex}
-  The correct derivative of $ \sin(x^2) $ is $ 2x \cos(x^2) $.
-\end{ex}
-
-\begin{ex}
-  If $ f(r) = \sqrt{r^2 - 3} $, then $ f'(r) = 2r \frac{1}{2} \left(r^2 - 3\right)^{-1/2} = \dfrac{r}{\sqrt{r^2 - 3}} $.
-\end{ex}
-
-\begin{ex}
-  If $ g(x) = \sin((\sin^7 x^7 + 1)^7) $, then we compute:
-  \begin{align*}
-    g(x)  &= \sin \left( \left[ \left( \sin x^7 \right)^7 + 1 \right]^7 \right)\\
-    g'(x) &= 7x^6 \cdot \cos x^7 \cdot 7\left(\sin x^7\right)^6 \cdot 7\left[\left(\sin x^7\right)^7 + 1\right]
-                  \cdot \cos \left( \left[ \left( \sin x^7 \right)^7 + 1 \right]^7 \right)
-  \end{align*}
-  This result can probably be simplified, however the point is to evaluate the derivative chain from inside to outside in a systematic fashion.
-\end{ex}
-
-\begin{ex}
-  One of the main uses of the chain rule is in related rates problems. For example, consider
-  a disc of radius $ r $. The area of this disc is given by $ A = \pi r^2 $, and so $ \od{A}{r} = 2\pi r $.
-  But what if $ r $ is itself changing with respect to time, say at a rate of $ \SI{3}{\metre\per\second} $? Then
-  $ \od{A}{t} = \od{r}{t} (2\pi r) = 6\pi r = 6\pi (r_0 + 3t) $ (where $ r_0 $ is the radius at $ t = 0 $).
-\end{ex}
+\begin{exs}\leavevmode
+  \begin{enumerate}
+    \item The correct derivative of $ \sin(x^2) $ is $ 2x \cos(x^2) $.
+    \item If $ f(r) = \sqrt{r^2 - 3} $, then $ f'(r) = 2r \frac{1}{2} \left(r^2 - 3\right)^{-1/2} = \dfrac{r}{\sqrt{r^2 - 3}} $.
+    \item If $ g(x) = \sin((\sin^7 x^7 + 1)^7) $, then we compute:
+          \begin{align*}
+            g(x)  &= \sin \left( \left[ \left( \sin x^7 \right)^7 + 1 \right]^7 \right)\\
+            g'(x) &= 7x^6 \cdot \cos x^7 \cdot 7\left(\sin x^7\right)^6 \cdot 7\left[\left(\sin x^7\right)^7 + 1\right]
+                          \cdot \cos \left( \left[ \left( \sin x^7 \right)^7 + 1 \right]^7 \right)
+          \end{align*}
+          This result can probably be simplified, however the point is to evaluate the derivative chain from inside to outside in a systematic fashion.
+  \end{enumerate}
+\end{exs}
 
 \begin{proof}[Proof of the chain rule (optional)]
   The proof is a little fiddly, and comes in two parts. Recall that in the work on limits, we found that an alternative definition of
@@ -81,7 +70,7 @@ A rigorous proof is given below, and it matches our intuition reasonably well.
                                                    &= \lim_{k \to x} \frac{f(g(x)) - f(g(k))}{g(x) - g(k)} \cdot \lim_{k \to x} \frac{g(x) - g(k)}{x - k}\\
                                                    &= f'(g(x)) g'(x),
   \end{align*}
-  (noting that as $ k \to x $ , $ g(k) \to g(x) $). This calculation only works when $ g $ is not constant around $ x $, because if $ g $ \emph{is}
+  (noting that as $ k \to x $, $ g(k) \to g(x) $). This calculation only works when $ g $ is not constant around $ x $, because if $ g $ \emph{is}
   constant around $ x $ then for all $ k $ sufficiently close to $ x $, $ g(x) - g(k) = 0 $ and the limit does not exist.
 
   To deal with this case, assume that $ g $ \emph{is} constant around $ x $. Then $ g'(x) = 0 $, and also for all $ h $ close enough
@@ -128,11 +117,8 @@ A rigorous proof is given below, and it matches our intuition reasonably well.
       \part Find the velocity of the particle at time $ t $.
       \part At which times is the particle momentarily stationary?
     \end{parts}
-  \question The volume of a spherical balloon at a time $ t $ is given by $ V(t) $, and its radius is given by $ r(t) $.
-    \begin{parts}
-      \parA What do the derivatives $ \od{V}{t} $ and $ \od{V}{r} $ represent?
-      \parM The volume of a sphere of radius $ r $ is $ V_\text{sphere} = \frac{4}{3} \pi r^3 $. Find $ \od{V}{t} $ in terms of $ \od{r}{t} $.
-    \end{parts}
+  \question The volume of a spherical balloon at a time $ t $ is given by $ V(t) = \frac{4}{3} \pi r^2 $, and its radius, changing
+            over time, is given by $ r(t) $. Find $ \od{V}{t} $ in terms of $ \od{r}{t} $.
   \questioM If $ F(x) = f(3f(4f(x))) $, where $ f(0) = 0 $ and $ f'(0) = 2 $, find $ F'(0) $.
   \questioA Suppose $ f(x) = g(x + g(a)) $ for some differentiable function $ g $ and constant $ a $. Find $ f'(x) $.
   \question The depth of water at the end of a jetty in a harbour varies with time due to the tides. The depth
@@ -146,15 +132,10 @@ A rigorous proof is given below, and it matches our intuition reasonably well.
       \parM When is the first time after $ t = 0 $ that the tide changes direction?
       \parE At that time, is the water changing from rising to falling or from falling to rising?
     \end{parts}
-  \question Consider the function $ \psi $ given by
-            \begin{displaymath}
-              \psi(t) = \frac{e^t + e^{-t}}{2}
-            \end{displaymath}
-    \begin{parts}
-      \parA Compute $ \psi' $.
-      \parM Find $ \psi^{(2017)} $ (the 2017th derivative of $ \psi $).
-      \parA Show that $ \psi $ satisfies the differential equation $ \od{}{t}(\psi + \psi') = \psi + \psi' $.
-    \end{parts}
+  \questioM In physics, the rate of change of momentum of an object is proportional to the force needed to effect
+            that change: if $ p $ is the momentum of the object as a function of time, $ F = \od{p}{t} $. The momentum
+            of a particular object, oscillating back and forth along a line, is given by $ p = mA\sin(\omega t + \phi)\thinspace\si{\kilo\gram\metre\per\second} $
+            (where $ m $, $ A $, $ \omega $, and $ \phi $ are various constants). What is the force acting on the object at $ t = 10 $?
   \question The force $ F $ (in newtons) acting at an angle $ \theta $ with the horizontal that is needed
             to drag a mass of $ W $ kilograms along a horizontal surface at a constant velocity is given by
             \begin{displaymath}
@@ -174,6 +155,17 @@ A rigorous proof is given below, and it matches our intuition reasonably well.
             \end{displaymath}
             [\textit{Hint: Write $ \abs{x} = \sqrt{x^2} $.}]
       \part If $ f(x) = \abs{\sin x} $, find $ f'(x) $ and sketch the graphs of both $ f $ and $ f' $.
+    \end{parts}
+  \questioS In the next section, we will be studying the product rule for derivatives. It is possible, though not
+            particularly usual, to prove it using simply the basic derivatives from the last section and the chain
+            rule; in this exercise, you will do just that.
+
+            Suppose that $ f $ and $ g $ are functions, and consider the function $ F $ defined by $ F(x) = \left(f(x) + g(x)\right)^2 $.
+    \begin{parts}
+      \part Calculate $ F'(x) $ using the chain rule.
+      \part Calculate $ F'(x) $ by multiplying out the square and differentiating the polynomial that results. (In particular, note
+            that $ \od{}{x} 2(fg)(x) = 2 (fg)'(x) $).
+      \part Compare parts (a) and (b).
     \end{parts}
 \end{questions}
 \end{document}

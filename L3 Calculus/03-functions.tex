@@ -4,34 +4,37 @@
 \mainHeaderDiff{3}{Derivatives of Common Functions}
 Now that we understand the purpose and form of the derivative, we can begin to calculate
 the derivatives of some common functions. We list them here without proof, but it is easy
-to find the proofs yourself if you are interested.
+to find the proofs yourself in a textbook or on the internet if you are interested.
 
 \begin{center}
   \def\arraystretch{1.5}
-  \begin{tabular}{|c|c|}\hline
-    \textbf{Function} & \textbf{Derivative}\\\hline
-    $ x^n $ & $ nx^{n - 1} $\\\hline
-    $ e^x $ & $ e^x $\\\hline
-    $ \ln \abs{x} $ & $ \frac{1}{x} $\\\hline
-    $ \sin x $ & $ \cos x $\\\hline
-    $ \cos x $ & $ -\sin x $\\\hline
-    $ \tan x $ & $ \sec^2 x $\\\hline
-    $ \csc x $ & $ -\csc x \cot x $\\\hline
-    $ \sec x $ & $ \sec x \tan x $\\\hline
-    $ \cot x $ & $ -\csc^2 x $\\\hline
+  \begin{tabular}{|c|c|l|}\hline
+    \textbf{Function} & \textbf{Derivative} & \textbf{Notes}\\\hline
+    $ x^n $ & $ nx^{n - 1} $&\\\hline
+    $ e^x $ & $ e^x $ & Here, $ e \approx 2.71828 $ is Euler's number. \\\hline
+    $ \ln \abs{x} $ & $ \frac{1}{x} $ & Here, $ \ln = \log_e $. \\\hline
+    $ \sin x $ & $ \cos x $&\\\hline
+    $ \cos x $ & $ -\sin x $&\\\hline
+    $ \tan x $ & $ \sec^2 x $&\\\hline
+    $ \csc x $ & $ -\csc x \cot x $&\\\hline
+    $ \sec x $ & $ \sec x \tan x $&\\\hline
+    $ \cot x $ & $ -\csc^2 x $&\\\hline
   \end{tabular}
 \end{center}
 
-Today, we also introduce several rules for finding the derivative of a more complicated function
-in terms of the derivatives of component functions. Let $ f $ and $ g $ be functions, and let $ \lambda $ be a real constant. Then:
-\begin{enumerate}
-  \item $ (\lambda)' = 0 $ [The slope of a constant function is zero.]
-  \item $ (\lambda f)' = \lambda f' $ [The slope of a scaled function is the scaled slope of the function.]
-  \item $ (f + g)' = f' + g' $ [The slope of the sum of two functions is the sum of the individual slopes.]
-\end{enumerate}
-In particular, the derivative is \textit{linear}: that is, for functions $ f, g $ and real constants $ \alpha, \beta $
-we have $ (\alpha f + \beta g)' = \alpha f' + \beta g' $. These formulae can all be proved using the limit definition
-of the derivative, and it is a simple exercise to check them all. For example,
+We also have several rules for finding the derivative of a more complicated function in terms of the derivatives of component
+functions.
+
+\begin{thm}
+  Let $ f $ and $ g $ be functions, and let $ \lambda $ be a real constant. Then:
+  \begin{enumerate}
+    \item $ (\lambda)' = 0 $: The slope of a constant function is zero.
+    \item $ (\lambda f)' = \lambda f' $: The slope of a scaled function is the scaled slope of the function.
+    \item $ (f + g)' = f' + g' $: The slope of the sum of two functions is the sum of the individual slopes.
+  \end{enumerate}
+\end{thm}
+
+These formulae can all be proved using the limit definition of the derivative, and it is a simple exercise to check them all. For example,
 \begin{align*}
   (f + g)'(x) = \lim_{h \to 0} \frac{(f + g)(x + h) - (f + g)(x)}{h} &= \lim_{h \to 0} \frac{f(x + h) + g(x + h) - f(x) - g(x)}{h} \\
                                                                      &= \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} + \lim_{h \to 0} \frac{g(x + h) - g(x)}{h} \\
@@ -42,12 +45,13 @@ Note that the obvious product rule, $ (fg)' = f'g' $ does \textbf{not} hold. We 
 although it should be noted that Leibniz initially believed this rule to be true! A counterexample is outlined in the
 exercises for you to work out.
 
-\begin{ex}\leavevmode
+\begin{exs}\leavevmode
   \begin{enumerate}
     \item $ \od{}{x} [\sin x + \cos x] = \cos x - \sin x $.
     \item $ \od{}{x} \frac{3x^2 + 2x + 1}{x} = \od{}{x} \left[ 3x + 2 + x^{-1} \right] = 3 + 0 + (-1)x^{-2} = 3 - \frac{1}{x^2} $.
+    \item $ \od{}{x} \sqrt{x} = \od{}{x} x^{1/2} = \frac{1}{2}x^{-1/2} = \frac{1}{2\sqrt{x}} $.
   \end{enumerate}
-\end{ex}
+\end{exs}
 
 \clearpage
 \subsection*{Questions}
@@ -67,13 +71,15 @@ exercises for you to work out.
   \questioA Where is the function $ x \mapsto x^3 - 2x^2 - x + 1 $ increasing?
   \questioA Find the slope of the tangent line to $ y = e^x - \sin x $ at $ x = 2\pi $.
   \questioA Find the slope of the tangent line to $ y = x + \tan x $ at $ (\pi, \pi) $.
-  \questioA Compute the derivative of $ \ln x^2 $.
-  \questioA Differentiate $ \tan x \cot x \sin x $.
-  \questioA True or false: if $ f(x) $ is a cubic polynomial, then $ f'(x) $ is a quadratic polynomial.
+  \questioA It is \textbf{not} true that the derivative of $ f(g(x)) $ is $ f'(g'(x)) $.
+    \begin{parts}
+      \part For a counterexample, consider $ f(x) = x^2 $ and $ g(x) = x $; show that $ f'(g'(x)) = 2 $, but $ \od{}{x} f(g(x)) = 2x $.
+      \part Compute the derivative of $ \ln x^2 $.
+    \end{parts}
   \questioA Suppose the derivative of a function is $ \od{y}{x} = 3x^2 - x - 4 $. What could the original function be?
   \questioM Find the 64th derivative of $ \sin x $.
   \questioM Find the $ n$th derivative of $ x^n $.
-  \questioM If $ y = 2\sin 3x \cos 2x $, find $ \od{y}{x} $. (Hint: use an identity to rewrite this as a sum of functions)
+  \questioM If $ y = 2\sin 3x \cos 2x $, find $ \od{y}{x} $. (Hint: use an identity to rewrite this as a sum of functions.)
   \questioM For which values of $ x $ does the graph of $ f(x) = x + 2\sin x $ have a horizontal tangent?
   \questioE Show that $ y = 6x^3 + 5x - 3 $ has no tangent line with a slope of 4.
   \questioE Find real values of $ \alpha $ and $ \beta $ such that, if $ y = \alpha \sin x + \beta \cos x $,
@@ -84,13 +90,34 @@ exercises for you to work out.
             respect to $ \theta $?
   \questioE Prove that the function $ \varphi $ given by $ \varphi(x) = \frac{x^{101}}{101} + \frac{x^{51}}{51} + x + 1 $
             has no extreme values.
-  \question
+  \questioM The derivative is primarily a geometric concept, not an algebraic one.
     \begin{parts}
-      \parA The area of a circle of radius $ r $ is $ A = \pi r^2 $. Find $ \od{A}{r} $. What do you notice?
-      \parM Explain part (a) geometrically.
-      \parE The volume of a sphere is given by $ V = \frac{4}{3} \pi r^3 $. Find an expression for the surface area.
+      \part The area of a circle of radius $ r $ is $ A = \pi r^2 $. Find $ \od{A}{r} $. What do you notice?
+      \part Explain part (a) geometrically.
+      \part The volume of a sphere is given by $ V = \frac{4}{3} \pi r^3 $. Find an expression for the surface area.
     \end{parts}
-  \questioE Calculate $ \od{y}{x} $ if $ y = \log_{10} x $.
+  \questioE We have the derivative of $ \log_e $, but not for any other log base. Calculate $ \od{y}{x} $ if $ y = \log_{10} x $.
   \questioE Prove the remaining two differentiation rules using the limit definition of the derivative.
+  \questioS In this exercise, we will calculate the value of $ e $ based on solving the differential
+            equation $ f(x) = f'(x) $. Clearly one solution is $ f(x) = 0 $, but by drawing some pictures
+            you should see that a reasonable guess for a more interesting solution would be an exponential function, $ f(x) = a^x $.
+            We just need to pick the right base.
+    \begin{parts}
+      \part Show that the derivative of $ a^x $ is given by
+            \begin{displaymath}
+              \lim_{h \to 0} a^x \left(\frac{a^h - 1}{h}\right).
+            \end{displaymath}
+      \part For $ a^x $ to be a solution to our differential equation, we need $ \lim_{h \to 0} \frac{a^h - 1}{h} $ to be 1. Show that
+            \begin{displaymath}
+              a = \lim_{h \to 0}(1 + h)^{1/h}
+            \end{displaymath}
+            works for this purpose.
+      \part The expression in (b) is not the standard way to write this limit. Show that if $ n = 1/h $, then
+            \begin{displaymath}
+              a = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n.
+            \end{displaymath}
+      \part By calculating the value of $ \left(1 + \frac{1}{n}\right)^n $ for a suitably large value of $ n $, obtain a numerical
+            approximation for Euler's number, $ e $.
+    \end{parts}
 \end{questions}
 \end{document}

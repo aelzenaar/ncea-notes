@@ -2,13 +2,13 @@
 \begin{document}
 
 \mainHeaderIntg{24}{Kinematics}
-Calculus was independently developed by Sir Isaac Newton to describe mechanical motion in physics. This use is known as \textit{kinematics} (from
+Calculus was independently developed by Sir Isaac Newton to describe mechanical motion in physics. This use is known as \textbf{kinematics} (from
 the Greek \textit{kinein}, `to move'). Suppose a particle moves from position $ x_0 $ to position $ x_1 $ over a time $ \Delta t $. We call the ratio
 \begin{displaymath}
   \frac{x_1 - x_0}{\Delta t}
 \end{displaymath}
-the \textit{average velocity} of the particle; if we let $ x_1 \to x_2 $ (or let $ t \to 0 $), we obtain the derivative $ \od{x}{t} = v $, the
-\textit{instantaneous velocity} of the particle at the point $ x $ (usually just abbreviated to velocity).
+the \textbf{average velocity} of the particle; if we let $ x_1 \to x_2 $ (or let $ \Delta t \to 0 $), we obtain the derivative $ \od{x}{t} = v $, the
+\textbf{instantaneous velocity} of the particle at the point $ x $ (usually just abbreviated to velocity).
 
 Similarly, the rate of change of velocity is called \textit{acceleration}. We have $ a = \od{v}{t} = \od[2]{x}{t} $. (Out of interest, the third
 derivative of displacement is known as \textit{jerk}, and the fourth is \textit{jounce}.)
@@ -26,7 +26,7 @@ If we make the intervals smaller, then clearly our approximation becomes better;
   \end{tabular}
 \end{center}
 
-We can prove the following \textit{kinematic equations} if acceleration is kept constant over a time period $ \Delta t $. These equations
+We can prove the following \textbf{kinematic equations} if acceleration is kept constant over a time period $ \Delta t $. These equations
 should be familar to all of those that took level 2 physics, and they are derived by finding areas underneath a velocity-time graph: in
 short, via calculus.
 
@@ -41,37 +41,37 @@ short, via calculus.
 All distances are given in \si{\metre}, and all times in \si{\second}, unless otherwise stated.
 \begin{questions}
   \questioA A particle moves from $ x = \SI{2}{\metre} $ to $ x = \SI{3}{\metre} $ over \SI{3}{\second}. What is its average velocity over that time?
-  \questioM Derive the kinematic equations, by considering the integrals of a velocity function $ v(t) $ with constant derivative $ a $.
   \questioA A particle moves from $ (3,4) $ to $ (12,-3) $ over a time \SI{10}{\second}. If the displacements are measured in metres, what is the magnitude of
             its average velocity during that period?
   \questioA An object $ A $ has a positive acceleration $ a $, and a second object $ B $ has a negative acceleration $ -a $. Both are moving in the
-            same direction. Which of the following is \textbf{not} true?
+            same direction. Which of the following is \textit{not} true?
     \begin{parts}
       \part Object $ B $ is slowing down compared to object $ A $.
       \part Object $ B $ has a lower velocity than object $ A $.
       \part At some point, object $ B $ will reach a velocity of zero and then start moving in the opposite direction.
       \part If object $ B $ is behind object $ A $, the two will never cross paths.
     \end{parts}
-  \questioA Suppose a particle has a velocity of $ \SI{34}{\metre\per\second} $. How long does it take for the particle to travel \SI{150}{\metre}?
-  \question The velocity $ v $ of an object $ t $ seconds after it moves from the origin is given by
+  \questioA Suppose a particle has a constant velocity of $ \SI{34}{\metre\per\second} $. How long does it take for the particle to travel \SI{150}{\metre}?
+  \questioM Derive the kinematic equations, by considering the integrals of a velocity function $ v(t) $ with constant derivative $ a $.
+  \questioM The velocity $ v $ of an object $ t $ seconds after it moves from the origin is given by
             \begin{displaymath}
               v(t) = 3t^2 - 6t - 24.
             \end{displaymath}
     \begin{parts}
-      \parA Write down the formula for the acceleration of the particle after $ t $ seconds.
-      \parA Work out the initial velocity and acceleration.
-      \parA When is the object at rest momentarily?
-      \parM When did the object return to the origin?
-      \parE What was the total distance travelled by the object before it returned to the origin?
+      \part Write down the formula for the acceleration of the particle after $ t $ seconds.
+      \part Work out the initial velocity and acceleration.
+      \part When is the object at rest momentarily?
+      \part When did the object return to the origin?
+      \part What was the total distance travelled by the object before it returned to the origin?
     \end{parts}
-  \questioA A well-wrapped food parcel is dropped from an aeroplane flying at a height of \SI{500}{\metre}
+  \questioM A well-wrapped food parcel is dropped from an aeroplane flying at a height of \SI{500}{\metre}
             above the ground. The constant acceleration due to gravity is \SI{-9.81}{\metre\per\second\squared}. Air resistance
             is negligible.
     \begin{parts}
       \part How long does it take for the food parcel to hit the ground?
       \part How fast is the food parcel moving when it hits the ground?
     \end{parts}
-  \questioA A racing car travelling at \SI{210}{\kilo\metre\per\hour} skids for a distance of \SI{150}{\metre}
+  \questioM A racing car travelling at \SI{210}{\kilo\metre\per\hour} skids for a distance of \SI{150}{\metre}
             after its brakes are applied. The brakes provide a constant deceleration.
     \begin{parts}
       \part What is the deceleration in \si{\metre\per\second\squared}?
@@ -85,6 +85,12 @@ All distances are given in \si{\metre}, and all times in \si{\second}, unless ot
       \part Draw the acceleration of the object over time.
       \part Draw the position of the object over time, if it was originally located at $ x = 0 $.
     \end{parts}
+  \questioM The velocity of an Olympic sprinter is modelled by
+            \begin{displaymath}
+              v_x = a(1 - e^{-bt}),
+            \end{displaymath}
+            where $ a = \SI{11.81}{\metre\per\second} $ and $ b = \SI{0.6887}{\per\second} $. Find an expression for the
+            distance travelled after time $ t $.
   \questioE The displacement of an object moving in a straight line on either side of a fixed origin is given by
             \begin{displaymath}
               s(t) = 2t^3 - 12t^2 + 18t + 3.
@@ -93,13 +99,18 @@ All distances are given in \si{\metre}, and all times in \si{\second}, unless ot
       \part Find the minimum velocity of the object. Carefully prove that you have found a minimum.
       \part What is the distance between the origin and the object when its velocity is at a minimum?
     \end{parts}
-  \questioM The velocity of an Olympic sprinter is modelled by
-            \begin{displaymath}
-              v_x = a(1 - e^{-bt}),
-            \end{displaymath}
-            where $ a = \SI{11.81}{\metre\per\second} $ and $ b = \SI{0.6887}{\per\second} $. Find an expression for the
-            distance travelled after time $ t $.
   \questioM The acceleration of a rocket propelled washing machine is given by $ \od{v}{t} = 9t^3 - t^4 + t^{-3/2} $, where $ 0 \leq t \leq 10 $. Find
             the distance which it has travelled after 10 seconds if its initial velocity (at $ t = 0 $) was \SI{90}{\metre\per\second}.
+  \questioM The acceleration of an object is given by $ a(t) = 0.2t + 0.3\sqrt{t} $ for $ 0 \leq t \leq 10 $, where $ a $ is the acceleration
+            of the object in \si{\metre\per\second\squared} and $ t $ is the time in seconds from the instant that movement began. The object
+            was moving with a velocity of \SI{5}{\metre\per\second} when $ t = 4 $. How far was the object from its starting point after nine seconds?
+  \questioE A ball is thrown straight up from the edge of the roof of a building, with initial velocity $ v_0 $. A second ball is dropped from the
+            roof \SI{1.00}{\second} later. Both feel a constant acceleration due to gravity, $ g = \SI{-9.81}{\metre\per\second\squared} $.
+    \begin{parts}
+      \part Suppose the height of the building is \SI{20.00}{\metre}. What must be the initial speed $ v_0 $ if both balls are to hit the ground
+            at the same time?
+      \part Consider a second building of unknown height $ h $; if the first ball is thrown upwards with initial velocity $ v_1 $, and both
+            balls hit the ground at the same time, give an expression for $ h $ in terms of $ v_1 $.
+    \end{parts}
 \end{questions}
 \end{document}
