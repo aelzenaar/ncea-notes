@@ -36,6 +36,8 @@ My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf)
  17. (2.3) 		Number Sequences and Fractals
  18. (2.5) 		Graphs and Networks
 
+I am not currently planning any stats notes.
+
 ### Level Three and Scholarship Calculus
  * Generic skills: a [set of notes](L3%20Maths%20Generic/generic.pdf) covering (naive) sets, (rudimentary) proofs, sigma and pi notation, induction,
    the Binomial theorem, and very basic graph theory.
@@ -46,12 +48,14 @@ My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf)
    and homeworks with material ranging in difficulty from achieved to outstanding scholarship.
 
 **In progress:**
- * Geometry notes (similar in style to _Solutions_ for scholarship students, and may be from L1 upwards). In the meantime, I highly recommend
-   Lang and Murrow's book _Geometry: A High School Course_ (published by Springer) --- the first edition is available in the University of
-   Auckland library at 516 L27 (or online).
-
-I am not intending to write any material on the L3 path analysis standard. Some graph theory is in the general skills notes,
-and there is work on weighted graphs in the L2 notes.
+I am currently in the process of reworking and reorganising my L3 maths notes; the final plan will be to have the following
+sets of notes, broadly in the given logical order and aligned with the L2 notes above:
+ 1. Foundations for Scholarship. Basic set theory and number theory, with proof writing. This will be broadly based on the generic skills notes above.
+ 2. Linear systems. Perhaps will include critical path analysis, as these notes seem to be where the applied stuff goes. Based on the notes above that I wrote last year, but with some more problems.
+ 3. Trigonometry. WIP.
+ 4. Calculus. This reworking is [done](L3%20Calculus/bookform.pdf)!
+ 5. Algebra. I will either rework or rewrite _Solutions_.
+ 6. Conic Sections. This is currently a WIP.
 
 ## Physics
 ### Level Two
