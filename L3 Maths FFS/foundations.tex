@@ -1,0 +1,511 @@
+\documentclass[a4paper,leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[inline]{enumitem}
+
+\usepackage{siunitx}
+\usepackage{multirow}
+\usepackage{subcaption}
+
+\usepackage[english]{babel}
+\usepackage[autostyle, english=british]{csquotes}
+\MakeOuterQuote{"}
+
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
+
+\usepackage{hyperref}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{changepage}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries\centering}{Section~\thesection:}{1em}{}
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+  \hbox{}\nobreak\hfil(#1)%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}}
+  {\signed{\usebox\mybox}\end{quote}}
+
+% Augmented matrices.
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+%--------grstep
+% For denoting a Gauss' reduction step.
+% Use as: \grstep{\rho_1+\rho_3} or \grstep[2\rho_5 \\ 3\rho_6]{\rho_1+\rho_3}
+\newcommand{\grstep}[2][\relax]{%
+   \ensuremath{\mathrel{
+       {\mathop{\longrightarrow}\limits^{#2\mathstrut}_{
+                                     \begin{subarray}{l} #1 \end{subarray}}}}}}
+\newcommand{\swap}{\leftrightarrow}
+
+
+\swapnumbers
+\numberwithin{equation}{section}
+\newtheorem{thm}[equation]{Theorem}
+\newtheorem{lem}[equation]{Lemma}
+\newtheorem{cor}[equation]{Corollary}
+\newtheorem{prp}[equation]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[equation]{Definition}
+\newtheorem{ex}[equation]{Example}
+\newtheorem{exercise}[equation]{Exercise}
+\newtheorem{alg}[equation]{Algorithm}
+\theoremstyle{remark}
+\newtheorem{rem}[equation]{Remark}
+
+\newcommand{\df}[1]{\textbf{#1}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\F}{\mathrm{F}}
+\newcommand{\IndSet}{\mathbf{I}}
+
+
+\title{Down the River: Foundations for Scholarship}
+\author{Alex Elzenaar}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section*{Preface}
+This set of notes is an introduction to the shallower foundations of mathematics, for those students who
+are attempting the New Zealand Scholarship examination in Calculus.
+
+I assume knowledge of the breadth of Level 2, but not any material from Level 3. As a guideline, I would
+expect any student attempting Scholarship to come into Level 3 with the following skills:
+\begin{itemize}
+  \item Comfort with basic algebraic manipulations.
+  \item Understanding of exponential and logarithmic functions.
+  \item Understanding of quadratic equations (especially with the link between parabolae and quadratics, and factoring).
+  \item Knowledge of the links between functions and their graphs (in general; particularly, being able to give some kind
+        of definition and knowledge of some basic examples).
+  \item Comfort with the geometry underlying the derivative (slopes of lines, average slopes of curves, and the ability
+        to apply the derivative in geometric situations like finding turning points). [This skill is not explicitly required for these notes.]
+\end{itemize}
+
+\titleformat{\section}{\clearpage\titlerule[0.8pt]\vspace{0.5ex}\normalfont\Large\bfseries\centering}{Section~\thesection:}{1em}{}[{\titlerule[0.8pt]}]
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+\section{Set Notation}
+\subsection{Defining Sets}
+We begin by quoting from Paul Halmos' classic book, \textit{Naive Set Theory}.
+\begin{aquote}{Halmos}
+  A pack of wolves, a bunch of grapes, or a flock of pigeons are all examples of sets of things. The mathematical concept of a set can
+  be used as the foundation for all known mathematics...
+\end{aquote}
+Like Halmos, we will avoid an exact definition of sets so that we do not need to deal with the logical issues that come
+with it (does the set of all sets that do not contain themselves contain itself?) --- for us, a set is simply a collection
+of objects.
+
+We can write down a set by placing the names of the objects within the set (the \df{elements} of the set) inside curly brackets; for example,
+\begin{equation}
+  S = \{1, 2, 3\}
+\end{equation}
+is a set consisting of three elements. If $ x $ is an element of a set $ S $, then we write $ x \in S $ ($ x $ is in $ S $); otherwise,
+we can write $ x \notin S $.
+
+There are several `standard' sets:
+\begin{itemize}
+  \item $ \mathbb{N} = \{1, 2, 3, ...\} $ is the set of natural numbers.
+  \item $ \mathbb{N}_0 = \{0, 1, 2, ...\} $ is the set of natural numbers together with zero.
+  \item $ \mathbb{Z} = \{..., -2, -1, 0, 1, 2, ...\} $ is the set of integers.\footnote{The letter $ Z $ comes from the German \textit{Zahlen} (number).}
+  \item $ \mathbb{Q} $ is the set of rational numbers (that is, all numbers $ x $ which can be written in the form $ a/b $ for $ a $ and $ b $ integers).
+  \item $ \mathbb{R} $ is the set of real numbers (that is, all possible lengths that can be measured along an infinite line\footnote{There are more rigorous
+        definitions of the real numbers than this, but we do not need to worry too much about defining them properly.}).
+  \item $ \emptyset $ is the set containing no elements.
+\end{itemize}
+
+If we construct a set using a rule, then we have another notation: if $ E $ is the set containing all even numbers, then we can write
+\begin{equation}
+  E = \{ n : n\text{ is an even number}\}.
+\end{equation}
+This notation is called \df{set-builder notation}; if $ S = \{ x \in \mathcal{U} : P(x) \text{ is true}\} $, then we read it
+as `$ S $ is the set of all $ x $ in $ \mathcal{U} $ such that $ P(x) $ is true'.
+
+If $ S $ and $ T $ are sets such that every element of $ T $ is also an element of $ S $, then we say that $ T $ is a \df{subset} of $ S $ (or
+that $ S $ \df{includes} $ T $), and write $ T \subseteq S $. In particular, we have $ \mathbb{N} \subseteq \mathbb{Z} \subseteq \mathbb{Q} \subseteq \mathbb{R} $.
+\begin{exercise}
+  Let $ X $ be some set. Prove that $ \emptyset \subseteq X $, and that $ X \subseteq X $.
+\end{exercise}
+
+\subsection{Set Operations}
+If $ S $ and $ T $ are two sets, then their \df{intersection} is the set
+\begin{equation}
+  S \cap T = \{ x : x \in S \text{ and } x \in T \}
+\end{equation}
+and their \df{union} is the set
+\begin{equation}
+  S \cup T = \{ x : x \in S \text{ or } x \in T \}.
+\end{equation}
+
+\begin{ex}
+  If $ S = \{2, 4, 6, 8, 10, 12\} $ and $ T = \{1, 4, 9, 16\} $, then $ S \cup T = \{1,2,3,6,8,9,10,12,16\} $ and $ S \cap T = \{4\} $.
+\end{ex}
+
+\begin{exercise}[Distributivity]
+  Show that, if $ R $, $ S $, and $ T $ are sets, then
+  \begin{enumerate}
+    \item $ R \cup (S \cap T) = (R \cup S) \cap (R \cup T) $, and
+    \item $ R \cap (S \cup T) = (R \cap S) \cup (R \cap T) $.
+  \end{enumerate}
+  Draw Venn diagrams to show each configuration.
+\end{exercise}
+
+Now, suppose $ S $ is a subset of $ \mathcal{U} $. The \df{compliment} of $ S $ in $ \mathcal{U} $ is the set of
+all elements of $ \mathcal{U} $ that are not in $ S $; in other words,
+\begin{equation}
+  \mathcal{U} - S = \{ x \in \mathcal{U} : c \notin S\}.
+\end{equation}
+If the set $ \mathcal{U} $ is clear from context, we can just write $ S^C $ or $ \overline{S} $ in place of $ \mathcal{U} - S $.
+
+\begin{exercise}[de Morgan's laws]
+  Show that, if $ R $ and $ S $ are subsets of $ \mathcal{U} $, then
+  \begin{enumerate}
+    \item $ \overline{R \cup S} = \overline{R} \cap \overline{S} $, and
+    \item $ \overline{R \cap S} = \overline{R} \cup \overline{S} $.
+  \end{enumerate}
+  Draw Venn diagrams to show each configuration.
+\end{exercise}
+
+\subsection{Functions}
+We also define the \df{Cartesian product} of $ S $ and $ T $ by
+\begin{equation}
+  S \times T = \{(s,t) : s \in S, t \in T\}
+\end{equation}
+where $ (s,t) $ denotes the ordered pair with $ s $ in the first position and $ t $ in the second; i.e. $ (s,t) = (t,s) $ if and only if $ s = t $.
+
+A \df{function} $ f $ with \df{domain} $ D $ and \df{codomain} $ C $ (or a function \df{from} $ D $ \df{(in)to} $ C $) is a subset
+of $ D \times T $ such that if $ (x,y_1) \in f $ and $ (x, y_2) \in f $ then $ y_1 = y_2 $. When defining such a function, we can
+write that $ f : D \to C $. If $ (x,y) \in f $, we usually write $ f(x) = y $.
+
+The set $ R = \{r \in C : f(x) = r \text{ for some } x \in D\} $ is called the \df{range} of $ f $. If $ R = C $ (that is, for every value $ y $
+in the codomain there is some $ x $ in the domain so that $ f(x) = y $), then the function is called \df{surjective} or \df{onto}.
+
+If $ f(x_1) = y $ and $ f(x_2) = y $ implies that $ x_1 = x_2 $ (that is, if every member $ y $ of the range has precisely one corresponding
+element $ x $ of the domain so that $ f(x) = y $) then the function is called \df{injective} or \df{one-to-one}.
+
+We say that $ f : A \to B $ and $ g : C \to D $ are \df{equal}, writing $ f = g $, if and only if both of the following conditions are met:
+\begin{enumerate}
+  \item $ A = C $ and $ B = D $; and
+  \item For every $ x \in A $, $ f(x) = g(x) $.
+\end{enumerate}
+
+\begin{ex}\leavevmode
+  \begin{enumerate}
+    \item If $ f : \mathbb{R} \to \mathbb{R} $ is defined by $ f(x) = 3x + 1 $, then $ f $ is one-to-one and onto.
+    \item If $ g : \mathbb{N} \to \mathbb{N} $ is defined by $ f(x) = x + 1 $, then $ f $ is one-to-one but not onto, since there is no $ x \in \mathbb{N} $
+          such that $ 1 = x + 1 $.
+  \end{enumerate}
+\end{ex}
+
+\begin{thm}\footnote{\df{Theorem}: A statement which has been proved to be true.}
+  Let $ f : D \to C $ be a function, and let $ R \subseteq C $ be the range of $ f $. Then $ f $ is one-to-one and onto if and only if there exists a
+  function $ g : C \to D $ so that for every $ x \in D $, $ x = g(f(x)) $ and for every $ y \in C $, $ y = f(g(y)) $. This function $ g $ is unique.
+\end{thm}
+\begin{proof}\footnote{\df{Proof}: A valid argument, from true premises, to obtain a conclusion. The symbol $ \qed $ denotes the end of a proof.}
+  Suppose $ f $ is one-to-one and onto. Since $ f $ is one-to-one, we can define a new function $ g $ so that $ g(y) = x $ if and only if $ f(x) = y $:
+  since if $ g(y) = x_1 $ and $ g(y) = x_2 $, we have $ f(x_1) = y = f(x_2) $ and $ x_1 = x_2 $ by the injectivity of $ f $. This new function $ g $
+  has domain $ R = C $ (since $ f $ is onto, the two sets are equal) and range $ D $. In particular, if $ x \in D $, $ f(x) = y $ for some $ y \in R $
+  and hence $ x = g(y) = g(f(x)) $. Similarly, if $ y \in R $, then there exists $ x \in D $ such that $ f(x) = y $ and so $ g(y) = x $; hence $ f(g(y)) = y $.
+
+  Conversely, suppose such a $ g $ exists. Suppose $ f(x_1) = f(x_2) = y $ for some $ x_1, x_2 \in D $ and $ y \in R $. Then $ g(f(x_1)) = g(y) $, so $ g(y) = x_1 $.
+  Similarly, $ g(f(x_2)) = g(y) $ so $ g(y) = x_2 $. Hence $ x_1 = x_2 $ and $ f $ is injective. Let $ y \in C $; then $ y = f(g(y)) $, and so there
+  exists $ x = g(y) $ so that $ f(x) = y $; hence $ y \in R $, so $ C = R $ and $ f $ is onto.
+
+  Suppose for uniqueness that both $ g_1 $ and $ g_2 $ satisfy the requirements of the theorem. Then for every $ y \in R $,  $ y = f(g_1(y)) = f(g_2(y)) $. But
+  since $ f $ is injective, $ g_1(y) = g_2(y) $; and since $ g_1 $ and $ g_2 $ have the same domain and codomain, and agree at every point, they are equal.
+\end{proof}
+
+The unique function $ g $ defined as in the theorem for some function $ f $ is called the \df{inverse} of $ f $, and we usually write $ g = f^{-1} $.
+
+\begin{exercise}
+  Show that, if $ f^{-1} $ is the inverse of $ f $, then $ f^{-1} $ has an inverse and that inverse is $ f $.
+\end{exercise}
+
+\section{Divisibility}
+Let $ a $ and $ b $ be integers. We say that $ a $ \df{divides} $ b $ (or $ a $ is a \df{factor} of $ b $) if there is some integer $ q $ such
+that $ b = aq $; we write $ a \mid b $.
+\begin{lem}\footnote{\df{Lemma}: A statement which is proved on the way to a more important result. (Plural: lemmata.)}\leavevmode
+  Let $ a $, $ b $, and $ c $ be integers. Then:
+  \begin{enumerate}
+    \item $ a \mid 0 $.
+    \item If $ a \mid b $, and $ b \mid c $, then $ a \mid c $.
+    \item If $ a \mid b $, and $ a \mid c $, then $ a \mid (b + c) $.
+    \item If $ a \mid b $, then $ a \mid bc $.
+%     \item If $ a \mid b $, and $ b \mid a $, then $ a = \pm b $.
+  \end{enumerate}
+\end{lem}
+\begin{proof}\leavevmode
+  \begin{enumerate}
+    \item We must find an integer $ q $ so that $ 0 = qa $. Let us simply take $ q = 0 $; then $ 0 = 0a $ for all $ a $, so $ a \mid 0 $.
+    \item Because $ a \mid b $, there exists some integer $ q $ so that $ b = qa $. Similarly, there exists some integer $ r $ so that $ c = rb $.
+          Putting these together, $ c = rb = r(qa) = (rq)a $; so $ a \mid c $.
+    \item Because $ a \mid b $, there exists some integer $ q $ so that $ b = qa $. Similarly, there exists some integer $ r $ so that $ c = ra $.
+          Adding these, we have that $ b + c = qa + ra = (q + r)a $, and so $ a \mid (b+c) $.
+    \item Because $ a \mid b $, there exists some integer $ q $ so that $ b = qa $. Hence $ bc = c(qa) = (cq)a $ and so $ a \mid bc $.
+%     \item We have $ q $ and $ r $ so that $ b = qa $ and $ a = rb $. Hence $ b = qrb $, and so $ qr = 1 $. Then $ q = \pm 1 $, so $ b = \pm a $.
+  \end{enumerate}
+\end{proof}
+
+From this point, lower case italic letters will always denote integers unless otherwise stated.
+
+\begin{cor}\footnote{\df{Corollary}: A proof which is a direct result of an earlier proof.}
+  If $ d \mid a_1 $, $ d \mid a_2 $, ..., $ d \mid a_n $, then
+  \begin{displaymath}
+    d \mid (c_1 a_1 + c_2 a_2 + \cdots c_n a_n)
+  \end{displaymath}
+  for any integers $ c_1 $, ..., $ c_n $.
+\end{cor}
+\begin{proof}
+  By the definition of divisibility, there exist integers $ q_1 $, ..., $ q_n $ such that $ a_1 = q_1 d$, ..., $ a_n = q_n d $. Hence
+  \begin{displaymath}
+    c_1 a_1 + \cdots + c_n a_n = c_1 q_1 d + \cdots + c_n q_n d = d(c_1 q_1 + \cdots + c_n q_n)
+  \end{displaymath}
+  and so the result holds.
+\end{proof}
+
+\begin{exercise}
+  Show that if $ a \mid b $, and $ a $ and $ b $ are positive, then $ a \leq b $. Show that this result
+  does not always hold if $ a $ and $ b $ are non-negative.
+\end{exercise}
+
+\begin{exercise}
+  If $ n $ is an integer, define the \df{absolute value} of $ n $ by
+  \begin{displaymath}
+    \abs{n} = \begin{cases}
+                n & \text{if } n \geq 0\\
+                -n & \text{if } n < 0.
+              \end{cases}
+  \end{displaymath}
+  Show that $ \abs{n} \mid n $ and $ n \mid \abs{n} $.
+\end{exercise}
+
+\begin{defn}
+  If $ a $ and $ b $ are integers, then the integer $ d $ is called the \df{greatest common divisor} of $ a $ and $ b $ (written $ d = (a,b) $)
+  if the following two conditions are met:
+  \begin{enumerate}
+    \item $ d \mid a $ and $ d \mid b $ (that is, $ d $ is a common divisor of both numbers).
+    \item If $ d' \mid a $ and $ d' \mid b $, then $ d' \leq d $ (that is, every other common divisor is less than $ d $).
+  \end{enumerate}
+\end{defn}
+
+\begin{ex}\leavevmode\label{ex:gcd}
+  \begin{enumerate}
+    \item Since for every $ a $ and $ b $ we have $ 1 \mid a $ and $ 1 \mid b $, it follows that $ (a,b) \geq 1 $.
+    \item The greatest common divisor of $ -3 $ and $ 5 $ is $ (-3, 5) = 1 $, since $ 1 \mid -3 $ and $ 1 \mid 5 $ but no integer larger than $ 1 $ divides both.
+    \item We also have $ (4, 14) = 2 $ and $ (24, 36) = 12 $.
+    \item For all integers $ n $, $ (n, 1) = 1 $ (since the only integers dividing 1 are $ \pm 1 $, and $ 1 > -1 $).
+    \item For all integers $ n $, $ (n, 0) = \abs{n} $ (since $ \abs{n} \mid 0 $ and $ \abs{n} \mid n $, so $ (n,0) \geq \abs{n} $; and no divisors
+          of $ n $ are greater than $ \abs{n} $, so $ (n, 0) \leq \abs{n} $).
+  \end{enumerate}
+\end{ex}
+
+\begin{exercise}
+  Let $ d $ be an integer. Prove that if $ d $ is a positive integer, then $ (d, nd) = d $; and if $ d $ is negative, then $ (d, nd) = -d $.
+\end{exercise}
+
+If $ (a,b) = 1 $, then $ a $ and $ b $ are called \df{coprime} or \df{relatively prime}.
+
+\begin{thm}
+  If $ (a,b) = d $, then $ a/d $ and $ b/d $ are coprime.
+\end{thm}
+This theorem is intuitive: if we divide two numbers out by their greatest common divisor, they no longer have any common divisors greater than 1. This
+observation essentially proves itself.
+\begin{proof}
+  We must show that $ (a/d, b/d) = 1 $. Let $ (a/d, b/d) = c $. Then $ c \mid a/d $ and $ c \mid b/d $; so there exist $ q_1 $ and $ q_2 $ such
+  that $ a/d = cq_1 $ and $ b/d = cq_2 $; hence $ a = cq_1 d $ and $ b = c q_2 d $. This implies that $ cd $ is a common divisor of $ a $ and $ b $,
+  and so $ cd \leq d $. Since $ d = (a,b) \geq 1 $ (by example \ref{ex:gcd}.1 above), we can divide through by $ d $ and obtain $ c \leq 1 $. Applying
+  the same example again, since $ c $ is itself a greatest common divisor by definition, we have $ c \geq 1 $. Combining these two inequalities, $ c = 1 $.
+\end{proof}
+
+Our next goal is to find an easy (well, easier) way to compute the greatest common divisor of two numbers. To do this, we must develop the
+idea of division with remainder like we learned in primary school. The main theorem which ensures that we can divide properly in the integers
+is the following
+\begin{thm}[The division algorithm]
+  Let $ a $ and $ b \neq 0 $ be positive integers. Then there exist \emph{unique} integers $ q $ and $ r $, so that $ 0 \leq r < b $,
+  and so that $ a = qb + r $. The integers $ q $ and $ r $ are respectively called the \df{quotient} and \df{remainder}.
+\end{thm}
+
+For the proof of this, we must use the \df{well-ordering principle}:
+\begin{equation}
+  \begin{minipage}{0.8\textwidth}
+    If $ S $ is a non-empty set of integers which is bounded below (i.e. there is some $ b \in \mathbb{Z} $ so that
+    if $ n \in S $ then $ n \geq b $), then $ S $ has a smallest element.
+  \end{minipage}
+\end{equation}
+
+
+\begin{proof}[Proof of the division algorithm]
+  Consider the set $ S $ defined by
+  \begin{equation}
+    S = \{a - nb : n \in \mathbb{Z} \} \cap \mathbb{N}_0.
+  \end{equation}
+  This is just the set of all non-negative numbers which can be written in the form $ a - nb $, for some integer $ n $. Since $ a \in S $, the
+  set is non-empty; and since every $ x \in S $ satisfies $ x \geq 0 $, $ x $ is bounded below by 0. Hence $ S $ has a least element, $ a - qb $.
+  This element is non-negative by definition, and must be less than $ b $: if it were larger than $ b $, we could consider $ a - (q + 1)b = (a - qb) - b $,
+  which is in $ S $ and less than $ a - qb $, which is impossible since $ a - qb $ is the least element in $ S $. So if we let $ r = a - qb $,
+  then $ 0 \leq r < q $, and $ a = ab + r $. So suitable $ q $ and $ r $ exist.
+
+  For uniqueness, suppose that $ q_1 $, $ r_1 $ and $ q_2 $, $ r_2 $ both satisfy the conclusion of the theorem. Hence $ a = bq_1 + r_1 = b q_2 + r_2 $,
+  and so
+  \begin{equation}\label{eqn:divn}
+    0 = b(q_1 - q_2) + (r_1 - r_2).
+  \end{equation}
+  Since $ b \mid 0 $ and $ b \mid b(q_1 - q_2) $, it follows that $ b $ divides $ r_1 - r_2 $. But we have $ 0 \leq r_1 < b $ and $ 0 \geq -r_2 > -b $,
+  so $ -b < r_1 - r_2 < b $. The only multiple of $ b $ in between $ -b $ and $ b $ is zero, so $ r_1 = r_2 $ and hence (by \ref{eqn:divn}) $ q_1 = q_2 $.
+\end{proof}
+
+In order to compute the greatest common divisor easily, we will create a chain of integers so that the pairs of integers next to each other
+share the same GCD. The division algorithm allows us to do this, because of the following lemma.
+
+\begin{lem}\label{lem:euclidalg}
+  If $ a = bq + r $, then $ (a,b) = (b,r) $.
+\end{lem}
+\begin{proof}
+  By the hypothesis, $ (a,b) \mid r $, and so $ (a,b) $ is a common divisor of $ b $ and $ r $. Hence $ (a,b) \leq (b,r) $. On the other hand, $ (b,r) \mid a $
+  (since it divides both numbers on the right-hand side of the equality in the hypothesis) and so $ (b,r) \leq (a,b) $ (since $ (b,r) $ is a common divisor
+  of $ a $ and $ b $). Combining both inequalities, $ (b,r) = (a,b) $.
+\end{proof}
+
+Finally, we have an algorithm for computing the greatest common divisor.
+\begin{thm}[The Euclidean algorithm]
+  If $ a $ and $ b \neq 0 $ are positive integers, and
+  \begin{align*}
+    a &= bq_1 + r_1,\\
+    b &= r_1q_2 + r_2,\\
+    r_1 &= r_2 q_3 + r_3,\\\
+    &\enspace \vdots\\
+    r_k &= r_{k + 1} q_{k + 2} + r_{k + 2}
+  \end{align*}
+  where each $ r_{k + 2} $ is bounded like $ 0 \leq r_{k + 2} < r_{k + 1} $, then for $ k $ large enough
+  we have $ r_{k - 1} = r_{k} q_{k + 1} $ (i.e. $ r_{k + 1} = 0 $) and $ (a,b) = r_k $.
+\end{thm}
+\begin{proof}
+  Since each $ r_k $ is non-negative, and each $ r_k $ is less than $ r_{k - 1} $, the sequence $ b > r_1 > \cdots > r_k $
+  has a least non-negative element, $ r_k $, which must be zero or we would be able to divide again by the division algorithm.
+  Then $ r_{k - 1} = r_{k} q_{k + 1} $, and (by repeated application of lemma \ref{lem:euclidalg}) we have
+  \begin{displaymath}
+    (a,b) = (b,r_1) = (r_1, r_2) = \cdots = (r_{k - 1}, r_{k}) = (r_{k}, 0) = r_k.
+  \end{displaymath}
+\end{proof}
+
+\begin{ex}
+  Let us compute $ (240, 373) $. We have:
+  \begin{align*}
+    373 &= 1 \times 240 + 133\\
+    240 &= 1 \times 133 + 107\\
+    133 &= 1 \times 107 + 26\\
+    107 &= 4 \times 26 + 3\\
+    26 &= 8 \times 3 + 2\\
+    3 &= 1 \times 2 + 1\\
+    2 &= 1 \times 1 + 1\\
+    1 &= {\color{red}1} \times 1.
+  \end{align*}
+\end{ex}
+
+\begin{ex}
+  Let us compute $ (120, 340) $. We have:
+  \begin{align*}
+    340 &= 2 \times 120 + 100\\
+    120 &= 1 \times 100 + 20\\
+    100 &= {\color{red}5} \times 20.
+  \end{align*}
+\end{ex}
+
+\begin{cor}[B\'ezout's Lemma]
+  If $ a $ and $ b $ are positive integers, then there exist integers $ x $ and $ y $ such that $ ax + by = (a,b) $.
+\end{cor}
+\begin{proof}
+  By the proof of the Euclidean algorithm, for some $ k $ we have
+  \begin{align*}
+    a &= bq_1 + r_1,\\
+    b &= r_1q_2 + r_2,\\
+    r_1 &= r_2 q_3 + r_3,\\\
+    &\enspace \vdots\\
+    r_{k - 2} &= r_{k - 1} q_k + r_k,\\
+    r_{k - 1} &= r_k q_{k + 1},
+  \end{align*}
+  and $ r_k = (a,b) $. Rearranging:
+  \begin{align*}
+    a - bq_1 &= r_1,\\
+    b - r_1q_2 &= r_2,\\
+    r_1 - r_2 q_3 &= r_3,\\\
+    &\enspace \vdots\\
+    r_{k - 2} - r_{k - 1} q_k &= r_k = (a,b),
+  \end{align*}
+  and it is clear that we can substitute each equation into the one below it, eliminating every $ r_i $ until
+  we (in the final line) arrive at some equation of the form $ ax + by = (a,b) $.
+\end{proof}
+
+B\'ezout's Lemma is surprisingly useful; in fact, we will use it later this year to prove various properties of a particular system
+in algebra.\footnote{For those following along from the future, it will be used when we study \df{primitive roots}.}
+
+Since we know that $ (a,b) $ divides $ ax + by $ for all $ x $ and $ y $, the lemma tells us that for every $ n $, the equation
+\begin{equation}
+  ax + by = n(a,b)
+\end{equation}
+has an integer solution for $ x $ and $ y $. In fact, it has infinitely many:
+\begin{thm}
+  If $ (x,y) $ solves $ ax + by = z $, then all solutions are of the form $ (x - bn, an + y) $ for some $ n \in \mathbb{Z} $.
+\end{thm}
+
+\begin{proof}
+  Clearly $ a(x - bn) + b(an + y) = z $, so all expressions of that form are indeed solutions. On the other hand, suppose $ (x', y') $
+  is a solution. Then $ 0 = a(x - x') + b(y - y') $; it follows that $ a \mid (y - y') $. Rearranging, we obtain $ x' = x - b\frac{(y' - y)}{a} $,
+  where $ (y' - y)/a = n $ is an integer. Hence $ z = a(x - bn) + by' = ax - abn + by' = ax + b(y' - an) $, and hence $ y' = y + an $.
+\end{proof}
+
+\begin{ex}
+  The equation $ 18x + 24y = 23 $ has no solutions, since $ (18,24) = 6 $ does not divide $ 23 $.
+\end{ex}
+\begin{ex}
+  We will solve $ 18x + 24y = 36 $ for all the integer solutions $ x, y $. Since $ (18,24) = 6 $, we will begin by solving $ 18x + 24y = 6 $:
+  \begin{align*}
+    24 = 1 \times 18 + 6\\
+    18 = 6 \times 3
+  \end{align*}
+  Hence $ 6 = 1 \times 24 + (-1) \times 18 $, and $ 36 = 6 \times 24 + (-6) \times 18 $. By the theorem above, all the solutions are
+  given by $ (6 - 24n, -6 + 18n) $ for $ n \in \mathbb{Z} $.
+\end{ex}
+
+\section{Prime Factorisation}
+\begin{defn}
+  A \df{prime} is an integer
+\end{defn}
+
+\section{Next Steps}
+As well as the material in the level three standards (differentiation, integration, algebra, linear systems, linear programming, path analysis,
+trigonometry, and conic sections) it is advantageous for Scholarship students to be aware of mathematics as a broader discipline. In the 2017
+paper, for example, the opening question part was on number theory.
+
+As such, I have here a list of books and topics which Scholarship students may wish to look over. I have included the University of Auckland
+library call number in brackets.
+\begin{itemize}
+  \item \textbf{Culture:} \emph{A Mathematician's Lament} by Paul Lockhart [510.71 L81].
+  \item \textbf{Proofs:} \emph{How to Think Like a Mathematician} by Kevin Houston [510 H84].
+  \item \textbf{Number theory:} \emph{Elementary Number Theory} by Underwood Dudley [512.72 D84].
+  \item \textbf{Linear algebra:} \emph{Linear Algebra: A Modern Introduction} by David Poole [512.5 P82].
+  \item \textbf{Geometry:} \emph{Geometry: A High School Course} by Serge Lang and Gene Murrow [516 L27].
+  \item \textbf{Set theory:} \emph{Naive Set Theory} by Paul Halmos [511.322 H19].
+  \item \textbf{Calculus:} \emph{Calculus} by Paul Spivak [515 S76].
+\end{itemize}
+
+I must stress that a comprehensive understanding of the content in the above books is \emph{not required}; in most cases, a read of the first three
+sections will suffice to obtain an overview of the relevant parts of the subject (not that that precludes interested students from reading further).
+
+\end{document}
