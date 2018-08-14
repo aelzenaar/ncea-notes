@@ -8,6 +8,7 @@
 \usepackage{multirow}
 \usepackage{subcaption}
 
+
 \usepackage[english]{babel}
 \usepackage[autostyle, english=british]{csquotes}
 \MakeOuterQuote{"}
@@ -16,6 +17,8 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
+
+\usepackage{skull}
 
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.11}
@@ -68,6 +71,7 @@
 \newtheorem{alg}[equation]{Algorithm}
 \theoremstyle{remark}
 \newtheorem{rem}[equation]{Remark}
+\newtheorem{warning}[equation]{Warning $\skull$}
 
 \newcommand{\df}[1]{\textbf{#1}}
 \newcommand{\T}{\mathrm{T}}
@@ -81,10 +85,18 @@
 
 \begin{document}
 \maketitle
+\setcounter{tocdepth}{1}
 \tableofcontents
 \section*{Preface}
 This set of notes is an introduction to the shallower foundations of mathematics, for those students who
-are attempting the New Zealand Scholarship examination in Calculus.
+are attempting the New Zealand Scholarship examination in Calculus. We broadly cover the following topics,
+but the point is to learn the methods, not the results.
+\begin{itemize}
+  \item A bit of set theory.
+  \item A bit of rigorous combinatorics.
+  \item A bit of number theory.
+  \item A bit of geometry.
+\end{itemize}
 
 I assume knowledge of the breadth of Level 2, but not any material from Level 3. As a guideline, I would
 expect any student attempting Scholarship to come into Level 3 with the following skills:
@@ -237,9 +249,18 @@ The unique function $ g $ defined as in the theorem for some function $ f $ is c
   Show that, if $ f^{-1} $ is the inverse of $ f $, then $ f^{-1} $ has an inverse and that inverse is $ f $.
 \end{exercise}
 
+\section{Combinatorics}
+We will now look at combinatorics as an application of set theory.
+\begin{warning}
+  This section will not be nice and cuddly like the combinatorics we did last year; instead of counting players on a team or probabilities, we
+  will be working directly with the guts of sets and functions. While this section is optional (like the rest of the notes), sometimes the gory
+  detail can provide a bit of perspective and some clarity.
+\end{warning}
+
 \section{Divisibility}
+\subsection{The Definition}
 Let $ a $ and $ b $ be integers. We say that $ a $ \df{divides} $ b $ (or $ a $ is a \df{factor} of $ b $) if there is some integer $ q $ such
-that $ b = aq $; we write $ a \mid b $.
+that $ b = aq $; we write $ a \mid b $. If $ a $ does not divide $ b $, we write $ a \nmid b $.
 \begin{lem}\footnote{\df{Lemma}: A statement which is proved on the way to a more important result. (Plural: lemmata.)}\leavevmode
   Let $ a $, $ b $, and $ c $ be integers. Then:
   \begin{enumerate}
@@ -295,6 +316,7 @@ From this point, lower case italic letters will always denote integers unless ot
   Show that $ \abs{n} \mid n $ and $ n \mid \abs{n} $.
 \end{exercise}
 
+\subsection{Greatest Common Divisors}
 \begin{defn}
   If $ a $ and $ b $ are integers, then the integer $ d $ is called the \df{greatest common divisor} of $ a $ and $ b $ (written $ d = (a,b) $)
   if the following two conditions are met:
@@ -483,10 +505,210 @@ has an integer solution for $ x $ and $ y $. In fact, it has infinitely many:
   given by $ (6 - 24n, -6 + 18n) $ for $ n \in \mathbb{Z} $.
 \end{ex}
 
+\section{Induction}
+Recall the well-ordering principle:
+\begin{equation}
+  \begin{minipage}{0.8\textwidth}
+    If $ S $ is a non-empty set of integers which is bounded below (i.e. there is some $ b \in \mathbb{Z} $ so that
+    if $ n \in S $ then $ n \geq b $), then $ S $ has a smallest element.
+  \end{minipage}
+\end{equation}
+
+We will use this principle to prove the following \df{induction principle}.
+\begin{thm}
+  Let $ S \subseteq \mathbb{N} $ be a set satisfying the following criteria:
+  \begin{enumerate}
+    \item $ 1 \in S $
+    \item If $ n \in S $, then $ n + 1 \in S $.
+  \end{enumerate}
+  Then $ S = \mathbb{N} $.
+\end{thm}
+\begin{proof}
+  Let $ Q $ be the set of all natural numbers not in $ S $. Since every element of $ Q $ is greater than 1, $ Q $ is a bounded below subset of the
+  integers and hence either is empty or has a least element, $ n $. Suppose the latter. Since $ 1 \notin Q $, $ n \neq 1 $. Hence $ n - 1 $ is a
+  natural number, and must therefore be in $ S $ (or otherwise $ n $ would not be the least element of $ Q $). But, by the definition of $ S $,
+  if $ n - 1 \in S $ then $ n = (n - 1) + 1 \in S $. Hence $ n \in S $, and $ Q $ does not have a least element; so it is empty, and $ S = \mathbb{N} $.
+\end{proof}
+
+This principle is frequently useful if we want to prove a statement about all natural numbers, but we don't have much information
+to go on. We normally split proofs by induction into three steps:
+\begin{enumerate}
+  \item The base case. Prove that $ 1 \in S $, where $ S $ is the set of all natural numbers for which the property holds.
+  \item The induction step. Prove that if the property holds for $ n $, then it holds for $ n + 1 $.
+  \item The conclusion step. Apply the principle of induction to (1) and (2) above, and conclude that $ S = \mathbb{N} $: the property holds for all natural numbers.
+\end{enumerate}
+
+\begin{thm}
+  The expression $ 6^n - 1 $ is divisible by 5 for all $ n \in \mathbb{N} $.
+\end{thm}
+\begin{proof}
+  We use induction on $ n $.
+
+  \paragraph{Base case: $ n = 1 $.}
+  If $ n = 1 $, then $ 6^n - 1 = 6 - 1 = 5 $, which is obviously divisible by 5.
+
+  \paragraph{Inductive step.}
+  Suppose that the theorem holds for some $ n \in \mathbb{N} $. Consider $ 6^{n + 1} - 1 = 6 \cdot 6^n - 1 = 6 \cdot 6^n - 6 + 5 = 6(6^n - 1) + 5 $;
+  since $ 6^n - 1 $ is divisible by 5, it follows that $ 6(6^n - 1) + 5 $ is divisible by 5 (why?) and so the theorem holds for $ n + 1 $.
+
+  \paragraph{Conclusion.}
+  Since the theorem holds for $ n = 1 $, and the result for $ n $ implies the result for $ n + 1 $, the theorem holds for all natural numbers.
+\end{proof}
+
+As a brief notational note, since we need to write sums and products of a series of numbers quite often, we introduce a condensed form:
+\begin{gather}
+  \sum_{k = 1}^n a_k = a_1 + a_2 + \cdots + a_n\\
+  \prod_{k = 1}^n a_k = a_1 a_2 \cdots a_n.
+\end{gather}
+
+\begin{exercise}\label{ex:w1}
+  Show that the sum of all the natural numbers, $ \sum_{k = 1}^n k $, is equal to $ \frac{n(n+1)}{2} $ using induction.
+\end{exercise}
+
+\begin{exercise}
+  Find a closed-form formula for $ \sum_{k = 0}^n k^2 $.
+\end{exercise}
+
+Recall also that the \df{factorial} of $ n $ is defined by
+\begin{displaymath}
+  n! = 1 \cdot 2 \cdots (n - 1) \cdot n.
+\end{displaymath}
+
+\begin{exercise}
+  Show that for all $ n \in \mathbb{N} $, $ 2^{n - 1} \leq n! $.
+\end{exercise}
+
+\begin{exercise}
+  Use induction to show that, for all $ n $, $ x^n - 1 = (x - 1)\left(\sum_{k = 1}^{n - 1} x^k \right) $.
+\end{exercise}
+
+\begin{exercise}
+  The set $ \mathcal{P}(X) $, called the \textbf{power set} of a set $ X $, is the set of all subsets of $ X $. Show
+  that $ \abs{\mathcal{P}(X)} = 2^{\thinspace\abs{X}} $ if $ X $ is finite.
+\end{exercise}
+
+Induction is often useful when we are trying to prove statement about recursive definitions: definitions where
+the $n$th case depends on the $ (n - 1)$th case.
+
+\begin{exercise}
+  Consider the sequence $ T $ defined recursively by
+  \begin{align*}
+    T_0 &= 0\\
+    T_n &= 2T_{n - 1} + 1.
+  \end{align*}
+  For example, $ T_1 = 2 \times 0 + 1 = 1 $; $ T_2 = 2 \times 1 + 1 = 3 $; and $ T_3 = 2 \times 3 + 1 = 7 $. Can you find
+  a closed-form formula for $ T_n $ (i.e. a formula depending only on $ n $)?
+\end{exercise}
+
+\begin{exercise}
+  Recall that the \df{Fibonnacci series} is defined by
+  \begin{align*}
+    F_1 &= F_2 = 1\\
+    F_n &= F_{n - 1} + F_{n - 2}.
+  \end{align*}
+  The first few values of this sequence are $ 1, 1, 2, 3, 5, 8, 13, \dots $. At first glance, there does not seem to be
+  any simple closed-form equation for $ F_n $; it is surprising, then, that
+  \begin{displaymath}
+    F_n = \frac{\left(1 + \sqrt{5}\right)^n - \left(1 - \sqrt{5}\right)^n}{2^n \sqrt{5}}.
+  \end{displaymath}
+  Prove it.
+\end{exercise}
+
+
 \section{Prime Factorisation}
 \begin{defn}
-  A \df{prime} is an integer
+  A \df{prime} is a number $ p \in \mathbb{N} $ such that if there exists $ n \in \mathbb{N} $ where $ n \mid p $, then $ n = 1 $ or $ n = p $.
 \end{defn}
+
+The primes are, in some sense, the `building blocks' of the natural numbers. This is because every natural number can
+be written as a product of prime numbers, and be written like that in exactly one way. Our goal is, eventually, the
+following theorem which guarantees this property; we will give the proof at the end of the section.
+\begin{thm}[Fundamental Theorem of Arithmetic]\label{thm:funarithmetic}
+  If $ n $ is a natural number, then there exist distinct primes $ p_1 < p_2 < \cdots < p_n $ and natural
+  numbers $ e_1 $, $ e_2 $, ..., $ e_n $, such that
+  \begin{displaymath}
+    n = p_1^{e_1} p_2^{e_2} \cdots p_n^{e_n}.
+  \end{displaymath}
+  This factorisation is unique.
+\end{thm}
+
+\begin{ex}
+  We can write $ 1234 = 2 \times 617 $, and $ 540 = 2^2 \times 3^3 \times 5 $.
+\end{ex}
+
+We start out with some properties of the primes which we take for granted.
+\begin{lem}[Euclid's lemma]
+  If $ p $ is prime, and $ p \mid ab $, then either $ p \mid a $ or $ p \mid b $.
+\end{lem}
+Clearly this is not necessarily true if $ p $ is not prime:- $ 6 \mid (3 \times 4) $, but $ 6 \nmid 3 $ and $ 6 \nmid 4 $!
+\begin{proof}
+  Suppose $ p \mid ab $. Consider $ (p,b) $; since it is positive and divides $ p $, it is equal to either 1
+  or $ p $. If $ (p,b) = p $, then $ p \mid b $ and we are done. So suppose that $ (p,b) = 1 $. Then there exist (by B\'ezout's
+  lemma) $ x $ and $ y $ such that $ xp + yb = 1 $; multiplying both sides by $ a $, $ apx + aby = a $. Since $ p $ divides both
+  terms on the left, it must divide the right hand side; so $ p \mid a $, and we are done.
+\end{proof}
+
+\begin{lem}
+  If $ n \neq 1 $ is a natural number, then there exists some prime $ p $ such that $ p \mid n $.
+\end{lem}
+\begin{proof}
+  Let $ n $ be the smallest natural number not divisible by any prime. Then $ n $ is not itself a prime,
+  and so there is some natural number $ m $, $ 1 < m < n $, that divides $ n $. But $ m $ is divisible by
+  a prime $ p $ (since it is less than $ n $), and hence $ p \mid n $. So there cannot be a smallest natural
+  number not divisible by any prime, and hence all natural numbers are divisible by primes (except 1).
+\end{proof}
+
+These two lemmas are all we need for the
+\begin{proof}[Proof of the fundamental theorem of arithmetic]
+  Since the theorem is obvious for $ n $ prime, let $ n > 1 $ be a non-prime natural number. We use induction; assume that all the $ m < n $ are uniquely
+  factorisable into primes.
+  \paragraph{Existence of factorisation.}
+  Since $ n > 1 $, there is some prime $ p $ and integer $ m \leq n $ so that $ pm = n $. By the inductive hypothesis, $ m $ is factorisable into
+  primes; so $ n $ is factorisable into primes.
+  \paragraph{Uniqueness of factorisation.}
+  Suppose that $ n $ can be factorised in two ways, as $ n = p_1^{e_1} \cdots p_n^{e_n} = q_1^{f_1} \cdots q_m^{f_m} $. By Euclid's lemma,
+  we have $ p_1 = q_i $ for some $ i $; hence $ p_1^{e_1 - 1} \cdots p_n^{e_n} = q_1^{f_1} \cdots q_i^{f_i - 1} \cdots q_m^{f_m} $. But this
+  new number is less than $ n $, and so the factorisation is unique; applying the inductive hypothesis, the factorisation of $ n $ is unique.
+\end{proof}
+
+We now look at a couple of applications of the fundamental theorem. First of all,
+\begin{cor}
+  If $ (a,b) $ and $ [a,b] $ are, respectively, the greatest common divisor and least common multiple of $ a $ and $ b $,
+  then $ (a,b)[a,b] = ab $.
+\end{cor}
+\begin{proof}
+  Suppose $ a $ and $ b $ can be factorised as
+  \begin{gather*}
+    a = p_1^{e_1} \cdots p_n^{e_n}\\
+    b = p_1^{f_1} \cdots p_n^{f_n}
+  \end{gather*}
+  where we write both in terms of the same primes, but exponents may be zero. I claim that
+  \begin{displaymath}
+    (a,b) = p_1^{\min(e_1, f_1)} \cdots p_n^{\min(e_n, f_n)} \text{ and } [a,b] = p_1^{\max(e_1, f_1)} \cdots p_n^{\max(e_n, f_n)}
+  \end{displaymath}
+  (check this yourself), and by direct multiplication the result holds.
+\end{proof}
+
+\begin{cor}
+  If $ n $ has prime factorisation $ n = p_1^{e_1} \cdots p_n^{e_n} $, then the number of possible factors of $ n $ is precisely $ d(n) = \prod_{k = 1}^n (e_k + 1) $.
+\end{cor}
+\begin{proof}
+  By Euclid's lemma, every divisor of $ n $ is of the form $ p_1^{f_1} \cdots p_n^{f_n} $ where each $ f_k $ satisfies $ 0 \leq f_k \leq e_k $. There
+  are $ e_k + 1 $ choices for each exponent, and each exponent is independent; the result follows by counting.
+\end{proof}
+
+Finally, we will look at one final classical application of Euclid's lemma:
+\begin{cor}
+  $ \sqrt{p} $ is irrational for all primes $ p $.
+\end{cor}
+\begin{proof}
+  Suppose $ \sqrt{p} $ is rational; so there exist coprime integers $ a $ and $ b $ such that $ \sqrt{p} = a/b $. This implies
+  that $ pb^2 = a^2 $. Since $ p \mid a^2 $, by Euclid's lemma $ p \mid a $; hence $ a = np $ for some $ n $, and $ pb^2 = n^2 p^2 $.
+  Cancelling $ p $, $ b^2 = n^2 p $, and (again by Euclid's lemma) $ p \mid b $. So $ p \leq (a,b) $, and (in particular) $ (a,b) > 1 $ ---
+  so the existence of fractional representation in lowest form of $ \sqrt{p} $ is contradictory.
+\end{proof}
+
+\section{Triangles}
 
 \section{Next Steps}
 As well as the material in the level three standards (differentiation, integration, algebra, linear systems, linear programming, path analysis,
