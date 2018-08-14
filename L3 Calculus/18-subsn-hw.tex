@@ -1,85 +1,35 @@
-\documentclass{exam}
-\usepackage[utf8]{inputenc}
-
-\usepackage[parfill]{parskip}
-\usepackage[dvipsnames]{xcolor}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amsthm}
-\usepackage{microtype}
-\usepackage{siunitx}
-\DeclareSIUnit\year{yr}
-\usepackage{pgfplots}
-\usepackage{graphicx}
-\usepackage{sidecap}
-\sidecaptionvpos{figure}{c}
-\usepackage{float}
-\usepackage{gensymb}
-\usepackage{tkz-euclide}
-\usetkzobj{all}
-\usepackage{commath}
-\usepackage{hyperref}
-\usepackage{enumitem}
-\usepackage{wasysym}
-\usepackage[autostyle, english = british]{csquotes}
-\MakeOuterQuote{"}
-
-
-\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
-
-\newtheorem*{thm}{Theorem}
-\newtheorem*{iden}{Identity}
-\newtheorem*{lemma}{Lemma}
-\theoremstyle{definition}
-\newtheorem*{defn}{Definition}
-\newtheorem*{ex}{Example}
-
-\newtheoremstyle{break}
-  {\topsep}{\topsep}%
-  {\itshape}{}%
-  {\bfseries}{}%
-  {\newline}{}%
-\theoremstyle{break}
-\newtheorem*{bthm}{Theorem}
-
-% russian integral
-\usepackage{scalerel}
-\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
-
-\pgfplotsset{vasymptote/.style={
-    before end axis/.append code={
-        \draw[densely dashed] ({rel axis cs:0,0} -| {axis cs:#1,0})
-        -- ({rel axis cs:0,1} -| {axis cs:#1,0});
-    }
-}}
-
-% \qformat{Question \thequestion: \thequestiontitle\hfill}
-
+\input{stdinclude.tex}
 \begin{document}
 
-\section*{NCEA Level 3 Calculus (Integration)\\18. Substitution (Homework)}
+\mainHeaderIntgHw{18}{Substitution}
 \subsection*{Reading}
 Historically, when Leibniz conceived of the notation, $ \od{y}{x} $ was supposed to be a quotient: it was the quotient of the "infinitesimal change in $y$ produced by the change in $x$" divided by the "infinitesimal change in $x$".
-However, the formulation of calculus with infinitesimals in the usual setting of the real numbers leads to a lot of problems. For one thing, infinitesimals can't exist in the usual setting of real numbers! Because the real numbers satisfy an important property, called the Archimedean Property: given any positive real number $ \varepsilon > 0 $, no matter how small, and given any positive real number $ N > 0 $, no matter how big, there exists a natural number $n$ such that $n \varepsilon > N$. But an "infinitesimal" $ \xi $ is supposed to be so small that no matter how many times you add it to itself, it never gets to 1, contradicting the Archimedean Property.
+
+However, the formulation of calculus with infinitesimals in the usual setting of the real numbers leads to a lot of problems. For one thing, infinitesimals can't exist in the usual setting of real numbers! This is because the real numbers satisfy an important property, called the Archimedean property: given any positive real number $ \varepsilon > 0 $, no matter how small, and given any positive real number $ N > 0 $, no matter how big, there exists a natural number $n$ such that $n \varepsilon > N$. An "infinitesimal" $ \xi $ is supposed to be so small that no matter how many times you add it to itself, it never gets to 1, contradicting the Archimedean property.
+
 Other problems: Leibniz defined the tangent to the graph of $y=f(x)$ at $x=a$ by saying "Take the point $(a,f(a))$; then add an infinitesimal amount to $a$, $a+\dif{x}$, and take the point $(a+dx,f(a+\dif{x}))$, and draw the line through those two points." But if they are two different points on the graph, then it's not a tangent, and if it's just one point, then you can't define the line because you just have one point. That's just two of the problems with infinitesimals. (See below where it says "However...", though.)
-So Calculus was essentially rewritten from the ground up in the following 200 years to avoid these problems, and you are seeing the results of that rewriting. Because of that rewriting, the derivative is no longer a quotient, now it's a limit:
+
+So calculus was essentially rewritten from the ground up in the following 200 years to avoid these problems, and you are seeing the results of that rewriting. Because of that rewriting, the derivative is no longer a quotient, now it's a limit:
 \begin{displaymath}
   \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}
 \end{displaymath}
-And because we cannot express this limit-of-a-quotient as a-quotient-of-the-limits (both numerator and denominator go to zero), then the derivative is not a quotient.
-However, Leibniz' notation is very suggestive and very useful; even though derivatives are not really quotients, in many ways they behave as if they were quotients. So we have the Chain Rule:
+
+Because we cannot express this limit-of-a-quotient as a-quotient-of-the-limits (both numerator and denominator go to zero), then the derivative is not a quotient.
+However, Leibniz' notation is very suggestive and very useful; even though derivatives are not really quotients, in many ways they behave as if they were quotients. So we have the chain rule:
 \begin{displaymath}
   \od{y}{x} = \od{y}{u} \od{y}{x}
 \end{displaymath}
-which looks very natural if you think of the derivatives as "fractions". You have the Inverse Function theorem, which tells you that
+which looks very natural if you think of the derivatives as "fractions". You have the inverse function theorem, which tells you that
 \begin{displaymath}
   \od{x}{y} = 1/\od{y}{x}
 \end{displaymath}
-which is again almost "obvious" if you think of the derivatives as fractions. So, because the notation is so nice and so suggestive, we keep the notation even though the notation no longer represents an actual quotient, it now represents a single limit. In fact, Leibniz' notation is so good, so superior to the prime notation and to Newton's notation, that England fell behind all of Europe for centuries in mathematics and science because, due to the fight between Newton's and Leibniz' camp over who had invented Calculus and who stole it from whom (consensus is that they each discovered it independently), England's scientific establishment decided to ignore what was being done in Europe with Leibniz' notation, stuck to Newton's, and got stuck in the mud in large part because of it.
-So, even though we write $ \od{y}{x} $ as if it were a fraction, and many computations look like we are working with it like a fraction, it isn't really a fraction (it just plays one on television).
-However... There is a way of getting around the logical difficulties with infinitesimals; this is called nonstandard analysis. It's pretty difficult to explain how one sets it up, but you can think of it as creating two classes of real numbers: the ones you are familiar with, that satisfy things like the Archimedean Property, the Supremum Property, and so on, and then you add another, separate class of real numbers that includes infinitesimals and a bunch of other things. If you do that, then you can, if you are careful, define derivatives exactly like Leibniz, in terms of infinitesimals and actual quotients; if you do that, then all the rules of Calculus that make use of $ \od{y}{x} $ as if it were a fraction are justified because, in that setting, it is a fraction. Still, one has to be careful because you have to keep infinitesimals and regular real numbers separate and not let them get confused, or you can run into some serious problems.
+which is again almost "obvious" if you think of the derivatives as fractions. So, because the notation is so nice and so suggestive, we keep the notation even though the notation no longer represents an actual quotient: it now represents a single limit.  Even though we write $ \od{y}{x} $ as if it were a fraction, and many computations look like we are working with it like a fraction, it isn't really a fraction (it just plays one on television).
 
-\small\textit{From \url{https://math.stackexchange.com/questions/21199/is-frac-textrmdy-textrmdx-not-a-ratio}.}
+However... There is a way of getting around the logical difficulties with infinitesimals; this is called nonstandard analysis. It's pretty difficult to explain how one sets it up, but you can think of it as creating two classes of real numbers: the ones you are familiar with, that satisfy things like the Archimedean property, the least-upper-bound property, and so on, and then you add another, separate class of real numbers that includes infinitesimals and a bunch of other things. If you do that, then you can, if you are careful, define derivatives exactly like Leibniz, in terms of infinitesimals and actual quotients; if you do that, then all the rules of calculus that make use of $ \od{y}{x} $ as if it were a fraction are justified because, in that setting, it is a fraction. Still, one has to be careful because you have to keep infinitesimals and regular real numbers separate and not let them get confused, or you can run into some serious problems.
+
+\begin{flushright}
+  From \url{https://math.stackexchange.com/questions/21199/is-frac-textrmdy-textrmdx-not-a-ratio}.
+\end{flushright}
 
 \subsection*{Questions}
 \begin{questions}
