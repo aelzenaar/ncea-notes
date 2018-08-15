@@ -37,7 +37,16 @@ All distances are given in \si{\metre}, and all times in \si{\second}, unless ot
             from the beach, and bouy $ B $ is \SI{600}{\metre} away from the beach. What is the least distance that
             a swimmer must swim? (Hint: minimise $ PA + PB $.)
             \begin{center}
-              \includegraphics[width=0.5\linewidth]{bouys}
+              \begin{tikzpicture}[scale=0.6]
+                \fill[Dandelion] (-5,0)--(5,0)--(5,-3)--(-5,-3)--cycle;
+                \node[label=left:{$B$},circle,fill,inner sep=2pt] at (-4, 2) {};
+                \node[label=right:{$A$},circle,fill,inner sep=2pt] at (4, 5) {};
+                \node[label=below:{$P$},circle,fill,inner sep=2pt] at (-1, 0) {};
+                \draw (-4, -1) --node[below]{\SI{1200}{\metre}} (4, -1);
+                \draw (-4, 0) --node[left]{\SI{600}{\metre}} (-4, 2);
+                \draw (4, 0) --node[right]{\SI{800}{\metre}} (4, 5);
+                \draw[style=dotted] (-4,2)--(-1,0)--(4,5);
+              \end{tikzpicture}
             \end{center}
   \question The following graph shows the acceleration of a rocket from launch until it reaches orbit. Given that the
             initial velocity of the rocket was \SI{0}{\foot\per\second}, find the final velocity of the rocket.
