@@ -1449,8 +1449,8 @@ Firstly, the displacement of a single point on a wave at time $ t $ is given by 
 where $ A $ is the amplitude, $ \phi $ is the \textbf{phase} (a measure of the initial position of the particle),
 and $ \omega = 2\pi f $ is the \textbf{angular frequency} of the wave.
 
-Secondly, the displacement of each point $ x $ metres along the wave at a given instant is given by $ y = A\sin(\frac{2\pi}{\lambda} t + \phi) $
-(or setting $ \nu = 1/\lambda $ to be the \textbf{wavenumber}) $ y = A\sin(2\pi\nu t + \phi) $.
+Secondly, the displacement of each point $ x $ metres along the wave at a given instant is given by $ y = A\sin(\frac{2\pi}{\lambda} x + \phi) $
+(or setting $ \nu = 1/\lambda $ to be the \textbf{wavenumber}) $ y = A\sin(2\pi\nu x + \phi) $.
 
 \begin{example}
   Consider a wave of frequency \SI{2}{\hertz} with an amplitude of \SI{2}{\metre}. Initially, a particle on
@@ -2085,8 +2085,8 @@ which can be solved via separation of variables:
   Q &= Q_0 e^{-t/RC}.
 \end{align}
 Note that $ e^{-C_0} = Q_0 $ is the initial charge on the capacitor. We let $ \tau = RC $, and call this the
-\textbf{time constant} of the circuit. The time constant is the time taken for the current to reduce to $ 1/e $
-of its initial amount; the current is negligible after $ 5\tau $.
+\textbf{time constant} of the circuit. The time constant is the time taken for the charge to reduce to $ 1/e $
+of its initial amount; the charge is negligible after $ 5\tau $.
 
 Since $ V \propto Q $, we also have
 \begin{equation}
@@ -2098,7 +2098,7 @@ We find an expression for the current by differentiating the charge with respect
   I = -\od{Q}{t} = -\od{}{t} Q_0 e^{-t/RC} = \frac{Q_0}{RC} e^{-t/RC} = \frac{V_0}{R} e^{-t/RC} = I_0 e^{-t/RC}.
 \end{equation}
 
-The charge and current become negligible after $ t = 5\tau $.
+The current also becomes negligible after $ t = 5\tau $.
 
 We also have the following equations for charging a capacitor, derived in the same way as those for discharging:
 \begin{align}
@@ -2321,7 +2321,7 @@ a voltage that opposes this dramatic current slope; similarly to the analysis of
 \begin{equation}
   I = I_0 e^{-t/(L/R)}.
 \end{equation}
-let us further define $ \tau = L/R $ to be the time constant of this system, which acts in the same way as the time constant
+Let us further define $ \tau = L/R $ to be the time constant of this system, which acts in the same way as the time constant
 of a capacitor.
 
 \begin{exercise*}
