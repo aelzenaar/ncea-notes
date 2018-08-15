@@ -118,7 +118,7 @@
 \DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
 
 % Make image counter count up everywhere.
-\usepackage{chngcntr}
+% \usepackage{chngcntr}
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
 
@@ -437,7 +437,7 @@ Now we can evaluate the right-hand side via the chain rule and the definition of
 \end{displaymath}
 and overall, we have the following identity:
 \begin{displaymath}
-  \rint_a^b F \dif{x} = \frac{1}{2}mv_0^2 - \frac{1}{2}mv_1^2
+  \rint_a^b F \dif{x} = \frac{1}{2}mv_1^2 - \frac{1}{2}mv_0^2
 \end{displaymath}
 We define the quantity on the left (the `total amount of force' we put in) to be \textbf{work} ($ W $), and the quantity on
 the right to be the change in \textbf{kinetic energy} ($ \Delta E_k $) when the object is accelerated from $ v_0 $ to $ v_1 $.
@@ -714,7 +714,7 @@ The constant $ G $ is \SI{6.674e-11}{\newton\metre\squared\per\kilo\gram\squared
   Use dimensional analysis to confirm the units of $ G $.
 \end{exercise}
 
-We can use this law to derive the value of $ g $, the acceleration due to gravity on earth. Let $ m $ be the mass of the object, and $ M $ the
+We can use this law to derive the value of $ g $, the acceleration due to gravity at the surface of the earth. Let $ m $ be the mass of the object, and $ M $ the
 mass of the earth. We have $ mg = G\frac{mM}{r^2} $, so $ g = \frac{GM}{r^2} = \frac{\num{6.674e-11} \times \num{5.972e24}}{(\num{6371e3})^2} $
 (since the distance between the centre of the earth and the centre of mass of the object is approximately the radius of the earth) and
 so $ g \approx \SI{9.8195}{\metre\per\second\squared} $.\footnote{~A more accurate calculation or measurement gives the value
@@ -734,6 +734,23 @@ spheres of different masses off the Leaning Tower of Pisa.
 Apollo 15 astronaut David Scott repeated a similar experiment on the moon with a feather and a hammer.
 
 \goandwatch{https://www.youtube.com/watch?v=5C5_dOEyAfk}
+
+Of course, $ F = mg $ only if the object is close to the surface of the earth. If an object is at a distance $ x $ above the surface
+of the earth, then $ F = G\frac{mM}{(x + r)^2} $; but $ g = \frac{GM}{r^2} $ and so
+\begin{equation}
+  F = \frac{mgR^2}{(x + R)^2}
+\end{equation}
+(where the force is directed towards the centre of the earth).
+
+\begin{exercise*}
+  By Newton's second law, for a projectile fired straight into the air from the surface of the earth, $ ma = -\frac{mgR^2}{(x + R)^2} $. Suppose
+  that the initial velocity of the projectile is $ v_0 $, and that it reaches a maximum height $ h $ above the earth's surface. Show that
+  \begin{displaymath}
+    v_0 = \sqrt{\frac{2grh}{r + h}},
+  \end{displaymath}
+  where $ r $ is the radius of the earth and $ g $ is the acceleration due to gravity at the earth's surface.\footnote{Adapted from the 2017 Scholarship
+  Calculus examination; using energy conservation, this question becomes routine!}
+\end{exercise*}
 
 \begin{figure}
   \centering
