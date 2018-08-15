@@ -50,10 +50,10 @@ I am not currently planning any stats notes.
 **In progress:**
 I am currently in the process of reworking and reorganising my L3 maths notes; the final plan will be to have the following
 sets of notes, broadly in the given logical order and aligned with the L2 notes above:
- 1. Foundations for Scholarship. Basic set theory and number theory, with proof writing. This will be broadly based on the generic skills notes above.
+ 1. [_Down the River: Foundations for Scholarship_](L3%20Maths%20FFS/foundations.pdf). Basic set theory, combinatorics, and number theory, with proof writing. This will be broadly based on the generic skills notes above.
  2. Linear systems. Perhaps will include critical path analysis, as these notes seem to be where the applied stuff goes. Based on the notes above that I wrote last year, but with some more problems.
  3. Trigonometry. WIP.
- 4. Calculus. This reworking is [done](L3%20Calculus/bookform.pdf)!
+ 4. [Calculus](L3%20Calculus/bookform.pdf). [DONE]
  5. Algebra. I will either rework or rewrite _Solutions_.
  6. Conic Sections. This is currently a WIP.
 
