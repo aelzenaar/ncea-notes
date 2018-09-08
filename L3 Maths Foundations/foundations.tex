@@ -25,6 +25,8 @@
 \usepgfplotslibrary{fillbetween}
 \usetikzlibrary{patterns}
 
+\usepackage{ytableau}
+
 \usepackage{hyperref}
 
 \usepackage[margin=1in]{geometry}
@@ -66,6 +68,7 @@
 \newtheorem{prp}[equation]{Proposition}
 \theoremstyle{definition}
 \newtheorem{defn}[equation]{Definition}
+\newtheorem{ax}[equation]{Axioms}
 \newtheorem{ex}[equation]{Example}
 \newtheorem{exercise}[equation]{Exercise}
 \newtheorem{alg}[equation]{Algorithm}
@@ -83,7 +86,7 @@
 \DeclareMathOperator{\Inj}{Inj}
 \DeclareMathOperator{\Bij}{Bij}
 
-\title{Down the River: Foundations for Scholarship}
+\title{Down the River: Sets and Number Theory for Scholarship}
 \author{Alex Elzenaar}
 \date{\today}
 
@@ -97,9 +100,7 @@ are attempting the New Zealand Scholarship examination in Calculus. We broadly c
 but the point is to learn the methods, not the results.
 \begin{itemize}
   \item A bit of set theory.
-  \item A bit of rigorous combinatorics.
   \item A bit of number theory.
-  \item A bit of geometry.
 \end{itemize}
 
 I assume knowledge of the breadth of Level 2, but not any material from Level 3. As a guideline, I would
@@ -257,97 +258,6 @@ a function has an inverse then it is called \df{invertible}, and thus the theore
 \begin{exercise}
   Show that, if $ f^{-1} $ is the inverse of $ f $, then $ f^{-1} $ has an inverse and that inverse is $ f $.
 \end{exercise}
-
-\section{Combinatorics}
-\subsection{Classes of Maps}
-We will now look at combinatorics as an application of set theory.
-\begin{warning}
-  This section will not be nice and cuddly like the combinatorics we did last year; instead of counting players on a team or probabilities, we
-  will be working directly with the guts of sets and functions. While this section is optional (like the rest of the notes), sometimes the gory
-  detail can provide a bit of perspective and some clarity.
-\end{warning}
-
-The basic combinatorial rules, which are restatements of results from set theory, are:
-\begin{equation}
-  \begin{minipage}{0.8\textwidth}
-    \begin{enumerate}
-      \item \df{The rule of equality.} If $ N $ and $ R $ are finite sets, and if there exists a bijection between them, then $ \abs{N} = \abs{R} $.
-      \item \df{The rule of sums.} If $ A_1, ..., A_n $ are finite sets with no elements in common, then $ \abs{\cup A_i} = \abs{A_1} + \cdots + \abs{A_n} $.
-      \item \df{The rule of products.} If $ A_1, ..., A_n $ are finite sets, then $ \abs{A_1 \times \cdots \times A_n} = \abs{A_1} \cdots \abs{A_n} $.
-    \end{enumerate}
-  \end{minipage}
-\end{equation}
-
-For the remainder of this section, we will let $ N $ and $ R $ be finite sets. We will study the following sets of functions from $ N $ to $ R $, and
-count their elements:
-\begin{equation}
-  \begin{aligned}
-    \Map(N,R) &= \{f : N \to R : f \text{ arbitrary}\}\\
-    \Sur(N,R) &= \{f : N \to R : f \text{ surjective}\}\\
-    \Inj(N,R) &= \{f : N \to R : f \text{ injective}\}\\
-    \Bij(N,R) &= \{f : N \to R : f \text{ bijective}\}
-  \end{aligned}
-\end{equation}
-
-As a first step, we can say the following things about the sizes of $ N $ and $ R $ based on the existence (or lack thereof) of functions
-matching these criteria.
-\begin{lem}\leavevmode
-  \begin{enumerate}
-    \item If $ \Bij(N,R) $ is not empty, then $ \abs{N} = \abs{R} $.
-    \item If $ \Inj(N,R) $ is not empty, then $ \abs{N} \leq \abs{R} $.
-    \item If $ \Sur(N,R) $ is not empty, then $ \abs{N} \geq \abs{R} $.
-  \end{enumerate}
-\end{lem}
-\begin{proof}
-  If there is a bijection from $ N $ to $ R $, then we can pair up the elements of both sets with none left over, and hence the
-  two sets are the same size (this is just the rule of equality). If there is an injective function from $ N $ to $ R $, then for
-  every distinct element of $ N $ there is at least one distinct element of $ R $, so there are at least as many elements in $ R $
-  as in $ N $. If there is a surjective function $ f $ from $ N $ to $ R $, then for every $ r \in R $ there is some element $ n \in N $
-  so that $ f(n) = r $ and hence there are at least as many elements in $ N $ as there are in $ R $.
-\end{proof}
-
-\subsection{Orderings}
-Suppose that we order $ N $ in some way, satisfying the following criteria:
-\begin{enumerate}
-  \item If $ a \leq b $ and $ b \leq a $, then $ a = b $.
-  \item If $ a \leq b $ and $ b \leq c $, then $ a \leq c $.
-  \item For all $ a $ and $ b $, either $ a \leq b $ or $ b \leq a $.
-\end{enumerate}
-(Such an ordering is called a \df{total order}.) Then we can look at any $ f : N \to R $ as giving a sequence of symbols in a
-word: if $ n \in N $ then we label the place $ n $ in the word with the symbol $ s = f(n) $; another metaphor is that we label
-a sequence of boxes with the ordered elements of $ N $ and then place the element $ f(n) $ of $ R $ in the corresponding box.
-Thus any map $ f : N \to R $, if $ N $ is ordered, is a labelling, indexing, or addressing of elements of $ S $ with elements of $ N $.
-If $ N = \{n_1, ..., n_m\} $ (with the natural total ordering), then we can unambigously represent $ f $ by writing the word $ f(n_1) f(n_2) \cdots f(n_m) $
-(here we are not multiplying, simply writing each symbol next to its neighbours).
-
-\begin{rem}
-  If $ N $ is totally ordered but $ R $ is unordered, and we pick a function $ f : N \to R $, then the sets $ f(X) = \{f(x) : x \in X\} $ are
-  all the subsets of $ R $ (with the usual conventions, i.e. $ \{a, a\} = \{a\} $ and $ \{a,b\} = \{b,a\} $). If we order $ R $, then we obtain
-  the ordered multisubsets of $ R $ (i.e. ordered subsets of $ R $ that can contain multiple copies of each element).
-\end{rem}
-
-\begin{ex}
-  Let $ N = \{1 < 2 < 3\} $ and $ R = \{a < b < c\} $. Then we can write out all of the elements of $ \Map(N,R) $:
-  \begin{displaymath}
-  \begin{tabular}{cccccc}
-    abc & acb & bac & bca & cab & cba\\
-    aab & aba & baa & aac & aca & caa\\
-    bba & bab & abb & bbc & bcb & cbb\\
-    cca & cac & acc & ccb & cbc & bcc\\
-    aaa & bbb & ccc &     &     &
-  \end{tabular}
-  \end{displaymath}
-  Then the first line consists of all the surjections; no other maps are onto or one-to-one.
-\end{ex}
-
-\begin{exercise}
-  Show that, if $ N $ is finite, and there exists a bijection from $ N $ to $ R $, then all injective or surjective functions
-  from $ N $ to $ R $ are in fact bijective.
-\end{exercise}
-
-\subsection{Permutations}
-If $ N = R $, then any bijective function $ f : N \to R $ is called a \df{permutation} of $ N $ --- one can imagine that $ f $ acts
-upon $ N $ by rearranging the order of its elements.
 
 \section{Divisibility}
 \subsection{The Definition}
@@ -789,7 +699,7 @@ We now look at a couple of applications of the fundamental theorem. First of all
   are $ e_k + 1 $ choices for each exponent, and each exponent is independent; the result follows by counting.
 \end{proof}
 
-Finally, we will look at one final classical application of Euclid's lemma:
+As a conclusion, we will look at one final classical application of Euclid's lemma:
 \begin{cor}
   $ \sqrt{p} $ is irrational for all primes $ p $.
 \end{cor}
@@ -800,7 +710,142 @@ Finally, we will look at one final classical application of Euclid's lemma:
   so the existence of fractional representation in lowest form of $ \sqrt{p} $ is contradictory.
 \end{proof}
 
-\section{Fields}
+\section{The Binomial Theorem}
+We will close out these notes by doing a little combinatorics.
+
+\begin{defn}
+  The \textbf{binomial coefficient} $ \binom{n}{k} $ (read \textbf{$ n $ choose $ k $}) is defined to be
+  \begin{displaymath}
+    \binom{n}{k} = \begin{cases}
+                     \dfrac{n!}{k!(n - k)!} & 0 \leq k \leq n\\
+                     0 & \text{otherwise}
+                   \end{cases}
+  \end{displaymath}
+  where $ n $ and $ k $ are non-negative integers.
+\end{defn}
+
+If we write $ kn! $, then this should be read as $ k(n!) $.
+
+\begin{exercise}
+  Show that, for all $ a \in \mathbb{N} $, $ \binom{a}{a} = 1 = \binom{a}{0} $.
+\end{exercise}
+
+\begin{exercise}
+  Compute $ \binom{3}{4} $, $ \binom{5}{2} $, and $ \binom{2}{5} $.
+\end{exercise}
+
+Binomial coefficients have another, more combinatorial definition: $ \binom{n}{k} $ is the number of different ways to choose subsets of size $ k $
+out of a set of size $ n $ (ignoring order). This is how we met them last year.
+
+\begin{exercise}
+  Prove that this definition is equivalent to the formulaic definition above.
+\end{exercise}
+
+\begin{thm}[And another time!]\label{ex:w2}
+  The sum of the first $ n $ natural numbers is $ S(n) = \frac{n(n+1)}{2} $.
+\end{thm}
+\begin{proof}
+  Consider the set $ X = \{1, 2, ..., n-1\} $; let us list the possible subsets of this set in a systematic way, in the form $ \{i,j\} $
+  for $ 1 \leq i \leq n - 2 $ and $ i < j \leq n - 1 $. Then:
+  \begin{itemize}
+    \item The sets with least element 1 are $ \{1, 2\} $, $ \{1, 3\} $, $ \{1, 4\} $, ..., $ \{1, n-1\} $ --- a total of $ n - 2 $.
+    \item The sets with least element 2 are $ \{2, 3\} $, $ \{2, 4\} $, $ \{2, 5\} $, ..., $ \{2, n-1\} $ --- a total of $ n - 3 $.
+    \item ...
+    \item The sets with least element $ n - 2 $ are $ \{n - 2, n - 1\} $ --- a total of 1.
+  \end{itemize}
+
+  Hence, the number of cardinality 2 subsets of $ X $ is $ (n - 2) + (n - 3) + \cdots + 1 = 1 + 2 + \cdots + (n - 2) $. But the number
+  of subsets of size 2 of $ X $ is given by
+  \begin{displaymath}
+    \binom{n - 1}{2} = \frac{(n - 1)!}{2(n - 3)!} = \frac{(n-1)(n-2)}{2}.
+  \end{displaymath}
+
+  Hence $ S(n - 2) = \frac{(n-1)(n-2)}{2} $, and so $ S(n) = \frac{(n - 1 + 2)(n - 2 + 2)}{2} = \frac{n(n+1)}{2} $.
+\end{proof}
+
+Before we can prove the binomial theorem, we need the following technical lemma. Try to prove it
+by yourself before reading the proof --- it is a simple bit of computation.
+\begin{lem}
+  Let $ 0 < k < n $; then $ \binom{n}{k} + \binom{n}{k - 1} = \binom{n + 1}{k} $.
+\end{lem}
+\begin{proof}
+  \begin{align*}
+    \binom{n}{k} + \binom{n}{k - 1} &= \frac{n!}{k! (n - k)!} + \frac{n!}{(k - 1)! (n - k + 1)!}\\
+                                    &= \frac{n!}{k(k - 1)! (n - k)!} + \frac{n!}{(k - 1)! (n - k)! (n - k + 1)}\\
+                                    &= \frac{kn! + (n - k + 1) n!}{(k - 1)! (n - k)! (n - k + 1)k}\\
+                                    &= \frac{kn! + (n + 1)! - kn! + n!}{k!(n - k + 1)!}\\
+                                    &= \frac{(n + 1)!}{k!(n + 1 - k)!}\\
+                                    &= \binom{n + 1}{k}.
+  \end{align*}
+\end{proof}
+
+\begin{exercise}
+  Last year, we proved the above lemma by counting subsets of a set. Can you reproduce that proof?
+\end{exercise}
+\begin{exercise}
+  Show that $ \binom{n}{k}/n $ is an integer for all $ 1 \leq k \leq n - 1 $. [Hint: use induction on $ n $ and the lemma above.]
+\end{exercise}
+
+The punchline of our work is the following theorem, which has applications in algebra, combinatorics, and essentially every other
+branch of mathematics.
+
+\begin{thm}[Binomial theorem]
+  Let $ x $ and $ y $ be real numbers, and $ n $ be a non-negative integer. Then,
+  \begin{displaymath}
+    (x + y)^n = \sum_{k = 0}^n \binom{n}{k} x^{n - k} y^k.
+  \end{displaymath}
+\end{thm}
+
+For example, this theorem allows us to quickly calculate $ (x + y)^3 $ without having to expand three pairs of brackets:
+\begin{equation}
+  (x + y)^3 = \binom{3}{0} x^3 + \binom{3}{1} x^2 y + \binom{3}{2} x y^2 + \binom{3}{3} y^3 = x^3 + 3(x^2 y + xy^2) + y^3.
+\end{equation}
+
+\begin{exercise}
+  Verify the theorem by expanding $ (y + 1)^4 $ both by the binomial theorem and by brute force. Why is this not a proof?
+\end{exercise}
+
+\begin{proof}[Proof of binomial theorem]
+  We use induction on $ n $.
+
+  \paragraph{Base case: $ n = 0 $.}
+  Suppose that $ n = 0 $. Then:
+  \begin{displaymath}
+    (x + y)^0 = 1 = \binom{0}{0} x^{-0} y^0 = \sum_{k = 0}^0 \binom{0}{k} x^{-k} y^k = \sum_{k = 0}^n \binom{n}{k} x^{n - k} y^k.
+  \end{displaymath}
+
+  \paragraph{Inductive step.}
+  Suppose that the theorem holds for some $ n $. Consider $ (x + y)^{n + 1} = (x + y)^n (x + y) $:
+  \begin{align*}
+    (x + y)^n (x + y) &= \left(\sum_{k = 0}^n \binom{n}{k} x^{n - k} y^k\right)(x + y)\\
+                      &= \sum_{k = 0}^n \binom{n}{k} x^{n - k + 1} y^k + \sum_{k = 0}^n \binom{n}{k} x^{n - k} y^{k + 1}\\
+                      &= \arraycolsep=1.2pt\def\arraystretch{2.2}\begin{array}{ccccccccccc}
+                           \binom{n}{0} x^{n + 1} &+& \binom{n}{1} x^n y &+& \binom{n}{2} x^{n - 1} y^2 &+& \cdots &+& \binom{n}{n} x y^n &+&\\
+                                                  &+& \binom{n}{0} x^n y &+& \binom{n}{1} x^{n - 1} y^2 &+& \cdots &+& \binom{n}{n - 1} x y^n &+& \binom{n}{n} y^{n + 1}
+                         \end{array}\\
+                      &= \tbinom{n}{0} x^{n + 1} + \left[\tbinom{n}{1} + \tbinom{n}{0}\right] x^n y + \cdots
+                            + \left[\tbinom{n}{n} + \tbinom{n}{n - 1}\right] x y^n + \tbinom{n}{n} y^{n + 1}\\
+                      &= \binom{n + 1}{0} x^{n + 1} + \binom{n + 1}{1} x^n y + \cdots + \binom{n + 1}{n} x y^n + \binom{n + 1}{n + 1} y^{n + 1}\\
+                      &= \sum_{k = 0}^{n + 1} \binom{n + 1}{k} x^{n + 1 - k} y^k.
+  \end{align*}
+  Hence the theorem holds for $ n + 1 $.
+
+  \paragraph{Conclusion}
+  Since the theorem holds for $ n = 0 $, and the truth of the theorem for the $ n$th case implies the truth of the theorem for the $ n + 1$th case,
+  the theorem holds for all $ n \geq 0 $.
+\end{proof}
+
+It is an important skill to be able to summarise proofs. The main point is not the detail, but the idea. Here, we can summarise
+the main idea of the inductive step as `rewrite the expression out and add the terms together in a different order'.
+
+\begin{exercise}
+  Find a short alternative proof of the binomial theorem by counting the number of times each combination of powers must
+  appear in the expansion of $ (x + y)^n $.
+\end{exercise}
+
+\begin{exercise}
+  Find an analogous theorem to the binomial theorem for expanding $ (x + y + z)^n $ for integer $ n $.
+\end{exercise}
 
 \section{Next Steps}
 As well as the material in the level three standards (differentiation, integration, algebra, linear systems, linear programming, path analysis,
@@ -810,13 +855,13 @@ paper, for example, the opening question part was on number theory.
 As such, I have here a list of books and topics which Scholarship students may wish to look over. I have included the University of Auckland
 library call number in brackets.
 \begin{itemize}
-  \item \textbf{Culture:} \emph{A Mathematician's Lament} by Paul Lockhart [510.71 L81].
-  \item \textbf{Proofs:} \emph{How to Think Like a Mathematician} by Kevin Houston [510 H84].
-  \item \textbf{Number theory:} \emph{Elementary Number Theory} by Underwood Dudley [512.72 D84].
-  \item \textbf{Linear algebra:} \emph{Linear Algebra: A Modern Introduction} by David Poole [512.5 P82].
-  \item \textbf{Geometry:} \emph{Geometry: A High School Course} by Serge Lang and Gene Murrow [516 L27].
-  \item \textbf{Set theory:} \emph{Naive Set Theory} by Paul Halmos [511.322 H19].
-  \item \textbf{Calculus:} \emph{Calculus} by Paul Spivak [515 S76].
+  \item \emph{A Mathematician's Lament} by Paul Lockhart [510.71 L81].
+  \item \emph{How to Think Like a Mathematician} by Kevin Houston [510 H84].
+  \item \emph{Elementary Number Theory} by Underwood Dudley [512.72 D84].
+  \item \emph{Linear Algebra: A Modern Introduction} by David Poole [512.5 P82].
+  \item \emph{Geometry: A High School Course} by Serge Lang and Gene Murrow [516 L27].
+  \item \emph{Calculus} by Paul Spivak [515 S76].
+  \item \emph{Naive Set Theory} by Paul Halmos [511.322 H19].
 \end{itemize}
 
 I must stress that a comprehensive understanding of the content in the above books is \emph{not required}; in most cases, a read of the first three
