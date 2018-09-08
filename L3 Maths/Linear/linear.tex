@@ -346,7 +346,9 @@ The goal in this section is to prove the following theorem that we observed in t
 
 The proof is quite technical, however, so readers who wish to skip it may do so. We begin by proving the theorem for the two smallest cases (systems
 of a single variable, and systems of two variables) in the following two lemmata --- they are not actually necessary for our main proof, but they are
-much easier to understand.
+much easier to understand. Note that in each proof we need to check two things: firstly, that each case is actually possible (e.g. we must find a
+system with exactly one solution, or exactly no solutions, or so forth), and secondly, that there are no other possiblilities (e.g. if there are at least
+two solutions, then there are infinitely many).
 
 \begin{lem}
   Consider any system of a single variable. Then we have exactly two possibilities:
@@ -370,6 +372,9 @@ much easier to understand.
   suppose that the system has two solutions $ x $ and $ x' $. Then, in particular, we have $ a_1 x = b_1 $ and $ a_1 x' = b_1 $; so $ x = x' $.
 \end{proof}
 
+Geometrically, each equation in a system of a single variable is a single point on a line, and two points can only intersect if they
+are the same point.
+
 \begin{lem}
   Consider any system of two variables. Then we have exactly three possibilities:
   \begin{itemize}
@@ -391,6 +396,9 @@ much easier to understand.
   \end{align*}
   Hence, if we have at least two distinct solutions, then we have an infinite number of solutions (one for each $ t $) --- and we are done.
 \end{proof}
+
+Geometrically, each equation in a system of two variables is a single line on a plane, and two lines can either intersect at zero, one, or infinitely
+many points.
 
 Now for the killing blow. The proof we give here will probably seem to be pulled out of thin air (i.e. there seems to be no motivation --- how
 did I come up with it?). The reason for this is that the standard proof of this uses a branch of mathematics known as \emph{linear algebra}. I
@@ -1000,7 +1008,7 @@ This was previously implied by lemma \ref{lem:det2}.
 \end{proof}
 
 \begin{thm}\label{thm:det3}
-  The following analagous equality holds in the $ 3 \times 3 $ case.
+  The following analogous equality holds in the $ 3 \times 3 $ case.
   \begin{equation}
     \begin{vmatrix}
       a & b & c \\ d & e & f \\ g & h & i
@@ -1346,7 +1354,7 @@ group 1, none from group 2, and 15 from group 3.
 
 \subsection*{Exercises}
 \begin{enumerate}
-  \item Draw a picture analagous to that in example \ref{ex:linprog2d} for the 3D case.
+  \item Draw a picture analogous to that in example \ref{ex:linprog2d} for the 3D case.
   \item Maximise the function $ z = 2x_1 + x_2 + 2x_4 $, subject to
         \begin{displaymath}
           \begin{cases}
@@ -1375,10 +1383,10 @@ We need a small geometric definition:
     \item The \textbf{boundary} of the closed half-space $ a_1 x_1 + \cdots + a_n x_n \leq b $ is the set of all points
           satisfying $ a_1 x_1 + \cdots + a_n x_n = b $.
     \item A \textbf{convex polytope} of $ n $ dimensions is an intersection of a finite number of closed half-spaces of $ n $ dimensions.
-    \item A point $ x$ is an \textbf{interior point} of a complex polytope $ P $ if there exists some real number $ \varepsilon > 0 $ such that the sphere
+    \item A point $ x$ is an \textbf{interior point} of a complex polytope $ P $ if there exists some real number $ \varepsilon > 0 $ such that the ball
           of radius $ \varepsilon $ centred at $ x $ is contained entirely within $ P $.
     \item A convex polytope $ P $ is \textbf{bounded} if there exists some real number $ \varepsilon > 0 $ such that every point of $ P $ is contained within
-          the sphere of radius $ \varepsilon $  centred at the origin. (Intuitively, $ P $ does not go ``to infinity''.)
+          the ball of radius $ R $  centred at the origin. (Intuitively, $ P $ does not go ``to infinity''.)
     \item A \textbf{face} of a convex polytope $ P $ is any intersection of $ P $ with a closed half-space such that none of the interior points of $ P $
           lie on the boundary of the half-space.
     \item A \textbf{vertex} of a convex polytope is a 0-dimensional face.
@@ -1395,24 +1403,28 @@ We need a small geometric definition:
   in $ P $ such that for all $ x $ in $ P $, $ \theta(x) \leq \theta(x^*) $. Then $ x^* $ is either a vertex of $ P $, or lies in a face of $ P $ such that
   for every point $ x' $ in that face (in particular, including the vertices of that face) we have $ \theta(x') = \theta(x^*) $.
 \end{thm}
+(Remark: the theorem claims that if a maximum $ x^* $ exists, then it is at a vertex. We can also gurantee that such a point $ x^* $ exists, and it is
+here that we use boundedness. However, the proof of this latter claim follows from the closed-and-boundedness of $ P $ and the continuity of $ \theta $,
+and we do not give it here.)
 \begin{proof}
   Let $ \theta(y_1, \dots, y_n) = a_1 y_1 + \cdots + a_n y_n $, and let $ x^* = (x_1, \dots, x_n ) $. Suppose that $ x^* $ is in the interior
-  of $ P $ (i.e. $ x^* $ is not in any face of $ P $). Then there exists some $ \varepsilon > 0 $ such that the sphere $ S $ of radius $ \varepsilon $ centred
-  at $ x^* $ is contained entirely within $ P $. Note that the point
+  of $ P $ (i.e. $ x^* $ is not in any face of $ P $). Then there exists some $ \varepsilon > 0 $ such that the ball $ B $ of radius $ \varepsilon $ centred
+  at $ x^* $ is contained entirely within $ P $. Note that the point\footnote{~From multi-dimensional calculus, $ (a_1, ..., a_n)/\sqrt{a_1^2 + \cdots + a_n^2} $
+  is the unit vector pointing up the slope of $ \theta $.}
   \begin{displaymath}
-    x^\dagger = (x_1 - \frac{\varepsilon}{2} \frac{a_1}{\sqrt{a_1^2 + \cdots + a_n^2}}, \dots, x_n - \frac{\varepsilon}{2} \frac{a_n}{\sqrt{a_1^2 + \cdots + a_n^2}})
+    x^\dagger = (x_1 + \frac{\varepsilon}{2} \frac{a_1}{\sqrt{a_1^2 + \cdots + a_n^2}}, \dots, x_n + \frac{\varepsilon}{2} \frac{a_n}{\sqrt{a_1^2 + \cdots + a_n^2}})
   \end{displaymath}
-  is still contained within $ S $ and hence within $ P $, because the distance between $ x^* $ and $ x^\dagger $ is less than $ \varepsilon $ (check this).
+  is still contained within $ B $ and hence within $ P $, because the distance between $ x^* $ and $ x^\dagger $ is less than $ \varepsilon $ (check this).
 
   Now consider
   \begin{align*}
-    \theta(x^\dagger) &= a_1 x_1 - \frac{\varepsilon}{2} \frac{a_1^2}{\sqrt{a_1^2 + \cdots + a_n^2}} + \dots
-                       + a_n x_n - \frac{\varepsilon}{2} \frac{a_n^2}{\sqrt{a_1^2 + \cdots + a_n^2}}\\
-                      &= a_1 x_1 + \cdots + a_n x_n - \frac{\varepsilon}{2} \sqrt{a_1^2 + \cdots + a_n^2}\\
-                      &= \theta(x^*) - \frac{\varepsilon}{2} \sqrt{a_1^2 + \cdots + a_n^2}.
+    \theta(x^\dagger) &= a_1 x_1 + \frac{\varepsilon}{2} \frac{a_1^2}{\sqrt{a_1^2 + \cdots + a_n^2}} + \dots
+                       + a_n x_n + \frac{\varepsilon}{2} \frac{a_n^2}{\sqrt{a_1^2 + \cdots + a_n^2}}\\
+                      &= a_1 x_1 + \cdots + a_n x_n + \frac{\varepsilon}{2} \sqrt{a_1^2 + \cdots + a_n^2}\\
+                      &= \theta(x^*) + \frac{\varepsilon}{2} \sqrt{a_1^2 + \cdots + a_n^2}.
   \end{align*}
   But recall that $ \varepsilon > 0 $; so in particular, $ \frac{\varepsilon}{2} \sqrt{a_1^2 + \cdots + a_n^2} > 0 $. So the value of $ \theta(x^\dagger) $ is
-  less than that of $ \theta(x^*) $; this is a contradiction and so $ x^* $ lies on a face of $ P $.
+  greater than that of $ \theta(x^*) $; this is a contradiction and so $ x^* $ lies on a face of $ P $.
 
   Now, suppose that $ x^* $ lies on a face of $ P $ that is not a vertex. Suppose that the face is $ m$-dimensional. Then we have a minimum value of $ \theta $ on
   the inside of a $ m$-dimensional polytope, which is a contradiction unless $ \theta $ is constant on the face; hence the minimum value also occurs on the boundaries
