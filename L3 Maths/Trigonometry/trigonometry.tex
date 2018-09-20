@@ -18,6 +18,7 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 
+\usepackage[dvipsnames]{xcolor}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.11}
 \usepgfplotslibrary{fillbetween}
@@ -107,6 +108,18 @@
 \section*{Preface}
 These notes present a brief overview of the trigonometry required for Level 3 Calculus. We
 mainly treat the subject from a functional viewpoint.
+
+The definitions given are based on the intuitive geometric definitions of the functions on
+the unit circle, but since the intuition should be familiar to readers we make the extension
+from functions of acute angles to functions of real numbers very explicit. Because of this, these
+notes are likely inappropriate for students who are at all uncomfortable in their understanding of
+the geometric behaviour of the trigonometric functions; these students are directed to the
+Level 2 notes.
+
+A large number of the standard identities have proofs which either follow directly from each other,
+or are very similar to each other. As such, most of the identities are stated as exercises rather
+than theorems --- the reader is invited to make their own way through these, proving as many (or
+as few) as desired.
 
 \titleformat{\section}{\clearpage\titlerule[0.8pt]\vspace{0.5ex}\normalfont\Large\bfseries\centering}{Section~\thesection:}{1em}{}[{\titlerule[0.8pt]}]
 \let\oldsection\section
@@ -201,19 +214,16 @@ as drawn above can be extended as far as we like in either direction by just mak
 \begin{prp}\label{thm:basicids}
   The following identities always hold.
   \begin{enumerate}
-    \item $ -1 \leq \sin \theta \leq 1 $ and $ -1 \leq \cos \theta \leq 1 $ for all $ \theta $.
     \item $ \sin 2n\pi = 0 $ and $ \cos 2n\pi = 1 $ for all integers $ n $.
     \item $ \sin^2 \theta + \cos^2 \theta = 1 $ for all $ \theta $.
+    \item $ -1 \leq \sin \theta \leq 1 $ and $ -1 \leq \cos \theta \leq 1 $ for all $ \theta $.
     \item $ \sin (-\theta) = -\sin \theta $ and $ \cos (-\theta) = \cos \theta $ for all $ \theta $.
     \item $ \cos \theta = \sin (\theta + \pi/2) $.
+    \item $ \sin (\pi - \theta) = \sin \theta $ and $ \cos(\pi - \theta) = -\cos \theta $.
   \end{enumerate}
 \end{prp}
 \begin{proof}\leavevmode
   \begin{enumerate}
-    \item For $ 0 \leq \theta < \pi/2 $, the two functions are defined using the lengths $ PX $ and $ OP $ which
-          are positive and always less than 1. For all other values of $ \theta $, the functions are defined in
-          terms of the values on this interval and are not scaled beyond a negative sign; so both functions are
-          bounded above by 1 and below by $ -1 $.
     \item $ \sin 2n\pi = \sin(0 + 2n\pi) = \sin 0 = 0 $. A similar calculation holds for cosine.
     \item When $ 0 \leq \theta < \pi/2 $, the statement follows from an application of Pythagoras' theorem
           to the right triangle $ OPX $. When $ \pi/2 \leq \theta < \pi $,
@@ -224,6 +234,12 @@ as drawn above can be extended as far as we like in either direction by just mak
             If $ \theta $ is not in this range, then $ \theta = \theta' + 2n\pi $ for some integer $ n $ and some $ \theta' $ that
             does lie in that range; since $ \sin (\theta' + 2n\pi) = \sin \theta' $, and $ \cos (\theta' + 2n\pi) = \cos \theta' $, we
             can apply what we have already proved in this case as well.
+    \item For $ 0 \leq \theta < \pi/2 $, the two functions are defined using the lengths $ PX $ and $ OP $ which
+          are positive and always less than 1. For all other values of $ \theta $, the functions are defined in
+          terms of the values on this interval and are not scaled beyond a negative sign; so both functions are
+          bounded above by 1 and below by $ -1 $.
+
+          Alternatively, note that by (2) above, $ \sin^2 \theta \leq 1 $ and $ \cos^2 \theta \leq 1 $ for all $ \theta $.
     \item Note that $ \sin(-\theta) = \sin(2\pi - \theta) = -\sin \theta $, and $ \cos(-\theta) = \cos(2\pi - \theta) = \cos \theta $ (by
           the final column of table \ref{tab:extend1}).
     \item Suppose $ 0 \leq \theta < \pi/2 $. Then, considering the following diagram, we perform some angle-pushing.
@@ -239,10 +255,11 @@ as drawn above can be extended as far as we like in either direction by just mak
           If $ \pi/2 \leq \theta < \pi $, then $ \pi \leq \theta + \pi/2 < 3\pi/2 $ and $ \sin(\theta + \pi/2) = -\sin(\theta + \pi/2 - \pi) $;
           then (applying the case we have already proved) $ -\sin(\theta - \pi/2) = -\cos(\theta - \pi) = \cos \theta $ as required. We extend
           the proof to all $ 0 \leq \theta < 2\pi $ using similar arguments, and then conclude it holds for all $ \theta $ by periodicity.
+    \item Here, we apply table \ref{tab:extend1} in the reverse and simplify, if needed, using (1), (4), and periodicity.
   \end{enumerate}
 \end{proof}
 
-\begin{thm}
+\begin{thm}\label{thm:ratios}
   If $ ABC $ is a right triangle such that the right angle is at $ C $, and $ \alpha $ is the interior angle at $ A $, then
     \begin{gather}
       \sin \alpha = \frac{\abs{BC}}{\abs{AB}} = \frac{\text{opposite}}{\text{hypotenuse}} \text{ and}\\
@@ -473,14 +490,18 @@ We have the following definition, which summarises all the definitions we have m
       \end{enumerate}
   \end{enumerate}
 \end{defn}
-Of these, the basic functions and the reciprocal functions are the most useful.
+Of these, the basic functions and the reciprocal functions are the most useful and
+the only ones worth learning.
 
-We also have the following identities.
-\begin{thm}\leavevmode
+We also restate the following identities for convenience. Since the second two follow
+immediately from the first, and the first is a trivial application of Pythagoras' theorem,
+the reader is advised not to try to memorise them.
+\begin{thm}
+  For all angles $ \theta $,
   \begin{enumerate}
-    \item $ \sin^2 \theta + \cos^2 \theta = 1 $
-    \item $ \tan^2 \theta + 1 = \sec^2 \theta $
-    \item $ 1 + \cot^2 \theta = \csc^2 \theta $
+    \item $ \sin^2 \theta + \cos^2 \theta = 1 $,
+    \item $ \tan^2 \theta + 1 = \sec^2 \theta $, and
+    \item $ 1 + \cot^2 \theta = \csc^2 \theta $.
   \end{enumerate}
 \end{thm}
 
@@ -536,6 +557,7 @@ goal in this section is to derive similar rules for the basic trigonometric func
     \item $ \tan(\alpha - \beta) = \frac{\tan \alpha - \tan \beta}{1 + \tan \alpha \tan \beta} $
     \item $ \sin(2\alpha) = 2 \sin \alpha \cos \alpha $
     \item $ \cos(2\alpha) = \cos^2 \alpha - \sin^2 \alpha = 1 - 2\sin^2 \alpha = 2\cos^2 \alpha - 1 $.
+    \item $ \tan(2\alpha) = \frac{2\tan \alpha}{1 - \tan^2 \alpha} $.
   \end{enumerate}
 \end{cor}
 \begin{proof}
@@ -544,7 +566,7 @@ goal in this section is to derive similar rules for the basic trigonometric func
   For (3), write $ \tan(\alpha + \beta) = \frac{\sin(\alpha + \beta)}{\cos(\alpha + \beta)} $, apply parts (1) and (2), and simplify. Then (4)
   follows in a similar way to (1) and (2) (noting that $ \tan (-\theta) = -\tan \theta $).
 
-  For (5) and (6), set $ \beta = \alpha $ and apply theorem \ref{thm:sumids}.
+  For (5) and (6), set $ \beta = \alpha $ and apply theorem \ref{thm:sumids}; (7) is done in a similar way.
 \end{proof}
 
 \begin{exercise}
@@ -586,7 +608,8 @@ Finally, we prove the following aesthetic identity.
   First, note that since $ z = \pi - x - y $, we have $ \sin z = \sin(x + y) $ and $ \cos z = -\cos(x + y) $. This follows
   from the facts $ \sin \theta = \sin(\pi - \theta) $ and $ \cos \theta = -\cos(\pi - \theta) $ which can be easily seen
   from symmetry in the case $ 0 \leq \theta < \pi/2 $ using the unit circle (figure), and then for all other $ \theta $ by
-  applying table \ref{tab:extend1} and proposition \ref{thm:basicids}.
+  applying table \ref{tab:extend1} and proposition \ref{thm:basicids}. It also follows algebraically from the definition
+  (see proposition \ref{thm:basicids}).
   \begin{center}
     \includegraphics[width=0.3\textwidth]{piminus}
   \end{center}
@@ -601,7 +624,172 @@ Finally, we prove the following aesthetic identity.
 \end{proof}
 
 \section{Inverse Functions}
+Suppose we draw a right triangle $ ABC $. It is clear that, if we know the three lengths, then the three angles are determined: there
+is only one such triangle with the three given lengths.
+
+In fact, since we know that one angle is a right angle, if we know the lengths of only two sides together with their position in relation
+to the right angle (whether each is opposite, hypotenuse, or adjacent), then we know the length of the third side together with the angle.
+
+This fact, which we have phrased here rather philosophically, simply means that given the ratios we found in \ref{thm:ratios},
+\begin{equation}
+      \sin \alpha = \frac{\abs{BC}}{\abs{AB}} = \frac{\text{opposite}}{\text{hypotenuse}} \text{ and }
+      \cos \alpha = \frac{\abs{AC}}{\abs{AB}} = \frac{\text{adjacent}}{\text{hypotenuse}},
+\end{equation}
+there is a unique $ \alpha $ in the range $ 0 \leq \alpha < \pi/2 $ which will produce them.
+
+More formally, we say that a function $ f(x) $ is invertible if for every possible output $ y $ in a given range, then there is precisely
+one input $ x $ that will produce that output (i.e. there is a unique $ x $ such that $ y = f(x) $). If a function is invertible, then we
+can define a second function $ g $ such that $ g(f(x)) = x = f(g(y)) $ for every input $ x $ and every output $ y $. We have geometrically justified, then,
+that $ \sin \alpha $ and $ \cos \alpha $ are invertible on the range $ 0 \leq \alpha < \pi/2 $ --- and in fact, by the way we defined the
+extensions of these functions into other intervals, they are invertible on the wider range $ -\pi/2 \leq \alpha < \pi/2 $ (in the case of $\sin$)
+and $ 0 \leq \alpha < \pi $ (in the case of $\cos $).
+
+\begin{defn}
+  Suppose that we are given some real number $ x $, such that $ -1 \leq x \leq 1 $. Draw a right triangle $ ABC $ with hypotenuse $\abs{AB} = 1 $
+  and side $ \abs{BC} = x $ (i.e. the right angle is at $ C $). Then we define two functions as follows:
+  \begin{enumerate}
+    \item The function $ \arcsin $, by writing $ \arcsin x = \alpha $ (where $ \alpha $ is the interior angle at $ A $), and
+    \item The function $ \arccos $, by writing $ \arccos x = \beta $ (where $ \beta $ is the interior angle at $ B $).
+  \end{enumerate}
+  In other words, $ \arcsin x = \alpha $ if and only if $ -\pi/2 \leq \alpha < \pi/2 $ and $ \sin \alpha = x $, and $ \arccos x = \beta $ if
+  and only if $ 0 \leq \alpha < \pi $ and $ \cos \beta = x $.
+
+  Further, suppose we are given some real number $ y $. Define $ \arctan y = \theta $ if and only if $ -\pi/2 < \theta < \pi/2 $, and $ \tan \theta = x $.
+\end{defn}
+
+You will also see these functions written as $ \arcsin x = \sin^{-1} x $, $ \arccos x = \cos^{-1} x $, and $ \arctan x = \tan^{-1} x $; I will avoid
+this notation here as it clashes with the notation $ \sin^n x = (\sin x)^n $ which we have already introduced (although philosophically speaking, if
+we are to drop any notation then we should drop the latter as it is unique to trig functions, while writing a superscript $ -1 $ for inverses is very
+standard across all of mathematics).
+
+These new inverse functions are of mainly practical importance, as they allow us to reverse geometric calculations and move from lengths
+to angles. We graph them here, with $ y = \arcsin x $ in red, $ y = \arccos x $ in blue, and $ y = \arctan x $ in dotted green.
+\begin{center}
+  \fbox{\begin{tikzpicture}
+    \begin{axis}[
+      axis lines = center,
+      xmax = 1, xmin = -1,
+      ymax = 3.1416, ymin = -1.5708,
+      ytick={-1.5708, 0, 1.5708, 3.1416},
+      yticklabels={$-\frac{\pi}{2} $, $0$, $\frac{\pi}{2}$, $\pi$},
+      xlabel = $ x $,
+      ylabel = $ y $
+    ]
+      \addplot[samples=100,domain = -1:1, color = red] {asin(x)/180*pi};
+      \addplot[samples=100,domain = -1:1, color = blue] {acos(x)/180*pi};
+      \addplot[samples=100,style=dashed,domain = -1:1, color = OliveGreen] {atan(x)/180*pi};
+    \end{axis}
+  \end{tikzpicture}}
+\end{center}
+
+By definition, $ \sin(\arcsin x) = \arcsin(\sin x) = 1 $ (and analagous statements hold for $ \cos $ and $ \tan $). However, the
+definitions do not say anything about combinations like $ \sin(\arccos x) $ or $ \arctan(\sin x) $. It turns out that expressions
+like these show up in calculus reasonably often, so we will look at them carefully.
+
+Note that the first class of this kind of expression, those of the form $ \text{inverse}(\text{trig}(x)) $, can be turned into
+`normal' equations: if $ y = \arctan(\sin x) $, then $ \tan y = \sin x $ and we can solve for $ y $ by studying the nature of
+solutions of trigonometric equations. We will do this in the next section.
+
+For now, then, we will consider only expressions consisting of an inverse function inside a normal trigonometric function.
+\begin{thm}
+  In general, the following identities hold:
+  \begin{enumerate}
+    \item $ \sin(\arccos x) = \sqrt{1 - x^2} $
+    \item $ \sin(\arctan x) = \frac{x}{\sqrt{x^2 + 1}} $
+    \item $ \cos(\arcsin x) = \sqrt{1 - x^2} $
+    \item $ \cos(\arctan x) = \frac{1}{x^2 + 1} $
+    \item $ \tan(\arcsin x) = \frac{x}{\sqrt{1 - x^2}} $
+    \item $ \tan(\arccos x) = \frac{\sqrt{1 - x^2}}{x} $
+  \end{enumerate}
+\end{thm}
+\begin{proof}
+  We prove (1) and (6) here, leaving the remainder as an exercise. Consider the triangle given below.
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{invid1}
+  \end{center}
+  Then $ \theta = \arccos x $ (since $ \cos \theta = \frac{x}{1} $). Calculating $ \sin \theta $ and $ \tan \theta $
+  we arrive at the required identities.
+\end{proof}
+
+\section{Trigonometric Equations}
+The trigonometric functions are not very well-behaved with respect to the rational numbers --- they tend to map
+simple inputs to complicated real numbers. However, there are a few special values which we can compute, corresponding
+to triangles with simple sides.
+\begin{exercise}\leavevmode\label{ex:specialtriangles}
+  \begin{enumerate}
+    \item \textbf{Standard special triangles.} Show, by drawing appropriate triangles, the following identities. This is not year twelve any more,
+                                               so in particular you must prove that if you construct a triangle with given angles then it has the
+                                               correct lengths (or vice versa, if you pick a triangle with given lengths then it has the given angles).
+      \begin{enumerate}
+        \item $ \sin \pi/4 = \cos \pi/4 = 1/\sqrt{2} $ and $ \tan \pi/4 = 1 $ (45-45-90)
+        \item $ \sin \pi/6 = 1/2 $, $ \cos \pi/6 = \sqrt{3}/2 $, and $ \tan \pi/6 = 1/\sqrt{3} $ (60-30-90)
+        \item $ \sin \pi/3 = \sqrt{3}/2 $, $ \cos \pi/3 = 1/2 $, and $ \tan \pi/6 = \sqrt{3} $ (60-30-90)
+      \end{enumerate}
+    \item \textbf{Magical exotic triangles.}
+      \begin{enumerate}
+        \item Draw an isoceles triangle with angles $ \pi/5 $, $ 2\pi/5 $, and $ 2\pi/5 $ (36-72-72), and shortest length 1. By bisecting
+              one of the angles with measure $ 2\pi/5 $ and working with ratios of lengths of similar triangles, show that the
+              two longer lengths $ \Phi $ satisfy the equation $ 1 + \Phi = \Phi^2 $. (The measure $ \Phi $ is known as the golden
+              ratio.) Conclude that:
+              \begin{enumerate}
+                \item $ \sin \pi/5 = \frac{\sqrt{\Phi^2 - 1/4}}{\Phi} $, $ \cos \pi/10 = \frac{1}{2\Phi} $, and $ \tan \pi/10 = 2\sqrt{\Phi^2 - 1/4} $.
+                \item $ \sin \pi/10 = \frac{1}{2\Phi} $, $ \cos \pi/10 = \frac{\sqrt{\Phi^2 - 1/4}}{\Phi} $, and $ \tan \pi/10 = \frac{1}{2\sqrt{\Phi^2 - 1/4}} $.
+              \end{enumerate}
+      \end{enumerate}
+  \end{enumerate}
+  Remark: To remember (1a) and (1b) above, cut an equilateral triangle in half.
+\end{exercise}
+
+We can also easily compute the zeroes of the trigonometric functions.
+\begin{thm}\leavevmode
+  \begin{enumerate}
+    \item $ \sin \theta = 0 $ precisely when $ \theta = n \pi $ for arbitrary integers $ n $.
+    \item $ \cos \theta = 0 $ precisely when $ \theta = n \frac{\pi}{2} $ for odd integers $ n $.
+    \item $ \tan \theta = 0 $ precisely when $ \theta = n\pi $ for arbitrary integers $ n $.
+  \end{enumerate}
+\end{thm}
+\begin{proof}
+  We give the proof for $ \cos $ carefully, leaving the proof for $ \sin $ to the reader. (Note that the result for $ \tan $ follows
+  directly from the result for $ \sin $.)
+
+  From the unit circle definitions, we see that the line segment that defines $ \cos \theta $ is zero precisely when $ \theta = \pi/2 $
+  or $ \theta = 3\pi/2 $. We then have, by periodicity, that $ \cos (2\pi m + \pi/2) = 0 $ and $ \cos(2\pi m + 3\pi/2) $ are all of the
+  zeroes of $ \cos $ for arbitrary integers $ m $. But $ 2\pi n + \pi/2 = (4m + 1) \pi/2 $, and $ 2\pi m + 3\pi/2 = (4m + 3) \pi/2 $; and every odd number $ n $ is
+  either of the form $ n = 4m + 1 $ or $ n = 4m + 3 $. The result follows.
+\end{proof}
+
+Before we can start solving trigonometric equations, we also need to take account of the periodicity of the functions. For
+example, note that $ \sin \pi/4 = \sin 3\pi/4 $.
+
+\begin{thm}\leavevmode
+  In all of the following, $n $ is an arbitrary integer.
+  \begin{enumerate}
+    \item Suppose that $ \sin x = \sin y $. Then every $ y = n\pi + (-1)^n x $ is a solution, and every solution for $ y $ is of this form.
+    \item Suppose that $ \cos x = \cos y $. Then every $ y = 2n\pi \pm x $ is a solution, and every solution for $ y $ is of this form.
+    \item Suppose that $ \tan x = \tan y $. Then every $ y = n\pi + x $ is a solution, and every solution for $ y $ is of this form.
+  \end{enumerate}
+\end{thm}
+\begin{proof}
+  We prove (1) and leave the other two as exercises. We need to check two things: (a) that $ \sin x = \sin (n\pi + (-1)^n x) $ for any integer $ n $,
+  and (b) that if $ \sin x = \sin y $ then $ y $ is of the form given.
+
+  For (a), we have two cases: either $ n = 2k $, or $ n = 2k + 1 $ for some integer $ k $ (i.e. $ n $ is either even or odd). If $ n $ is
+  even, then $ \sin(n\pi + (-1)^n x) = \sin(2k\pi + (-1)^{2k} x) = \sin x $; if $ n $ is odd,
+  then $ \sin(n\pi + (-1)^n x) = \sin((2k + 1)\pi + (-1)^{2k + 1}x) = \sin(2k\pi + \pi - x) = \sin(\pi - x) = \sin x $.
+
+  For (b), note from our definitions and proposition \ref{thm:basicids} that $ \sin x = \sin y $ precisely when $ y = (\pi - \theta) + 2k\pi $
+  or $ y = \theta + 2k\pi $. In the first case, $ y = (2k + 1)\pi - (-1)^{2k + 1} \theta $ and we let $ n = 2k + 1 $, and in the second case
+  we let $ n = 2k $.
+\end{proof}
+
+We will now solve some trigonometric equations.
+\begin{ex}
+  Consider $ \sin x = \cos x $. Then $ \tan x = 1 $, and thus (by exercise \ref{ex:specialtriangles} and the above theorem) $ x = \pi/4 + n\pi $
+  for arbitrary integers $ n $.
+\end{ex}
 
 \section{Periodic Models}
+
+\section{Epilogue: Hyperbolic Trigonometric Functions}
 
 \end{document}
