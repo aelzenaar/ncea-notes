@@ -39,28 +39,26 @@ My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf)
 I am not currently planning any stats notes.
 
 ### Level Three and Scholarship Calculus
- * Generic skills: a [set of notes](L3%20Maths%20Generic/generic.pdf) covering (naive) sets, (rudimentary) proofs, sigma and pi notation, induction,
-   the Binomial theorem, and very basic graph theory.
- * Linear programming (91574) and simultaneous equations (91587): a [set of notes](L3%20Linear%20Systems/lineqs.pdf) with some problems.
  * Algebra (91577): a set of notes entitled [_Solutions_](L3%20Algebra/solutions.pdf) designed for self-study for scholarship students
    (with [full answers to exercises](L3%20Algebra/solutions2.pdf)).
- * [_Down the River: Foundations for Scholarship_](L3%20Maths/Foundations/foundations.pdf). Basic set theory, combinatorics, and
-   number theory, with proof writing.
- * Calculus (91578 and 91579): a [set of notes](L3%20Calculus/bookform.pdf) containing both tutorial session material and homeworks with
-   material ranging in difficulty from achieved to outstanding scholarship.
 
 **In progress:**
 I am currently in the process of reworking and reorganising my L3 maths notes; the final plan will be to have the following
 sets of notes, broadly in the given logical order and aligned with the L2 notes above:
 1. _Down the River: Foundations for Scholarship_. a [set of notes](L3%20Maths/Foundations/foundations.pdf) covering basic set theory, combinatorics,
    and number theory, with proof writing and induction.
-2. Linear systems. Perhaps will include critical path analysis, as these notes seem to be where the applied stuff goes. Based on the
-   notes above that I wrote last year, but with some more problems.
-3. Trigonometry. WIP.
-4. Calculus (91578 and 91579): a [set of notes](L3%20Calculus/bookform.pdf) containing both tutorial session material and homeworks
-   with material ranging in difficulty from achieved to outstanding scholarship. [DONE]
-5. Algebra. I will either rework or rewrite _Solutions_.
-6. Conic Sections. This is currently a WIP.
+2. Linear programming (91574) and simultaneous equations (91587). a [set of notes](L3%20Maths/Linear/linear.pdf) from a proof-based
+   perspective, although most non-easy proofs are clearly marked and optional. Some exercises are included.
+3. Trigonometry (91575). a [set of notes](L3%20Maths/Trigonometry/trigonometry.pdf) which covers the definition of the trigonometric functions
+   and proves various identities, with a view towards mix of geometric and analytical thinking.
+4. Calculus (91578 and 91579). a [set of notes](L3%20Maths/Calculus/bookform.pdf) containing both tutorial session material and homeworks
+   with material ranging in difficulty from achieved to outstanding scholarship.
+5. [WIP] Algebra. I will either rework or rewrite _Solutions_.
+6. [WIP] Conic Sections. This is currently a WIP.
+
+One should note that the majority of my notes are at a slightly higher level than is strictly required. As such, students should be
+guided through skipping or only lightly touching some sections (for example, the functional definition of the trig functions in my
+trig notes is only of use to students that are very comfortable with the geometric definition of the functions from L2 or earlier).
 
 ## Physics
 ### Level Two
