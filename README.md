@@ -49,12 +49,16 @@ sets of notes, broadly in the given logical order and aligned with the L2 notes 
    and number theory, with proof writing and induction.
 2. Linear programming (91574) and simultaneous equations (91587). a [set of notes](L3%20Maths/Linear/linear.pdf) from a proof-based
    perspective, although most non-easy proofs are clearly marked and optional. Some exercises are included.
-3. [WIP] Trigonometry (91575). a [set of notes](L3%20Maths/Trigonometry/trigonometry.pdf) which covers the definition of the trigonometric functions
-   and proves various identities, with a view towards a less geometric and more analytical style.
+3. Trigonometry (91575). a [set of notes](L3%20Maths/Trigonometry/trigonometry.pdf) which covers the definition of the trigonometric functions
+   and proves various identities, with a view towards mix of geometric and analytical thinking.
 4. Calculus (91578 and 91579). a [set of notes](L3%20Maths/Calculus/bookform.pdf) containing both tutorial session material and homeworks
    with material ranging in difficulty from achieved to outstanding scholarship.
 5. [WIP] Algebra. I will either rework or rewrite _Solutions_.
 6. [WIP] Conic Sections. This is currently a WIP.
+
+One should note that the majority of my notes are at a slightly higher level than is strictly required. As such, students should be
+guided through skipping or only lightly touching some sections (for example, the functional definition of the trig functions in my
+trig notes is only of use to students that are very comfortable with the geometric definition of the functions from L2 or earlier).
 
 ## Physics
 ### Level Two
