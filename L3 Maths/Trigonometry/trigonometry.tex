@@ -96,6 +96,7 @@
 \DeclareMathOperator{\cvs}{cvs}
 \DeclareMathOperator{\exsec}{exsec}
 \DeclareMathOperator{\excsc}{excsc}
+\DeclareMathOperator{\arccot}{arccot}
 \DeclareMathOperator{\crd}{crd}
 \DeclareMathOperator{\sech}{sech}
 \DeclareMathOperator{\csch}{csch}
@@ -680,6 +681,14 @@ Finally, we prove the following aesthetic identity.
   \end{align*}
 \end{proof}
 
+\begin{exercise}
+  Prove the following identities.
+  \begin{enumerate}
+    \item $ \sin A + \sin B + \sin C - \sin (A + B + C) = 4\sin \frac{A + B}{2}\sin \frac{B + C}{2}\sin \frac{C + A}{2} $
+    \item $ \dfrac{\sin \dfrac{B - C}{2}}{\sin \dfrac{B + C}{2}} + \dfrac{\sin \dfrac{C - A}{2}}{\sin \dfrac{C + A}{2}} + \dfrac{\sin \dfrac{A - B}{2}}{\sin \dfrac{A + B}{2}} + \dfrac{\sin \dfrac{B - C}{2}\sin \dfrac{C - A}{2}\sin \dfrac{A - B}{2}}{\sin \dfrac{B + C}{2}\sin \dfrac{C + A}{2}\sin \dfrac{A + B}{2}} = 0 $
+  \end{enumerate}
+\end{exercise}
+
 \section{Inverse Functions}
 Suppose we draw a right triangle $ ABC $. It is clear that, if we know the three lengths, then the three angles are determined: there
 is only one such triangle with the three given lengths.
@@ -767,6 +776,13 @@ For now, then, we will consider only expressions consisting of an inverse functi
   Then $ \theta = \arccos x $ (since $ \cos \theta = \frac{x}{1} $). Calculating $ \sin \theta $ and $ \tan \theta $
   we arrive at the required identities.
 \end{proof}
+
+\begin{exercise}\leavevmode
+  \begin{enumerate}
+    \item Prove that the identity $ \arctan x = 2\arctan(\csc \arctan x - \tan \arccot x) $ holds.
+    \item Show that, if $ \arccos x + \arccos y + \arccos z = \pi $, then $ x^2 + y^2 + z^2 + 2xyz = 1 $.
+  \end{enumerate}
+\end{exercise}
 
 \section{Trigonometric Equations}
 The trigonometric functions are not very well-behaved with respect to the rational numbers --- they tend to map
@@ -868,7 +884,11 @@ We will now solve some trigonometric equations.
   Solve the following equations for $ \theta $:
   \begin{enumerate}
     \item $ \sin 2\theta = \cos \theta $
+    \item $ \sin \theta + 2\cos \theta = 1 $
+    \item $ \sec 4\theta - \sec 2\theta = 2 $
+    \item $ \tan(\pi/4 + \phi) = 3\tan(\pi/4 - \phi) $
     \item $ \cos 5\theta + 5\cos 3\theta + 10\cos \theta = \frac{1}{2} $
+    \item $ \tan 3\theta - \tan 2\theta - \tan \theta = 0 $
   \end{enumerate}
 \end{exercise}
 
@@ -1016,6 +1036,7 @@ See references in text, as well as:
   \item Paul Foerster, \emph{Trigonometry: functions and applications}. Second Edition. Addison-Wesley Publishing Co. (1977).
   \item E.W. Hobson, \emph{A Treatise on Plane Trigonometry}. Second Edition. Cambridge University Press (1897).
   \item Serge Lang and Gene Murrow, \emph{Geometry: A high-school course} Springer-Verlag (1983).
+  \item Marko Petkov\v sek, Herbert S. Wilf, and Doron Zeilberger, \emph{$A = B$}. A K Peters, Ltd. (1996).
 \end{itemize}
 
 \end{document}
