@@ -17,7 +17,7 @@
 \usepackage{amsthm}
 \usepackage{adjustbox}
 \usepackage[hidelinks]{hyperref}
-\usepackage[parfill]{parskip}
+\usepackage{cleveref}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.11}
 \usepackage{graphicx}
@@ -29,13 +29,18 @@
 \usepackage{caption}
 \usepackage{commath}
 \usepackage{titlepic}
-% \usepackage[wider]{rmpage}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{changepage}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries\centering}{Section~\thesection:}{1em}{}
 
 \newtheorem*{thm}{Theorem}
 \newtheorem*{iden}{Identity}
 \theoremstyle{definition}
 \newtheorem*{defn}{Definition}
 \DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator{\proj}{proj}
 \DeclareMathOperator{\carg}{arg}
 \newcommand*\realp[1]{ \mathfrak{Re} \left ( {#1} \right )  }
 \newcommand*\imagp[1]{ \mathfrak{Im} \left ( {#1} \right )  }
@@ -90,10 +95,11 @@
 
 \tableofcontents
 
+\titleformat{\section}{\clearpage\titlerule[0.8pt]\vspace{0.5ex}\normalfont\Large\bfseries\centering}{Section~\thesection:}{1em}{}[{\titlerule[0.8pt]}]
 \let\oldsection\section
 \renewcommand\section{\clearpage\oldsection}
 
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 What does it really mean to \emph{solve} an equation? These notes attempt
 to briefly present an outline to Level 3 and Scholarship methods for both finding
 solutions to equations and interpreting those solutions.
@@ -120,112 +126,34 @@ be read in conjunction with the problems (but have a go yourself before reading 
 solutions). Additional information on the problems themselves, as well as a discussion
 of some notation, can be found in the introduction to the solutions.
 
-The culmination of the text comes in sections 6 and 8; the former is a digression
+The culmination of the text comes in sections \ref{sec:roots} and \ref{sec:cubic}; the former is a digression
 into more pure mathematics (developing a theory of the roots of unity), and the latter
 is a more applied section (developing the solution of the general cubic). Both should
 be easily within reach of the enthusiastic student.
 
-\section{Linear Equations}
+\section{Quadratic Equations}\label{sec:quadratic}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{meso}
+  \caption[blag]{Babylon in ancient Mesopotamia.\footnotemark}
+\end{figure}
+\footnotetext{By Goran tek-en - Own work. Based on: Karte von Mesopotamien, Mesopotamia Syria. CC BY-SA 3.0, \url{https://commons.wikimedia.org/w/index.php?curid=30851043}}
 
-The following quote is known as \emph{Diophantus' Riddle}.
-
-\begin{quote}
-  God gave him his boyhood one-sixth of his life,\\
-  One twelfth more as youth while whiskers grew rife;\\
-  And then yet one-seventh ere marriage begun;\\
-  In five years there came a bouncing new son.\\
-  Alas, the dear child of master and sage\\
-  After attaining half the measure of his father's life chill fate took him.\\
-  After consoling his fate by the science of numbers for four years,\\
-  He ended his life.
-\end{quote}
-
-The poem describes the length of life of the Greek mathematician and philosopher
-Diophantus, and can be expressed symbolically as:
-\begin{displaymath}
-  \label{eqn:diophantus}
-  D = \frac{1}{6}D + \frac{1}{12}D + \frac{1}{7}D + 5 + \frac{1}{2}D + 4
-\end{displaymath}
-In order to find Diophantus' age, we must find some number $ D $ such that both
-sides of the equals sign are equal. It should be an easy exercise for the reader
-to rearrange the equation to obtain $ D = 84 $.
-
-The equation above is known as a linear equation. A linear equation
-always has at most one \emph{solution} --- a value which can be substituted in for
-the unknown to make both sides of the equation equal.
-
-All linear equations can be put into the standard form $ ax + b = 0 $ for some $ a $ and
-$ b $. In general, to solve any linear equation we can rearrange it into this form
-and then take $ x = -\frac{b}{a} $.
-
-It is trivial, then, to solve linear equations algebraically. However, it is often useful to be
-able to visualise the solutions to equations. Take the equation $ 3x - 2(x+4) = 3(x+6) $
-for example --- it is difficult to see at a glance what the solution is without first
-rearranging it into the form $ ax + b = 0 $. One method that we can use is to subtract the
-right-hand side from the left-hand side, replace the resulting zero  with $ y $, and graph it.
-
-\begin{align*}
-                      3x - 2(x + 4) &= 3(x + 6) \\
-  \implies 3x - 2(x + 4) - 3(x + 6) &= 0        &&\text{(rearranging to make the RHS zero)}\\
-           3x - 2(x + 4) - 3(x + 6) &= y        &&\text{(substituting $ y $ for the RHS)}
-\end{align*}
-
-After graphing this equation, we can look at the $ x $ value where $ y = 0 $ --- this will
-be our solution.
-
-\begin{center}\fbox{
-\begin{tikzpicture}
-  \begin{axis}[
-    xlabel=$x$,
-    ylabel={$y$},
-    axis lines=middle,
-    scale=.8
-  ]
-    \addplot[domain=-20:10, color=CornflowerBlue]{ 3*x - 2*(x + 4) - 3*(x + 6) };
-  \end{axis}
-\end{tikzpicture}
-}\\
-\textit{The graph of $ y = 3x - 2(x + 4) - 3(x + 6) $.}
-\end{center}
-
-From the graph we can see that when $ x = -11 $, the function passes through the $ x$-axis --- and so $ x = -11 $ is
-the solution to our linear equation.
-
-This is an important thing to note --- for equations, we can graph the function, and
-the solutions will be the places where it cuts the $ x$-axis (i.e. where it becomes
-zero). Because of this, we often call the solutions of an equation the \emph{zeroes}
-of an equation, or the \emph{roots} (because they are the places where the function
-grows from). In general, if we have some function $ f $ then we can talk about the
-roots or zeros of $ f $, and the solutions of $ f(x) = 0 $.
-
-Equations like $ 4x-3x = x+1 $ do not touch the $x$-axis. These equations have no
-solutions since they are not satisfied by \emph{any} value of $ x $.
-
-\subsection*{Exercises}
-\begin{enumerate}[resume]
-  \item Find some $ x $ such that $ 3\times(2\times  x + 5 ) - 2\times( x + 5) = 3\times x+14 $.
-  \hard A bottle of orange juice costs \$20. The juice costs \$19 more than the
-        empty bottle. How much does the empty bottle cost?
-  \item Rearrange, graph, and solve $ 4x+2=45(x+4(x-8)) $.
-  \item Does the function $ f(x) = 3(1 + 2x) - 6x $ have any roots?
-  \item Suppose $ f(x) $ is a function defined implicitly by $ f(x) + x = 3f(x) - x $. Find the solutions of $ f(x) = 0 $.
-  \hard Solve $ \frac{2x}{x+3} = \frac{3}{x-10} + 2 $ for $ x $.
-\end{enumerate}
-
-\section{Quadratic Equations}
-Several ancient clay tablets from the Old Babylonian period (1800 - 1600 BC)
+Even earlier than the Greeks, mathematics was being done in ancient Babylon.
+Several ancient clay tablets from the Old Babylonian period (between 1800 and 1600 BCE)
 contain mathematical problems and solutions. Such a problem, given on the tablet
-illustrated, is (translated of course):\footnote{~Translation from \cite{Ste08}.}
+illustrated in \cref{fig:babylon2}, is (translated of course):\footnote{~Translation from \cite{Ste08}.}
 
 \begin{quote}
   I have added up seven times the side of my square and eleven times the area,
   getting 6;15.
 \end{quote}
 
-\begin{center}
-  \includegraphics[width=0.8\textwidth]{babylon2}\\
-  \textit{Tablet BM 13901; image from the British Museum.}
-\end{center}
+\begin{figure}\label{fig:babylon2}
+  \centering
+  \includegraphics[width=\textwidth]{babylon2}
+  \caption[blag]{Tablet BM 13901; image from the British Museum.}
+\end{figure}
 
 The number 6;15 is in sexagesimal notation; it means $ 6 + \frac{15}{60} = 6.25 $. We
 can therefore rewrite this problem as follows, where $ x $ is the length of the side
@@ -233,23 +161,27 @@ of the square and $ x^2 $ is the area:
 \begin{displaymath}
   11x^2 + 7x = 6.25
 \end{displaymath}
-We can use a similar graphical approach to that above as we are simply
-finding the zeros of $ 11x^2 + 7x - 6.25 = y $.
+Rearranging this we have $ 11x^2 + 7x - 6.25 = 0 $, and so we see that our problem is simply
+to find the $ y$-intercepts of a parabola, graphed as \cref{fig:parabola1}
 
-\begin{center}\fbox{
-\begin{tikzpicture}
-  \begin{axis}[
-    xlabel=$x$,
-    ylabel=$y$,
-    axis lines=middle,
-    height=7cm
-  ]
-    \addplot[domain=-1:1, samples=100, color=purple]{11*x^2 + 7*x - 6.25};
-  \end{axis}
-\end{tikzpicture}
-}\\
-\textit{The graph of $ y = 11x^2 + 7x - 6.25 $}.
-\end{center}
+All of the equations which we will consider this year can be put into the form $ f(x) = 0 $ for
+some function $ f $. The values $ x $ which satisfy the equation are called \emph{solutions} of
+the equation, or \emph{roots} or \emph{zeroes} of the function.
+
+\begin{figure}\label{fig:parabola1}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xlabel=$x$,
+      ylabel=$y$,
+      axis lines=middle,
+      height=7cm
+    ]
+      \addplot[domain=-1:1, samples=100, color=purple]{11*x^2 + 7*x - 6.25};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The graph of $ y = 11x^2 + 7x - 6.25 $.}
+\end{figure}
 
 We find that the only positive solution to the equation is $ x = 0.5 $ --- or 0;30 in
 Babylonian notation.
@@ -318,22 +250,20 @@ The polynomials which multiply together together to form a larger polynomial are
 as \textit{factors} of the larger polynomial, and the process of splitting a polynomial
 into factors is known as \textit{factorising}.
 
-\begin{center}
-\begin{tikzpicture}
-  \node (A) at (-2,0) {\color{ForestGreen}\textbf{\shortstack{algebraic\\roots/zeros}}};
-  \node (B) at (0,2) {\color{Dandelion}\textbf{\shortstack{graph\\$ x $-intercepts}}};
-  \node (C) at (2,0) {\color{RubineRed}\textbf{\shortstack{polynomial\\factors}}};
-  \node () at (0,0.67) {\textbf{\textit{\shortstack{Polynomial\\Equations}}}};
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \node (A) at (-2,0) {\color{ForestGreen}\textbf{\shortstack{algebraic\\roots/zeros}}};
+    \node (B) at (0,2) {\color{Dandelion}\textbf{\shortstack{graph\\$ x $-intercepts}}};
+    \node (C) at (2,0) {\color{RubineRed}\textbf{\shortstack{polynomial\\factors}}};
+    \node () at (0,0.67) {\textbf{\textit{\shortstack{Polynomial\\Equations}}}};
 
-  \draw (A) edge[<->,bend left=90] (B);
-  \draw (B) edge[<->,bend left=90] (C);
-  \draw (C) edge[<->,bend left=90] (A);
-\end{tikzpicture}
-\end{center}
-
-% \begin{center}
-%   \includegraphics[width=0.8\textwidth]{solutions-chrt}
-% \end{center}
+    \draw (A) edge[<->,bend left=90] (B);
+    \draw (B) edge[<->,bend left=90] (C);
+    \draw (C) edge[<->,bend left=90] (A);
+  \end{tikzpicture}
+  \caption{Relationships between concepts.}
+\end{figure}
 
 \subsection*{Exercises}
 \begin{enumerate}
@@ -365,21 +295,6 @@ into factors is known as \textit{factorising}.
           \item $ x^2 - 2ab = a^2 + b^2 $
         \end{enumerate}
         \end{multicols}
-  \item Two cars start at the same point. One begins to travel
-        due north at a constant speed of 50~kph; two hours later, the second begins
-        to travel due east at a constant speed of 100~kph. How long after the first
-        car begins to move are the two cars exactly 300 kilometres apart?
-  \item A dairy farmer owns a square cow field alongside a 3~m wide vehicle track. According
-        to LINZ, the total area of the field and the track is 49~m$^2$; what are the dimensions
-        of the field alone?
-        \begin{center}
-        \begin{minipage}[t]{.3\linewidth}
-          \raggedright
-          \adjustbox{valign=t}{%
-            \includegraphics[width=\linewidth]{field}%
-          }
-        \end{minipage}
-        \end{center}
   \hard Prove that $ ax^2 + bx + c = Ax^2 + Bx + C $ implies that $ a = A $, $ b = B $, and $ c = C $.
         This result allows us to \textit{match coefficients}, an important tool which we can use to
         reason about the symmetries of polynomials.
@@ -444,7 +359,9 @@ We can find solutions to general polynomial equations $ p(x) = 0 $ by factorisin
 them and then finding the zeros of each factor. This is the reverse of the process
 outlined in the previous section for creating polynomials with an arbitrary number of solutions.
 
+\begin{center}
 \textbf{Solving a polynomial equation is equivalent to finding its factors.}
+\end{center}
 
 For example, if we take the equation $ x^2 + 3x + 2 $ then we can see that two factors of this are $ (x+1) $ and
 $ (x+2) $ (because $ x^2 + 3x + 2 = (x+1)(x+2) $). The two solutions are therefore $ x = -1 $
@@ -463,26 +380,26 @@ take the cubic $ x^3 + 2x^2 - x - 2 = 0$. We can see that one solution is $ x = 
 is usually a good idea to try simple solutions like 1 and 0 first), and therefore one
 factor of the equation is $ (x-1) $. If we divide out the cubic by this factor, we obtain
 that $ x^3 + 2x^2 - x - 2 = (x-1)(x^2+3x+2) $, and we can solve the quadratic easily! The
-three solutions to this cubic are therefore $ x = 1 $, $ x = -1 $, and $ x = -2 $. The following
-graph shows both the cubic (in blue) and its factors (in purple), to illustrate this idea.
+three solutions to this cubic are therefore $ x = 1 $, $ x = -1 $, and $ x = -2 $. Figure \ref{fig:factgraph}
+shows both the cubic (in blue) and its factors (in purple) to illustrate this idea.
 
-\begin{center}\fbox{
-\begin{tikzpicture}
-  \begin{axis}[
-    xlabel=$x$,
-    ylabel={$y$},
-    axis lines=middle,
-    scale=.8
-  ]
-    \addplot[domain=-3:2, samples=100, color=CornflowerBlue]{ x^3 + 2*x^2 - x - 2};
-    \addplot[domain=-3:2, samples=5, color=purple]{ x - 1 };
-    \addplot[domain=-3:2, samples=5, color=purple]{ x + 1 };
-    \addplot[domain=-3:2, samples=5, color=purple]{ x + 2 };
-  \end{axis}
-\end{tikzpicture}
-}\\
-\textit{The solutions to an equation are exactly the solutions of its factors.}
-\end{center}
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xlabel=$x$,
+      ylabel={$y$},
+      axis lines=middle,
+      scale=.8
+    ]
+      \addplot[domain=-3:2, samples=100, color=CornflowerBlue]{ x^3 + 2*x^2 - x - 2};
+      \addplot[domain=-3:2, samples=5, color=purple]{ x - 1 };
+      \addplot[domain=-3:2, samples=5, color=purple]{ x + 1 };
+      \addplot[domain=-3:2, samples=5, color=purple]{ x + 2 };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The solutions to an equation are exactly the solutions of its factors.\label{fig:factgraph}}
+\end{figure}
 
 If we know that the solutions to a polynomial are integers, we need only try the factors
 of the constant term as this term is simply the product of the roots of the polynomial.
@@ -520,9 +437,10 @@ the solutions to an equation are the same as the solutions to the factors of the
 
 If we can divide out a polynomial multiple times by a factor, we call the
 root(s) corresponding to that factor "repeated." The \textit{multiplicity}
-of some root $ \alpha $ of $ p(x) = 0 $ is the number of times which we can divide out the factor
-$ (x - \alpha) $ from $ p(x) $ --- in other words, the number of times that
-the root is repeated.
+of some root $ \alpha $ of $ p(x) = 0 $ is the number of times that the factor
+$ (x - \alpha) $ appears in $ p(x) $: i.e. the highest number $ n $ such that the division
+of $ p(x) $ by $ (x - \alpha)^n $ gives a remainder of zero. The multiplicity, in some
+sense, quantifies the number of times that a root is repeated.
 
 A second application of the remainder theorem is less obvious --- we can
 use it to evaluate polynomials. For example, we can use the remainder theorem
@@ -550,19 +468,6 @@ by $ (x - 4) $ and taking the remainder.
         \end{displaymath}
         have?
   \item Show that $ t = 4 $ is a zero of $ t^4 - (6 + \sqrt{3})t^3 + 6\sqrt{3}t^2 + 32t -32\sqrt{3} $.
-  \item Find the remainder after dividing $ x^7 + 5x - 9 $ by $ (x-6) $.
-        \begin{center}\fbox{
-        \begin{tikzpicture}
-          \begin{axis}[
-            xlabel=$x$,
-            ylabel={$ x^7 + 5x - 9 $},
-            axis lines=middle,
-            scale=.4
-          ]
-            \addplot[domain=0:2, samples=100, color=OliveGreen]{x^7 + 5*x - 9};
-          \end{axis}
-        \end{tikzpicture}
-        }\end{center}
   \item Find a polynomial $ p(x) $ with integer coefficients such that:
     \begin{enumerate*}
       \item $ p\left(\frac{1}{2}\right) = 0 $;
@@ -599,8 +504,7 @@ by $ (x - 4) $ and taking the remainder.
         will give a cubic in $ y $ with no quadratic term (this is known as a Tschirnhaus substitution and is
         often the first step to create a general formula to solve the cubic).
   \item Show that $ \sqrt{2} + \sqrt{3} = \sqrt{5 + \sqrt{6}} $.
-  \harder Prove the following identity.\footnote{~See chapter 1 of \cite{Ste15} for historical context,
-        but note that the identity as stated there is in error (and not listed in errata).}
+  \harder Prove the following identity.\footnote{~See chapter 1 of \cite{Ste15} for historical context.}
         \begin{displaymath}
           \sqrt[3]{-18 + \sqrt{325}} + \sqrt[3]{-18 - \sqrt{325}} = -3
         \end{displaymath}
@@ -612,7 +516,7 @@ by $ (x - 4) $ and taking the remainder.
   \item Show that there are no integers $ r $ and $ s $ such that $ \sqrt{2} = \frac{r}{s} \sqrt{3} $.
 \end{enumerate}
 
-\section{Complex Numbers}
+\section{Complex Numbers}\label{sec:complex1}
 Now that we have somewhat developed the theory of polynomial equations, a sensible question to ask ourselves is the following.
 \begin{center}
   \emph{When do polynomial equations have solutions?}
@@ -647,7 +551,7 @@ extend our number system further so that the equation $ x^2 + 1 = 0 $ has a solu
 root of $ -1 $ (and setting $ -i $ to be the other square root); then the set of all numbers of the form $ a + bi $ (for any real
 numbers $ a $ and $ b $) is called the set of \emph{complex numbers}; this system of writing them is called \emph{rectangular form}.
 
-The complex numbers are generally considered to have been formally born in Girolamo Cardano's \emph{Ars Magna} in 1545, where he
+The complex numbers are generally considered to have been first used in Girolamo Cardano's \emph{Ars Magna} in 1545, where he
 introduces them only to dismiss them as `as subtle as they are useless'. Despite this, modern mathematics has fully accepted the
 existence of complex numbers for two main reasons: firstly they do not introduce any contradictions into basic arithmetic or
 any theory that we care about, and secondly they allow us to state the following historic theorem.
@@ -656,11 +560,10 @@ any theory that we care about, and secondly they allow us to state the following
   Let $ p(x) $ be a polynomial with complex coefficients. Then, counting repeated roots, there are exactly $ \partial p $ complex roots of $ p(x) $.
 \end{thm}
 
-The proof of the Fundamental Theorem unfortunately requires concepts and techniques far beyond the scope of this book (Stewart
-gives a proof in \cite{Ste15}, and Artin gives two(!) proofs in \cite{Art91} \S 9.9). All proofs (that I am aware of) require
-the use of analysis (i.e. there is no pure-algebra proof).
+The proof of the Fundamental Theorem unfortunately requires concepts and techniques far beyond the scope of this book. All proofs (that I am aware of) require
+the use of analysis (i.e. there is no pure-algebra proof).\footnote{~Stewart gives a proof in \cite{Ste15}, and Artin gives two(!) proofs in \cite{Art91} \S 9.9.}
 
-The first rigorous proof of this theorem was published by French mathematician Jean-Robert Argand in 1814; the name is somewhat
+The first rigorous proof of the theorem was published by French mathematician Jean-Robert Argand in 1814; the name is somewhat
 incorrect in the modern era as the study of algebra is no longer purely devoted to the properties of the complex number field.
 An analogue of the theorem in a more modern context is Kronecker's Theorem, which states that a polynomial with coefficients
 in set of numbers in which we can add, subtract, multiply, and divide has at least one solution in a `bigger' set of numbers that
@@ -684,42 +587,46 @@ of this is exactly the same as that of the absolute value of a real number (and 
 value) --- despite this, note that while there is a natural ordering on the real numbers (for example, $ -2 < 0 < \pi < \sqrt{17} $) there
 can be no such ordering on the complex numbers. It is completely nonsensical to talk about any complex number being `bigger' than any other.
 
-\begin{center}\fbox{
-\begin{tikzpicture}
-  \begin{axis}[
-    xmin = -4, xmax = 4,
-    ymin = -4, ymax = 4,
-    xlabel=$\realp{z}$,
-    ylabel={$\imagp{z}$},
-    axis lines=middle,
-    scale=.8
-  ]
-    \addplot[color=BurntOrange, mark=*, thick]
-    coordinates {
-      (0, 1)
-    };
-    \addplot[color=ForestGreen, mark=*, thick]
-    coordinates {
-      (1, 0)
-    };
-    \addplot[color=NavyBlue, mark=*, thick]
-    coordinates {
-      (3,2)
-    };
-    \addplot[color=Red, mark=*, thick]
-    coordinates {
-      (-1,-1)
-    };
-    \addplot[color=Mulberry, mark=*, thick]
-    coordinates {
-      (-1,2)
-    };
-  \end{axis}
-\end{tikzpicture}
-}\end{center}
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xmin = -4, xmax = 4,
+      ymin = -4, ymax = 4,
+      xlabel=$\realp{z}$,
+      ylabel={$\imagp{z}$},
+      axis lines=middle,
+      scale=.8
+    ]
+      \addplot[color=BurntOrange, mark=*, thick]
+      coordinates {
+        (0, 1)
+      };
+      \addplot[color=ForestGreen, mark=*, thick]
+      coordinates {
+        (1, 0)
+      };
+      \addplot[color=NavyBlue, mark=*, thick]
+      coordinates {
+        (3,2)
+      };
+      \addplot[color=Red, mark=*, thick]
+      coordinates {
+        (-1,-1)
+      };
+      \addplot[color=Mulberry, mark=*, thick]
+      coordinates {
+        (-1,2)
+      };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Five points on an Argand diagram.\label{fig:argand}}
+\end{figure}
 
-The five points marked on this Argand diagram are $ i $, 1, $ 3+2i $, $ -1 - i $, and $ 2i - 1 $. See if you can label each point on the diagram itself.
+The five points marked on the Argand diagram in \cref{fig:argand} are $ i $, 1, $ 3+2i $, $ -1 - i $, and $ 2i - 1 $. See if you
+can label each point on the diagram itself.
 
+\subsection*{Addition and Subtraction}
 Due to the way we constructed the complex numbers, there are natural rules for arithmetic. Suppose we have two complex numbers, $ u = a + bi $
 and $ v = c + di $. We have the following rules for addition and subtraction by collecting the real and imaginary terms together:
 \begin{align*}
@@ -728,34 +635,38 @@ and $ v = c + di $. We have the following rules for addition and subtraction by 
 \end{align*}
 
 Geometrically, we are simply taking the vectors associated with each point and adding them.
-\begin{center}\fbox{
-\begin{tikzpicture}
-  \begin{axis}[
-    xmin = 0, xmax = 5,
-    ymin = 0, ymax = 6,
-    xlabel=$\realp{z}$,
-    ylabel={$\imagp{z}$},
-    axis lines=middle,
-    scale=.8
-  ]
-    \coordinate (O) at (0,0);
-    \coordinate (A) at (3,2);
-    \coordinate (B) at (1,3);
-    \coordinate (S) at (4,5);
-    \draw[very thick, BurntOrange, ->] (O)--(A);
-    \draw[very thick, dotted, Mulberry, ->] (A)--(S);
-    \draw[very thick, dotted, BurntOrange, ->] (B)--(S);
-    \draw[very thick, Mulberry, ->] (O)--(B);
-  \end{axis}
-\end{tikzpicture}
-}\end{center}
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xmin = 0, xmax = 5,
+      ymin = 0, ymax = 6,
+      xlabel=$\realp{z}$,
+      ylabel={$\imagp{z}$},
+      axis lines=middle,
+      scale=.8
+    ]
+      \coordinate (O) at (0,0);
+      \coordinate (A) at (3,2);
+      \coordinate (B) at (1,3);
+      \coordinate (S) at (4,5);
+      \draw[very thick, BurntOrange, ->] (O)--(A);
+      \draw[very thick, dotted, Mulberry, ->] (A)--(S);
+      \draw[very thick, dotted, BurntOrange, ->] (B)--(S);
+      \draw[very thick, Mulberry, ->] (O)--(B);
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The addition of complex numbers.}
+\end{figure}
 
 Before we discuss multiplication of complex numbers, we will discuss one more simple but important operation: that of complex conjugation. Our intent
 is to take the geometric property of reflection (across the real axis), and give it an algebraic meaning; in particular, the \emph{complex conjugate}
 of $ z = a + bi $ is $ \overline z = a-bi $. An initial application of this concept is the simple result that if a polynomial has real coefficents,
 any complex roots must come in conjugate pairs (you are asked to prove this in the special case of quadratic polynomials as exercise \ref{ex:conjquadratic},
-and in the general case as exercise 9.\ref{ex:solutiongenerator}).
+and in the general case as exercise \ref{sec:finalexs}.\ref{ex:solutiongenerator}).
 
+\subsection*{Multiplication}
 There is a rule for multiplying complex numbers that is similar to the rules for addition; we simply collect like
 terms and remember that $ i^2 = -1 $ in order to obtain the result
 \begin{displaymath}
@@ -768,29 +679,31 @@ are the distances from the two axes, we write $ z = r \cis \theta $, where $ r $
 origin (simply the modulus $ \abs{z} $ again) and $ \theta $ is the angle that number's vector makes with the $ x$-axis
 (known as the \emph{argument} of $ z $, and written as $ \carg(z) $). The function $ \cis \theta $ is defined to be $ \cos \theta + i\sin \theta $.
 
-\begin{center}\fbox{
-\begin{tikzpicture}
-  \begin{axis}[
-    xmin = 0, xmax = 4,
-    ymin = 0, ymax = 3,
-    xticklabels = {,,},
-    yticklabels = {,,},
-    ticks=none,
-    xlabel=$\realp{z}$,
-    ylabel={$\imagp{z}$},
-    axis lines=middle
-  ]
-    \coordinate (O) at (0,0);
-    \node[circle, fill=ForestGreen, inner sep=0pt, minimum size=5pt, label=above right:{$ z = a + bi $}] (A) at (3,2) {};
-    \coordinate (B) at (3,0);
-    \draw[black, ->] (O)--(A) node[midway, sloped, above left] {$ r $};
-    \draw[black] (O) +(0:.8cm) arc (0:33.69:.9cm);
-    \draw[black] (O) +(15:.6) node[rotate=0] {$ \theta $};
-    \draw[black] (B) -- (A) node[midway, right] {$ b $};
-    \draw[black] (O) -- (B) node[midway, above] {$ a $};
-  \end{axis}
-\end{tikzpicture}
-}\end{center}
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xmin = 0, xmax = 4,
+      ymin = 0, ymax = 3,
+      xticklabels = {,,},
+      yticklabels = {,,},
+      ticks=none,
+      xlabel=$\realp{z}$,
+      ylabel={$\imagp{z}$},
+      axis lines=middle
+    ]
+      \coordinate (O) at (0,0);
+      \node[circle, fill=ForestGreen, inner sep=0pt, minimum size=5pt, label=above right:{$ z = a + bi $}] (A) at (3,2) {};
+      \coordinate (B) at (3,0);
+      \draw[black, ->] (O)--(A) node[midway, sloped, above left] {$ r $};
+      \draw[black] (O) +(0:.8cm) arc (0:33.69:.9cm);
+      \draw[black] (O) +(15:.6) node[rotate=0] {$ \theta $};
+      \draw[black] (B) -- (A) node[midway, right] {$ b $};
+      \draw[black] (O) -- (B) node[midway, above] {$ a $};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The polar form of a complex number.}
+\end{figure}
 
 It is simple to see that $ \theta = \tan^{-1}{\frac{b}{a}} $; we have already got a formula for $ r $.
 
@@ -806,46 +719,48 @@ Note that any complex number has an infinite number of different representations
 rotation around the origin) to its argument. This fact comes into play later on when we try to solve equations involving powers of complex
 numbers.
 
-It is possible to make a sensible definition for complex exponents using \emph{Euler's formula},
+\subsection*{Exponentiation}
+Finally, we ask ourselves what a definition of complex exponentiation should be. There are two important
+behaviours of the real exponential function which we want to preserve: the sum-to-product rule ($ \exp(x + y) = \exp(x) \exp(y) $)
+and the differentiation rule ($ \exp'(x) = \exp(x) $).
+
+If we define the complex exponential in such a way that these rules hold, then we will have $ \exp(x + iy) = \exp(x) \exp(iy) $;
+in particular, we need only make a sensible definition for $ \exp(iy) $. Further, we have already seen a function that satisfies the sum
+rule: $ \cis(x + y) = \cis(x) \cis(y) $. Thus, we make a guess that a decent definition for our exponential function will be $ \exp(iy) = \cis(y) $.
+
+We now check that this definition satisfies the differentiation rule: we have not formally defined how differentiation should work over the
+complex numbers, but $ \cis $ is only a function of real variables and so we can differentiate it using our normal definitions:
 \begin{displaymath}
-  \cis \theta = e^{i\theta}.
+  \od{}{y} [\cos y + i\sin y] = -\sin y + i\cos y = i(i\sin y + \cos y) = i\cis y.
 \end{displaymath}
-From this we obtain the following equation, which relates five fundamental mathematical constants
+Thus, if we make this definition, then $ \exp(iy) = i\exp(iy) $ which is the `usual' rule for exponent differentiation.
+
+We therefore make the definition formally, known as \emph{Euler's formula}, that
+\begin{displaymath}
+  \cis \theta = \exp(i\theta)
+\end{displaymath}
+and thus
+\begin{displaymath}
+  \exp(x + iy) = e^x \cis y;
+\end{displaymath}
+we will also allow ourselves to use the standard notation, $ \exp(z) = e^z $.
+
+Philosophically, we make the note that complex exponentiation is very elegant, in the sense that it
+is simply a function which transforms numbers from rectangular form into polar form by `wrapping them
+around the origin'!
+
+From Euler's formula we obtain the following equation, which relates five fundamental mathematical constants
 in one expression and which some have called the most beautiful equation in mathematics:
 \begin{equation}
   \tag{Euler's Identity}
   e^{i\pi} + 1 = 0.
 \end{equation}
 
-\begin{center}
-  \includegraphics[width=0.5\textwidth]{stars}\\
-  \small{\textit{From \url{http://brownsharpie.courtneygibbons.org/?p=848}}}
-\end{center}
-
-A simple proof of Euler's formula, using calculus, is presented here.
-\begin{proof}
-  We wish to show that $ \frac{e^{i\theta}}{\cos\theta+i\sin\theta} = 1 $. Note that $ \cis\theta \neq 0 $ for all $ \theta $.
-
-  Suppose $ f $ is a function of $ \theta $, defined by $ f(\theta) = \frac{e^{i\theta}}{\cos\theta+i\sin\theta} $.
-  Then, taking the derivative, we have
-  \begin{align*}
-    \od{f}{\theta} &= \frac{(\cos \theta + i\sin \theta) \cdot i e^{i\theta} - e^{i\theta} \cdot (-\sin \theta + i \cos \theta)}{\cis^2 \theta}\\
-                   &= \frac{ie^{i\theta}\cos\theta - e^{i\theta}\sin\theta + e^{i\theta}\sin\theta - ie^{i\theta}\cos\theta}{\cis^2\theta}\\
-                   &= 0.
-  \end{align*}
-  So $ f $ is a constant function, and so has the same value for all $ \theta $. But $ f(0) = \frac{e^{i\cdot 0}}{\cos 0 + i\sin 0} = 1 $;
-  so $ \frac{e^{i\theta}}{\cos\theta+i\sin\theta} = 1 $ for all $ \theta $.
-\end{proof}
-
-As a short aside, we have already seen that we can view the complex numbers as points in the plane, $ \mathbb{R}^2 $. This means
-that we can carry out geometric operations algebraically using complex numbers. For example, the length of the line joining two
-points $ z_1 $ and $ z_2 $ is simply $ \abs{z_1 - z_2} $.
-
-We define the \textit{locus} of an equation to be the set of all points satisfying that equation; for example, the locus
-of $ x^2 + y^2 = 1 $ is the set of all points making up the unit circle. We can use our correspondence between points on
-a plane and complex numbers to reason about the locus of a complex equation; for example, the locus of the equation $ \abs{z} = 1 $
-is the set of all points at a unit distance from the origin: it is another way of talking about the unit circle. (If you
-write $ z = x + iy $, then $ \abs{z} = x^2 + y^2 $ and the comparison becomes even more obvious.)
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{stars}
+  \caption{From \url{http://brownsharpie.courtneygibbons.org/?p=848}.}
+\end{figure}
 
 \subsection*{Exercises}
 \begin{enumerate}
@@ -863,7 +778,7 @@ write $ z = x + iy $, then $ \abs{z} = x^2 + y^2 $ and the comparison becomes ev
       \item Show that any complex number $ z $ can be written as $ z = pv + qw $ for some real $ p $ and $ q $.
     \end{enumerate}
   \item Solve the quadratic equation $ x^2 + 4 = 0 $.
-  \item Prove that $ z + \overline z = 2 \cdot \realp{z} $ and $ z - \overline z = 2i \cdot \imagp{z} $.
+  \item Prove that $ z + \overline z = 2 \cdot \realp{z} $ and $ z - \overline z = 2i \cdot \imagp{z} $. \label{ex:reflecsum}
   \item Verify the following properties of conjugation.
     \begin{enumerate}
       \item $ \overline {\overline z} = z $
@@ -909,7 +824,7 @@ write $ z = x + iy $, then $ \abs{z} = x^2 + y^2 $ and the comparison becomes ev
   \hard If $ \zeta = \sqrt{\frac{1}{2}(a+\sqrt{a^2+b^2})} + i\sqrt{\frac{1}{2}(-a+\sqrt{a^2+b^2})} $
         is a complex number, find $ \zeta^2 $ in the form $ p + iq $ (where $ a $, $ b $, $ p $, and $ q $ are real).
   \hard If $ z = x + iy $, and $ az^2 + bz + c = 0 $, show that $ a \overline z^2 + b \overline z + c = 0 $
-        if $ a $, $ b $, and $ c $ are real. (This exercise is generalised in 9.\ref{ex:solutiongenerator}.) \label{ex:conjquadratic}
+        if $ a $, $ b $, and $ c $ are real. (This exercise is generalised in \ref{sec:finalexs}.\ref{ex:solutiongenerator}.) \label{ex:conjquadratic}
   \hard Use Euler's identity to find $ \ln (-1) $, and hence $ \ln (-x) $ for real $ x $.
   \hard Prove that for every positive integer $ n $, $ (-1 + \sqrt{3}i)^{3n} + (-1 - \sqrt{3}i)^{3n} = 2^{3n+1} $.
   \item Show that $ y_1(x) = e^{ix} + e^{-ix} $ and $ y_2(x) = 2\cos x $ are both solutions of the differential equation
@@ -931,13 +846,6 @@ write $ z = x + iy $, then $ \abs{z} = x^2 + y^2 $ and the comparison becomes ev
       \item Show that (b) is a root of the cubic equation $ t^3 - 15t - 4 = 0 $,
             and hence find all three solutions.
     \end{enumerate}
-  \item Show that, if $ a $ and $ b $ are fixed complex numbers, then $ \abs{z - a} = \abs{z - b} $ describes a line.
-  \hard Let $ v = 1 + i $ and $ z = x + iy $ for any real numbers $ x $ and $ y $.
-    \begin{enumerate}
-      \item Show that the equation $ \abs{z - v} = \abs{vz} $ represents a circle, and find its
-            centre and radius.
-      \item Find the point of intersection of the circle with the straight line $ \abs{z - v} = \abs{z + v} $.
-    \end{enumerate}
   \item You do not need the fundamental theorem of algebra for this exercise.
     \begin{enumerate}
       \item Prove that all cubic equations with real coefficients must have exactly three roots in the complex numbers.
@@ -946,7 +854,139 @@ write $ z = x + iy $, then $ \abs{z} = x^2 + y^2 $ and the comparison becomes ev
     \end{enumerate}
 \end{enumerate}
 
-\section{Roots of Unity}
+\section{Geometry}\label{sec:geometry}
+We have already seen that we can view the complex numbers as points in the plane, $ \mathbb{R}^2 $. This means
+that we can carry out geometric operations algebraically using complex numbers. For example, the length of the line joining two
+points $ z_1 $ and $ z_2 $ is simply $ \abs{z_1 - z_2} $.
+
+We define the \textit{locus} of an equation to be the set of all points satisfying that equation; for example, the locus
+of $ x^2 + y^2 = 1 $ is the set of all points making up the unit circle. We can use our correspondence between points on
+a plane and complex numbers to reason about the locus of a complex equation; for example, the locus of the equation $ \abs{z} = 1 $
+is the set of all points at a unit distance from the origin: it is another way of talking about the unit circle. (If you
+write $ z = x + iy $, then $ \abs{z} = x^2 + y^2 $ and the comparison becomes even more obvious.)
+
+More interestingly, consider the set of all points $ z $ such that for some real number $ t $ and for a pair of fixed
+points $ z_1 $ and $ z_2 $, $ z = tz_1 + (1 - t)z_2 $. The locus of this set is the line joining $ z_1 $ and $ z_2 $.
+To prove this, write $ z = x + iy $, $ z_1 = x_1 + iy_1 $, and $ z_2 = x_2 + iy_2 $; then the equation tells us that
+\begin{gather*}
+  x + yi = tx_1 + it y_1 + x_2 + i y_2 - tx_2 - it y_2\\
+  x = t(x_1 - x_2) + x_2, \qquad y = t(y_1 - y_2) + y_2
+\end{gather*}
+From the second line, we see that $ t = \frac{x - x_2}{x_1 - x_2} $ and thus
+\begin{gather*}
+  y = \frac{x - x_2}{x_1 - x_2}(y_1 - y_2) + y_2.
+\end{gather*}
+Writing $ m = \frac{y_1 - y_2}{x_1 - x_2} $, we see that we have the equation of a line passing through $ (x_2, y_2) $
+with slope $ m $.
+
+Now, we will consider two non-zero complex numbers $ w $ and $ z $; we will call the two points \textit{orthogonal} if the lines
+passing from $ w $ and $ z $ to the origin meet at right angles. The claim is that the two points are orthogonal precisely
+when $ \realp w \realp z + \imagp w \imagp z = 0 $. Suppose that the two points are orthogonal; then, by Pythagoras' theorem,
+we have that $ \abs{w - z}^2 = \abs{w}^2 + \abs{z}^2 $. Expanding this, we obtain
+\begin{align*}
+  (w - z)(\overline{w} - \overline{z}) &= w\overline{w} + z\overline{z}\\
+  z\overline{w} + w\overline{z} &= 0.
+\end{align*}
+But $ z\overline{w} + w\overline{z} = z \overline{w} + \overline{z \overline{w}} $, and hence (applying exercise \ref{sec:complex1}.\ref{ex:reflecsum})
+we have $ 2 \realp{z \overline{w}} = 0 $. But $ \realp{z \overline w} = \realp{z}\realp{w} + \imagp{z} \imagp{w} $, and so the condition
+claimed holds.
+
+On the other hand, suppose $ \realp{z}\realp{w} + \imagp{z} \imagp{w} = 0 $. We form the triangle with sides $ \abs{w} $, $ \abs{z} $,
+and $ \abs{w - z} $ with an angle $ \theta $ at the origin. By the cosine rule, $ \abs{w - z}^2 = \abs{w}^2 + \abs{z}^2 - 2\abs{w}\abs{z}\cos\theta $.
+Using the same argument as above, we have $ z\overline{w} + w\overline{z} = - 2\abs{w}\abs{z}\cos\theta $; but the left hand side
+is zero, and thus (since $ \abs{w} $ and $ \abs{z} $ are non-zero) we have $ \cos \theta = 0 $ and $ \theta = \pm \pi/2 $ as claimed.
+
+We call the expression $ \realp w \realp z + \imagp w \imagp z $ the \emph{dot product} of $ w $ and $ z $; we write it $ (w, z) $. One
+important property of the dot product is that $ (u + v, w) = (u, w) + (v, w) $.
+
+The dot product is intimately connected with the geometry of the complex plane. As well as our result about orthogonality above,
+we have two more properties:
+\begin{enumerate}
+  \item The modulus of $ z $ is $ \abs{z} = \sqrt{(z, z)} $.
+  \item If $ \theta $ is the angle at the origin between $ w $ and $ z $ (i.e. $ \theta = \arg w - \arg z $), then $ \cos \theta = \frac{(w,z)}{\abs{w}\abs{z}} $.
+\end{enumerate}
+
+Suppose we have two nonzero complex numbers, $ w_0 $ and $ z_0 $. We want to find the closest point $ z $ on the line generated by $ z_0 $
+(i.e. the line passing through $ z_0 $ and the origin) to the point $ w_0 $. This point is called the \emph{projection} of $ w_0 $ onto $ z_0 $,
+and we denote it by $ z = \proj_{z_0}(w_0) $.
+
+The calculation of the projection is based on the dot product, and proceeds as follows. Consider $ h = w_0 - tz_0 $, where $ t $ is some
+real number. Then $ (h, z_0) = (w_0, z_0) - (tz_0, z_0) = (w_0, z_0) - t\abs{z_0}^2 $; so $ h $ is perpendicular to $ tz_0 $ precisely
+when $ t = \frac{(w_0, z_0)}{\abs{z_0}^2} = \frac{(w_0, z_0)}{(z_0, z_0)} $. It follows that
+\begin{displaymath}
+  \proj_{z_0}(w_0) = z_0 \frac{(w_0, z_0)}{(z_0, z_0)}.
+\end{displaymath}
+
+As a bonus, if we are given any fixed complex number $ z_0 $ then we can write every vector $ w_0 $ in the plane in the form $ w_0 = tz_0 + z_0^\perp $
+where $ z_0 $ and $ z_0^\perp $ are perpendicular: just take $ t = \frac{(w_0, z_0)}{(z_0, z_0)} $ and $ z_0^\perp = w_0 - tz_0 $.
+
+Now suppose we are given a line $ \ell $ passing through the point $ b $ with some slope $ m $; then the angle the line makes with the horizontal
+is $ \theta = \tan^{-1} m $, and thus we are simply looking at the line generated by $ \cis \theta $, shifted to $ b $. Suppose we are given a
+point $ w $, and we wish to find the perpendicular distance between $ w $ and $ \ell $. This distance is simply
+\begin{align*}
+  d(w, \ell) &= \abs{(w - b) - \proj_{\cis \theta}(w - b)}\\
+             &= \abs{(w - b) - (\cis \theta) \frac{(w - b, \cis \theta)}{(\cis \theta, \cis \theta)}}\\
+             &= \abs{(w - b) - (\cis \theta)(w - b, \cis \theta)}\\
+             &= \abs{(w - (w, \cis \theta)\cis \theta) - (b - (b, \cis \theta)\cis \theta)}\\
+\end{align*}
+
+\subsection*{Exercises}
+\begin{enumerate}
+  \item Show that, if $ a $ and $ b $ are fixed complex numbers, then $ \abs{z - a} = \abs{z - b} $ describes the line which
+        cuts the segment between $ a $ and $ b $ at a right angle.
+  \hard Let $ v = 1 + i $ and $ z = x + iy $ for any real numbers $ x $ and $ y $.
+    \begin{enumerate}
+      \item Show that the equation $ \abs{z - v} = \abs{vz} $ represents a circle, and find its
+            centre and radius.
+      \item Find the point of intersection of the circle with the straight line $ \abs{z - v} = \abs{z + v} $.
+    \end{enumerate}
+  \item Find the locus of all $ z $ such that for some fixed $ a $, $ z - a $ is perpendicular to $ z + a $.
+  \item Show that if $ u $, $ v $, and $ w $ are complex numbers, and if $ \lambda $ and $ \mu $ are real
+        numbers, then:
+    \begin{enumerate}
+      \item $ (u, v) = (v, u) $
+      \item $ (\lambda u + \mu v, w) = \lambda(u, w) + \mu(v, w) $
+    \end{enumerate}
+  \hard The following inequality, which holds for all real numbers $ a_1 $, $ a_2 $, ..., $ a_n $, $ b_1 $, ..., $ b_n $, is known as the Cauchy-Schwarz
+        inequality.
+        \begin{equation}\label{eqn:cauchy}
+          (a_1 b_1 + a_2 b_2 + \cdots + a_n b_n)^2 \leq (a_1^2 + \cdots + a_n^2)(b_1^2 + \cdots + b_n^2) \tag{Cauchy-Schwarz}
+        \end{equation}
+        The inequality is a very useful result in analysis; there are several different elementary proofs of it.
+        \begin{enumerate}
+          \item Show that if $ a > 0 $, then $ ax^2 + bx + c \geq 0 $ for all $ x $ if and only if $ b^2 - 4ac \leq 0 $.
+          \item Prove the Cauchy-Schwarz inequality by considering the expression $ (a_1 x + b_1)^2 + \cdots + (a_n x + b_n)^2 $,
+                collecting terms, and applying (a).
+          \item As a special case of the inequality, show that if $ w $ and $ z $ are complex numbers then $ (w, z)^2 \leq \abs{w}^2 \abs{z}^2 $.
+          \item Hence show the \emph{triangle inequality}: $ \abs{a + b} \leq \abs{a} + \abs{b} $ for complex numbers $ a $ and $ b $.
+        \end{enumerate}
+  \hard As we have already seen, complex numbers can be used to solve problems in geometry. For example, multiplication
+        by $ i $ rotates a point by $ \frac{\pi}{2} $ around the origin. A generalisation of this allows us to rotate
+        a point $ z $ around an arbitrary point $ a $ by that angle: $ z' = a + i(z-a) $.
+
+        A pirate named Kim Dotcom has hidden his sick tunes on a desert island tax haven in order to evade
+        American FBI agents. You have been hired to find the data stick containing his mp3 files so that
+        his extradition case can be resolved, but all you can find is a treasure map with the following
+        instructions:
+
+        \begin{aquote}{Kim Dotcom's Amazing Totally Secret Treasure Map\textsuperscript{TM}}
+          From the statue of Richard Seddon, go to the kauri tree (counting your steps), and then turn
+          exactly 90\degree left and walk the same number of steps to the point $ g' $. Returning
+          to the statue, walk to the beech tree (again counting your steps). Turn right by 90\degree,
+          and walk the same number of steps to point $ g'' $. The treasure is buried exactly at the midpoint
+          of the line joining $ g' $ and $ g'' $.
+        \end{aquote}
+
+        Given that the kauri tree is at $ (0,0) $, the beech tree is at $ (10,0) $, and
+        the statue is somewhere on the line $ y = 2009 $, find the location of the treasure
+        using the geometry of complex numbers and rid New Zealand of Kim Dotcom forever.\footnote{~Problem taken from \cite{Kes09}, section 5.1.}
+  \hard A line in $ \mathbb{C}^2 $ (the plane with complex coordinates) is defined to be the locus of a linear equation
+        $ ax + by + c = 0 $ where $ a $, $ b $, and $ c $ are complex constants. Prove that, given two distinct points $ (x_0, y_0) $
+        and $ (x_1, y_1) $ in $ \mathbb{C}^2 $, there is a \textbf{unique} line through those two points. \textit{Hint: it is certainly \textbf{not} true
+        that there is a unique linear equation whose graph includes both points.}
+\end{enumerate}
+
+\section{Roots of Unity}\label{sec:roots}
 Let us take the equation $ z^3 = 1 $. We know that this equation has exactly three complex
 roots, and of these we already know that the only real root is $ z = 1 $. How can we find
 the two non-real roots?
@@ -960,42 +1000,44 @@ respectively. Note that if we set $ k $ to any higher number (3, for example) we
 obtain one of the roots we already have (e.g. $ \cis \frac{6\pi}{3} = 1 $), since we
 have gone `around the circle'.
 
-\begin{center}\fbox{
-\begin{tikzpicture}
-  \begin{axis}[
-    xlabel=$\realp(z)$,
-    ylabel={$\imagp(z)$},
-    axis lines=middle,
-    disabledatascaling,
-    xmin=-1.5,
-    xmax=1.5,
-    ymin=-1.5,
-    ymax=1.5,
-    axis equal
-  ]
-    \addplot[color=Maroon, mark=*, thick]
-    coordinates {
-      (1, 0)
-    };
-    \addplot[color=Maroon, mark=*, thick]
-    coordinates {
-      (-0.5, 0.866)
-    };
-    \addplot[color=Maroon, mark=*, thick]
-    coordinates {
-      (-0.5, -0.866)
-    };
-  \path [draw=Maroon, fill=none, semitransparent] (0,0) circle (1);
-  \path [draw=Maroon, fill=none, semitransparent] (-0.5,0.866) -- (0,0);
-  \path [draw=Maroon, fill=none, semitransparent] (-0.5,-0.866) -- (0,0);
-  \path [draw=Apricot, fill=none, semitransparent] (-0.5,-0.866) -- (-0.5,0.866);
-  \path [draw=Apricot, fill=none, semitransparent] (1, 0) -- (-0.5,0.866);
-  \path [draw=Apricot, fill=none, semitransparent] (-0.5,-0.866) -- (1, 0);
-  \end{axis}
-\end{tikzpicture}
-}\end{center}
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xlabel=$\realp{z}$,
+      ylabel={$\imagp{z}$},
+      axis lines=middle,
+      disabledatascaling,
+      xmin=-1.5,
+      xmax=1.5,
+      ymin=-1.5,
+      ymax=1.5,
+      axis equal
+    ]
+      \addplot[color=Maroon, mark=*, thick]
+      coordinates {
+        (1, 0)
+      };
+      \addplot[color=Maroon, mark=*, thick]
+      coordinates {
+        (-0.5, 0.866)
+      };
+      \addplot[color=Maroon, mark=*, thick]
+      coordinates {
+        (-0.5, -0.866)
+      };
+    \path [draw=Maroon, fill=none, semitransparent] (0,0) circle (1);
+    \path [draw=Maroon, fill=none, semitransparent] (-0.5,0.866) -- (0,0);
+    \path [draw=Maroon, fill=none, semitransparent] (-0.5,-0.866) -- (0,0);
+    \path [draw=Apricot, fill=none, semitransparent] (-0.5,-0.866) -- (-0.5,0.866);
+    \path [draw=Apricot, fill=none, semitransparent] (1, 0) -- (-0.5,0.866);
+    \path [draw=Apricot, fill=none, semitransparent] (-0.5,-0.866) -- (1, 0);
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The cube roots of 1.\label{fig:cuberoots}}
+\end{figure}
 
-If we look at the roots geometrically (on an Argand diagram like that above), we see that
+If we look at the roots geometrically (on an Argand diagram like that in \cref{fig:cuberoots}), we see that
 the $ n$th roots of 1 will be arranged in a circle of radius $ 1 $ centred on the origin, and the
 angles between them will be exactly $ \frac{2\pi}{n} $. If $ n $ is even, both 1 and -1 will both
 be real roots, but if $ n $ is odd then 1 will be the only real root. In general, the sum of all
@@ -1013,7 +1055,6 @@ and so on, then a root is only primitive for that value of $ n $ for which it fi
 For example, $ \mu = \cis \frac{2\pi}{3} $ is a primitive third root of unity (since the smallest
 nonzero $ n $ such that $ \mu^n = 1 $ is $ n = 3 $).
 
-\clearpage
 We now prove that, as we claimed, the primitive $n$th roots of unity "generate" all the other
 $ n$th roots of unity:
 \begin{thm}
@@ -1108,7 +1149,7 @@ no divisors (i.e. if $ \gcd(a,b) = 1 $).
         prime then $ \sigma(p^n) = \frac{p^{n+1} - 1}{p - 1} $.
 \end{enumerate}
 
-\section{The Double-Triangle Problem}
+\section{The Double-Triangle Problem}\label{sec:triangle}
 As an application of our work on primitive roots, we solve the \emph{double-triangle problem} which appeared
 in the 2009 New Zealand Scholarship examination.
 
@@ -1150,17 +1191,19 @@ quadratic equations:
 Note that because all of the complex roots come in conjugate pairs the imaginary parts
 cancel leaving us with a sextic polynomial with real coefficients.
 
-\begin{center}\fbox{
-\begin{tikzpicture}
-  \begin{axis}[
-    xlabel=$x$,
-    ylabel={$p(x)$ when $ k = 2 $},
-    axis lines=middle
-  ]
-    \addplot[domain=-2.1:2.1, samples=100, color=WildStrawberry]{(x -2)*(x + (2/2))*(x^2 - (2/2)*x + (2^2)/4)*(x^2 + 2*x + 2^2)};
-  \end{axis}
-\end{tikzpicture}
-}\end{center}
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xlabel=$x$,
+      ylabel={$p(x)$ when $ k = 2 $},
+      axis lines=middle
+    ]
+      \addplot[domain=-2.1:2.1, samples=100, color=WildStrawberry]{(x -2)*(x + (2/2))*(x^2 - (2/2)*x + (2^2)/4)*(x^2 + 2*x + 2^2)};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{A polynomial with the desired roots.}
+\end{figure}
 
 \subsection*{Exercises}
 Work through the problem, writing out all working clearly. Attempt the problem without
@@ -1170,26 +1213,25 @@ and make sure you understand why each step is taken and why the solution is corr
 Are there any other possible ways of completing the problem? Is this the only possible
 solution?
 
-\section{Solving the Cubic}
+\section{Solving the Cubic}\label{sec:cubic}
 This section presents a general solution for the cubic equation similar to the solution
-of the quadratic equation given in exercise 3.\ref{ex:quadratificational}. Be sure to complete that
+of the quadratic equation given in exercise \ref{sec:quadratic}.\ref{ex:quadratificational}. Be sure to complete that
 exercise before reading this section. The general outline of this proof is given in \S14
 of \cite{Edw84}.
 
-\subsection*{Historical Background}
-\begin{figure}[h]
+\begin{figure}
+  \centering
   \begin{minipage}{0.5\textwidth}
   \begin{center}
-    \includegraphics[width=0.4\linewidth]{tartaglia}\\
-    \small{\textit{Niccolo Fontana (Tartaglia)}}
+    \includegraphics[width=0.4\linewidth]{tartaglia}
   \end{center}
-  \end{minipage}
+  \end{minipage}%
   \begin{minipage}{0.5\textwidth}
   \begin{center}
-    \includegraphics[width=0.4\linewidth]{galois}\\
-    \small{\textit{\'Evariste Galois}}
+    \includegraphics[width=0.4\linewidth]{galois}
   \end{center}
   \end{minipage}
+  \caption{Niccolo Fontana (Tartaglia) (left) and \'Evariste Galois (right)}
 \end{figure}
 
 This particular method of solution was presented first by the French mathematician Alexandre-Th\'eophile Vandermonde
@@ -1200,7 +1242,6 @@ the Stammerer), who was conviced to pass them on to another Italian, Girolamo Ca
 published the solution in his book, \emph{Ars Magna}, which also included a solution to the general quartic
 by Ludovico Ferrari.
 
-\subsection*{Notation and Preliminary Results}
 Suppose we have some polynomial $ t^3 - \sigma_1 t^2 + \sigma_2 t - \sigma_3 $ (note the signs
 on the coefficients) with the three complex roots (not necessarily distinct) $ x $, $ y $,
 and $ z $. So $ \sigma_1 = x + y + z $, $ \sigma_2 = xy + xz + yz $, and $ \sigma_3 = xyz $,
@@ -1339,7 +1380,7 @@ which is obviously symmetric in each $ \alpha_i $.
         Suppose that for a particular quartic $ Q(x) $ with real coefficients, $ \Delta_4[Q(x)] > 0 $. What can you say about the number of real roots?
 \end{enumerate}
 
-\section{Final Exercises}
+\section{Final Exercises}\label{sec:finalexs}
 
 \begin{aquote}{John von Neumann}
   In mathematics you don't understand things. You just get used to them.
@@ -1389,30 +1430,6 @@ section first as they often include some content themselves.
   \hard Suppose that $ \abs{z+w} = \abs{z-w} $. Show that $ \carg z - \carg w = \pm \frac{\pi}{2} $.
   \hard If $ 3z^3 + (2-3ai)z^2 + (6+2bi)z + 4 $ has exactly one real root, what value must
         the quotient $ b/a $ take if both $ a $ and $ b $ are real? Find the real root.
-  \hard As we have already seen, complex numbers can be used to solve problems in geometry. For example, multiplication
-        by $ i $ rotates a point by $ \frac{\pi}{2} $ around the origin. A generalisation of this allows us to rotate
-        a point $ z $ around an arbitrary point $ a $ by that angle: $ z' = a + i(z-a) $.
-
-        A pirate named Kim Dotcom has hidden his sick tunes on a desert island tax haven in order to evade
-        American FBI agents. You have been hired to find the data stick containing his mp3 files so that
-        his extradition case can be resolved, but all you can find is a treasure map with the following
-        instructions:
-
-        \begin{aquote}{Kim Dotcom's Amazing Totally Secret Treasure Map\textsuperscript{TM}}
-          From the statue of Richard Seddon, go to the kauri tree (counting your steps), and then turn
-          exactly 90\degree left and walk the same number of steps to the point $ g' $. Returning
-          to the statue, walk to the beech tree (again counting your steps). Turn right by 90\degree,
-          and walk the same number of steps to point $ g'' $. The treasure is buried exactly at the midpoint
-          of the line joining $ g' $ and $ g'' $.
-        \end{aquote}
-
-        Given that the kauri tree is at $ (0,0) $, the beech tree is at $ (10,0) $, and
-        the statue is somewhere on the line $ y = 2009 $, find the location of the treasure
-        using the geometry of complex numbers and rid New Zealand of Kim Dotcom forever.\footnote{~Problem taken from \cite{Kes09}, section 5.1.}
-  \hard A line in $ \mathbb{C}^2 $ (the plane with complex coordinates) is defined to be the locus of a linear equation
-        $ ax + by + c = 0 $ where $ a $, $ b $, and $ c $ are complex constants. Prove that, given two distinct points $ (x_0, y_0) $
-        and $ (x_1, y_1) $ in $ \mathbb{C}^2 $, there is a \textbf{unique} line through those two points. \textit{Hint: it is certainly \textbf{not} true
-        that there is a unique linear equation whose graph includes both points.}
   \hard Find all possible values for $ \theta $ if $ \cis^2 \theta + \cis \theta + 1 = 0 $.
   \item Graph the locus of $ \carg w = \abs{w} $. What about $ \carg w + \abs {w} = 1 $?
   \item Given a quadratic equation $ x^2 + px + q $ and a root $ \alpha $, show that the other root $ \beta $ is
@@ -1440,7 +1457,7 @@ section first as they often include some content themselves.
   \item \label{ex:solutiongenerator}
     \begin{enumerate}
       \item Let $ p(x) = \sum^n_{r = 0} p_r x^r $ be a polynomial with real coefficients. If $ p(z) = 0 $,
-            then $ p(\overline{z}) = 0 $. (This is a generalisation of 5.\ref{ex:conjquadratic} to arbitrary degree polynomials.)
+            then $ p(\overline{z}) = 0 $. (This is a generalisation of \ref{sec:complex1}.\ref{ex:conjquadratic} to arbitrary degree polynomials.)
       \item Let $ p(x) = \sum^n_{r = 0} p_r x^{2r} $ be a polynomial with real coefficients and only even powers of $ x $.
             If $ p(a + bi) = 0 $, then $ p(\pm a \pm bi) = 0 $ for all possible combinations of $ \pm $.
     \end{enumerate}
@@ -1466,17 +1483,6 @@ section first as they often include some content themselves.
                 inverse)?
           \item When does $ (a + b\epsilon)^{-1} $ exist?
           \item Solve $ x^2 - 1 = 2\epsilon $ in $ \mathbb{R}[\epsilon] $.
-        \end{enumerate}
-  \hard The following inequality, which holds for all real numbers $ a_1 $, $ a_2 $, ..., $ a_n $, $ b_1 $, ..., $ b_n $, is known as the Cauchy-Schwarz
-        inequality.
-        \begin{equation}\label{eqn:cauchy}
-          (a_1 b_1 + a_2 b_2 + \cdots + a_n b_n)^2 \leq (a_1^2 + \cdots + a_n^2)(b_1^2 + \cdots + b_n^2) \tag{Cauchy-Schwarz}
-        \end{equation}
-        The inequality is a very useful result in analysis; there are several different elementary proofs of it.
-        \begin{enumerate}
-          \item Show that if $ a > 0 $, then $ ax^2 + bx + c \geq 0 $ for all $ x $ if and only if $ b^2 - 4ac \leq 0 $.
-          \item Prove the Cauchy-Schwarz inequality by considering the expression $ (a_1 x + b_1)^2 + \cdots + (a_n x + b_n)^2 $,
-                collecting terms, and applying (a).
         \end{enumerate}
   \hard Suppose $ p(x) = \sum_{i = 0}^n a_i x^i $ and $ q(x) = \sum_{i = 0}^m b_i x^i $ are polynomials. Show that $ p(x) q(x) = \sum_{i = 0}^{m + n} c_i x^i $,
         where each $ c_i $ is a constant. Give an expression for $ c_i $ in terms of the coefficients of $ p(x) $ and $ q(x) $.

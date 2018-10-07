@@ -148,73 +148,6 @@ consulting a professional! Ian Stewart's \textit{Taming the Infinite} is recomme
 \let\oldsection\section
 \renewcommand\section{\clearpage\oldsection}
 
-\section{Linear Equations}
-
-\begin{enumerate}
-  \answer Find some $ x $ such that $ 3\times(2\times  x + 5 ) - 2\times( x + 5) = 3\times x+14 $.
-\end{enumerate}
-
-The single solution is $ x = 9 $.
-
-\filbreak\begin{enumerate}[resume]
-  \answer A bottle of orange juice costs \$20. The juice costs \$19 more than the
-        empty bottle. How much does the empty bottle cost?
-\end{enumerate}
-
-Let $ b $ be the price of the empty bottle. Then the cost of the juice is $ 19 + b $,
-and so the total cost is $ 20 = (19 + b) + b \Rightarrow b = 0.5 $.
-
-\filbreak\begin{enumerate}[resume]
-  \answer Rearrange, graph, and solve $ 4x+2=45(x+4(x-8)) $.
-\end{enumerate}
-
-We have $ y = 45(x+4(x-8)) - 4x+2 $, and we graph to find the $ x$-intercept:
-
-\begin{center}\fbox{
-\begin{tikzpicture}
-  \begin{axis}[
-    xlabel=$x$,
-    ylabel={$y$},
-    axis lines=middle,
-    xtick distance=0.5
-  ]
-    \addplot[domain=5:8, samples=10, color=black]{45*(x+4*(x-8)) - 4*x+2};
-  \end{axis}
-\end{tikzpicture}
-}\end{center}
-
-$ x \approx 6.5 $ (from the graph), $ x = \frac{1442}{221} $
-
-\filbreak\begin{enumerate}[resume]
-  \answer Does the function $ f(x) = 3(1 + 2x) - 6x $ have any roots?
-\end{enumerate}
-We can either rearrange to see that $ f(x) = 3 \neq 0 $, or graph $ y = f(x) $ and notice that it is a straight line:
-
-\begin{center}\fbox{
-\begin{tikzpicture}
-  \begin{axis}[
-    xlabel=$x$,
-    ylabel={$y$},
-    axis lines=middle
-  ]
-    \addplot[domain=-8:8, samples=10, color=Dandelion]{3};
-  \end{axis}
-\end{tikzpicture}
-}\end{center}
-
-\filbreak\begin{enumerate}[resume]
-  \answer Suppose $ f(x) $ is a function defined implicitly by $ f(x) + x = 3f(x) - x $. Find the solutions of $ f(x) = 0 $.
-\end{enumerate}
-
-We have $ 2f(x) = 2x $ and hence $ x = 0 $ is the only solution to $ f(x) = 0 $.
-
-\filbreak\begin{enumerate}[resume]
-  \answer Solve $ \frac{2x}{x+3} = \frac{3}{x-10} + 2 $ for $ x $.
-\end{enumerate}
-
-Clearing fractions: $ 2x(x-10) = 3(x+3) + 2(x-10)(x+3) $
-After expanding and simplifying, the quadratic terms vanish and we have that $ x = \frac{17}{3} $.
-
 \section{Quadratic Equations}
 \begin{enumerate}
   \answer Find an example of a \textbf{quadratic equation} with the solutions:
@@ -272,42 +205,6 @@ $ x^2 - 7 = (x+\sqrt{7}){x-\sqrt{7}} $, so $ x = \pm \sqrt{7} $;\\
 $ x^2 - 16 = (x + 4)(x-4) $, so $ x = \pm 4 $; and\\
 $ x^2 - a^2 - 2ab - b^2 = x^2 - (a+b)^2 = (x + a + b)(x - a - b) $, so $ x = \pm (a+b) $.
 
-\filbreak\begin{enumerate}[resume]
-  \answer Two cars start at the same point. One begins to travel
-        due north at a constant speed of 50~kph; two hours later, the second begins
-        to travel due east at a constant speed of 100~kph. How long after the first
-        car begins to move are the two cars exactly 300 kilometres apart?
-\end{enumerate}
-
-Note first that the cars will be no more than 100~km apart before the second car
-begins to move.
-
-The distance moved north by the first car after time $ t $ will be $ d_1 = 50 t $;
-the distance moved east by the second car at that time will be $ d_2 = 100(t-2) $;
-and the distance between them will be $ d_a = \sqrt{d_1^2 + d_2^2} $.
-
-We have therefore that $ (300)^2 = (50t)^2 + (100(t-2))^2 = 2500t^2 + 10000(t^2 - 4t + 4) = 12500t^2 - 40000t + 40000 $,
-and so using the quadratic formula with $ a = 12500 $, $ b = -40000 $, and $ c = 40000-(300)^2 = -50000 $ we have
-that $ t \approx 4.16 $ and $ t \approx -0.96 $; obviously only the former makes sense in context.
-
-\filbreak\begin{enumerate}[resume]
-  \answer A dairy farmer owns a square cow field alongside a 3~m wide vehicle track. According
-        to LINZ, the total area of the field and the track is 49~m$^2$; what are the dimensions
-        of the field alone?
-        \begin{center}
-        \begin{minipage}[t]{.2\linewidth}
-          \raggedright
-          \adjustbox{valign=t}{%
-            \includegraphics[width=\linewidth]{field}%
-          }
-        \end{minipage}
-        \end{center}
-\end{enumerate}
-
-Call the length (and width) of the field alone $ \ell $. Then we have
-that $ \ell^2 + 3\ell = 49 $. Using the quadratic formula we have that
-$ \ell \approx 5.66 $ or $ \ell \approx -8.66 $. As only the former makes sense, we
-find that the farmer has an exceptionally small field.
 
 \filbreak\begin{enumerate}[resume]
   \answer Prove that $ ax^2 + bx + c = Ax^2 + Bx + C $ implies that $ a = A $, $ b = B $, and $ c = C $.
