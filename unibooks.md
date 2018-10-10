@@ -15,11 +15,11 @@ more towards the UoA curriculum. Library call numbers listed in brackets after r
      * [Number Theory (255)](#number-theory-255)
      * [Set Theory (255)](#set-theory-255)
  * [Stage III](#stage-iii)
-     * [Algebra (320 )](#algebra-320)
+     * [Algebra (320)](#algebra-320)
      * [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)
-     * [Analysis (332/333)](#analysis-332333-topology-353750)
-     * [Complex calculus and analysis](complex-calculus-and-analysis-340-341)
-     * [Geometry](geometry-353)
+     * [Analysis (332/333), Topology (353?, 750)](#analysis-332333-topology-353750)
+     * [Complex calculus and analysis (340, 341?)](#complex-calculus-and-analysis-340-341)
+     * [Geometry (353?)](#geometry-353)
 
 
 ## Culture
@@ -168,6 +168,7 @@ Books I want to read: Watkins, _Combinatorics with an Emphasis on the Theory of 
    some very nice pictures. (514.3 J22Y)
 
 ### Complex calculus and analysis (340, 341?)
+(to be added)
 
 ### Geometry (353?)
 (See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)) above)
