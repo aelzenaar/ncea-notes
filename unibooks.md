@@ -17,7 +17,9 @@ more towards the UoA curriculum. Library call numbers listed in brackets after r
  * [Stage III](#stage-iii)
      * [Algebra (320 )](#algebra-320)
      * [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)
-     * [Analysis (332/333)](#analysis-332333)
+     * [Analysis (332/333)](#analysis-332333-topology-353750)
+     * [Complex calculus and analysis](complex-calculus-and-analysis-340-341)
+     * [Geometry](geometry-353)
 
 
 ## Culture
@@ -31,8 +33,8 @@ more towards the UoA curriculum. Library call numbers listed in brackets after r
    _Cranks_ is a short collection of random stories. (516.204 D84 and 510 D84)
  * Stephen Krantz, _Mathematical Apocrypha_ and _More Mathematical Apocrypha_. "If it's the quotient rule you wish to know,/It's low-de-high
    less high-de-low./Then draw the line and down below,/Denominator squared will go." (510 K897m and 510 K897ma)
- * Carl E Linderholm, _Mathematics Made Difficult_: This book needs no introduction and no recommendation, it is a classic. (510 L74)
- * William Frucht, _Imaginary Numbers: An Anthology..._: Poems and short stories with a mathematical or physical flavour. I enjoyed parts of it. (808.80356 F94)
+ * Carl E Linderholm, _Mathematics Made Difficult_. This book needs no introduction and no recommendation, it is a classic. (510 L74)
+ * William Frucht, _Imaginary Numbers: An Anthology..._. Poems and short stories with a mathematical or physical flavour. I enjoyed parts of it. (808.80356 F94)
 
 ## Stage I: MATHS 150/250
 
@@ -45,7 +47,7 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
    actual mathematics, see the lecture notes (I haven't taken 150, but the notes for 250 and 253 are high-quality). Note that the content of the courses does not
    necessarily reflect the content of this textbook! (515.15 S84e 2012)
  * Howard Anton, _Calculus_. Isomorphic to Stewart. (515 A63)
- * Michael Spivak, _Calculus_. This is the best calculus text for mathematicians. Much more rigorous than Stewart, and plenty of interesting problems. Have on the
+ * Michael Spivak, _Calculus_. This is the best calculus text. Much more rigorous than Stewart, and plenty of interesting problems. Have on the
    side while reading through the lecture notes. (Should be good for the analysis that's at the end of 255 as well.) (515 S76)
 
 ### Linear Algebra
@@ -66,7 +68,7 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
 ### Calculus (253)
  * Peter Baxandall & Hans Liebeck, _Vector Calculus_. This book covers the same content as 253 but in much greater detail. Most of the exercises are
    computational; proofs mainly computational. Some nice examples. Nicer than Stewart, anyway. (You do need linear algebra for this book.) (151.84 B35v)
- * Michael Spivak, _Analysis on Manifolds_.
+ * Michael Spivak, _Calculus on Manifolds_ or James Munkres, _Analysis on Manifolds_. Vector calculus with rigor, leading to differential forms. (515.84 S76, 515.84 M96)
 
 ### Linear Algebra (253/255)
  * Paul Halmos, _Finite-Dimensional Vector Spaces_. This book covers the same content as 253 but in much greater detail. Like every other Paul Halmos book, it
@@ -130,8 +132,6 @@ I don't really have opinions on stage I texts, they're all pretty rubbish!
    Goes via a more classico-historical route, using proofs that Galois would have understood. (512.32 E26)
  * Lang, _Algebra_.
 
-Books I want to read: Rotman, _An Introduction to the Theory of Groups_; MacLane/Birkhoff, _Algebra_.
-
 ### Combinatorics and Finite Geometry (326)
  * Miklos Bona, _A Walk Through Combinatorics_. This is the only book you need for 326; it covers everything (bits with more detail than needed, bits with slightly
    not enough). Cute book, but a little pricey. Version in the library is an older edition without design theory. Perhaps a bit chatty and slow to get started, but
@@ -157,5 +157,23 @@ Books I want to read: Rotman, _An Introduction to the Theory of Groups_; MacLane
 
 Books I want to read: Watkins, _Combinatorics with an Emphasis on the Theory of Graphs_; something on matroids, maybe Wilson?
 
-### Analysis (332/333)
-Books I want to read/am in the process of reading: baby Rudin (as good as promised); Tao (very chatty and a bit slow for me).
+### Analysis (332/333), Topology (353?, 750)
+ * Walter Rudin, _Principles of Mathematical Analysis_. No comment needed. (515.8 R91)
+ * A.N. Kolmogorov and S.V. Fomin, _Introductory Real Analysis_. Higher level than Rudin, covers integration in a much nicer way in my opinion. Includes
+   a semi-detailed chapter on set theory from the point of view of analysis which is quite interesting for a different perspective. Lots of topology and
+   sequences as well. (515.8 K81eYs)
+ * James R. Munkres, _Topology_. This is the standard topology book, it's very clear with lots of examples and pictures. I didn't like the section on
+   metric spaces, though. (514.3 M96)
+ * Klaus Jänich, _Topology_. An easier introduction to topology which isn't rigorous enough for a third- or fourth-year course, but it does have
+   some very nice pictures. (514.3 J22Y)
+
+### Complex calculus and analysis (340, 341?)
+
+### Geometry (353?)
+(See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)) above)
+ * Alfred S. Posamentier and Charles S. Salkind, _Challenging Problems in Geometry_. Buy this book and do all the problems. Difficulty from school level upwards. (*)
+ * Harold Coxeter, _Introduction to Geometry_ and _Geometry Revisited_. These books are both full of a lot of nice university geometry with some quite
+   nice links to other subjects: for example, crystallography and biology. (516 C87, 516 C87g)
+ * Marcel Berger, _Geometry_. But this is my favourite geometry book.  It is a little long (two volumes), but you can dip in and out of it rather than
+   reading linearly. There are a lot of very pretty results in both affine and projective geometry. Linear algebra is used extensively (of course). (516 B49)
+
