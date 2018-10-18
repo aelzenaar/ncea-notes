@@ -387,7 +387,7 @@ Our goal is to work out how most of the new lengths we can play with depend on t
 defined; the reader is encouraged to annotate the diagram with the names of the various functions, like $ \tan $, as they
 are defined. A complete diagram is given at the end of the section.
 \begin{center}
-  \includegraphics[width=0.7\textwidth]{taxonomy}
+  \includegraphics[width=0.5\textwidth]{taxonomy}
 \end{center}
 
 \subsection{Reciprocal Functions}
@@ -480,41 +480,9 @@ Finally, we compute $ \abs{XR} $. We have
   \abs{XR}^2 = \sin^2 \theta + \versin^2 \theta = \sin^2 \theta + (1 - \cos \theta)^2 = \sin^2 \theta + 1 - 2\cos \theta + \cos^2 \theta = 2 - 2\cos \theta.
 \end{displaymath}
 
-\begin{defn}
+\begin{defn}\label{defn:chord}
   The \df{chord} function is defined by $ \crd \theta = \abs{XR} = \sqrt{2 - 2\cos \theta} $.
 \end{defn}
-
-We can calculate this function in a different way using the cosine rule which we learned last year.
-
-\begin{center}
-  \includegraphics[width=0.2\textwidth]{trisines}
-\end{center}
-
-\begin{thm}[Law of cosines]
-  If $ ABC $ is a triangle, labeled as in the picture, then $ c^2 = a^2 + b^2 - 2ab \cos \gamma $.
-\end{thm}
-
-Rather than repeat the standard proof, I will give one based on the intersecting chord theorem.
-\begin{thm}
-  Suppose that $ A $, $ B $, $ C $, and $ D $ lie on a circle, and the lines $ AB $ and $ CD $ intersect at
-  some point $ X $ inside the circle. Then $ \abs{AX} \abs{XB} = \abs{CX} \abs{XD} $.
-\end{thm}
-\begin{center}
-  \includegraphics[width=0.3\textwidth]{ichords}
-\end{center}
-\begin{proof}
-  I claim that $ BXD $ and $ CXA $ are similar. Clearly the two angles $ \angle DXB $ and $ \angle CXA $ are
-  equal, because they are opposite. By the inscribed angle theorem, $ \angle BOC = 2\angle BDC = 2\angle BAC $
-  because all three are subtended by the chord $ BC $. Hence both triangles have two equal angles, and are similar.
-  The result follows from taking the side ratios $ \frac{AX}{CX} = \frac{XD}{XB} $.
-\end{proof}
-
-The following proof of the law of cosines is due to Kung.\footnote{``Proof without Words: The law of cosines via Ptolemy's Theorem.'' \textit{Mathematics Magazine}, 65(2), p. 103. doi:10.1080/0025570X.1992.11995990}
-\begin{center}
-  \includegraphics[width=0.4\textwidth]{cosinelawproof}
-\end{center}
-
-Then $ \crd \theta = \sqrt{1^2 + 1^2 - 2\cdot1\cdot1\cdot \cos \theta} = \sqrt{2 - 2\cos \theta} $ as before.
 
 \subsection{Summary of the Taxonomy}
 \begin{center}
@@ -687,6 +655,66 @@ Finally, we prove the following aesthetic identity.
     \item $ \sin A + \sin B + \sin C - \sin (A + B + C) = 4\sin \frac{A + B}{2}\sin \frac{B + C}{2}\sin \frac{C + A}{2} $
     \item $ \dfrac{\sin \dfrac{B - C}{2}}{\sin \dfrac{B + C}{2}} + \dfrac{\sin \dfrac{C - A}{2}}{\sin \dfrac{C + A}{2}} + \dfrac{\sin \dfrac{A - B}{2}}{\sin \dfrac{A + B}{2}} + \dfrac{\sin \dfrac{B - C}{2}\sin \dfrac{C - A}{2}\sin \dfrac{A - B}{2}}{\sin \dfrac{B + C}{2}\sin \dfrac{C + A}{2}\sin \dfrac{A + B}{2}} = 0 $
   \end{enumerate}
+\end{exercise}
+
+\section{The Sine and Cosine Laws}
+We can calculate the chord function from definition \ref{defn:chord} in a different way using the cosine rule which we learned last year.
+
+\begin{center}
+  \includegraphics[width=0.2\textwidth]{trisines}
+\end{center}
+
+\begin{thm}[Law of cosines]
+  If $ ABC $ is a triangle, labeled as in the picture, then $ c^2 = a^2 + b^2 - 2ab \cos \gamma $.
+\end{thm}
+
+Rather than repeat the standard proof, I will give one based on the following intersecting chord theorem.
+\begin{thm}
+  Suppose that $ A $, $ B $, $ C $, and $ D $ lie on a circle, and the lines $ AB $ and $ CD $ intersect at
+  some point $ X $ inside the circle. Then $ \abs{AX} \abs{XB} = \abs{CX} \abs{XD} $.
+\end{thm}
+\begin{center}
+  \includegraphics[width=0.3\textwidth]{ichords}
+\end{center}
+\begin{proof}
+  I claim that $ BXD $ and $ CXA $ are similar. Clearly the two angles $ \angle DXB $ and $ \angle CXA $ are
+  equal, because they are opposite. By the inscribed angle theorem, $ \angle BOC = 2\angle BDC = 2\angle BAC $
+  because all three are subtended by the chord $ BC $. Hence both triangles have two equal angles, and are similar.
+  The result follows from taking the side ratios $ \frac{AX}{CX} = \frac{XD}{XB} $.
+\end{proof}
+
+The law of cosines now follows immediately from the following diagram, due to Kung.\footnote{``Proof without Words: The law of cosines via Ptolemy's Theorem.'' \textit{Mathematics Magazine}, 65(2), p. 103. doi:10.1080/0025570X.1992.11995990}
+\begin{center}
+  \includegraphics[width=0.4\textwidth]{cosinelawproof}
+\end{center}
+
+Then $ \crd \theta = \sqrt{1^2 + 1^2 - 2\cdot1\cdot1\cdot \cos \theta} = \sqrt{2 - 2\cos \theta} $ as before.
+
+\begin{exercise}
+  Let $ S $ be the area of the triangle $ ABC $, and let $ p $ be its half-perimeter: that is, $ p = \frac{1}{2}(a + b + c) $. Then draw
+  the circle inside the triangle which is tangent to the three sides (the \df{inscribed circle}), and call its radius $ r $.
+  \begin{enumerate}
+    \item Show that $ S = \frac{1}{2} bc \sin \alpha $.
+    \item Let $ \alpha $ be the centre of the inscribed circle. Divide the triangle into three by drawing segments
+          from the three vertices to $ \alpha $. Using this, show that $ S = pr $.
+    \item Show that $ \sin \alpha = \frac{2}{bc}\sqrt{p(p-a)(p-b)(p-c)} $. (Hint: this looks like the cosine rule.)
+    \item Conclude that
+          \begin{displaymath}
+            S = \sqrt{p(p-a)(p-b)(p-c)}.
+          \end{displaymath}
+          (This formula is attributed to Hero of Alexandria.)
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Law of sines]
+  As you will recall from last year, there is also a sine rule; we actually state here a slightly stronger
+  form of it. Let $ ABC $ be a triangle labelled as in the statement for the law of cosines; draw the circle passing
+  through the three vertices of the triangle (the so-called \df{circumcircle} of the triangle), and call its
+  radius $ R $. Prove that
+  \begin{displaymath}
+    \frac{a}{\sin \alpha} = \frac{b}{\sin \beta} = \frac{c}{\sin \gamma} = 2R.
+  \end{displaymath}
+  Hint: try to use the inscribed angle theorem.
 \end{exercise}
 
 \section{Inverse Functions}
@@ -1032,6 +1060,7 @@ of the geometry of the complex exponential function which is far beyond what we 
 \section*{Further Reading}
 See references in text, as well as:
 \begin{itemize}
+  \item Marcel Berget, \emph{Geometry I} (trans. by M. Cole and S. Levy). Springer-Verlag (1994).\footnote{Particularly chapter 10.}
   \item H.S.M. Coxeter, \emph{Introduction to Geometry}. John Wiley \& Sons (1961).
   \item Paul Foerster, \emph{Trigonometry: functions and applications}. Second Edition. Addison-Wesley Publishing Co. (1977).
   \item E.W. Hobson, \emph{A Treatise on Plane Trigonometry}. Second Edition. Cambridge University Press (1897).
