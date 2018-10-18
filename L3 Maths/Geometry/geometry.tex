@@ -1,0 +1,282 @@
+\documentclass[a4paper,leqno]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[inline]{enumitem}
+
+\usepackage{siunitx}
+\usepackage{multirow}
+\usepackage{subcaption}
+
+\usepackage[english]{babel}
+\usepackage[autostyle, english=british]{csquotes}
+\MakeOuterQuote{"}
+
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
+
+\usepackage{hyperref}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{changepage}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries\centering}{Section~\thesection:}{1em}{}
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+  \hbox{}\nobreak\hfil(#1)%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}}
+  {\signed{\usebox\mybox}\end{quote}}
+
+% Augmented matrices.
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+%--------grstep
+% For denoting a Gauss' reduction step.
+% Use as: \grstep{\rho_1+\rho_3} or \grstep[2\rho_5 \\ 3\rho_6]{\rho_1+\rho_3}
+\newcommand{\grstep}[2][\relax]{%
+   \ensuremath{\mathrel{
+       {\mathop{\longrightarrow}\limits^{#2\mathstrut}_{
+                                     \begin{subarray}{l} #1 \end{subarray}}}}}}
+\newcommand{\swap}{\leftrightarrow}
+
+
+\swapnumbers
+\numberwithin{equation}{section}
+\newtheorem{thm}[equation]{Theorem}
+\newtheorem{lem}[equation]{Lemma}
+\newtheorem{cor}[equation]{Corollary}
+\newtheorem{prp}[equation]{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}[equation]{Definition}
+\newtheorem{ex}[equation]{Example}
+\newtheorem{exercise}[equation]{Exercise}
+\newtheorem{alg}[equation]{Algorithm}
+\theoremstyle{remark}
+\newtheorem{rem}[equation]{Remark}
+
+\newcommand{\df}[1]{\textbf{#1}}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\F}{\mathrm{F}}
+\newcommand{\IndSet}{\mathbf{I}}
+\DeclareMathOperator{\cis}{cis}
+
+\title{Level Three Conic Sections}
+\author{Alex Elzenaar}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section*{Preface}
+The conic sections are the simplest curves in the plane which are not simply straight lines. However, most secondary school treatments of the subject
+tend to present a set of vaguely connected case-by-case results, rather than any kind of coherent story. These notes are my attempt to avoid this.
+
+\subsection*{Prerequisites}
+These notes have perhaps the most `formal' prerequisites out of all my Y13 notes. I will assume results from trigonometry, linear systems, calculus, and
+even algebra. However, this does not mean that the full power of these subjects are used. The most important prerequisites are actually Y11 and Y12
+geometry because there are a number of results from there about triangles, circles, lines, and so forth that will be used here. My Y13 notes on trigonometry
+revise a number of these results, and so the reader is directed there initially.
+
+\begin{center}
+  \includegraphics[width=0.4\textwidth]{conics}
+\end{center}
+
+\titleformat{\section}{\clearpage\titlerule[0.8pt]\vspace{0.5ex}\normalfont\Large\bfseries\centering}{Section~\thesection:}{1em}{}[{\titlerule[0.8pt]}]
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+\section{Quadratic Equations (Again)}
+We will study in this topic precisely equations of the form
+\begin{equation}\label{eqn:prototype}
+  ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0.
+\end{equation}
+This class of equations is the class of \df{quadratic equations} (in two variables). Note that, without loss
+of generality, we can assume $ c = 1 $ (otherwise, we just divide through by $ c $).
+
+The set of all points $ (x,y) $ satisfying a quadratic equation is called a \df{curve of the second degree}.
+
+Our first theorem is a generalisation of the statement from algebra that every quadratic equation in one variable
+(i.e. every equation $ x^2 + px + q = 0 $) has precisely two solutions (if you count correctly).
+\begin{thm}
+  Every line meets a curve of the second degree in precisely two points.
+\end{thm}
+
+This theorem is very nice, but (like the proof for quadratics in one variable) we do have to make a trade:
+we have to take our coordinate system to be over the complex numbers. Thus, for the remainder of these notes,
+we will assume implicitly that rather than living in the real plane $ \mathbb{R}^2 $ we are in fact living
+in the complex plane $ \mathbb{C}^2 $. In some sense, then, we are doing geometry in four dimensions. On the
+other hand, in many places we will only be interested in real coordinates. For example, the graph of a four-dimensional
+object is a little tricky to draw if we only have three dimensions available!
+
+Our first proof attempt looks all right, and indeed it is almost correct;
+
+\begin{proof}[Proof attempt]
+  Let $ ax + by = 1 $ be our line. At least one of $ a $ or $ b $ is non-zero; assume that $ a $ is
+  non-zero (but essentially the same proof will work if $ a = 0 $ but $ b $ is non-zero). Then we
+  can substitute $ x = \frac{1 - by}{a} $ into our curve of the second degree to obtain a quadratic
+  equation in the variable $ y $; by the fundamental theorem of algebra, this equation has two solutions;
+  and each of these corresponds with a point of intersection.
+\end{proof}
+
+The problem with this proof is illustrated by the following example:-
+\begin{ex}
+  Consider the quadratic $ xy + y + x^2 = 1 $. This describes a perfectly good curve in two dimensions, graphed here.
+  \begin{center}
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        axis lines = center,
+        xlabel = $ x $,
+        ylabel = $ y $
+      ]
+        \addplot[domain = -5:5, color = red] {(1 - x^2)/(1 + x)};
+        \draw[color = red] ({axis cs:1,0}|-{rel axis cs:0,0}) -- ({axis cs:1,0}|-{rel axis cs:0,1});
+      \end{axis}
+    \end{tikzpicture}}
+  \end{center}
+  If we intersect this curve with the line $ x = 0 $, then we obtain a linear equation $ y = 1 $ instead of a quadratic
+  equation --- and so even counting multiplicities and moving up to $ \mathbb{C} $, we only have one solution.
+\end{ex}
+
+The reader might be tempted to discount this example as uninteresting, because it's simply the intersection of a pair of two lines
+with a third line (admittedly the first pair of lines has a hole, but the hole is far away from where we take the intersection so it
+doesn't matter) and thus isn't really a problem that affects our programme of studying curves of the second degree.
+
+The next example, though, is both more fundamental and more worrying.
+\begin{ex}
+  If we intersect the parabola $ x^2 = y $ with the line $ x = 0 $, we obtain a single point of intersection, even
+  up to multiplicity.
+\end{ex}
+
+Does this mean that we have to abandon the beautiful intersection theorem?
+
+It turns out that, like how we expanded our number system to make the fundamental theorem of algebra work
+nicely, we can expand our plane $ \mathbb{C}^2 $ further to make our intersection theorem work.
+
+We will not make this precise, but the method we will use is some kind of limiting process; the result, and the
+system we will work in from now on, is the projective plane over $ \mathbb{C} $. Let us see how we climb to it.
+
+\section{Isometries}
+I claim that the graph of every quadratic equation like \ref{eqn:prototype} is just a translated and
+rotated version of the graph of an equation with the form
+\begin{equation}
+  px^2 + qy^2 = 1.
+\end{equation}
+
+In order to show this, we need to study the effect of rotations and translations on coordinate systems. We
+begin with rotations because it turns out that rotating before translating is easier for our purposes.
+
+Let $ \rho = \cis \theta $ be a complex number such that $ \abs{\rho} = 1 $. If $ z = x + yi $ is a point on the complex plane,
+then $ \rho $ acts by multiplication on $ z $ to rotate it around the origin by an angle $ \theta $; we can then calculate
+the resulting rectangular coordinates of $ \rho z $ to see how a rotation affects our normal coordinate system.
+\begin{align*}
+  z &= \abs{z} \cis(\tan^{-1} x/y)\\
+  \rho z &= \abs{z} \cis(\tan^{-1} x/y + \theta)\\
+         &= \abs{z} \left[\cos(\tan^{-1} x/y + \theta) + i\sin(\tan^{-1} x/y + \theta)\right].
+\end{align*}
+
+Using trig identities, we calculate
+\begin{align*}
+  \cos(\tan^{-1} x/y + \theta) = \cos(\tan^{-1} x/y) \cos \theta - \sin(\tan^{-1} x/y) \sin \theta\\
+                               = \frac{x}{\sqrt{x^2 + y^2}} \cos \theta - \frac{y}{\sqrt{x^2 + y^2}} \sin \theta\\
+  \sin(\tan^{-1} x/y + \theta) = \sin(\tan^{-1} x/y) \cos \theta + \cos(\tan^{-1} x/y) \sin \theta\\
+                               = \frac{y}{\sqrt{x^2 + y^2}} \cos \theta + \frac{x}{\sqrt{x^2 + y^2}} \sin \theta
+\end{align*}
+and so
+\begin{align*}
+  \rho z &= \abs{z} \left[\cos(\tan^{-1} x/y + \theta) + i\sin(\tan^{-1} x/y + \theta)\right]\\
+         &= (x \cos \theta - y \sin \theta) + i(y \cos \theta + x \sin \theta).
+\end{align*}
+
+In other words, if the point $ (x,y) $ is rotated about the origin by an angle $ \theta $, then
+\begin{equation}
+  (x,y) \xmapsto{\rho} (x \cos \theta - y \sin \theta,y \cos \theta + x \sin \theta).
+\end{equation}
+
+Considering $ ax^2 + bx + cxy + dy + ey^2 $, then, we want to rotate $ (x,y) $ by some $ \theta $ so that some terms vanish. Doing
+a long computation, we find that
+\begin{align*}
+  ax^2 + bx + cxy + dx + ey^2 &= a(x \cos \theta - y \sin \theta)^2 + b(x \cos \theta - y \sin \theta)\\
+                              &  \qquad + c(x \cos \theta - y \sin \theta)(y \cos \theta + x \sin \theta)\\
+                              &  \qquad + d(y \cos \theta + x \sin \theta) + e(y \cos \theta + x \sin \theta)^2\\
+                              &= ax^2 \cos^2 \theta - 2axy \cos\theta\sin\theta + ay^2 \sin^2\theta + bx\cos\theta - by\sin\theta\\
+                              &  \qquad + cxy \cos^2 \theta + cx^2 \sin \theta\cos\theta - cy^2 \sin\theta\cos\theta - cxy \sin^2\theta\\
+                              &  \qquad + dy\cos\theta + dx\sin\theta + ey^2\cos^2\theta + 2exy\cos\theta\sin\theta + ex^2\sin^2\theta\\
+                              &= x^2(a\cos^2 \theta + \frac{c}{2}\sin 2\theta + e\sin^2 \theta) + x(b \cos \theta + d\sin \theta)\\
+                              &  \qquad + xy ((e - a)\sin 2\theta + c \cos 2\theta)\\
+                              &  \qquad + y(-b \sin \theta + d \cos \theta) + y^2(a\sin^2 \theta - \frac{c}{2}\sin 2\theta + e\cos^2 \theta)
+\end{align*}
+and, looking at this, we see that an easy candidate we can try to get rid of is the $ xy $ term. In fact, if we want this term
+to be zero we need only solve
+\begin{equation}
+  (e - a)\sin 2\theta + c \cos 2\theta = 0
+\end{equation}
+which is easy: $ \frac{-c}{e - a} = \frac{\sin 2\theta}{\cos 2\theta} = \tan 2\theta $, and so in order to remove
+the $ xy $ term we need only rotate our coordinate system by
+\begin{equation}
+  \theta = \frac{1}{2}\tan^{-1} \frac{c}{a - e}.
+\end{equation}
+
+Making the coordinate system change $ (x,y) \mapsto (x \cos \theta - y \sin \theta,y \cos \theta + x \sin \theta) $ therefore leaves
+us with something that looks like $ ax^2 + bx + dy + ey^2 = 1 $, where $ x $ and $ y $ are now coordinates in our rotated coordinate
+system and where the constants $ a $ to $ e $ are not necessarily the same as before.
+
+We already know that if $ y = f(x) $ is graphed, then we can shift the graph up by $ x_0 $ and to the right
+by $ y_0 $ by suitable transformations of the coordinates: $ y - y_0 = f(x - x_0) $ has the shifted graph. Last
+year, we performed similar transformations on parabolae by completing the square, and so this is the technique
+which we will use now. We proceed as we did last year (but now completing the square in both $ x $ and $ y $):
+\begin{displaymath}
+  ax^2 + bx + dy + ey^2 = a\left(x + \frac{b}{2a}\right)^2 - \frac{b^2}{4a} + e\left(\frac{d}{2e} + y\right)^2 - \frac{d^2}{4e} = 1.
+\end{displaymath}
+If we now let $ (x, y) \mapsto \left(x - \frac{b}{2a}, y - \frac{d}{2e}\right) $, then we have got a coordinate
+transformation that removes all the linear terms and leaves us with something like
+\begin{displaymath}
+  ax^2 + ey^2 = 1 + \frac{b^2}{4a} + \frac{d^2}{4e}
+\end{displaymath}
+and upon division of both sides by $ 1 + \frac{b^2}{4a} + \frac{d^2}{4e} $ we end up, as promised, with something of
+the form $ px^2 + qy^2 = 1 $. Note that our coordinate system has completely changed: the new curve has the same
+shape as our original curve, but sits inside our new coordinate system much more naturally than it sat in our old
+coordinate system.
+
+We have thus proved:
+\begin{thm}
+  The graph of any quadratic function can be obtained by rotating and translating the graph of
+  a quadratic function in \df{canonical form}, $ px^2 + qy^2 = 1 $.
+\end{thm}
+
+For the remainder of this unit, then, we will concern ourself mainly with studying quadratics in canonical form.
+
+\begin{ex}
+  Let us consider the curve defined by $ \frac{10}{4}x^2 + 3xy + \frac{10}{4}y^2 = 1 $. We begin by dealing with the $ xy $ term; according to
+  our work on transformations, to get rid of the cross-term we need to rotate our coordinate system
+  by $ \theta = \frac{1}{2}\tan^{-1} \frac{c}{a - e} $. Here, $ c = 3 $, and $ a = 10/4 = e $;
+  so $ \theta = \frac{1}{2} \tan^{-1} \infty = \frac{1}{2} \frac{\pi}{2} = \frac{\pi}{4} $. It follows that $ \cos \theta = 1/\sqrt{2} = \sin\theta $.
+
+  We are therefore sending
+  \begin{equation}
+    (x,y) \mapsto \left(\frac{x}{\sqrt{2}} - \frac{y}{\sqrt{2}}, \frac{y}{\sqrt{2}} + \frac{x}{\sqrt{2}}\right)
+  \end{equation}
+  and our rotated curve is $ x^2 + \frac{y^2}{4} = 1$.
+\end{ex}
+
+\begin{ex}
+  For an even simpler example, we note that the hyperbola $ y = 1/x $ is actually a quadratic equation: $ 1 = xy $. We
+  have $ a = e = 0 $ and $ c = 1 $, so $ \theta = \frac{\pi}{4} $ again. Our rotated curve is $ 1 = \frac{x^2}{2} - \frac{y^2}{2} $.
+\end{ex}
+
+
+\end{document}
