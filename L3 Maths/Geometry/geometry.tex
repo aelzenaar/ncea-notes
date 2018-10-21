@@ -67,6 +67,7 @@
 \newtheorem{ex}[equation]{Example}
 \newtheorem{exercise}[equation]{Exercise}
 \newtheorem{alg}[equation]{Algorithm}
+\newtheorem{axiom}[equation]{Axiom}
 \theoremstyle{remark}
 \newtheorem{rem}[equation]{Remark}
 
@@ -101,6 +102,9 @@ revise a number of these results, and so the reader is directed there initially.
 \let\oldsection\section
 \renewcommand\section{\clearpage\oldsection}
 \section{Quadratic Equations (Again)}
+\begin{center}
+  \emph{You know, for a mathematician, he did not have enough imagination. But he has become a poet and now he is fine.} --- Hilbert (on an ex-student)
+\end{center}
 We will study in this topic precisely equations of the form
 \begin{equation}\label{eqn:prototype}
   ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0.
@@ -112,7 +116,7 @@ The set of all points $ (x,y) $ satisfying a quadratic equation is called a \df{
 
 Our first theorem is a generalisation of the statement from algebra that every quadratic equation in one variable
 (i.e. every equation $ x^2 + px + q = 0 $) has precisely two solutions (if you count correctly).
-\begin{thm}
+\begin{thm}\label{thm:funthmquad}
   Every line meets a curve of the second degree in precisely two points.
 \end{thm}
 
@@ -143,18 +147,17 @@ The problem with this proof is illustrated by the following example:-
         xlabel = $ x $,
         ylabel = $ y $
       ]
-        \addplot[domain = -5:5, color = red] {(1 - x^2)/(1 + x)};
-        \draw[color = red] ({axis cs:1,0}|-{rel axis cs:0,0}) -- ({axis cs:1,0}|-{rel axis cs:0,1});
+        \addplot[domain = -5:5, color = red] {1-x};
+        \draw[color = red] ({axis cs:-1,0}|-{rel axis cs:0,0}) -- ({axis cs:-1,0}|-{rel axis cs:0,1});
       \end{axis}
     \end{tikzpicture}}
   \end{center}
-  If we intersect this curve with the line $ x = 0 $, then we obtain a linear equation $ y = 1 $ instead of a quadratic
+  If we intersect this curve with the line $ y = 2 - x $, then we obtain a linear equation $ x + 2 = 0 $ instead of a quadratic
   equation --- and so even counting multiplicities and moving up to $ \mathbb{C} $, we only have one solution.
 \end{ex}
 
 The reader might be tempted to discount this example as uninteresting, because it's simply the intersection of a pair of two lines
-with a third line (admittedly the first pair of lines has a hole, but the hole is far away from where we take the intersection so it
-doesn't matter) and thus isn't really a problem that affects our programme of studying curves of the second degree.
+with a third line and thus isn't really a problem that affects our programme of studying curves of the second degree.
 
 The next example, though, is both more fundamental and more worrying.
 \begin{ex}
@@ -169,6 +172,205 @@ nicely, we can expand our plane $ \mathbb{C}^2 $ further to make our intersectio
 
 We will not make this precise, but the method we will use is some kind of limiting process; the result, and the
 system we will work in from now on, is the projective plane over $ \mathbb{C} $. Let us see how we climb to it.
+
+\subsection{Euclidean Geometry}
+It turns out that in order to approach some kind of resolution, we need to mention the elephant in the room: the
+foundation of all the geometry which we have been doing thus far in our mathematical lives. (This might seem at first
+glance completely unrelated to the algebraic problem we're trying to solve, but bear with me.)
+
+In ancient Greece, in about 300~BCE, Euclid of Alexandria (in Egypt) wrote his book \emph{Elements}, one of the most
+influential mathematical texts of all time. In it, he set down the set of basic results which can be proved true
+about circles and lines on a plane: while modern geometry has gone much further than Euclid (in considering geometry in more than
+two dimensions, and on surfaces much more complicated than the plane), the basic results which are taught in any
+introductory geometry course are usually treated in the Elements.
+
+Euclid was influential because he was the first author (or, more likely, the first author whose work survives) to
+attempt to rigorously prove all his results based on a set of `universal truths': a set of simple statements (called
+\df{axioms}) whose truth is self-evident. In some sense, the goal of mathematics is to deduce the behaviour of the
+most complicated systems possible from the simplest axioms possible.\footnote{The axiom system which most of modern
+mathematics is done within is called ZFC (Zermelo-Fraenkel with Choice, named after two mathematicians working on the
+area in the early 1900s).} Euclid's axioms were as follows:
+\begin{enumerate}
+  \item A straight line segment can be drawn joining any two points.
+  \item Any straight line segment can be extended indefinitely in a straight line.
+  \item Given any straight line segment, a circle can be drawn having the segment as radius and one endpoint as center.
+  \item All right angles are congruent.
+  \item Given any straight line and a point not on it, there exists one and only one straight line which passes through
+        that point and never intersects the first line, no matter how far they are extended.
+\end{enumerate}
+Putting aside the fact that these axioms are in fact insufficient for the purpose of constructing plane geometry, it is
+clear that the fifth axiom is both far less elegant than the others and far more complicated. Indeed, Euclid himself avoided
+using it in his proofs except where necessary (he avoids it completely for the first 28 propositions, for example) and for
+many years mathematicians believed that it was in fact a theorem: that it could be proved from the previous four axioms.
+
+It turns out that this is false: there exist geometries for which the fifth axiom is false (for example, on a sphere).
+
+\subsection{Projective Geometry}
+The mathematical world which we are interested in is known as \df{projective geometry} (the name will only make sense towards
+the end of these notes). We obtain this geometry by replacing the final axiom with the following axiom:
+\begin{axiom}[Elliptic incidence property]
+  Any two distinct lines in a projective geometry meet at exactly one point.
+\end{axiom}
+This is clearly not true in usual Euclidean geometry. On the other hand, we didn't let this kind of thing stop us in the
+past: the number $ i $ is absolutely useless for counting sheep, for example, but that doesn't stop the complex numbers from
+being an interesting (and useful) mathematical space.
+
+The complex numbers became much clearer once we stopped thinking about numbers as a line and started drawing them as a plane. There
+is an analogous simple way to construct and think about a projective plane by extending the Euclidean plane (and then extending our
+setting, the complex plane, will be done in the same way).
+
+When we think about it, we find that the only reason that Euclidean geometry doesn't satisfy this axiom is that parallel lines exist.
+We will therefore \emph{define them not to exist}!
+
+More precisely, given every set of parallel lines with slope $ m $, we will take our plane and add on a new point $ \infty_m $ called
+a \emph{point at infinity}, and then define this new point to be on all the lines with slope $ m $. Thus, these parallel lines now
+intersect at exactly one point (the point at infinity related to their slope) and all other lines intersect in exactly one point (the
+same place they did before).
+
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{vanishingpoint}
+\end{center}
+
+This can be made to make some sense physically, and indeed the first place which projective geometry appeared was when Renaissance artists
+like Leonardo da Vinci began to experiment with perspective drawing --- if you look down two parallel lines in real life, like those in the
+image above,\footnote{© Vespertunes / Wikimedia Commons / ``Vanishing Point of Railway''. \url{https://commons.wikimedia.org/wiki/File:Vanishing_Point_of_Railway.jpg}}
+they appear to meet at the horizon, and lines going in the same direction away from you (i.e. lines with the same slope) meet
+at the same point. We call the line joining all the points at infinity (in this physical case, the horizon) the \df{line at infinity}.
+
+Going back to our problem of curves of the second degree, let us consider our second example: $ x^2 = y $ only intersects the line $ x = 0 $
+at one point.
+
+\begin{center}
+  \fbox{\begin{tikzpicture}
+    \begin{axis}[
+      axis lines = center,
+      xlabel = $ x $,
+      ylabel = $ y $, ymin=-2
+    ]
+      \addplot[domain = -5:5, color = red] {x^2};
+      \draw[color = blue] ({axis cs:0,0}|-{rel axis cs:0,0}) -- ({axis cs:0,0}|-{rel axis cs:0,1});
+    \end{axis}
+  \end{tikzpicture}}
+\end{center}
+
+But notice, as $ x \to \pm \infty $ the curve $ x^2 $ tends towards being vertical! More precisely, we have
+that $ \lim_{x \to \infty} \od{}{x} x^2 = \infty $; thus, the parabola is \df{eventually parallel} to the
+vertical line, and so the two intersect for a second time at the point at infinity $ \infty_\infty $.
+
+This is even more blatant in our first example: we had the following curve (and again, the blue line is the
+line we intersect with our second degree curve):
+
+\begin{center}
+  \fbox{\begin{tikzpicture}
+    \begin{axis}[
+      axis lines = center,
+      xlabel = $ x $,
+      ylabel = $ y $
+    ]
+      \addplot[domain = -5:5, color = red] {1-x};
+      \addplot[domain = -5:5, color = blue] {2-x};
+      \draw[color = red] ({axis cs:-1,0}|-{rel axis cs:0,0}) -- ({axis cs:-1,0}|-{rel axis cs:0,1});
+    \end{axis}
+  \end{tikzpicture}}
+\end{center}
+
+In this case, the curve is not only \emph{eventually} parallel, but in fact it is \emph{actually} parallel!
+
+The picture to keep in mind, for conic sections at least, is the following.
+
+\begin{center}
+  \includegraphics[width=0.3\textwidth]{infiniteparabola}
+\end{center}
+
+Note that this picture does not actually reflect what is \emph{really} going on when we graph second degree
+equations in the plane --- it's a diagrammatic representation of the fact that we've made a fundamental extension
+to our system of geometry (and to our system of algebra, but this isn't visible on a real graph).
+
+Philosophically, all we've done is decided what property we want our algebro-geometric system to have (that
+curves of the second degree intersect any line at exactly two places, unless it's tangent to the line) and then
+invented a geometry in which this property is true. It turns out that this geometry has a lot of other beautiful
+properties, most of which we don't have time to look at --- but at this stage, it's completely synthetic. We simply
+arbitrarily added a bunch of points (and we're honestly lucky we didn't get any contradictions). In fact, eventually
+we will see that there is an incredibly natural way to construct a projective plane without having to worry about
+sticking in a bunch more points and cooking it ourselves. For now, we will content ourselves with proving
+our motivational theorem.
+
+\subsection{Proof of Theorem \ref{thm:funthmquad}}
+
+Let $ y = mx + n $ be our line. Then we can substitute $ y $ into our curve of the second degree to obtain an equation
+in the variable $ x $ which is either of degree 1 or degree 2. (If necessary, let $ m $ be infinite.)
+
+\paragraph{Case I.} If the equation is of degree two, then by the fundamental theorem of algebra it
+has two solutions; and each of these corresponds with a point of intersection.
+
+\paragraph{Case II.} We will be done if we can show the following: if a line $ y = mx + n $ intersects
+some quadratic equation $ ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0 $ in exactly one point (i.e. in such a
+way as to produce a linear equation in $ x $ rather than a quadratic) then
+\begin{equation}
+  \lim_{x \to \infty} y'(x) = m
+\end{equation}
+
+Step 1. We will find the condition on the coefficients of our quadratic for $ x^2 $ to vanish upon substitution.
+So let us substitute $ y = mx + c $ into our quadratic; we obtain
+\begin{displaymath}
+  ax^2 + 2hx(mx + c) + b(mx + c)^2 + 2gx + 2f(mx + c) + c = 0
+\end{displaymath}
+
+Expanding, and setting the coefficient of the $ x^2 $ term to zero, we find that
+\begin{displaymath}
+  a + 2mh + bm^2 = 0.
+\end{displaymath}
+
+Step 2. We will find the derivative $ y'(x) $; this is a simple exercise in implicit differentiation and we get that
+\begin{displaymath}
+  \od{y}{x} = -\frac{ax + hy + g}{hx + by + f}.
+\end{displaymath}
+Substituting our condition on the coefficients, we have
+\begin{displaymath}
+  \od{y}{x} = -\frac{-2mhx - bm^2x + hy + g}{hx + by + f}.
+\end{displaymath}
+
+Step 3. Taking limits of both sides, we have
+\begin{displaymath}
+  \lim_{x \to \infty} \od{y}{x} = \lim_{x \to \infty} -\frac{-2mhx - bm^2x + hy + g}{hx + by + f}.
+\end{displaymath}
+
+It is not immediately obvious how we should deal with this right-hand side, because $ y $ also depends
+on $ x $. Looking at the equation for the quadratic, we note that as $ x \to \infty $, we must have $ y \to \pm\infty $ ---
+otherwise the right hand side couldn't stay at zero. Therefore, both the top and the bottom of the fraction under our
+limit go to infinity; we can apply the following theorem (which we will not prove here):
+
+\begin{thm}[l'Hopital's Rule]
+  If $ \lim_{x \to \infty} f(x) = \infty $ and $ \lim_{x \to \infty} g(x) = \infty $, and if $ \lim_{x\to\infty} f'(x)/g'(x) = l $,
+  then $ \lim_{x\to\infty} f(x)/g(x) = l $.\footnote{Proof: see Spivak, chapter 11, theorem 9 and exercises 36-38.\qed}
+\end{thm}
+
+Let $ \lim_{x \to \infty} \od{y}{x} = L $. Then we have
+\begin{displaymath}
+  L = \lim_{x \to \infty} -\frac{-2mhx - bm^2x + hy + g}{hx + by + f} = \lim_{x \to \infty} -\frac{-2mh - bm^2 + h\od{y}{x}}{h + b\od{y}{x}}
+                                                                      = -\frac{-2mh - bm^2 + hL}{h + bL}
+\end{displaymath}
+and $ 0 = bL^2 + 2hL - 2mh - bm^2 $, so
+\begin{displaymath}
+  L = \frac{-2h + \sqrt{4h^2 + 4b(2mh + bm^2)}}{2b} = \frac{-2h + 2\sqrt{h^2 + 2bmh + bm^2}}{2b}
+                                                    = \frac{-2h + 2(h + bm)}{2b} = m
+\end{displaymath}
+Thus we have shown that if the derivative $ \od{y}{x} $ tends to any value, it must tend to $ m $.
+
+Suppose $ \od{y}{x} $ does not tend to a finite number. If $ \od{y}{x} $ goes to infinity, then in
+particular it intersects every non-vertical line at two points (draw a picture), so if the line intersects
+at precisely one point then it is vertical; thus if $ m = \infty $ then $ \od{y}{x} \to \infty $. On
+the other hand, $ \od{y}{x} $ is either eventually positive or eventually negative (just by inspecting
+the expression for it above), so it either tends to infinity or to some finite limit.
+\qed
+
+\section{Classifying Curves of the Second Degree}
+Now that we know the correct system to frame our discussion in, we will begin to carry out our first major programme: the
+classification of all the different kinds of conic sections. Our goal is to determine, by looking at a quadratic equation,
+what the form of curve on the real plane it describes.
+
+\subsection{Polar Form}
+Recall that the plane can be given coordinates in two very natural ways: rectangular coordinates, and polar coordinates.
 
 \section{Isometries}
 I claim that the graph of every quadratic equation like \ref{eqn:prototype} is just a translated and
@@ -278,5 +480,17 @@ For the remainder of this unit, then, we will concern ourself mainly with studyi
   have $ a = e = 0 $ and $ c = 1 $, so $ \theta = \frac{\pi}{4} $ again. Our rotated curve is $ 1 = \frac{x^2}{2} - \frac{y^2}{2} $.
 \end{ex}
 
+\section{Further Reading}
+\subsection*{History and foundations of geometry}
+\begin{itemize}
+  \item Morris Kline, \emph{Mathematics for the Nonmathematician}. Dover Publications (1967).
+  \item John M. Lee, \emph{Axiomatic Geometry}. American Mathematical Society (2013).
+\end{itemize}
+
+\subsection*{Conic sections}
+\begin{itemize}
+  \item Keith Kendig, \emph{Conics}. Mathematical Association of America (2005).
+  \item George Salmon, \emph{A Treatise on Conic Sections}. Longmans, Green and Co. (1879).
+\end{itemize}
 
 \end{document}
