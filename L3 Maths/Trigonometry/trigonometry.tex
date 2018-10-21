@@ -23,6 +23,7 @@
 \pgfplotsset{compat=1.11}
 \usepgfplotslibrary{fillbetween}
 \usetikzlibrary{patterns}
+\usetikzlibrary{arrows}
 
 \newcommand*{\SectorRadius}{1.5ex}
 \newcommand*{\SectorHalfAngle}{45}
@@ -179,6 +180,22 @@ The second proof involves using similar triangles.
   Similarly, considering $ ACD $ and $ ABC $, $ c/b = b/(c - x) $; so $ c(c - x) = b^2 $. Adding the two expressions we have obtained, we
   have $ a^2 + b^2 = cx + c(c - x) = c^2 $, which is the statement of the theorem.
 \end{proof}
+
+\begin{exercise}
+  This exercise asks you to prove a couple of useful theorems about triangles.
+  \begin{enumerate}
+    \item Show that the sum of the inscribed angles of any triangle is $ \pi $ radians. (You may use any facts
+          which seem to you to be completely obvious; for example, the fact that a line crossing a pair of parallel
+          lines cuts the lines at equal angles, if this fact is obvious to you.)
+    \item (Inscribed angle theorem.) If $ AB $ is a chord in a circle with centre $ O $, and if $ C $ is any other
+          point on the circle, then the measure of the angle $ BOA $ is twice the angle of the angle $ BCA $. (For
+          example, in the following diagram $ \theta = 2\gamma $.)
+          \begin{center}
+            \includegraphics[width=0.3\textwidth]{inscribedanglethm}
+          \end{center}
+          Hint: there is an obvious line missing in the above diagram. Draw it in, and do some angle-pushing.
+  \end{enumerate}
+\end{exercise}
 
 \section{Definitions}
 \begin{center}
@@ -702,7 +719,8 @@ Then $ \crd \theta = \sqrt{1^2 + 1^2 - 2\cdot1\cdot1\cdot \cos \theta} = \sqrt{2
           \begin{displaymath}
             S = \sqrt{p(p-a)(p-b)(p-c)}.
           \end{displaymath}
-          (This formula is attributed to Hero of Alexandria.)
+          (This formula is attributed to Hero of Alexandria.) Thus we have a formula for the area of a triangle which
+          relies only on the lengths of the sides, and not on the height.
   \end{enumerate}
 \end{exercise}
 
