@@ -392,6 +392,33 @@ The following theorem is useful in calculus.
   with $ \cos \theta $, allowed because of proposition \ref{thm:basicids}, we have the desired result for negative $ \theta $.
 \end{proof}
 
+\begin{exercise}
+  Here are some revision problems from your earlier studies that should help you remember
+  the mechanical aspects of applying trigonometry.
+  \begin{enumerate}
+    \item To measure the width $ BC $ of a straight river, a surveyor starts at $ C $ and walks
+          along the bank to a point $ A $. He finds that the distance between $ A $ and $ C $
+          is \SI{50}{\metre}, and the angle at $ A $ is \ang{20}. What is the width of the river?
+    \item Before the advent of modern technology, it was still possible to make rough calculations
+          of the circumference and radius of the earth. For example, the Alexandrian mathematician
+          Eratosthenes calculated the circumference of the earth in around 200~BCE. Carry out the
+          following programme to arrive at Eratosthenes' estimate.
+          \begin{enumerate}
+            \item First, note that the sun is far enough away for the light rays arriving at the earth to be almost
+                  parallel. At the summer solstice, light hits the town of Syene so that the bottom
+                  of a deep well is fully illuminated; conclude that the sun is immediately overhead.
+            \item In Alexandria, \SI{800}{\kilo\metre} further north, a \SI{1}{\metre} vertical stick casts
+                  a shadow of \SI{13}{\centi\metre}. Compute the angle at which the sun's rays are hitting
+                  the stick.
+            \item Thus compute the angle at the centre of the earth between the radii of the planet at Alexandria
+                  and Syene. What is the circumference of the earth?
+          \end{enumerate}
+    \item Alternatively, suppose an astronomer climbs Mt Kaukau (height: \SI{445}{\metre} above sea level) and uses
+          an inclinometer to measure the angle between a vertical line and her line of sight to the horizon. Suppose
+          that this angle turns out to be \ang{89}. What is the radius of the earth, and hence its circumference?
+  \end{enumerate}
+\end{exercise}
+
 \section{Taxonomy of Functions}
 For the remainder of these notes, we only consider angles $ 0 \leq \theta < 2\pi $ unless otherwise stated. This is because
 all of the interesting theory occurs in this case, and extending results to arbitrary $ \theta $ is tedious and doesn't present
@@ -669,6 +696,9 @@ Finally, we prove the following aesthetic identity.
 \begin{exercise}
   Prove the following identities.
   \begin{enumerate}
+    \item $ \sin(\alpha + \beta + \gamma) = \sin\alpha \cos\beta \cos\gamma + \cos\alpha\sin\beta\cos\gamma + \cos\alpha\cos\beta\sin\gamma - \sin\alpha\sin\beta\sin\gamma $
+    \item $ \tan 3\alpha = \dfrac{3\sin\alpha - 4\sin^3 \alpha}{4\cos^3 \alpha - 3\cos\alpha} $
+    \item $ \dfrac{1}{2}(\cos 2\beta - \cos 2\alpha) = \sin^2 \alpha \cos^2\beta - \cos^2\alpha \sin^2 \beta $
     \item $ \sin A + \sin B + \sin C - \sin (A + B + C) = 4\sin \frac{A + B}{2}\sin \frac{B + C}{2}\sin \frac{C + A}{2} $
     \item $ \dfrac{\sin \dfrac{B - C}{2}}{\sin \dfrac{B + C}{2}} + \dfrac{\sin \dfrac{C - A}{2}}{\sin \dfrac{C + A}{2}} + \dfrac{\sin \dfrac{A - B}{2}}{\sin \dfrac{A + B}{2}} + \dfrac{\sin \dfrac{B - C}{2}\sin \dfrac{C - A}{2}\sin \dfrac{A - B}{2}}{\sin \dfrac{B + C}{2}\sin \dfrac{C + A}{2}\sin \dfrac{A + B}{2}} = 0 $
   \end{enumerate}
@@ -1078,7 +1108,7 @@ of the geometry of the complex exponential function which is far beyond what we 
 \section*{Further Reading}
 See references in text, as well as:
 \begin{itemize}
-  \item Marcel Berget, \emph{Geometry I} (trans. by M. Cole and S. Levy). Springer-Verlag (1994).\footnote{Particularly chapter 10.}
+  \item Marcel Berger, \emph{Geometry I} (trans. by M. Cole and S. Levy). Springer-Verlag (1994).\footnote{Particularly chapter 10.}
   \item H.S.M. Coxeter, \emph{Introduction to Geometry}. John Wiley \& Sons (1961).
   \item Paul Foerster, \emph{Trigonometry: functions and applications}. Second Edition. Addison-Wesley Publishing Co. (1977).
   \item E.W. Hobson, \emph{A Treatise on Plane Trigonometry}. Second Edition. Cambridge University Press (1897).
