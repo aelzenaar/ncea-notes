@@ -5,7 +5,7 @@ LaTeX code is available for most. Any errata/feedback encouraged either via emai
 Hopefully the folder structure is relatively straightforward.
 
 ## University Mathematics Book Reviews/Bibliography
-See [this page](unibooks.md). Very work-in-progress.
+See [this page](unibooks.md). Very work-in-progress; please note the disclaimer.
 
 ## Mathematics
 ### Level One
@@ -39,9 +39,6 @@ My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf)
 I am not currently planning any stats notes.
 
 ### Level Three and Scholarship Calculus
- *
-
-**In progress:**
 I am currently in the process of reworking and reorganising my L3 maths notes; the final plan will be to have the following
 sets of notes, broadly in the given logical order and aligned with the L2 notes above:
 1. _Down the River: Foundations for Scholarship_. a [set of notes](L3%20Maths/Foundations/foundations.pdf) covering basic set theory, combinatorics,
