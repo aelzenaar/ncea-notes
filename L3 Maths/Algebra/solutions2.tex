@@ -148,73 +148,6 @@ consulting a professional! Ian Stewart's \textit{Taming the Infinite} is recomme
 \let\oldsection\section
 \renewcommand\section{\clearpage\oldsection}
 
-\section{Linear Equations}
-
-\begin{enumerate}
-  \answer Find some $ x $ such that $ 3\times(2\times  x + 5 ) - 2\times( x + 5) = 3\times x+14 $.
-\end{enumerate}
-
-The single solution is $ x = 9 $.
-
-\filbreak\begin{enumerate}[resume]
-  \answer A bottle of orange juice costs \$20. The juice costs \$19 more than the
-        empty bottle. How much does the empty bottle cost?
-\end{enumerate}
-
-Let $ b $ be the price of the empty bottle. Then the cost of the juice is $ 19 + b $,
-and so the total cost is $ 20 = (19 + b) + b \Rightarrow b = 0.5 $.
-
-\filbreak\begin{enumerate}[resume]
-  \answer Rearrange, graph, and solve $ 4x+2=45(x+4(x-8)) $.
-\end{enumerate}
-
-We have $ y = 45(x+4(x-8)) - 4x+2 $, and we graph to find the $ x$-intercept:
-
-\begin{center}\fbox{
-\begin{tikzpicture}
-  \begin{axis}[
-    xlabel=$x$,
-    ylabel={$y$},
-    axis lines=middle,
-    xtick distance=0.5
-  ]
-    \addplot[domain=5:8, samples=10, color=black]{45*(x+4*(x-8)) - 4*x+2};
-  \end{axis}
-\end{tikzpicture}
-}\end{center}
-
-$ x \approx 6.5 $ (from the graph), $ x = \frac{1442}{221} $
-
-\filbreak\begin{enumerate}[resume]
-  \answer Does the function $ f(x) = 3(1 + 2x) - 6x $ have any roots?
-\end{enumerate}
-We can either rearrange to see that $ f(x) = 3 \neq 0 $, or graph $ y = f(x) $ and notice that it is a straight line:
-
-\begin{center}\fbox{
-\begin{tikzpicture}
-  \begin{axis}[
-    xlabel=$x$,
-    ylabel={$y$},
-    axis lines=middle
-  ]
-    \addplot[domain=-8:8, samples=10, color=Dandelion]{3};
-  \end{axis}
-\end{tikzpicture}
-}\end{center}
-
-\filbreak\begin{enumerate}[resume]
-  \answer Suppose $ f(x) $ is a function defined implicitly by $ f(x) + x = 3f(x) - x $. Find the solutions of $ f(x) = 0 $.
-\end{enumerate}
-
-We have $ 2f(x) = 2x $ and hence $ x = 0 $ is the only solution to $ f(x) = 0 $.
-
-\filbreak\begin{enumerate}[resume]
-  \answer Solve $ \frac{2x}{x+3} = \frac{3}{x-10} + 2 $ for $ x $.
-\end{enumerate}
-
-Clearing fractions: $ 2x(x-10) = 3(x+3) + 2(x-10)(x+3) $
-After expanding and simplifying, the quadratic terms vanish and we have that $ x = \frac{17}{3} $.
-
 \section{Quadratic Equations}
 \begin{enumerate}
   \answer Find an example of a \textbf{quadratic equation} with the solutions:
@@ -226,12 +159,14 @@ After expanding and simplifying, the quadratic terms vanish and we have that $ x
         \end{enumerate}
 \end{enumerate}
 
-All constant multiples of these will also have the same roots.
+\begin{gather*}
+  0 = (x-7)(x-4) = x^2 - 11x + 28,\\
+  0 = (x-7)(x+4) = x^2 -3x - 28,\\
+  0 = (x+7)(x+4) = x^2 + 11x + 28, \text{ and}\\
+  0 = (x-3)^2 = x^2 - 6x + 9.
+\end{gather*}
 
-$ 0 = (x-7)(x-4) = x^2 - 11x + 28 $,\\
-$ 0 = (x-7)(x+4) = x^2 -3x - 28 $,\\
-$ 0 = (x+7)(x+4) = x^2 + 11x + 28 $, and\\
-$ 0 = (x-3)^2 = x^2 - 6x + 9 $.
+All constant multiples of these will also have the same roots.
 
 \filbreak\begin{enumerate}[resume]
   \answer Use the discriminant $ \Delta_2 $ of the following quadratics to find the
@@ -272,42 +207,6 @@ $ x^2 - 7 = (x+\sqrt{7}){x-\sqrt{7}} $, so $ x = \pm \sqrt{7} $;\\
 $ x^2 - 16 = (x + 4)(x-4) $, so $ x = \pm 4 $; and\\
 $ x^2 - a^2 - 2ab - b^2 = x^2 - (a+b)^2 = (x + a + b)(x - a - b) $, so $ x = \pm (a+b) $.
 
-\filbreak\begin{enumerate}[resume]
-  \answer Two cars start at the same point. One begins to travel
-        due north at a constant speed of 50~kph; two hours later, the second begins
-        to travel due east at a constant speed of 100~kph. How long after the first
-        car begins to move are the two cars exactly 300 kilometres apart?
-\end{enumerate}
-
-Note first that the cars will be no more than 100~km apart before the second car
-begins to move.
-
-The distance moved north by the first car after time $ t $ will be $ d_1 = 50 t $;
-the distance moved east by the second car at that time will be $ d_2 = 100(t-2) $;
-and the distance between them will be $ d_a = \sqrt{d_1^2 + d_2^2} $.
-
-We have therefore that $ (300)^2 = (50t)^2 + (100(t-2))^2 = 2500t^2 + 10000(t^2 - 4t + 4) = 12500t^2 - 40000t + 40000 $,
-and so using the quadratic formula with $ a = 12500 $, $ b = -40000 $, and $ c = 40000-(300)^2 = -50000 $ we have
-that $ t \approx 4.16 $ and $ t \approx -0.96 $; obviously only the former makes sense in context.
-
-\filbreak\begin{enumerate}[resume]
-  \answer A dairy farmer owns a square cow field alongside a 3~m wide vehicle track. According
-        to LINZ, the total area of the field and the track is 49~m$^2$; what are the dimensions
-        of the field alone?
-        \begin{center}
-        \begin{minipage}[t]{.2\linewidth}
-          \raggedright
-          \adjustbox{valign=t}{%
-            \includegraphics[width=\linewidth]{field}%
-          }
-        \end{minipage}
-        \end{center}
-\end{enumerate}
-
-Call the length (and width) of the field alone $ \ell $. Then we have
-that $ \ell^2 + 3\ell = 49 $. Using the quadratic formula we have that
-$ \ell \approx 5.66 $ or $ \ell \approx -8.66 $. As only the former makes sense, we
-find that the farmer has an exceptionally small field.
 
 \filbreak\begin{enumerate}[resume]
   \answer Prove that $ ax^2 + bx + c = Ax^2 + Bx + C $ implies that $ a = A $, $ b = B $, and $ c = C $.
@@ -464,7 +363,7 @@ Adding on the remainder, we have
 as expected.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Divide, finding the quotient and remainder:
+  \answer Divide, finding the quotient and remainder polynomials:
         \begin{enumerate*}
           \answerb $ x^2 - 4 $ by $ x - 2 $,
           \answerb $ x^2 - 4 $ by $ x - 3 $, and
@@ -537,12 +436,12 @@ $ 4^4 - (6 + \sqrt{3})\cdot4^3 + 6\sqrt{3}\cdot4^2 + 32\cdot4 -32\sqrt{3} = 0 $.
 By the remainder theorem, the remainder will be $ 6^7 + 5\times6 - 9 = 179957 $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Find a polynomial $ p(x) $ with integer coefficients such that:
+  \answer Find four polynomials $ p_a(x) $, $ p_b(x) $, $ p_c(x) $, $ p_d(x) $ with integer coefficients such that:
     \begin{enumerate}
-      \answerb $ p\left(\frac{1}{2}\right) = 0 $;
-      \answerb $ p\left(\frac{1}{2} + \frac{1}{2} \sqrt{3}\right) = 0 $;
-      \answerb $ p\left(2i - \sqrt{2} \right) = 0 $; and
-      \answerb $ p\left(\sqrt{i} + \frac{1}{\sqrt[3]{2}}\right) = 0 $.
+      \answerb $ p_a\left(\frac{1}{2}\right) = 0 $;
+      \answerb $ p_b\left(\frac{1}{2} + \frac{1}{2} \sqrt{3}\right) = 0 $;
+      \answerb $ p_c\left(2i - \sqrt{2} \right) = 0 $; and
+      \answerb $ p_d\left(\sqrt{i} + \frac{1}{\sqrt[3]{2}}\right) = 0 $.
     \end{enumerate}
 \end{enumerate}
 
@@ -656,7 +555,7 @@ Similarly, the three roots 0, 1, and $ -1 $ of $ x^3 - x = 0 $ are closed under 
 \textit{Since the roots of the equation $ x^{n} - x =  0 $ are simply the $ n-1$th roots of unity together with
 zero, exercise 6.\ref{ex:grpdefn} makes this exercise trivial. If we restrict $ n $ to be a prime power (i.e. $ n = p^m $ for some
 integer $ m $), then it is possible to impose an addition structure on the roots as well if $ \alpha + \beta $ is reduced
-modulo $ p $. In fact, the roots of $ x^{p^m} - x = 0 $ form the (unique) finite field of order $ p^m $
+modulo $ p $. In fact, the roots of $ x^{p^m} - x = 0 $ modulo $ p $ form the (unique) finite field of order $ p^m $
 denoted $ GF(p^m) $ --- the Galois field of order $ p^m $).}
 \end{mdframed}
 
@@ -1163,7 +1062,7 @@ where the denominator is real.
 \filbreak\begin{enumerate}[resume]
   \answer
     \begin{enumerate}
-      \answerb Prove that a number $ z $ is real if and only if $ \bar {\bar z} = z $.
+      \answerb Prove that a number $ z $ is real if and only if $ \bar z = z $.
       \answerb Hence, or otherwise, show that $ z \bar w + w \bar z $ is always real.
       \answerb Show that $ z \bar w + w \bar z \leq 2 \abs{w} \abs{z} $.
     \end{enumerate}
@@ -1347,21 +1246,66 @@ By the quadratic formula, the two solutions of the quadratic factor are $ t = -2
 so the three solutions of the cubic must be $ t \in \{-2\pm\sqrt{3}, 4\} $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Show that, if $ a $ and $ b $ are fixed complex numbers, then $ \abs{z - a} = \abs{z - b} $ describes a line.
+  \answer You do not need the fundamental theorem of algebra for this exercise.
+    \begin{enumerate}
+      \answerb Prove that all cubic equations with real coefficients must have exactly three roots in the complex numbers.
+      \answerb Let $ p(x) $ be a polynomial of degree $ n $ such that there exists some complex number $ \zeta $ such that $ p(\zeta) = 0 $.
+               Show that $ p(x) = 0 $ has exactly $ n $ solutions (counting repeated roots).
+    \end{enumerate}
 \end{enumerate}
 
-Let $ z = x + iy $, $ a = \alpha + \zeta i$, and $ b = \beta + \xi i $. Then:
+\paragraph{(a)}
+A cubic with real coefficients must have at least one real root. There are two ways to see this;
+firstly, a cubic with real coefficients must cross the $ x$-axis at at least one point; and secondly,
+all non-real roots of polynomials with real coefficients must come in conjugate pairs (in order for the
+imaginary parts to cancel in the coefficients) and so a real polynomial with an odd number of roots
+must have at least one real root.\footnote{A proof that roots of real polynomials come in conjugate
+pairs is exercise 9.\ref{ex:solutiongenerator}.}
+
+Call our real root $ p $. Our cubic is $ a x^3 + b x^2 + cx + d = 0 $, and
+we can divide it out by $ x - p $, which we know is a factor, to obtain a
+quadratic. We know that the coefficients of this quadratic factor must multiply
+with the real coefficients of the linear factor to give the real coefficients of
+the cubic, and so the coefficients of the quadratic must be real... and so we can
+apply the quadratic formula to show that the roots of the quadratic must be complex!
+
+Hence all three roots of the general cubic are complex. \textit{Note that all real roots
+are also complex.}
+
+\paragraph{(b)}
+We use induction on $ n $. Firstly, note that if $ n = 1 $ then the result is trivial.
+
+Now, suppose that the theorem holds for all polynomials of degree $ n - 1 $. It follows from $ p(\zeta) = 0 $
+that $ (x - \zeta) $ is a factor of $ p(x) $, and so $ p(x) = (x - \zeta)q(x) $ where $ \partial q = n - 1 $.
+But by the inductive hypothesis, $ q(x) $ has exactly $ n - 1 $ roots; so $ p(x) $ has $ n $ roots, and if
+the theorem holds for polynomials of degree $ n - 1 $ then it holds for polynomials of degree $ n $.
+
+Hence, by the axiom of induction, it follows that if a polynomial of degree $ n $ has at least one complex
+root then it has exactly $ n $ complex roots.
+
+\section{Geometry}
+
+\filbreak\begin{enumerate}
+  \answer Show that, if $ a $ and $ b $ are fixed complex numbers, then $ \abs{z - a} = \abs{z - b} $ describes the line which
+        cuts the midpoint of the segment between $ a $ and $ b $ at a right angle.
+\end{enumerate}
+
+Suppose that the distance from $ z $ to $ a $ is equal to the distance from $ z $ to $ b $.
+
+The line joining $ a $ and $ b $ has direction $ a - b $; the line joining $ z $ and $ m(a,b) = \frac{a + b}{2} $ has direction $ z - \frac{a + b}{2} $. I
+claim that the two complex numbers obtained are orthogonal. Indeed,
 \begin{align*}
-  \abs{(x - \alpha) + (y - \zeta)} &= \abs{(x - \beta) + (y - \xi)}\\
-  (x - \alpha)^2 + (y - \zeta)^2 &= (x - \beta)^2 + (y - \xi)^2\\
-  x^2 - 2x\alpha + \alpha^2 + y^2 - 2y\zeta + \zeta^2 &= x^2 - 2x\beta + \beta^2 + y^2 - 2y\xi + \xi^2\\
-  - 2x\alpha + \alpha^2 - 2y\zeta + \zeta^2 &= - 2x\beta + \beta^2 - 2y\xi + \xi^2
+  (z - \frac{a + b}{2}, a - b) &= (z, a) - (z, b) - (\frac{a + b}{2}, a) + (\frac{a + b}{2}, b)\\
+                               &= (z, a) - (z,b) - \frac{1}{2}((a,a) + (b,a)) + \frac{1}{2}((a,b) + (b,b))\\
+                               &= (z,a) - (z,b) + \frac{1}{2}(b,b) - \frac{1}{2}(a,a).
 \end{align*}
-which can be rearranged to
+But $ \abs{z - a} = \abs{z - b} $, so
 \begin{displaymath}
-  y = \frac{- 2x\beta + \beta^2 + \xi^2 - \alpha^2 - \zeta^2 + 2x\alpha}{2(\xi - \zeta)}
+  (z - a, z - a) = (z - b, z - b) \implies (z, z) - 2(a,z) + (a,a) = (z,z) - 2(z,b) + (b,b)
 \end{displaymath}
-which is a linear polynomial equation in $ x $.
+and thus $ (z,a) - (z,b) = \frac{1}{2}(a,a) - \frac{1}{2}(b,b) $;
+so $ (z - \frac{a + b}{2}, a - b) = 0 $, and the two vectors are orthogonal. So every such $ z $ lies on the perpendicular
+bisector of the segment $ [ab] $; and clearly every $ z $ on that line is an equal distance from $ a $ and $ b $.
 
 \filbreak\begin{enumerate}[resume]
   \answer Let $ v = 1 + i $ and $ z = x + iy $ for any real numbers $ x $ and $ y $.
@@ -1426,42 +1370,311 @@ Substituting:
 So the line intersects the circle at $ (-1, 1) $ and $ (1, -1) $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer You do not need the fundamental theorem of algebra for this exercise.
+  \answer Find the locus of all $ z $ such that for some fixed $ a $, $ z - a $ is perpendicular to $ z + a $.
+\end{enumerate}
+
+We have $ (z - a, z + a) = 0 $; so $ (z,z) - (a,z) + (z,a) - (a,a) = 0 $
+and thus $ (z,z) = (a,a) $. So $ \sqrt{\abs{z}} = \sqrt{\abs(a)} $, and (since
+lengths are positive) $ \abs{z} = \abs{a} $. In other words, we have a circle
+around zero of radius $ \abs{a} $.
+
+\filbreak\begin{enumerate}[resume]
+  \answer Show that if $ u $, $ v $, and $ w $ are complex numbers, and if $ \lambda $ and $ \mu $ are real
+        numbers, then:
     \begin{enumerate}
-      \answerb Prove that all cubic equations with real coefficients must have exactly three roots in the complex numbers.
-      \answerb Let $ p(x) $ be a polynomial of degree $ n $ such that there exists some complex number $ \zeta $ such that $ p(\zeta) = 0 $.
-               Show that $ p(x) = 0 $ has exactly $ n $ solutions (counting repeated roots).
+      \answerb $ (u, v) = (v, u) $
+      \answerb $ (\lambda u + \mu v, w) = \lambda(u, w) + \mu(v, w) $
     \end{enumerate}
 \end{enumerate}
 
 \paragraph{(a)}
-A cubic with real coefficients must have at least one real root. There are two ways to see this;
-firstly, a cubic with real coefficients must cross the $ x$-axis at at least one point; and secondly,
-all non-real roots of polynomials with real coefficients must come in conjugate pairs (in order for the
-imaginary parts to cancel in the coefficients) and so a real polynomial with an odd number of roots
-must have at least one real root.\footnote{A proof that roots of real polynomials come in conjugate
-pairs is exercise 9.\ref{ex:solutiongenerator}.}
-
-Call our real root $ p $. Our cubic is $ a x^3 + b x^2 + cx + d = 0 $, and
-we can divide it out by $ x - p $, which we know is a factor, to obtain a
-quadratic. We know that the coefficients of this quadratic factor must multiply
-with the real coefficients of the linear factor to give the real coefficients of
-the cubic, and so the coefficients of the quadratic must be real... and so we can
-apply the quadratic formula to show that the roots of the quadratic must be complex!
-
-Hence all three roots of the general cubic are complex. \textit{Note that all real roots
-are also complex.}
+$ (u,v) = \realp{u}\realp{v} + \imagp{u} \imagp{v} = \realp{v}\realp{u} + \imagp{v} \imagp{u} = (v,u) $.
 
 \paragraph{(b)}
-We use induction on $ n $. Firstly, note that if $ n = 1 $ then the result is trivial.
+\begin{align*}
+  (\lambda u + \mu v, w) &= \realp{\lambda u + \mu v} \realp{w} + \imagp{\lambda u + \mu v} \imagp{w}\\
+   &= (\lambda \realp{u} + \mu \realp{v}) \realp{w} + (\lambda \imagp{u} + \mu \imagp{v}) \imagp{w}\\
+   &= \lambda \realp{u} \realp{w} + \mu \realp{v} \realp{w} + \lambda \imagp{u} \imagp{w} + \mu \imagp{v} \imagp{w}\\
+   &= \lambda (\realp{u} \realp{w} + \imagp{u} \imagp{w}) + \mu(\realp{v} \realp{w} + \imagp{v} \imagp{w})\\
+   &= \lambda(u, w) + \mu(v, w).
+\end{align*}
 
-Now, suppose that the theorem holds for all polynomials of degree $ n - 1 $. It follows from $ p(\zeta) = 0 $
-that $ (x - \zeta) $ is a factor of $ p(x) $, and so $ p(x) = (x - \zeta)q(x) $ where $ \partial q = n - 1 $.
-But by the inductive hypothesis, $ q(x) $ has exactly $ n - 1 $ roots; so $ p(x) $ has $ n $ roots, and if
-the theorem holds for polynomials of degree $ n - 1 $ then it holds for polynomials of degree $ n $.
+\filbreak\begin{enumerate}[resume]
+  \answer Let $ p $ be a positive real number, and let $ \Gamma $ be the locus of points $ z $ satisfying $ \abs{z - p} = c\realp{z} $. Show
+        that $ \Gamma $ is:
+    \begin{enumerate}
+      \answerb an ellipse if $ 0 < c < 1 $;
+      \answerb a parabola if $ c = 1 $;
+      \answerb a hyperbola if $ c > 1 $.
+    \end{enumerate}
+\end{enumerate}
 
-Hence, by the axiom of induction, it follows that if a polynomial of degree $ n $ has at least one complex
-root then it has exactly $ n $ complex roots.
+Let $ z = x + yi $. Expanding, we have $ (x - p)^2 + y^2 = c^2x^2 $ and therefore $ (1 - c^2)x^2 - 2px + p^2 + y^2 = 0 $.
+If $ c = 1 $, this is clearly the equation of the parabola $ y^2 = 2px - p^2 $; so assume $ c \neq 1 $. Dividing through
+by $ 1 - c^2 $ and completing the square, we have
+\begin{gather*}
+  \left( x - \frac{p}{1 - c^2} \right)^2 + \frac{y^2}{1 - c^2} = \frac{p^2c^2}{(1 - c^2)^2}\\
+  \frac{\left( x - \frac{p}{1 - c^2} \right)^2}{\left(\frac{p^2c^2}{(1 - c^2)^2}\right)} + \frac{y^2}{\left(\frac{p^2c^2}{1 - c^2}\right)} = 1
+\end{gather*}
+where the coefficient of the $ (x - p/(1 - c^2))^2 $ term is always positive and the coefficient of the $ y^2 $ term
+is positive when $ c < 1 $ and negative when $ c > 1 $, corresponding to an ellipse and a hyperbola respectively.
+
+\filbreak\begin{enumerate}[resume]
+  \answer A set of complex numbers is called \emph{convex} if for every pair of complex numbers in the set the line segment joining
+        them is also in the set.
+    \begin{enumerate}
+      \answerb Show that the set of all $ z $ where $ \abs{z} < 1 $ is convex.
+      \answerb Show that the set of all $ z $ where $ 0 < \abs{z} < 1 $ is not convex.
+    \end{enumerate}
+\end{enumerate}
+\paragraph{(a)}
+Suppose $ w $ and $ v $ lie inside the disc $ \abs{z} < 1 $. Then the segment
+joining them is given by $ z = (1 - t)w + tv $ (where $ 0 \leq t \leq 1 $).
+Computing the modulus of this, we obtain
+\begin{displaymath}
+  \abs{z} = \abs{(1 - t)w + tv} \leq \abs{(1 - t)w} + \abs{tv} = (1-t)\abs{w} + t\abs{v} < (1 - t) + t = 1;
+\end{displaymath}
+so every point in the segment also lies inside the disc.
+
+\paragraph{(b)}
+Consider the points $ w = -1/2 $ and $ v = 1/2 $. Then the segment between them is given by $ z = (1 - t)w + tv $, so
+the point $ (1 - (1/2))w + (1/2)v = (1/2)(-1/2) + (1/2)(1/2) = 0 $ lies on the segment but not inside the given set.
+
+\filbreak\begin{enumerate}[resume]
+  \answer A set of complex numbers is called \emph{star shaped} if there is some point $ c $ in the set such that for every
+        other point $ p $ in the set, the segment joining $ p $ to $ c $ lies in the set. Show that every convex set is star shaped.
+\end{enumerate}
+If a set is convex, then pick any point $ c $ in the set; then the segment joining $ p $ to $ c $ lies inside the set (where $ p $ is
+any other point in the set) and so the set is star-shaped.
+
+\filbreak\begin{enumerate}[resume]
+  \answer If $ S $ is a set of finitely many complex numbers $ z_1, ..., z_n $, the \emph{convex hull} of $ S $ is the smallest convex set
+          containing every point of $ S $. Show that a point $ w $ is in the convex hull of $ S $ precisely when there exist $ n $
+          non-negative real numbers, $ \lambda_1, ..., \lambda_n $, such that $ \lambda_1 + \cdots + \lambda_n = 1 $, and
+          \begin{displaymath}
+            w = \lambda_1 z_1 + \cdots \lambda_n z_n.
+          \end{displaymath}
+          The points $ w $ are called \emph{convex combinations} of the $ z_i $.
+\end{enumerate}
+This is proved in two steps: we show that the given set is convex, and that it is contained in every other convex set containing $ S $ (so
+it is the smallest such set).
+
+Suppose $ a $ and $ b $ lie inside the set; then $ a = \lambda_1 z_1 + \cdots \lambda_n z_n $ and $ b = \mu_1 z_1 + \cdots \mu_n z_n $ for
+some real numbers as restricted in the question. Consider the segment between them; any point $ z $ on the segment is of the form
+\begin{align*}
+  z &= (1-t)(\lambda_1 z_1 + \cdots \lambda_n z_n) + t(\mu_1 z_1 + \cdots \mu_n z_n)\\
+    &= (\lambda_1 - t\lambda_1 + t\mu_1)z_1 + \cdots + (\lambda_n - t\lambda_n + t\mu_n)z_n.
+\end{align*}
+But the sum of the coefficients is
+\begin{multline*}
+  (\lambda_1 - t\lambda_1 + t\mu_1) + \cdots + (\lambda_n - t\lambda_n + t\mu_n)\\
+    = (\lambda_1 + \cdots + \lambda_n) - t(\lambda_1 + \cdots + \lambda_n) + t(\mu_1 + \cdots + \mu_1)\\
+    = 1 - t + t = 1,
+\end{multline*}
+and each coefficient is of the form $ (1-t)\lambda_i + t\mu_i $ which lies on the segment of the real line joining $ \lambda_i $ to $ \mu_i $;
+since both of these are non-negative, the coefficient is non-negative. Thus $ z $ satisfies both criteria for its
+coefficients and lies inside the set; $ z $ is convex.
+
+Now suppose we have any other convex set containing the $ n $ points. The claim is that any point $ z = \lambda_1 z_1 + \cdots + \lambda_n z_n $
+lies inside the convex set. Suppose every convex combination of this form where $ k $ coefficients are non-zero lies inside the set (the case $ k = 2 $
+follows from convexity, because it is just a segment); consider convex combination $ z = \lambda_1 z_1 + \cdots + \lambda_k z_k + \lambda_{k + 1} z_{k + 1} $
+such that the first $ k $ coefficients are non-zero. Consider the point
+\begin{gather*}
+  \frac{\lambda_1 z_1 + \cdots + \lambda_k z_k}{\lambda_1 + \cdots + \lambda_k}
+\end{gather*}
+which has coefficient sum 1, so this point lies inside the convex set; and so the point
+\begin{displaymath}
+  z = (\lambda_1 + \cdots + \lambda_k)\left(\frac{\lambda_1 z_1 + \cdots + \lambda_k z_k}{\lambda_1 + \cdots + \lambda_k}\right) + \lambda_{k + 1} z_{k + 1}
+\end{displaymath}
+is a convex combination of two points in the set, and so lies inside the set. By induction, this holds for all $ k $ up to $ n $;
+so the set of all convex combinations of $ z_1,...,z_n $ lies inside every other convex set containing the $ n $
+points.
+
+
+\begin{mdframed}[hidealllines=true,backgroundcolor=Emerald!20]
+\textit{More generally, the convex hull of any set of points is the smallest convex set containing those points, and
+        we have that the set of all points in the convex hull is the set of finite convex combinations of points in
+        the set. However, it turns out that if we take our points in $ n$-dimensional space then the convex hull of
+        a set can be described by the convex combinations of sets of $ n + 1 $ points in the set. This theorem is
+        due to Carath\'eodory (see \cite{Ber94}, chapter 11).}
+\end{mdframed}
+
+\filbreak\begin{enumerate}[resume]
+  \answer The following inequality, which holds for all real numbers $ a_1 $, $ a_2 $, ..., $ a_n $, $ b_1 $, ..., $ b_n $, is known as the Cauchy-Schwarz
+        inequality.
+        \begin{equation}\label{eqn:cauchy}
+          (a_1 b_1 + a_2 b_2 + \cdots + a_n b_n)^2 \leq (a_1^2 + \cdots + a_n^2)(b_1^2 + \cdots + b_n^2) \tag{Cauchy-Schwarz}
+        \end{equation}
+        The inequality is a very useful result in analysis; there are several different elementary proofs of it.
+        \begin{enumerate}
+          \answerb Show that if $ a > 0 $, $ ax^2 + bx + c \geq 0 $ for all $ x $ if and only if $ b^2 - 4ac \leq 0 $.
+          \answerb Prove the Cauchy-Schwarz inequality by considering the expression $ (a_1 x + b_1)^2 + \cdots + (a_n x + b_n)^2 $,
+                collecting terms, and applying (a).
+          \answerb As a special case of the inequality, show that if $ w $ and $ z $ are complex numbers then $ (w, z)^2 \leq \abs{w}^2 \abs{z}^2 $.
+          \answerb Hence show the \emph{triangle inequality}: $ \abs{a + b} \leq \abs{a} + \abs{b} $ for complex numbers $ a $ and $ b $.
+        \end{enumerate}
+\end{enumerate}
+
+\paragraph{(a)}
+Use the quadratic formula.
+
+\paragraph{(b)}
+We rewrite in summation notation to make matters clearer; we simply write $ \sum $ for $ \sum_{i = 1}^n $ to save space. Considering
+the suggested expression:
+\begin{displaymath}
+  \sum (a_i x + b_i)^2 = \sum (a_i^2 x^2 + 2a_i b_i x + b_i^2) = x^2 \sum a_i^2 + 2x \sum a_i b_i + \sum b_i^2.
+\end{displaymath}
+But $ \sum a_i^2 \geq 0 $ (since each $ a_i $ is real and so has non-negative square); by the same reasoning, $ \sum (a_i x + b_i)^2 $ is
+non-negative and hence so is the right-hand side of the above equality. Hence we can apply (a), and conclude that
+\begin{displaymath}
+  \left(2\sum a_i b_i\right)^2 - 4\left(\sum a_i^2\right)\left(\sum b_i^2\right) \geq 0;
+\end{displaymath}
+expanding and rearranging, we find the required result:
+\begin{displaymath}
+  \left(\sum a_i b_i\right)^2 \geq \left(\sum a_i^2\right)\left(\sum b_i^2\right).
+\end{displaymath}
+
+\paragraph{(c)}
+We have
+\begin{displaymath}
+  (w,z)^2 = (\realp{w}\realp{z} + \imagp{w}\imagp{z})^2 \leq (\realp{w}^2 + \imagp{w}^2)(\realp{z}^2 + \imagp{z}^2) = \abs{w}^2\abs{z}^2.
+\end{displaymath}
+
+\paragraph{(d)}
+\begin{displaymath}
+  \abs{a + b}^2 = (a + b, a + b) = (a,a) + 2(a,b) + (b,b) = \abs{a}^2 + 2(a,b) + \abs{b}^2 \leq \abs{a}^2 + 2\abs{a}\abs{b} + \abs{b}^2 = (\abs{a} + \abs{b})^2;
+\end{displaymath}
+the result follows by taking square roots.
+
+\filbreak\begin{enumerate}[resume]
+  \answer Multiplication by $ i $ rotates a point by $ \frac{\pi}{2} $ around the origin.
+        \begin{enumerate}
+          \answerb A generalisation of this allows us to rotate a point $ z $ around an arbitrary point $ a $ by that
+                angle: $ z' = a + i(z-a) $. Justify this formula.
+          \answerb A pirate named Kim Dotcom has hidden his sick tunes on a desert island tax haven in order to evade
+                American FBI agents. You have been hired to find the data stick containing his mp3 files so that
+                his extradition case can be resolved, but all you can find is a treasure map with the following
+                instructions:
+
+                \begin{aquote}{Kim Dotcom's Amazing Totally Secret Treasure Map\textsuperscript{TM}}
+                  From the statue of Richard Seddon, go to the kauri tree (counting your steps), and then turn
+                  exactly 90\degree left and walk the same number of steps to the point $ g' $. Returning
+                  to the statue, walk to the beech tree (again counting your steps). Turn right by 90\degree,
+                  and walk the same number of steps to point $ g'' $. The treasure is buried exactly at the midpoint
+                  of the line joining $ g' $ and $ g'' $.
+                \end{aquote}
+
+                Given that the kauri tree is at $ (0,0) $, the beech tree is at $ (10,0) $, and
+                the statue is somewhere on the line $ y = 2009 $, find the location of the treasure
+                using the geometry of complex numbers and rid New Zealand of Kim Dotcom forever.\footnote{~Problem taken from \cite{Kes09}, section 5.1.}
+          \end{enumerate}
+\end{enumerate}
+
+\paragraph{(a)}
+We shift our coordinate system so that $ a $ becomes the origin, rotate the plane by multiplying by $ i $, and shift the origin back to $ a $.
+
+\paragraph{(b)}
+We will call the $ x$-coordinate of the statue $ x_0 $.
+
+Our technique for solving this problem is simply to rotate the point representing
+the statue around the given points for the trees by 90\degree using the formula given
+in the question --- then finding the midpoint is simple.
+
+First, we rotate $ x_0 + 2009i $ around the point $ 0 + 0i $, obtaining $ g' = -2009 + ix_0 $.
+We next rotate the statue around $ 10 + 0i $ three times (as we are turning
+right --- draw a diagram!) using the formula:
+\begin{align*}
+  10 + i(x_0 + 2009i - 10)         &= -1999 + i(x_0 - 10)\\
+  10 + i(-1999 + i(x_0 - 10) - 10) &= 20 - x_0 - 2009i\\
+  10 + i(20 - x_0 - 2009i - 10)    &= 2019 + i(10 - x_0)
+\end{align*}
+The midpoint is therefore $ \left( \frac{-2009 + 2019}{2}, \frac{x_0 + 10 - x_0}{2} \right) = (5,5)$. Interestingly,
+the position of the treasure does not depend on the $ x$-coordinate of the statue!
+
+\filbreak\begin{enumerate}[resume]
+  \answer A line in $ \mathbb{C}^2 $ (the plane with complex coordinates) is defined to be the locus of a linear
+        $ ax + by + c = 0 $ where $ a $, $ b $, and $ c $ are complex constants. Prove that, given two distinct points $ (x_0, y_0) $
+        and $ (x_1, y_1) $ in $ \mathbb{C}^2 $, there is a \textbf{unique} line through those two points. \textit{Hint: it is certainly \textbf{not} true
+        that there is a unique linear equation whose graph includes both points.}
+\end{enumerate}
+
+Let $ \mathcal{L} $ and $ \mathcal{M} $ be two lines passing through both points. (Our goal is to show
+that $ (x,y) \in \mathcal{L} \iff (x,y) \in \mathcal{M} $.) Then $ \mathcal{L} $ is the locus of some
+linear equation $ ax + by + c = 0 $, and $ \mathcal{M} $ is the locus of some other linear
+equation $ dx + ey + f = 0 $.
+
+Consider first $ \mathcal{L} $. We know that $ (x_0, y_0) \in \mathcal{L} \wedge (x_1, y_1) \in \mathcal{L} $. Hence we
+have the following system of simultaneous equations:
+\begin{align*}
+  ax_0 + by_0 + c = 0\\
+  ax_1 + by_1 + c = 0.
+\end{align*}
+
+Since we have a system of rank two with three variables, one variable must be free (a parameter); we chose it to be $ c $ as this
+simplifies the whole process. Our goal, therefore, is to rewrite $ ax + by + c = 0 $ in terms of $ c $ only (the purpose of this
+goal may not be clear at this point, but trust us). This can be done using any appropriate method (e.g. substitution); we chose to
+use linear algebra because it minimises the amount of tedious work required.
+
+\begin{mdframed}[hidealllines=true,backgroundcolor=Dandelion!20]
+\textit{Readers who do not know linear algebra should feel free to skip this portion of the solution, and are encouraged to find
+another way to derive the same result.}
+
+We have
+\begin{displaymath}
+  \begin{bmatrix} x_0 & y_0 \\ x_1 & y_1 \end{bmatrix} \begin{bmatrix} a\\b \end{bmatrix} = \begin{bmatrix} -c\\-c \end{bmatrix}.
+\end{displaymath}
+
+Inverting the coefficient matrix and solving for $ (a\ b)^t $ gives
+\begin{displaymath}
+  \begin{bmatrix} a\\b \end{bmatrix} = \frac{1}{x_0 y_1 - x_1 y_0} \begin{bmatrix} y_1 & -y_0 \\ -x_1 & x_0 \end{bmatrix} \begin{bmatrix} -c\\-c \end{bmatrix};
+\end{displaymath}
+\end{mdframed}
+
+We therefore conclude that
+\begin{align*}
+  a &= -\frac{c}{x_0 y_1 - x_1 y_0} (y_1 - y_0)\\
+  b &= -\frac{c}{x_0 y_1 - x_1 y_0} (x_0 - x_1)
+\end{align*}
+and (substituting) $ \mathcal{L} $ is the locus of
+\begin{displaymath}
+  c \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y \right) = 0.
+\end{displaymath}
+Similarly, $ \mathcal{M} $ is the locus of
+\begin{displaymath}
+  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y \right) = 0.
+\end{displaymath}
+
+Now, we must show that if a point $ (x_\star, y_\star) $ is in $ \mathcal{L} $ then it is in $ \mathcal{M} $ (and vice versa).
+To this end, consider the following:
+\begin{displaymath}
+  (x_\star, y_\star) \in \mathcal{L} \iff c \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
+\end{displaymath}
+So one of $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $ is true.
+
+\paragraph{Case I: $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $}\mbox{}\\
+Evidently
+\begin{displaymath}
+  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
+\end{displaymath}
+and so $ (x_\star, y_\star) \in \mathcal{M} $. (The same argument works with $ \mathcal{M} $ and $ \mathcal{L} $ swapped.)
+
+\paragraph{Case II: $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) \neq 0 $}\mbox{}\\
+In both cases,
+\begin{displaymath}
+  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
+\end{displaymath}
+and so $ (x_\star, y_\star) \in \mathcal{M} $. The above arguments also show that $ (x_\star, y_\star) \in \mathcal{M} \implies (x_\star, y_\star) \in \mathcal{L} $,
+so $ \mathcal{M} = \mathcal{L} $.
+
+\filbreak\begin{enumerate}[resume]
+  \answer Investigate the locus of $ \left\{z = r\cis\theta : r = \cos\left(\frac{n}{d}\theta\right)\right\} $ for different values of $ n $
+        and $ d $.
+\end{enumerate}
+
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{roses}
+\end{center}
+(Image: Jason Davies [CC BY-SA 3.0  (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons)
 
 \section{Roots of Unity}
 \begin{mdframed}[hidealllines=true,backgroundcolor=Emerald!20]
@@ -1883,7 +2096,7 @@ Note here that we are viewing this sum as a polynomial in a known number $ p $ r
 \section{The Double-Triangle Problem}
 There are no exercises for this section that require worked answers.
 
-\section{(Optional) Solving the Cubic}
+\section{Solving the Cubic}
 \begin{enumerate}
   \answer Check the author's algebra.
 \end{enumerate}
@@ -2393,122 +2606,6 @@ does not have coefficients depending on $ a $ or $ b $ (so we can find exact ans
 it has a single real solution of $ z = -\frac{2}{3}$; so the single real root is $ z = -\frac{2}{3} $ and $ \frac{b}{a} = -1 $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Complex numbers exist in a plane, and so can be used to solve problems in geometry. For example, multiplication
-        by $ i $ rotates a point by $ \frac{\pi}{2} $ around the origin. A generalisation of this allows us to rotate
-        a point $ z $ around an arbitrary point $ a $ by that angle: $ z' = a + i(z-a) $.
-
-        A pirate named Kim Dotcom has hidden his sick tunes on a desert island tax haven in order to evade
-        American FBI agents. You have been hired to find the data stick containing his mp3 files so that
-        his extradition case can be resolved, but all you can find is a treasure map with the following
-        instructions:
-
-        \begin{aquote}{Kim Dotcom's Amazing Totally Secret Treasure Map\textsuperscript{TM}}
-          From the statue of Richard Seddon, go to the kauri tree (counting your steps), and then turn
-          exactly 90\degree left and walk the same number of steps to the point $ g' $. Returning
-          to the statue, walk to the beech tree (again counting your steps). Turn right by 90\degree,
-          and walk the same number of steps to point $ g'' $. The treasure is buried exactly at the midpoint
-          of the line joining $ g' $ and $ g'' $.
-        \end{aquote}
-
-        Given that the kauri tree is at $ (0,0) $, the beech tree is at $ (10,0) $, and
-        the statue is somewhere on the line $ y = 2009 $, find the location of the treasure
-        using the geometry of complex numbers and rid New Zealand of Kim Dotcom forever.\footnote{~Problem taken
-        from Kessler (2009) section 5.1, but context changed.}
-\end{enumerate}
-
-We will call the $ x$-coordinate of the statue $ x_0 $.
-
-Our technique for solving this problem is simply to rotate the point representing
-the statue around the given points for the trees by 90\degree using the formula given
-in the question --- then finding the midpoint is simple.
-
-First, we rotate $ x_0 + 2009i $ around the point $ 0 + 0i $, obtaining $ g' = -2009 + ix_0 $.
-We next rotate the statue around $ 10 + 0i $ three times (as we are turning
-right --- draw a diagram!) using the formula:
-\begin{align*}
-  10 + i(x_0 + 2009i - 10)         &= -1999 + i(x_0 - 10)\\
-  10 + i(-1999 + i(x_0 - 10) - 10) &= 20 - x_0 - 2009i\\
-  10 + i(20 - x_0 - 2009i - 10)    &= 2019 + i(10 - x_0)
-\end{align*}
-The midpoint is therefore $ \left( \frac{-2009 + 2019}{2}, \frac{x_0 + 10 - x_0}{2} \right) = (5,5)$. Interestingly,
-the position of the treasure does not depend on the $ x$-coordinate of the statue!
-
-\filbreak\begin{enumerate}[resume]
-  \answer A line in $ \mathbb{C}^2 $ (the plane with complex coordinates) is defined to be the locus of a linear
-        $ ax + by + c = 0 $ where $ a $, $ b $, and $ c $ are complex constant. Prove that, given two distinct points $ (x_0, y_0) $
-        and $ (x_1, y_1) $ in $ \mathbb{C}^2 $, there is a \textbf{unique} line through those two points. \textit{Hint: it is certainly \textbf{not} true
-        that there is a unique linear equation whose graph includes both points.}
-\end{enumerate}
-
-Let $ \mathcal{L} $ and $ \mathcal{M} $ be two lines passing through both points. (Our goal is to show
-that $ (x,y) \in \mathcal{L} \iff (x,y) \in \mathcal{M} $.) Then $ \mathcal{L} $ is the locus of some
-linear equation $ ax + by + c = 0 $, and $ \mathcal{M} $ is the locus of some other linear
-equation $ dx + ey + f = 0 $.
-
-Consider first $ \mathcal{L} $. We know that $ (x_0, y_0) \in \mathcal{L} \wedge (x_1, y_1) \in \mathcal{L} $. Hence we
-have the following system of simultaneous equations:
-\begin{align*}
-  ax_0 + by_0 + c = 0\\
-  ax_1 + by_1 + c = 0.
-\end{align*}
-
-Since we have a system of rank two with three variables, one variable must be free (a parameter); we chose it to be $ c $ as this
-simplifies the whole process. Our goal, therefore, is to rewrite $ ax + by + c = 0 $ in terms of $ c $ only (the purpose of this
-goal may not be clear at this point, but trust us). This can be done using any appropriate method (e.g. substitution); we chose to
-use linear algebra because it minimises the amount of tedious work required.
-
-\begin{mdframed}[hidealllines=true,backgroundcolor=Dandelion!20]
-\textit{Readers who do not know linear algebra should feel free to skip this portion of the solution, and are encouraged to find
-another way to derive the same result.}
-
-We have
-\begin{displaymath}
-  \begin{bmatrix} x_0 & y_0 \\ x_1 & y_1 \end{bmatrix} \begin{bmatrix} a\\b \end{bmatrix} = \begin{bmatrix} -c\\-c \end{bmatrix}.
-\end{displaymath}
-
-Inverting the coefficient matrix and solving for $ (a\ b)^t $ gives
-\begin{displaymath}
-  \begin{bmatrix} a\\b \end{bmatrix} = \frac{1}{x_0 y_1 - x_1 y_0} \begin{bmatrix} y_1 & -y_0 \\ -x_1 & x_0 \end{bmatrix} \begin{bmatrix} -c\\-c \end{bmatrix};
-\end{displaymath}
-\end{mdframed}
-
-We therefore conclude that
-\begin{align*}
-  a &= -\frac{c}{x_0 y_1 - x_1 y_0} (y_1 - y_0)\\
-  b &= -\frac{c}{x_0 y_1 - x_1 y_0} (x_0 - x_1)
-\end{align*}
-and (substituting) $ \mathcal{L} $ is the locus of
-\begin{displaymath}
-  c \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y \right) = 0.
-\end{displaymath}
-Similarly, $ \mathcal{M} $ is the locus of
-\begin{displaymath}
-  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y \right) = 0.
-\end{displaymath}
-
-Now, we must show that if a point $ (x_\star, y_\star) $ is in $ \mathcal{L} $ then it is in $ \mathcal{M} $ (and vice versa).
-To this end, consider the following:
-\begin{displaymath}
-  (x_\star, y_\star) \in \mathcal{L} \iff c \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
-\end{displaymath}
-So one of $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $ is true.
-
-\paragraph{Case I: $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $}\mbox{}\\
-Evidently
-\begin{displaymath}
-  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
-\end{displaymath}
-and so $ (x_\star, y_\star) \in \mathcal{M} $. (The same argument works with $ \mathcal{M} $ and $ \mathcal{L} $ swapped.)
-
-\paragraph{Case II: $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) \neq 0 $}\mbox{}\\
-In both cases,
-\begin{displaymath}
-  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
-\end{displaymath}
-and so $ (x_\star, y_\star) \in \mathcal{M} $. The above arguments also show that $ (x_\star, y_\star) \in \mathcal{M} \implies (x_\star, y_\star) \in \mathcal{L} $,
-so $ \mathcal{M} = \mathcal{L} $.
-
-\filbreak\begin{enumerate}[resume]
   \answer Find all possible values for $ \theta $ if $ \cis^2 \theta + \cis \theta + 1 = 0 $.
 \end{enumerate}
 
@@ -2899,39 +2996,6 @@ We wish to find $ x = a + b\epsilon $ such that $ x^2 = 2\epsilon + 1 $:
 \end{align*}
 So $ a^2 = 1 \implies a = \pm 1 $, and $ ab = 1 $ so $ b = a $. Hence we have
 exactly two solutions: $ \pm 1 \pm \epsilon $.
-
-\filbreak\begin{enumerate}[resume]
-  \answer The following inequality, which holds for all real numbers $ a_1 $, $ a_2 $, ..., $ a_n $, $ b_1 $, ..., $ b_n $, is known as the Cauchy-Schwarz
-        inequality.
-        \begin{equation}\label{eqn:cauchy}
-          (a_1 b_1 + a_2 b_2 + \cdots + a_n b_n)^2 \leq (a_1^2 + \cdots + a_n^2)(b_1^2 + \cdots + b_n^2) \tag{Cauchy-Schwarz}
-        \end{equation}
-        The inequality is a very useful result in analysis; there are several different elementary proofs of it.
-        \begin{enumerate}
-          \answerb Show that if $ a > 0 $, $ ax^2 + bx + c \geq 0 $ for all $ x $ if and only if $ b^2 - 4ac \leq 0 $.
-          \answerb Prove the Cauchy-Schwarz inequality by considering the expression $ (a_1 x + b_1)^2 + \cdots + (a_n x + b_n)^2 $,
-                collecting terms, and applying (a).
-        \end{enumerate}
-\end{enumerate}
-
-\paragraph{(a)}
-Use the quadratic formula.
-
-\paragraph{(b)}
-We rewrite in summation notation to make matters clearer; we simply write $ \sum $ for $ \sum_{i = 1}^n $ to save space. Considering
-the suggested expression:
-\begin{displaymath}
-  \sum (a_i x + b_i)^2 = \sum (a_i^2 x^2 + 2a_i b_i x + b_i^2) = x^2 \sum a_i^2 + 2x \sum a_i b_i + \sum b_i^2.
-\end{displaymath}
-But $ \sum a_i^2 \geq 0 $ (since each $ a_i $ is real and so has non-negative square); by the same reasoning, $ \sum (a_i x + b_i)^2 $ is
-non-negative and hence so is the right-hand side of the above equality. Hence we can apply (a), and conclude that
-\begin{displaymath}
-  \left(2\sum a_i b_i\right)^2 - 4\left(\sum a_i^2\right)\left(\sum b_i^2\right) \geq 0;
-\end{displaymath}
-expanding and rearranging, we find the required result:
-\begin{displaymath}
-  \left(\sum a_i b_i\right)^2 \geq \left(\sum a_i^2\right)\left(\sum b_i^2\right).
-\end{displaymath}
 
 \filbreak\begin{enumerate}[resume]
   \answer Suppose $ p(x) = \sum_{i = 0}^n a_i x^i $ and $ q(x) = \sum_{i = 0}^m b_i x^i $ are polynomials. Show that $ p(x) q(x) = \sum_{i = 0}^{m + n} c_i x^i $,
