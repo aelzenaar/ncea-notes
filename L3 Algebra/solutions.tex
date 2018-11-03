@@ -927,6 +927,33 @@ when $ t = \frac{(w_0, z_0)}{\abs{z_0}^2} = \frac{(w_0, z_0)}{(z_0, z_0)} $. It 
 As a bonus, if we are given any fixed complex number $ z_0 $ then we can write every vector $ w_0 $ in the plane in the form $ w_0 = tz_0 + z_0^\perp $
 where $ z_0 $ and $ z_0^\perp $ are perpendicular: just take $ t = \frac{(w_0, z_0)}{(z_0, z_0)} $ and $ z_0^\perp = w_0 - tz_0 $.
 
+Another important geometric property of the complex numbers is the triangle inequality; if $ a $ and $ b $ are
+complex numbers, then $ \abs{a + b} \leq \abs{a} + \abs{b} $. Geometrically, this just states that if two sides
+of a triangle have lengths $ \abs{a} $ and $ \abs{b} $ then the third side has length at most $ \abs{a} + \abs{b} $ (\cref{fig:triangleineq}).
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xmin = 0, xmax = 5,
+      ymin = 0, ymax = 6,
+      xlabel=$\realp{z}$,
+      ylabel={$\imagp{z}$},
+      axis lines=middle,
+      scale=.8
+    ]
+      \coordinate (O) at (0,0);
+      \coordinate (A) at (3,2);
+      \coordinate (B) at (1,3);
+      \coordinate (S) at (4,5);
+      \draw[very thick, BurntOrange, ->] (O) -- (A) node[midway,above]{$a$};
+      \draw[very thick, Mulberry, ->] (A) -- (S) node[midway,left]{$b$};
+      \draw[very thick, dotted, ForestGreen, ->] (O) -- (S) node[midway,above left]{$a+b$};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The triangle inequality.\label{fig:triangleineq}}
+\end{figure}
+
 \subsection*{Exercises}
 \begin{enumerate}
   \item Show that, if $ a $ and $ b $ are fixed complex numbers, then $ \abs{z - a} = \abs{z - b} $ describes the line which
@@ -959,12 +986,13 @@ where $ z_0 $ and $ z_0^\perp $ are perpendicular: just take $ t = \frac{(w_0, z
     \end{enumerate}
   \item A set of complex numbers is called \emph{star shaped} if there is some point $ c $ in the set such that for every
         other point $ p $ in the set, the segment joining $ p $ to $ c $ lies in the set. Show that every convex set is star shaped.
-  \harder If $ S $ is a set of finitely many complex numbers $ z_1, ..., z_n $, the \emph{convex hull} of $ S $ is the smallest convex set containing
-          every point of $ S $. Show that a point $ w $ is in the convex hull of $ S $ precisely when there exist $ n $ real numbers, $ \lambda_1, ..., \lambda_n $,
-          such that $ \lambda_1 + \cdots + \lambda_n = 1 $ and
+  \harder If $ S $ is a set of finitely many complex numbers $ z_1, ..., z_n $, the \emph{convex hull} of $ S $ is the smallest convex set
+          containing every point of $ S $. Show that a point $ w $ is in the convex hull of $ S $ precisely when there exist $ n $
+          non-negative real numbers, $ \lambda_1, ..., \lambda_n $, such that $ \lambda_1 + \cdots + \lambda_n = 1 $, and
           \begin{displaymath}
             w = \lambda_1 z_1 + \cdots \lambda_n z_n.
           \end{displaymath}
+          The points $ w $ are called \emph{convex combinations} of the $ z_i $.
   \hard The following inequality, which holds for all real numbers $ a_1 $, $ a_2 $, ..., $ a_n $, $ b_1 $, ..., $ b_n $, is known as the Cauchy-Schwarz
         inequality.
         \begin{equation}\label{eqn:cauchy}

@@ -1399,6 +1399,283 @@ $ (u,v) = \realp{u}\realp{v} + \imagp{u} \imagp{v} = \realp{v}\realp{u} + \imagp
    &= \lambda(u, w) + \mu(v, w).
 \end{align*}
 
+\filbreak\begin{enumerate}[resume]
+  \answer Let $ p $ be a positive real number, and let $ \Gamma $ be the locus of points $ z $ satisfying $ \abs{z - p} = c\realp{z} $. Show
+        that $ \Gamma $ is:
+    \begin{enumerate}
+      \answerb an ellipse if $ 0 < c < 1 $;
+      \answerb a parabola if $ c = 1 $;
+      \answerb a hyperbola if $ c > 1 $.
+    \end{enumerate}
+\end{enumerate}
+
+Let $ z = x + yi $. Expanding, we have $ (x - p)^2 + y^2 = c^2x^2 $ and therefore $ (1 - c^2)x^2 - 2px + p^2 + y^2 = 0 $.
+If $ c = 1 $, this is clearly the equation of the parabola $ y^2 = 2px - p^2 $; so assume $ c \neq 1 $. Dividing through
+by $ 1 - c^2 $ and completing the square, we have
+\begin{gather*}
+  \left( x - \frac{p}{1 - c^2} \right)^2 + \frac{y^2}{1 - c^2} = \frac{p^2c^2}{(1 - c^2)^2}\\
+  \frac{\left( x - \frac{p}{1 - c^2} \right)^2}{\left(\frac{p^2c^2}{(1 - c^2)^2}\right)} + \frac{y^2}{\left(\frac{p^2c^2}{1 - c^2}\right)} = 1
+\end{gather*}
+where the coefficient of the $ (x - p/(1 - c^2))^2 $ term is always positive and the coefficient of the $ y^2 $ term
+is positive when $ c < 1 $ and negative when $ c > 1 $, corresponding to an ellipse and a hyperbola respectively.
+
+\filbreak\begin{enumerate}[resume]
+  \answer A set of complex numbers is called \emph{convex} if for every pair of complex numbers in the set the line segment joining
+        them is also in the set.
+    \begin{enumerate}
+      \answerb Show that the set of all $ z $ where $ \abs{z} < 1 $ is convex.
+      \answerb Show that the set of all $ z $ where $ 0 < \abs{z} < 1 $ is not convex.
+    \end{enumerate}
+\end{enumerate}
+\paragraph{(a)}
+Suppose $ w $ and $ v $ lie inside the disc $ \abs{z} < 1 $. Then the segment
+joining them is given by $ z = (1 - t)w + tv $ (where $ 0 \leq t \leq 1 $).
+Computing the modulus of this, we obtain
+\begin{displaymath}
+  \abs{z} = \abs{(1 - t)w + tv} \leq \abs{(1 - t)w} + \abs{tv} = (1-t)\abs{w} + t\abs{v} < (1 - t) + t = 1;
+\end{displaymath}
+so every point in the segment also lies inside the disc.
+
+\paragraph{(b)}
+Consider the points $ w = -1/2 $ and $ v = 1/2 $. Then the segment between them is given by $ z = (1 - t)w + tv $, so
+the point $ (1 - (1/2))w + (1/2)v = (1/2)(-1/2) + (1/2)(1/2) = 0 $ lies on the segment but not inside the given set.
+
+\filbreak\begin{enumerate}[resume]
+  \answer A set of complex numbers is called \emph{star shaped} if there is some point $ c $ in the set such that for every
+        other point $ p $ in the set, the segment joining $ p $ to $ c $ lies in the set. Show that every convex set is star shaped.
+\end{enumerate}
+If a set is convex, then pick any point $ c $ in the set; then the segment joining $ p $ to $ c $ lies inside the set (where $ p $ is
+any other point in the set) and so the set is star-shaped.
+
+\filbreak\begin{enumerate}[resume]
+  \answer If $ S $ is a set of finitely many complex numbers $ z_1, ..., z_n $, the \emph{convex hull} of $ S $ is the smallest convex set
+          containing every point of $ S $. Show that a point $ w $ is in the convex hull of $ S $ precisely when there exist $ n $
+          non-negative real numbers, $ \lambda_1, ..., \lambda_n $, such that $ \lambda_1 + \cdots + \lambda_n = 1 $, and
+          \begin{displaymath}
+            w = \lambda_1 z_1 + \cdots \lambda_n z_n.
+          \end{displaymath}
+          The points $ w $ are called \emph{convex combinations} of the $ z_i $.
+\end{enumerate}
+This is proved in two steps: we show that the given set is convex, and that it is contained in every other convex set containing $ S $ (so
+it is the smallest such set).
+
+Suppose $ a $ and $ b $ lie inside the set; then $ a = \lambda_1 z_1 + \cdots \lambda_n z_n $ and $ b = \mu_1 z_1 + \cdots \mu_n z_n $ for
+some real numbers as restricted in the question. Consider the segment between them; any point $ z $ on the segment is of the form
+\begin{align*}
+  z &= (1-t)(\lambda_1 z_1 + \cdots \lambda_n z_n) + t(\mu_1 z_1 + \cdots \mu_n z_n)\\
+    &= (\lambda_1 - t\lambda_1 + t\mu_1)z_1 + \cdots + (\lambda_n - t\lambda_n + t\mu_n)z_n.
+\end{align*}
+But the sum of the coefficients is
+\begin{multline*}
+  (\lambda_1 - t\lambda_1 + t\mu_1) + \cdots + (\lambda_n - t\lambda_n + t\mu_n)\\
+    = (\lambda_1 + \cdots + \lambda_n) - t(\lambda_1 + \cdots + \lambda_n) + t(\mu_1 + \cdots + \mu_1)\\
+    = 1 - t + t = 1,
+\end{multline*}
+and each coefficient is of the form $ (1-t)\lambda_i + t\mu_i $ which lies on the segment of the real line joining $ \lambda_i $ to $ \mu_i $;
+since both of these are non-negative, the coefficient is non-negative. Thus $ z $ satisfies both criteria for its
+coefficients and lies inside the set; $ z $ is convex.
+
+Now suppose we have any other convex set containing the $ n $ points. The claim is that any point $ z = \lambda_1 z_1 + \cdots + \lambda_n z_n $
+lies inside the convex set. Suppose every convex combination of this form where $ k $ coefficients are non-zero lies inside the set (the case $ k = 2 $
+follows from convexity, because it is just a segment); consider convex combination $ z = \lambda_1 z_1 + \cdots + \lambda_k z_k + \lambda_{k + 1} z_{k + 1} $
+such that the first $ k $ coefficients are non-zero. Consider the point
+\begin{gather*}
+  \frac{\lambda_1 z_1 + \cdots + \lambda_k z_k}{\lambda_1 + \cdots + \lambda_k}
+\end{gather*}
+which has coefficient sum 1, so this point lies inside the convex set; and so the point
+\begin{displaymath}
+  z = (\lambda_1 + \cdots + \lambda_k)\left(\frac{\lambda_1 z_1 + \cdots + \lambda_k z_k}{\lambda_1 + \cdots + \lambda_k}\right) + \lambda_{k + 1} z_{k + 1}
+\end{displaymath}
+is a convex combination of two points in the set, and so lies inside the set. By induction, this holds for all $ k $ up to $ n $;
+so the set of all convex combinations of $ z_1,...,z_n $ lies inside every other convex set containing the $ n $
+points.
+
+
+\begin{mdframed}[hidealllines=true,backgroundcolor=Emerald!20]
+\textit{More generally, the convex hull of any set of points is the smallest convex set containing those points, and
+        we have that the set of all points in the convex hull is the set of finite convex combinations of points in
+        the set. However, it turns out that if we take our points in $ n$-dimensional space then the convex hull of
+        a set can be described by the convex combinations of sets of $ n + 1 $ points in the set. This theorem is
+        due to Carath\'eodory (see \cite{Ber94}, chapter 11).}
+\end{mdframed}
+
+\filbreak\begin{enumerate}[resume]
+  \answer The following inequality, which holds for all real numbers $ a_1 $, $ a_2 $, ..., $ a_n $, $ b_1 $, ..., $ b_n $, is known as the Cauchy-Schwarz
+        inequality.
+        \begin{equation}\label{eqn:cauchy}
+          (a_1 b_1 + a_2 b_2 + \cdots + a_n b_n)^2 \leq (a_1^2 + \cdots + a_n^2)(b_1^2 + \cdots + b_n^2) \tag{Cauchy-Schwarz}
+        \end{equation}
+        The inequality is a very useful result in analysis; there are several different elementary proofs of it.
+        \begin{enumerate}
+          \answerb Show that if $ a > 0 $, $ ax^2 + bx + c \geq 0 $ for all $ x $ if and only if $ b^2 - 4ac \leq 0 $.
+          \answerb Prove the Cauchy-Schwarz inequality by considering the expression $ (a_1 x + b_1)^2 + \cdots + (a_n x + b_n)^2 $,
+                collecting terms, and applying (a).
+          \answerb As a special case of the inequality, show that if $ w $ and $ z $ are complex numbers then $ (w, z)^2 \leq \abs{w}^2 \abs{z}^2 $.
+          \answerb Hence show the \emph{triangle inequality}: $ \abs{a + b} \leq \abs{a} + \abs{b} $ for complex numbers $ a $ and $ b $.
+        \end{enumerate}
+\end{enumerate}
+
+\paragraph{(a)}
+Use the quadratic formula.
+
+\paragraph{(b)}
+We rewrite in summation notation to make matters clearer; we simply write $ \sum $ for $ \sum_{i = 1}^n $ to save space. Considering
+the suggested expression:
+\begin{displaymath}
+  \sum (a_i x + b_i)^2 = \sum (a_i^2 x^2 + 2a_i b_i x + b_i^2) = x^2 \sum a_i^2 + 2x \sum a_i b_i + \sum b_i^2.
+\end{displaymath}
+But $ \sum a_i^2 \geq 0 $ (since each $ a_i $ is real and so has non-negative square); by the same reasoning, $ \sum (a_i x + b_i)^2 $ is
+non-negative and hence so is the right-hand side of the above equality. Hence we can apply (a), and conclude that
+\begin{displaymath}
+  \left(2\sum a_i b_i\right)^2 - 4\left(\sum a_i^2\right)\left(\sum b_i^2\right) \geq 0;
+\end{displaymath}
+expanding and rearranging, we find the required result:
+\begin{displaymath}
+  \left(\sum a_i b_i\right)^2 \geq \left(\sum a_i^2\right)\left(\sum b_i^2\right).
+\end{displaymath}
+
+\paragraph{(c)}
+We have
+\begin{displaymath}
+  (w,z)^2 = (\realp{w}\realp{z} + \imagp{w}\imagp{z})^2 \leq (\realp{w}^2 + \imagp{w}^2)(\realp{z}^2 + \imagp{z}^2) = \abs{w}^2\abs{z}^2.
+\end{displaymath}
+
+\paragraph{(d)}
+\begin{displaymath}
+  \abs{a + b}^2 = (a + b, a + b) = (a,a) + 2(a,b) + (b,b) = \abs{a}^2 + 2(a,b) + \abs{b}^2 \leq \abs{a}^2 + 2\abs{a}\abs{b} + \abs{b}^2 = (\abs{a} + \abs{b})^2;
+\end{displaymath}
+the result follows by taking square roots.
+
+\filbreak\begin{enumerate}[resume]
+  \answer Multiplication by $ i $ rotates a point by $ \frac{\pi}{2} $ around the origin.
+        \begin{enumerate}
+          \answerb A generalisation of this allows us to rotate a point $ z $ around an arbitrary point $ a $ by that
+                angle: $ z' = a + i(z-a) $. Justify this formula.
+          \answerb A pirate named Kim Dotcom has hidden his sick tunes on a desert island tax haven in order to evade
+                American FBI agents. You have been hired to find the data stick containing his mp3 files so that
+                his extradition case can be resolved, but all you can find is a treasure map with the following
+                instructions:
+
+                \begin{aquote}{Kim Dotcom's Amazing Totally Secret Treasure Map\textsuperscript{TM}}
+                  From the statue of Richard Seddon, go to the kauri tree (counting your steps), and then turn
+                  exactly 90\degree left and walk the same number of steps to the point $ g' $. Returning
+                  to the statue, walk to the beech tree (again counting your steps). Turn right by 90\degree,
+                  and walk the same number of steps to point $ g'' $. The treasure is buried exactly at the midpoint
+                  of the line joining $ g' $ and $ g'' $.
+                \end{aquote}
+
+                Given that the kauri tree is at $ (0,0) $, the beech tree is at $ (10,0) $, and
+                the statue is somewhere on the line $ y = 2009 $, find the location of the treasure
+                using the geometry of complex numbers and rid New Zealand of Kim Dotcom forever.\footnote{~Problem taken from \cite{Kes09}, section 5.1.}
+          \end{enumerate}
+\end{enumerate}
+
+\paragraph{(a)}
+We shift our coordinate system so that $ a $ becomes the origin, rotate the plane by multiplying by $ i $, and shift the origin back to $ a $.
+
+\paragraph{(b)}
+We will call the $ x$-coordinate of the statue $ x_0 $.
+
+Our technique for solving this problem is simply to rotate the point representing
+the statue around the given points for the trees by 90\degree using the formula given
+in the question --- then finding the midpoint is simple.
+
+First, we rotate $ x_0 + 2009i $ around the point $ 0 + 0i $, obtaining $ g' = -2009 + ix_0 $.
+We next rotate the statue around $ 10 + 0i $ three times (as we are turning
+right --- draw a diagram!) using the formula:
+\begin{align*}
+  10 + i(x_0 + 2009i - 10)         &= -1999 + i(x_0 - 10)\\
+  10 + i(-1999 + i(x_0 - 10) - 10) &= 20 - x_0 - 2009i\\
+  10 + i(20 - x_0 - 2009i - 10)    &= 2019 + i(10 - x_0)
+\end{align*}
+The midpoint is therefore $ \left( \frac{-2009 + 2019}{2}, \frac{x_0 + 10 - x_0}{2} \right) = (5,5)$. Interestingly,
+the position of the treasure does not depend on the $ x$-coordinate of the statue!
+
+\filbreak\begin{enumerate}[resume]
+  \answer A line in $ \mathbb{C}^2 $ (the plane with complex coordinates) is defined to be the locus of a linear
+        $ ax + by + c = 0 $ where $ a $, $ b $, and $ c $ are complex constants. Prove that, given two distinct points $ (x_0, y_0) $
+        and $ (x_1, y_1) $ in $ \mathbb{C}^2 $, there is a \textbf{unique} line through those two points. \textit{Hint: it is certainly \textbf{not} true
+        that there is a unique linear equation whose graph includes both points.}
+\end{enumerate}
+
+Let $ \mathcal{L} $ and $ \mathcal{M} $ be two lines passing through both points. (Our goal is to show
+that $ (x,y) \in \mathcal{L} \iff (x,y) \in \mathcal{M} $.) Then $ \mathcal{L} $ is the locus of some
+linear equation $ ax + by + c = 0 $, and $ \mathcal{M} $ is the locus of some other linear
+equation $ dx + ey + f = 0 $.
+
+Consider first $ \mathcal{L} $. We know that $ (x_0, y_0) \in \mathcal{L} \wedge (x_1, y_1) \in \mathcal{L} $. Hence we
+have the following system of simultaneous equations:
+\begin{align*}
+  ax_0 + by_0 + c = 0\\
+  ax_1 + by_1 + c = 0.
+\end{align*}
+
+Since we have a system of rank two with three variables, one variable must be free (a parameter); we chose it to be $ c $ as this
+simplifies the whole process. Our goal, therefore, is to rewrite $ ax + by + c = 0 $ in terms of $ c $ only (the purpose of this
+goal may not be clear at this point, but trust us). This can be done using any appropriate method (e.g. substitution); we chose to
+use linear algebra because it minimises the amount of tedious work required.
+
+\begin{mdframed}[hidealllines=true,backgroundcolor=Dandelion!20]
+\textit{Readers who do not know linear algebra should feel free to skip this portion of the solution, and are encouraged to find
+another way to derive the same result.}
+
+We have
+\begin{displaymath}
+  \begin{bmatrix} x_0 & y_0 \\ x_1 & y_1 \end{bmatrix} \begin{bmatrix} a\\b \end{bmatrix} = \begin{bmatrix} -c\\-c \end{bmatrix}.
+\end{displaymath}
+
+Inverting the coefficient matrix and solving for $ (a\ b)^t $ gives
+\begin{displaymath}
+  \begin{bmatrix} a\\b \end{bmatrix} = \frac{1}{x_0 y_1 - x_1 y_0} \begin{bmatrix} y_1 & -y_0 \\ -x_1 & x_0 \end{bmatrix} \begin{bmatrix} -c\\-c \end{bmatrix};
+\end{displaymath}
+\end{mdframed}
+
+We therefore conclude that
+\begin{align*}
+  a &= -\frac{c}{x_0 y_1 - x_1 y_0} (y_1 - y_0)\\
+  b &= -\frac{c}{x_0 y_1 - x_1 y_0} (x_0 - x_1)
+\end{align*}
+and (substituting) $ \mathcal{L} $ is the locus of
+\begin{displaymath}
+  c \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y \right) = 0.
+\end{displaymath}
+Similarly, $ \mathcal{M} $ is the locus of
+\begin{displaymath}
+  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y \right) = 0.
+\end{displaymath}
+
+Now, we must show that if a point $ (x_\star, y_\star) $ is in $ \mathcal{L} $ then it is in $ \mathcal{M} $ (and vice versa).
+To this end, consider the following:
+\begin{displaymath}
+  (x_\star, y_\star) \in \mathcal{L} \iff c \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
+\end{displaymath}
+So one of $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $ is true.
+
+\paragraph{Case I: $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $}\mbox{}\\
+Evidently
+\begin{displaymath}
+  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
+\end{displaymath}
+and so $ (x_\star, y_\star) \in \mathcal{M} $. (The same argument works with $ \mathcal{M} $ and $ \mathcal{L} $ swapped.)
+
+\paragraph{Case II: $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) \neq 0 $}\mbox{}\\
+In both cases,
+\begin{displaymath}
+  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
+\end{displaymath}
+and so $ (x_\star, y_\star) \in \mathcal{M} $. The above arguments also show that $ (x_\star, y_\star) \in \mathcal{M} \implies (x_\star, y_\star) \in \mathcal{L} $,
+so $ \mathcal{M} = \mathcal{L} $.
+
+\filbreak\begin{enumerate}[resume]
+  \answer Investigate the locus of $ \left\{z = r\cis\theta : r = \cos\left(\frac{n}{d}\theta\right)\right\} $ for different values of $ n $
+        and $ d $.
+\end{enumerate}
+
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{roses}
+\end{center}
+(Image: Jason Davies [CC BY-SA 3.0  (https://creativecommons.org/licenses/by-sa/3.0)], from Wikimedia Commons)
+
 \section{Roots of Unity}
 \begin{mdframed}[hidealllines=true,backgroundcolor=Emerald!20]
 \textit{Many of the results here follow from basic results in number theory. The interested reader is directed
@@ -1819,7 +2096,7 @@ Note here that we are viewing this sum as a polynomial in a known number $ p $ r
 \section{The Double-Triangle Problem}
 There are no exercises for this section that require worked answers.
 
-\section{(Optional) Solving the Cubic}
+\section{Solving the Cubic}
 \begin{enumerate}
   \answer Check the author's algebra.
 \end{enumerate}
@@ -2329,122 +2606,6 @@ does not have coefficients depending on $ a $ or $ b $ (so we can find exact ans
 it has a single real solution of $ z = -\frac{2}{3}$; so the single real root is $ z = -\frac{2}{3} $ and $ \frac{b}{a} = -1 $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Complex numbers exist in a plane, and so can be used to solve problems in geometry. For example, multiplication
-        by $ i $ rotates a point by $ \frac{\pi}{2} $ around the origin. A generalisation of this allows us to rotate
-        a point $ z $ around an arbitrary point $ a $ by that angle: $ z' = a + i(z-a) $.
-
-        A pirate named Kim Dotcom has hidden his sick tunes on a desert island tax haven in order to evade
-        American FBI agents. You have been hired to find the data stick containing his mp3 files so that
-        his extradition case can be resolved, but all you can find is a treasure map with the following
-        instructions:
-
-        \begin{aquote}{Kim Dotcom's Amazing Totally Secret Treasure Map\textsuperscript{TM}}
-          From the statue of Richard Seddon, go to the kauri tree (counting your steps), and then turn
-          exactly 90\degree left and walk the same number of steps to the point $ g' $. Returning
-          to the statue, walk to the beech tree (again counting your steps). Turn right by 90\degree,
-          and walk the same number of steps to point $ g'' $. The treasure is buried exactly at the midpoint
-          of the line joining $ g' $ and $ g'' $.
-        \end{aquote}
-
-        Given that the kauri tree is at $ (0,0) $, the beech tree is at $ (10,0) $, and
-        the statue is somewhere on the line $ y = 2009 $, find the location of the treasure
-        using the geometry of complex numbers and rid New Zealand of Kim Dotcom forever.\footnote{~Problem taken
-        from Kessler (2009) section 5.1, but context changed.}
-\end{enumerate}
-
-We will call the $ x$-coordinate of the statue $ x_0 $.
-
-Our technique for solving this problem is simply to rotate the point representing
-the statue around the given points for the trees by 90\degree using the formula given
-in the question --- then finding the midpoint is simple.
-
-First, we rotate $ x_0 + 2009i $ around the point $ 0 + 0i $, obtaining $ g' = -2009 + ix_0 $.
-We next rotate the statue around $ 10 + 0i $ three times (as we are turning
-right --- draw a diagram!) using the formula:
-\begin{align*}
-  10 + i(x_0 + 2009i - 10)         &= -1999 + i(x_0 - 10)\\
-  10 + i(-1999 + i(x_0 - 10) - 10) &= 20 - x_0 - 2009i\\
-  10 + i(20 - x_0 - 2009i - 10)    &= 2019 + i(10 - x_0)
-\end{align*}
-The midpoint is therefore $ \left( \frac{-2009 + 2019}{2}, \frac{x_0 + 10 - x_0}{2} \right) = (5,5)$. Interestingly,
-the position of the treasure does not depend on the $ x$-coordinate of the statue!
-
-\filbreak\begin{enumerate}[resume]
-  \answer A line in $ \mathbb{C}^2 $ (the plane with complex coordinates) is defined to be the locus of a linear
-        $ ax + by + c = 0 $ where $ a $, $ b $, and $ c $ are complex constant. Prove that, given two distinct points $ (x_0, y_0) $
-        and $ (x_1, y_1) $ in $ \mathbb{C}^2 $, there is a \textbf{unique} line through those two points. \textit{Hint: it is certainly \textbf{not} true
-        that there is a unique linear equation whose graph includes both points.}
-\end{enumerate}
-
-Let $ \mathcal{L} $ and $ \mathcal{M} $ be two lines passing through both points. (Our goal is to show
-that $ (x,y) \in \mathcal{L} \iff (x,y) \in \mathcal{M} $.) Then $ \mathcal{L} $ is the locus of some
-linear equation $ ax + by + c = 0 $, and $ \mathcal{M} $ is the locus of some other linear
-equation $ dx + ey + f = 0 $.
-
-Consider first $ \mathcal{L} $. We know that $ (x_0, y_0) \in \mathcal{L} \wedge (x_1, y_1) \in \mathcal{L} $. Hence we
-have the following system of simultaneous equations:
-\begin{align*}
-  ax_0 + by_0 + c = 0\\
-  ax_1 + by_1 + c = 0.
-\end{align*}
-
-Since we have a system of rank two with three variables, one variable must be free (a parameter); we chose it to be $ c $ as this
-simplifies the whole process. Our goal, therefore, is to rewrite $ ax + by + c = 0 $ in terms of $ c $ only (the purpose of this
-goal may not be clear at this point, but trust us). This can be done using any appropriate method (e.g. substitution); we chose to
-use linear algebra because it minimises the amount of tedious work required.
-
-\begin{mdframed}[hidealllines=true,backgroundcolor=Dandelion!20]
-\textit{Readers who do not know linear algebra should feel free to skip this portion of the solution, and are encouraged to find
-another way to derive the same result.}
-
-We have
-\begin{displaymath}
-  \begin{bmatrix} x_0 & y_0 \\ x_1 & y_1 \end{bmatrix} \begin{bmatrix} a\\b \end{bmatrix} = \begin{bmatrix} -c\\-c \end{bmatrix}.
-\end{displaymath}
-
-Inverting the coefficient matrix and solving for $ (a\ b)^t $ gives
-\begin{displaymath}
-  \begin{bmatrix} a\\b \end{bmatrix} = \frac{1}{x_0 y_1 - x_1 y_0} \begin{bmatrix} y_1 & -y_0 \\ -x_1 & x_0 \end{bmatrix} \begin{bmatrix} -c\\-c \end{bmatrix};
-\end{displaymath}
-\end{mdframed}
-
-We therefore conclude that
-\begin{align*}
-  a &= -\frac{c}{x_0 y_1 - x_1 y_0} (y_1 - y_0)\\
-  b &= -\frac{c}{x_0 y_1 - x_1 y_0} (x_0 - x_1)
-\end{align*}
-and (substituting) $ \mathcal{L} $ is the locus of
-\begin{displaymath}
-  c \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y \right) = 0.
-\end{displaymath}
-Similarly, $ \mathcal{M} $ is the locus of
-\begin{displaymath}
-  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y \right) = 0.
-\end{displaymath}
-
-Now, we must show that if a point $ (x_\star, y_\star) $ is in $ \mathcal{L} $ then it is in $ \mathcal{M} $ (and vice versa).
-To this end, consider the following:
-\begin{displaymath}
-  (x_\star, y_\star) \in \mathcal{L} \iff c \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
-\end{displaymath}
-So one of $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $ is true.
-
-\paragraph{Case I: $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0 $}\mbox{}\\
-Evidently
-\begin{displaymath}
-  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
-\end{displaymath}
-and so $ (x_\star, y_\star) \in \mathcal{M} $. (The same argument works with $ \mathcal{M} $ and $ \mathcal{L} $ swapped.)
-
-\paragraph{Case II: $ c = 0 $ and $ \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) \neq 0 $}\mbox{}\\
-In both cases,
-\begin{displaymath}
-  f \left(1 - \frac{y_1 - y_0}{x_0 y_1 - x_1 y_0} x_\star - \frac{x_0 - x_1}{x_0 y_1 - x_1 y_0} y_\star \right) = 0
-\end{displaymath}
-and so $ (x_\star, y_\star) \in \mathcal{M} $. The above arguments also show that $ (x_\star, y_\star) \in \mathcal{M} \implies (x_\star, y_\star) \in \mathcal{L} $,
-so $ \mathcal{M} = \mathcal{L} $.
-
-\filbreak\begin{enumerate}[resume]
   \answer Find all possible values for $ \theta $ if $ \cis^2 \theta + \cis \theta + 1 = 0 $.
 \end{enumerate}
 
@@ -2835,39 +2996,6 @@ We wish to find $ x = a + b\epsilon $ such that $ x^2 = 2\epsilon + 1 $:
 \end{align*}
 So $ a^2 = 1 \implies a = \pm 1 $, and $ ab = 1 $ so $ b = a $. Hence we have
 exactly two solutions: $ \pm 1 \pm \epsilon $.
-
-\filbreak\begin{enumerate}[resume]
-  \answer The following inequality, which holds for all real numbers $ a_1 $, $ a_2 $, ..., $ a_n $, $ b_1 $, ..., $ b_n $, is known as the Cauchy-Schwarz
-        inequality.
-        \begin{equation}\label{eqn:cauchy}
-          (a_1 b_1 + a_2 b_2 + \cdots + a_n b_n)^2 \leq (a_1^2 + \cdots + a_n^2)(b_1^2 + \cdots + b_n^2) \tag{Cauchy-Schwarz}
-        \end{equation}
-        The inequality is a very useful result in analysis; there are several different elementary proofs of it.
-        \begin{enumerate}
-          \answerb Show that if $ a > 0 $, $ ax^2 + bx + c \geq 0 $ for all $ x $ if and only if $ b^2 - 4ac \leq 0 $.
-          \answerb Prove the Cauchy-Schwarz inequality by considering the expression $ (a_1 x + b_1)^2 + \cdots + (a_n x + b_n)^2 $,
-                collecting terms, and applying (a).
-        \end{enumerate}
-\end{enumerate}
-
-\paragraph{(a)}
-Use the quadratic formula.
-
-\paragraph{(b)}
-We rewrite in summation notation to make matters clearer; we simply write $ \sum $ for $ \sum_{i = 1}^n $ to save space. Considering
-the suggested expression:
-\begin{displaymath}
-  \sum (a_i x + b_i)^2 = \sum (a_i^2 x^2 + 2a_i b_i x + b_i^2) = x^2 \sum a_i^2 + 2x \sum a_i b_i + \sum b_i^2.
-\end{displaymath}
-But $ \sum a_i^2 \geq 0 $ (since each $ a_i $ is real and so has non-negative square); by the same reasoning, $ \sum (a_i x + b_i)^2 $ is
-non-negative and hence so is the right-hand side of the above equality. Hence we can apply (a), and conclude that
-\begin{displaymath}
-  \left(2\sum a_i b_i\right)^2 - 4\left(\sum a_i^2\right)\left(\sum b_i^2\right) \geq 0;
-\end{displaymath}
-expanding and rearranging, we find the required result:
-\begin{displaymath}
-  \left(\sum a_i b_i\right)^2 \geq \left(\sum a_i^2\right)\left(\sum b_i^2\right).
-\end{displaymath}
 
 \filbreak\begin{enumerate}[resume]
   \answer Suppose $ p(x) = \sum_{i = 0}^n a_i x^i $ and $ q(x) = \sum_{i = 0}^m b_i x^i $ are polynomials. Show that $ p(x) q(x) = \sum_{i = 0}^{m + n} c_i x^i $,
