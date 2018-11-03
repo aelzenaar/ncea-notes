@@ -131,7 +131,8 @@ of some notation, can be found in the introduction to the solutions.
 The culmination of the text comes in sections \ref{sec:roots} and \ref{sec:cubic}; the former is a digression
 into more pure mathematics (developing a theory of the roots of unity), and the latter
 is a more applied section (developing the solution of the general cubic). Both should
-be easily within reach of the enthusiastic student.
+be easily within reach of the enthusiastic student. The section on geometry, \ref{sec:geometry}, also includes
+a selection of material beyond that needed for level 3.
 
 \section{Quadratic Equations}\label{sec:quadratic}
 \begin{figure}
@@ -762,7 +763,7 @@ in one expression and which some have called the most beautiful equation in math
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.5\textwidth]{stars}
+  \includegraphics[width=0.4\textwidth]{stars}
   \caption{From \url{http://brownsharpie.courtneygibbons.org/?p=848}.}
 \end{figure}
 
@@ -923,6 +924,16 @@ when $ t = \frac{(w_0, z_0)}{\abs{z_0}^2} = \frac{(w_0, z_0)}{(z_0, z_0)} $. It 
 \begin{displaymath}
   \proj_{z_0}(w_0) = z_0 \frac{(w_0, z_0)}{(z_0, z_0)}.
 \end{displaymath}
+This result tells us that the geometric meaning of the dot product $ (a,b) $ is just the length of the `shadow' cast onto $ a $
+by $ b $, multiplied by the squared length of $ a $. But the dot product is symmetric, so this is also the length of the `shadow' cast onto $ b $
+by $ a $, multiplied by the squared length of $ b $. If both $ a $ and $ b $ have length 1, then this length is just the cosine of
+the angle between them. (See \cref{fig:projection}.)
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.2\textwidth]{projection}
+  \caption{The projection of $ b $ onto $ a $. From \url{http://tutorial.math.lamar.edu/Classes/CalcII/DotProduct.aspx}.\label{fig:projection}}
+\end{figure}
 
 As a bonus, if we are given any fixed complex number $ z_0 $ then we can write every vector $ w_0 $ in the plane in the form $ w_0 = tz_0 + z_0^\perp $
 where $ z_0 $ and $ z_0^\perp $ are perpendicular: just take $ t = \frac{(w_0, z_0)}{(z_0, z_0)} $ and $ z_0^\perp = w_0 - tz_0 $.

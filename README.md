@@ -39,8 +39,7 @@ My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf)
 I am not currently planning any stats notes.
 
 ### Level Three and Scholarship Calculus
- * Algebra (91577): a set of notes entitled [_Solutions_](L3%20Algebra/solutions.pdf) designed for self-study for scholarship students
-   (with [full answers to exercises](L3%20Algebra/solutions2.pdf)).
+ *
 
 **In progress:**
 I am currently in the process of reworking and reorganising my L3 maths notes; the final plan will be to have the following
@@ -53,7 +52,9 @@ sets of notes, broadly in the given logical order and aligned with the L2 notes 
    and proves various identities, with a view towards mix of geometric and analytical thinking.
 4. Calculus (91578 and 91579). a [set of notes](L3%20Maths/Calculus/bookform.pdf) containing both tutorial session material and homeworks
    with material ranging in difficulty from achieved to outstanding scholarship.
-5. [WIP] Algebra. I will either rework or rewrite _Solutions_.
+5. Algebra (91577): a set of notes entitled [_Solutions_](L3%20Maths/Algebra/solutions.pdf) designed for self-study for scholarship students
+   (with [full answers to exercises](L3%20Maths/Algebra/solutions2.pdf)). There are a number of sections for further reading beyond the required
+   material.
 6. [WIP] Conic Sections. This is currently a WIP.
 
 One should note that the majority of my notes are at a slightly higher level than is strictly required. As such, students should be
