@@ -159,12 +159,14 @@ consulting a professional! Ian Stewart's \textit{Taming the Infinite} is recomme
         \end{enumerate}
 \end{enumerate}
 
-All constant multiples of these will also have the same roots.
+\begin{gather*}
+  0 = (x-7)(x-4) = x^2 - 11x + 28,\\
+  0 = (x-7)(x+4) = x^2 -3x - 28,\\
+  0 = (x+7)(x+4) = x^2 + 11x + 28, \text{ and}\\
+  0 = (x-3)^2 = x^2 - 6x + 9.
+\end{gather*}
 
-$ 0 = (x-7)(x-4) = x^2 - 11x + 28 $,\\
-$ 0 = (x-7)(x+4) = x^2 -3x - 28 $,\\
-$ 0 = (x+7)(x+4) = x^2 + 11x + 28 $, and\\
-$ 0 = (x-3)^2 = x^2 - 6x + 9 $.
+All constant multiples of these will also have the same roots.
 
 \filbreak\begin{enumerate}[resume]
   \answer Use the discriminant $ \Delta_2 $ of the following quadratics to find the
@@ -361,7 +363,7 @@ Adding on the remainder, we have
 as expected.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Divide, finding the quotient and remainder:
+  \answer Divide, finding the quotient and remainder polynomials:
         \begin{enumerate*}
           \answerb $ x^2 - 4 $ by $ x - 2 $,
           \answerb $ x^2 - 4 $ by $ x - 3 $, and
@@ -434,12 +436,12 @@ $ 4^4 - (6 + \sqrt{3})\cdot4^3 + 6\sqrt{3}\cdot4^2 + 32\cdot4 -32\sqrt{3} = 0 $.
 By the remainder theorem, the remainder will be $ 6^7 + 5\times6 - 9 = 179957 $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Find a polynomial $ p(x) $ with integer coefficients such that:
+  \answer Find four polynomials $ p_a(x) $, $ p_b(x) $, $ p_c(x) $, $ p_d(x) $ with integer coefficients such that:
     \begin{enumerate}
-      \answerb $ p\left(\frac{1}{2}\right) = 0 $;
-      \answerb $ p\left(\frac{1}{2} + \frac{1}{2} \sqrt{3}\right) = 0 $;
-      \answerb $ p\left(2i - \sqrt{2} \right) = 0 $; and
-      \answerb $ p\left(\sqrt{i} + \frac{1}{\sqrt[3]{2}}\right) = 0 $.
+      \answerb $ p_a\left(\frac{1}{2}\right) = 0 $;
+      \answerb $ p_b\left(\frac{1}{2} + \frac{1}{2} \sqrt{3}\right) = 0 $;
+      \answerb $ p_c\left(2i - \sqrt{2} \right) = 0 $; and
+      \answerb $ p_d\left(\sqrt{i} + \frac{1}{\sqrt[3]{2}}\right) = 0 $.
     \end{enumerate}
 \end{enumerate}
 
@@ -553,7 +555,7 @@ Similarly, the three roots 0, 1, and $ -1 $ of $ x^3 - x = 0 $ are closed under 
 \textit{Since the roots of the equation $ x^{n} - x =  0 $ are simply the $ n-1$th roots of unity together with
 zero, exercise 6.\ref{ex:grpdefn} makes this exercise trivial. If we restrict $ n $ to be a prime power (i.e. $ n = p^m $ for some
 integer $ m $), then it is possible to impose an addition structure on the roots as well if $ \alpha + \beta $ is reduced
-modulo $ p $. In fact, the roots of $ x^{p^m} - x = 0 $ form the (unique) finite field of order $ p^m $
+modulo $ p $. In fact, the roots of $ x^{p^m} - x = 0 $ modulo $ p $ form the (unique) finite field of order $ p^m $
 denoted $ GF(p^m) $ --- the Galois field of order $ p^m $).}
 \end{mdframed}
 
@@ -1060,7 +1062,7 @@ where the denominator is real.
 \filbreak\begin{enumerate}[resume]
   \answer
     \begin{enumerate}
-      \answerb Prove that a number $ z $ is real if and only if $ \bar {\bar z} = z $.
+      \answerb Prove that a number $ z $ is real if and only if $ \bar z = z $.
       \answerb Hence, or otherwise, show that $ z \bar w + w \bar z $ is always real.
       \answerb Show that $ z \bar w + w \bar z \leq 2 \abs{w} \abs{z} $.
     \end{enumerate}
@@ -1244,21 +1246,66 @@ By the quadratic formula, the two solutions of the quadratic factor are $ t = -2
 so the three solutions of the cubic must be $ t \in \{-2\pm\sqrt{3}, 4\} $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer Show that, if $ a $ and $ b $ are fixed complex numbers, then $ \abs{z - a} = \abs{z - b} $ describes a line.
+  \answer You do not need the fundamental theorem of algebra for this exercise.
+    \begin{enumerate}
+      \answerb Prove that all cubic equations with real coefficients must have exactly three roots in the complex numbers.
+      \answerb Let $ p(x) $ be a polynomial of degree $ n $ such that there exists some complex number $ \zeta $ such that $ p(\zeta) = 0 $.
+               Show that $ p(x) = 0 $ has exactly $ n $ solutions (counting repeated roots).
+    \end{enumerate}
 \end{enumerate}
 
-Let $ z = x + iy $, $ a = \alpha + \zeta i$, and $ b = \beta + \xi i $. Then:
+\paragraph{(a)}
+A cubic with real coefficients must have at least one real root. There are two ways to see this;
+firstly, a cubic with real coefficients must cross the $ x$-axis at at least one point; and secondly,
+all non-real roots of polynomials with real coefficients must come in conjugate pairs (in order for the
+imaginary parts to cancel in the coefficients) and so a real polynomial with an odd number of roots
+must have at least one real root.\footnote{A proof that roots of real polynomials come in conjugate
+pairs is exercise 9.\ref{ex:solutiongenerator}.}
+
+Call our real root $ p $. Our cubic is $ a x^3 + b x^2 + cx + d = 0 $, and
+we can divide it out by $ x - p $, which we know is a factor, to obtain a
+quadratic. We know that the coefficients of this quadratic factor must multiply
+with the real coefficients of the linear factor to give the real coefficients of
+the cubic, and so the coefficients of the quadratic must be real... and so we can
+apply the quadratic formula to show that the roots of the quadratic must be complex!
+
+Hence all three roots of the general cubic are complex. \textit{Note that all real roots
+are also complex.}
+
+\paragraph{(b)}
+We use induction on $ n $. Firstly, note that if $ n = 1 $ then the result is trivial.
+
+Now, suppose that the theorem holds for all polynomials of degree $ n - 1 $. It follows from $ p(\zeta) = 0 $
+that $ (x - \zeta) $ is a factor of $ p(x) $, and so $ p(x) = (x - \zeta)q(x) $ where $ \partial q = n - 1 $.
+But by the inductive hypothesis, $ q(x) $ has exactly $ n - 1 $ roots; so $ p(x) $ has $ n $ roots, and if
+the theorem holds for polynomials of degree $ n - 1 $ then it holds for polynomials of degree $ n $.
+
+Hence, by the axiom of induction, it follows that if a polynomial of degree $ n $ has at least one complex
+root then it has exactly $ n $ complex roots.
+
+\section{Geometry}
+
+\filbreak\begin{enumerate}
+  \answer Show that, if $ a $ and $ b $ are fixed complex numbers, then $ \abs{z - a} = \abs{z - b} $ describes the line which
+        cuts the midpoint of the segment between $ a $ and $ b $ at a right angle.
+\end{enumerate}
+
+Suppose that the distance from $ z $ to $ a $ is equal to the distance from $ z $ to $ b $.
+
+The line joining $ a $ and $ b $ has direction $ a - b $; the line joining $ z $ and $ m(a,b) = \frac{a + b}{2} $ has direction $ z - \frac{a + b}{2} $. I
+claim that the two complex numbers obtained are orthogonal. Indeed,
 \begin{align*}
-  \abs{(x - \alpha) + (y - \zeta)} &= \abs{(x - \beta) + (y - \xi)}\\
-  (x - \alpha)^2 + (y - \zeta)^2 &= (x - \beta)^2 + (y - \xi)^2\\
-  x^2 - 2x\alpha + \alpha^2 + y^2 - 2y\zeta + \zeta^2 &= x^2 - 2x\beta + \beta^2 + y^2 - 2y\xi + \xi^2\\
-  - 2x\alpha + \alpha^2 - 2y\zeta + \zeta^2 &= - 2x\beta + \beta^2 - 2y\xi + \xi^2
+  (z - \frac{a + b}{2}, a - b) &= (z, a) - (z, b) - (\frac{a + b}{2}, a) + (\frac{a + b}{2}, b)\\
+                               &= (z, a) - (z,b) - \frac{1}{2}((a,a) + (b,a)) + \frac{1}{2}((a,b) + (b,b))\\
+                               &= (z,a) - (z,b) + \frac{1}{2}(b,b) - \frac{1}{2}(a,a).
 \end{align*}
-which can be rearranged to
+But $ \abs{z - a} = \abs{z - b} $, so
 \begin{displaymath}
-  y = \frac{- 2x\beta + \beta^2 + \xi^2 - \alpha^2 - \zeta^2 + 2x\alpha}{2(\xi - \zeta)}
+  (z - a, z - a) = (z - b, z - b) \implies (z, z) - 2(a,z) + (a,a) = (z,z) - 2(z,b) + (b,b)
 \end{displaymath}
-which is a linear polynomial equation in $ x $.
+and thus $ (z,a) - (z,b) = \frac{1}{2}(a,a) - \frac{1}{2}(b,b) $;
+so $ (z - \frac{a + b}{2}, a - b) = 0 $, and the two vectors are orthogonal. So every such $ z $ lies on the perpendicular
+bisector of the segment $ [ab] $; and clearly every $ z $ on that line is an equal distance from $ a $ and $ b $.
 
 \filbreak\begin{enumerate}[resume]
   \answer Let $ v = 1 + i $ and $ z = x + iy $ for any real numbers $ x $ and $ y $.
@@ -1323,42 +1370,34 @@ Substituting:
 So the line intersects the circle at $ (-1, 1) $ and $ (1, -1) $.
 
 \filbreak\begin{enumerate}[resume]
-  \answer You do not need the fundamental theorem of algebra for this exercise.
+  \answer Find the locus of all $ z $ such that for some fixed $ a $, $ z - a $ is perpendicular to $ z + a $.
+\end{enumerate}
+
+We have $ (z - a, z + a) = 0 $; so $ (z,z) - (a,z) + (z,a) - (a,a) = 0 $
+and thus $ (z,z) = (a,a) $. So $ \sqrt{\abs{z}} = \sqrt{\abs(a)} $, and (since
+lengths are positive) $ \abs{z} = \abs{a} $. In other words, we have a circle
+around zero of radius $ \abs{a} $.
+
+\filbreak\begin{enumerate}[resume]
+  \answer Show that if $ u $, $ v $, and $ w $ are complex numbers, and if $ \lambda $ and $ \mu $ are real
+        numbers, then:
     \begin{enumerate}
-      \answerb Prove that all cubic equations with real coefficients must have exactly three roots in the complex numbers.
-      \answerb Let $ p(x) $ be a polynomial of degree $ n $ such that there exists some complex number $ \zeta $ such that $ p(\zeta) = 0 $.
-               Show that $ p(x) = 0 $ has exactly $ n $ solutions (counting repeated roots).
+      \answerb $ (u, v) = (v, u) $
+      \answerb $ (\lambda u + \mu v, w) = \lambda(u, w) + \mu(v, w) $
     \end{enumerate}
 \end{enumerate}
 
 \paragraph{(a)}
-A cubic with real coefficients must have at least one real root. There are two ways to see this;
-firstly, a cubic with real coefficients must cross the $ x$-axis at at least one point; and secondly,
-all non-real roots of polynomials with real coefficients must come in conjugate pairs (in order for the
-imaginary parts to cancel in the coefficients) and so a real polynomial with an odd number of roots
-must have at least one real root.\footnote{A proof that roots of real polynomials come in conjugate
-pairs is exercise 9.\ref{ex:solutiongenerator}.}
-
-Call our real root $ p $. Our cubic is $ a x^3 + b x^2 + cx + d = 0 $, and
-we can divide it out by $ x - p $, which we know is a factor, to obtain a
-quadratic. We know that the coefficients of this quadratic factor must multiply
-with the real coefficients of the linear factor to give the real coefficients of
-the cubic, and so the coefficients of the quadratic must be real... and so we can
-apply the quadratic formula to show that the roots of the quadratic must be complex!
-
-Hence all three roots of the general cubic are complex. \textit{Note that all real roots
-are also complex.}
+$ (u,v) = \realp{u}\realp{v} + \imagp{u} \imagp{v} = \realp{v}\realp{u} + \imagp{v} \imagp{u} = (v,u) $.
 
 \paragraph{(b)}
-We use induction on $ n $. Firstly, note that if $ n = 1 $ then the result is trivial.
-
-Now, suppose that the theorem holds for all polynomials of degree $ n - 1 $. It follows from $ p(\zeta) = 0 $
-that $ (x - \zeta) $ is a factor of $ p(x) $, and so $ p(x) = (x - \zeta)q(x) $ where $ \partial q = n - 1 $.
-But by the inductive hypothesis, $ q(x) $ has exactly $ n - 1 $ roots; so $ p(x) $ has $ n $ roots, and if
-the theorem holds for polynomials of degree $ n - 1 $ then it holds for polynomials of degree $ n $.
-
-Hence, by the axiom of induction, it follows that if a polynomial of degree $ n $ has at least one complex
-root then it has exactly $ n $ complex roots.
+\begin{align*}
+  (\lambda u + \mu v, w) &= \realp{\lambda u + \mu v} \realp{w} + \imagp{\lambda u + \mu v} \imagp{w}\\
+   &= (\lambda \realp{u} + \mu \realp{v}) \realp{w} + (\lambda \imagp{u} + \mu \imagp{v}) \imagp{w}\\
+   &= \lambda \realp{u} \realp{w} + \mu \realp{v} \realp{w} + \lambda \imagp{u} \imagp{w} + \mu \imagp{v} \imagp{w}\\
+   &= \lambda (\realp{u} \realp{w} + \imagp{u} \imagp{w}) + \mu(\realp{v} \realp{w} + \imagp{v} \imagp{w})\\
+   &= \lambda(u, w) + \mu(v, w).
+\end{align*}
 
 \section{Roots of Unity}
 \begin{mdframed}[hidealllines=true,backgroundcolor=Emerald!20]

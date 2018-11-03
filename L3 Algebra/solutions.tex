@@ -30,7 +30,7 @@
 \usepackage{commath}
 \usepackage{titlepic}
 
-% \usepackage{flafter}
+\usepackage{flafter}
 
 \usepackage[margin=1in]{geometry}
 \usepackage{changepage}
@@ -468,12 +468,13 @@ by $ (x - 4) $ and taking the remainder.
         \end{displaymath}
         have?
   \item Show that $ t = 4 $ is a zero of $ t^4 - (6 + \sqrt{3})t^3 + 6\sqrt{3}t^2 + 32t -32\sqrt{3} $.
-  \item Find a polynomial $ p(x) $ with integer coefficients such that:
+  \item Find the remainder after dividing $ x^7 + 5x - 9 $ by $ (x-6) $.
+  \item Find four polynomials $ p_a(x) $, $ p_b(x) $, $ p_c(x) $, $ p_d(x) $ with integer coefficients such that:
     \begin{enumerate*}
-      \item $ p\left(\frac{1}{2}\right) = 0 $;
-      \item $ p\left(\frac{1}{2} + \frac{1}{2} \sqrt{3}\right) = 0 $;
-      \item $ p\left(2i - \sqrt{2} \right) = 0 $; and
-      \item $ p\left(\sqrt{i} + \frac{1}{\sqrt[3]{2}}\right) = 0 $.
+      \item $ p_a\left(\frac{1}{2}\right) = 0 $;
+      \item $ p_b\left(\frac{1}{2} + \frac{1}{2} \sqrt{3}\right) = 0 $;
+      \item $ p_c\left(2i - \sqrt{2} \right) = 0 $; and
+      \item $ p_d\left(\sqrt{i} + \frac{1}{\sqrt[3]{2}}\right) = 0 $.
     \end{enumerate*}
   \hard If $ x^2 + bx + c $ and $ x^2 + dx + e $ have a common factor of $ (x - p) $,
         show that $ \frac{e-c}{b-d} = p $.
@@ -481,7 +482,7 @@ by $ (x - 4) $ and taking the remainder.
         multiplicity of this root?
   \item Is $ (x+3) $ a factor of $ 2x^3 + x^2 - 5x + 7 $?
   \item Use the remainder theorem to compute $ f(3) $ for $ f(x) = x^4 + x - 10 $.
-  \item Show that if $ \alpha $ and $ \beta $ are roots of $ x^n - x = 0 $ (for $ n > 1 $), then $ \alpha^{-1} $ and $ \alpha\beta $
+  \item Show that if $ \alpha \neq 0 $ and $ \beta $ are roots of $ x^n - x = 0 $ (for $ n > 1 $), then $ \alpha^{-1} $ and $ \alpha\beta $
         are also roots. Why does this not imply that $ x^2 - x = 0 $ and $ x^3 - x = 0 $ have at least four roots?
   \hard Elliptic curves are a form of cubic; they are equations of the form $ y^2 = x^3 + ax + b $.
         \begin{enumerate}
@@ -517,7 +518,7 @@ by $ (x - 4) $ and taking the remainder.
 \end{enumerate}
 
 \section{Complex Numbers}\label{sec:complex1}
-\begin{aquote}[Philip Davis and Reuben Hersh]
+\begin{aquote}{Philip Davis and Reuben Hersh}
   [Mathematics consists of] true facts about imaginary objects.
 \end{aquote}
 Now that we have somewhat developed the theory of polynomial equations, a sensible question to ask ourselves is the following.
@@ -819,7 +820,7 @@ in one expression and which some have called the most beautiful equation in math
         form $ a + bi $, where $ a $ and $ b $ are real numbers.
   \item
     \begin{enumerate}
-      \item Prove that a number $ z $ is real if and only if $ \overline {\overline z} = z $.
+      \item Prove that a number $ z $ is real if and only if $ \overline z = z $.
       \item Hence, or otherwise, show that $ z \overline w + w \overline z $ is always real.
       \item Show that $ z \overline w + w \overline z \leq 2 \abs{w} \abs{z} $.
     \end{enumerate}
@@ -858,7 +859,7 @@ in one expression and which some have called the most beautiful equation in math
 \end{enumerate}
 
 \section{Geometry}\label{sec:geometry}
-\begin{aquote}[Michael Atiyah]
+\begin{aquote}{Michael Atiyah}
   Algebra is the offer made by the devil to the mathematician... All you need to do, is give me your soul: give up geometry.
 \end{aquote}
 We have already seen that we can view the complex numbers as points in the plane, $ \mathbb{R}^2 $. This means
