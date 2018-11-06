@@ -167,5 +167,25 @@ This way of solving differential equations is called \textbf{separation of varia
     \begin{displaymath}
       f'(x) = (f(x))^3 \text{ and } f(0) = 2
     \end{displaymath}
+  \questioO If you are more interested in nice geometry than applications, fill in the details here. Consider the family
+            of curves consisting of all circles tangent to the $ y$-axis at $ (0,0) $: that is, all circles with equations
+            of the form
+            \begin{displaymath}
+              (x - r)^2 + y^2 = r^2.
+            \end{displaymath}
+    \begin{parts}
+      \part Show that $ 2(x - r) + 2y \od{y}{x} = -\frac{x - r}{y} $.
+      \part By substituting the original equation, eliminate the parameter $ r $.
+      \part Thus we have found a differential equation satisfied by all of the circles in the family. We now want to find
+            the set of curves such that each of our new curves is orthogonal to all of the curves in the original family:
+            that is, the set of curves such that each intersects every circle at right angles. We thus need to solve
+            \begin{displaymath}
+              \od{y}{x} = -\frac{2xy}{x^2 - y^2}.
+            \end{displaymath}
+            Justify this.
+      \part Use the substitution $ z = y/x $, and rewrite the differential equation in terms of $ z $ and $ x $ only. The
+            result should be separable; solve it as usual, and graph the resulting family of functions to check that they
+            are indeed the ones we are looking for.
+    \end{parts}
 \end{questions}
 \end{document}
