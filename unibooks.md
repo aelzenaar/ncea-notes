@@ -12,28 +12,26 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
  * That I know what I am talking about.
 
 ## Contents
- * [Mathematics Book List](#mathematics-book-list)
-   * [Contents](#contents)
-   * [Culture](#culture)
-   * [Stage I: MATHS 150/250](#stage-i-maths-150250)
-       * [Calculus](#calculus)
-       * [Linear Algebra](#linear-algebra)
-   * [Stage II](#stage-ii)
-       * [Calculus (253)](#calculus-253)
-       * [Linear Algebra (253/255)](#linear-algebra-253255)
-       * ["Proofs" (255)](#proofs-255)
-       * [Number Theory (255)](#number-theory-255)
-       * [Set Theory (255)](#set-theory-255)
-       * [Differential Equations (260)](#differential-equations-260)
-   * [Stage III](#stage-iii)
-       * [Algebra (320 )](#algebra-320)
-       * [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)
-       * [Analysis (332/333), Topology (353?, 750)](#analysis-332333-topology-353-750)
-       * [Complex calculus and analysis (340, 341?)](#complex-calculus-and-analysis-340-341)
-       * [Geometry (353?)](#geometry-353)
-       * [Mathematical logic (315)](#mathematical-logic-315)
-       * [Differential geometry (334)](#differential-geometry-334)
-   * [Books I want to get around to reading and/or writing about here](#books-i-want-to-get-around-to-reading-andor-writing-about-here)
+ * [Culture](#culture)
+ * [Stage I: MATHS 150/250](#stage-i-maths-150250)
+  * [Calculus](#calculus)
+  * [Linear Algebra](#linear-algebra)
+ * [Stage II](#stage-ii)
+  * [Calculus (253)](#calculus-253)
+  * [Linear Algebra (253/255)](#linear-algebra-253255)
+  * ["Proofs" (255)](#proofs-255)
+  * [Number Theory (255)](#number-theory-255)
+  * [Set Theory (255)](#set-theory-255)
+  * [Differential Equations (260)](#differential-equations-260)
+ * [Stage III](#stage-iii)
+  * [Algebra (320)](#algebra-320)
+  * [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)
+  * [Analysis (332/333), Topology (353?, 750)](#analysis-332333-topology-353-750)
+  * [Geometry (353?)](#geometry-353)
+  * [Complex calculus and analysis (340, 341?)](#complex-calculus-and-analysis-340-341)
+  * [Mathematical logic (315)](#mathematical-logic-315)
+  * [Algebraic geometry (334)](#algebraic-geometry-334)
+ * [Books I want to get around to reading and/or writing about here](#books-i-want-to-get-around-to-reading-andor-writing-about-here)
 
 ## Culture
 
@@ -51,8 +49,6 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
  * William Frucht, _Imaginary Numbers: An Anthology..._. Poems and short stories with a mathematical or physical flavour. I enjoyed parts of it. (808.80356 F94)
 
 ## Stage I: MATHS 150/250
-
-I don't really have opinions on stage I texts, they're all pretty rubbish!
 
 ### Calculus
 
@@ -114,7 +110,8 @@ My favourite multi-dimensional calculus book, is, in fact:
    of linear algebra, and ends up around 500 pages later with a very nice approach to differential forms. This is my favourite calculus text of all time,
    but it is probably a little too much for students in first year! (Or even students who have completed 253, to be honest... perhaps 255 is enough
    preparation? The preface recommends baby Spivak as prep.) Highlights include a rigorous (and clear) treatment of infinitesimal functions and differentials,
-   and a final chapter on applications to theoretical physics. (515.8 L86)
+   and a final chapter on applications to theoretical physics. The exposition tries to explain a great deal of the 'philosophy of doing mathematics',
+   which I quite like - see, for example, the chapter on uniformity and compactness. (515.8 L86)
 
 ### Linear Algebra (253/255)
  * Paul Halmos, _Finite-Dimensional Vector Spaces_. This book covers the same content as 253 but in much greater detail. Like every other Paul Halmos book, it
@@ -132,16 +129,16 @@ My favourite multi-dimensional calculus book, is, in fact:
 ### Number Theory (255)
  * Underwood Dudley, _Elementary Number Theory_. This is a cute little introduction to number theory; the first few chapters cover the material needed for 255,
    and the remainder are a mixture of topic chapters (on number representations, prime counting, and so on). As you might expect from this author, the book has
-   a definite sense of humour (look under `sex' in the index). My main complaint is that most of the exercises are too easy (and some are too hard). If you like
-   it, find something more substantial to read afterwards! (512.7 D84g)
- * Edmund Landau, _Foundations of Analysis_. The Chicago bibliography says that this book makes for terrible bathroom reading; I would honestly keep a copy
-   of this in the bathroom just because it's so beautiful. Landau develops the theory of complex arithmetic from the Peano axioms, and it's something every
-   mathematician should read at some point in their lives. (512 L253Y)
- * Kenneth Ireland and Michael Rosen, _A Classical Introduction to Modern Number Theory_. Read after doing 320. Very good book. (512.7 I65)
+   a definite sense of humour (see, for example, the index and the exercises). My main complaint is that most of the exercises are too easy (and some are too
+   hard). If you like it, find something more substantial to read afterwards! (512.7 D84g)
+ * Kenneth Ireland and Michael Rosen, _A Classical Introduction to Modern Number Theory_. This book develops number theory with algebra at about the level of
+   320. (512.7 I65)
  * Gareth A. Jones and J. Mary Jones, _Elementary Number Theory_. This is kind of a step between Dudley and I&R, I suppose; there are some very interesting
    problems in here, but the typesetting really annoys me. Don't let the easy nature of the first few chapters fool you. For chapter 5, our lecturer
    gave all the proofs via ring theory; if you know some algebra, write down these proofs yourself (they follow from the fact that a cyclic ring can be
-   decomposed into a product of cyclic rings of prime power order) and compare with the ones in here. (512.7 J77)
+   decomposed into a product of cyclic rings of prime power order; see, for example, I&R) and compare with the ones in here. (512.7 J77)
+ * Edmund Landau, _Foundations of Analysis_. This book is a work of art. It makes excellent bathroom reading, despite what the Chicago bibliography
+   would have you believe. (512 L253Y)
 
 ### Set Theory (255)
  * Paul Halmos, _Naive Set Theory_. This is *the* set theory book that you should read. Not many exercises that are marked as such, but the proofs are
@@ -182,8 +179,8 @@ If you're looking for 328, see also [the section on number theory](#number-theor
    Covers all the basic material (field extensions, proof of impossibility of general solutions to the quintic using radicals). Plenty of exercises, computational
    ones as well. [Stewart is a semi-famous pop-maths author too, if you have family who are into that kind of book. Well worth looking into anything he's written,
    although over the past few years he seems to have rewritten the same book multiple times under different titles!] (512.32 S84)
- * Harold Edwards, _Galois Theory_. A GTM that I quite like on Galois theory. Not really good for a first intro after 320 - read Stewart or Artin first.
-   Goes via a more classico-historical route, using proofs that Galois would have understood. (512.32 E26)
+<!-- * Harold Edwards, _Galois Theory_. A GTM that I quite like on Galois theory. Not really good for a first intro after 320 - read Stewart or Artin first.
+   Goes via a more classico-historical route, using proofs that Galois would have understood. (512.32 E26)-->
 
 ### Combinatorics and Finite Geometry (326)
  * Miklos Bona, _A Walk Through Combinatorics_. This is the only book you need for 326; it covers everything (bits with more detail than needed, bits with slightly
@@ -207,8 +204,9 @@ If you're looking for 328, see also [the section on number theory](#number-theor
  * Robin Hartshorne, _Geometry: Euclid and Beyond_. I'm almost cheating putting this book here. It covers the finite geometry part of 326, but the real reason
    you should read it is because it is amazing. Hartshorne follows Euclid, putting him on a firm axiomatic foundation. The capstone of the book is a discussion
    of polyhedra. You should have a little algebra for the last stretch, but the rest should actually be accessible to a high-school student! (516 H33)
-
-Books I want to read: Watkins, _Combinatorics with an Emphasis on the Theory of Graphs_; something on matroids, maybe Wilson?
+ * Martin Aigner, _Combinatorial Theory_; Jack Graver and Mark Watkins, _Combinatorics with emphasis on the theory of graphs_. These books are far too difficult
+   for 326, but I found the more abstract perspectives in the first few chapter rather enlightning; Aigner, for example, develops the theory of counting entirely
+   via counting bijections and surjections and so forth; and G&W develops graph theory in a much more abstract way first. (511.6 A28Y) and (511.6 G77)
 
 ### Analysis (332/333), Topology (353?, 750)
  * Walter Rudin, _Principles of Mathematical Analysis_. No comment needed. (515.8 R91)
@@ -219,19 +217,6 @@ Books I want to read: Watkins, _Combinatorics with an Emphasis on the Theory of 
    metric spaces, though - use Rudin here, it's a good supplement. (514.3 M96)
  * Klaus Jänich, _Topology_. An easier introduction to topology which isn't rigorous enough for a third- or fourth-year course, but it does have
    some very nice pictures. (514.3 J22Y)
-
-### Complex calculus and analysis (340, 341?)
-To do: do a course in complex analysis.
- * Stephen D. Fisher, _Complex Variables_. This is the book we used in 2018 for complex calculus, I found it a little weird because it tries to be both
-   an accessible calculus book and a book with proofs. I mean, that's not a bad thing, I suppose. For what it is, it's OK, and the examples are very
-   geometric, which is nice, but I don't think it has enough personality. I don't know of any *better* books in this regard though, and it's a Dover
-   book so it's very cheap. (515.93 F53)
- * E.B. Saff and A.D. Snider, _Fundamentals of Complex Analysis for Mathematics, Sci...etc._ I own this book, it's basically a calculus book, so if
-   you like Stewart or Anton you'll probably like this. I don't hate it, and I found it useful for 334. (Clarification: Not UoA 334, but UofT 334.)
-   It's a bit expensive though, because it's a calculus book... (515.9 S12)
- * Tristan Needham, _Visual Complex Analysis_. Now this is actually a complex analysis book rather than a calculus book. It is very geometric. I quite
-   like it. (I have no strong opinions on the books in this section, but this is perhaps the book I have the least not strong opinion about.) There is
-   also quite a lot of physical motivation, which is very good. (515.9 N37)
 
 ### Geometry (353?)
 (See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)) above)
@@ -246,17 +231,33 @@ To do: do a course in complex analysis.
  * Kieth Kendig, _Conics_. This book is everything you never knew about conic sections and it is amazing. Please read it. (516.352 K33)
  * George Salmon, _A Treatise on Conic Sections_. If you read Kendig and want to know more, this book (from the 1800s) is very good but a little difficult to read
    due to its age. Serving recommendation: read and try to make Salmon's statements precise with projective geometry and/or complex algebra. (516.3 S17)
+ * Jeffrey R. Weeks, _The Shape of Space_. This is supposed to "fill the gap" between the simple geometric examples of topology (Klein bottles, tori) and
+   the "sophisticated mathematics of upper-level courses". I don't think it does this job very well, but it is a very nice book of geometry that might even
+   be accessible to the layperson. What I would like to see is a book like this that makes explicit the actual links with point-set topology. (514.3 W39)
+
+
+### Complex calculus and analysis (340, 341?)
+To do: do a course in complex analysis.
+ * Stephen D. Fisher, _Complex Variables_. This is the book we used in 2018 for complex calculus, I found it a little weird because it tries to be both
+   an accessible calculus book and a book with proofs. I mean, that's not a bad thing, I suppose. For what it is, it's OK, and the examples are very
+   geometric, which is nice, but I don't think it has enough personality. I don't know of any *better* books in this regard though, and it's a Dover
+   book so it's very cheap. (515.93 F53)
+ * E.B. Saff and A.D. Snider, _Fundamentals of Complex Analysis for Mathematics, Sci...etc._ I own this book, it's basically a calculus book, so if
+   you like Stewart or Anton you'll probably like this. I don't hate it, and I found it useful for 334. (Clarification: Not UoA 334, but UofT 334.)
+   It's a bit expensive though, because it's a calculus book... (515.9 S12)
+ * Tristan Needham, _Visual Complex Analysis_. Now this is actually a complex analysis book rather than a calculus book. It is very geometric. I quite
+   like it. (I have no strong opinions on the books in this section, but this is perhaps the book I have the least not strong opinion about.) There is
+   also quite a lot of physical motivation, which is very good. (515.9 N37)
 
 ### Mathematical logic (315)
 To add in 2019.
 
-### Differential geometry (334)
+### Algebraic geometry (334)
 To add in 2019.
 
 ## Books I want to get around to reading and/or writing about here
  * George F. Simmons, _Differential Equations with Applications and Historical Notes_.
  * Coxeter, _Regular Polytopes_.
- * Weeks, _The Shape of Space_.
  * O'Rourke, _Geometric folding algorithms_.
  * Something on knot theory?
  * Something on matroids?
