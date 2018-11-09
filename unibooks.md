@@ -1,7 +1,8 @@
 # Mathematics Book List
 
-This list is an effort to make a list similar to the [Chicago undergrad bibliography](https://www.ocf.berkeley.edu/~abhishek/chicmath.htm), but tailored
-more towards the UoA curriculum. Library call numbers listed in brackets after review; (*) denotes a book that the library does not own.
+This list is an effort to make a list similar and supplementary to the [Chicago undergrad bibliography](https://www.ocf.berkeley.edu/~abhishek/chicmath.htm),
+but with a less useful organisational structure based vaguely on the University of Auckland mathematics courses. Library call numbers listed in brackets after
+review; (*) denotes a book that the library does not own.
 
 To do: reorganise because MATHS 150 no longer exists and a lot of the stuff in MATHS 255 could be moved into MATHS 315, maybe. Also, there's
 a lot of stuff under 353, and that course hasn't run at all since I've been at Auckland. No better place to put it, though...
@@ -14,23 +15,23 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
 ## Contents
  * [Culture](#culture)
  * [Stage I: MATHS 150/250](#stage-i-maths-150250)
-  * [Calculus](#calculus)
-  * [Linear Algebra](#linear-algebra)
+    * [Calculus](#calculus)
+    * [Linear Algebra](#linear-algebra)
  * [Stage II](#stage-ii)
-  * [Calculus (253)](#calculus-253)
-  * [Linear Algebra (253/255)](#linear-algebra-253255)
-  * ["Proofs" (255)](#proofs-255)
-  * [Number Theory (255)](#number-theory-255)
-  * [Set Theory (255)](#set-theory-255)
-  * [Differential Equations (260)](#differential-equations-260)
+    * [Calculus (253)](#calculus-253)
+    * [Linear Algebra (253/255)](#linear-algebra-253255)
+    * ["Proofs" (255)](#proofs-255)
+    * [Number Theory (255)](#number-theory-255)
+    * [Set Theory (255)](#set-theory-255)
+    * [Differential Equations (260)](#differential-equations-260)
  * [Stage III](#stage-iii)
-  * [Algebra (320)](#algebra-320)
-  * [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)
-  * [Analysis (332/333), Topology (353?, 750)](#analysis-332333-topology-353-750)
-  * [Geometry (353?)](#geometry-353)
-  * [Complex calculus and analysis (340, 341?)](#complex-calculus-and-analysis-340-341)
-  * [Mathematical logic (315)](#mathematical-logic-315)
-  * [Algebraic geometry (334)](#algebraic-geometry-334)
+    * [Algebra (320)](#algebra-320)
+    * [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)
+    * [Analysis (332/333), Topology (353?, 750)](#analysis-332333-topology-353-750)
+    * [Geometry (353?)](#geometry-353)
+    * [Complex calculus and analysis (340, 341?)](#complex-calculus-and-analysis-340-341)
+    * [Mathematical logic (315)](#mathematical-logic-315)
+    * [Algebraic geometry (334)](#algebraic-geometry-334)
  * [Books I want to get around to reading and/or writing about here](#books-i-want-to-get-around-to-reading-andor-writing-about-here)
 
 ## Culture
@@ -209,17 +210,20 @@ If you're looking for 328, see also [the section on number theory](#number-theor
    via counting bijections and surjections and so forth; and G&W develops graph theory in a much more abstract way first. (511.6 A28Y) and (511.6 G77)
 
 ### Analysis (332/333), Topology (353?, 750)
+ * Kenneth R. Davidson and Allan P. Donsig, _Real Analysis and Applications_. The analysis part is nothing special but I liked the applications chapters.
+   Like Jones & Jones above, this is another new Springer book with really annoying typesetting. (First edition: 515 D25; I have the second edition, which is
+   supposed to be a major revision)
  * Walter Rudin, _Principles of Mathematical Analysis_. No comment needed. (515.8 R91)
  * A.N. Kolmogorov and S.V. Fomin, _Introductory Real Analysis_. Higher level than Rudin, covers integration in a much nicer way in my opinion. Includes
    a semi-detailed chapter on set theory from the point of view of analysis which is quite interesting for a different perspective. Lots of topology and
-   sequences as well. (515.8 K81eYs)
+   metric space theory as well, with an abundance of linear algebra. (515.8 K81eYs)
  * James R. Munkres, _Topology_. This is the standard topology book, it's very clear with lots of examples and pictures. I didn't like the section on
    metric spaces, though - use Rudin here, it's a good supplement. (514.3 M96)
  * Klaus Jänich, _Topology_. An easier introduction to topology which isn't rigorous enough for a third- or fourth-year course, but it does have
-   some very nice pictures. (514.3 J22Y)
+   some very nice pictures. I liked it in first year when I wanted to learn more about topology. (514.3 J22Y)
 
 ### Geometry (353?)
-(See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)) above)
+See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326) above.
  * Alfred S. Posamentier and Charles S. Salkind, _Challenging Problems in Geometry_. Buy this book and do all the problems. Difficulty from school level upwards. (*)
  * Harold Coxeter, _Introduction to Geometry_ and _Geometry Revisited_. These books are both full of a lot of nice university geometry with some quite
    nice links to other subjects: for example, crystallography and biology. (516 C87, 516 C87g)
@@ -243,7 +247,7 @@ To do: do a course in complex analysis.
    geometric, which is nice, but I don't think it has enough personality. I don't know of any *better* books in this regard though, and it's a Dover
    book so it's very cheap. (515.93 F53)
  * E.B. Saff and A.D. Snider, _Fundamentals of Complex Analysis for Mathematics, Sci...etc._ I own this book, it's basically a calculus book, so if
-   you like Stewart or Anton you'll probably like this. I don't hate it, and I found it useful for 334. (Clarification: Not UoA 334, but UofT 334.)
+   you like Stewart or Anton you'll probably like this. I don't hate it, and I found it useful for complex calculus.
    It's a bit expensive though, because it's a calculus book... (515.9 S12)
  * Tristan Needham, _Visual Complex Analysis_. Now this is actually a complex analysis book rather than a calculus book. It is very geometric. I quite
    like it. (I have no strong opinions on the books in this section, but this is perhaps the book I have the least not strong opinion about.) There is
@@ -259,5 +263,5 @@ To add in 2019.
  * George F. Simmons, _Differential Equations with Applications and Historical Notes_.
  * Coxeter, _Regular Polytopes_.
  * O'Rourke, _Geometric folding algorithms_.
- * Something on knot theory?
+ * Something on knot theory? (Cromwell, _Knots and Links_ ?)
  * Something on matroids?
