@@ -51,6 +51,16 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
 
 ## Stage I: MATHS 150/250
 
+**Texts used by all 8 NZ universities for first year**
+(A) indicates courses are mainly service courses for the sciences or engineering, (P) indicates pure mathematics focus available, (C) indicates compsci and/or discrete focus, (X) indicates mathematics is not offered as a subject. *DO NOT USE THIS PAGE AS COURSE ADVICE.*
+ * Auckland (P), (MATHS 150, Advancing Mathematics 1): Lecture notes, with Stewart and Poole recommended
+ * AUT (A), (MATH 501, Differential and Integral Calculus): Stewart; (MATH 501, Algebra and Discrete Mathematics): Ross and Wright(?), Anton
+ * Canterbury (A), (MATH 102/3, Mathematics 1A/B): Anton recommended
+ * Lincoln (X)
+ * Massey (A), (160.101, Calculus I): Stewart; (160.102, Linear Mathematics): Poole
+ * Otago (A), (160/70, Mathematics 1/2): Lecture notes, Stewart recommended for calculus sectioon
+ * Victoria (C), (MATH 141, Calculus 1A): Lecture notes, with Anton recommended; (MATH 151, Algebra): Easdown(?) recommended
+
 ### Calculus
 
  * James Stewart, _Calculus_. This is the "recommended" textbook for the calculus portion of 150 (and 250, and 253). If you're an engineering student, this book
@@ -213,8 +223,8 @@ If you're looking for 328, see also [the section on number theory](#number-theor
  * Kenneth R. Davidson and Allan P. Donsig, _Real Analysis and Applications_. The analysis part is nothing special but I liked the applications chapters.
    Like Jones & Jones above, this is another new Springer book with really annoying typesetting. (First edition: 515 D25; I have the second edition, which is
    supposed to be a major revision)
- * Walter Rudin, _Principles of Mathematical Analysis_. No comment needed. (515.8 R91)
- * A.N. Kolmogorov and S.V. Fomin, _Introductory Real Analysis_. Higher level than Rudin, covers integration in a much nicer way in my opinion. Includes
+ * Walter Rudin, _Principles of Mathematical Analysis_. No comment needed - I prefer L&S for multivariable analysis, though. (515.8 R91)
+ * A.N. Kolmogorov and S.V. Fomin, _Introductory Real Analysis_. Higher level than Rudin, covers Lebesgue integration in a much nicer way in my opinion. Includes
    a semi-detailed chapter on set theory from the point of view of analysis which is quite interesting for a different perspective. Lots of topology and
    metric space theory as well, with an abundance of linear algebra. (515.8 K81eYs)
  * James R. Munkres, _Topology_. This is the standard topology book, it's very clear with lots of examples and pictures. I didn't like the section on
@@ -265,3 +275,4 @@ To add in 2019.
  * O'Rourke, _Geometric folding algorithms_.
  * Something on knot theory? (Cromwell, _Knots and Links_ ?)
  * Something on matroids?
+ * David Gould, _Differential Topology_.
