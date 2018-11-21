@@ -60,6 +60,7 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
  * Massey (A), (160.101, Calculus I): Stewart; (160.102, Linear Mathematics): Poole
  * Otago (A), (160/70, Mathematics 1/2): Lecture notes, Stewart recommended for calculus sectioon
  * Victoria (C), (MATH 141, Calculus 1A): Lecture notes, with Anton recommended; (MATH 151, Algebra): Easdown(?) recommended
+ * Waikato (A), (MATHS 101, Intro. to Calculus): Schaum’s Outlines 'Calculus' (!); (MATHS 102, Intro. to Algebra): Anton recommended
 
 ### Calculus
 
