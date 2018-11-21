@@ -73,6 +73,8 @@
 \newtheorem*{thm}{Theorem}
 \theoremstyle{definition}
 \newtheorem*{defn}{Definition}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
 
 \newcommand{\df}[1]{\textbf{#1}}
 \newcommand{\T}{\mathrm{T}}
@@ -394,6 +396,30 @@ coordinate system.
   \end{enumerate}
 \end{exercise}
 
+\begin{rem}
+  Felix Klein (a German mathematician who studied, among other things, geometric transformations) defined a geometry
+  as a set of points together with a set of transformations of those points, such that two figures (two collections
+  of points) are said to be `equivalent' if there exists some invertible transformation mapping the figures onto each other.
+
+  For example, in normal Euclidean geometry (our current playground), we say two figures are `congruent' if they
+  can be placed on top of each other to exactly cover each other: in other words (and more precisely), two figures
+  are congruent if one can be mapped to the other via a series of translations, rotations, and reflections --- precisely the case
+  which we have studied in this section. (Such transformations are called \emph{isometries}.) Since all these maps
+  preserve lengths and angles, these things are well-defined in Euclidean geometry.
+
+  A less familiar geometry is affine geometry, in which we also allow dilations (scaling) --- so all circles
+  are equivalent in affine geometry. This does mean that lengths become meaningless: any line segment can be
+  mapped onto any other line segment, no matter its length. Angles also become meaningless (why?). However, enough
+  properties are left to provide a rich venue for geometry: for example, parallel lines are still parallel after an
+  affine transformation, and so any result which only uses parallelism in its proof makes sense here.
+
+  Other geometries include M\"obius geometry, where figures are equivalent if they can be mapped onto each other
+  by an isometry or a circle inversion (a reflection through a circle), and projective geometry, which is a further
+  loosening of the conditions on an affine geometry  such that even parallel lines make no sense and the only results
+  left are those which just involve incidence and intersection. Perhaps surprisingly, projective geometry is in
+  some sense the most rich geometry of all.
+\end{rem}
+
 \section{Cones}
 \begin{center}
   \includegraphics[width=0.5\textwidth]{slices}
@@ -432,8 +458,7 @@ is to show that the conics are just slices of a cone (hence the name), as in the
 \begin{exercise}[Geometric cone-slicing: the icecream proof]
   In the previous exercise, we had to use coordinates to prove that every slice of a cone is a conic. We will now
   discover a geometric proof that an ellipse is just a slice of a right circular cone, in such a way that we will
-  understand why such slices obey the focii properties of the ellipse.\footnote{~This proof is as given in Apostol, \textit{Linear~Algebra} ---
-  the figure used is Figure 2.11 from that book --- but it is originally due to Dandelin.}
+  understand why such slices obey the focii properties of the ellipse.\footnote{~Tom M. Apostol, \emph{Linear Algebra: A first course} (pp.78--9). John Wiley \& Sons (1997).}
 
   Let us take our plane and slice our cone with it. Pick any point $ P $ in the intersection of the two surfaces (i.e.
   on the curve we wish to show is an ellipse). In addition, we will place two spheres $ S_1 $ and $ S_2 $ into our cone
@@ -456,11 +481,120 @@ is to show that the conics are just slices of a cone (hence the name), as in the
   \end{enumerate}
 \end{exercise}
 
+\emph{To do: same result but for hyperbolae.}
+
+\section{Orthogonal families of conics}
+In this section, we will consider families of conics with the same focii, and we will find all the curves which are orthogonal
+to each family.
+
+\begin{defn}
+  Two curves are said to be \df{orthogonal} if, at every point where they intersect, they have tangent lines
+  which meet at right angles. Equivalently, two curves are orthogonal if at each point of intersection the normal
+  line of one is the tangent line of the other.
+\end{defn}
+
+Let us first revise a result which you should now have proved twice (both in Y12 coordinate geometry and in Y13 calculus).
+
+\begin{exercise}[Orthogonality]
+  Show that, if $ y = f(x) $ is a simple curve (i.e. a curve which does not cross itself) that is differentiable
+  at $ P = (x_0, y_0) $, then there is a unique line passing through $ P $ that is orthogonal to the curve at $ P $.
+
+  If the reader is feeling clever, she should prove it in two different ways. (Hint: you can prove it via drawing
+  triangles --- this is the proof given in the Y13 calculus notes --- or by rotating your line.)
+\end{exercise}
+
+\begin{exercise}[Homogenous differential equations]
+  Suppose $ y $ is a function of $ x $. Recall that a differential equation is said to be \df{separable} if it can
+  be written in the form $ \od{y}{x} = P(x) Q(y) $, where $ P $ and $ Q $ are functions of $ x $ and $ y $ alone.
+  \begin{enumerate}
+    \item Show, using the chain rule (i.e. without treating $ \od{y}{x} $ as a fraction), that $ \int \frac{1}{Q(y)} \dif{y} = \int \frac P(x) \dif{x} $.
+    \item If a curve with derivative $ \od{y}{x} = \frac{\sin x}{\cos y} $ passes through $ (0,0) $, which $ y $ values does it take when $ x = \pi $?
+    \item Find an explicit formula for a function $ f $ defined for all positive numbers such that when $ y = f(x) $,
+          $ \od{y}{x} = \frac{y^2}{1 - x} $ and $ f(1) = 0 $.
+  \end{enumerate}
+
+  The differential equations we wish to consider later in this section are, unfortunately, \emph{not} separable. However,
+  they are nice enough that we can apply a change of variables to \emph{make} them separable.
+
+  We say that a function of two variables $ P(x,y) $ is \df{homogenous of degree $ n $} if $ P(tx, ty) = t^nP(x,y) $ for all $ x $ and $ y $.
+  \begin{enumerate}[resume]
+    \item Suppose that $ P(x,y) $ and $ Q(x,y) $ are both homogenous of degree $ n $. Show that $ f(x,y) = \frac{P(x,y)}{Q(x,y)} $ is
+          homogenous of degree 0.
+    \item Let us consider the equation $ \od{y}{x} = f(x,y) $, where $ f $ is as in the previous question. Let $ t = 1/x $;
+          show that, using the substitution $ z = y/x $ and homogeneity, we obtain the separable equation
+          \begin{displaymath}
+            z + x\od{z}{x} = f(1,z) = \frac{P(1,z)}{Q(1,z)}.
+          \end{displaymath}
+          Find the solution of this equation.
+    \item Using this technique, solve $ \od{y}{x} = \frac{x^2 - 2y^2}{xy} $. (Be sure to check that the technique is applicable: i.e. that
+          the right hand side is homogenous of degree zero.)
+  \end{enumerate}
+\end{exercise}
+
+In a break from form, I will do a nice easy example to start with. Suppose we consider the family of curves consisting
+of all the circles whose centre is the origin; it should be intuitively clear that the only curves orthogonal to all of
+these circles at once are the lines through the origin.
+
+As a first step, we know that every such circle has equation $ x^2 + y^2 = R^2 $ for some constant $ R $. Given any
+particular circle, its derivative is given by $ 2x + 2y \od{y}{x} = 0 $ or $ \od{y}{x} = -\frac{x}{y} $; since the
+parameter $ R $ is absent from this equation, it describes every such circle. (We have shown that every such circle
+has this derivative, but you should check yourself, by integrating, that every equation of this form is a circle centred
+at the origin.)
+
+We want to find all the curves such that, at every point $ (x,y) $ on our curve, the tangent line of our curve is the
+normal line of the circle centred at the origin and passing through that point. To do this, we simply need to solve
+\begin{displaymath}
+  \od{y}{x} = \frac{y}{x}
+\end{displaymath}
+and this is not only separable but easy: $ \int \frac{\dif{y}}{y} = \int \frac{\dif{x}}{x} $ and thus $ \ln\abs{x} = \ln\abs{y} + C $,
+or $ x = Ky $; and this is just the family of all lines through the origin, as we guessed initially.
+
+For convenience, if $ \mathcal{F} $ is a family of curves then we will call the family of curves orthogonal to $ \mathcal{F} $
+the \df{orthogonal complement} of $ \mathcal{F} $.
+
+\begin{exercise}[Orthogonal families of curves]
+  We (or rather you, the reader) will now show that when we take orthogonal complements of various families of conics, then we obtain
+  other families of conics. As well as the results explicitly stated here, you should consider how the families are related to each
+  other. Show that:
+  \begin{enumerate}
+    \item The family of NE-SW diagonal hyperbolae, $ xy = c $, are orthogonal to the family of NW-SE diagonal hyperbolae, $ xy = -c $.
+    \item The vertical parabolae, $ y = ax^2 $, are orthogonal to the family of ellipses $ x^2 + \frac{y^2}{b} = 1 $. (See \texttt{parabolae-and-ellipse.ggb}.)
+    \item The family of all circles tangent to the $ y$-axis at the origin (i.e. $ x^2 + y^2 = 2rx $) is orthogonal to the family of all circles tangent to
+          the $ x$-axis at the origin (i.e. $ x^2 + y^2 = 2ry $).
+  \end{enumerate}
+  Hence, complete the following: orthogonal complements of $ X $ are $ Y $, taking $ X $ to be hyperbolae, parabolae, circles, and ellipses. (We have
+  found the orthogonal complements of families of curves in particular places, but consider the hint after exercise \ref{ex:apollonius}.)
+\end{exercise}
+
+Finally, we have one rather pretty example.
+\begin{exercise}[Circles of Apollonius]\label{ex:apollonius}
+  Fix two points $ A $ and $ B $. Let us consider the locus of all points $ P $ such that $ \frac{\abs{AP}}{\abs{BP}} = \rho $, for positive numbers $ \rho $;
+  we will examine one particular perpendicular family.
+  \begin{enumerate}
+    \item Show that if we fix $ A $ and $ B $ and vary $ \rho $ then we have a family of circles whose centres lie on the line $ AB $.
+    \item Show that the orthogonal complement of this family is the set of circles passing through $ A $ and $ B $ with centres on the perpendicular
+          bisector of the segment $ AB $.
+  \end{enumerate}
+
+  Hint: without loss of generality, you can suppose $ A = (-1, 0) $ and $ B = (0, 1) $. (Then the result follows for any choice of $ A $ and $ B $,
+  simply because dilations, translations, and rotations all preserve circles and orthogonality of lines.)
+
+  There are three ways to do this exercise that the author is aware of: perhaps the easiest for us now is to apply calculus like we have been
+  doing throughout this section. For a geometric view on this exercise, see Coxeter \S 6.6; for a view from complex calculus, see Fisher \S 1.2.
+\end{exercise}
+
 \section{Applications to physics}
+\emph{To do: gravity laws.}
 
 \section{Further reading}
-Kendig
-Coxeter
-Salmon
+See references in text, as well as:
+\begin{itemize}
+  \item H.S.M. Coxeter, \emph{Introduction to geometry}. John Wiley \& Sons (1961).
+  \item Stephen D. Fisher, \emph{Complex Variables}. Dover (1999).
+  \item Keith Kendig, \emph{Conics}. Mathematical Association of America (2005).
+  \item Morris Kline, \emph{Mathematics for the nonmathematician}. Dover (1985).
+  \item George Salmon, \emph{A treatise on conic sections}. Longmans, Green (1900).
+  \item George F. Simmons, \emph{Differential equations with applications and historical notes}. McGraw-Hill (1991).
+\end{itemize}
 
 \end{document}
