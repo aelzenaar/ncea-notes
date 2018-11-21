@@ -56,6 +56,7 @@
                                      \begin{subarray}{l} #1 \end{subarray}}}}}}
 \newcommand{\swap}{\leftrightarrow}
 
+\makeatletter
 \newtheoremstyle{exercise}% name of the style to be used
 {5pt}% measure of space to leave above the theorem. E.g.: 3pt
 {3pt}% measure of space to leave below the theorem. E.g.: 3pt
@@ -65,6 +66,7 @@
 {.}% punctuation between head and body
 {\newline}% space after theorem head; " " = normal interword space
 {\thmname{#1}\thmnumber{ #2}\thmnote{: #3}}
+\makeatother
 
 \theoremstyle{exercise}
 \newtheorem{exercise}{Exercise}
@@ -93,6 +95,7 @@
 \begin{titlepage}
   \maketitle
   \begin{center}
+  {\Huge\color{red}\bf WORK IN PROGRESS}
     \includegraphics[width=0.4\textwidth]{icecream}
 
     \vspace{2em}
@@ -130,7 +133,7 @@ revise a number of these results, and so the reader is directed there initially.
 \renewcommand\section{\clearpage\oldsection}
 \section{Introduction}
 The study of the conic sections (as with much of elementary plane and solid geometry) goes back to the ancient Greeks. It is
-thought that the first prson to study the slices of a cone was Menaechmus, who lived on the Gallipoli Peninsula in around 350~BCE,
+thought that the first person to study the slices of a cone was Menaechmus, who lived on the Gallipoli Peninsula in around 350~BCE,
 in his solution of the Delian problem: the construction of a cube whose volume is twice that of a given cube. Anecdotally, it is to
 Menaechmus that the famous quote on the cover of these notes is attributed (usually in his disputed role as the tutor to Alexander the Great).
 
@@ -145,11 +148,14 @@ however, Apollonius of Perga (a city in what is now Turkey) expanded Euclid's wo
 after Euclid's death. Apollonius used Euclidean geometry to prove most of the classical theorems on the conic sections, including
 the many applications to physics that the subject holds.
 
+Despite these ancient roots, it turns out that the subject is deep enough to still hold interest in the modern day. Indeed, we
+will use techniques from calculus (in other words, from the 16th and 17th century) and from complex analysis (the 18th and 19th
+century) in these notes; and the proper setting for conics turns out to be projective geometry, which dates from the 19th and 20th
+century --- although we will only touch on this briefly here.
+
 Conic sections have many beautiful applications; later on, we will discuss applications to optics and to celestial mechanics. For
 example, in the 17th century the German astronomer Johannes Kepler showed that all astronomical bodies follow, due to gravity,
 paths in the shape of conic sections.
-
-This subject is also a very nice gateway into various topics in further mathematics, both in geometry and in analysis (calculus).
 
 \section{Basic results}
 \begin{defn}
@@ -497,17 +503,24 @@ Let us first revise a result which you should now have proved twice (both in Y12
 
 \begin{exercise}[Orthogonality]
   Show that, if $ y = f(x) $ is a simple curve (i.e. a curve which does not cross itself) that is differentiable
-  at $ P = (x_0, y_0) $, then there is a unique line passing through $ P $ that is orthogonal to the curve at $ P $.
+  at $ P = (x_0, y_0) $, then there is a unique line $ N $ passing through $ P $ that is orthogonal to the curve at $ P $;
+  further, the slope of $ N $ is $ -\frac{1}{f'(x_0)} $.
 
   If the reader is feeling clever, she should prove it in two different ways. (Hint: you can prove it via drawing
   triangles --- this is the proof given in the Y13 calculus notes --- or by rotating your line.)
 \end{exercise}
 
+\begin{rem}
+  In the exercise above, we implicitly assumed in the statement that our curve was the graph of a function; however, this
+  need not be the case. We only need the curve to be a function locally (i.e. for there to exist a small ball about $ (x_0, y_0) $
+  within which our curve is the graph of a function). You should check that your proof only uses local properties of the graph of $ f $!
+\end{rem}
+
 \begin{exercise}[Homogenous differential equations]
   Suppose $ y $ is a function of $ x $. Recall that a differential equation is said to be \df{separable} if it can
   be written in the form $ \od{y}{x} = P(x) Q(y) $, where $ P $ and $ Q $ are functions of $ x $ and $ y $ alone.
   \begin{enumerate}
-    \item Show, using the chain rule (i.e. without treating $ \od{y}{x} $ as a fraction), that $ \int \frac{1}{Q(y)} \dif{y} = \int \frac P(x) \dif{x} $.
+    \item Show, using the chain rule (i.e. without treating $ \od{y}{x} $ as a fraction), that $ \int \frac{1}{Q(y)} \dif{y} = \int \frac \dif{x} $.
     \item If a curve with derivative $ \od{y}{x} = \frac{\sin x}{\cos y} $ passes through $ (0,0) $, which $ y $ values does it take when $ x = \pi $?
     \item Find an explicit formula for a function $ f $ defined for all positive numbers such that when $ y = f(x) $,
           $ \od{y}{x} = \frac{y^2}{1 - x} $ and $ f(1) = 0 $.
@@ -574,6 +587,7 @@ Finally, we have one rather pretty example.
     \item Show that if we fix $ A $ and $ B $ and vary $ \rho $ then we have a family of circles whose centres lie on the line $ AB $.
     \item Show that the orthogonal complement of this family is the set of circles passing through $ A $ and $ B $ with centres on the perpendicular
           bisector of the segment $ AB $.
+    \item Use Geogebra (or similar software) to draw a nice picture.
   \end{enumerate}
 
   Hint: without loss of generality, you can suppose $ A = (-1, 0) $ and $ B = (0, 1) $. (Then the result follows for any choice of $ A $ and $ B $,
@@ -581,6 +595,31 @@ Finally, we have one rather pretty example.
 
   There are three ways to do this exercise that the author is aware of: perhaps the easiest for us now is to apply calculus like we have been
   doing throughout this section. For a geometric view on this exercise, see Coxeter \S 6.6; for a view from complex calculus, see Fisher \S 1.2.
+\end{exercise}
+
+\begin{exercise}[Bipolar coordinates (difficult)]
+  (Prerequisite: you do need to understand exercise \ref{ex:apollonius} quite well. You should also read the epilogue on hyperbolic trigonometric
+  functions in the trigonometry notes.)
+
+  From your pictures in the previous exercise, you should notice that every point in the plane is at the intersection of two circles of apollonius.
+  Let us fix $ A = (-1, 0) $ and $ B = (1,0) $, as in the hint for the previous exercise; we will use these circles to define a new coordinate system
+  for the plane.
+
+  Suppose $ P = (x,y) $ lies at the intersection of two circles; then we define $ \sigma $ to be the angle $ APB $, and $ \tau = \ln \frac{\abs{PA}}{\abs{PB}} $.
+  We then define the \df{bipolar coordinates} of $ P $ to be $ (\sigma, \tau) $.
+  \begin{enumerate}
+    \item Show that
+          \begin{displaymath}
+            \begin{cases}
+              x = \frac{\sinh \tau}{\cosh \tau - \cos \sigma}\\
+              y = \frac{\sin \sigma}{\cosh \tau - \cos \sigma}.
+            \end{cases}
+          \end{displaymath}
+    \item Identifying the plane $ \mathbb{R}^2 $ with the complex numbers $ \mathbb{C} $, show that this is
+          equivalent to $ x + iy = ai \cot \left(\frac{\sigma + i\tau}{2}\right) $. (Recall that we define $ \cot z = \frac{e^{iz} - e^{-iz}}{ie^{iu} + ie^{-iu}} $.)
+    \item Identify the locus of all $ P = (\sigma, \tau) $ such that (a) $ \sigma $ is held constant, or (b) $ \tau $ is held constant.
+    \item Translate the standard equations of the conics into bipolar coordinates.
+  \end{enumerate}
 \end{exercise}
 
 \section{Applications to physics}
