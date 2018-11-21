@@ -1400,6 +1400,38 @@ $ (u,v) = \realp{u}\realp{v} + \imagp{u} \imagp{v} = \realp{v}\realp{u} + \imagp
 \end{align*}
 
 \filbreak\begin{enumerate}[resume]
+  \answer Show that if $ b $ is a complex number and $ a $ and $ c $ are real numbers, then the locus of all complex numbers
+        $ z $ satisfying $ a(z,z) + (b,z) + c = 0 $ is a circle. (Hint: if $ z $ was real, you would complete the square.)
+\end{enumerate}
+
+Indeed, we simply `complete the square' but now with inner products instead of normal products:
+\begin{align*}
+  0 = a(z,z) + (b,z) + c &= a(z + \frac{b}{2a}, z + \frac{b}{2a}) - \frac{(b,b)}{4a} + c\\
+  (z + \frac{b}{2a}, z + \frac{b}{2a}) &= \frac{(b,b) - 4ac}{4a^2}\\
+  \sqrt{(z + \frac{b}{2a}, z + \frac{b}{2a})} &= \sqrt{\frac{(b,b) - 4ac}{4a^2}}\\
+  \abs{z + \frac{b}{2a}} &= \frac{\sqrt{(b,b) - 4ac}}{2a}.
+\end{align*}
+So the locus is a circle of radius $ \frac{\sqrt{(b,b) - 4ac}}{2a} $ centred at $ -\frac{b}{2a} $.
+
+\filbreak\begin{enumerate}[resume]
+  \answer Let $ X $ be a set of complex numbers. If $ \rho \neq 0 $ and $ t $ are complex numbers, define $ \rho X + t $ to be
+        the set of all complex numbers of the form $ \rho x + t $ for some $ x $ in the set $ X $. Show that
+    \begin{enumerate}
+      \answerb if $ X $ is a line, then $ \rho X + t $ is a line;
+      \answerb if $ X $ is a circle, then $ \rho X + t $ is a circle.
+    \end{enumerate}
+\end{enumerate}
+
+Indeed, if $ X $ is a line then $ X $ is the set of all points of the form $ \alpha z + c $ for some real number $ \alpha $ and
+complex number $ c $; so $ \rho X + t $ is the set of all points of the form $ \rho(\alpha z + c) + t = \rho\alpha z + \rho c $,
+which is the line in the direction $ \rho z $ through the point $ \rho c $.
+
+If $ X $ is a circle, then $ X $ is the locus of $ \abs{z - c} = r $ for some complex number $ c $ and some point $ r $; then
+every point $ w $ in $ \rho X + t $ satisfies $ w = \rho z + t $ for some $ z $ in $ X $, and so $ z = \rho^{-1} (w - t) $;
+thus $ \rho X + t $ is the locus of all $ w $ satisfying $ \abs{\rho^{-1} (w - t) - c} = r $. Applying properties of the modulus,
+we have that $ \abs{w - (t + \rho c)} = \abs{\rho} r $, and so $ \rho X + t $ is just the circle with centre $ t + \rho c $ with radius $ \abs{\rho} r $.
+
+\filbreak\begin{enumerate}[resume]
   \answer Let $ p $ be a positive real number, and let $ \Gamma $ be the locus of points $ z $ satisfying $ \abs{z - p} = c\realp{z} $. Show
         that $ \Gamma $ is:
     \begin{enumerate}

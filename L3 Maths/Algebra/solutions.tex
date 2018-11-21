@@ -111,7 +111,7 @@ polynomials. Geometric and algebraic interpretations will be presented, along wi
 a number of examples and exercises.
 
 Philosophically, we have made the decision to leave a number of important results
-(chiefly de~Moirve's~Theorem) as exercises. However, these results are required
+(chiefly de~Moirve's theorem) as exercises. However, these results are required
 knowledge for the later problems --- so the reader should at least glance at previous
 problems before attempting later ones.
 
@@ -969,7 +969,7 @@ of a triangle have lengths $ \abs{a} $ and $ \abs{b} $ then the third side has l
 \begin{enumerate}
   \item Show that, if $ a $ and $ b $ are fixed complex numbers, then $ \abs{z - a} = \abs{z - b} $ describes the line which
         cuts the midpoint of the segment between $ a $ and $ b $ at a right angle.
-  \hard Let $ v = 1 + i $ and $ z = x + iy $ for any real numbers $ x $ and $ y $.
+  \item Let $ v = 1 + i $ and $ z = x + iy $ for any real numbers $ x $ and $ y $.
     \begin{enumerate}
       \item Show that the equation $ \abs{z - v} = \abs{vz} $ represents a circle, and find its
             centre and radius.
@@ -982,6 +982,14 @@ of a triangle have lengths $ \abs{a} $ and $ \abs{b} $ then the third side has l
       \item $ (u, v) = (v, u) $
       \item $ (\lambda u + \mu v, w) = \lambda(u, w) + \mu(v, w) $
     \end{enumerate}
+  \hard Show that if $ b $ is a complex number and $ a $ and $ c $ are real numbers, then the locus of all complex numbers
+        $ z $ satisfying $ a(z,z) + (b,z) + c = 0 $ is a circle. (Hint: if $ z $ was real, you would complete the square.)
+  \item Let $ X $ be a set of complex numbers. If $ \rho \neq 0 $ and $ t $ are complex numbers, define $ \rho X + t $ to be
+        the set of all complex numbers of the form $ \rho x + t $ for some $ x $ in the set $ X $. Show that
+      \begin{enumerate*}
+        \item if $ X $ is a line, then $ \rho X + t $ is a line;
+        \item if $ X $ is a circle, then $ \rho X + t $ is a circle.
+      \end{enumerate*}
   \item Let $ p $ be a positive real number, and let $ \Gamma $ be the locus of points $ z $ satisfying $ \abs{z - p} = c\realp{z} $. Show
         that $ \Gamma $ is:
     \begin{enumerate}
@@ -1213,7 +1221,9 @@ no divisors (i.e. if $ \gcd(a,b) = 1 $).
 As an application of our work on primitive roots, we solve the \emph{double-triangle problem} which appeared
 in the 2009 New Zealand Scholarship examination.
 
-\includegraphics[width=\textwidth]{double_triangle}
+\begin{center}
+  \includegraphics[width=\textwidth]{double_triangle}
+\end{center}
 
 The question states that the positive real solution is $ z_1 = k = k \cis 0 $. We
 can therefore see that the other two solutions on the outer circle will be given
@@ -1544,7 +1554,10 @@ section first as they often include some content themselves.
           \item When does $ (a + b\epsilon)^{-1} $ exist?
           \item Solve $ x^2 - 1 = 2\epsilon $ in $ \mathbb{R}[\epsilon] $.
         \end{enumerate}
-  \hard Suppose $ p(x) = \sum_{i = 0}^n a_i x^i $ and $ q(x) = \sum_{i = 0}^m b_i x^i $ are polynomials. Show that $ p(x) q(x) = \sum_{i = 0}^{m + n} c_i x^i $,
+  \hard Suppose $ p(x) = \sum_{i = 0}^n a_i x^i $ and $ q(x) = \sum_{i = 0}^m b_i x^i $ are polynomials. Show that
+        \begin{displaymath}
+          p(x) q(x) = \sum_{i = 0}^{m + n} c_i x^i,
+        \end{displaymath}
         where each $ c_i $ is a constant. Give an expression for $ c_i $ in terms of the coefficients of $ p(x) $ and $ q(x) $.
   \harder In this exercise, we will prove the division theorem that we stated without proof in section \ref{section:poly}: if $ f $ and $ g \neq 0 $
           are polynomials, then there exist unique polynomials $ q $ and $ r $ such that $ \partial r < \partial g $ and
