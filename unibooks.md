@@ -277,3 +277,12 @@ To add in 2019.
  * Something on knot theory? (Cromwell, _Knots and Links_ ?)
  * Something on matroids?
  * David Gould, _Differential Topology_.
+
+## My favourite books
+ * Artin, _Algebra_
+ * Rudin, _Principles of Mathematical Analysis_
+ * Loomis and Sternberg, _Advanced Calculus_
+ * Wallis, _Combinatorial Designs_
+ * Berger, _Geometry_
+ * Halmos, _Naive Set Theory_ and _Finite-Dimensional Vector Spaces_
+ * Landau, _Foundations of Analysis_
