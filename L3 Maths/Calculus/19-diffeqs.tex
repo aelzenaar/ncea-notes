@@ -9,16 +9,16 @@ for a spring pulled a distance $ x $ away from its equilibrium point we have
 \end{displaymath}
 for some constant $ k $; and for a falling stone at distance $ r $ from the centre of the Earth, we have
 \begin{displaymath}
-  \od[2]{r}{t} = -g \frac{r_0^2}{r^2}
+  \od[2]{r}{t} = -{K}{r^2}
 \end{displaymath}
-where $ r_0 $ is the radius of the Earth and $ g $ is a constant. These kinds of equations are known as \textbf{differential equations}.
+where $ K $ is some constant. These kinds of equations are known as \textbf{differential equations}.
 
 Suppose $ \od{y}{x} = f(x) g(y) $. It would be nice if we could find $ y $ in terms of $ x $ only. This
 is in fact possible, using substitution:
 \begin{align*}
-  \od{y}{x} &= f(x) g(y) \\
-  \Rightarrow \frac{1}{g(y)} \od{y}{x} &= f(x)\\
-  \Rightarrow \rint \frac{1}{g(y)} \od{y}{x} \dif{x} &= \rint f(x) \dif{x}.
+  \dod{y}{x} &= f(x) g(y) \\
+  \Rightarrow \frac{1}{g(y)} \dod{y}{x} &= f(x)\\
+  \Rightarrow \rint \frac{1}{g(y)} \dod{y}{x} \dif{x} &= \rint f(x) \dif{x}.
 \end{align*}
 
 Now, let $ G(y) $ be an antiderivative of $ \frac{1}{g(y)} $ (with respect to $ y $). By the chain rule, then,
@@ -47,6 +47,9 @@ This way of solving differential equations is called \textbf{separation of varia
   To check our answer, let us now use implicit differentiation to differentiate this curve. We have $ 2y \od{y}{x} = 2e^x $ so and $ y \od{y}{x} = e^x $
   as expected: our solution is correct.
 \end{ex}
+
+If we have a differential equation of the form $ \od{y}{x} + A(x)y + B(x) = 0 $ for any functions $ A $ and $ B $, then for
+every point $ (x_0,y_0) $ in the plane, there exists a unique solution $ f $ whose graph $ y = f(x) $ passes through $ (x_0, y_0) $.
 
   \clearpage
 \begin{ex}
@@ -151,12 +154,33 @@ This way of solving differential equations is called \textbf{separation of varia
               \od[2]{x}{t} = -\frac{kx}{m}
             \end{displaymath}
             Show that $ x = A \cos(\sqrt{k/m} \thinspace\cdot t) $ is a solution of the given differential equation.
-  \questioS Consider the general wave equation, $ y = A\sin(kx -\omega t) $ (where $A$, $ k $, and $ \omega $ are constant). We
-            write $ \pd{y}{x} $ for the derivative of $ y $ with respect to $ x $ holding $ t $ constant, and $ \pd{y}{t} $ for
-            the derivative of $ y $ with respect to $ t $ keeping $ x $ constant.
-
-            Show that $ \pd[2]{y}{t} = c^2 \pd[2]{y}{x} $ for some constant $ c $.
-  \questioS Physics: Write down a differential equation modelling the charge on the capacitor in an RC circuit over time. Solve the equation.
+  \questioE Read the following result, which you don't need to prove.
+            \begin{thm}
+              Suppose $ P $, $ Q $, and $ R $ are constants, and suppose $ (x_0, y_0) $  and $ (x_0, y_0') $ are points. Then
+              there exists a unique function $ f $ satisfying the following conditions:
+              \begin{displaymath}
+                \begin{cases}
+                  f''(x) + Pf'(x) + Qf(x) + R = 0\\
+                  f(x_0) = y_0\\
+                  f'(x_0) = y_0'.
+                \end{cases}
+              \end{displaymath}
+            \end{thm}
+            \begin{parts}
+              \part Suppose that $ y = s(x) $ and $ y = c(x) $ satisfy $ y'' + y = 0 $, and that:
+                    \begin{itemize}
+                      \item $ s(0) = 0 $, $ s'(0) = 1 $
+                      \item $ c(0) = 1 $, $ c'(1) = 0 $.
+                    \end{itemize}
+                    Show, using only this information, that $ s' = c $ and $ c' = -s $.
+              \part Show, again using only the information in (a) and the theorem, that:
+                \begin{subparts}
+                  \subpart $ [s(x)]^2 + [c(x)]^2 = 1 $ (we have actually already done this)
+                  \subpart $ s(x + a) = s(x) c(a) + c(x) s(a) $
+                  \subpart $ 2s(x) c(a) = s(x + a) + s(x - a) $
+                \end{subparts}
+              \part Explicitly write down functions $ s $ and $ c $ satisfying the above.
+            \end{parts}
   \questioS Scholarship 2000: The piriform is the curve defined by the equation $ 16y^2 = x^3(8-x) $ where $ x \geq 0 $.
             By solving the differential equation
             \begin{displaymath}
