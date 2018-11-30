@@ -487,10 +487,6 @@ and $ \abs{PT} = \sin \theta \sqrt{\sec^2 \theta - 1} = \sin \theta \tan \theta 
   The \df{cosecant} function is defined by $ \csc \theta = \abs{OB} = \frac{1}{\sin \theta} $.
 \end{defn}
 
-\begin{exercise}
-  Show the pretty identity that $ \sec^2 \theta \csc^2 \theta = \sec^2 \theta \csc^2 \theta $. (Hint: apply Pythagoras to $ OBT $.)
-\end{exercise}
-
 \begin{exercise}\leavevmode
   \begin{enumerate}
     \item By applying Pythagoras' theorem to $ BOT $, show that $ \cot^2 \theta + \tan^2 \theta + 2 = \csc^2 \theta + \sec^2 \theta $,
@@ -500,8 +496,24 @@ and $ \abs{PT} = \sin \theta \sqrt{\sec^2 \theta - 1} = \sin \theta \tan \theta 
   \end{enumerate}
 \end{exercise}
 
-\subsection{Historical Functions}
-A few easy lengths follow, which only have names for historical reasons.
+\begin{exercise}[Difficult]
+  Draw tangent lines $ \ell_R $ and $ \ell_C $ to the unit circle at $ R $ and $ C $, and extend the ray $ OX $ to meet these tangent lines
+  at $ E $ and $ F $ (so $ ER $ is a vertical line and $ FC $ is horizontal). Show that:
+  \begin{enumerate}
+    \item $ \abs{ER} = \tan \theta $
+    \item $ \abs{FC} = \cot \theta $
+    \item $ \abs{EO} = \sec \theta $
+    \item $ \abs{FO} = \csc \theta $
+  \end{enumerate}
+  (See \url{https://math.stackexchange.com/a/2056257} for diagrams; these alternative definitions somewhat
+  explain why $ \mathrm{sine} = \frac{1}{\mathrm{cosec}} $ and $ \mathrm{cosine} = \frac{1}{\mathrm{sec}} $ rather
+  than $ \mathrm{sine} = \frac{1}{\mathrm{sec}} $ and $ \mathrm{cosine} = \frac{1}{\mathrm{cosec}} $.)
+\end{exercise}
+
+\subsection{Other Circle Lengths}
+A few easy lengths follow, which have names for historical reasons: in the era before electronic
+calculators, tables of values for these functions were used to avoid doing some calculations. (See
+the Roots of Unity blog post in the further reading list.)
 \begin{defn}\leavevmode
   \begin{enumerate}
     \item The \df{versine} function is defined by $ \versin \theta = \abs{PR} = 1 - \cos \theta $.
@@ -520,7 +532,6 @@ A few easy lengths follow, which only have names for historical reasons.
   \end{enumerate}
 \end{exercise}
 
-\subsection{Chords}
 Finally, we compute $ \abs{XR} $. We have
 \begin{displaymath}
   \abs{XR}^2 = \sin^2 \theta + \versin^2 \theta = \sin^2 \theta + (1 - \cos \theta)^2 = \sin^2 \theta + 1 - 2\cos \theta + \cos^2 \theta = 2 - 2\cos \theta.
@@ -549,21 +560,18 @@ We have the following definition, which summarises all the definitions we have m
         \item $ \sec \theta = \abs{OT} = \frac{1}{\cos\theta} $ (secant)
         \item $ \cot \theta = \abs{BX} = \frac{1}{\tan\theta} = \frac{\cos\theta}{\sin\theta} $ (cotangent)
       \end{enumerate}
-    \item \textbf{Historical Functions}
+    \item \textbf{Other Functions}
       \begin{enumerate}
         \item $ \versin \theta = \abs{PR} = 1 - \cos \theta $ (versine)
         \item $ \cvs \theta = \abs{CD} = 1 - \sin \theta $ (coversine)
         \item $ \exsec \theta = \abs{RT} = \sec \theta - 1 $ (exsecant)
         \item $ \excsc \theta = \abs{BC} = \csc \theta - 1$ (excosecant)
-      \end{enumerate}
-    \item \textbf{Other Functions}
-      \begin{enumerate}
         \item $ \crd \theta = \abs{RX} = \sqrt{2 - 2\cos \theta} $ (chord)
       \end{enumerate}
   \end{enumerate}
 \end{defn}
-Of these, the basic functions and the reciprocal functions are the most useful and
-the only ones worth learning.
+Of these, the basic functions and the reciprocal functions are the most useful and are
+the ones which we will study for the remainder of these notes.
 
 We also restate the following identities for convenience. Since the second two follow
 immediately from the first, and the first is a trivial application of Pythagoras' theorem,
