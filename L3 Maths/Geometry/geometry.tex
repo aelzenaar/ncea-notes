@@ -31,6 +31,8 @@
 \usepackage{titlesec}
 \titleformat{\section}{\normalfont\Large\bfseries\centering}{Section~\thesection:}{1em}{}
 
+\usepackage[framemethod=tikz]{mdframed}
+
 \def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
   \hbox{}\nobreak\hfil(#1)%
   \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
@@ -69,7 +71,10 @@
 \makeatother
 
 \theoremstyle{exercise}
-\newtheorem{exercise}{Exercise}
+\newtheorem{Exercise}{Exercise}
+\newenvironment{exercise}
+  {\begin{mdframed}\begin{Exercise}}
+  {\end{Exercise}\end{mdframed}}
 
 \theoremstyle{plain}
 \newtheorem*{thm}{Theorem}
@@ -78,12 +83,13 @@
 \theoremstyle{remark}
 \newtheorem*{rem}{Remark}
 
-\newcommand{\df}[1]{\textbf{#1}}
+\newcommand{\df}{\textbf}
 \newcommand{\T}{\mathrm{T}}
 \newcommand{\F}{\mathrm{F}}
 \newcommand{\IndSet}{\mathbf{I}}
 \DeclareMathOperator{\cis}{cis}
 \DeclareMathOperator{\arcsec}{arcsec}
+\renewcommand\vec{\mathbf}
 
 \title{Level Three Conic Sections}
 \author{Alex Elzenaar}
@@ -118,6 +124,15 @@ tend to present a set of vaguely connected case-by-case results, rather than any
 Most of the content is presented as a series of exercises; however, even an enthusiastic Y13 student will require a significant amount of
 guidance. As always, though, it is important that the student struggles with the material on their own!
 
+Section 2 (basic results) contains almost all the `required' material; section 3 (isometries) examines the role of transformations in geometry
+in a superficial way that tries to give some idea of the fundamental concepts which tie all of the different sub-fields of geometry together.
+Section 4 (cones) is a short description of the link between conic sections and cones, including an account of the `ice-cream proof' which shows
+the geometric meaning of the focii of the ellipse in relation to the cone which it is a slice of. Section 5 (orthogonal families of curves) gives
+a few notes on some beautiful geometry which relates different families of conics together, and section 6 (applications to physics) derives Kepler's
+laws of planetary motion using L3 calculus and the theory of conics.
+
+A short appendix is provided, which summarises the basic results.
+
 \subsection*{Prerequisites}
 These notes have perhaps the most `formal' prerequisites out of all my Y13 notes. I will assume results from trigonometry, linear systems, calculus, and
 even algebra. However, this does not mean that the full power of these subjects are used. The most important prerequisites are actually Y11 and Y12
@@ -131,7 +146,7 @@ revise a number of these results, and so the reader is directed there initially.
 \titleformat{\section}{\clearpage\titlerule[0.8pt]\vspace{0.5ex}\normalfont\Large\bfseries\centering}{Section~\thesection:}{1em}{}[{\titlerule[0.8pt]}]
 \let\oldsection\section
 \renewcommand\section{\clearpage\oldsection}
-\section{Introduction}
+\section{Introduction and Historical Remarks}
 The study of the conic sections (as with much of elementary plane and solid geometry) goes back to the ancient Greeks. It is
 thought that the first person to study the slices of a cone was Menaechmus, who lived on the Gallipoli Peninsula in around 350~BCE,
 in his solution of the Delian problem: the construction of a cube whose volume is twice that of a given cube. Anecdotally, it is to
@@ -211,13 +226,15 @@ paths in the shape of conic sections.
           for some real numbers $ a $ and $ b $. The new location of the origin is called the \df{centre} of the conic. Conclude that:
           \begin{enumerate}
             \item Both the ellipse and hyperbola are symmetric across both Cartesian axes.
-            \item For an ellipse, the values $ 2a $ and $ 2b $ are the lengths of the chords through the origin along the $ x$- and $ y$-axes respectively.
+            \item For an ellipse, the values $ 2a $ and $ 2b $ are the lengths of the chords through the origin along the $ x$- and $ y$-axes respectively. (The
+                  longer of these is called the \df{major axis}, and the shorter the \df{minor axis}.)
             \item The two branches of a hyperbola lie in opposite regions formed by the two lines (\df{asymptotes})
                     \begin{displaymath}
                       \left(\frac{x}{a} - \frac{y}{b} \right)\left(\frac{x}{a} + \frac{y}{b} \right) = 0.
                     \end{displaymath}
                     The value $ 2a $ is the length of the transverse axis of the hyperbola and the value $ 2b $ is the length of the conjugate
                     axis: the two dimensions of the rectangle whose diagonals are the asymptotes and which is bounded by the hyperbola.
+            \item Further, show that as $ x \to \pm\infty $, the branches of the hyperbola tend arbitrarily close to the asymptotes. (Hint: take limits.)
           \end{enumerate}
     \item If $ \varepsilon = 1 $, show that the conic equation for the parabola can be written in the form
           \begin{displaymath}
@@ -623,7 +640,124 @@ Finally, we have one rather pretty example.
 \end{exercise}
 
 \section{Applications to physics}
-\emph{To do: gravity laws.}
+We will now look briefly at some applications to the theory of gravity. Recall from stage 2 physics (or earlier)
+the following definitions and results:
+
+\begin{defn}\leavevmode
+  \begin{enumerate}
+    \item If an object's position $ x $ is given as a function of time $ t $, then $ v := \od{x}{t} $ is known as
+          the velocity of the object and $ a := \od{v}{t} = \od[2]{x}{t} $ is known as the acceleration of the object.
+    \item Newton's second law of motion: An object with mass $ m $, when acted upon by a force $ F $, undergoes an acceleration $ a = F/m $ in
+          the same direction as the force; the force does not affect the motion of the object in any other direction.
+    \item Newton's law of gravity: If two objects have masses $ M $ and $ m $ and their centres are a distance $ R $ apart, then they impose
+          on each other equal and opposite forces of magnitude $ \frac{GMm}{R^2} $, where $ G $ is a constant.
+    \item If an object of mass $ m $ is close to the surface of the earth, then the gravitational force upon it
+          due to the earth is $ mg $ towards the centre of the planet, where $ g \approx 9.81 $.
+  \end{enumerate}
+\end{defn}
+
+As a warmup, we will derive some simple results from stage 2 physics.
+
+\begin{exercise}[Projectile motion]
+  An object of small mass $ m $ flying through the air can often be modelled as a \df{projectile}: a particle
+  with constant speed $ v_x = \od{x}{t} $ along the ground, and constant acceleration $ a_y = mg $ pointing
+  towards the centre of the earth.
+
+  \begin{enumerate}
+    \item Show that the motion of the mass is a parabola.
+    \item If the object is launched skywards at an angle of $ \pi/4 $ to the horizontal, with a
+           velocity $ v = 10 $ along its direction of travel, how far along the ground will it travel?
+    \item With the conditions of problem (2), how is the focus of the parabola traced positioned?
+    \item At what angle must the object be launched for the focus to lie precisely on the ground?
+  \end{enumerate}
+\end{exercise}
+
+So, to a first approximation, objects follow a parabolic path due to gravity. We made two main simplifications here:
+\begin{enumerate}
+  \item We assumed that the force of gravity on the object was constant (in both magnitude and direction) regardless of position.
+  \item We assumed that the earth was fixed in space relative to the object.
+\end{enumerate}
+
+Because of the positioning of our object, these approximations are actually quite valid: the force of gravity
+is roughly perpendicular to the surface of the earth, the surface of the earth is approximately flat when you are close
+to it, and the object was far enough away from the centre of the earth for a small increase or decrease in height
+to have a negligible impact on the magnitude force felt by the object. Further, the earth is massive compared to our
+object and so would feel a negligible force due to it.
+
+We will now relax the first of these two approximations, and consider the new path followed.\footnote{For a detailed
+exposition of this derivation, see Simmons \S21.}
+\begin{exercise}[Kepler's laws]
+  In order to make our discussion more concrete, we will fix some large mass $ M $ at the origin $ O $, and we
+  will consider some smaller planet, located at $ \vec{r} $ with mass $ m $. The planet $ P $ will accelerate due to
+  the gravitational force exerted on it by $ O $; we want to study the motion of $ P $. It is convenient to use
+  polar coordinates.
+
+  \begin{enumerate}
+    \item Kepler's second law.
+      \begin{enumerate}
+        \item Suppose that $ \vec{u}_r = (\cos \theta, \sin \theta) $ is the unit vector in the direction of $ \vec{r} $, so $ \vec{r} = r\vec{u}_r $.
+              Let us define $ \vec{u}_\theta = (-\sin\theta, \cos \theta) $ to be the unit vector perpendicular to $ \vec{u}_r $ in the direction
+              of increasing $ \theta $. Show that $ \od{\vec{u}_r}{\theta} = \vec{u}_\theta $ and $ \od{\vec{u}_\theta}{\theta} = -\vec{u}_r $, and hence (using
+              the product and chain rules) deduce that:
+              \begin{gather*}
+                \vec{v} = \od{\vec{r}}{t} = r \od{\theta}{t} \vec{u}_\theta + \od{r}{t} \vec{u}_r\\
+                \vec{a} = \od{\vec{v}}{t} = \left( \od[2]{r}{t} - r \left(\od{\theta}{t}\right)^2 \right)\vec{u}_\theta.
+              \end{gather*}
+        \item Hence, using Newton's second law of motion and (a) above, we can write expressions for the components of the
+              force $ \vec{F} = F_\theta \vec{u}_\theta + F_r \vec{u}_r $ acting on an object of mass $ m $:
+              \begin{gather*}
+                F_\theta = m\left(r \od{\theta}{t} \vec{u}_\theta + \od{r}{t} \right)\\
+                F_r = m\left( \od[2]{r}{t} - r \left(\od{\theta}{t}\right)^2 \right).
+              \end{gather*}
+
+              Our force of gravity is a \df{central force}: it only acts in the direction of $ \vec{r} $. Hence the $ \theta$-component
+              of the force acting on the mass $ m $ is zero. Show that
+              \begin{displaymath}
+                r^2 \od{\theta}{t} = h
+              \end{displaymath}
+              for some constant $ h $.
+        \item Suppose $ A(t) $ gives the area `swept out' by the radius vector $ \vec{r} $ between some fixed time $ t_0 $
+              and the time $ t $. Using the fact that $ \od{A}{\theta} = \frac{r^2}{2} $ (since $ \dif{A} = \pi r^2 \cdot \frac{\dif{\theta}}{2\pi} $),
+              show that $ A(t_2) - A(t_1) = \frac{1}{2}h(t_2 - t_1) $. Conclude \df{Kepler's second law}: if $ P $ and $ Q $ are
+              planets with associated masses $ m_P $ and $ m_Q $, then over a time $ \Delta t $ the planets will sweep out equal
+              area.
+      \end{enumerate}
+    \item Kepler's first law.
+      \begin{enumerate}
+        \item Let $ z = 1/r $. Express $ \od{r}{t} $ and $ \od[2]{r}{t} $ in terms of $ \od{z}{\theta} $ and $ \od[2]{z}{\theta} $.
+        \item By Newton's law of gravity, $ F_r = -\frac{GMm}{r^2} $. Thus, we have that $ \od[2]{r}{t} - r \left(\od{\theta}{t}\right)^2 = -\frac{GM}{r^2} $.
+              Use the expression in (1b) above to show that $ \od[2]{r}{t} - \frac{h^2}{r^3} = -\frac{GM}{r^2} $, and then apply
+              the substitution in (a) to show that $ \od[2]{z}{\theta} + z = \frac{GM}{h^2} $.
+        \item Solve the differential equation in (b). (Hint: the general solution is $ z = A \sin \theta + B \cos \theta + \frac{GM}{h^2} $.)
+        \item Let us shift and rotate our coordinate axis such that $ \vec{r} $ is minimised when $ \theta = 0 $: in other words, we pick
+              our axis such that the mass $ m $ is closest to the origin at $ \theta = 0 $. Since $ 1/r $ is maximised when $ r $ is minimised,
+              we have that $ \eval{\od{z}{\theta}}_{\theta = 0} = 0 $ and $ \eval{\od[2]{z}{\theta}}_{\theta = 0} < 0 $. Show that $ A = 0 $
+              and $ B > 0 $.
+        \item Further, show that
+              \begin{displaymath}
+                r = \frac{h^2/GM}{1 + (Bh^2/GM)\cos\theta};
+              \end{displaymath}
+        \item Write $ e = Bh^2/GM $ in the equation of (e), and conclude \df{Kepler's second law} by comparison
+              with exercise 1P: the locus of $ P $ is a conic section with one focus $ O $.\footnote{It can be shown
+              that $ e = \sqrt{1 + E \frac{2h^2}{G^2M^2m}} $, where $ E $ is the potential energy associated with the mass $ m $; so
+              the particular conic traced depends on the energy associated with the mass $ m $. Thus the planets in
+              the solar system, which have negative energy (they are trapped by the sun, and work must be done to them
+              to pull them away), trace elliptical orbits; while bodies like comets trace parabolic and hyperbolic trajectories.}
+      \end{enumerate}
+    \item Kepler's third law.
+      \begin{enumerate}
+        \item Suppose our mass traces an elliptical orbit, such that $ Bh^2/GM < 1 $ in the equation $ r = \frac{h^2/GM}{1 + (Bh^2/GM)\cos\theta} $.
+              Let us write this in rectangular form as $ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $. Using results from exercises 1 and 2 (collected
+              in the appendix), show that $ a = \frac{h^2a^2}{GMb^2} $ and thus that $ b^2 = \frac{h^2a}{GM} $. (Hint: $ a $, the semi-major axis
+              length, is half the sum of the maximum and minimum values for $ r $.)
+        \item If $ T $ is the period of revolution of our mass $ m $, use Kepler's second law (in particular the formula derived in (1c)) to show
+              that $ \pi ab = \frac{hT}{2} $ and thus, using (a), that $ T^2 = \left(\frac{4\pi^2}{GM}\right)a^3 $. Noting that this is independent
+              of the mass $ m $, conclude \df{Kepler's third law}: the square of the period of revolution of any planet is proportional
+              to the cube of its average distance from the sun, where the constant of proportionality depends only on the mass $ M $ and
+              some constants of nature.
+      \end{enumerate}
+  \end{enumerate}
+\end{exercise}
 
 \section{Further reading}
 See references in text, as well as:
@@ -637,3 +771,4 @@ See references in text, as well as:
 \end{itemize}
 
 \end{document}
+
