@@ -221,10 +221,23 @@ If you're looking for 328, see also [the section on number theory](#number-theor
    via counting bijections and surjections and so forth; and G&W develops graph theory in a much more abstract way first. (511.6 A28Y) and (511.6 G77)
 
 ### Analysis (332/333), Topology (353?, 750)
- * Kenneth R. Davidson and Allan P. Donsig, _Real Analysis and Applications_. The analysis part is nothing special but I liked the applications chapters.
-   Like Jones & Jones above, this is another new Springer book with really annoying typesetting. (First edition: 515 D25; I have the second edition, which is
-   supposed to be a major revision)
- * Walter Rudin, _Principles of Mathematical Analysis_. No comment needed - I prefer L&S for multivariable analysis, though. (515.8 R91)
+ * Kenneth R. Davidson and Allan P. Donsig, _Real Analysis and Applications_. For an introduction to real analysis for someone who understands calculus
+   at the level of, say, 150 but not 250+ this might be a better choice than Rudin - it's probably comparable to whatever text is recommended for 332, I
+   find it incredibly readable, it has a very nice tone, plenty of interesting exercises and examples, and the bits which depend on linear algebra are done
+   a lot better than Rudin (but in less generality). I also like the second half (on applications).
+
+   Let me compare it directly with Rudin: Rudin is shorter, denser, and deeper; D&D is longer, friendlier, more detailed, and covers slightly less material.
+
+   One major complaint: there is no explicit construction of the real numbers. (They try to explain a construction via decimal expansions in a very
+   handwavy way; there is also almost an outline of a construction via Cauchy sequences in exercise 2.8.L; I know that Tao does this same construction
+   in the same kind of detail as the rest of D&D, so it might be an idea to look there for this material. Or in Rudin, or Landau.)
+
+   Like Jones & Jones above, this is another new Springer book with really annoying typesetting, but to a lesser degree. (First edition: 515 D25; I have
+   the second edition, which is supposed to be a major revision)
+ * Walter Rudin, _Principles of Mathematical Analysis_. No comment needed - I prefer L&S for multivariable analysis, though. (I did try to work through
+   chapter 9, and despite knowing what he was trying to do at every point - it's just material from 253 - it's incredibly clunkly and awful. Belive me,
+   I thought the Chicago bibliography was exaggerating on this point, but it turns out that they were entirely correct.) It is by far the cleanest exposition
+   of metric space theory on this list. (515.8 R91)
  * A.N. Kolmogorov and S.V. Fomin, _Introductory Real Analysis_. Higher level than Rudin, covers Lebesgue integration in a much nicer way in my opinion. Includes
    a semi-detailed chapter on set theory from the point of view of analysis which is quite interesting for a different perspective. Lots of topology and
    metric space theory as well, with an abundance of linear algebra. (515.8 K81eYs)
