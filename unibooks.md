@@ -54,16 +54,16 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
 **Texts used by all 8 NZ universities for first year**
 (A) indicates courses are mainly service courses for the sciences or engineering, (P) indicates pure mathematics focus available, (C) indicates compsci and/or discrete focus, (X) indicates mathematics is not offered as a subject. *DO NOT USE THIS PAGE AS COURSE ADVICE.*
 
-| University | | Courses |
-| --- | --- | --- | --- | --- |
-| Auckland | (P) | MATHS 150, Advancing Mathematics 1: Lecture notes, with Stewart and Poole recommended |
-| AUT | (A) | MATH 501, Differential and Integral Calculus: Stewart; MATH 502, Algebra and Discrete Mathematics: Ross and Wright(?), Anton |
+| University |     | Courses |
+| ---        | --- | --- |
+| Auckland   | (P) | MATHS 150, Advancing Mathematics 1: Lecture notes, with Stewart and Poole recommended |
+| AUT        | (A) | MATH 501, Differential and Integral Calculus: Stewart; MATH 502, Algebra and Discrete Mathematics: Ross and Wright(?), Anton |
 | Canterbury | (A) | MATH 102/103/199, Mathematics 1A/B/AIMS: Anton recommended |
-| Lincoln | (X) | |
-| Massey | (A) | 160.101, Calculus I: Stewart; 160.102, Linear Mathematics: Poole |
-| Otago | (A) | MATH 160/170, Mathematics 1/2: Lecture notes, Stewart recommended for calculus section |
-| Victoria | (C) | MATH 141, Calculus 1A: Lecture notes, with Anton recommended; MATH 151, Algebra: Easdown(?) recommended |
-| Waikato | (A) | MATHS 101, Intro. to Calculus: Schaum’s Outlines 'Calculus' (!); MATHS 102, Intro. to Algebra: Anton recommended |
+| Lincoln    | (X) | |
+| Massey     | (A) | 160.101, Calculus I: Stewart; 160.102, Linear Mathematics: Poole |
+| Otago      | (A) | MATH 160/170, Mathematics 1/2: Lecture notes, Stewart recommended for calculus section |
+| Victoria   | (C) | MATH 141, Calculus 1A: Lecture notes, with Anton recommended; MATH 151, Algebra: Easdown(?) recommended |
+| Waikato    | (A) | MATHS 101, Intro. to Calculus: Schaum’s Outlines 'Calculus' (!); MATHS 102, Intro. to Algebra: Anton recommended |
 
 ### Calculus
 
