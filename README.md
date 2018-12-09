@@ -36,11 +36,13 @@ My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf)
  17. (2.3) 		Number Sequences and Fractals
  18. (2.5) 		Graphs and Networks
 
-I am not currently planning any stats notes.
+I may be adding a couple of probability notes if I tutor L2 again next year; I may also re-add my old integration notes as an extension
+exercise.
 
 ### Level Three and Scholarship Calculus
-I am currently in the process of reworking and reorganising my L3 maths notes; the final plan will be to have the following
-sets of notes, broadly in the given logical order and aligned with the L2 notes above:
+I have almost completed the process of reworking and reorganising my L3/Scholarship maths notes; I have written the following sets of notes, designed
+to be used broadly in the given logical order and aligned with the L2 notes above.
+
 1. _Down the River: Foundations for Scholarship_. a [set of notes](L3%20Maths/Foundations/foundations.pdf) covering basic set theory, combinatorics,
    and number theory, with proof writing and induction.
 2. Linear programming (91574) and simultaneous equations (91587). a [set of notes](L3%20Maths/Linear/linear.pdf) from a proof-based
@@ -51,12 +53,17 @@ sets of notes, broadly in the given logical order and aligned with the L2 notes 
    with material ranging in difficulty from achieved to outstanding scholarship.
 5. Algebra (91577). a set of notes entitled [_Solutions_](L3%20Maths/Algebra/solutions.pdf) designed for self-study for scholarship students
    (with [full answers to exercises](L3%20Maths/Algebra/solutions2.pdf)). There are a number of sections for further reading beyond the required
-   material.
-6. Conic sections (91573). a [set of notes](L3%20Maths/Geometry/geometry.pdf) in the form of a sequence of exercises. This is currently a WIP.
+   material, and a great deal of geometry.
+6. Conic sections (91573). a [set of notes](L3%20Maths/Geometry/geometry.pdf) in the form of a sequence of exercises. This is currently a work
+   in progress.
 
 One should note that the majority of my notes are at a slightly higher level than is strictly required. As such, students should be
 guided through skipping or only lightly touching some sections (for example, the functional definition of the trig functions in my
 trig notes is only of use to students that are very comfortable with the geometric definition of the functions from L2 or earlier).
+
+The conic sections notes in particular require a significant amount of mathematical sophistication on the part of the student, and
+as such I would probably only use them for scholarship students. (With the right mentoring, L3 students could probably profit from
+them as well; if anyone does this, I would be intrigued to hear the results.)
 
 ## Physics
 ### Level Two

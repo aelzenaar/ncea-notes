@@ -94,7 +94,7 @@ represent any of the listed universities.*
    complex analysis chapters at the end, but beyond that there are no real faults with this book. (The University of Toronto is one university that uses this
    book for their flagship first-year course, which has a reputation for being a trial-by-fire for new mathematics students.) One final bonus: it is cheap (well,
    not really, but cheaper than the shiny calculus books that the book shop sells) and concise (again, it is a doorstop, but much more concise than the texts
-   that try to include absolutely everything from biology examples to Stoke's theorem). (515 S76)
+   that try to include absolutely everything from biology examples to Stoke's theorem). ([Some comments](http://www.math.toronto.edu/~drorbn/classes/0405/157AnalysisI/SpivakComments/SpivakComments.html)) (515 S76)
 
 ### Linear Algebra
 
@@ -278,7 +278,7 @@ To do: do a course in complex analysis.
    because it's a calculus book... (515.9 S12)
  * Tristan Needham, _Visual Complex Analysis_. Now this is actually a complex analysis book rather than a calculus book. It is very geometric. I quite
    like it. (I have no strong opinions on the books in this section, but this is perhaps the book I have the least not strong opinion about.) There is
-   also quite a lot of physical motivation, which is very good. (515.9 N37)
+   also quite a lot of physical motivation, which is very good. Issue: I'm not entirely sure there are any proofs... (515.9 N37)
 
 ### Geometry (353?)
 See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326) above.
