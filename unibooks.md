@@ -237,14 +237,15 @@ If you're looking for 328, see also [the section on number theory](#number-theor
  * Walter Rudin, _Principles of Mathematical Analysis_. No comment needed - I prefer L&S for multivariable analysis, though. (I did try to work through
    chapter 9, and despite knowing what he was trying to do at every point - it's just material from 253 - it's incredibly clunkly and awful. Belive me,
    I thought the Chicago bibliography was exaggerating on this point, but it turns out that they were entirely correct.) It is by far the cleanest exposition
-   of metric space theory on this list. (515.8 R91)
+   of metric space theory on this list. ([Errata and notes](https://math.berkeley.edu/~gbergman/ug.hndts/#Rudin)) (515.8 R91)
  * A.N. Kolmogorov and S.V. Fomin, _Introductory Real Analysis_. Higher level than Rudin, covers Lebesgue integration in a much nicer way in my opinion. Includes
    a semi-detailed chapter on set theory from the point of view of analysis which is quite interesting for a different perspective. Lots of topology and
    metric space theory as well, with an abundance of linear algebra. (515.8 K81eYs)
  * James R. Munkres, _Topology_. This is the standard topology book, it's very clear with lots of examples and pictures. I didn't like the section on
-   metric spaces, though - use Rudin here, it's a good supplement. (514.3 M96)
- * Klaus Jänich, _Topology_. An easier introduction to topology which isn't rigorous enough for a third- or fourth-year course, but it does have
-   some very nice pictures. I liked it in first year when I wanted to learn more about topology. (514.3 J22Y)
+   metric spaces, though - use Rudin here, it's a good supplement. ([Errata](http://drorbn.net/index.php?title=10-327/Errata_to_Munkres%27_Book)) (514.3 M96)
+ * Klaus Jänich, _Topology_. An easier introduction to topology which isn't rigorous enough for a third- or fourth-year course (and probably not appropriate
+   for anyone that's actually done any analysis at all yet, it's very handwavy), but it does have some very nice pictures. I liked it in first year when I
+   wanted to learn more about topology. (514.3 J22Y)
 
 ### Geometry (353?)
 See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326) above.
@@ -262,7 +263,8 @@ See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geo
  * Jeffrey R. Weeks, _The Shape of Space_. This is supposed to "fill the gap" between the simple geometric examples of topology (Klein bottles, tori) and
    the "sophisticated mathematics of upper-level courses". I don't think it does this job very well, but it is a very nice book of geometry that might even
    be accessible to the layperson. What I would like to see is a book like this that makes explicit the actual links with point-set topology. (514.3 W39)
-
+ * Marta Sved, _Journey into Geometries_. This is a very strange book which motivates non-Euclidean geometry (hyperbolic geometry in particular) with
+   the characters of Alice in Wonderland. It's well worth the read. (516.0076 S96)
 
 ### Complex calculus and analysis (340, 341?)
 To do: do a course in complex analysis.
