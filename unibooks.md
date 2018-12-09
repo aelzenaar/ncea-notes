@@ -25,13 +25,13 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
     * [Set Theory (255)](#set-theory-255)
     * [Differential Equations (260)](#differential-equations-260)
  * [Stage III](#stage-iii)
+    * [Mathematical logic (315)](#mathematical-logic-315)
     * [Algebra (320)](#algebra-320)
     * [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)
     * [Analysis (332/333), Topology (353?, 750)](#analysis-332333-topology-353-750)
-    * [Geometry (353?)](#geometry-353)
-    * [Complex calculus and analysis (340, 341?)](#complex-calculus-and-analysis-340-341)
-    * [Mathematical logic (315)](#mathematical-logic-315)
     * [Algebraic geometry (334)](#algebraic-geometry-334)
+    * [Complex calculus and analysis (340, 341?)](#complex-calculus-and-analysis-340-341)
+    * [Geometry (353?)](#geometry-353)
  * [Books I want to get around to reading and/or writing about here](#books-i-want-to-get-around-to-reading-andor-writing-about-here)
 
 ## Culture
@@ -53,14 +53,17 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
 
 **Texts used by all 8 NZ universities for first year**
 (A) indicates courses are mainly service courses for the sciences or engineering, (P) indicates pure mathematics focus available, (C) indicates compsci and/or discrete focus, (X) indicates mathematics is not offered as a subject. *DO NOT USE THIS PAGE AS COURSE ADVICE.*
- * Auckland (P), (MATHS 150, Advancing Mathematics 1): Lecture notes, with Stewart and Poole recommended
- * AUT (A), (MATH 501, Differential and Integral Calculus): Stewart; (MATH 501, Algebra and Discrete Mathematics): Ross and Wright(?), Anton
- * Canterbury (A), (MATH 102/3, Mathematics 1A/B): Anton recommended
- * Lincoln (X)
- * Massey (A), (160.101, Calculus I): Stewart; (160.102, Linear Mathematics): Poole
- * Otago (A), (160/70, Mathematics 1/2): Lecture notes, Stewart recommended for calculus sectioon
- * Victoria (C), (MATH 141, Calculus 1A): Lecture notes, with Anton recommended; (MATH 151, Algebra): Easdown(?) recommended
- * Waikato (A), (MATHS 101, Intro. to Calculus): Schaum’s Outlines 'Calculus' (!); (MATHS 102, Intro. to Algebra): Anton recommended
+
+| University | | Courses |
+|---|---|---|---|---|
+| Auckland | (P) | MATHS 150, Advancing Mathematics 1: Lecture notes, with Stewart and Poole recommended |
+| AUT | (A) | MATH 501, Differential and Integral Calculus: Stewart; MATH 502, Algebra and Discrete Mathematics: Ross and Wright(?), Anton |
+| Canterbury | (A) | MATH 102/103/199, Mathematics 1A/B/AIMS: Anton recommended |
+| Lincoln | (X) | |
+| Massey | (A) | 160.101, Calculus I: Stewart; 160.102, Linear Mathematics: Poole |
+| Otago | (A) | MATH 160/170, Mathematics 1/2: Lecture notes, Stewart recommended for calculus section |
+| Victoria | (C) | MATH 141, Calculus 1A: Lecture notes, with Anton recommended; MATH 151, Algebra: Easdown(?) recommended |
+| Waikato | (A) | MATHS 101, Intro. to Calculus: Schaum’s Outlines 'Calculus' (!); MATHS 102, Intro. to Algebra: Anton recommended |
 
 ### Calculus
 
@@ -101,7 +104,9 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
  * Howard Anton: _Elementary Linear Algebra_. Isomorphic to Venit & Bishop. (512.5 A63)
  * Gilbert Strang: _Linear Algebra and its Applications_. I like this book, it would probably be (read: actually is) the book I would recommend someone use
    during a stage I course. Lots of intuition, so you can move on to something more rigorous like Halmos for stage II. He does somewhat fetishise the dimension
-   theorem for a linear transformation (he calls it the 'fundamental theorem of linear algebra') but it's not enough to ruin the book. (512.5 S89)
+   theorem for a linear transformation (he calls it the 'fundamental theorem of linear algebra') but it's not enough to ruin the book. It's probably very
+   good for compsci students, there's a lot of algorithm stuff and optimisation and efficiency stuff in here (my edition gives all the computer code in FORTRAN
+   and some flavour of BASIC, but it's an old edition). (512.5 S89)
 
 ## Stage II
 
@@ -118,18 +123,21 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
 
 My favourite multi-dimensional calculus book, is, in fact:
 
- * Lynn Loomis and Shlomo Sternberg, _Advanced Calculus_. This book started off as notes for the legendary Math 55 at Harvard; it starts off with a recap
-   of linear algebra, and ends up around 500 pages later with a very nice approach to differential forms. This is my favourite calculus text of all time,
-   but it is probably a little too much for students in first year! (Or even students who have completed 253, to be honest... perhaps 255 is enough
-   preparation? The preface recommends baby Spivak as prep.) Highlights include a rigorous (and clear) treatment of infinitesimal functions and differentials,
-   and a final chapter on applications to theoretical physics. The exposition tries to explain a great deal of the 'philosophy of doing mathematics',
-   which I quite like - see, for example, the chapter on uniformity and compactness. (515.8 L86)
+ * Lynn Loomis and Shlomo Sternberg, _Advanced Calculus_. This book started off as notes for the legendary Math 55 at Harvard (a first year course!);
+   it starts off with a recap of linear algebra, and ends up around 500 pages later with a very nice approach to differential forms. This is my
+   favourite calculus text of all time, but it is probably a little too much for students in first year! (Or even students who have completed 253,
+   to be honest... perhaps 255 is enough preparation? The preface recommends baby Spivak as prep.) Highlights include a rigorous (and clear) treatment
+   of infinitesimal functions and differentials, and a final chapter on applications to theoretical physics. The exposition tries to explain a great
+   deal of the 'philosophy of doing mathematics', which I quite like - see, for example, the chapter on uniformity and compactness. (515.8 L86)
 
 ### Linear Algebra (253/255)
+Note also that Artin's _Algebra_ (see 320 below) is also a very nice introduction to linear algebra for someone who understands the computational
+stuff in first semester linear algebra. The material in 250/253/255 is covered in chapters 1, 3, 4, and 7.
+
  * Paul Halmos, _Finite-Dimensional Vector Spaces_. This book covers the same content as 253 but in much greater detail. Like every other Paul Halmos book, it
    is incredibly well-written; just take care not to get bogged down by the sections on multi-linear algebra and determinants. The exercises are actually quite
    similar to those that you should be solving for 253 anyway, just take note of his preface (some exercises are introduced before the material that makes them
-   easy). (515.5 H19f)
+   easy). Like _Naive Set Theory_ below, the theorems themselves are the real exercises. (515.5 H19f)
  * Sheldon Axler, _Linear Algebra Done Right_. On my list to read. Supposed to be very good. (512.5 A96)
 
 ### "Proofs" (255)
@@ -149,8 +157,8 @@ My favourite multi-dimensional calculus book, is, in fact:
    problems in here, but the typesetting really annoys me. Don't let the easy nature of the first few chapters fool you. For chapter 5, our lecturer
    gave all the proofs via ring theory; if you know some algebra, write down these proofs yourself (they follow from the fact that a cyclic ring can be
    decomposed into a product of cyclic rings of prime power order; see, for example, I&R) and compare with the ones in here. (512.7 J77)
- * Edmund Landau, _Foundations of Analysis_. This book is a work of art. It makes excellent bathroom reading, despite what the Chicago bibliography
-   would have you believe. (512 L253Y)
+ * Edmund Landau, _Foundations of Analysis_. Construction of the complex numbers and their properties from the Peano axioms. This book is a work of
+   art. It makes excellent bathroom reading, despite what the Chicago bibliography would have you believe. (512 L253Y)
 
 ### Set Theory (255)
  * Paul Halmos, _Naive Set Theory_. This is *the* set theory book that you should read. Not many exercises that are marked as such, but the proofs are
@@ -166,6 +174,9 @@ To add in 2019.
 
 ## Stage III
 
+### Mathematical logic (315)
+To add in 2019.
+
 ### Algebra (320+)
 If you're looking for 328, see also [the section on number theory](#number-theory-255).
  * Joseph Gallian, _Contemporary Abstract Algebra_. This is the book the course is based on. Jianbei's notes are generally a condensed version of Gallian,
@@ -177,7 +188,9 @@ If you're looking for 328, see also [the section on number theory](#number-theor
    example). Also very cheap. Buy this book. (512 P65)
  * Nathan Carter, _Visual Group Theory_. Don't get this book expecting a good textbook: it's kind of rubbish for learning algebra out of. Get this book for the
    diagrams and the intuition. (512.2 C325)
- * M. A. Armstrong, _Groups and Symmetry_. Another very geometric book, especially if you liked the algebraic parts of 326. (512.2 A73)
+ * M. A. Armstrong, _Groups and Symmetry_. Another very geometric book, especially if you liked the algebraic parts of 326. It's similar in philosophy
+   to Jänich's topology book below, in that it's less rigorous than one would really like for third year. I have actually used some parts for scholarship
+   calculus students in the past. (512.2 A73)
  * Michael Artin, _Algebra_. **This is the best introductory algebra book ever written.** Lots of geometry (e.g. he classifies all of the motions of the plane).
    Focuses heavily on linear algebra. Maybe a little light on the proofs (not that he's not rigorous, but make sure you do the exercises, or you'll miss out
    on stuff). Highlights include a chapter on Galois theory (first edition only) and a chapter on group representations. (512 A79)
@@ -247,6 +260,22 @@ If you're looking for 328, see also [the section on number theory](#number-theor
    for anyone that's actually done any analysis at all yet, it's very handwavy), but it does have some very nice pictures. I liked it in first year when I
    wanted to learn more about topology. (514.3 J22Y)
 
+### Algebraic geometry (334)
+To add in 2019.
+
+### Complex calculus and analysis (340, 341?)
+To do: do a course in complex analysis.
+ * Stephen D. Fisher, _Complex Variables_. This is the book we used in 2018 for complex calculus, I found it a little weird because it tries to be both
+   an accessible calculus book and a book with proofs. I mean, that's not a bad thing, I suppose. For what it is, it's OK, and the examples are very
+   geometric, which is nice, but I don't think it has enough personality. I don't know of any *better* books in this regard though, and it's a Dover
+   book so it's very cheap. I do really like the sections on the geometry of analytic functions (chapter 3). (515.93 F53)
+ * E.B. Saff and A.D. Snider, _Fundamentals of Complex Analysis for Mathematics, Sci...etc._ I own this book, it's basically a calculus book, so if
+   you like Stewart or Anton you'll probably like this. I don't hate it, and I found it useful for complex calculus, if a little dry. It's a bit expensive,
+   because it's a calculus book... (515.9 S12)
+ * Tristan Needham, _Visual Complex Analysis_. Now this is actually a complex analysis book rather than a calculus book. It is very geometric. I quite
+   like it. (I have no strong opinions on the books in this section, but this is perhaps the book I have the least not strong opinion about.) There is
+   also quite a lot of physical motivation, which is very good. (515.9 N37)
+
 ### Geometry (353?)
 See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326) above.
  * Alfred S. Posamentier and Charles S. Salkind, _Challenging Problems in Geometry_. Buy this book and do all the problems. Difficulty from school level upwards. (*)
@@ -265,25 +294,6 @@ See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geo
    be accessible to the layperson. What I would like to see is a book like this that makes explicit the actual links with point-set topology. (514.3 W39)
  * Marta Sved, _Journey into Geometries_. This is a very strange book which motivates non-Euclidean geometry (hyperbolic geometry in particular) with
    the characters of Alice in Wonderland. It's well worth the read. (516.0076 S96)
-
-### Complex calculus and analysis (340, 341?)
-To do: do a course in complex analysis.
- * Stephen D. Fisher, _Complex Variables_. This is the book we used in 2018 for complex calculus, I found it a little weird because it tries to be both
-   an accessible calculus book and a book with proofs. I mean, that's not a bad thing, I suppose. For what it is, it's OK, and the examples are very
-   geometric, which is nice, but I don't think it has enough personality. I don't know of any *better* books in this regard though, and it's a Dover
-   book so it's very cheap. (515.93 F53)
- * E.B. Saff and A.D. Snider, _Fundamentals of Complex Analysis for Mathematics, Sci...etc._ I own this book, it's basically a calculus book, so if
-   you like Stewart or Anton you'll probably like this. I don't hate it, and I found it useful for complex calculus.
-   It's a bit expensive though, because it's a calculus book... (515.9 S12)
- * Tristan Needham, _Visual Complex Analysis_. Now this is actually a complex analysis book rather than a calculus book. It is very geometric. I quite
-   like it. (I have no strong opinions on the books in this section, but this is perhaps the book I have the least not strong opinion about.) There is
-   also quite a lot of physical motivation, which is very good. (515.9 N37)
-
-### Mathematical logic (315)
-To add in 2019.
-
-### Algebraic geometry (334)
-To add in 2019.
 
 ## Books I want to get around to reading and/or writing about here
  * George F. Simmons, _Differential Equations with Applications and Historical Notes_.
