@@ -51,18 +51,21 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
 
 ## Stage I: MATHS 150/250
 
-**Texts used by all 8 NZ universities for first year**
-(A) indicates courses are mainly service courses for the sciences or engineering, (P) indicates pure mathematics focus available, (C) indicates compsci and/or discrete focus, (X) indicates mathematics is not offered as a subject. *DO NOT USE THIS PAGE AS COURSE ADVICE.*
+**Texts used by all 8 NZ universities for first year.**
+(A) indicates courses are mainly service courses for the sciences or engineering, (P) indicates pure mathematics focus available, (C) indicates compsci
+and/or discrete mathematics focus, (X) indicates mathematics is not offered as a subject. *Do not use this page as course or enrollment advice. I do not
+represent any of the listed universities.*
 
 | University |     | Courses |
 | ---        | --- | --- |
-| Auckland   | (P) | MATHS 150, Advancing Mathematics 1: Lecture notes, with Stewart and Poole recommended |
+| Auckland (to 2018)  | (P) | MATHS 150, Advancing Mathematics 1: Lecture notes, with Stewart and Poole recommended |
+| Auckland (from 2019)   | (P) | MATHS 120, Algebra: Unknown. MATHS 130, Calculus: Unknown. MATHS 162, Computational Mathematics: Coursebook (from UBS). |
 | AUT        | (A) | MATH 501, Differential and Integral Calculus: Stewart; MATH 502, Algebra and Discrete Mathematics: Ross and Wright(?), Anton |
 | Canterbury | (A) | MATH 102/103/199, Mathematics 1A/B/AIMS: Anton recommended |
 | Lincoln    | (X) | |
 | Massey     | (A) | 160.101, Calculus I: Stewart; 160.102, Linear Mathematics: Poole |
 | Otago      | (A) | MATH 160/170, Mathematics 1/2: Lecture notes, Stewart recommended for calculus section |
-| Victoria   | (C) | MATH 141, Calculus 1A: Lecture notes, with Anton recommended; MATH 151, Algebra: Easdown(?) recommended |
+| Victoria   | (C) | MATH 141, Calculus 1A: Lecture notes, with Anton recommended; MATH 151, Algebra: Easdown(?) recommended; MATH 161, Discrete Mathematics and Logic: No recommended text. |
 | Waikato    | (A) | MATHS 101, Intro. to Calculus: Schaum’s Outlines 'Calculus' (!); MATHS 102, Intro. to Algebra: Anton recommended |
 
 ### Calculus
@@ -208,6 +211,7 @@ If you're looking for 328, see also [the section on number theory](#number-theor
    Goes via a more classico-historical route, using proofs that Galois would have understood. (512.32 E26)-->
 
 ### Combinatorics and Finite Geometry (326)
+I don't know of any books on the simple voting games topic in 326.
  * Miklos Bona, _A Walk Through Combinatorics_. This is the only book you need for 326; it covers everything (bits with more detail than needed, bits with slightly
    not enough). Cute book, but a little pricey. Version in the library is an older edition without design theory. Perhaps a bit chatty and slow to get started, but
    does cover a lot of random topics that should be of interest both to compscies and mathsies. (511.6 B697)
@@ -230,7 +234,7 @@ If you're looking for 328, see also [the section on number theory](#number-theor
    you should read it is because it is amazing. Hartshorne follows Euclid, putting him on a firm axiomatic foundation. The capstone of the book is a discussion
    of polyhedra. You should have a little algebra for the last stretch, but the rest should actually be accessible to a high-school student! (516 H33)
  * Martin Aigner, _Combinatorial Theory_; Jack Graver and Mark Watkins, _Combinatorics with emphasis on the theory of graphs_. These books are far too difficult
-   for 326, but I found the more abstract perspectives in the first few chapter rather enlightning; Aigner, for example, develops the theory of counting entirely
+   for 326, but I found the more abstract perspectives in the first few chapters rather enlightening; Aigner, for example, develops the theory of counting entirely
    via counting bijections and surjections and so forth; and G&W develops graph theory in a much more abstract way first. (511.6 A28Y) and (511.6 G77)
 
 ### Analysis (332/333), Topology (353?, 750)
@@ -305,9 +309,10 @@ See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geo
 
 ## My favourite books
  * Artin, _Algebra_
- * Rudin, _Principles of Mathematical Analysis_
- * Loomis and Sternberg, _Advanced Calculus_
- * Wallis, _Combinatorial Designs_
  * Berger, _Geometry_
  * Halmos, _Naive Set Theory_ and _Finite-Dimensional Vector Spaces_
+ * Hartshorne, _Geometry: Euclid and Beyond_
  * Landau, _Foundations of Analysis_
+ * Loomis and Sternberg, _Advanced Calculus_
+ * Rudin, _Principles of Mathematical Analysis_
+ * Wallis, _Combinatorial Designs_
