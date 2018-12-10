@@ -2,7 +2,9 @@
 \begin{document}
 
 \mainHeaderDiff{11}{Related Rates of Change}
-Moving on from optimisation and shape, we will now study the use of the derivative in modelling rates of change.
+Our goal next week is to begin to look at more types of curves. In order to do this, there is a bit of machinery that we need
+to become confident with; as well as looking at the inverses of functions (which we did last week), we need to learn more about
+how compositions of functions cooperate with derivatives.
 
 We can use the chain rule to relate rates of change together --- for example, the area of a circle is given by $ A = \pi r^2 $
 and so the rate of change of area with respect to radius $ \od{A}{r} = 2\pi r $; but if $ r $ varies with respect to time then
@@ -17,9 +19,8 @@ We can also apply the inverse function rule for differentiation, which tells us 
   \od{x}{y} = \frac{1}{\od{y}{x}}. \tag{inverse function rule}
 \end{equation}
 
-Although these two operations allow us to rearrange equations as if $ \od{y}{x} $ were a fraction, it is
-fairly important to remember that it is not a fraction and that whenever we treat it like one then it should
-be possible to justify that step more rigorously.
+These two operations allow us to rearrange equations as if $ \od{y}{x} $ were a fraction. There isn't much of a problem
+if you do think of it in this way, as long as you're careful.
 
 \begin{ex}
   A ladder \SI{5}{\metre} long rests against a vertical wall. If the bottom of the ladder slides away
@@ -50,8 +51,6 @@ be possible to justify that step more rigorously.
 
 \subsection*{Questions}
 \begin{questions}
-  \fullwidth{For each of the following situations: (a) identify the quantities given in the problem; (b) identify the unknown;
-            (c) draw a diagram; (d) write an equation relating the given quantities to an equation; (e) solve the problem.}
   \questioM Each side of a square is increasing at a rate of \SI{6}{\centi\metre\per\second}. At what rate is the
             area of the square increasing when the area of the square is \SI{16}{\centi\metre\squared}?
   \questioM Gas is being forced into a spherical balloon at a rate of \SI{400}{\centi\metre\cubed\per\minute}. How fast

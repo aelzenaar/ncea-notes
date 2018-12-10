@@ -12,7 +12,8 @@ Since integration is (in some sense) the inverse of differentiation, we can writ
   \rint f'(g(x)) g'(x) \dif{x} = f(g(x)) + C.
 \end{displaymath}
 
-For a mnemonic, we can let $ u = g(x) $. Then $ \dif{u} = g'(x) \dif{x} $\footnote{This rearrangement is not rigorous, but it works.}
+For a mnemonic, we can let $ u = g(x) $. Then $ \dif{u} = g'(x) \dif{x} $\footnote{again, this is just a mnemonic: it \emph{is} possible to
+make $ \dif{x} $ meaningful (it is what is known as a \emph{differential form}), but all we are really doing is applying the chain rule.}
 and so, by the rule we just wrote down, we have
 \begin{displaymath}
   \rint f'(g(x)) g'(x) \dif{x} = \rint f'(u) \dif{u} = f(u) + C = f(g(x)) + C.

@@ -65,6 +65,9 @@ The conic sections notes in particular require a significant amount of mathemati
 as such I would probably only use them for scholarship students. (With the right mentoring, L3 students could probably profit from
 them as well; if anyone does this, I would be intrigued to hear the results.)
 
+**To do.** Either fix or totally remove the `readings' from the L3 calculus homeworks, I'm less and less happy with them over time. Remove
+the scholarship exam(s) and add a longer list of suggested exercises instead.
+
 ## Physics
 ### Level Two
  * Waves (91170), mechanics (91171), and electromagnetism (91172): [full set of notes](L2%20Physics/externals.pdf), including many diagrams and links to youtube videos,
