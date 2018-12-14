@@ -504,6 +504,8 @@ Note: primitive roots of unity are not examinable at L3, but may show up for sch
       \part Describe the locus of all complex numbers $ z $ such that $ \abs{z} = 2(1 + \mathfrak{Re}(z) + \mathfrak{Im}(z)) $.
       \part Show that $ \zeta = \cis(6\pi/283) $ is a \textbf{primitive} 283rd root of unity. (Hint: 283 is prime.)
     \end{parts}
+  \question Show that the function $ T(z) = \frac{1}{2}(z + \frac{1}{2}) $ maps circles centred at the origin to
+            confocal ellipses. (Hint: use polar form.)
 \end{questions}
 
 \section*{Scholarship}
@@ -533,7 +535,7 @@ Note: primitive roots of unity are not examinable at L3, but may show up for sch
     \end{parts}
   \question
     \begin{parts}
-      \part[10] Consider the cubic equation $ p(x) = x^3 + px + q $ (where $ p $ and $ q $ are real).
+      \part Consider the cubic equation $ p(x) = x^3 + px + q $ (where $ p $ and $ q $ are real).
         \begin{subparts}
           \subpart Let the three roots of $ p(x) $ be $ \alpha $, $ \beta $, and $ \gamma $. Show that
                    \begin{displaymath}
@@ -619,6 +621,39 @@ Note: primitive roots of unity are not examinable at L3, but may show up for sch
       \part Find a function $ f $ such that $ f'(-1) = \frac{1}{2} $, $ f'(0) = 0 $, and $ f''(x) > 0 $ for all $ x $, or prove that such a function
             cannot exist.
     \end{parts}
+  \question The formula for integration by parts is $ \rint f'(x)g(x) \dif{x} = f(x) g(x) - \rint f(x) g'(x) \dif{x} $.
+    \begin{parts}
+      \part Compute $ \rint \ln x \dif{x} $. [\emph{Hint: apply integration by parts to $ 1 \cdot \ln x $.}]
+      \part Using your answer to (a), or otherwise, compute $ \rint (\ln x) (\ln x) \dif{x} $.
+      \part Define $ \Gamma(x) = \lim_{\alpha \to \infty} \rint^\alpha_0 e^{-t} t^{x - 1} \dif{x} $. Show that $ \Gamma(x + 1) = x\Gamma(x) $ for
+            all $ x > 0 $. (You may assume the integral exists.)
+    \end{parts}
+  \question
+    \begin{parts}
+      \part Prove that if $ ABCD $ is a cyclic quadrilateral (i.e. a quadrilateral inscribed in a circle), then the opposite interior
+            angles of the quadrilateral sum to \ang{180}.
+      \part Prove, from first principles, that if $ ABC $ is a triangle such that the internal angle at $ A $ is $ \alpha $, then
+            $ \abs{BC}^2 = \abs{AB}^2 + \abs{AC}^2 - 2\abs{AB}\abs{AC}\cos\alpha $.
+      \part Consider the set of ellipses given by $ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $. Find \emph{all} real numbers $ p $ and $ q $
+            such that both of the following conditions are met:
+            \begin{itemize}
+              \item The hyperbolae $ \frac{x^2}{p^2} - \frac{x^2}{q^2} = 1 $ share the same focii as the family of ellipses.
+              \item The hyperbolae are orthogonal to the ellipses at every point of intersection.
+            \end{itemize}
+    \end{parts}
+\end{questions}
+
+\subsection*{Written Questions}
+It is possible for scholarship exams to include written questions; the following are some examples of the subjects and style of question.
+\begin{questions}
+  \question Discuss the significance of the fundamental theorem of calculus.
+  \question Many natural phenomena are modelled well by the differential equation $ y = \od{y}{x} $. Discuss the reasons for this.
+  \question Compare and contrast the geometric and algebraic viewpoints of the complex numbers.
+  \question One of the main ideas of calculus is the approximation of complex phenomena with simpler models. Discuss, with examples.
+  \question Scholarship 2018: Using a suitable substitution, or otherwise, evaluate the integral $ \rint^5_0 (2x - 5)\sqrt{2x + 5} \dif{x} $.
+            Explain why the method used cannot be used to evaluate $ \rint^5_0 (2x + 5)\sqrt{2x - 5} \dif{x} $.
+  \question Compute $ \rint_0^{\pi/2} (\cos^2 x - \cos^4 x) \sin x \dif{x} $ with the substitution $ u = \sin x $. Explain why this substitution
+            does not help us to compute $ \rint_0^{\pi} (\cos^2 x - \cos^4 x) \sin x \dif{x} $, and calculate this latter integral.
 \end{questions}
 
 \end{document}
