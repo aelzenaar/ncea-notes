@@ -4,6 +4,8 @@
 
 \mainHeaderDiff{1}{The Derivative}
 
+\goals{To remember why we care about derivatives, and remind ourselves of how slopes should behave.}
+
 Last year we met the derivative. Let us recall that the derivative of a function is, in some sense:
 \begin{itemize}
   \item A way to find the slope of another function.
@@ -16,8 +18,9 @@ about slope, curviness and speed into questions that can be solved via algebraic
 
 If $ f $ is a function, then the derivative is a function that takes some point $ x $ and gives us the slope of $ f $ at $ x $. For this
 function, we write $ f' $ (read \emph{eff prime}), so the slope of $ f $ at $ x $ is denoted by $ f'(x) $. If we want to be explicit about the names
-of the quantities we are relating, then if $ y = f(x) $ we write $ f'(x) = \od{y}{x} $ (read \emph{dee y over dee x}); in this notation,
-the slope of the graph at $ x = x_0 $ is written as $ \eval{\od{y}{x}}_{x = x_0} $ (but I tend to avoid this latter notation).
+of the quantities we are relating, then if $ y = f(x) $ we write $ f'(x) = \dod{y}{x} $ (read \emph{dee y over dee x}); in this notation,
+the slope of the graph at $ x = x_0 $ is written as $ \eval{\od{y}{x}}_{x = x_0} $ (but I tend to avoid this latter notation). In physics,
+especially in mechanics, the derivative of $ x $ with respect to time is often written like $ \dot x $.
 
 If a function does not have a well-defined derivative at some point, it is said to be non-differentiable at that point.
 
@@ -38,6 +41,7 @@ If a function does not have a well-defined derivative at some point, it is said 
   particle is the derivative of the displacement. The derivative of speed is called the acceleration of a particle.
 \end{ex}
 
+\clearpage
 \begin{ex}
   In the diagram, the derivative of the red functions is shown as the blue function. Note
   that the derivative of the function depends only upon the shape, not the $ y$-shift. Also,
@@ -58,6 +62,36 @@ If a function does not have a well-defined derivative at some point, it is said 
       \end{axis}
     \end{tikzpicture}}
   \end{center}
+\end{ex}
+
+\begin{ex}
+  The two diagrams below show the graphs of the function $ f(x) = (x - 1)^2 $ and its derivative $ f' $.
+
+  \begin{multicols}{2}
+  \begin{center}
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        axis lines = center,
+        xlabel = $ x $,
+        ylabel = {$ y = f(x) $}
+      ]
+        \addplot[domain = -5:5, color = red] {x^2 - 2*x + 1};
+      \end{axis}
+    \end{tikzpicture}}
+  \end{center}
+
+  \begin{center}
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        axis lines = center,
+        xlabel = $ x $,
+        ylabel = {$ y = f'(x) $}
+      ]
+        \addplot[domain = -5:5, color = blue] {2*(x-1)};
+      \end{axis}
+    \end{tikzpicture}}
+  \end{center}
+  \end{multicols}
 \end{ex}
 
 \clearpage
@@ -121,13 +155,15 @@ If a function does not have a well-defined derivative at some point, it is said 
   \questioA Write down the slope of $ y = mx + c $. Hence give $ \od{y}{x} $.
   \questioA If $ f' $ is the derivative of some function $ f $, describe the meaning of $ (f')' $ in terms of rate of change (to save space, from now on we
             will write $ f'' $ for this second derivative).
+  \questioM If a function is periodic, with a period of $ T $, what can you say about its derivative?
   \questioA Let $ f $ be a function. Suppose that it is known that $ f'(3) = 9 $, and $ f(3) = 6 $.
     \begin{parts}
       \part What does the graph of $ y = f(x) $ look like around $ x = 3 $?
       \part Give the equation of the tangent line to $ f(x) $ at $ x = 3 $.
     \end{parts}
   \questioM The function $ \mathrm{floor} $ maps any number $ x $ to the greatest integer less than or equal to $ x $ (so $ \mathrm{floor}(\pi) = 3 $, for
-            example). Draw a graph of $ y = \mathrm{floor}(x) $. Where is $ \mathrm{floor} $ differentiable?
+            example). Draw a graph of $ y = \mathrm{floor}(x) $. Where is $ \mathrm{floor} $ differentiable, and what is the derivative of $ \mathrm{floor} $
+            at these points?
   \questioM When a hot water tap is turned on, the temperature $ T $ of the water depends on how long
             the water has been running.
     \begin{parts}
@@ -138,19 +174,16 @@ If a function does not have a well-defined derivative at some point, it is said 
   \questioM The rate of change of a population at a time $ t $ is directly proportional to the
             population $ P(t) $ at that time, such that $ \od{P}{t} = P $. Draw a graph of the
             population over time if $ P(0) \approx 1000 $.
-  \questioM Consider a continuous real-valued function $ f $ which has $ n $ roots (all of multiplicity one) in some
-            interval $ I $. How many roots must its derivative have in $ I $?
-  \questioM If a function is periodic, with a period of $ T $, what can you say about its derivative?
-  \questioM Consider an ellipse, $ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $. This is not a function: since both $ (0, b) $ and $ (0, -b) $ are
-            members of the function, it fails the vertical line test. However, it would be nice to reason about its
-            rate of change \textit{as if it were} a function. Describe the slope of the ellipse as a particle traces the curve in
-            an anticlockwise direction at a constant rate.
   \questioM The number of bacteria after $ t $ hours in a controlled laboratory experiment is $ n = f(t) $.
     \begin{parts}
-      \part What is the meaning of the derivative $ f'(5) $? What are its units?
+      \part What is the meaning of the derivative $ f'(5) $?
       \part Suppose that there is an unlimited amount of space and nutrients. Which would you
             expect to be larger, $ f'(5) $ or $ f'(10) $? If the supply of nutrients is limited
             does your answer change?
     \end{parts}
+  \questioM Consider an ellipse, $ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $. This is not a function: since both $ (0, b) $ and $ (0, -b) $ are
+            members of the function, it fails the vertical line test. However, it would be nice to reason about its
+            rate of change \textit{as if it were} a function. Describe the slope of the ellipse as a particle traces the curve in
+            an anticlockwise direction at a constant rate.
 \end{questions}
 \end{document}

@@ -3,12 +3,15 @@
 \begin{document}
 
 \mainHeaderDiff{2}{Limits}
+
+\goals{To use limits to give a proper definition for the derivative.}
+
 Last week we looked at the derivative from the point of view of a `slope function', and remarked that this definition is not really useful at all
 because it is dependent on some notion of `slope' for functions which aren't lines.
 
 Consider, for example, the graph of a function $ f $. A good definition of `slope' for the graph at the point $ (x_1, f(x_1)) $ is the slope of the
 line at that point which `just touches' the curve at that point --- we can obtain this line by drawing another point $ (x_0, y_0) $ on the curve and
-joining it to $ (x_1, f(x_1) $ by a line and then slowly moving $ x_0 $ towards $ x_1 $, redrawing the line at each point until $ x_0 $ and $ x_1 $
+joining it to $ (x_1, f(x_1)) $ by a line and then slowly moving $ x_0 $ towards $ x_1 $, redrawing the line at each point until $ x_0 $ and $ x_1 $
 become the same. This process is illustrated below, where the dotted lines approach the solid tangent line as the point on the curve approaches the
 place we want to take the tangent.
 
@@ -171,22 +174,6 @@ Now that we have a proper definition, we can begin to calculate some derivatives
   \questioE Show that $ \lim_{x \to a} \frac{f(x) - f(a)}{x - a} $ and $ \lim_{h \to 0} \frac{f(a + h) - f(a)}{h} $ are
             equivalent definitions for the derivative at the point $ a $ of some function $ f $.
   \questioE If $ \lim_{x \to a} [f(x) + g(x)] = 2 $ and $ \lim_{x \to a} [f(x) - g(x)] = 1 $, find $ \lim_{x \to a} f(x)g(x) $.
-  \questioS Consider the following limit (you may assume that it exists):
-            \begin{displaymath}
-              L = \lim_{n \to \infty} \sum^n_{i = 0} \frac{9}{10^i}
-            \end{displaymath}
-    \begin{parts}
-      \part Write $ L = 0.9 + 0.09 + \cdots $, and make a conjecture about the value of $ L $.
-      \part Prove or disprove your conjecture from (a). [\textit{Hint: you may wish to consider the following working.}]
-        \begin{displaymath}
-          \left(1 - \frac{1}{10}\right)L = 9\left(1 - \frac{1}{10}\right)\left(\frac{1}{10} + \frac{1}{100} + \cdots\right)
-        \end{displaymath}
-      \part In general, consider the sum $ S_n = \sum_{i = 1}^n ar^i $ for some real constants $ a $ and $ r $. Prove that
-        \begin{displaymath}
-          \lim_{n \to \infty} S_n = \frac{a(1 - r^n)}{1 - r}.
-        \end{displaymath}
-        [\textit{Hint: use the same trick as in (b).}] Is there any restriction on $ r $ for this limit to exist?
-    \end{parts}
   \questioS Last year, we defined the \emph{exponent} $ a^r $ as follows:
             \begin{itemize}
               \item If $ r = 0 $, then $ a^r = 1 $.
@@ -197,26 +184,5 @@ Now that we have a proper definition, we can begin to calculate some derivatives
             \end{itemize}
             Give a reasonable definition for $ a^r $ where $ r $ is any real number. Use your definition to compute a reasonable approximation to $ 2^\pi $
             (given that $ \pi \approx 3.14159...$).
-  \clearpage
-  \questioS Zeno was a Greek philosopher active in the 5th century BCE. He presented a list of `paradoxes', or apparent contradictions,
-            including the following (adapted from Wikipedia):
-            \begin{itemize}
-              \item Suppose Achilles is in a foot race with a tortoise. Achilles runs much faster than the tortoise, but the latter
-                    has a head start. By the time Achilles reaches the location that the tortoise started, the tortoise will have moved
-                    a small amount further on; similarly, by the time Achilles reaches the new location of the tortoise, it will have moved
-                    an even smaller distance further on; and by this reasoning it follows that Achilles can never overtake the tortoise.
-                    \begin{center}
-                      \includegraphics[width=0.4\textwidth]{achilles}
-                    \end{center}
-              \item Suppose Homer wishes to walk to the end of a path. Before he can get there, he must get halfway there. Before he can
-                    get halfway there, he must get a quarter of the way there. Before traveling a quarter, he must travel one-eighth; before
-                    an eighth, one-sixteenth; and so on. So Homer cannot walk to the end of the path.
-              \item For motion to occur, an object must change the position which it occupies. Consider an example of an arrow in flight. In any
-                    one (duration-less) instant of time, the arrow is neither moving to where it is, nor to where it is not. It cannot move to
-                    where it is not, because no time elapses for it to move there; it cannot move to where it is, because it is already there.
-                    In other words, at every instant of time there is no motion occurring. If everything is motionless at every instant, and
-                    time is entirely composed of instants, then motion is impossible.
-            \end{itemize}
-            Use your knowledge of limits to explain these apparent contradictions.
 \end{questions}
 \end{document}
