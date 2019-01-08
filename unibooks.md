@@ -33,6 +33,7 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
     * [Complex calculus and analysis (340, 341?)](#complex-calculus-and-analysis-340-341)
     * [Geometry (353?)](#geometry-353)
  * [Books I want to get around to reading and/or writing about here](#books-i-want-to-get-around-to-reading-andor-writing-about-here)
+ * [My favourite books](#my-favourite-books)
 
 ## Culture
 
@@ -141,7 +142,6 @@ stuff in first semester linear algebra. The material in 250/253/255 is covered i
    is incredibly well-written; just take care not to get bogged down by the sections on multi-linear algebra and determinants. The exercises are actually quite
    similar to those that you should be solving for 253 anyway, just take note of his preface (some exercises are introduced before the material that makes them
    easy). Like _Naive Set Theory_ below, the theorems themselves are the real exercises. (515.5 H19f)
- * Sheldon Axler, _Linear Algebra Done Right_. On my list to read. Supposed to be very good. (512.5 A96)
 
 ### "Proofs" (255)
  * Kevin Houston, _How to Think Like a Mathematician_. I'm philosophically opposed to a book that tries to teach "proofs" without teaching mathematics, but
@@ -152,8 +152,8 @@ stuff in first semester linear algebra. The material in 250/253/255 is covered i
 ### Number Theory (255)
  * Underwood Dudley, _Elementary Number Theory_. This is a cute little introduction to number theory; the first few chapters cover the material needed for 255,
    and the remainder are a mixture of topic chapters (on number representations, prime counting, and so on). As you might expect from this author, the book has
-   a definite sense of humour (see, for example, the index and the exercises). My main complaint is that most of the exercises are too easy (and some are too
-   hard). If you like it, find something more substantial to read afterwards! (512.7 D84g)
+   a definite sense of humour (see, for example, the index and the exercises). My main complaint is that there is absolutely no algebra used at all, even if it
+   would simplify any argument. (512.7 D84g)
  * Kenneth Ireland and Michael Rosen, _A Classical Introduction to Modern Number Theory_. This book develops number theory with algebra at about the level of
    320. (512.7 I65)
  * Gareth A. Jones and J. Mary Jones, _Elementary Number Theory_. This is kind of a step between Dudley and I&R, I suppose; there are some very interesting
@@ -182,10 +182,12 @@ To add in 2019.
 
 ### Algebra (320+)
 If you're looking for 328, see also [the section on number theory](#number-theory-255).
- * Joseph Gallian, _Contemporary Abstract Algebra_. This is the book the course is based on. Jianbei's notes are generally a condensed version of Gallian,
-   but he does prove some things differently. Lots of computational exercises. Some "topic" readings at the back (Galois theory, crystal point groups, etc).
-   I can't stand this book: he spends so much time doing computational examples that he hardly gets around to the algebra! Very slow to start (like the
-   course itself). Worth buying? No. (Also, it's overly expensive.) The library has copies if you feel you need it. (512 G16)
+ * Joseph Gallian, _Contemporary Abstract Algebra_. This is the book the course is based on. The lecture notes are generally a condensed version of Gallian,
+   but he does prove some things differently. Lots of computational exercises. Some "topic" readings at the back (Galois theory, crystal point groups, etc),
+   but not enough mathematics is developed to make them worthwhile (his stated goal is something like showing off algebra as a modern and up-to-date subject,
+   but he doesn't do enough group and field theory to introduce anything beyond a short historical sketch). I can't stand this book: he spends so much time
+   doing computational examples that he hardly gets around to the algebra! Worth buying? No. (Also, it's overly expensive.) The library has copies if you
+   feel you need it. (512 G16)
  * Charles Pinter, _A Book of Abstract Algebra_. This is the book that 320 *should* be using. Very readable, lots of interesting exercises (both applications,
    if you're into that kind of thing, and pure mathematics: the proof of the structure theorem for abelian groups is left as a structured set of exercises, for
    example). Also very cheap. Buy this book. (512 P65)
@@ -211,10 +213,9 @@ If you're looking for 328, see also [the section on number theory](#number-theor
    Goes via a more classico-historical route, using proofs that Galois would have understood. (512.32 E26)-->
 
 ### Combinatorics and Finite Geometry (326)
-I don't know of any books on the simple voting games topic in 326.
  * Miklos Bona, _A Walk Through Combinatorics_. This is the only book you need for 326; it covers everything (bits with more detail than needed, bits with slightly
    not enough). Cute book, but a little pricey. Version in the library is an older edition without design theory. Perhaps a bit chatty and slow to get started, but
-   does cover a lot of random topics that should be of interest both to compscies and mathsies. (511.6 B697)
+   does cover a lot of random topics that should be of interest both for computer science and mathematics. (511.6 B697)
  * Robin Wilson, _Introduction to Graph Theory_. Elementary book. Easy exercises. Use to study before exam if you're into that kind of thing. (511.6 W75)
  * Rudolf and Gerda Fritsch, _The Four Colour Theorem_. Nice little book for context. (511.5 F919)
  * Robert Wilson, _Graphs, Colourings, and the Four-Colour Theorem_. Proves most of the results for planar graphs and graph colourings that are needed for 326; no
@@ -236,6 +237,8 @@ I don't know of any books on the simple voting games topic in 326.
  * Martin Aigner, _Combinatorial Theory_; Jack Graver and Mark Watkins, _Combinatorics with emphasis on the theory of graphs_. These books are far too difficult
    for 326, but I found the more abstract perspectives in the first few chapters rather enlightening; Aigner, for example, develops the theory of counting entirely
    via counting bijections and surjections and so forth; and G&W develops graph theory in a much more abstract way first. (511.6 A28Y) and (511.6 G77)
+ * Alvin E. Roth (ed.), _The Shapley value: Essays in honor of Lloyd S. Shapley_. This book includes the original paper by Shapley on assigning power values
+   to voting systems, together with a number of essays and papers motivating and extending the paper. (*)
 
 ### Analysis (332/333), Topology (353?, 750)
  * Kenneth R. Davidson and Allan P. Donsig, _Real Analysis and Applications_. For an introduction to real analysis for someone who understands calculus
@@ -251,10 +254,10 @@ I don't know of any books on the simple voting games topic in 326.
 
    Like Jones & Jones above, this is another new Springer book with really annoying typesetting, but to a lesser degree. (First edition: 515 D25; I have
    the second edition, which is supposed to be a major revision)
- * Walter Rudin, _Principles of Mathematical Analysis_. No comment needed - I prefer L&S for multivariable analysis, though. (I did try to work through
-   chapter 9, and despite knowing what he was trying to do at every point - it's just material from 253 - it's incredibly clunkly and awful. Belive me,
-   I thought the Chicago bibliography was exaggerating on this point, but it turns out that they were entirely correct.) It is by far the cleanest exposition
-   of metric space theory on this list. ([Errata and notes](https://math.berkeley.edu/~gbergman/ug.hndts/#Rudin)) (515.8 R91)
+ * Walter Rudin, _Principles of Mathematical Analysis_. The first eight chapters are an incredibly clean and terse exposition of metric space theory. I
+   prefer L&S (see 253) for multivariable analysis, though. (I did try to work through    chapter 9, and despite knowing what he was trying to do at every
+   point - it's just material from 253 - it's incredibly clunkly and awful. Belive me, I thought the Chicago bibliography was exaggerating on this
+   point, but it turns out that they were entirely correct.)  ([Errata and notes](https://math.berkeley.edu/~gbergman/ug.hndts/#Rudin)) (515.8 R91)
  * A.N. Kolmogorov and S.V. Fomin, _Introductory Real Analysis_. Higher level than Rudin, covers Lebesgue integration in a much nicer way in my opinion. Includes
    a semi-detailed chapter on set theory from the point of view of analysis which is quite interesting for a different perspective. Lots of topology and
    metric space theory as well, with an abundance of linear algebra. (515.8 K81eYs)
@@ -282,9 +285,11 @@ To do: do a course in complex analysis.
 
 ### Geometry (353?)
 See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326) above.
- * Alfred S. Posamentier and Charles S. Salkind, _Challenging Problems in Geometry_. Buy this book and do all the problems. Difficulty from school level upwards. (*)
+ * Alfred S. Posamentier and Charles S. Salkind, _Challenging Problems in Geometry_. Buy this (cheap) book and do all the problems. Difficulty from school
+   level upwards. (*)
  * Harold Coxeter, _Introduction to Geometry_ and _Geometry Revisited_. These books are both full of a lot of nice university geometry with some quite
-   nice links to other subjects: for example, crystallography and biology. (516 C87, 516 C87g)
+   nice links to other subjects: for example, crystallography and biology. _Revisited_ doesn't require any more than basic school geometry, but _Introduction_
+   is quite sophisticated (you need group theory). (516 C87, 516 C87g)
  * Marcel Berger, _Geometry_. But this is my favourite geometry book.  It is a little long (two volumes), but you can dip in and out of it rather than
    reading linearly. There are a lot of very pretty results in both affine and projective geometry. Linear algebra is used extensively (of course). (516 B49)
  * John M. Lee, _Axiomatic Geometry_. This book is like Hartshorne but in a much more formal style; it's written for future teachers, but it develops Euclidean
@@ -306,6 +311,7 @@ See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geo
  * Something on knot theory? (Cromwell, _Knots and Links_ ?)
  * Something on matroids?
  * David Gould, _Differential Topology_.
+ * Sheldon Axler, _Linear Algebra Done Right_. On my list to read. Supposed to be very good. (512.5 A96)
 
 ## My favourite books
  * Artin, _Algebra_
