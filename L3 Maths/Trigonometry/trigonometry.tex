@@ -18,6 +18,10 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 
+\usepackage{pifont}
+\reversemarginpar
+\newcommand{\marginsymbol}{\marginpar{\hfill(\ding{43})}}
+
 \usepackage[dvipsnames]{xcolor}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.11}
@@ -125,7 +129,10 @@ Level 2 notes.
 A large number of the standard identities have proofs which either follow directly from each other,
 or are very similar to each other. As such, most of the identities are stated as exercises rather
 than theorems --- the reader is invited to make their own way through these, proving as many (or
-as few) as desired.
+as few) as desired. The author would like to note, by way of motivation, that the 2018 scholarship
+calculus examination asked candidates to prove one of the sum formulae.
+
+Equations and results which appear on the NZQA formula sheet are marked with a symbol as follows: \ding{43}.
 
 \titleformat{\section}{\clearpage\titlerule[0.8pt]\vspace{0.5ex}\normalfont\Large\bfseries\centering}{Section~\thesection:}{1em}{}[{\titlerule[0.8pt]}]
 \let\oldsection\section
@@ -284,7 +291,7 @@ as drawn above can be extended as far as we like in either direction by just mak
   The following identities always hold.
   \begin{enumerate}
     \item $ \sin 2n\pi = 0 $ and $ \cos 2n\pi = 1 $ for all integers $ n $.
-    \item $ \sin^2 \theta + \cos^2 \theta = 1 $ for all $ \theta $.
+    \item $ \sin^2 \theta + \cos^2 \theta = 1 $ for all $ \theta $. \marginsymbol
     \item $ -1 \leq \sin \theta \leq 1 $ and $ -1 \leq \cos \theta \leq 1 $ for all $ \theta $.
     \item $ \sin (-\theta) = -\sin \theta $ and $ \cos (-\theta) = \cos \theta $ for all $ \theta $.
     \item $ \cos \theta = \sin (\theta + \pi/2) $.
@@ -446,7 +453,7 @@ However, $ \abs{XT} = \tan \theta $, $ \abs{OX} = 1 $, and $ \abs{PX} = \sin \th
 have $ \tan \theta = \abs{OT}\sin \theta $; but $ \tan \theta = \frac{\sin \theta}{\cos \theta} $,
 so $ \abs{OT} = \frac{1}{\cos \theta} $.
 \begin{defn}
-  The \df{secant} function is defined by $ \sec \theta = \abs{OT} = \frac{1}{\cos \theta} $.
+  The \df{secant} function is defined by $ \sec \theta = \abs{OT} = \frac{1}{\cos \theta} $. \marginsymbol
 \end{defn}
 
 We next calculate $ \abs{BX} $. Note that $ DBX $ and $ PXT $ are similar triangles, and so $ \frac{\abs{BX}}{\abs{DX}} = \frac{\abs{XT}}{\abs{PT}} $.
@@ -467,13 +474,13 @@ Cancelling $ \tan \theta = \sin \theta/\cos \theta $,
   \abs{BX} = \frac{1}{\sqrt{\frac{1}{\cos^2 \theta} - 1}}.
 \end{displaymath}
 To simplify further, recall that $ \sin^2 \theta + \cos^2 \theta = 1 $, and so (dividing by $ \cos^2 \theta $)
-\begin{equation}\label{eqn:tansecid}
+\marginsymbol\begin{equation}\label{eqn:tansecid}
   \tan^2 \theta + 1 = \frac{1}{\cos^2 \theta} = \sec^2 \theta.
 \end{equation}
 Hence $ \abs{BX} = \frac{1}{\sqrt{\tan^2 \theta}} = \frac{1}{\tan \theta} $.
 
 \begin{defn}
-  The \df{cotangent} function is defined by $ \cot \theta = \abs{BX} = \frac{1}{\tan \theta} $.
+  The \df{cotangent} function is defined by $ \cot \theta = \abs{BX} = \frac{1}{\tan \theta} $. \marginsymbol
 \end{defn}
 
 Our next trick is to calculate $ \abs{OB} $. Again, we use similar triangles: $ OBT $ is similar to $ PXT $. In
@@ -484,10 +491,10 @@ and $ \abs{PT} = \sin \theta \sqrt{\sec^2 \theta - 1} = \sin \theta \tan \theta 
 \end{displaymath}
 
 \begin{defn}
-  The \df{cosecant} function is defined by $ \csc \theta = \abs{OB} = \frac{1}{\sin \theta} $.
+  The \df{cosecant} function is defined by $ \csc \theta = \abs{OB} = \frac{1}{\sin \theta} $. \marginsymbol
 \end{defn}
 
-\begin{exercise}\leavevmode
+\begin{exercise}\leavevmode\marginsymbol
   \begin{enumerate}
     \item By applying Pythagoras' theorem to $ BOT $, show that $ \cot^2 \theta + \tan^2 \theta + 2 = \csc^2 \theta + \sec^2 \theta $,
           and conclude by equation \ref{eqn:tansecid} that $ \cot^2 \theta + 1 = \csc^2 \theta $.
@@ -513,7 +520,8 @@ and $ \abs{PT} = \sin \theta \sqrt{\sec^2 \theta - 1} = \sin \theta \tan \theta 
 \subsection{Other Circle Lengths}
 A few easy lengths follow, which have names for historical reasons: in the era before electronic
 calculators, tables of values for these functions were used to avoid doing some calculations. (See
-the Roots of Unity blog post in the further reading list.)
+the Roots of Unity blog post in the further reading list.) We only list them here to fill out our
+taxonomic diagram.
 \begin{defn}\leavevmode
   \begin{enumerate}
     \item The \df{versine} function is defined by $ \versin \theta = \abs{PR} = 1 - \cos \theta $.
@@ -573,23 +581,11 @@ We have the following definition, which summarises all the definitions we have m
 Of these, the basic functions and the reciprocal functions are the most useful and are
 the ones which we will study for the remainder of these notes.
 
-We also restate the following identities for convenience. Since the second two follow
-immediately from the first, and the first is a trivial application of Pythagoras' theorem,
-the reader is advised not to try to memorise them.
-\begin{thm}
-  For all angles $ \theta $,
-  \begin{enumerate}
-    \item $ \sin^2 \theta + \cos^2 \theta = 1 $,
-    \item $ \tan^2 \theta + 1 = \sec^2 \theta $, and
-    \item $ 1 + \cot^2 \theta = \csc^2 \theta $.
-  \end{enumerate}
-\end{thm}
-
 \section{Identity Fishing}
 Recall that if we consider the function $ \exp $ which maps $ x \mapsto e^x $, then we have the addition rule $ \exp(x + y) = \exp(x) \exp(y) $. Our
 goal in this section is to derive similar rules for the basic trigonometric functions.
 
-\begin{thm}\leavevmode\label{thm:sumids}
+\begin{thm}\leavevmode\label{thm:sumids}\marginsymbol
   Suppose $ \alpha $ and $ \beta $ are angles. Then:
   \begin{enumerate}
     \item $ \sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta $
@@ -619,7 +615,7 @@ goal in this section is to derive similar rules for the basic trigonometric func
   which is rearranged to obtain $ \cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta $ as required.
 \end{proof}
 
-\begin{exercise}
+\begin{exercise}\marginsymbol
   Use the following diagram and an analagous argument to derive the sum formula for sine.
   \begin{center}
     \includegraphics[width=0.3\textwidth]{sinesum}
@@ -628,7 +624,7 @@ goal in this section is to derive similar rules for the basic trigonometric func
   and that $ \abs{EF} = \frac{\sin\beta \cos\alpha}{\sin \alpha} $. Finally, $ \sin \alpha = \frac{\abs{AB}}{\abs{EF}} $.
 \end{exercise}
 
-\begin{cor}
+\begin{cor}\marginsymbol
   We also have the following identities:-
   \begin{enumerate}
     \item $ \sin(\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha \sin \beta $
@@ -649,7 +645,7 @@ goal in this section is to derive similar rules for the basic trigonometric func
   For (5) and (6), set $ \beta = \alpha $ and apply theorem \ref{thm:sumids}; (7) is done in a similar way.
 \end{proof}
 
-\begin{exercise}
+\begin{exercise}\marginsymbol
   Show the following product identities hold.
   \begin{enumerate}
     \item $ 2 \sin \alpha \cos \beta = \sin(\alpha + \beta) + \sin(\alpha - \beta) $
@@ -659,6 +655,7 @@ goal in this section is to derive similar rules for the basic trigonometric func
   \end{enumerate}
   Find an expression for $ \tan \alpha \tan \beta $ in terms of $ \cos $.
 \end{exercise}
+
 \begin{exercise}
   Show the following half-angle identities hold.
   \begin{enumerate}
@@ -670,7 +667,8 @@ goal in this section is to derive similar rules for the basic trigonometric func
   can have two signs: it may be positive, or negative, depending on the value of $ \alpha $. Classify all the
   relevant cases. (For which $ \alpha $ is $ \sin \alpha/2 $ positive, and for which $ \alpha $ is it negative? Repeat for all three.)
 \end{exercise}
-\begin{exercise}
+
+\begin{exercise}\marginsymbol
   Show the following sum identities hold.
   \begin{enumerate}
     \item $ \sin \alpha + \sin \beta = 2\sin \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2} $
@@ -710,7 +708,6 @@ Finally, we prove the following aesthetic identity.
     \item $ \tan 3\alpha = \dfrac{3\sin\alpha - 4\sin^3 \alpha}{4\cos^3 \alpha - 3\cos\alpha} $
     \item $ \dfrac{1}{2}(\cos 2\beta - \cos 2\alpha) = \sin^2 \alpha \cos^2\beta - \cos^2\alpha \sin^2 \beta $
     \item $ \sin A + \sin B + \sin C - \sin (A + B + C) = 4\sin \frac{A + B}{2}\sin \frac{B + C}{2}\sin \frac{C + A}{2} $
-    \item $ \dfrac{\sin \dfrac{B - C}{2}}{\sin \dfrac{B + C}{2}} + \dfrac{\sin \dfrac{C - A}{2}}{\sin \dfrac{C + A}{2}} + \dfrac{\sin \dfrac{A - B}{2}}{\sin \dfrac{A + B}{2}} + \dfrac{\sin \dfrac{B - C}{2}\sin \dfrac{C - A}{2}\sin \dfrac{A - B}{2}}{\sin \dfrac{B + C}{2}\sin \dfrac{C + A}{2}\sin \dfrac{A + B}{2}} = 0 $
     \item Scholarship 2018: $ \frac{\cos \theta}{1 + \sin \theta} - \frac{\sin \theta}{1 + \cos\theta} = \frac{2(\cos\theta - \sin\theta)}{1+ \sin\theta \cos \theta} $
   \end{enumerate}
 \end{exercise}
@@ -723,7 +720,7 @@ We can calculate the chord function from definition \ref{defn:chord} in a differ
 \end{center}
 
 \begin{thm}[Law of cosines]
-  If $ ABC $ is a triangle, labeled as in the picture, then $ c^2 = a^2 + b^2 - 2ab \cos \gamma $.
+  If $ ABC $ is a triangle, labeled as in the picture, then $ c^2 = a^2 + b^2 - 2ab \cos \gamma $.\marginsymbol
 \end{thm}
 
 Rather than repeat the standard proof, I will give one based on the following intersecting chord theorem.
@@ -766,7 +763,7 @@ Then $ \crd \theta = \sqrt{1^2 + 1^2 - 2\cdot1\cdot1\cdot \cos \theta} = \sqrt{2
 \end{exercise}
 
 \begin{exercise}[Law of sines]
-  As you will recall from last year, there is also a sine rule; we actually state here a slightly stronger
+  As \marginsymbol you will recall from last year, there is also a sine rule; we actually state here a slightly stronger
   form of it. Let $ ABC $ be a triangle labelled as in the statement for the law of cosines; draw the circle passing
   through the three vertices of the triangle (the so-called \df{circumcircle} of the triangle), and call its
   radius $ R $. Prove that
@@ -774,6 +771,11 @@ Then $ \crd \theta = \sqrt{1^2 + 1^2 - 2\cdot1\cdot1\cdot \cos \theta} = \sqrt{2
     \frac{a}{\sin \alpha} = \frac{b}{\sin \beta} = \frac{c}{\sin \gamma} = 2R.
   \end{displaymath}
   Hint: try to use the inscribed angle theorem.
+\end{exercise}
+
+\begin{exercise}
+  Generate proofs of the sine\footnote{Bonus points if you can show the equality related to the circumradius.} and cosine rules by drawing lines into the
+  triangles and angle-pushing. (See, for example, the Y12 notes.)
 \end{exercise}
 
 \section{Inverse Functions}
@@ -877,7 +879,7 @@ simple inputs to complicated real numbers. However, there are a few special valu
 to triangles with simple sides.
 \begin{exercise}\leavevmode\label{ex:specialtriangles}
   \begin{enumerate}
-    \item \textbf{Standard special triangles.} Show, by drawing appropriate triangles, the following identities. This is not year twelve any more,
+    \item \textbf{Standard special triangles.} Show,\marginsymbol by drawing appropriate triangles, the following identities. This is not year twelve any more,
                                                so in particular you must prove that if you construct a triangle with given angles then it has the
                                                correct lengths (or vice versa, if you pick a triangle with given lengths then it has the given angles).
       \begin{enumerate}
@@ -921,7 +923,7 @@ We can also easily compute the zeroes of the trigonometric functions.
 Before we can start solving trigonometric equations, we also need to take account of the periodicity of the functions. For
 example, note that $ \sin \pi/4 = \sin 3\pi/4 $.
 
-\begin{thm}\leavevmode
+\begin{thm}\leavevmode\marginsymbol
   In all of the following, $n $ is an arbitrary integer.
   \begin{enumerate}
     \item Suppose that $ \sin x = \sin y $. Then every $ y = n\pi + (-1)^n x $ is a solution, and every solution for $ y $ is of this form.
