@@ -1620,6 +1620,18 @@ The midpoint is therefore $ \left( \frac{-2009 + 2019}{2}, \frac{x_0 + 10 - x_0}
 the position of the treasure does not depend on the $ x$-coordinate of the statue!
 
 \filbreak\begin{enumerate}[resume]
+  \answer A \emph{Gaussian integer} is a complex number of the form $ m + ni $, for integers $ m $ and $ n $. Show that there is
+        no equilaterial triangle on the complex plane with Gaussian integer vertices.
+\end{enumerate}
+Suppose we have such an equilateral triangle; without loss of generality, we can take one of the vertices to be the origin. Let
+the other two vertices be $ a + bi $ and $ c + di $. Since the triangle is equilateral, $ \abs{a + bi} = \abs{c + di} $. Further,
+the angle between the two points at the origin is $ \frac{\pi}{3} $. Then, by the rotation property of complex multiplication,
+\begin{displaymath}
+  a + bi = \cis \frac{\pi}{3} (c + di) = \frac{1}{2}c + \frac{\sqrt{3}}{2} di;
+\end{displaymath}
+hence $ b = d\sqrt{3}/2 $, which is irrational if $ d $ is an integer (contradiction).
+
+\filbreak\begin{enumerate}[resume]
   \answer A line in $ \mathbb{C}^2 $ (the plane with complex coordinates) is defined to be the locus of a linear
         $ ax + by + c = 0 $ where $ a $, $ b $, and $ c $ are complex constants. Prove that, given two distinct points $ (x_0, y_0) $
         and $ (x_1, y_1) $ in $ \mathbb{C}^2 $, there is a \textbf{unique} line through those two points. \textit{Hint: it is certainly \textbf{not} true
@@ -2569,41 +2581,6 @@ Hence, we argue as follows:
 Note that $ \carg $ here behaves like a logarithm in that it converts a sum to a product. This
 is because if $ z = \cis \theta $ then $ z = e^{i\theta} $ and so $ \carg z = \theta = \frac{1}{i} \ln z $;
 hence we take $ \carg w + \carg z = \frac{1}{i}{\ln w + \ln z} = \frac{1}{i} \ln (wz) = \carg wz $.
-
-\filbreak\begin{enumerate}[resume]
-  \answer Suppose that $ \abs{z+w} = \abs{z-w} $. Show that $ \carg z - \carg w = \pm \frac{\pi}{2} $.
-\end{enumerate}
-
-\paragraph{Proof using the $ \arctan $ result from the previous exercise.}
-Let $ z = a+bi $ and $ w = c+di $.
-\begin{align*}
-  \carg z - \carg w &= \arctan \left( \frac{b}{a} \right) - \arctan \left( \frac{d}{c} \right)\\
-                    &= \arctan \left( \frac{\frac{b}{a} - \frac{d}{c}}{1+ \frac{bd}{ac}} \right).
-\end{align*}
-We therefore have that $ \pm \frac{\pi}{2} = \arctan \left( \frac{\frac{b}{a} - \frac{d}{c}}{1+ \frac{bd}{ac}} \right) $,
-and therefore $ \tan \left( \pm \frac{\pi}{2} \right) = \frac{\frac{b}{a} - \frac{d}{c}}{1+ \frac{bd}{ac}} $. However, note that
-$ \tan \left( \pm \frac{\pi}{2} \right) $ is undefined; a sufficient reason for this would be the denominator of the fraction on the
-right hand side becoming zero, which occurs when $ \frac{bd}{ac} = -1 $. Hence, if we can show this last fact, we
-imply that $ \carg z - \carg w = \pm \frac{\pi}{2} $.
-
-This can be done as follows:
-\begin{align*}
-  \abs{z + w} = \abs{z - w} &\Rightarrow \abs{a + bi + c + di} = \abs{a + bi - c - di}\\
-                            &\Rightarrow \sqrt{(a+c)^2 + (b+d)^2} = \sqrt{(a-c)^2 + (b-d)^2}\\
-                            &\Rightarrow a^2 + 2ac + c^2 + b^2 + 2bd + d^2 = a^2 - 2ac + c^2 + b^2 - 2bd + d^2\\
-                            &\Rightarrow 4ac = -4bd\\
-                            &\Rightarrow \frac{bd}{ac} = -1.
-\end{align*}
-
-\paragraph{Geometric proof.}
-Consider the addition parallelogram formed by $ u $ and $ v $.
-\begin{center}
-  \includegraphics[width=0.5\textwidth]{vecadd}\\
-\end{center}
-The lengths of the two diagonals of a parallelogram can only be equal
-if the parallelogram is in fact a square; i.e. $ u $ and $ v $ are at
-right angles, and so the angle between them will be $ \frac{\pi}{2} $.
-
 
 \filbreak\begin{enumerate}[resume]
   \answer  If $ 3z^3 + (2-3ai)z^2 + (6+2bi)z + 4 $ has exactly one real root, what value must

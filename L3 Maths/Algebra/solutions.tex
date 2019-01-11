@@ -74,6 +74,17 @@
 % \newcommand{\hard}{\item}
 % \newcommand{\harder}{\item}
 
+\newcommand{\expphasordeg}[4]% origin, r, phi(pi), style
+{   \path (#1);
+  \pgfgetlastxy{\xorig}{\yorig}
+  \pgfmathsetmacro{\xfirst}{\xorig/28.453}
+  \pgfmathsetmacro{\yfirst}{\yorig/28.453}
+  \pgfmathsetmacro{\xsecond}{\xorig/28.453+#2*cos(#3)}
+  \pgfmathsetmacro{\ysecond}{\yorig/28.453+#2*sin(#3)}
+  \draw[#4] (\xfirst,\yfirst) -- (\xsecond,\ysecond);
+}
+
+
 \usepackage[english]{babel}
 \usepackage[autostyle, english = british]{csquotes}
 \MakeOuterQuote{"}
@@ -888,9 +899,44 @@ Writing $ m = \frac{y_1 - y_2}{x_1 - x_2} $, we see that we have the equation of
 with slope $ m $.
 
 Now, we will consider two non-zero complex numbers $ w $ and $ z $; we will call the two points \textit{orthogonal} if the lines
-passing from $ w $ and $ z $ to the origin meet at right angles. The claim is that the two points are orthogonal precisely
-when $ \realp w \realp z + \imagp w \imagp z = 0 $. Suppose that the two points are orthogonal; then, by Pythagoras' theorem,
-we have that $ \abs{w - z}^2 = \abs{w}^2 + \abs{z}^2 $. Expanding this, we obtain
+passing from $ w $ and $ z $ to the origin meet at right angles (for example, \cref{fig:orthogonal}).
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xmin = -4, xmax = 4,
+      ymin = -4, ymax = 4,
+      xlabel=$\realp{z}$,
+      ylabel={$\imagp{z}$},
+      axis lines=middle,
+      scale=.8
+    ]
+      \addplot[color=ForestGreen, mark=*, thick]
+      coordinates {
+        (-1.5, 2.6)
+      };
+      \addplot[color=Mulberry, mark=*, thick]
+      coordinates {
+        (-2.6, -1.5)
+      };
+      \draw (0,0)--(-1.5, 2.6);
+      \draw (0,0)--(-2.6, -1.5);
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Two orthogonal points, $ 3\cis(120^\circ) $ and $ 3\cis(210^\circ) $.\label{fig:orthogonal}}
+\end{figure}
+
+
+The claim is that the two points are orthogonal precisely when $ \realp w \realp z + \imagp w \imagp z = 0 $. To prove this, we need to show
+two things:
+\begin{itemize}
+  \item if $ w $ and $ z $ are orthogonal then the condition holds; and
+  \item if the condition holds for the $ w $ and $ z $ then they are orthogonal.
+\end{itemize}
+
+Suppose first that the two points are orthogonal; then, by Pythagoras' theorem, we have that $ \abs{w - z}^2 = \abs{w}^2 + \abs{z}^2 $.
+Expanding this, we obtain
 \begin{align*}
   (w - z)(\overline{w} - \overline{z}) &= w\overline{w} + z\overline{z}\\
   z\overline{w} + w\overline{z} &= 0.
@@ -1042,6 +1088,8 @@ of a triangle have lengths $ \abs{a} $ and $ \abs{b} $ then the third side has l
                 Given that the kauri tree is at $ (0,0) $, the beech tree is at $ (10,0) $, and
                 the statue is somewhere on the line $ y = 2009 $, find the location of the treasure.
           \end{enumerate}
+  \item A \emph{Gaussian integer} is a complex number of the form $ m + ni $, for integers $ m $ and $ n $. Show that there is
+        no equilaterial triangle on the complex plane with Gaussian integer vertices.
   \hard A line in $ \mathbb{C}^2 $ (the plane with complex coordinates) is defined to be the locus of a linear equation
         $ ax + by + c = 0 $ where $ a $, $ b $, and $ c $ are complex constants. Prove that, given two distinct points $ (x_0, y_0) $
         and $ (x_1, y_1) $ in $ \mathbb{C}^2 $, there is a \textbf{unique} line through those two points. \textit{Hint: it is certainly \textbf{not} true
@@ -1213,7 +1261,7 @@ As an application of our work on primitive roots, we solve the \emph{double-tria
 in the 2009 New Zealand Scholarship examination.
 
 \begin{center}
-  \includegraphics[width=\textwidth]{double_triangle}
+  \includegraphics[width=0.8\textwidth]{double_triangle}
 \end{center}
 
 The question states that the positive real solution is $ z_1 = k = k \cis 0 $. We
@@ -1258,7 +1306,8 @@ cancel leaving us with a sextic polynomial with real coefficients.
     \begin{axis}[
       xlabel=$x$,
       ylabel={$p(x)$ when $ k = 2 $},
-      axis lines=middle
+      axis lines=middle,
+      scale=.8
     ]
       \addplot[domain=-2.1:2.1, samples=100, color=WildStrawberry]{(x -2)*(x + (2/2))*(x^2 - (2/2)*x + (2^2)/4)*(x^2 + 2*x + 2^2)};
     \end{axis}
@@ -1488,7 +1537,6 @@ section first as they often include some content themselves.
   \item Use Euler's formula to prove that $ \cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta $, and that
         $ \sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta $.
   \harder Show that $ \arctan a + \arctan b = \arctan \frac{a + b}{1 - ab} $.
-  \hard Suppose that $ \abs{z+w} = \abs{z-w} $. Show that $ \carg z - \carg w = \pm \frac{\pi}{2} $.
   \hard If $ 3z^3 + (2-3ai)z^2 + (6+2bi)z + 4 $ has exactly one real root, what value must
         the quotient $ b/a $ take if both $ a $ and $ b $ are real? Find the real root.
   \hard Find all possible values for $ \theta $ if $ \cis^2 \theta + \cis \theta + 1 = 0 $.
