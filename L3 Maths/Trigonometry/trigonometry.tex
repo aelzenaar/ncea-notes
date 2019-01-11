@@ -615,8 +615,8 @@ goal in this section is to derive similar rules for the basic trigonometric func
   which is rearranged to obtain $ \cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta $ as required.
 \end{proof}
 
-\begin{exercise}\marginsymbol
-  Use the following diagram and an analagous argument to derive the sum formula for sine.
+\begin{exercise}
+  Use the following diagram and an analagous argument to derive the sum formula for sine.\marginsymbol
   \begin{center}
     \includegraphics[width=0.3\textwidth]{sinesum}
   \end{center}
@@ -624,8 +624,8 @@ goal in this section is to derive similar rules for the basic trigonometric func
   and that $ \abs{EF} = \frac{\sin\beta \cos\alpha}{\sin \alpha} $. Finally, $ \sin \alpha = \frac{\abs{AB}}{\abs{EF}} $.
 \end{exercise}
 
-\begin{cor}\marginsymbol
-  We also have the following identities:-
+\begin{cor}
+  We also have the following identities:-\marginsymbol
   \begin{enumerate}
     \item $ \sin(\alpha - \beta) = \sin \alpha \cos \beta - \cos \alpha \sin \beta $
     \item $ \cos(\alpha - \beta) = \cos \alpha \cos \beta + \sin \alpha \sin \beta $
@@ -645,8 +645,8 @@ goal in this section is to derive similar rules for the basic trigonometric func
   For (5) and (6), set $ \beta = \alpha $ and apply theorem \ref{thm:sumids}; (7) is done in a similar way.
 \end{proof}
 
-\begin{exercise}\marginsymbol
-  Show the following product identities hold.
+\begin{exercise}
+  Show the following product identities hold.\marginsymbol
   \begin{enumerate}
     \item $ 2 \sin \alpha \cos \beta = \sin(\alpha + \beta) + \sin(\alpha - \beta) $
     \item $ 2 \cos \alpha \sin \beta = \sin(\alpha + \beta) - \sin(\alpha - \beta) $
@@ -654,6 +654,11 @@ goal in this section is to derive similar rules for the basic trigonometric func
     \item $ 2 \sin \alpha \sin \beta = \cos(\alpha - \beta) - \cos(\alpha + \beta) $ (note reversed $ \pm $)
   \end{enumerate}
   Find an expression for $ \tan \alpha \tan \beta $ in terms of $ \cos $.
+\end{exercise}
+
+\begin{exercise}
+  Show that, for every value of $ x $, $ \sin x \cos x \leq \frac{1}{2} $ (hint: $ \sin 2x \leq 1 $) and $ \sin x + \cos x \leq \sqrt{2} $
+  (hint: $ (\sin x + \cos x)^2 = \textbf{?} $).
 \end{exercise}
 
 \begin{exercise}
@@ -704,6 +709,8 @@ Finally, we prove the following aesthetic identity.
 \begin{exercise}
   Prove the following identities.
   \begin{enumerate}
+    \item If $ f(x,y) = \sin(x+y) \sin(x-y) $, then $ f(\alpha,\beta) + f(\beta,\gamma) + f(\gamma,\alpha) = 0 $.
+    \item $ \sin \alpha + \sin\left(\alpha + \frac{2\pi}{3}\right) + \sin\left(\alpha + \frac{4\pi}{3}\right) = 0 $
     \item $ \sin(\alpha + \beta + \gamma) = \sin\alpha \cos\beta \cos\gamma + \cos\alpha\sin\beta\cos\gamma + \cos\alpha\cos\beta\sin\gamma - \sin\alpha\sin\beta\sin\gamma $
     \item $ \tan 3\alpha = \dfrac{3\sin\alpha - 4\sin^3 \alpha}{4\cos^3 \alpha - 3\cos\alpha} $
     \item $ \dfrac{1}{2}(\cos 2\beta - \cos 2\alpha) = \sin^2 \alpha \cos^2\beta - \cos^2\alpha \sin^2 \beta $
