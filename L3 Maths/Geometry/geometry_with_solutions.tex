@@ -1,0 +1,297 @@
+\documentclass[a4paper,leqno,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[inline]{enumitem}
+
+\usepackage{siunitx}
+\usepackage{multirow}
+\usepackage{subcaption}
+
+\usepackage[english]{babel}
+\usepackage[autostyle, english=british]{csquotes}
+\MakeOuterQuote{"}
+
+\usepackage{commath}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
+\usetikzlibrary{arrows}
+
+\usepackage{hyperref}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{changepage}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries\centering}{Section~\thesection:}{1em}{}
+
+\usepackage[framemethod=tikz]{mdframed}
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+  \hbox{}\nobreak\hfil(#1)%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}}
+  {\signed{\usebox\mybox}\end{quote}}
+
+% Augmented matrices.
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+%--------grstep
+% For denoting a Gauss' reduction step.
+% Use as: \grstep{\rho_1+\rho_3} or \grstep[2\rho_5 \\ 3\rho_6]{\rho_1+\rho_3}
+\newcommand{\grstep}[2][\relax]{%
+   \ensuremath{\mathrel{
+       {\mathop{\longrightarrow}\limits^{#2\mathstrut}_{
+                                     \begin{subarray}{l} #1 \end{subarray}}}}}}
+\newcommand{\swap}{\leftrightarrow}
+
+\makeatletter
+\newtheoremstyle{exercise}% name of the style to be used
+{5pt}% measure of space to leave above the theorem. E.g.: 3pt
+{3pt}% measure of space to leave below the theorem. E.g.: 3pt
+{\rm}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{\large\bf}% name of head font
+{.}% punctuation between head and body
+{\newline}% space after theorem head; " " = normal interword space
+{\thmname{#1}\thmnumber{ #2}\thmnote{: #3}}
+\makeatother
+
+\theoremstyle{exercise}
+\newtheorem{Exercise}{Exercise}
+\newenvironment{exercise}
+  {\begin{mdframed}\begin{Exercise}}
+  {\end{Exercise}\end{mdframed}}
+
+\theoremstyle{plain}
+\newtheorem*{thm}{Theorem}
+\newtheorem*{lem}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{ex}{Example}
+\newtheorem*{axiom}{Axiom}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+\newcommand{\df}{\textbf}
+\newcommand{\T}{\mathrm{T}}
+\newcommand{\F}{\mathrm{F}}
+\newcommand{\IndSet}{\mathbf{I}}
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator{\arcsec}{arcsec}
+\renewcommand\vec{\mathbf}
+
+\title{Level Three Conic Sections --- Notes and solutions}
+\author{Alex Elzenaar}
+\date{\today}
+
+\begin{document}
+\setcounter{tocdepth}{1}
+
+\begin{titlepage}
+  \maketitle
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{icecream}
+
+    \vspace{2em}
+
+    \begin{minipage}{\dimexpr\textwidth-4cm}
+      \begin{aquote}{Grothendieck}\slshape
+        The first analogy that came to my mind is of immersing the nut in some softening liquid, and why not simply water? From time to time you rub so the liquid penetrates better, and otherwise you let time pass. The shell becomes more flexible through weeks and months—when the time is ripe, hand pressure is enough, the shell opens like a perfectly ripened avocado! A different image came to me a few weeks ago. The unknown thing to be known appeared to me as some stretch of earth or hard marl, resisting penetration... the sea advances insensibly in silence, nothing seems to happen, nothing moves, the water is so far off you hardly hear it... yet it finally surrounds the resistant substance.
+      \end{aquote}
+    \end{minipage}
+  \end{center}
+  \thispagestyle{empty}
+\end{titlepage}
+\pagenumbering{arabic}
+
+\tableofcontents
+\section*{Preface}
+This is a set of notes and outlines of solutions to the various exercises in the conic section notes.
+
+\titleformat{\section}{\clearpage\titlerule[0.8pt]\vspace{0.5ex}\normalfont\Large\bfseries\centering}{Notes on Section~\thesection:}{1em}{}[{\titlerule[0.8pt]}]
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+\setcounter{section}{2}\addtocounter{section}{-1}
+\section{Basic results}
+
+\begin{exercise}[Polar form]
+  Show that, if $ X $ is on the directrix of a conic such that $ OX \perp \ell $, then the polar equation of the
+  conic with respect to this axis and origin $ O $ is
+  \begin{displaymath}
+    \frac{l}{r} = 1 + \varepsilon \cos \theta.
+  \end{displaymath}
+  Conclude that:
+  \begin{enumerate}
+    \item Every conic is symmetric with respect to $ OX $.
+    \item The ellipse is a closed and bounded curve (i.e. it does not extend towards infinity).
+    \item The parabola is unbounded, but is connected.
+    \item The hyperbola consists of two seperate branches, each extending to infinity, given by $ -\alpha < \theta < \alpha $
+          and $ \alpha < \theta < 2\pi - \alpha $ (where $ \alpha = \arcsec(-\varepsilon) $).
+  \end{enumerate}
+\end{exercise}
+
+Before answering this, I do need to conceed that at this stage we have no good definition for a closed curve, or a connected curve, or
+for a branch/component of a curve. However, the curves we deal with are so simple that we can say that:
+\begin{itemize}
+  \item A closed curve is one which is periodic in $ \theta $.
+  \item A component/branch of a curve is a set of points on the curve such that (1) each point in the set
+        corresponds to a value of $ \theta $ taken from some open interval $ (a,b) $; and (2) each point corresponding
+        to a value of $\theta $ from the interval is on the curve and has a finite radius.
+  \item A connected curve is one which consists of a single component.
+\end{itemize}
+A fairly general and accessible version (restricted to curves in the real plane) can be found in books on multivariate calculus and/or the
+geometry of curves; see for example the first couple of chapters of do Carmo.\footnote{\emph{Differential geometry of curves and surfaces}.}
+However, the `proper' generalisation comes from topology: see for example Munkres (\S 23--24).
+
+Let us consider the following diagram.
+\begin{center}
+  \includegraphics[width=0.3\textwidth]{solutions1}
+\end{center}
+We have the following: $ \abs{OQ} = \abs{OX} - \abs{QX} $. But $ \abs{OQ} = r\cos \theta $, $ \abs{OX} = e/\varepsilon $, and $ \abs{QX} = \abs{PK} $;
+thus $ r \cos \theta = l/\varepsilon - \abs{PK} $. But since $ P $ is on the conic, $ \varepsilon = \abs{OP}/\abs{PK} = r/\abs{PK} $;
+hence $ r \cos \theta = l/\varepsilon - r/\varepsilon $ and thus $ l/r = 1 - \varepsilon \cos \theta $.
+
+For (1), we need to check that the graph is symmetric about $ OX $; this ray is our polar axis, and so we just need to check that $ (r, \theta) $
+is on $ \mathcal{C} $ iff $ (r, -\theta) $ is on the curve. But $ \cos \theta = \cos (-\theta) $, which is sufficient.
+
+For (2), we need to do some work with inequalities. From the polar equation, $ r = \frac{l}{1 + \varepsilon \cos \theta} $;
+so we need to show that this fraction is bounded above (i.e. given any eccentricity $ \varepsilon $ and any length $ l $ then there exists some $ K $ --- which
+depends on $ \varepsilon $ and $ l $ --- such that $ \abs{r} < K $ for all possible $ \theta $). Let us therefore fix a given eccentricity $ \varepsilon $. Since
+the conic is an ellipse, we have $ 0 \leq \varepsilon < 1 $.
+
+Since $ \varepsilon $ is real, there exists some positive $ \kappa $ satisfying $ \varepsilon < \kappa < 1 $.\footnote{We need \df{completeness} here.}
+Hence we have that $ 0 < \varepsilon < \kappa $, and thus $ -\kappa < -\varepsilon < 0 $; so $ 1 - \kappa < 1 - \varepsilon < 1 $,
+and thus $ 1 + \varepsilon \cos \theta \geq 1 - \varepsilon > 1 - \kappa $.
+
+From this, we have that $ \frac{1}{1 - \varepsilon \cos \theta} < \frac{1}{1 - \kappa} $, and hence $ r < \frac{l}{1 - \kappa} < \infty $.
+
+Further, $ 1 + \varepsilon \cos \theta \leq 1 + \varepsilon < 2 $, so $ \frac{1}{2} < \frac{1}{1 + \varepsilon \cos \theta} $ and
+thus $ \frac{l}{2} < r $. Combining our two $ r$-involving inequalities, we obtain
+
+\begin{displaymath}
+  \frac{l}{2} < r < \frac{l}{1 - \kappa};
+\end{displaymath}
+so $ r $ (and thus the curve) is bounded. The closedness of the curve is trivial, since $ r $ is periodic (with period dividing $ 2\pi $.)
+
+For (3), we need to show the parabola $ r = \frac{l}{1 + \cos \theta} $ is unbounded (note $ \varepsilon = 1 $). But this is clearly
+true, for if $ \theta \to \pi $ then $ r \to \infty $. The parabola is connected, since $ \theta = \pi $ is the only discontinuity,
+and the curve is periodic otherwise: to see this more clearly, let $ \theta $ vary from $ -\pi $ to $ \pi $; the result covers the entire
+parabola, and is only discontinuous at the endpoints.
+
+Now for (4) we proceed similarly to (3); the curve is periodic with period $ 2\pi $, and $ r \to \infty $ precisely
+when $ 1 + \varepsilon \cos \theta \to 0 $; this latter phenomenon occurs when $ \cos \theta = -1/\varepsilon $,
+which is equivalent to $ \sec \theta = -\varepsilon $. Fix $ \alpha = \arcsec(-\varepsilon) $; then all of $ -\alpha $, $ \alpha $,
+and $ 2\pi - \alpha $ satisfy $ \sec(\theta) = -\varepsilon $, and these three points are the only points in the interval $ [-\alpha, 2\pi - \alpha] $
+which satisfy this. If $ \theta $ ranges over this interval we cover the entire curve, and $ r \to \infty $ only at the endpoints and
+at $ \theta = \alpha $. Hence the curve is in two components (since it is continuous everywhere in the interval except these three points),
+and tends to infinity at the claimed angles.
+
+\begin{exercise}[Rectangular form]\label{exercise:rectangular}
+  By squaring the polar form equation, show that the Cartesian equation for a conic, taking suitable axes and origin, is
+  \begin{displaymath}
+    x^2 + y^2 = (l - \varepsilon x)^2.
+  \end{displaymath}
+  \begin{enumerate}
+    \item If $ \varepsilon \neq 1 $, and a suitable origin is chosen, show that the conic equation can be written in the form
+          \begin{displaymath}
+            \frac{x^2}{a^2} \pm \frac{y^2}{b^2} = 1
+          \end{displaymath}
+          for some real numbers $ a $ and $ b $. The new location of the origin is called the \df{centre} of the conic. Conclude that:
+          \begin{enumerate}
+            \item Both the ellipse and hyperbola are symmetric across both Cartesian axes.
+            \item For an ellipse, the values $ 2a $ and $ 2b $ are the lengths of the chords through the origin along the $ x$- and $ y$-axes respectively. (The
+                  longer of these is called the \df{major axis}, and the shorter the \df{minor axis}.)
+            \item The two branches of a hyperbola lie in opposite regions formed by the two lines (\df{asymptotes})
+                    \begin{displaymath}
+                      \left(\frac{x}{a} - \frac{y}{b} \right)\left(\frac{x}{a} + \frac{y}{b} \right) = 0.
+                    \end{displaymath}
+                    The value $ 2a $ is the length of the transverse axis of the hyperbola and the value $ 2b $ is the length of the conjugate
+                    axis: the two dimensions of the rectangle whose diagonals are the asymptotes and which is bounded by the hyperbola.
+            \item Further, show that as $ x \to \pm\infty $, the branches of the hyperbola tend arbitrarily close to the asymptotes. (Hint: take limits.)
+          \end{enumerate}
+    \item If $ \varepsilon = 1 $, show that the conic equation for the parabola can be written in the form
+          \begin{displaymath}
+            y^2 = 2l(\frac{1}{2}l - x).
+          \end{displaymath}
+          By reflecting in a suitable vertical line, derive the standard form equation
+          \begin{displaymath}
+            y^2 = 2lx.
+          \end{displaymath}
+          Given this latter equation, give the coordinates of the focus, and the Cartesian equation of the directrix.
+  \end{enumerate}
+\end{exercise}
+
+We will pick our origin to be $ O $, our $ x$-axis to be the ray in the direction of $ X $ (i.e. the polar axis), and the $ y$-axis to be
+the line through $ O $ perpendicular to $ OX $.
+
+To compute the rectangular form equation take $ r = l - \varepsilon r \cos \theta $, so $ r^2 = l^2 - 2l\varepsilon r \cos\theta + \varepsilon^2 r^2 \cos^2\theta $
+and then (substituting) $ x^2 + y^2 = l^2 - 2l\varepsilon x + \varepsilon^2 x^2 = (l - \varepsilon x)^2 $.
+
+Assume $ \varepsilon \neq 1 $. Then we collect terms and complete the square:
+\begin{align*}
+  x^2 + y^2 = (l - \varepsilon x)^2 &\implies (1 - \varepsilon^2)x^2 + 2l\varepsilon x + y^2 = l^2\\
+                                    &\implies x^2 + \frac{2l\varepsilon}{1 - \varepsilon^2} + \frac{y^2}{1 - \varepsilon^2} = \frac{l^2}{1 - \varepsilon^2}\\
+                                    &\implies \left(x + \frac{l\varepsilon}{1 - \varepsilon^2}\right)^2 - \frac{l^2 \varepsilon^2}{(1 - \varepsilon^2)^2} + \frac{y^2}{1 - \varepsilon^2} = \frac{l^2}{1 - \varepsilon^2}\\
+                                    &\implies \left(x + \frac{l\varepsilon}{1 - \varepsilon^2}\right)^2 + \frac{y^2}{1 - \varepsilon^2} = \frac{l^2}{(1 - \varepsilon^2)^2}.
+\end{align*}
+Set $ a = \frac{l}{1 - \varepsilon^2} $, and $ b = \sqrt{\abs{1 - \varepsilon^2}}a $ (where the sign on $ b $ is the same as the sign of $ 1 - \varepsilon^2 $).
+Let us make a change of coordinates, sending $ (x,y) \mapsto (x',y') = (x - \varepsilon a) $; then our equation becomes
+\begin{equation}\label{eqn:generalconic}
+  \frac{{x'}^2}{a^2} \pm \frac{{y'}^2}{b^2} = 1
+\end{equation}
+where the sign $ \pm $ is the same as the sign of $ 1 - \varepsilon^2 $.
+
+Note also that $ l = \frac{b^2}{a} $, in this coordinate system.
+
+If $ (x,y) $ satisfies the equation \ref{eqn:generalconic}, by the properties of squaring all four sign permutations of $ (\pm x , \pm y) $ satisfy it as
+well; so the curve is indeed symmetric across both axes.
+
+The $ x$-intercepts of the curve are $ x = \pm a $, so the chord along the $ x$-axis has length $ 2a $.
+
+Suppose the sign is $ + $, so we have an ellipse. Then the $ y$-intercepts are $ y = \pm a $, so the $ y$-axis chord has length $ 2b $. If we have
+a hyperbola, then we don't have any $ y$-intercepts (since such an intercept would satisfy $ (y/b)^2 = -1 $, which is impossible).
+
+\section{Isometries}
+
+\section{Cones}
+
+\section{Orthogonal families of conics}
+
+\section{Applications to physics}
+
+\section{The intersection theorem}
+
+\appendix
+\titleformat{\section}{\clearpage\titlerule[0.8pt]\vspace{0.5ex}\normalfont\Large\bfseries\centering}{Appendix~\thesection:}{1em}{}[{\titlerule[0.8pt]}]
+\section{List of formulae}
+
+\section{Further reading}
+See references in text, as well as:
+\begin{itemize}
+  \item H.S.M. Coxeter, \emph{Introduction to geometry}. John Wiley \& Sons (1961).
+  \item Stephen D. Fisher, \emph{Complex variables}. Dover (1999).
+  \item Robin Hartshorne, \emph{Geometry: Euclid and beyond}. Springer (2000).
+  \item Keith Kendig, \emph{Conics}. Mathematical Association of America (2005).
+  \item Morris Kline, \emph{Mathematics for the nonmathematician}. Dover (1985).
+  \item John M. Lee, \emph{Axiomatic geometry}. American Mathematical Society (2017).
+  \item George Salmon, \emph{A treatise on conic sections}. Longmans, Green (1900).
+  \item George F. Simmons, \emph{Differential equations with applications and historical notes}. McGraw-Hill (1991).
+  \item Marta Sved, \emph{Journey into geometries}. Mathematical Association of America (1991).
+\end{itemize}
+
+\end{document}
+
