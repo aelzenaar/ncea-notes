@@ -15,6 +15,8 @@ is either revision from Y9/10 or simple calculations.
  * Trigonometry (91032): [worksheet](L1%20Maths/Trigonometry/level_1_trig.pdf), [homework](L1%20Maths/Trigonometry/level_1_trig1_hw.pdf).
  * Practice exams: [Algebra](L1%20Maths/Algebra/algebra_paper1.pdf)
 
+In addition, I have some questions on [numeracy and basic skills](L1%20Maths/Numeracy/numeracy.pdf).
+
 ### Level Two
 My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf). The sheets include:
  1. (2.1) 		Coordinate Geometry
@@ -36,8 +38,7 @@ My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf)
  17. (2.3) 		Number Sequences and Fractals
  18. (2.5) 		Graphs and Networks
 
-I may be adding a couple of probability notes if I tutor L2 again next year; I may also re-add my old integration notes as an extension
-exercise.
+I am in the process of adding some statistics notes as well.
 
 ### Level Three and Scholarship Calculus
 I have almost completed the process of reworking and reorganising my L3/Scholarship maths notes; I have written the following sets of notes, designed
