@@ -94,6 +94,8 @@
 \DeclareMathOperator{\arcsec}{arcsec}
 \renewcommand\vec{\mathbf}
 
+\renewcommand{\theequation}{N\arabic{equation}}
+
 \title{Level Three Conic Sections --- Notes and solutions}
 \author{Alex Elzenaar}
 \date{\today}
@@ -260,10 +262,53 @@ Note also that $ l = \frac{b^2}{a} $, in this coordinate system.
 If $ (x,y) $ satisfies the equation \ref{eqn:generalconic}, by the properties of squaring all four sign permutations of $ (\pm x , \pm y) $ satisfy it as
 well; so the curve is indeed symmetric across both axes.
 
-The $ x$-intercepts of the curve are $ x = \pm a $, so the chord along the $ x$-axis has length $ 2a $.
+Now, suppose we have an ellipse; so the sign in the equation is $ + $. The $ x$-intercepts of the curve are $ x = \pm a $, so the chord along
+the $ x$-axis has length $ 2a $. By the same reasoning, the $ y$-intercepts are $ y = \pm b $, so the $ y$-axis chord has length $ 2b $.
 
-Suppose the sign is $ + $, so we have an ellipse. Then the $ y$-intercepts are $ y = \pm a $, so the $ y$-axis chord has length $ 2b $. If we have
-a hyperbola, then we don't have any $ y$-intercepts (since such an intercept would satisfy $ (y/b)^2 = -1 $, which is impossible).
+Now let us consider the case of a hyperbola. We have shifted our origin, and so we need to compute a new polar form, depending on $ a $
+and $ b $. Since $ r^2 = x^2 + y^2 $ and $ \tan \theta = \frac{y}{x} $, we have $ r^2 = x^2(1 + \tan^2 \theta) = x^2 \sec^2 \theta $.
+Substituting:
+\begin{displaymath}
+  1 = \frac{x^2}{a^2} - \frac{y^2}{b^2} = \frac{r^2}{a^2\sec^2 \theta} - \frac{r^2 \tan^2 \theta}{b^2\sec^2 \theta} = r^2 \left( \frac{b^2 - a^2 \tan^2 \theta}{a^2b^2 \sec^2\theta} \right)
+\end{displaymath}
+and hence
+\begin{equation}
+  r = \frac{ab \abs{\sec \theta}}{\sqrt{b^2 - a^2 \tan^2 \theta}}
+\end{equation}
+is our new polar form (let us call it \df{central polar form}; in these notes, we will call the polar form from exercise 1 the \df{focus polar form}).
+
+Since we have only performed a translation, our curve is still in two disconnected branches. The equation for $ r $ is periodic with period $ 2\pi $,
+and is undefined precisely when $ b^2 - a^2 \tan^2 \theta \leq 0 $. The `boundaries' of this area are thus the bounding lines of the hyperbola, and
+are the lines described by $ b^2 - a^2 \tan^2 \theta = 0 $, or $ \tan \theta = \pm \frac{b}{a} $; in other words, $ y = \pm \frac{b}{a}x $.
+
+We can now give the dimensions for the axes of the hyperbola. The $ x$-intercepts of the hyperbola, as for the ellipse, are $ x = \pm a $. Thus the
+four corners of the rectangle are $ (a, b) $, $ (-a, b) $, $ (a, -b) $, and $ (-a, -b) $. Thus the two side lengths of the rectangle, as claimed,
+are $ 2a $ (in the $ x$-direction) and $ 2b $ (in the $ y$-direction).
+
+Finally, as $ x \to \infty $, we need to show that the curve becomes arbitrarily close to the asymptotes. Indeed, we can easily show
+that $ \od{y}{x} = \frac{x b^2}{y a^2} $. Consider the portion of the hyperbola where $ x > 0 $ and $ y > 0 $. Here,
+\begin{displaymath}
+  y = b\sqrt{\frac{x^2}{a^2} - 1}
+\end{displaymath}
+and so the equation of the tangent to the curve at $ (x_0, y_0) $ is
+\begin{align*}
+  y &= \frac{x_0 b^2}{y_0 a^2} (x - x_0) + y_0\\
+    &= \frac{x_0 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}} x - \frac{x_0^2 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}} + b\sqrt{\frac{x_0^2}{a^2} - 1}.
+\end{align*}
+The slope of the tangent line, as $ x_0 \to \infty $, is
+\begin{displaymath}
+ \frac{x_0 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}} = \frac{b}{a^2\sqrt{\frac{1}{a^2} - \frac{1}{x_0^2}}} \to \frac{b}{a^2\sqrt{\frac{1}{a^2} - 0}} = \frac{b}{a}.
+\end{displaymath}
+Further, the $ y$-intercept becomes
+\begin{align*}
+  -\frac{x_0^2 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}} + b\sqrt{\frac{x_0^2}{a^2} - 1} &= \frac{ba^2(\frac{x_0^2}{a^2} - 1)-x_0^2 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}}\\
+    &= \frac{- ba^2}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}}\\
+    &\to 0
+\end{align*}
+when $ x_0 \to \infty $.
+
+Thus the tangent line of the curve approaches $ y = \frac{b}{a} x $ as $ x \to \infty $, and hence the curve itself approaches this line. We can perform similar
+calculations for the various cases where $ x < 0 $ or $ y < 0 $ (or both).
 
 \section{Isometries}
 
