@@ -55,8 +55,8 @@ to be used broadly in the given logical order and aligned with the L2 notes abov
 5. Algebra (91577). a set of notes entitled [_Solutions_](L3%20Maths/Algebra/solutions.pdf) designed for self-study for scholarship students
    (with [full answers to exercises](L3%20Maths/Algebra/solutions2.pdf)). There are a number of sections for further reading beyond the required
    material, and a great deal of geometry.
-6. Conic sections (91573). a [set of notes](L3%20Maths/Geometry/geometry.pdf) in the form of a sequence of exercises. This is currently a work
-   in progress.
+6. Conic sections (91573). a [set of notes](L3%20Maths/Geometry/geometry.pdf) in the form of a sequence of exercises. Solutions can be
+   found [here](L3%20Maths/Geometry/geometry_with_solutions.pdf). This is currently a work in progress.
 
 I also have [a document](L3%20Maths/Exams/exam-practice-qns.pdf) containing some additional exam practice questions (without solutions). Use
 at your own risk.
@@ -102,9 +102,3 @@ I do not intend to write modern physics notes for L2 at this point in time; my L
 ## Geography
  * [Key concepts](Geography/Key%20Concepts.odt).
  * Skills practice exams: Mahia: [Questions](Geography/L3-Skills-Mahia-qns.pdf), [Resources](Geography/L3-Skills-Mahia-res.pdf); Chatham Islands: [Questions](Geography/L3-Skills-Chathams-qns.pdf), [Resources](Geography/L3-Skills-Chathams-res.pdf)
-
-## Other in progress
-I hope to begin work on specific notes for scholarship physics at some point in 2018. I tend to like the ESA study guide for chemistry so currently
-have no L2/L3 notes planned.
-
-There are no L1 maths notes planned as the content is so elementary.
