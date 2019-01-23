@@ -86,6 +86,7 @@
 \newtheorem*{axiom}{Axiom}
 \theoremstyle{remark}
 \newtheorem*{rem}{Remark}
+\AtEndEnvironment{rem}{\hfill$\blacksquare$}%
 
 \newcommand{\df}{\textbf}
 \newcommand{\T}{\mathrm{T}}
@@ -251,15 +252,30 @@ Assume $ \varepsilon \neq 1 $. Then we collect terms and complete the square:
                                     &\implies \left(x + \frac{l\varepsilon}{1 - \varepsilon^2}\right)^2 - \frac{l^2 \varepsilon^2}{(1 - \varepsilon^2)^2} + \frac{y^2}{1 - \varepsilon^2} = \frac{l^2}{1 - \varepsilon^2}\\
                                     &\implies \left(x + \frac{l\varepsilon}{1 - \varepsilon^2}\right)^2 + \frac{y^2}{1 - \varepsilon^2} = \frac{l^2}{(1 - \varepsilon^2)^2}.
 \end{align*}
-Set $ a = \frac{l}{1 - \varepsilon^2} $, and $ b = \sqrt{\abs{1 - \varepsilon^2}}a $ (where the sign on $ b $ is the same as the sign of $ 1 - \varepsilon^2 $).
+
+\begin{rem}
+  I will take some liberties here with regard to choosing $ b $. In particular, we 'want' $ b $ to be such that $ b^2 $ is negative when we have
+  a hyperbola, so we should take $ b = i\beta $ (where $ \beta $ is half the length of the conjugate axis); on the other hand, it is much
+  easier to interpret $ b $ as a length if it is real.
+
+  In these notes, I will reverse this notation here and take $ b $ to be the \emph{length} which is half the $ y$-chord (for both the hyperbola and the ellipse),
+  and $ \beta = ib $ to be the purely imaginary number which has the same modulus. This notation is not standard.
+\end{rem}
+
+Set $ a = \frac{l}{1 - \varepsilon^2} $, and $ \beta = \sqrt{1 - \varepsilon^2}a $ (where $ \beta $ will be be imaginary, in the case of a hyperbola).
+Then set $ b = \abs{\beta} $.
+
 Let us make a change of coordinates, sending $ (x,y) \mapsto (x',y') = (x - \varepsilon a) $; then our equation becomes
 \begin{equation}\label{eqn:generalconic}
   \frac{{x'}^2}{a^2} \pm \frac{{y'}^2}{b^2} = 1
 \end{equation}
-where the sign $ \pm $ is the same as the sign of $ 1 - \varepsilon^2 $. (Note that the signs of $ a $ and $ b $ are irrelevant, so in general we
-assume them to be positive.)
+where the sign $ \pm $ is the same as the sign of $ 1 - \varepsilon^2 $; more precisely, our equation becomes
+\begin{equation}\label{eqn:generalconic}
+  \frac{{x'}^2}{a^2} + \frac{{y'}^2}{\beta^2} = 1
+\end{equation}
+but the former is more usual.
 
-Note also that $ l = \frac{b^2}{a} $, in this coordinate system.
+Note also that $ l = \frac{\beta^2}{a} $, in this coordinate system.
 
 If $ (x,y) $ satisfies the equation \ref{eqn:generalconic}, by the properties of squaring all four sign permutations of $ (\pm x , \pm y) $ satisfy it as
 well; so the curve is indeed symmetric across both axes.
@@ -279,13 +295,29 @@ and hence
 \end{equation}
 is our new polar form (let us call it \df{central polar form}; in these notes, we will call the polar form from exercise 1 the \df{focus polar form}).
 
+\begin{rem}
+  Let us translate this into the use of imaginary axes, so we can use the same formula for the ellipse as well. We have the following:
+  \begin{displaymath}
+    1 = \frac{x^2}{a^2} + \frac{y^2}{\beta^2} = \frac{r^2}{a^2\sec^2 \theta} + \frac{r^2 \tan^2 \theta}{\beta^2\sec^2 \theta} = r^2 \left( \frac{\beta^2 + a^2 \tan^2 \theta}{a^2\beta^2 \sec^2\theta} \right)
+  \end{displaymath}
+  and hence
+  \begin{equation}
+    r = \abs{\frac{ab \sec \theta}{\sqrt{\beta^2 + a^2 \tan^2 \theta}}} = \frac{ab \abs{\sec \theta}}{\sqrt{\abs{\beta^2 + a^2 \tan^2 \theta}}}.
+  \end{equation}
+
+  We can now ``nicely'' write down an equation for $ \varepsilon $ in terms of $ a $ and $ \beta $: since $ a = \frac{l}{1 - \varepsilon^2} $
+  and $ l = \frac{\beta^2}{a} $, we have that $ \varepsilon^2 = \frac{a^2 - \beta^2}{a^2} $; this becomes $ \varepsilon^2 = \frac{a^2 + b^2}{a^2} $
+  for an ellipse, and $ \varepsilon^2 = \frac{a^2 - b^2}{a^2} $ for a hyperbola. (This use of imaginary axes for the hyperbola thus wraps up the
+  two different formulae for the eccentricity into a single formula, which is nice.)
+\end{rem}
+
 Since we have only performed a translation, our curve is still in two disconnected branches. The equation for $ r $ is periodic with period $ 2\pi $,
 and is undefined precisely when $ b^2 - a^2 \tan^2 \theta \leq 0 $. The `boundaries' of this area are thus the bounding lines of the hyperbola, and
 are the lines described by $ b^2 - a^2 \tan^2 \theta = 0 $, or $ \tan \theta = \pm \frac{b}{a} $; in other words, $ y = \pm \frac{b}{a}x $.
 
 We can now give the dimensions for the axes of the hyperbola. The $ x$-intercepts of the hyperbola, as for the ellipse, are $ x = \pm a $. Thus the
 four corners of the rectangle are $ (a, b) $, $ (-a, b) $, $ (a, -b) $, and $ (-a, -b) $. Thus the two side lengths of the rectangle, as claimed,
-are $ 2a $ (in the $ x$-direction) and $ 2b $ (in the $ y$-direction).
+are $ 2a $ (in the $ x$-direction) and $ 2b $ (in the $ y$-direction). [Note, in this situation we take $ b $ to be real, not imaginary.]
 
 Finally, as $ x \to \infty $, we need to show that the curve becomes arbitrarily close to the asymptotes. Indeed, we can easily show
 that $ \od{y}{x} = \frac{x b^2}{y a^2} $. Consider the portion of the hyperbola where $ x > 0 $ and $ y > 0 $. Here,
@@ -312,6 +344,23 @@ when $ x_0 \to \infty $.
 Thus the tangent line of the curve approaches $ y = \frac{b}{a} x $ as $ x \to \infty $, and hence the curve itself approaches this line. We can perform similar
 calculations for the various cases where $ x < 0 $ or $ y < 0 $ (or both).
 
+For the parabola, since $ \varepsilon = 1 $, we obtain $ x^2 + y^2 = (l - x)^2 = l^2 - 2lx + x^2 $, and so $ y^2 = 2l(\frac{1}{2}l - x) $.
+If we reflect in the line $ x = l/4 $, then we map
+\begin{displaymath}
+  (x,y) \to (-(x - l/4) + l/4, y) = (l/2 - x, y)
+\end{displaymath}
+and our equation becomes
+\begin{displaymath}
+  y^2 = 2l\left(\frac{l}{2} - \frac{l}{2} + x \right) = 2lx.
+\end{displaymath}
+
+We obtained the equation $ y^2 = 2l(\frac{1}{2}l - x) $ using the focus polar form, and so in that form the focus was $ (0,0) $. In doing
+our reflection, we mapped $ (0,0) \to (l/2,0) $; hence this is the location of the focus. In other words, if $ y^2 = 4ax $, then $ 2l = 4a $
+and $ a = l/2 $; so $ (a,0) $ is the focus. The directrix of the original form was located at $ x = l/\varepsilon = l $; after the transformation,
+it is located at $ x = -l/2 $, or (if we write the equation as $ y^2 = 4ax $) it is located at $ x = -a $. (These results suggest that $ y^2 = 4ax $
+is the most natural form for the equation of the parabola.)
+
+
 \section{Isometries}
 
 \section{Cones}
@@ -324,8 +373,6 @@ calculations for the various cases where $ x < 0 $ or $ y < 0 $ (or both).
 
 \appendix
 \titleformat{\section}{\clearpage\titlerule[0.8pt]\vspace{0.5ex}\normalfont\Large\bfseries\centering}{Appendix~\thesection:}{1em}{}[{\titlerule[0.8pt]}]
-\section{List of formulae}
-
 \section{Further reading}
 See references in text, as well as:
 \begin{itemize}

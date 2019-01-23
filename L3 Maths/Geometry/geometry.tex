@@ -4,6 +4,7 @@
 \usepackage{OldStandard}
 \usepackage{microtype}
 \usepackage[inline]{enumitem}
+\usepackage{tabu}
 
 \usepackage{siunitx}
 \usepackage{multirow}
@@ -1044,6 +1045,21 @@ Thus we have shown that if the derivative $ \od{y}{x} $ tends to any value, it m
 \appendix
 \titleformat{\section}{\clearpage\titlerule[0.8pt]\vspace{0.5ex}\normalfont\Large\bfseries\centering}{Appendix~\thesection:}{1em}{}[{\titlerule[0.8pt]}]
 \section{List of formulae}
+
+\begin{description}
+  \item[Polar form of conic with focus at $ (0,0) $] \hfill \\
+    $\dfrac{l}{r} = 1 + \varepsilon \cos \theta $.
+  \item[Rectangular form of ellipse or hyperbola with centre at $ (0,0) $] \hfill \\
+    $ \dfrac{x^2}{a^2} \pm \dfrac{y^2}{b^2} = 1 $, where $ 2a $ is the $ x-$dimension and $ 2b $ is the $ y$-dimension
+  \item[Relation of rectangular form to eccentricity] \hfill \\
+    $ a^2 \varepsilon^2 = a^2 + \beta^2 $,  where $ \beta = b $ for an ellipse and $ \beta = ib $ for a hyperbola.
+  \item[Relation of rectangular form to latus rectum] \hfill \\
+    $ l = b^2/a $.
+  \item[Relation of rectangular form to focii] \hfill \\
+    $ (\pm c, 0) $ where $ c^2 = a^2 - \beta^2 $.
+  \item[Rectangular form of parabola with vertex at $ (0,0) $] \hfill \\
+    $ y^2 = 4ax $, where $ (0,a) $ is the focus and $ x = -a $ is the directrix.
+\end{description}
 
 \section{Further reading}
 See references in text, as well as:
