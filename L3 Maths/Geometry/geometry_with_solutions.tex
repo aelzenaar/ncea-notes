@@ -1,6 +1,7 @@
 \documentclass[a4paper,leqno,10pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
+% \usepackage{lmodern}
+\usepackage{OldStandard}
 \usepackage{microtype}
 \usepackage[inline]{enumitem}
 
@@ -255,7 +256,8 @@ Let us make a change of coordinates, sending $ (x,y) \mapsto (x',y') = (x - \var
 \begin{equation}\label{eqn:generalconic}
   \frac{{x'}^2}{a^2} \pm \frac{{y'}^2}{b^2} = 1
 \end{equation}
-where the sign $ \pm $ is the same as the sign of $ 1 - \varepsilon^2 $.
+where the sign $ \pm $ is the same as the sign of $ 1 - \varepsilon^2 $. (Note that the signs of $ a $ and $ b $ are irrelevant, so in general we
+assume them to be positive.)
 
 Note also that $ l = \frac{b^2}{a} $, in this coordinate system.
 
@@ -291,20 +293,20 @@ that $ \od{y}{x} = \frac{x b^2}{y a^2} $. Consider the portion of the hyperbola 
   y = b\sqrt{\frac{x^2}{a^2} - 1}
 \end{displaymath}
 and so the equation of the tangent to the curve at $ (x_0, y_0) $ is
-\begin{align*}
-  y &= \frac{x_0 b^2}{y_0 a^2} (x - x_0) + y_0\\
-    &= \frac{x_0 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}} x - \frac{x_0^2 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}} + b\sqrt{\frac{x_0^2}{a^2} - 1}.
-\end{align*}
+\begin{displaymath}
+  y = \frac{x_0 b^2}{y_0 a^2} (x - x_0) + y_0
+    = \frac{x_0 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}} x - \frac{x_0^2 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}} + b\sqrt{\frac{x_0^2}{a^2} - 1}.
+\end{displaymath}
 The slope of the tangent line, as $ x_0 \to \infty $, is
 \begin{displaymath}
  \frac{x_0 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}} = \frac{b}{a^2\sqrt{\frac{1}{a^2} - \frac{1}{x_0^2}}} \to \frac{b}{a^2\sqrt{\frac{1}{a^2} - 0}} = \frac{b}{a}.
 \end{displaymath}
 Further, the $ y$-intercept becomes
-\begin{align*}
-  -\frac{x_0^2 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}} + b\sqrt{\frac{x_0^2}{a^2} - 1} &= \frac{ba^2(\frac{x_0^2}{a^2} - 1)-x_0^2 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}}\\
-    &= \frac{- ba^2}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}}\\
-    &\to 0
-\end{align*}
+\begin{displaymath}
+  -\frac{x_0^2 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}} + b\sqrt{\frac{x_0^2}{a^2} - 1} = \frac{ba^2(\frac{x_0^2}{a^2} - 1)-x_0^2 b}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}}
+    = \frac{- ba^2}{a^2\sqrt{\frac{x_0^2}{a^2} - 1}}
+    \to 0
+\end{displaymath}
 when $ x_0 \to \infty $.
 
 Thus the tangent line of the curve approaches $ y = \frac{b}{a} x $ as $ x \to \infty $, and hence the curve itself approaches this line. We can perform similar
