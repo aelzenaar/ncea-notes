@@ -98,7 +98,7 @@
 
 \renewcommand{\theequation}{N\arabic{equation}}
 
-\title{Level Three Conic Sections --- Notes and solutions}
+\title{Level Three Conic Sections\\---\\Notes and solutions}
 \author{Alex Elzenaar}
 \date{\today}
 
@@ -360,6 +360,117 @@ and $ a = l/2 $; so $ (a,0) $ is the focus. The directrix of the original form w
 it is located at $ x = -l/2 $, or (if we write the equation as $ y^2 = 4ax $) it is located at $ x = -a $. (These results suggest that $ y^2 = 4ax $
 is the most natural form for the equation of the parabola.)
 
+\begin{exercise}[Parametric form]
+  Show that:
+  \begin{enumerate}
+    \item The ellipse $ x^2/a^2 + y^2/b^2 = 1 $ is parameterised by $ (a \cos t, b \sin t) $ for $ 0 \leq t < 2\pi $.
+    \item The parabola $ y^2 = 2lx $ is parameterised by $ (2lt^2, 2lt) $.
+    \item The hyperbola $ x^2/a^2 - y^2/b^2 = 1 $ is parameterised by $ (a \sec t, b \tan t) $ for $ 0 \leq t < 2\pi $.
+  \end{enumerate}
+  Illustrate these parameterisations with a suitable computer program (e.g. Geogebra, or your favourite programming language).
+\end{exercise}
+
+Consider the ellipse case. We need to show two things:
+\renewcommand{\labelenumi}{\Roman{enumi}.}
+\begin{enumerate}
+  \item That each point of the form $ (a \cos t, b \sin t) $ lies on the ellipse.
+  \item That for each point $(x,y)$ on the ellipse there exists some unique $ t $ lying in the range $ 0 \leq t < 2\pi $
+        such that $ (x,y) = (a \cos t, b \sin t) $.
+\end{enumerate}
+
+Point I is easy: $ (a \cos t)^2/a^2 + (b \sin t)^2/b^2 = \cos^2 t + \sin^2 t = 1 $, so each such point is indeed on the ellipse.
+
+Now, suppose $ (x,y) $ lies on the ellipse. Let us begin by finding all $ t $ such that $ a \cos t = x $; indeed,
+$ \cos t = x/a $, and (by our earlier results) we know that $ \abs{x} \leq \abs{a} $ so there exists some $ t_0 $ in the given range
+such that $ \cos t_0 = x/a $; further, $ 2\pi - t_0 $ is the only other point in the range which might satisfy this equation.
+
+Let us now consider $ \sin t_0 $ and $ \sin (2\pi - t_0) $. We have $ x^2/a^2 + y^2/b^2 = 1 $, so $ \cos^2 t_0 + y^2/b^2 = 1 $. It
+follows that $ 1 - \sin^2 t_0 + y^2/b^2 = 1 $, and hence that $ \sin^2 t_0 = y^2/b^2 $; so $ \sin t_0 = \pm y/b $.
+
+Suppose that $ \sin t_0 = -y/b $. Then $ \sin (2\pi - t_0) = -\sin(t_0) $ (by standard properties of the sine function),
+and so $ \sin(2\pi - t_0) = y/b $; thus $ y = b\sin(2\pi - t_0) $ and $ x = a\cos(2\pi - t_0) $, $ t = 2\pi - t_0 $ is the
+only substitution such that both $ y = b\sin t $ and $ x = a\cos t $ work.
+
+It remains to show that if $ \sin t_0 = y/b $ then $ \sin (2\pi - t_0) \neq y/b $ (for if both held, then we wouldn't have
+a unique value for $ t $: both $ t_0 $ and $ 2\pi - t_0 $ would work). But by the same reasoning as above, $ \sin t_0 = y/b $
+implies $ \sin (2\pi - t_0) = -y/b \neq y/b $; so if $ \sin t_0 = y/b $ then the substitution $ t = t_0 $ is the unique parameter
+giving the point $ (x,y) $.
+
+The same process works for both the hyperbola and the ellipse.
+
+\begin{exercise}[Focii of rectangular conics]
+  Given the equation
+  \begin{displaymath}
+    \frac{x^2}{a^2} \pm \frac{y^2}{b^2} = 1,
+  \end{displaymath}
+  compute the coordinates of the focus, equation of the directrix, and eccentricity of the conic. Hence show that
+  ellipses and hyperbolae have two focii and two directrices each. Where is the directrix of a circle?
+
+  Show that the following two properties can be used as alternative definitions for the ellipse and hyperbola:
+  \begin{enumerate}[label={AP\arabic*}.]
+    \item Show that the ellipse with focii $ O_1 $ and $ O_2 $ is the locus of all points $ P $
+          such that $ d(O_1, P) + d(P, O_2) = R $ for some constant $ R $. Give $ R $ in terms of $ a $ and $ b $.
+    \item Show that the hyperbola with focii $ O_1 $ and $ O_2 $ is the locus of all points $ P $
+          such that $ d(O_1, P) - d(P, O_2) = R $ for some constant $ R $. Give $ R $ in terms of $ a $ and $ b $.
+  \end{enumerate}
+
+  As an application of this definition, we will derive the `reflection property' of the ellipse.
+  \begin{enumerate}
+    \item Suppose $ O_1 $ and $ O_2 $ are on the same side of a line $ \ell $. Show that the shortest path from $ O_1 $
+          to $ O_2 $ which touches the line $ \ell $ is the broken line $ O_1XO_2 $, where $ X $ is on $ \ell $ and
+          the angles between $ O_1 X $ and $ \ell $ and between $ X O_2 $ and $ \ell $ are equal. (Hint: you can do this
+          with calculus, but that would be like killing a fly with a sledgehammer.)
+    \item Show that, if $ O_1 $ and $ O_2 $ are two focii of an ellipse and $ X $ is any point on the ellipse, then the broken line $ O_1 X O_2 $
+          makes equal angles with the tangent line of the ellipse at $ X $. (Hint: show that this broken line is the shortest path from $ O_1 $ to $ O_2 $
+          that touches the tangent line at $ X $.)
+    \item Thus, given the law of reflection for waves, show that if a light source is placed at $ O_1 $ then every ray from the source
+          will arrive at $ O_2 $ at precisely the same time.
+    \item Derive some result of this kind for parabolae by treating a parabola as an ellipse with one focus `at infinity'. Suggest an
+          application of this property related to, say, torches.
+  \end{enumerate}
+\end{exercise}
+
+We saw in exercise 2 that $ l = \frac{\beta^2}{a} $ and $ \varepsilon^2 = \frac{a^2 - \beta^2}{a^2} $ (where, again, $ \beta = b $ for an ellipse
+and $ \beta = ib $ for a hyperbola). When origin is at the focus, the directrix was $ x = l/\varepsilon $; when we put the equation into the
+normal rectangular form, we performed the transformation $ (x,y) \mapsto (x - \varepsilon a, y) $ and so the focus is now at $ (-\varepsilon a, 0) $;
+if $ c = \varepsilon a $ then $ c^2 = \varepsilon^2 a^2 = a^2 - \beta^2 $; thus the focii lie at $ (\pm c, 0) = (\pm(a^2 - \beta^2), 0) $. The
+directrix is now at
+\begin{align*}
+  x &= l/\varepsilon - \varepsilon a = \frac{\beta^2}{a\varepsilon} - \varepsilon a = \frac{\beta^2 - \varepsilon^2 a^2}{\varepsilon a}
+     = \frac{2\beta^2 - a^2}{\varepsilon a}\\
+  x^2 &= \frac{(2\beta^2 - a^2)^2}{a^2 - \beta^2}.
+\end{align*}
+
+For a circle, $ \beta = a $. Hence the directrix will be ``at infinity'' in the sense that it is undefined but that $ x \to \infty $ in the above
+calculation as $ \beta \to a $.
+
+(Note that we don't actually need to do any calculations to show that ellipses and hyperbolae must have two focii and two directrices, because it
+follows immediately from the fact that the figures are symmetric about the $ y$-axis and so the reflections of the initial focus and directrix from
+the definition must also generate the same conic.)
+
+We will now prove the `string-and-stakes' definitions for the ellipse.\footnote{For an explanation of the name `string-and-stakes',
+see \url{https://www.youtube.com/watch?v=Et3OdzEGX_w}.}
+
+Suppose $ O_1 $ and $ O_2 $ are two points, and that $ R $ is some positive number. Let $ \mathcal{F} $ be the locus of all points $ P $
+satisfying the relation $ d(P,O_1) + d(P,O_2) = R $. We want to do some coordinate geometry, so we need to pick a coordinate system; we will
+chose the origin to be the midpoint $ O = m(O_1, O_2) $ and then, setting $ c = d(O_1, O) = d(O_2, O) $, we will place $ O_1 $ and $ O_2 $
+on the $ x$-axis at $ O_1 = (-c, 0) $ and $ O_2 = (c,0) $.
+
+Let $ P = (x,y) $ satisfy the given relation; then $ R = \sqrt{(x + c)^2 + y^2} + \sqrt{(x - c)^2 + y^2} $, so
+\begin{align*}
+  (R - \sqrt{(x - c)^2 + y^2})^2 &= x^2 + 2xc + c^2 + y^2\\
+  R^2 - 2R\sqrt{(x - c)^2 + y^2} &= 4xc\\
+  (x - c)^2 + y^2 &= \left(\frac{R^2 - 4xc}{2R}\right)^2\\
+  x^2 - 2cx + c^2 + y^2 &= \frac{R^4 - 8cR^2x + 16c^2x^2}{4R^2}\\
+  x^2 + c^2 + y^2 &=  \frac{R^2}{4} + \frac{4c^2}{R^2}x^2\\
+  \frac{1 - \frac{4c^2}{R^2}}{\frac{R^2}{4} - c^2} x^2 + \frac{1}{\frac{R^2}{4} - c^2}y^2 = 1.
+\end{align*}
+So every such point $ P $ lies on the ellipse with $ a^2 = \frac{\frac{R^2}{4} - c^2}{1 - \frac{4c^2}{R^2}} $ and $ b^2 = \frac{R^2}{4} - c^2 $.
+
+Further, suppose $ P = (x,y) $ lies on the ellipse. We need to show that $ R = d(O_1, P) + d(O_2, P) $; this can be done by simply running
+the above calculation backwards.
+
+A similar computation can be done for the hyperbola.
 
 \section{Isometries}
 
