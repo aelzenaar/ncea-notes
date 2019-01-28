@@ -11,6 +11,11 @@ As we've already discussed, it is usually impractical to measure an entire popul
 to measure a smaller sample and then extrapolate our findings. This process, known as \emph{statistical inference},
 requires us to have a good method for choosing our sample so that it is representative.
 
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{dilbert-sampling}
+\end{center}
+
+
 We will look at several examples of bad methods of sampling to begin with.
 
 \subsection*{The examples}
@@ -24,6 +29,11 @@ We will look at several examples of bad methods of sampling to begin with.
   \item A psychiatrist finds that practically everyone is neurotic.
   \item A drug trial is performed; the patients were analysed according to the treatment they actually took, rather
         than the treatment they were assigned at the randomisation stage of the trial.
+  \item A majority of people attending a public meeting on a new cycleway are strongly against it. However, a combination of online
+        survey, door knocking surveys, and paper surveys performed by the council found that 75\% of the population of the area was
+        either in favour or strongly in favour of the new cycleway.
+  \item The council conducted a survey on a new residential development. The survey was conducted by posting a survey to all those on the list of
+        a local resident's association. 90\% of respondents were against the new development.
 \end{enumerate}
 
 \subsection*{The problems}
@@ -41,11 +51,42 @@ We will look at several examples of bad methods of sampling to begin with.
         that should be being answered is `is this treatment effective?' rather than `out of the people who chose to take our
         tablets, is the treatment effective?'. After all, if people don't end up taking the medication after being given it,
         this is philosophically and medically the same as if the medication was ineffective.\footnote{See Ben Goldacre, \emph{Bad Pharma}, pages 200-1.}
+  \item There is a bias in the sample of people attending the public meeting: for example, they are likely to have strong opinions on the cycleway and
+        are likely to be more involved in local politics and resident groups. The council survey reaches a broader spectrum of residents and thus
+        has less selection bias.
+  \item By now, you should be able to come up with your own explanation as to why this sample was not representative.
 \end{enumerate}
+
+From studying these examples, we have the following broad guidelines:
+\begin{itemize}
+  \item When a selection procedure is biased, taking a larger sample with the same bias doesn't help.
+  \item If a large proportion of people don't respond, the results are likely to be biased.
+  \item Picking a sample from a certain group of people within a population is likely to be biased.
+  \item Allowing people to choose whether or not to respond introduces bias.
+\end{itemize}
+
+There are various methods of producing a sample, based on these lessons. They include:
+\begin{description}
+  \item[Simple random sampling] \hfill \\
+    Taking a full list of all the people in the population, and picking some proportion of them entirely at random.
+  \item[Quota sampling] \hfill \\
+    Giving each interviewer a quota of subjects to interview, and interviewing a fixed proportion of particular categories
+    within that quota (e.g. 50\% non-male, 20\% below the age of thirty, and so forth) which match the proportion of the
+    categories in the overall population.
+\end{description}
+
+In general, simple random sampling is the best method as long as it is carried out correctly:
+\begin{itemize}
+  \item The list of possible interviewees must be a full list of the entire population to be surveyed.
+  \item The sampling method should be truly random (in other words, `choosing every $ n$th person' is not a good idea).
+\end{itemize}
+
+The problem of non-response bias remains; it is therefore a very good idea to conduct surveys using many different
+methods (postal surveys, physical meetings, door-knocking, phone surveys, and so forth) in order to minimise this.
 
 READING: http://www.goodmath.org/blog/2016/09/29/polls-and-sampling-errors-in-the-presidental-debate-results/
 
-SURVEY DESIGN: https://www.youtube.com/watch?v=G0ZZJXw4MTA
+SURVEY DESIGN:
 
 
 \subsection*{Questions}
