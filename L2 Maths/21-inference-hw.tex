@@ -1,0 +1,103 @@
+\input{stdinclude.tex}
+
+\begin{document}
+
+\mainHeaderHw{21}{Statistical Inference}
+\subsection*{Reading}
+Every year, thousands of New Zealand high school students try to decide which of the eight
+universities in New Zealand they should attend. One of the tools which they can use to help
+inform their decision is the idea of a `university ranking', a list of universities ordered
+by how `good' they are according to some set of criteria.
+
+The following table shows the global rankings given by eight different websites for both the University
+of Auckland and the University of Otago.
+
+\begin{table}[h]
+  \begin{center}
+    \begin{tabular}{|r|c|c|}
+      \hline
+      & \textbf{The University of Auckland} & \textbf{The University of Otago} \\
+      \hline
+      topuniversities.com & 81 & 169\\
+      CWUR & 252 & 354\\
+      Times & 165 & 225\\
+      ARWU & 175 & 350\\
+      CWTS Leiden & 204 & 267\\
+      university-list.net & 182 & 270\\
+      4icu & 165 & \textit{No rank}\\
+      RankPro & 321 & 351\\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+Here are some calculated values and a box-and-whisker graph for the University of Auckland data:
+\begin{table}[h]
+  \makeatletter
+  \fontsize{\f@size}{2em}\selectfont
+  \makeatother
+  \begin{center}
+    \begin{tabular}{|r|l|c|}
+      \hline
+      & \textbf{Auckland} & \textbf{Otago}\\
+      \hline
+      \textbf{Mean ($ \bar x $)} & 193.125 & \hspace{0.4\linewidth} \ \\
+      \textbf{Minimum} & 81 &\\
+      \textbf{Lower quartile} & 165 &\\
+      \textbf{Median} & 178.5 &\\
+      \textbf{Upper quartile} & 228 &\\
+      \textbf{Maximum} & 321 &\\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\begin{tikzpicture}
+  \begin{axis}
+    [
+    width=\linewidth,
+    height=15em,
+    ytick={2,1},
+    yticklabels={Auckland, Otago},
+    xmin = 0, xmax = 400, xtick distance = 50,
+    major grid style={line width=.1pt, draw=gray!10},
+    grid = both
+    ]
+    \addplot[
+    boxplot prepared={
+      median=0,
+      upper quartile=0,
+      lower quartile=0,
+      upper whisker=0,
+      lower whisker=0
+    },
+    ] coordinates {};
+    \addplot+[
+    boxplot prepared={
+      median=178.5,
+      upper quartile=165,
+      lower quartile=228,
+      upper whisker=81,
+      lower whisker=321
+    },
+    ] coordinates {};
+  \end{axis}
+\end{tikzpicture}
+
+\clearpage
+\subsection*{Questions}
+\begin{questions}
+  \question Fill in the University of Otago column in the table using the data given, and draw a box-and-whisker graph
+            for it in the space underneath the University of Auckland graph.
+  \question Write a couple of paragraphs comparing the two graphs (half a page at most) and discussing the pros and cons
+            of university ranking surveys. You might want to discuss the questions below:
+    \begin{parts}
+      \part How do you think the ranking websites might have conducted their surveys (who did they talk to and/or what
+            data might they have gathered)? What might the pros and cons of your predicted surveying method be?
+      \part Is one university generally ranked higher than the other?
+      \part Looking at the graphs, can you see any visible skew in the data?
+      \part Do you think that the higher ranked university is necessarily better, or could there be some other reason for its
+            high ranking --- in other words, does the ranking of the university actually reflect how `good' it is, or could
+            there be some other force(s) at play here?
+    \end{parts}
+\end{questions}
+\end{document}

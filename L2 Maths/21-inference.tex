@@ -1,0 +1,137 @@
+\input{stdinclude.tex}
+
+\begin{document}
+
+\mainHeader{21}{Statistical Inference}
+
+Unless we are very lucky, the statistics we gather from our small sample will not
+exactly match the parameters of the population. We can't exactly predict what the
+population looks like!
+
+\subsection*{Summarising data}
+We first need to take our data and work out what it is telling us about the \emph{sample}.
+
+We have a number of statistics that we could calculate. First, we look at the \emph{measures
+of central tendancy}; these tell us, in some sense, what the typical value for a measurement
+in our sample is.
+
+\begin{center}
+  \includegraphics[width=0.4\textwidth]{wellchosenaverage}\\
+  \vspace{5px}
+  \small{From \emph{How to lie with statistics}, by Darrell Huff (p.33).}
+\end{center}
+
+\begin{description}
+  \item[Arithmetic mean] \hfill \\
+    This is the `usual' average value; it tells us where the `centre of mass' of the data lies. However,
+    it might not be typical of any actual data value; see the diagram above, or consider that the
+    mean of $\{13,15,16,80\} $ is 31, but no actual data value is anywhere near 31.
+  \item[Median and quartiles] \hfill \\
+    If we list out all the data values for our measurement in order and then pick the three quartiles (the \emph{lower quartile}
+    is the value that 25\% of the values lie below, the \emph{median} is the value that 50\% of the values lie below, and the
+    \emph{upper quartile} is the value that 75\% of values lie below), then we have some information about the `shape' of the
+    data. If we have two populations to compare (female versus non-female.)
+  \item[Mode] \hfill \\
+    The \emph{mode} is the most common value for the measurement.
+\end{description}
+
+We also have measures of spread, which tell us how likely we are to find points far away from our central point.
+\begin{description}
+  \item[Range and inter-quartile range] \hfill \\
+    These values, the difference between the maximum and minimum and between the two quartiles respectively, give us
+    a rough idea of how spread out our data values are. However, they don't tell us whether the `typical' data value
+    is close to or far away from the centre --- only how far apart the furthest data points are.
+  \item[Variance and standard deviation] \hfill \\
+    The \emph{variance} $ s^2 $ of a set of data is the mean of the squares of the distances of each point to the mean.
+    \begin{displaymath}
+      s^2 = \frac{\sum (x - \bar x)^2}{n}.
+    \end{displaymath}
+    The \emph{standard deviation} of the set is $ s $, the square root of the variance.
+\end{description}
+
+We will use the central points and the spread measurements of our sample to estimate the same values
+for the population as a whole.
+
+\subsection*{Drawing an inference}
+We then need to take our \emph{statistics} and work out how sure we can be about the
+\emph{parameters} of the population.
+
+At this level, we won't go into the details too far. What we will do is assume that our
+median value for our sample is a reasonable guess for the median value of our population,
+and then write down an \emph{informal confidence interval}:
+\begin{displaymath}
+  \text{sample median} \pm 1.5 \cdot \frac{\text{IQR}}{\sqrt{n}}
+\end{displaymath}
+(where IQR is the inter-quartile range of the sample). Note: bigger sample size,
+smaller informal confidence interval. (Why?)
+
+The population median will lie within this range with 90\% confidence: if
+we sample ten times, calculating this value each time, then on average nine of
+these intervals will contain the population median.\footnote{Next year, we will
+learn how to make this idea more useful by re-sampling the population a bunch of
+times to make the confidence intervals we obtain smaller.}
+
+In order to compare two subsets of a population, it is useful to use side-by-side
+box and whisker graphs to visualise the shapes of the data sets. For example:
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{stats-byod}
+\end{center}
+
+
+\clearpage
+\subsection*{Questions}
+\begin{questions}
+  \question Consider the following data from the 2017 Census at School. (The question answered was `How much water did you drink yesterday?'.) Is
+            there any significant difference between the Auckland and Wellington medians?
+\begin{verbatim}
+======================================================================================
+                               iNZight Summary
+--------------------------------------------------------------------------------------
+        Primary variable of interest: region (categorical)
+                  Secondary variable: drinkwater (numeric)
+
+        Total number of observations: 1000
+   Number omitted due to missingness: 68 (68 in drinkwater)
+   Total number of observations used: 932
+======================================================================================
+
+Summary of drinkwater by region:
+--------------------------------
+
+                       Min   25%   Median    75%    Max    Mean      SD   Sample Size
+     Auckland Region     0   250      700   1000   4000   799.1   724.7           471
+   Wellington Region     0   250      600   1000   4000   774.6   702.1           461
+
+
+======================================================================================
+\end{verbatim}
+
+  \question The following table shows the data collected from a sample of 1000 Census at School respondents (2017 survey),
+            answering the question `In how many languages can you hold a conversation about a lot of every day things?'.
+            The notation $ [a,b) $ means `all the numbers between $ a $ and $ b $, including $ a $ but not including $ b $'.
+            \begin{center}
+              \includegraphics[width=\textwidth]{stats-languages}
+            \end{center}
+    \begin{parts}
+      \item Calculate the statistics for the total sample. Hence write down a guess for the population
+            measurement, and a confidence interval for that guess. Is it more or less than you would expect?
+      \item Calculate the statistics for male and female respondents from the sample separately. Is there
+            a significant difference between your sample medians? Consider the male and female populations
+            of respondents. Can you conclude that, in general, one gender tends to be comfortable with
+            more languages than the other? (Two populations are likely to have different population medians
+            if the informal confidence intervals for the median of each don't overlap.)
+    \end{parts}
+  \question The following tables show the data collected from a sample of 1000 Census at School respondents answering the question `What
+            is the main way you usually get to school?'. The first table is sampled from the 2009 data set, and the second from the 2017
+            data set. Pick a mode of transport, make a hypothesis (with reasoning) as to whether there is likely to be any significant
+            change in usage of your chosen mode over the eight years between the two surveys, and test your hypothesis.
+            \begin{center}
+              \includegraphics[width=\textwidth]{stats-transport2009}
+            \end{center}
+            \begin{center}
+              \includegraphics[width=\textwidth]{stats-transport2017}
+            \end{center}
+\end{questions}
+
+\end{document}
+
