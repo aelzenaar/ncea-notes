@@ -34,13 +34,11 @@ In fact, it turns out that the derivative of $ f \circ g $ is $ g' (f' \circ g) 
 \end{displaymath}
 This is known as the \textbf{chain rule}, since we are ``chaining" together functions.
 
-Before proving the chain rule, let us convince ourselves that it is plausible. We can interpret the
+Let us convince ourselves that this rule is plausible. We can interpret the
 derivative $ \od{g}{x} $ as the rate of change of $ g $ with respect to $ x $, and the derivative $ \od{f}{g} $
-as the derivative of $ f $ with respect to small changes in $ g $; it is intuitive that if $ g $ changes
+as the derivative of $ f $ with respect to small changes in the output of $ g $; it is intuitive that if $ g $ changes
 twice as fast as $ x $ at some point, and $ f $ changes five times as fast as $ g $, then $ f $ changes $ 2 \times 5 = 10 $
 times as fast as $ x $.
-
-The actual proof (given below) matches this intuition quite well.
 
 \begin{exs}\leavevmode
   \begin{enumerate}
@@ -52,36 +50,35 @@ The actual proof (given below) matches this intuition quite well.
             g'(x) &= 7x^6 \cdot \cos x^7 \cdot 7\left(\sin x^7\right)^6 \cdot 7\left[\left(\sin x^7\right)^7 + 1\right]
                           \cdot \cos \left( \left[ \left( \sin x^7 \right)^7 + 1 \right]^7 \right)
           \end{align*}
-          This result can probably be simplified, however the point is to evaluate the derivative chain from inside to outside in a systematic fashion.
   \end{enumerate}
 \end{exs}
 
-\begin{proof}[Proof of the chain rule (optional)]
-  The proof is a little fiddly, and comes in two parts. Recall that in the work on limits, we found that an alternative definition of
-  the derivative of $ f $ at $ x $ was
-  \begin{displaymath}
-    f'(x) = \lim_{k \to x} \frac{f(x) - f(k)}{x - k}.
-  \end{displaymath}
+% We don't need this, but it's here just in case.
+% \begin{proof}[Proof of the chain rule (optional)]
+%   The proof is a little fiddly, and comes in two parts. Recall that in the work on limits, we found that an alternative definition of
+%   the derivative of $ f $ at $ x $ was
+%   \begin{displaymath}
+%     f'(x) = \lim_{k \to x} \frac{f(x) - f(k)}{x - k}.
+%   \end{displaymath}
+%
+%   Now, suppose we wish to find the derivative of $ f \circ g $ at $ x $. In the first case, suppose that $ g $ is not constant
+%   around $ x $ (in other words, we can zoom in `far enough' towards $ x $ so that for all $ k $ in the zoomed in area, $ g(k) \neq g(x) $).
+%   Then:
+%   \begin{align*}
+%     \lim_{k \to x} \frac{f(g(x)) - f(g(k))}{x - k} &= \lim_{k \to x} \frac{f(g(x)) - f(g(k))}{g(x) - g(k)} \cdot \frac{g(x) - g(k)}{x - k}\\
+%                                                    &= \lim_{k \to x} \frac{f(g(x)) - f(g(k))}{g(x) - g(k)} \cdot \lim_{k \to x} \frac{g(x) - g(k)}{x - k}\\
+%                                                    &= f'(g(x)) g'(x),
+%   \end{align*}
+%   (noting that as $ k \to x $, $ g(k) \to g(x) $). This calculation only works when $ g $ is not constant around $ x $, because if $ g $ \emph{is}
+%   constant around $ x $ then for all $ k $ sufficiently close to $ x $, $ g(x) - g(k) = 0 $ and the limit does not exist.
+%
+%   To deal with this case, assume that $ g $ \emph{is} constant around $ x $. Then $ g'(x) = 0 $, and also for all $ h $ close enough
+%   to zero we have $ g(x + h) = g(x) $. Then
+%   \begin{displaymath}
+%     (f \circ g)'(x) = \lim_{h \to 0} \frac{f(g(x + h)) - f(g(x))}{h} = \lim_{h \to 0} \frac{f(g(x)) - f(g(x))}{h} = 0 = 0 \times f'(g(x)) = g'(x) f'(g(x)).
+%   \end{displaymath}
+% \end{proof}
 
-  Now, suppose we wish to find the derivative of $ f \circ g $ at $ x $. In the first case, suppose that $ g $ is not constant
-  around $ x $ (in other words, we can zoom in `far enough' towards $ x $ so that for all $ k $ in the zoomed in area, $ g(k) \neq g(x) $).
-  Then:
-  \begin{align*}
-    \lim_{k \to x} \frac{f(g(x)) - f(g(k))}{x - k} &= \lim_{k \to x} \frac{f(g(x)) - f(g(k))}{g(x) - g(k)} \cdot \frac{g(x) - g(k)}{x - k}\\
-                                                   &= \lim_{k \to x} \frac{f(g(x)) - f(g(k))}{g(x) - g(k)} \cdot \lim_{k \to x} \frac{g(x) - g(k)}{x - k}\\
-                                                   &= f'(g(x)) g'(x),
-  \end{align*}
-  (noting that as $ k \to x $, $ g(k) \to g(x) $). This calculation only works when $ g $ is not constant around $ x $, because if $ g $ \emph{is}
-  constant around $ x $ then for all $ k $ sufficiently close to $ x $, $ g(x) - g(k) = 0 $ and the limit does not exist.
-
-  To deal with this case, assume that $ g $ \emph{is} constant around $ x $. Then $ g'(x) = 0 $, and also for all $ h $ close enough
-  to zero we have $ g(x + h) = g(x) $. Then
-  \begin{displaymath}
-    (f \circ g)'(x) = \lim_{h \to 0} \frac{f(g(x + h)) - f(g(x))}{h} = \lim_{h \to 0} \frac{f(g(x)) - f(g(x))}{h} = 0 = 0 \times f'(g(x)) = g'(x) f'(g(x)).
-  \end{displaymath}
-\end{proof}
-
-\clearpage
 \subsection*{Questions}
 \begin{questions}
   \questioA Identify the inner and outer functions, but do not attempt to differentiate.

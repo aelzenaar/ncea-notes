@@ -73,25 +73,7 @@ error of a given approximation; this is explored, a little, in the exercises.
   Hence $ \sqrt{4.03} \approx \frac{1}{4} \times 0.03 + 2 = 2.0075 $ --- and, as promised, all of these calculations
   can be done without a calculator. (According to my calculator, $ \sqrt{4.03} \approx 2.007486 $ and so we are not far
   off at all.)
-
-%   Let us now calculate the error of this approximation. The difference between the actual and approximate values of
-%   the square root is $ \left(\frac{1}{4}x + 2\right) - \sqrt{4 + x} $; if we want our error to be less than $ E \% $
-%   of the real value, then we must solve
-%   \begin{displaymath}
-%     \abs{\left(\frac{1}{4}x + 2\right) - \sqrt{4 + x}} < \frac{E}{100} \sqrt{4 + x}
-%   \end{displaymath}
-%   for $ x $. Luckily, this is basically a polynomial in $ u = \sqrt{4 + x} $; making this substitution, we have
-%   \begin{gather*}
-%     \left(\frac{u^2}{4} + 1 - u\right)^2 < \left(\frac{E}{100}\right)^2 u^2\\
-%     \frac{u^4}{16} + 1 + u^2 + \frac{u^2}{2} - \frac{u^3}{2} - 2u < \left(\frac{E}{100}\right)^2 u^2\\
-%     0 < -\frac{1}{16}u^4 + \frac{1}{2}u^3 + \left(\frac{E^2}{10000} - \frac{3}{2}\right)u^2 + 2u - 1
-%   \end{gather*}
-%   We can now use our calculator to find the roots of this polynomial (or, if you were so inclined, there are various
-%   methods for finding an approximation by hand); for example, if $ E = 100 $ then $ 4 - 2\sqrt{2} < u < 4 + 2\sqrt{2} $
-%   is the region within which our approximation is `good'.
 \end{ex}
-
-\emph{To do: add a discussion about the error of an approximation.}
 
 \subsection*{Normal Lines}
 If a function has a tangent line at a particular point, then the line perpendicular to the tangent line
@@ -204,12 +186,6 @@ at that point is called the \textbf{normal line}.
   \questioM Find the best linear approximation to $ y = 3x^3 + 2x + 4 $ around $ x = 2 $.
   \questioM Find the point(s) on the graph of the function $ y = x^2 $ such that the slope of the normal to the curve at that point is $ m^\perp = -1 $.
   \questioE The tangents to the curve $ y = \frac{1}{4}(x - 2)^2 $ at points $ P $ and $ Q = (6,4) $ are perpendicular. What is the $ x$-ordinate of $ P $?
-  \questioS Consider the surface described by $ z = x^2 + 2\sin(y^2 + 1) + 2 $.
-    \begin{parts}
-      \part Find the derivative of $ z $ with respect to $ x $, and find the tangent line in the $ x $ direction at $ (0,0) $.
-      \part Find the derivative of $ z $ with respect to $ y $, and find the tangent line in the $ y $ direction at $ (0,0) $.
-      \part Hence describe the tangent \textit{plane} of the surface at $ (0,0) $.
-    \end{parts}
   \question Consider the function $ y = \sin x $.
     \begin{parts}
       \parM Find the best linear approximation to this function around $ (0,0) $.
