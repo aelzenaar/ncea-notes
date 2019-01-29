@@ -128,10 +128,11 @@ represent any of the listed universities.*
 My favourite multi-dimensional calculus book, is, in fact:
 
  * Lynn Loomis and Shlomo Sternberg, _Advanced Calculus_. This book started off as notes for the legendary Math 55 at Harvard (a first year course!);
-   it starts off with a recap of linear algebra, and ends up around 500 pages later with a very nice approach to differential forms. This is my
-   favourite calculus text of all time, but it is probably a little too much for students in first year! (Or even students who have completed 253,
-   to be honest... perhaps 255 is enough preparation? The preface recommends baby Spivak as prep.) Highlights include a rigorous (and clear) treatment
-   of infinitesimal functions and differentials, and a final chapter on applications to theoretical physics. The exposition tries to explain a great
+   it starts off with a recap of linear algebra (really one of the best `second courses in linear algebra' I've looked at), and ends up around 500
+   pages later with a very nice approach to differential forms. This is my favourite calculus text of all time, but it is probably a little too much
+   for students in first year! (Or even students who have completed 253 to be honest... perhaps 255 is enough preparation? The preface recommends baby
+   Spivak as prep, so maybe 332 is the best prerequisite course.) Highlights include a rigorous (and clear) treatment of infinitesimal functions and
+   differentials, and a final chapter on applications to theoretical physics. The exposition tries to explain a great
    deal of the 'philosophy of doing mathematics', which I quite like - see, for example, the chapter on uniformity and compactness. (515.8 L86)
 
 ### Linear Algebra (253/255)
@@ -273,9 +274,8 @@ To add in 2019.
 ### Complex calculus and analysis (340, 341?)
 To do: do a course in complex analysis.
  * Stephen D. Fisher, _Complex Variables_. This is the book we used in 2018 for complex calculus, I found it a little weird because it tries to be both
-   an accessible calculus book and a book with proofs. I mean, that's not a bad thing, I suppose. For what it is, it's OK, and the examples are very
-   geometric, which is nice, but I don't think it has enough personality. I don't know of any *better* books in this regard though, and it's a Dover
-   book so it's very cheap. I do really like the sections on the geometry of analytic functions (chapter 3). (515.93 F53)
+   an accessible calculus book and a book with proofs. To quote myself, ``the main problem with Fisher is it's trying to be both a rigorous book and a
+   calculus book and failing miserably at both''. I do really like the sections on the geometry of analytic functions (chapter 3). (515.93 F53)
  * E.B. Saff and A.D. Snider, _Fundamentals of Complex Analysis for Mathematics, Sci...etc._ I own this book, it's basically a calculus book, so if
    you like Stewart or Anton you'll probably like this. I don't hate it, and I found it useful for complex calculus, if a little dry. It's a bit expensive,
    because it's a calculus book... (515.9 S12)
@@ -311,12 +311,11 @@ See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geo
  * Something on knot theory? (Cromwell, _Knots and Links_ ?)
  * Something on matroids?
  * David Gould, _Differential Topology_.
- * Sheldon Axler, _Linear Algebra Done Right_. On my list to read. Supposed to be very good. (512.5 A96)
 
 ## My favourite books
  * Artin, _Algebra_
  * Berger, _Geometry_
- * Halmos, _Naive Set Theory_ and _Finite-Dimensional Vector Spaces_
+ * Halmos, _Naive Set Theory_
  * Hartshorne, _Geometry: Euclid and Beyond_
  * Landau, _Foundations of Analysis_
  * Loomis and Sternberg, _Advanced Calculus_
