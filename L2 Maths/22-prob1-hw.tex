@@ -1,0 +1,57 @@
+\input{stdinclude.tex}
+
+\begin{document}
+
+\mainHeaderHw{22}{Probability and Risk}
+\subsection*{Reading}
+\begin{center}
+\begin{tcolorbox}[width=0.8\textwidth,colback={white},title={\textbf{Go and watch... (basic probability)}},colbacktitle=black,coltitle=white]
+  \textcolor{black}{\url{https://www.youtube.com/watch?v=Kgudt4PXs28}}
+\end{tcolorbox}
+\end{center}
+
+\begin{center}
+\begin{tcolorbox}[width=0.8\textwidth,colback={white},title={\textbf{Go and watch... (relative risk)}},colbacktitle=black,coltitle=white]
+  \textcolor{black}{\url{https://www.youtube.com/watch?v=felIAwyaGFM}}
+\end{tcolorbox}
+\end{center}
+
+
+\subsection*{Questions}
+\begin{questions}
+  \item Watch the first video above. I have six tetrahedral dice. I roll them 1000 times. How many times should I expect to get six of the same
+        number (six 1's, six 2's, six 3's, or six 4's) in a roll?
+  \item Watch the second video above. Consider the following two tables, which show data from two groups of New Zealander males over the age of fifty.
+
+        \begin{tabular}{|r|c|c|c|}\hline
+          A& \textbf{Heart disease} & \textbf{None} & \textbf{Total}\\\hline
+          \textbf{Overweight} &24&142&166\\\hline
+          \textbf{Not overwt} &14&1706&184\\\hline
+          \textbf{Total} &38&312&350\\\hline
+        \end{tabular}
+        \begin{tabular}{|r|c|c|c|}\hline
+          B& \textbf{Heart disease} & \textbf{None} & \textbf{Total}\\\hline
+          \textbf{Smoker} &12&65&77\\\hline
+          \textbf{Non-smoker} &9&84&93\\\hline
+          \textbf{Total} &21&149&170\\\hline
+        \end{tabular}
+
+        \begin{parts}
+          \part Discuss the following statement (is it correct? why?): The \emph{absolute risk} of heart disease in
+                group A was $ 38/350 = 0.109 $, while the absolute risk of heart disease in group B was much greater: $ 0.124 $. Thus,
+                smoking is more problematic than obesity when it comes to risks of heart disease.
+          \part \textbf{Important lesson:} it is not the \emph{risk} that matters when comparing probabilities, it is the \emph{relative risk}.
+                In other words, we don't care about the probability that a person gets heart disease given that they are overweight --- we care
+                about whether this probability is higher than the probability that they get heart disease given that they are not overweight.
+
+            \begin{subparts}
+              \subpart Suppose a person from group $ A $ is known to be overweight. What is the risk that they develop a heart disease?
+              \subpart Suppose a person from group $ A $ is known to be not overweight. What is the risk that they develop a heart disease?
+              \subpart How much more likely is a person from group $ A $ to get heart disease if they are overweight?
+            \end{subparts}
+          \part \emph{According to this study, a 50-year-old male is 60\% more likely to develop heart disease if they are a smoker than if
+                they are a non-smoker.} Does the evidence support this statement?
+        \end{parts}
+\end{questions}
+
+\end{document}
