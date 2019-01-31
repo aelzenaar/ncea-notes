@@ -136,7 +136,12 @@ My favourite multi-dimensional calculus book, is, in fact:
    deal of the 'philosophy of doing mathematics', which I quite like - see, for example, the chapter on uniformity and compactness. (515.8 L86)
 
 ### Linear Algebra (253/255)
-Note also that Artin's _Algebra_ (see 320 below) is also a very nice introduction to linear algebra for someone who understands the computational
+I have recently realised that I don't have any strong opinions on any linear algebra books. I actually think that the linear algebra chapters in
+the start of Loomis & Sternberg are well-motivated and have some nice exercises, and they are roughly at the right level. Apart from that, I have
+used Lang's _Linear Algebra_ for some revision in the past, although I haven't actually read through it (it was more the linear algebra book I
+happened to pick up from the basement of Gerstein when I wanted to look up how to prove some determinant properties).
+
+Artin's _Algebra_ (see 320 below) is also a very nice introduction to linear algebra for someone who understands the computational
 stuff in first semester linear algebra. The material in 250/253/255 is covered in chapters 1, 3, 4, and 7.
 
  * Paul Halmos, _Finite-Dimensional Vector Spaces_. This book covers the same content as 253 but in much greater detail. Like every other Paul Halmos book, it
@@ -208,8 +213,7 @@ If you're looking for 328, see also [the section on number theory](#number-theor
  * Ian Stewart, _Galois Theory_. Once you have an OK grounding of the material in 320 (basic facts about groups, rings, and fields) then this book is a readable
    introduction to Galois theory. Famously full of typos. Later editions (3rd and 4th) start by proving everything over *C* before moving to arbitrary fields.
    Covers all the basic material (field extensions, proof of impossibility of general solutions to the quintic using radicals). Plenty of exercises, computational
-   ones as well. [Stewart is a semi-famous pop-maths author too, if you have family who are into that kind of book. Well worth looking into anything he's written,
-   although over the past few years he seems to have rewritten the same book multiple times under different titles!] (512.32 S84)
+   ones as well. (512.32 S84)
 <!-- * Harold Edwards, _Galois Theory_. A GTM that I quite like on Galois theory. Not really good for a first intro after 320 - read Stewart or Artin first.
    Goes via a more classico-historical route, using proofs that Galois would have understood. (512.32 E26)-->
 
@@ -253,17 +257,27 @@ If you're looking for 328, see also [the section on number theory](#number-theor
    handwavy way; there is also almost an outline of a construction via Cauchy sequences in exercise 2.8.L; I know that Tao does this same construction
    in the same kind of detail as the rest of D&D, so it might be an idea to look there for this material. Or in Rudin, or Landau.)
 
-   Like Jones & Jones above, this is another new Springer book with really annoying typesetting, but to a lesser degree. (First edition: 515 D25; I have
-   the second edition, which is supposed to be a major revision)
- * Walter Rudin, _Principles of Mathematical Analysis_. The first eight chapters are an incredibly clean and terse exposition of metric space theory. I
-   prefer L&S (see 253) for multivariable analysis, though. (I did try to work through    chapter 9, and despite knowing what he was trying to do at every
+   Like Jones & Jones above, this is another new Springer book with really annoying typesetting, but to a lesser degree. (*)
+
+ * Walter Rudin, _Principles of Mathematical Analysis_. The first eight chapters are an incredibly clean and terse exposition of metric space theory.
+   People I know have called it dry, but I didn't actually find it that bad - it is a little lacking in motivation, so maybe it would be a good idea
+   to pick up a shiny book like Davidson & Donsig above as well for historical details and more examples.
+
+   I prefer L&S (see 253) for multivariable analysis. (I did try to work through chapter 9, and despite knowing what he was trying to do at every
    point - it's just material from 253 - it's incredibly clunkly and awful. Belive me, I thought the Chicago bibliography was exaggerating on this
    point, but it turns out that they were entirely correct.)  ([Errata and notes](https://math.berkeley.edu/~gbergman/ug.hndts/#Rudin)) (515.8 R91)
  * A.N. Kolmogorov and S.V. Fomin, _Introductory Real Analysis_. Higher level than Rudin, covers Lebesgue integration in a much nicer way in my opinion. Includes
    a semi-detailed chapter on set theory from the point of view of analysis which is quite interesting for a different perspective. Lots of topology and
    metric space theory as well, with an abundance of linear algebra. (515.8 K81eYs)
  * James R. Munkres, _Topology_. This is the standard topology book, it's very clear with lots of examples and pictures. I didn't like the section on
-   metric spaces, though - use Rudin here, it's a good supplement. ([Errata](http://drorbn.net/index.php?title=10-327/Errata_to_Munkres%27_Book)) (514.3 M96)
+   metric spaces, though - use Rudin here, it's a good supplement. Kolmogorov & Fomin is also nice to read alongside.
+
+   Having thought about it for a while, I think it's incredibly likely that this is the textbook I have spent the most time with over the past year:-
+   it was used in the topology course I took in 2018 (MAT 327 at UofT), and I must have spent at least an hour a day with it, doing readings or assignment
+   questions. (Perhaps Griffith's _Intro. to Electromagnetism_ is another strong contender; or Halmos' set theory book.)
+
+   ([Errata](http://drorbn.net/index.php?title=10-327/Errata_to_Munkres%27_Book)) (514.3 M96)
+
  * Klaus Jänich, _Topology_. An easier introduction to topology which isn't rigorous enough for a third- or fourth-year course (and probably not appropriate
    for anyone that's actually done any analysis at all yet, it's very handwavy), but it does have some very nice pictures. I liked it in first year when I
    wanted to learn more about topology. (514.3 J22Y)
@@ -275,7 +289,7 @@ To add in 2019.
 To do: do a course in complex analysis.
  * Stephen D. Fisher, _Complex Variables_. This is the book we used in 2018 for complex calculus, I found it a little weird because it tries to be both
    an accessible calculus book and a book with proofs. To quote myself, ``the main problem with Fisher is it's trying to be both a rigorous book and a
-   calculus book and failing miserably at both''. I do really like the sections on the geometry of analytic functions (chapter 3). (515.93 F53)
+   calculus book and failing miserably at both''. I don't hate the sections on the geometry of analytic functions (chapter 3). (515.93 F53)
  * E.B. Saff and A.D. Snider, _Fundamentals of Complex Analysis for Mathematics, Sci...etc._ I own this book, it's basically a calculus book, so if
    you like Stewart or Anton you'll probably like this. I don't hate it, and I found it useful for complex calculus, if a little dry. It's a bit expensive,
    because it's a calculus book... (515.9 S12)
@@ -289,13 +303,14 @@ See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geo
    level upwards. (*)
  * Harold Coxeter, _Introduction to Geometry_ and _Geometry Revisited_. These books are both full of a lot of nice university geometry with some quite
    nice links to other subjects: for example, crystallography and biology. _Revisited_ doesn't require any more than basic school geometry, but _Introduction_
-   is quite sophisticated (you need group theory). (516 C87, 516 C87g)
+   is quite sophisticated (you need group theory). It is very easy to expand a lot of what Coxeter says in half a page into hours of
+   fruitful ~~messing about with a blackboard~~ thinking. (516 C87, 516 C87g)
  * Marcel Berger, _Geometry_. But this is my favourite geometry book.  It is a little long (two volumes), but you can dip in and out of it rather than
    reading linearly. There are a lot of very pretty results in both affine and projective geometry. Linear algebra is used extensively (of course). (516 B49)
  * John M. Lee, _Axiomatic Geometry_. This book is like Hartshorne but in a much more formal style; it's written for future teachers, but it develops Euclidean
    geometry (and only Euclidean geometry, although there is some hyperbolic stuff at the end) in a synthetic and formal way. I secretly quite like this book,
    but I will never admit it. This is the book I use to look things up if I feel the urge to know how (for example) the inscribed angle theorem is proved. (516 L47)
- * Kieth Kendig, _Conics_. This book is everything you never knew about conic sections and it is amazing. Please read it. (516.352 K33)
+ * Kieth Kendig, _Conics_. This book is everything you always suspected about conic sections and it is amazing. Please read it. (516.352 K33)
  * George Salmon, _A Treatise on Conic Sections_. If you read Kendig and want to know more, this book (from the 1800s) is very good but a little difficult to read
    due to its age. Serving recommendation: read and try to make Salmon's statements precise with projective geometry and/or complex algebra. (516.3 S17)
  * Jeffrey R. Weeks, _The Shape of Space_. This is supposed to "fill the gap" between the simple geometric examples of topology (Klein bottles, tori) and
