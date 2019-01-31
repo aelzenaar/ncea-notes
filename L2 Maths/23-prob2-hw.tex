@@ -1,0 +1,67 @@
+\input{stdinclude.tex}
+
+\begin{document}
+
+\mainHeaderHw{23}{Probability Distributions}
+\subsection*{Reading}
+\begin{center}
+\begin{tcolorbox}[width=0.8\textwidth,colback={white},title={\textbf{Go and watch...}},colbacktitle=black,coltitle=white]
+  \textcolor{black}{\url{https://www.youtube.com/watch?v=UCmPmkHqHXk}}
+\end{tcolorbox}
+\end{center}
+
+\begin{center}
+  \includegraphics[width=0.6\textwidth]{killerstats}\\
+  \small{\url{https://www.smbc-comics.com/comic/stats-gang}}
+\end{center}
+
+
+\subsection*{Questions}
+\begin{questions}
+  \item How are probability distributions related to the kind of data analysis we began probability with? Discuss. (Write
+        around half a page, and do some research.)
+  \item In 2017, one of the Census at School questions asked for the amount of water, in millilitres, drunk in the last day.
+        The following graphs and statistical information shows the data for this question for students who drove to school, and
+        for students who walked.
+        \begin{center}
+          \includegraphics[width=0.9\textwidth]{drinktravel1}
+        \end{center}
+\begin{verbatim}
+==========================================================================
+                           iNZight Summary
+--------------------------------------------------------------------------
+        Primary variable of interest: travel (categorical)
+                  Secondary variable: drinkwater (numeric)
+
+        Total number of observations: 1000
+   Number omitted due to missingness: 61 (61 in drinkwater)
+   Total number of observations used: 939
+==========================================================================
+
+Summary of drinkwater by travel:
+--------------------------------
+
+           Min   25%   Median    75%    Max    Mean      SD   Sample Size
+   motor     0   250      500   1000   4000   728.5   707.1           530
+    walk     0   250      750   1000   4000   825.9   733.1           409
+
+
+==========================================================================
+\end{verbatim}
+    \begin{parts}
+      \part Compare and contrast the shapes of the statistics for the two groups.
+      \part Is there any meaningful difference between the volume of water drunk in the last day between the two groups?
+      \part Calculate the probability that a randomly chosen person from each group drank more than 800 mililitres in the
+            last day. What is the relative risk --- is a walker more likely to have drunk more than 800 mililitres compared
+            to a motorist?
+      \part Suppose that at a particular school the mean value for water drunk in the last day (over all students) was
+            \SI{712}{\milli\litre}. The survey also shows that only 10\% of students drank less than \SI{400}{\milli\litre}.
+        \begin{subparts}
+          \subpart What is the standard deviation of the sample in this case?
+          \subpart What is the minimum amount of water for a student to have drunk in the last day in order to be
+                   in the top 5\% of water drinkers, at this school?
+        \end{subparts}
+    \end{parts}
+\end{questions}
+
+\end{document}

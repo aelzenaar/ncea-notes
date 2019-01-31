@@ -19,26 +19,29 @@ In addition, I have some questions on [numeracy and basic skills](L1%20Maths/Num
 
 ### Level Two
 My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf). The sheets include:
- 1. (2.1) 		Coordinate Geometry
- 2. (2.4)		Arcs and Sectors of Circles
- 3. (2.4) 		Trigonometry
- 4. (2.2) 		Functions
- 5. (2.2/2.6) 	Quadratic Modelling
- 6. (2.6/2.14) 	Simultaneous Equations
- 7. (2.6/2.14) 	Linear Inequations
- 8. (2.6) 		The Quadratic Formula
- 9. (2.2/2.6)	Exponential and Logarithmic Functions
- 10. (2.2/2.6) 	Negative and Fractional Powers
- 11. (2.7) 		Slopes and Differentiation
- 12. (2.7) 		Tangent Lines and Approximation
- 13. (2.7) 		Turning Points Optimisation
- 14. (2.7) 		Anti-differentiation
- 15. (2.7) 		Kinematics and Rates of Change
- 16. (Stats?)	Counting and Combinatorics
- 17. (2.3) 		Number Sequences and Fractals
- 18. (2.5) 		Graphs and Networks
-
-I am in the process of adding some statistics notes as well.
+ 1. (2.1) 			Coordinate Geometry
+ 2. (2.4)			Arcs and Sectors of Circles
+ 3. (2.4) 			Trigonometry
+ 4. (2.2) 			Functions
+ 5. (2.2/2.6) 		Quadratic Modelling
+ 6. (2.6/2.14) 		Simultaneous Equations
+ 7. (2.6/2.14) 		Linear Inequations
+ 8. (2.6) 			The Quadratic Formula
+ 9. (2.2/2.6)		Exponential and Logarithmic Functions
+ 10. (2.2/2.6) 		Negative and Fractional Powers
+ 11. (2.7) 			Slopes and Differentiation
+ 12. (2.7) 			Tangent Lines and Approximation
+ 13. (2.7) 			Turning Points Optimisation
+ 14. (2.7) 			Anti-differentiation
+ 15. (2.7) 			Kinematics and Rates of Change
+ 16. (Stats?)		Counting and Combinatorics
+ 17. (2.3) 			Number Sequences and Fractals
+ 18. (2.5) 			Graphs and Networks
+ 19. (2.10/2.11)	The statistical enquiry process
+ 20. (2.9/2.11)		Sampling
+ 21. (2.9)			Statistical inference
+ 22. (2.12/2.13)	Probability and risk
+ 23. (2.12)			Probability distributions
 
 ### Level Three and Scholarship Calculus
 I have almost completed the process of reworking and reorganising my L3/Scholarship maths notes; I have written the following sets of notes, designed
