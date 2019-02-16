@@ -45,9 +45,9 @@ Let's take an example.
         ylabel = {$ y $}
       ]
         \addplot[domain = -4:6, color = green, samples=100] {sqrt(4+x)};
-        \draw (4.03,0) -- (4.03,4);
-        \node[label=left:{$ x = 4.03 $}] at (4.1,1.5) {};
-        \node[label=above:{$ y = \sqrt{4 + x} $}] at (-2.2, 1.6) {};
+        \draw[color=red] (0.03,0) -- (0.03,4);
+        \node[label=left:{\color{red}$ x = 0.03 $}] at (2.4,1.5) {};
+        \node[label=above:{\color{green}$ y = \sqrt{4 + x} $}] at (-2.2, 1.6) {};
       \end{axis}
     \end{tikzpicture}
   \end{center}
