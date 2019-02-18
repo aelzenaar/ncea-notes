@@ -18,9 +18,9 @@ In particular, if we draw our triangle inside a unit circle then we can draw the
 \begin{center}
   \includegraphics[width=0.4\textwidth]{trigfns}
 \end{center}
-In fact, we can take this as our definition of $ \sin $ and $ \cos $. To show that $ \tan \theta $ is indeed the line segment marked there,
-first notice that since the large triangle is right-angled, the angle at the intersection of the horizontal line and the tangent line
-is $ \ang{90} - \theta $; so the other non-right-angle in the smaller triangle is $ \theta $. Hence the hypotenuse of the triangle
+In fact, we can take this as our definition of $ \sin $ and $ \cos $. To show that $ \tan \theta $ is indeed the line segment marked,
+first notice that since the triangle $ OPR $ is right-angled, the angle at the intersection of the horizontal line and the tangent line
+is $ \ang{90} - \theta $; so the other non-right-angle in the triangle $ PQR $ is $ \theta $. Hence the hypotenuse of $ PQR $
 is $ \frac{\text{adjacent}}{\cos \theta} = \frac{\sin\theta}{\cos\theta} $, as proposed.
 
 Note also that, from this diagram, we have
@@ -154,14 +154,27 @@ Let us now begin to look at more general triangles:
       \part Sides of length 90, 30, and 30.
     \end{parts}
   \question Prove that, if a quadrilateral has equal diagonals, then it is a rectangle. (We used this fact last week!)
+  \question Let $ ABC $ be a triangle.
+    \begin{parts}
+      \part Let $ X = m(A,B) $, $ Y = m(B,C) $, and $ Z = (C,A) $ be the midpoints of the sides; then the
+            lines $ CX $, $ AY $, and $ BZ $ are called the \emph{medians} of the triangle. Show that the
+            three medians always intersect at a single point $ N $ (the \emph{centroid}).
+      \part Let $ k $ be the perpendicular bisector of $ AB $, $ \ell $ be the perpendicular bisector
+            of $ BC $, and $ m $ be the perpendicular bisector of $ CA $. Show that $ k $, $ \ell $,
+            and $ m $ intersect at a single point $ O $ (the \emph{circumcentre}). Show that $ O $
+            is the centre of the circle passing through $ A $, $ B $, and $ C $.
+      \part Let $ \lambda $ be the line passing through $ A $ that bisects the angle of the triangle
+            at $ A $. Define $ \mu $ and $ \nu $ similarly as the angle bisectors at $ B $ and $ C $. Show
+            that $ \lambda $, $ \mu $, and $ \nu $ intersect at a single point $ P $ (the \emph{incentre}).
+            Show that $ P $ is the centre of the circle which is tangent to the three sides of the triangle.
+      \part Let $ \rho $ be the line through $ A $ perpendicular to $ BC $; define $ \sigma $ and $ \tau $
+            similarly to be lines through $ B $ and $ C $. These lines are known as the \emph{altitudes} of
+            the triangle. Show that $ \rho $, $ \sigma $, and $ \tau $ intersect at a single point (the \emph{orthocentre}).
+    \end{parts}
   \question This question requires you to find exact values for trig functions \emph{without} using a calculator. [Schol 1999]
     \begin{parts}
-      \part Sketch an equilateral triangle of side 2 units. Hence, or otherwise, show that
-            \begin{itemize}
-              \item $ \cos \frac{\pi}{3} = \frac{1}{2} $,
-              \item $ \sin \frac{\pi}{3} = \frac{\sqrt{3}}{2} $, and
-              \item $ \tan \frac{\pi}{6} = \frac{1}{\sqrt{3}} $.
-            \end{itemize}
+      \part Sketch an equilateral triangle of side 2 units. Hence, or otherwise, show that $ \cos \frac{\pi}{3} = \frac{1}{2} $,
+            $ \sin \frac{\pi}{3} = \frac{\sqrt{3}}{2} $, and $ \tan \frac{\pi}{6} = \frac{1}{\sqrt{3}} $.
       \part Sketch a right angled isosceles triangle whose equal sides enclose the right angle and are of length 1.
             Hence, or otherwise, show that $ \cos \frac{\pi}{4} = \sin \frac{\pi}{4} = \frac{1}{\sqrt{2}} $.
     \end{parts}
