@@ -1,0 +1,204 @@
+\section{The product law}
+
+So far, we can differentiate functions which are made up of sums and compositions
+of polynomials, trig functions, and $ \ln $ and $ \exp $. However, the following
+function will leave us lost and confused if we try to compute its derivative directly:
+\begin{displaymath}
+  f(x) = (\sin x) (\cos x) \qquad f'(x) = ?
+\end{displaymath}
+
+In this particular case, we can use the identity $ \sin 2x = 2\sin x \cos x $
+to rewrite $ f(x) = \frac{1}{2} \sin 2x $ and then apply the chain rule to
+find that $ f'(x) = \cos 2x $. However, in general we don't have nice things
+like trig identities; thus, we need a rule to differentiate products of functions.
+
+First of all, we notice that $ (fg)' \neq (f')(g') $.\footnote{To save ink, I will
+write $ (fg) $ for the function defined by $ (fg)(x) = f(x) g(x) $.} Indeed, for
+the function $ f $ defined above, $ (\sin x)' (\cos x)' = -\sin x \cos x $; this
+is zero at $ x = 1 $, but we have already seen that the derivative of $ f $ is $ \cos 2x $,
+which is equal to $ 1 $ when $ x = 1 $.
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[scale=.8]
+    \draw (0,0) -- (0,10) -- (10,10) -- (10,0) -- (0,0);
+    \draw (0,9) -- (10,9);
+    \draw (9,0) -- (9,10);
+    \draw (4.5,4.5) node{$ f(x) g(x) $};
+    \draw[left] (0,4.5) node{$ g(x) $};
+    \draw[left] (0,9.5) node{$ \approx g'(x) h $};
+    \draw[below] (4.5,0) node{$ f(x) $};
+    \draw[below] (9.5,0) node{$ \approx f'(x) h $};
+    \draw (-1.95,0) -- (-2,0) -- (-2,10) -- (-1.95,10);
+    \draw[left] (-2,5) node{$ g(t + h) $};
+    \draw (0,-0.95) -- (0,-1) -- (10,-1) -- (10,-0.95);
+    \draw[below] (5,-1) node{$ f(t + h) $};
+    \fill[fill=gray!10] (9,9) -- (9,10) -- (10,10) -- (10,9) -- (9,9);
+    \path[->] (11,10.5) edge[bend right] (9.5,9.5);
+    \draw[right] (11,10.5) node[align=center]{negligible:\\$ \approx f'(t) g'(t) h^2 $};
+  \end{tikzpicture}
+  \caption{The approximate errors in the product rule estimation.}
+\end{figure}
+
+We will try to derive one by estimation; consider the following difference:
+\begin{displaymath}
+  (fg)(x + h) - fg(x) = f(x + h) g(x + h) - f(x) g(x)
+\end{displaymath}
+We may assume that $ f $ and $ g $ are differentiable at $ x $, and so we can
+approximate them with their derivatives,
+\begin{align*}
+  f(x + h) g(x + h) - f(x) g(x) &\approx (f'(x)h + f(x))(g'(x)h + g(x)) - f(x) g(x)\\
+                                &= f'(x) g'(x) h^2 + f'(x) g(x) h + f(x) g'(x) h.
+\end{align*}
+Applying the reasoning we developed a few sections ago, we note that as $ h \to 0 $, the
+approximation becomes exact.\footnote{Technical note. Recall that we defined $ f(x) \approx g(x) $
+if $ f(x) = g(x) + \vartheta(h) $ where $ \vartheta(h)/h \to 0 $ as $ h \to 0 $. One can
+therefore make the reasoning here rigorous by carrying through the $ \vartheta$'s that
+give us the approximations for $ f(x + h) $ and $ g(x + h) $, checking that we end up with
+an estimation term that is also satisfies the $ \vartheta $ condition.} Taking the limit
+of our difference quotient, we find that
+\begin{align*}
+  \lim_{h \to 0} \frac{(fg)(x + h) - (fg)(x)}{h} &= \lim_{h \to 0} \frac{f'(x) g'(x) h^2 + f'(x) g(x) h + f(x) g'(x) h}{h}\\
+                                                 &= f'(x) g(x) + f(x) g'(x);
+\end{align*}
+and we have justified the following
+\begin{thm}[Product law]
+  If $ f $ and $ g $ are differentiable at $ x $, then
+  \begin{displaymath}
+    (fg)'(x) = f'(x) g(x) + f(x) g'(x).
+  \end{displaymath}
+\end{thm}
+
+\begin{ex}
+  Consider $ y = 2t \sin t $. Then $ \od{y}{t} = 2 \sin t + 2t \cos t $.
+\end{ex}
+
+With our rules (sum, chain, and product, together with our basic derivatives), we can now differentiate almost any
+combination of functions that we are currently aware of. The process of differentiation is entirely mechanical, and
+can be easily performed by a computer. As such, learning to differentiate more complicated combinations of functions
+is very similar to learning how to add, multiply, and perform long division, and is only a matter of practice.
+
+\begin{ex}
+  Let $ f(x) = \sin x^2 + e^{10x^2 + 3x + e^x} + \frac{2x + 3}{\ln x} $. We can split
+  this into three derivative-taking problems by applying the sum rule; so
+  \begin{displaymath}
+    f'(x) = \od{}{x} \sin x^2 + \od{}{x} e^{10x^2 + 3x + e^x} + \od{}{x} \frac{2x + 3}{\ln x}
+  \end{displaymath}
+
+  Taking these in turn, $ \sin x^2 \mapsto 2x \cos x^2 $ (applying the chain rule, since we have a
+  function composition) and $ e^{10x^2 + 3x + e^x} \mapsto (20x + 3 + e^x) e^{10x^2 + 3x + e^x} $
+  (applying the chain rule again). Finally, note that $ \frac{2x + 3}{\ln x} = (2x + 3)[(\ln x)^{-1}] $
+  and so we need to apply the product rule:
+  \begin{align*}
+    \od{}{x} (2x + 3)[(\ln x)^{-1}] &= \left(\od{}{x} (2x + 3)\right)\left( (\ln x)^{-1} \right) + \left(2x + 3\right)\left( \od{}{x} (\ln x)^{-1} \right)\\
+                                    &= 2(\ln x)^{-1} + (2x + 3)\left( -1 (\ln x)^{-2} \cdot \od{}{x} \ln x \right)\\
+                                    &= 2(\ln x)^{-1} + (2x + 3)\left( -1 (\ln x)^{-2} \cdot \frac{1}{x} \right)\\
+                                    &= \frac{2}{\ln x} - \frac{2x + 3}{x (\ln x)^2}\\
+                                    &= \frac{2x\ln x - 2x - 3}{x (\ln x)^2}.
+  \end{align*}
+  Thus the derivative of $ f $ is
+  \begin{displaymath}
+    f'(x) = 2x \cos x^2 + (20x + 3 + e^x) e^{10x^2 + 3x + e^x} + \frac{2x\ln x - 2x - 3}{x (\ln x)^2}.
+  \end{displaymath}
+\end{ex}
+
+\subsection{Exercises and Problems}
+\begin{enumerate}
+  \item In each case, find $ \od{y}{t} $.
+    \begin{multicols}{2}
+    \begin{enumerate}
+      \item $ y = \left(3 + 2t^2\right)^4 $
+      \item $ y = \dfrac{t^3}{\ln t} $
+      \item $ y = t\sqrt{t} $
+      \item $ y = 2t \sin t - (t^2 - 2) \cos t $
+      \item $ y = \dfrac{t}{\sqrt{a^2 - t^2}} $ ($ a $ constant)
+      \item $ y = \dfrac{1}{8} t^8 \left(1 - t^2\right)^{-4} $
+      \item $ y = e^t \ln t $
+      \item $ y = \log \left[1 + \dfrac{t^2 + 3t + 17}{t^{17}}\right] $
+      \item $ y = \sin \left[e^{\tan t} \ln \tan t\right] $
+      \item $ y = \dfrac{3t - 2}{\sqrt{2t + 1}} $
+      \item $ y = \dfrac{\sec 2t}{1 + \tan 2t} $
+      \item $ y = \dfrac{(t - 1)(t - 4)}{(t - 2)(t - 3)} $
+      \item $ y = t \sin^2(\cos \sqrt{\sin \pi t}) $
+      \item $ y = \sqrt[5]{t \tan t} $
+      \item $ y = \dfrac{(t + \lambda)^4}{t^4 + \lambda^4} $ ($\lambda $ constant)
+    \end{enumerate}
+    \end{multicols}
+  \item If $ f(x) = e^{-x} $, find $ f(0) + xf'(0) $.
+  \item Show that $ \od{}{x} e^{\tan x} e^{-\cot x} = \left(\od{}{x}e^{\tan x}\right)\left(\od{}{x}e^{-\cot x}\right) $. Reconcile
+        this with our statement above that the naive product rule does not work in general.
+  \item The altitude $ h $ of a triangle is increasing at a constant rate of \SI{1}{\centi\metre\per\minute} while
+        the area $ A $ increases at a constant rate of \SI{2}{\centi\metre\squared\per\minute}. At what rate
+        is the length $ b $ of the base of the triangle increasing when $ h = \SI{10}{\centi\metre} $ and $ A = \SI{100}{\centi\metre\squared} $?
+  \item Show that if $ f $ and $ g $ are differentiable at $ x $, such that $ g(x) \neq 0 $, we have
+        \begin{displaymath}
+          \left( \frac{f}{g} \right)'(x) = \frac{g(x)f'(x) - f(x)g'(x)}{[g(x)]^2}.
+        \end{displaymath}
+        This is often called the \emph{quotient law}.
+  \item Show that $ y = xe^{-x} $ satisfies the differential equation $ xy' = (1-x)y $.
+  \item If $ y = \ln \frac{1 + \sqrt{\sin x}}{1 - \sqrt{\sin x}} $, find $ y'' $.
+  \item Find the equation of the tangent line to the graph of $ y = \ln \cos \frac{x - 1}{x} $ at
+        the point $(1, 0)$.
+  \item Show that $ y = (1 + x + \ln x)^{-1} $ satisfies the differential equation $ xy' = y(y \ln x - 1) $.
+  \item Find the angle at which $ y = x^2 \ln [(x - 2)^2] $ cuts the $ x$-axis at the point $ (0,0) $.
+  \item When $ x = 0 $, is the curve $ y = (x + 20)^2 (2x^2 - 3)^6 - \ln \sin (x - \frac{\pi}{2}) $ concave up or concave down?
+  \item If $ y = \frac{e^x}{\sin x} $, show that $ \od{y}{x} = y(1 - \cot x) $.
+  \item Show that if $ f $, $ g $, and $ h $ are functions then $ (fgh)' = f'gh + fg'h + fgh' $.
+  \item Suppose $ f(x) = f(-x) $ for all $ x $ in the domain of $ f $. Prove that $ f'(x) = -f'(-x) $ for all $ x $
+        in the domain of $ f'(x) $.
+  \item Consider the function defined by $ f(x) = x^x $.
+    \begin{enumerate}
+      \item Rewrite $ f $ in the form $ f(x) = e^{x \ln x} $, and hence find $ f'(x) $.
+      \item Find $ \od{y}{t} $ if $ y = (t^2 + 3)^{(t^2 + 3)} $.
+    \end{enumerate}
+  \item Prove the product rule a different way by writing $ f(x) g(x) = e^{\ln(f(x) g(x))} $.
+  \item Find $ f'(x + 3) $ if $ f(x + 3) = (x + 5)^7 $.
+  \item The number $ a $ is called a \textbf{double root} of some polynomial function $ f $ if $ f(x) = (x - a)^2g(x) $ for
+        some polynomial $ g $. Prove that $ a $ is a double root of $ f $ if and only if $ a $ is a root of both $ f $ and $ f' $.
+\end{enumerate}
+
+\subsection{References}
+
+\subsection{Homework}
+\paragraph{Reading}
+Even next year, when you will be expected to know the derivative rules, it is not necessary to remember the quotient rule because
+it is just a special case of the product rule. However, here is a little rhyme:
+
+\begin{center}\itshape
+  If it's the quotient rule you wish to know,\\
+  It's low-de-high less high-de-low.\\
+  Then draw the line and down below,\\
+  Denominator squared will go.\footnote{Quoted in \textit{Mathematical Apocrypha} by Steven G. Krantz (p.36).}
+\end{center}
+
+\paragraph{Problems}
+\begin{enumerate}
+  \item Find the derivatives:
+    \begin{enumerate}
+      \item $ \od{y}{x} $ if $ y = \sin x \ln x $.
+      \item $ \od{y}{x} $ if $ y = x \sec kx $ ($ k $ constant).
+      \item $ \od{f}{\theta} $ if $ f(\theta) = \frac{\cos \pi \theta}{\sin \pi \theta + \cos \pi \theta} $.
+      \item $ \od{y}{t} $ if $ y = \cos^4 (\sin^3 t) $.
+    \end{enumerate}
+  \item Find an expression for $ (fg)''(x) $ in terms of $ f'(x) $ and $ g'(x) $.
+  \item Suppose a liquid is oozing from a corner across a rectangular ridged surface that makes it
+        easier to flow in one direction than the other; call the corner $ (0,0) $, and suppose that
+        the ridges are in the $ y$--direction: so we would expect the flow to be faster towards increasing
+        $ y $ compared to increasing $ x $. As the total volume $ V $ of liquid oozed increases, the flow rate increases
+        due to the pressure. Suppose that the rate of ooze is constant, at $ \od{V}{t} = \SI{3}{\metre\cubed\per\hour} $.
+        A measurement shows that the flow rates of the liquid at its edges in the two directions are $ \od{x}{t} = V^{-1/2} e^{k(V^{1/2})} $
+        and $ \od{y}{t} = e^{kV} $, for some small constant $ k \approx 0.24 $. (Both rates are in metres per hour.)
+    \begin{enumerate}
+      \item Assuming that the liquid covers the surface uniformly, and that the area covered is roughly rectangular,
+            what is the area covered after three hours (the initial volume being zero), and what is the rate of change
+            of the area covered at that time? [Useless hint: you will need to take some anti-derivatives at some point, and you
+            should need to use the product and chain rules for derivatives eventually as well.]
+      \item (Even more funner question.) Suppose the room measures ten metres by ten metres; when the liquid reaches the wall
+            in the $ y$--direction, suppose that the full `force' of the liquid is now pushing in the $ x$--direction and the
+            flow rate in that direction is the sum of the original flow rates: so $ \od{y}{t} = 0 $ and $ \od{x}{t} = V^{-1/2} e^{k(V^{1/2})} + e^{kV} $.
+
+            Calculate how long the liquid will take to reach the wall in the $ y$--direction, and then (taking into account
+            the changed flow rates) work out how long the liquid takes to fill the entire floor area of the room. [Even more
+            useless hint: the final answer should be large.]
+    \end{enumerate}
+\end{enumerate}

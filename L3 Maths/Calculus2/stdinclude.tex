@@ -1,0 +1,112 @@
+\documentclass{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{siunitx}
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\foot{ft}
+\DeclareSIUnit\litre{\liter}
+
+\usepackage{skull}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
+\usepgfplotslibrary{polar}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{commath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{wasysym}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage[version=4]{mhchem}
+\usepackage{changepage}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{iden}{Identity}
+\newtheorem*{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{joke}{Joke}
+\newtheorem*{rem}{Technical Remark}
+\AtEndEnvironment{rem}{\hfill$\diamondsuit$}%
+\newtheorem*{app}{Application}
+\newtheorem*{ex}{Example}
+\newtheorem*{exs}{Examples}
+
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+\newtheorem*{bthm}{Theorem}
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+
+% \DeclareMathOperator*{\rint}{\int}
+
+\pgfplotsset{vasymptote/.style={
+    before end axis/.append code={
+        \draw[densely dashed] ({rel axis cs:0,0} -| {axis cs:#1,0})
+        -- ({rel axis cs:0,1} -| {axis cs:#1,0});
+    }
+}}
+
+\pointsinrightmargin
+\boxedpoints
+\pointname{}
+
+\newcommand{\goandwatch}[1]{
+\begin{center}
+\begin{tcolorbox}[width=0.8\textwidth,colback={ProcessBlue!20},title={\textbf{Go and watch...}},colbacktitle=RoyalBlue,coltitle=White]
+  \textcolor{black}{\url{#1}}
+\end{tcolorbox}
+\end{center}}
+
+\newcommand{\goals}[1]{
+\begin{center}
+\begin{tcolorbox}[width=0.8\textwidth,colback={ProcessBlue!20},title={\textbf{Goal for this week}},colbacktitle=RoyalBlue,coltitle=White]
+  \textcolor{black}{#1}
+\end{tcolorbox}
+\end{center}}
+
+\newcommand{\questioA}{\question[\texttt{\textbf{\color{Cerulean} A}}]}
+\newcommand{\questioM}{\question[\texttt{\textbf{\color{PineGreen} M}}]}
+\newcommand{\questioE}{\question[\texttt{\textbf{\color{WildStrawberry} E}}]}
+\newcommand{\questioS}{\question[\texttt{\textbf{\color{Goldenrod} S}}]}
+\newcommand{\questioO}{\question[\texttt{\textbf{\color{BurntOrange} O}}]}
+
+\newcommand{\parA}{\part[\texttt{\textbf{\color{Cerulean} A}}]}
+\newcommand{\parM}{\part[\texttt{\textbf{\color{PineGreen} M}}]}
+\newcommand{\parE}{\part[\texttt{\textbf{\color{WildStrawberry} E}}]}
+\newcommand{\parS}{\part[\texttt{\textbf{\color{Goldenrod} S}}]}
+\newcommand{\parO}{\part[\texttt{\textbf{\color{BurntOrange} O}}]}
+
+\newcommand{\subparA}{\subpart[\texttt{\textbf{\color{Cerulean} A}}]}
+\newcommand{\subparM}{\subpart[\texttt{\textbf{\color{PineGreen} M}}]}
+\newcommand{\subparE}{\subpart[\texttt{\textbf{\color{WildStrawberry} E}}]}
+\newcommand{\subparS}{\subpart[\texttt{\textbf{\color{Goldenrod} S}}]}
+\newcommand{\subparO}{\subpart[\texttt{\textbf{\color{BurntOrange} O}}]}
+
+\newcommand{\mainHeaderDiff}[2]{\section*{NCEA Level 3 Calculus (Differentiation)\\#1. #2}}
+\newcommand{\mainHeaderDiffHw}[2]{\section*{NCEA Level 3 Calculus (Differentiation)\\#1. #2 (Homework)}}
+\newcommand{\mainHeaderIntg}[2]{\section*{NCEA Level 3 Calculus (Integration)\\#1. #2}}
+\newcommand{\mainHeaderIntgHw}[2]{\section*{NCEA Level 3 Calculus (Integration)\\#1. #2 (Homework)}}

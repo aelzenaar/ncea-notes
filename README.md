@@ -72,7 +72,11 @@ The conic sections notes in particular require a significant amount of mathemati
 as such I would probably only use them for scholarship students. (With the right mentoring, L3 students could probably profit from
 them as well; if anyone does this, I would be intrigued to hear the results.)
 
-**To do.** Either fix or totally remove the `readings' from the L3 calculus homeworks, I'm less and less happy with them over time.
+**For the interested.** I am working on a revised version of my calculus notes; this is not complete yet, but what has been
+done can be found [here](L3%20Maths/Calculus2/notes.pdf). There is a very definite philosophy that I am trying to convey with
+these new notes, based somewhat on a mixture of numeric approximations and the treatment of elementary calculus given in
+Loomis and Sternberg; my idea of the `correct' way to understand calculus has changed significantly from when I wrote my
+older notes above, and I am no longer happy with them.
 
 ## Physics
 ### Level Two

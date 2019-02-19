@@ -1,0 +1,228 @@
+\documentclass[a4paper]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage{OldStandard}
+% \usepackage{lmodern}
+\usepackage{microtype}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{commath}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\litre{\liter}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+\usepgfplotslibrary{polar}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{wasysym}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{cancel}
+\usepackage{chngcntr}
+
+% \renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{iden}{Identity}
+\newtheorem*{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{joke}{Joke}
+\newtheorem*{app}{Application}
+\newtheorem*{ex}{Example}
+\newtheorem*{exs}{Examples}
+
+
+% \newtheorem*{PRIVATEexercises}{Exercises}
+%
+% \newlist{subexercises}{enumerate}{4}
+%
+% \setlist[subexercises,1]{
+%   label=\arabic*.,
+%   before=\setcounter{subexercisesi}{\value{subexercises}},
+%   after=\setcounter{subexercises}{\value{subexercisesi}},
+% }% ALWAYS resumed
+% \setlist[subexercises,2]{label=(\alph*)}%           NOT resumed
+% \setlist[subexercises,3]{label=(\roman*)}%           NOT resumed
+% \setlist[subexercises,4]{label=(\greek*)}%           NOT resumed
+%
+% \newcounter{subexercises}
+%
+% \newenvironment{exercises}{
+%     \begin{mdframed}\begin{PRIVATEexercises}\leavevmode
+%     \begin{subexercises}
+%   }
+%   {
+%     \end{subexercises}
+%     \end{PRIVATEexercises}\end{mdframed}
+% }
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+
+\setlrmarginsandblock{3.5cm}{2.5cm}{*}
+\setulmarginsandblock{2.5cm}{*}{1}
+\checkandfixthelayout
+
+\newlength\drop
+\newcommand*{\titleGM}{\begingroup% Gentle Madness
+\drop = 0.1\textheight
+\vspace*{\baselineskip}
+\vfill
+  \hbox{%
+  \hspace*{0.2\textwidth}%
+  \rule{1pt}{\dimexpr\textheight-35pt\relax}%
+  \hspace*{0.05\textwidth}%
+%\fbox{%
+\parbox[b]{0.75\textwidth}{
+  \vbox{%
+    \vspace{\drop}
+    {\noindent\HUGE\bfseries Level Three\\[0.5\baselineskip] Calculus}\\[2\baselineskip]
+    {\Large\itshape Second Edition}\\[4\baselineskip]
+    {\Large ALEX ELZENAAR}\par
+    \vspace{0.5\textheight}
+    {\noindent \url{https://github.com/aelzenaar/ncea-notes}}\\[\baselineskip]
+    }% end of vbox
+}% end of parbox
+%}% end of fbox
+  }% end of hbox
+\vfill
+\null
+\endgroup}
+
+\title{Introduction to Calculus}
+\author{Alex Elzenaar}
+\date{\today}
+
+\begin{document}
+
+\frontmatter
+
+\begin{titlingpage}
+  \titleGM
+\end{titlingpage}
+
+
+\chapter{Preface for the navigator}
+These notes are my second attempt at a coherent introduction to calculus at the level of NCEA
+Level 3 and NZ Scholarship.
+
+I have made a few philosophical changes from the first edition:-
+\begin{itemize}
+  \item I treat anti-differentiation at the same time as differentiation. (I do introduce the $ \rint $ notation
+        and the term `indefinite integral' here, though I would rather not.)
+  \item The notes are split into ``topic'' chapters: \textit{The basics} (the basic formal manipulations
+        of derivatives and anti-derivatives), \textit{Geometry of curves} (studying curves via differentiation),
+        \textit{Geometry of spaces} (definite integrals, the fundamental theorem of calculus, and arc lengths,
+        surface area, and volumes), and \textit{Motion and change} (differential equations).
+  \item I have dropped many of the proofs; my justification for this change is threefold(!). Firstly,
+        the students that `need' the proofs will see them in a Stage I university course. Secondly, many
+        of the proofs in elementary calculus often obscure a nugget of geometry behind the formal manipulation
+        of limits, and so I would rather include intuitive geometric \emph{justifications} for results in the
+        space the proofs formerly were. Finally, most students at Level 3 are simply not ready for proofs: either
+        they don't understand why proof is required, or their level of mathematical sophistication means that
+        the proofs seem esoteric. I have included copious references to textbooks where proofs can be found.
+\end{itemize}
+
+I feel the need also to point out that these notes are incredibly geometric. \emph{If you don't like teaching geometry, these are not the notes for you.}
+
+\section{Prerequisite material}
+Firstly, a hard fact: for a student to be successful in L3 calculus, they should have
+a good understanding of the material at L2 and earlier (I would generally expect that
+students with less than a merit in the level 2 algebra standard will struggle).
+
+In these notes, I will use material from algebra and geometry at L2 or earlier liberally;
+I try to point it out when I use some of the more obsure results. I do not use any
+material from any of the level three standards, except trigonometry.
+
+So, in general, the prerequisites and expectations for these notes are:-
+\begin{itemize}
+  \item A good understanding of L2 coordinate geometry and algebra.
+  \item A decent understanding of L3 trigonometry, \emph{including the manipulation of identities}.
+\end{itemize}
+
+For some of the sections, knowledge of a little physics (L1 and/or L2) would be nice. I cover
+the material in the L2 calculus standard quickly so this is not formally a prerequisite, but a student
+who doesn't understand the material there well will struggle with these notes. Roughly speaking,
+the differentiation material there is more important.
+
+I would strongly recommend revising the material on functions (section 4 of my own level 2 notes).
+
+\section{Recommended textbooks}
+I have used the following textbooks when writing these notes, in roughly increasing order of sophistication:
+\begin{itemize}
+  \item \emph{Calculus made easy}, by Sivanus P. Thompson and Martin Gardner. This book is perhaps at the correct level mathematically speaking
+        for a Y12/13 student, but it is not very geometric. It is certainly worth looking at, though.
+  \item \emph{Calculus}, by James Stewart. This is one of the standard first-year computational calculus books. It has many examples and many exercises,
+        but lacks soul.
+  \item \emph{Calculus}, by Michael Spivak. This is often called the `One True Calculus Book', but is more properly an introduction to
+        real analysis. As such, it is too diffcult for all but the most motivated high school students.
+  \item (For the sake of completeness,) \emph{Advanced Calculus}, by L. H. Loomis and S. Sternberg. This is the author's favourite calculus
+        book, but is eminently unsuitable for high school students of any motivation. It is incredibly geometric, wonderfully written, and
+        almost impenetrable.
+\end{itemize}
+
+\chapter{Preface for the student}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{hobbes}
+\end{figure}
+I don't have much to say, really. I could spend time explaining why calculus is useful, but I won't do that here because we'll see
+a lot of examples of calculus `in the wild' as we progress (just as a taster, we'll look at some physics, some biology, some economics,
+and maybe even some statistics). I could equally well spend time trying to explain exactly what calculus \emph{is} exactly, but this
+page is not large enough to contain such an exposition.
+
+Instead, I will give some study advice.
+
+Firstly, you must read the notes. You must sleep with them beneath your pillow. You must do all the problems. You must ask questions.
+
+Because no student ever follows my first piece of advice, I will give you a second, easier option. For each topic, there are a few
+homework problems set. \emph{At a minimum}, you should do all these problems. (But beware, if you \emph{only} do these problems, you
+will be woefully underprepared for any situation you need calculus for.)
+
+Secondly, draw pictures. I do my best to include lots of diagrams (some even in colour!), but one can never have too many pictures.
+(``What is the use of a book without pictures or conversations?''\footnote{\emph{Alice in Wonderland}, by Lewis Carroll.})
+
+Thirdly, and I cannot stress this enough, \emph{your exam grades do not matter}. It is perfectly possible to pass calculus exams
+without understanding the material, but if you do that (by, for example, trying to memorise everything in leu of understanding it),
+you are cheating yourself out of an education. If you understand the material, you will be prepared for every subject you may wish
+to take next year (and, as a bonus, you'll pass the exam).
+
+Let us begin.
+
+\cleardoublepage
+\begin{KeepFromToc}
+\tableofcontents*
+\end{KeepFromToc}
+
+\mainmatter
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\chapter{The basics}
+
+\include{01-tangents}
+\include{02-limits}
+\include{03-derivatives}
+\include{04-antidifferentiation}
+\include{05-chainrule}
+\include{06-substitution}
+\include{07-products}
+
+\end{document}
