@@ -54,7 +54,9 @@ will be written $ f'(x_0) $.
 
 Another notation for the derivative is also common; because we are looking at changes in $ y $ divided by changes in $ x $ it sometimes
 makes sense to write the derivative as $ \od{y}{x} $ (where $ \dif{x} $ denotes, in some sense, a small change in $ x $). The value of the
-derivative at $ x_0 $ is written as $ \eval{\od{y}{x}}_{x = x_0} $.
+derivative at $ x_0 $ is written as $ \eval{\dod{y}{x}}_{x = x_0} $. This notation is known as Leibniz notation, as it was first introduced
+in the 1600s by Gottfried Leibiz (a German mathematician and philosopher who, it can be argued, was one of the first modern mathematicians
+to develop calculus in a sophisticated manner).
 
 The derivative of the derivative of $ f $ is called the second derivative of $ f $, and we write $ f'' $ for this new function. In general,
 the $ n$th derivative of $ f $ is denoted by $ f^{(n)} $ (it is the function produced by repeatedly differentiating $ f $). In Leibniz
@@ -62,10 +64,10 @@ notation, the $ n$th derivative of $ y = f(x) $ is $ \od[n]{y}{x} $.
 
 \begin{defn}
   \begin{enumerate}
-    \item If we can approximate the change in a function $ f $ around a point $ x_0 $ by writing $ f(x_0 + h) - f(x_0) = m h $
+    \item If we can approximate the change in a function $ f $ around a point $ x_0 $ by writing $ f(x_0 + h) - f(x_0) \approx m h $
           for some constant $ m $ that depends on $ x_0 $ but not $ h $, then $ f $ is said to be differentiable at $ x_0 $
           with derivative $ m = f'(x_0) $.
-    \item If $ y = f(x) $, then $ \od{y}{x} = f'(x) $.\
+    \item If $ y = f(x) $, then $ \od{y}{x} = f'(x) $.
     \item The line passing through $ (x_0,f(x_0)) $ with slope $ f'(x_0) $ is called the \emph{tangent line} to $ f $ at $ x_0 $.
   \end{enumerate}
 \end{defn}
@@ -203,7 +205,9 @@ say that the curve is \emph{non-differentiable} there.
       \item $ x \mapsto \sin x $
       \item $ x \mapsto \tan x $
     \end{enumerate}
-  \item Justify: `The derivative of $ f $ is the same as the derivative of $ f + K $ for every constant $ K $.'
+  \item Justify: `The derivative of $ f $ is the same as the derivative of $ f + K $ for every constant $ K $.'\footnote{Here, $ f + K $ denotes
+        the function defined by $ (f + K)(x) = f(x) + K $ for all $ x $. Likewise, if $ f $ and $ g $ are functions we define $ f + g $ to
+        be the function satisfying $ (f + g)(x) = f(x) + g(x) $ for all $ x $.}
   \item Above, we proved that if $ y = x^2 + x - 1 $ then $ \od{y}{x} = 2x + 1 $. Write the equation of the
         tangent line to this curve at the point $ (3, 11) $.
   \item Let $ f $ be a function. Suppose that it is known that $ f'(3) = 9 $, and $ f(3) = 6 $.
@@ -271,20 +275,20 @@ common-sense terms --- of the two principal symbols that are used in calculating
 
 These dreadful symbols are:
 
-(1) $ \dif{} $, which merely means "a little bit of".
+(1) $ \dif{} $, which merely means ``a little bit of''.
 
 Thus $ \dif{x} $ meas a little bit of $ x $;
 or $ \dif{u} $ means a little bit of $ u $. Ordinary mathematicians think it more polite to say
-"an element of", instead of "a little bit of". Just as you please. But you will find that these
+``an element of'', instead of ``a little bit of''. Just as you please. But you will find that these
 little bits (or elements) may be considered to be infinitesimally small.
 
-(2) $ \rint $, which is merely a long $ S $, and may be called (if you like) "the sum of".
+(2) $ \rint $, which is merely a long $ S $, and may be called (if you like) ``the sum of''.
 
 Thus $ \rint \dif{x} $ means the sum of all the little bits of $ x $; or $ \rint \dif{t} $ means
-the sum of all the little bits of $ t $. Ordinary mathematicians call this symbol "the integral of".
+the sum of all the little bits of $ t $. Ordinary mathematicians call this symbol ``the integral of''.
 Now any fool can see that if $ x $ is considered to be made up of a lot of little bits, each of
 which is called $ \dif{x} $, if you add them all up together you get the sum of all the $ \dif{x}$'s (which
-is simply the same thing as the whole of $ x $). The word "integral" simply means "the whole". If you think
+is simply the same thing as the whole of $ x $). The word ``integral'' simply means ``the whole''. If you think
 of the duration of time for one hour, you may  (if you like) think of it cut up into 3600 little bits
 called seconds. The whole of the 3600 little bits added up together make one hour.
 

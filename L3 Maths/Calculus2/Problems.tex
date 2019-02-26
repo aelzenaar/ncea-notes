@@ -59,3 +59,29 @@ def integrals:
             \end{center}
   \questioS Evaluate $ I = \rint^{\pi/2}_0 \frac{\sqrt{\sin x}}{\sqrt{\sin x} + \sqrt{\cos x}} \dif{x} $ [\textit{Hint: use the
             substitution $ x = \frac{\pi}{2} - u $ and add the result to the original integral.}]
+
+  \item If $ \frac{a}{b} = \frac{c}{d} $, show that $ \rint_a^b \frac{1}{x} \dif{x} = \rint_c^d \frac{1}{x} \dif{x} $.
+
+def integrals, by parts:
+  \questioS Find the area bounded by $ y = x^2 \ln x $ and $ y = 4\ln x $
+  \question Scholarship 2012:
+    \begin{parts}
+      \parE Find $ \od{}{x}[x \cos x] $ and use this result to find $ \rint x \sin x \dif{x} $.
+      \parS Hence find the value of $ \rint^{n\pi}_0 x \sin x \dif{x} $ for integer values of $ n $.
+    \end{parts}
+  \questioS It is well known that
+       \begin{displaymath}
+         \rint^{\infty}_{-\infty} e^{-x^2} \dif{x} = \sqrt{\pi}.
+       \end{displaymath}
+       Using this result, show that
+       \begin{displaymath}
+         \rint^{\infty}_{-\infty} x^2 e^{-x^2} \dif{x} = \frac{\sqrt{\pi}}{2}.
+       \end{displaymath}
+  \questioS If $ I_n = \rint^{n}_0 x^n e^x \dif{x} $, write down an explicit general formula for $ I_n $.
+  \questioS Compute $ \rint^\lambda_0 te^{-\lambda t} \dif{t} $.
+  \questioS Suppose that $ f(1) = 2 $, $ f(4) = 7 $, $ f'(1) = 5 $, and $ f'(4) = 3 $. Evaluate $ \rint^4_1 xf''(x) \dif{x} $.
+  \questioS Scholarship 2016: A function $ f(x) $, where $ x $ is a real number, is defined implicitly by the formula
+            \begin{displaymath}
+              f(x) = x - \int^{\pi/2}_0 f(x) \sin(x) \dif{x}.
+            \end{displaymath}
+            Find the explicit expression for $ f(x) $ in simplest form.

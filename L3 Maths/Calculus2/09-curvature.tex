@@ -1,0 +1,341 @@
+\section{The geometry of graphs of functions}
+In this chapter we want to study the geometry of curves: direction, speed, bending,
+and twisting. This field of study is properly called \emph{differential geometry}.
+
+In this section, we will discuss the geometry of the graphs of functions, and then over the next
+few sections we will define and then talk about curves with more interesting and complex
+properties.
+
+\subsection{Slope and concavity}
+Suppose $ \gamma $ is a function. If we walk along the graph of $ \gamma $, then
+at each point $ (t, \gamma(t)) $ we have a measure of the direction that we are
+pointing: we are pointing at an angle $ \arctan \gamma'(t) $ to the $ x$--axis.
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        axis lines = center,
+        xlabel = $ t $,
+        ylabel = {$ y = \gamma(t) $},
+        ticks = none
+      ]
+        \addplot[domain = 0:5, color = red, samples=100] {x^3 - x^2 - x - 1};
+        \draw[->] (4,43) -- (4.33,56);
+        \draw[dotted] (4,43) -- (4.33,43) -- (4.33,56);
+        \draw[below] (4.165,43) node{$1$};
+        \draw[right] (4.33,49.5) node{$\gamma'(t)$};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Slope as a measure of direction.}
+\end{figure}
+
+We can essentially differentiate (if you pardon the pun) three different kinds of behaviour:
+\begin{defn}
+  Let $ \gamma $ be a function. Then:
+  \begin{enumerate}
+    \item If $ \gamma'(a) > 0 $, $ \gamma $ is said to be \emph{increasing} at $ a $.
+    \item If $ \gamma'(a) = 0 $, $ \gamma $ is said to be \emph{stationary} at $ a $.
+    \item If $ \gamma'(a) < 0 $, $ \gamma $ is said to be \emph{decreasing} at $ a $.
+  \end{enumerate}
+\end{defn}
+
+However, this does not yet give us any information about the curvature of the graph
+of $ \gamma $: the amount of `bending' taking place. Based on our studies so far, it
+would make some sense to define curvature to be the rate of change of slope. Unfortunately,
+it turns out that this definition is `incomplete' in some technical sense (we will
+discuss this briefly when we talk about arc length). However, the second derivative $ \gamma'' $
+is useful to us on its own merits; instead of curvature, we will call it \emph{concavity}.
+
+\begin{defn}
+  Let $ \gamma $ be a function. Then:
+  \begin{enumerate}
+    \item If $ \gamma''(a) > 0 $, $ \gamma $ is said to be \emph{concave up} (or \emph{convex}) at $ a $.
+    \item If $ \gamma''(a) = 0 $, $ a $ is said to be an \emph{inflection point} of $ \gamma $.
+    \item If $ \gamma''(a) < 0 $, $ \gamma $ is said to be \emph{concave down} (or simply \emph{concave}) at $ a $.
+  \end{enumerate}
+
+  If $ \gamma $ is concave up for all points $ a $ , then we call the function as a whole concave up (and likewise for concave down functions).
+\end{defn}
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      axis lines = center,
+      ymax = 1.5, ymin = -1.5,
+      xtick={-6.28, -4.7124, -3.14159, -1.5708, 1.5708, 3.14159, 4.7124, 6.28},
+      xticklabels={$ -2\pi $, $ -\frac{3\pi}{2} $, $ -\pi $, $ -\frac{\pi}{2} $, $ \frac{\pi}{2} $, $ \pi $, $ \frac{3\pi}{2} $, $ 2\pi $},
+      xlabel = $ x $,
+      ylabel = $ y $
+    ]
+      \addplot[domain = -2*pi:2*pi, color = red, samples=100] {sin(deg(x))};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The sine function.\label{fig:sine}}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      axis lines = center,
+      xlabel = $ x $,
+      ylabel = {$ y $}
+    ]
+      \addplot[domain=-5:5, color=red, samples=200] {x^3};
+      \addplot[domain=-10:10, color=blue, samples=200] {x^2};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Graphs of $ x^n $ for odd $ n $ (red) and even $ n $ (blue).\label{fig:monomials}}
+\end{figure}
+
+\begin{exs}
+  \begin{enumerate}
+    \item The function $ x \mapsto x^2 $ is concave up everywhere, increasing for $ x > 0 $, and decreasing when $ x < 0 $.
+    \item The function $ x \mapsto \sin x $ is concave down when $ (2n)\pi < x < (2n + 1)\pi $, and concave up when $ (2n + 1)\pi < x < (2n + 2)\pi $
+          (for all integers $ n $). See figure \ref{fig:sine}
+    \item The function $ x \mapsto x^3 $ has an inflection point at $ (0,0) $; to the left of this point, the function is concave
+          down (the second derivative is negative) and to the right the function is concave up (the second derivative is positive).
+    \item In general, functions of the form $ f(x) = x^n $ (for integer $ n \geq 0 $) have some fairly symmetric properties:
+      \begin{itemize}
+        \item If $ n $ is even, then $ y = f(x) $ is even around the $ x $-axis (i.e. $ f(-x) = f(x) $), has a minimum at $ (0,0) $, and
+              tends to $ +\infty $ in both directions. (See the function graphed in blue in figure \ref{fig:monomials}.)
+        \item If $ n $ is odd, then $ y = x^n $ is odd around the $ x $-axis (i.e. $ f(-x) = -f(x) $), has an inflection point at $ (0,0) $,
+              and tends to $ -\infty $ towards the left and $ +\infty $ towards the right. (See the function graphed in red in the figure.)
+      \end{itemize}
+  \end{enumerate}
+\end{exs}
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      axis lines = center,
+      xlabel = $ x $,
+      ylabel = {$ y = f(x) $},
+    ]
+      \addplot[domain=-2:2, color=red, samples=200] {x^4 - 2*x^2 + 3};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The graph of $ f(x) = x^4 - 2x^2 + 3 $.\label{fig:poly9}}
+\end{figure}
+
+\begin{ex}
+  Consider the function defined by $ f(x) = x^4 - 2x^2 + 3 $ (figure \ref{fig:poly9}). Find the intervals on which $ f $
+  is increasing or decreasing, find the intervals of concavity, and find any inflection points.
+
+  \textit{Solution.} We have $ f'(x) = 4x^3 - 4x $. This function is zero at $ x \in \{-1, 0, 1\} $, and so (since the function
+  is a positive cubic) $ f $ will be decreasing when $ x < -1 $, increasing when $ -1 < x < 0 $, decreasing when $ 0 < x < 1 $,
+  and increasing when $ 1 < x $. We also have $ f''(x) = 12x^2 - 4 $ and so $ f''(x) = 0 $ when $ x = \pm \frac{1}{\sqrt{3}} $.
+  Hence the function is concave up when $ x < -\frac{1}{\sqrt{3}} $, concave down when $ \abs{x} < \frac{1}{\sqrt{3}} $, and concave
+  up when $ x > \frac{1}{\sqrt{3}} $. The inflection points will be $ x = \pm{1}{\sqrt{3}} $.
+\end{ex}
+
+\subsection{Continuity}
+We have already mentioned continuity, when we discussed limits. We would like to call a
+function continuous, intuitively, if its graph can be drawn without picking a pen up off
+the page. This is insufficient: we cannot prove continuity of any function via this
+definition! The precise definition of continuity was given by Bernard Bolzano in the early
+1800s, and is one of the greatest historical breakthroughs in mathematics. His definition,
+for us, is best stated in terms of limits:
+\begin{defn}
+  A function $ f $ is said to be \emph{continuous} at $ a $ if $ \lim_{x \to a} f(x) = f(a) $. If $ f $
+  is continous for every $ a $ in its domain, the function as a whole is said to be continuous.
+\end{defn}
+
+It is perhaps unfortunate that the concepts of continuity and differentiability are not the same. The details of this
+are studied in exercise \ref{exercise:contnotdif}.
+
+\subsection{Exercises and Problems}
+\begin{enumerate}
+  \item The following function is known as the \textit{logistic curve} and is used for population modelling. Find the intervals of
+        concavity, and label any inflection points.
+        \begin{center}
+          \includegraphics[width=0.4\textwidth]{logistic}
+        \end{center}
+  \item Find the second derivative of the following functions.
+    \begin{enumerate}
+      \item $ y = x^2 + x $
+      \item $ f(x) = \sin x $
+      \item $ g(x) = \cot(3x^2 + 5) $
+      \item $ y = \frac{\sin mx}{x} $
+      \item $ y = 4 \sin^2 x $
+      \item $ y = \tan^2 (\sin \theta) $
+      \item $ y = \tan \sqrt{1 - x} $
+    \end{enumerate}
+  \item Find the concavity of the function $ y = \frac{x^2 - 1}{x^2 + 1} $ at $ (0, -1) $.
+  \item Find the intervals on which the following functions are increasing or decreasing, and
+        find their intervals of concavity.
+    \begin{enumerate}
+      \item $ y = x^2 + 1 $
+      \item $ y = 2x^3+ 3x^2 - 36x $
+      \item $ G(x) = x - 4\sqrt{x} $
+    \end{enumerate}
+  \item The graph of $ y = f(x) $ (where $ f $ is a continuous function) is concave up for all $ x < 0 $, concave down for $ x > 0 $, and decreasing everywhere.
+    \begin{enumerate}
+      \item Sketch the graph of $ y = f(x) $.
+      \item What can you say about $ f'(x) $ and $ f''(x) $ for $ x < 0 $ and $ x > 0 $?
+      \item What about $ x = 0 $?
+    \end{enumerate}
+  \item Find a value of $ k $ such that the function $ F $ is continuous at $ x = -3 $, where
+        \begin{displaymath}
+          F(x) =
+          \begin{cases}
+            \frac{x^2 - 9}{x+3} & \text{if } x \neq -3,\\
+            k                   & \text{if } x = -3.
+          \end{cases}
+        \end{displaymath}
+  \item Show whether or not the function $ g $ is continuous at the three points $(2, g(2)) $, $ (3,g(3)) $, and  $(4,g(4)) $, where
+        \begin{displaymath}
+          g(x) =
+          \begin{cases}
+            2x-x^2              & \text{if } 0 \leq 2,\\
+            2-x                 & \text{if } 2 < x \leq 3,\\
+            x-4                 & \text{if } 3 < x \leq 4,\\
+            \pi                 & \text{if } x \geq 4.
+          \end{cases}
+        \end{displaymath}
+  \item Find all values of $ \alpha $ such that $ \Phi $ is continuous everywhere, where
+        \begin{displaymath}
+          \Phi(x) =
+          \begin{cases}
+            x+1                 & \text{if } x \leq \alpha, \\
+            x^2                 & \text{if } x > \alpha.
+          \end{cases}
+        \end{displaymath}
+  \item Sketch a function satisfying the given criteria.
+    \begin{enumerate}
+      \item
+        \begin{itemize}
+          \item Vertical asymptote at $ x = 0 $,
+          \item $ f'(x) > 0 $ if $ x < -2 $,
+          \item $ f'(x) < 0 $ if $ x > -2 $ ($ x \neq 0 $),
+          \item $ f''(x) < 0 $ if $ x < 0 $, $ f''(x) > 0 $ if $ x > 0 $.
+        \end{itemize}
+      \item
+        \begin{itemize}
+          \item $ f'(0) = f'(2) = f'(4) = 0 $,
+          \item $ f'(x) > 0 $ if $ x < 0 $ or $ 2 < x < 4 $,
+          \item $ f'(x) < 0 $ if $ 0 < x < 2 $ or $ x > 4 $,
+          \item $ f''(x) > 0 $ if $ 1 < x < 3 $,
+          \item $ f''(x) < 0 $ if $ x < 1 $ or $ x > 3 $.
+        \end{itemize}
+    \end{enumerate}
+  \item A curve is defined by the function $ f(x) = e^{-(x-k)^2} $. Find, in terms of $ k $, the $ x$-ordinates for which $ f''(x) = 0 $.
+  \item It turns out that if a function $ f $ is differentiable at $ a $ then $ f $ is always continuous at $ a $, but the converse
+        is not true: there exist continuous functions that are not differentiable. (In fact, there exist functions that are continuous
+        everywhere but differentiable nowhere.) \label{exercise:contnotdif}
+    \begin{enumerate}
+      \item We will prove that differentiability of $ f $ at $ a $ implies continuity of $ f $ at $ a $; expand the following
+            and use the limit laws to show that $ \lim_{x \to a} f(x) - f(a) = 0 $, carefully indicating where you use the existence
+            of the derivative.
+            \begin{displaymath}
+              \left[\lim_{a \to x} f(x) - f(a)\right]\left[\lim_{a \to x} \frac{x - a}{x - a}\right]
+            \end{displaymath}
+      \item Give an example of a function which is continuous but not differentiable at some point.
+    \end{enumerate}
+  \item We will do some studies of convexity that may be familiar to students who have looked at the exercises on convexity
+        in the algebra notes. We assume that all functions are continuous and differentiable everywhere for simplicity.
+    \begin{enumerate}
+      \item Show that if $ f $ is a convex function, and if $ P = (p,f(p)) $ and $ Q = (q,f(q)) $ are any two distinct points
+            on the graph of $ f $, then for every point $ X = (x_1, x_2) $ on the line segment $ \overline{PQ} $, $ x_2 \geq f(x_1) $
+            and equality is only obtained at the endpoints.
+      \item Show that if $ f $ is a convex function, and if $ P = (p,f(P)) $ is a point on the graph of $ f $, then for every
+            point $ (x_1,x_2) $ on the tangent line to $ f $ at $ P $, $ x_2 \leq f(x_1) $ and equality is only obtained at $ P $.
+      \item Prove similar statements to (a) and (b) in the case that $ f $ is a concave function. [Hint: there is not much work
+            involved, as long as one ponders the function $ -f $.]
+    \end{enumerate}
+  \item Scholarship 2010: Recall that the points of inflection of a curve are places where the second derivative
+        changes sign. These are typically, \textbf{but not always}, points at which the second derivative is zero.
+
+        Consider the curve $ y = \sqrt[3]{x} e^{-x^2} $.
+
+        Write the second derivative in the form $ \od[2]{y}{x} = (ax^4 + bx^2 + x)e^{-x^2} x^{-5/3} $, and hence
+        find the $ x$-ordinates of the points of inflection of the curve.
+  \item Scholarship 2004: (You may wish to remind yourself how to perform long division of polynomials.) Consider the function
+        \begin{displaymath}
+          y = \frac{x^2}{1 + x^2},
+        \end{displaymath}
+        where $ -1 \leq x \leq 1 $. The gradient at the point $ x = 1 $ is $ \frac{1}{2} $.
+
+        Hence show that there is a point with $ \frac{1}{4} \leq x \leq \frac{1}{2} $ where the gradient is also $ \frac{1}{2} $.
+  \item Scholarship 2013: A function $ f $ is \textbf{even} if $ f(-x) = f(x) $ for all $ x $ in its domain, and \textbf{odd} if $ f(-x) = f(-x) $
+        for all $ x $ in its domain.
+    \begin{enumerate}
+      \item Describe which polynomials are even, which are odd, and which are neither.
+      \item Suppose that $ g $ is any even differentiable function defined for all real numbers (not necessarily a polynomial). Use the
+            limit definition of the derivative to prove that $ g' $ is odd.
+    \end{enumerate}
+  \item Recall that we can define the derivative of $ f $ by $ \mathsf{D}f(x) = \lim_{y \to x} \frac{f(y) - f(x)}{y - x} $.
+        We will generalise this, by writing $ \mathsf{SD}f(x) = \lim_{h \to 0} \frac{f(x + h) - f(x - h)}{2h} $.
+        This is called the \emph{symmetric derivative} of $ f $.
+    \begin{enumerate}
+      \item In fact, we defined the derivative of $ f $ at $ x $ to be the unique $ f' $ such that $ f(x + h) \approx f(x) + hf'(x) $
+            for small $ h $.\footnote{Then we defined the notation $ \varphi(x,h) \approx \psi(x,h) $ to mean that $ \varphi(x) = \psi(x) + \vartheta(h) $
+            for some function $ \vartheta $ satisfying $ \vartheta(h)/h \to 0 $ as $ h \to 0 $.}
+
+            Show that, for small $ h $, if $ f'(x) $ exists then $ f(x + h) - f(x - h) \approx 2hf'(h) $. Hence
+            conclude that $ \mathsf{SD}f(x) = \mathsf{D}f(x) $ whenever the latter exists.
+      \item The converse is not true: show that if we define $ f(x) = \abs{x} $, then $ \mathsf{SD} f(0) $ exists
+            but $ \mathsf{D} f(0) $ does not.
+      \item Define the \emph{second} symmetric derivative of $ f $ by
+            \begin{displaymath}
+              \mathsf{SD}^2 f(x) = \lim_{h \to 0} \frac{\frac{f(x + h) - f(x)}{h} - \frac{f(x) - f(x - h)}{h}}{h} = \lim_{h \to 0} \frac{f(x + h) - 2f(x) + f(x - h)}{h^2}.
+            \end{displaymath}
+            Show that whenever $ f''(x) = \mathsf{D}^2 f(x) $ exists then $ \mathsf{SD}^2 f(x) $ exists and has the same value; show that the converse
+            does not hold (i.e. the existence of the second symmetric derivative does not imply the existence of the usual second derivative)
+            by considering a suitable function, such as
+            \begin{displaymath}
+              \mathrm{sgn}(x) = \begin{cases} -1 & x < 0 \\ 0 & x = 0 \\ 1 & x > 0. \end{cases}
+            \end{displaymath}
+    \end{enumerate}
+  \item Define $ f $ by
+        \begin{displaymath}
+          f(x) = \begin{cases} e^{-1/x^2} & x \neq 0 \\ 0 &x = 0 \end{cases}.
+        \end{displaymath}
+    \begin{enumerate}
+      \item Show that $ f $ is differentiable at zero.
+      \item Show that, for all $ n > 0 $, $ f^{(n)}(0) = 0 $. (Implicit here is the existence of the $ n$th derivative.)
+      \item Show that $ f $ has a global minimum at zero.
+      \item Justify that there can thus never be a rule, based simply on checking $ n$th derivatives, for proving
+            that any function has a local minimum or maximum at a point.
+      \end{enumerate}
+\end{enumerate}
+
+\subsection{References}
+A good introduction to the geometry of curves, and differential geometry in general, is \emph{Differential Geometry
+of Curves and Surfaces} by Manfredo P. do Carmo.
+
+For a discussion of the history of continuity, see J F Harper (2016): Defining continuity of
+real functions of real variables, BSHM Bulletin: Journal of the British Society for the History
+of Mathematics, DOI:10.1080/17498430.2015.1116053 (\url{http://homepages.ecs.vuw.ac.nz/~harper/harper16.pdf}).
+
+\subsection{Homework}
+\paragraph{Reading}
+
+\paragraph{Problems}
+\begin{enumerate}
+  \item Explain, with sketches, the geometric meaning of the second derivative.
+  \item Find the second derivative of the following functions.
+    \begin{enumerate}
+      \item $ f(x) = x^5 - 5x + 3 $
+      \item $ f(x) = \frac{x^2}{x - 1} $
+      \item $ f(x) = \sqrt{x} - \sqrt[4]{x} $
+    \end{enumerate}
+  \item Sketch a function satisfying the given criteria.
+    \begin{enumerate}
+      \item (hint: your result should be an odd function)
+        \begin{itemize}
+           \item $ f'(1) = f'(-1) = 0 $,
+           \item $ f'(x) < 0 $ if $ \abs{x} < 1 $,
+           \item $ f'(x) > 0 $ if $ 1 < \abs{x} < 2 $,
+           \item $ f'(x) = -1 $ if $ \abs{x} > 2 $.
+        \end{itemize}
+      \item
+        \begin{itemize}
+          \item $ f'(x) < 0 $,
+          \item $ f''(x) < 0 $.
+        \end{itemize}
+    \end{enumerate}
+\end{enumerate}

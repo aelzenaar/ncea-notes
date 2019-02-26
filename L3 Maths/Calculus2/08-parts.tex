@@ -1,0 +1,97 @@
+\section{Anti-differentiation by parts}
+We have already seen that, by reversing the chain rule, we can anti-differentiate
+some function compositions. Similarly, we can reverse the product rule:
+\begin{gather*}
+  \od{}{x} f(x) g(x) = f'(x) g(x) + f(x) g'(x)\\
+  f(x) g(x) = \rint f'(x) g(x) \dif{x} + \rint f(x) g'(x) \dif{x}.
+\end{gather*}
+This result is normally written in the form
+\begin{equation}
+  \rint f'(x) g(x) \dif{x} = f(x) g(x) - \rint f(x) g'(x) \dif{x}
+\end{equation}
+and is known as \emph{integration by parts}. We often write it in Leibniz notation,
+where it looks like $ \rint \od{u}{x} v \dif{x} = uv - \rint u \od{v}{x} \dif{x} $.
+
+\begin{exs}
+  \begin{enumerate}
+    \item Consider $ \rint x \sin x \dif{x} $, which does not yield to any obvious change of variable. Let $ u = x $, and
+          let $ \od{v}{x} = \sin x $. So $ \od{u}{x} = 1 $, and $ v = -\cos x $. Hence:
+          \begin{displaymath}
+            \rint x \sin x \dif{x} = -x\cos x + \rint \cos x \dif{x} = -x\cos x + \sin x + C,
+          \end{displaymath}
+          where $ C $ is an arbitrary constant. Check that $ (-x\cos x + \sin x)' = x\sin x $.
+    \item Now we will anti-differentiate $ x^2 \sin 2x $. We work as follows:
+          \begin{align*}
+            \rint x^2 \sin 2x \dif{x} &= -\frac{x^2 \cos 2x}{2} + \rint x \cos 2x \dif{x}\\
+                                      &= -\frac{x^2 \cos 2x + x \sin 2x}{2} - \rint \frac{1}{2} \sin 2x\\
+                                      &= -\frac{x^2 \cos 2x + x \sin 2x}{2} + \frac{1}{4} \cos 2x + C.
+          \end{align*}
+  \end{enumerate}
+\end{exs}
+
+The aim is to end up with an easier integral than the one that was started with.
+
+\subsection{Exercises and Problems}
+\begin{enumerate}
+  \item Compute the following indefinite integrals.
+    \begin{multicols}{2}
+    \begin{enumerate}
+      \item $ \rint x e^x \dif{x} $
+      \item $ \rint x^2 e^{2x} \dif{x} $
+      \item $ \rint \ln x \dif{x} $
+      \item $ \rint t^5 \ln t \dif{t} $
+      \item $ \rint t^3 e^{-t^2} \dif{t} $
+      \item $ \rint \sin \ln y \dif{y} $
+      \item $ \rint x \tan^2 x \dif{x} $
+      \item $ \rint \frac{te^t + te^{-t}}{2} \dif{t} $
+      \item $ \rint \cos \sqrt{t} \dif{t} $
+      \item $ \rint \theta^3 \cos (\theta^2) \dif{\theta} $
+      \item $ \rint (x^2 + 1)e^{-x} \dif{x} $
+    \end{enumerate}
+    \end{multicols}
+  \item Consider $ \rint f'(x) g(x) \dif{x} $; show that, for integration by parts,
+        we can take any anti-derivative of $ f' $ for $ f $.
+  \item Prove that
+        \begin{displaymath}
+          \rint \cos^n x \dif{x} = \frac{1}{n} \sin x \cos^{(n - 1)} x + \frac{n-1}{n} \rint \cos^{(n - 2)} x \dif{x}
+        \end{displaymath}
+  \item Evaluate $ \rint (\ln x)^2 \dif{x} $.
+  \item A particle moving in one dimension has a velocity function $ v(t) = t^2 e^{-t} $ (where $ t $ is in seconds). What is its displacement from its
+        starting position after three minutes?
+  \item Scholarship 2016: A curve passing through the point $ (1,1) $ has the property that at each point $ (x,y) $ on the curve,
+        the gradient of the curve is $ x - 2y $; that is, $ \od{y}{x} = x - 2y $.
+        \begin{enumerate}
+          \item Show that $ \od{}{x} e^{2x} y = xe^{2x} $.
+          \item Hence, or otherwise, find the equation of the curve.
+        \end{enumerate}
+  \item Find $ I(x) = \int e^x \cos x \dif{x} $.
+  \item Evaluate $ \rint \sin 4x \cos 5x \dif{x} $ in two different ways.
+  \item Find an anti-derivative of $ (\sin^{-1} x)^2 $.
+  \item Recall that $ \od{}{x} \tan^{-1} x = \frac{1}{1 + x^2} $. Find $ \rint \tan^{-1} x \dif{x} $.
+  \item We integrate $ \rint 1/x \dif{x} $ by parts:
+        \begin{align*}
+          \rint \frac{1}{x} \dif{x} = \frac{1}{x} \cdot x - \rint -\frac{1}{x^2} \cdot x \dif{x} = 1 + \rint \frac{1}{x} \dif{x}
+        \end{align*}
+        Cancelling the indefinite integral from both sides, we have $ 0 = 1 $. Explain.
+\end{enumerate}
+
+\subsection{References}
+
+\subsection{Homework}
+\paragraph{Reading}
+\url{https://www.youtube.com/watch?v=-reFBJ4R9iA}
+
+\paragraph{Problems}
+\begin{enumerate}
+  \item Compute the following indefinite integrals.
+    \begin{enumerate}
+      \item $ \rint x \cos 5x \dif{x} $
+      \item $ \rint \cos x \ln \sin x \dif{x} $
+      \item $ \rint \cos \sqrt{x} \dif{x} $
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+      \item Prove that $ \rint (\ln x)^n \dif{x} = x(\ln x)^n - \rint (\ln x)^{(n-1)} \dif{x} $.
+      \item Find $ \rint (\ln x)^3 \dif{x} $.
+    \end{enumerate}
+\end{enumerate}

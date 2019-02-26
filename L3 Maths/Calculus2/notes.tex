@@ -14,6 +14,8 @@
 \DeclareSIUnit\year{yr}
 \DeclareSIUnit\litre{\liter}
 
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.14}
 \usepgfplotslibrary{polar}
@@ -72,12 +74,13 @@
 \usepackage{scalerel}
 \DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
 
-\renewcommand{\thechapter}{\Roman{chapter}}
-\renewcommand{\thesection}{\thechapter.\arabic{section}}
-
 \setlrmarginsandblock{3.5cm}{2.5cm}{*}
 \setulmarginsandblock{2.5cm}{*}{1}
 \checkandfixthelayout
+
+\counterwithout{section}{chapter}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
 
 \newlength\drop
 \newcommand*{\titleGM}{\begingroup% Gentle Madness
@@ -170,11 +173,12 @@ I have used the following textbooks when writing these notes, in roughly increas
         for a Y12/13 student, but it is not very geometric. It is certainly worth looking at, though.
   \item \emph{Calculus}, by James Stewart. This is one of the standard first-year computational calculus books. It has many examples and many exercises,
         but lacks soul.
-  \item \emph{Calculus}, by Michael Spivak. This is often called the `One True Calculus Book', but is more properly an introduction to
-        real analysis. As such, it is too diffcult for all but the most motivated high school students.
+  \item \emph{Calculus}, by Michael Spivak. This is often called the `One True Calculus Book',\footnote{For example, by the \emph{Chicago undergraduate
+        mathematics bibliography}: \url{https://www.ocf.berkeley.edu/~abhishek/chicmath.htm} (somewhat useful, if taken with a grain of salt).} but
+        is more properly an introduction to real analysis. As such, it is too diffcult for all but the most motivated high school students.
   \item (For the sake of completeness,) \emph{Advanced Calculus}, by L. H. Loomis and S. Sternberg. This is the author's favourite calculus
-        book, but is eminently unsuitable for high school students of any motivation. It is incredibly geometric, wonderfully written, and
-        almost impenetrable.
+        book, but is eminently unsuitable for high school students of any motivation. It is incredibly geometric, wonderfully well written, and
+        almost impenetrable. This book inspired these notes, philosophically speaking.
 \end{itemize}
 
 \chapter{Preface for the student}
@@ -189,16 +193,18 @@ page is not large enough to contain such an exposition.
 
 Instead, I will give some study advice.
 
-Firstly, you must read the notes. You must sleep with them beneath your pillow. You must do all the problems. You must ask questions.
+Firstly, you must read the notes. You must sleep with them beneath your pillow. You must work through the examples yourself. You must
+do all the problems. You must ask questions.
 
 Because no student ever follows my first piece of advice, I will give you a second, easier option. For each topic, there are a few
 homework problems set. \emph{At a minimum}, you should do all these problems. (But beware, if you \emph{only} do these problems, you
 will be woefully underprepared for any situation you need calculus for.)
 
-Secondly, draw pictures. I do my best to include lots of diagrams (some even in colour!), but one can never have too many pictures.
-(``What is the use of a book without pictures or conversations?''\footnote{\emph{Alice in Wonderland}, by Lewis Carroll.})
+Secondly, draw pictures. I do my best to include lots of diagrams (some even in colour!), but one can never have too many
+pictures. (As a young girl called Alice once perceptively remarked, ``What is the use of a book without pictures or
+conversations?''\footnote{\emph{Alice in Wonderland}, by Lewis Carroll.})
 
-Thirdly, and I cannot stress this enough, \emph{your exam grades do not matter}. It is perfectly possible to pass calculus exams
+Thirdly, and I cannot stress this enough, \emph{your exam grades do not matter}.$^\textit{[citation needed]}$ It is perfectly possible to pass calculus exams
 without understanding the material, but if you do that (by, for example, trying to memorise everything in leu of understanding it),
 you are cheating yourself out of an education. If you understand the material, you will be prepared for every subject you may wish
 to take next year (and, as a bonus, you'll pass the exam).
@@ -224,5 +230,9 @@ Let us begin.
 \include{05-chainrule}
 \include{06-substitution}
 \include{07-products}
+\include{08-parts}
+
+\chapter{The geometry of curves}
+\include{09-curvature}
 
 \end{document}
