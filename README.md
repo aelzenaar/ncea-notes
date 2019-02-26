@@ -78,6 +78,9 @@ these new notes, based somewhat on a mixture of numeric approximations and the t
 Loomis and Sternberg; my idea of the `correct' way to understand calculus has changed significantly from when I wrote my
 older notes above, and I am no longer happy with them.
 
+If the rewriting goes successfully, I will likely give a similar treatment to the algebra notes, as _Solutions_ is beginning
+to bend under the weight of three or four years of constant bolting-on of new pieces of random mathematics.
+
 ## Physics
 ### Level Two
  * Waves (91170), mechanics (91171), and electromagnetism (91172): [full set of notes](L2%20Physics/externals.pdf), including many diagrams and links to youtube videos,

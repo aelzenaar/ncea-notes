@@ -472,7 +472,54 @@ the above calculation backwards.
 
 A similar computation can be done for the hyperbola.
 
+\begin{enumerate}
+  \item There is a standard trick here: form $ O_2' $ by reflecting $ O_2 $ across $ \ell $; then $ \abs{O_2 X} = \abs{O_2' X} $ for
+        every $ X $ on $ \ell $. Let us pick such an $ X $ by taking the intersection of $ O_1 O_2 $ with $ \ell $; then for any other
+        point $ Y $ on $ \ell $, $ \abs{O_1 X} + \abs{O_2' X} = \abs{O_1 O_2'} \leq \abs{O_1 Y} + \abs{Y O_2'} $. Thus $ X $ is the
+        required point. To show the given angles are equal, look at the triangles formed by $ O_2 X O_2' $; they are congruent
+        by construction, and hence the two angles at $ X $ are equal; then the angle between $ O_1 X $ and $ \ell $ is opposite and thus
+        equal to one of these angles.
+  \item To show this result, I will prove a stronger proposition and then deduce the hint as a special case. Consider the given
+        ellipse; suppose it is the locus of all points $ X $ such that $ d(O_1,X) + d(O_2,X) = R $. Let $ P $ be any point outside
+        the ellipse; I claim that $ d(O_1,P) + d(O_2,P) > R $. Pick $ Q $ to be the intersection between the ellipse and the angular
+        bisector of $ O_1 X O_2 $; then $ d(O_1, Q) + d(O_2, Q) = R $. On the other hand, $ d(O_1, P) \geq d(O_1, Q) + d(Q,P) $;
+        similarly, $ d(O_2,P) \geq d(O_2,Q) + d(Q,P) $. Thus $ d(O_1, P) + d(O_2, P) \geq d(O_1, Q) + 2d(Q,P) + d(O_2, Q) = R + 2d(Q,P) \geq R $
+        with equality if and only if $ P = Q $, which is not the case.\footnote{Exercise: show that if $ P $ lies within the
+        ellipse, then $ d(O_1,P) + d(O_2,P) < R $.}
+
+        Now, let $ X $ be any point on the ellipse. Then every point on the tangent line to the ellise at $ X $, except $ X $ itself,
+        lies outside the ellipse. Hence for all such points $ Y $, $ d(O_1, Y) + d(O_2, Y) \geq R $. Thus the minimum distance between $ O_1 $
+        and $ O_2 $ via a point on the tangent line occurs when we travel via $ X $, as this is the only point for which we can attain equality.
+
+        By result I it follows immediately that the two angles are equal.
+  \item The reflection law for waves states that a wave hitting a surface will reflect at an equal angle; thus light rays from $ O_1 $
+        will (by II) pass through $ O_2 $. Further, the distance all such rays travel is $ R $; hence all rays from $ O_1 $ will reach $ O_2 $
+        in equal time despite taking different paths.
+  \item For a parabola, all waves from the focus $ O $ will reflect `towards infinity' --- they will reflect away from the vertex, parallel to the axis
+        of the parabola.
+        \begin{center}
+          \includegraphics[width=0.4\textwidth]{parabola-reflections}
+        \end{center}
+\end{enumerate}
+
 \section{Isometries}
+
+\begin{exercise}[Further thoughts on this argument]\label{exercise:degenerate}
+  You are asked to think critically about the above argument (so reread it and check the computations) and to extend it (so not only must
+  you read it, but understand it).
+  \begin{enumerate}
+    \item Clearly $ y = x^2 $ cannot be written in the canonical form. Where does the proof above fall down for a parabola?
+    \item What happens if our ellipse is a circle?
+    \item We have now classified the quadratic equations in two variables corresponding to hyperbolae and ellipses ($ px^2 \pm qy^2 = 1 $)
+          and parabolae ($ y^2 = kx^2 $). What other forms can the graph of such a quadratic equation take? (Hint: you should be able to
+          find three other kinds, and show that every quadratic equation is of one of the six kinds.)
+  \end{enumerate}
+\end{exercise}
+
+\begin{enumerate}
+  \item The issue is that we cannot complete the square in $ x $ --- there is no square.
+\end{enumerate}
+
 
 \section{Cones}
 
