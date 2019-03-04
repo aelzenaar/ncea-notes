@@ -147,6 +147,75 @@ for us, is best stated in terms of limits:
 It is perhaps unfortunate that the concepts of continuity and differentiability are not the same. The details of this
 are studied in exercise \ref{exercise:contnotdif}.
 
+\subsection{Arc length and curvature (optional)}
+The second derivative measures the curvature of a graph based on our position as we walk along the $ x$--axis. A little thought
+suggests that it might be more natural to measure the curvature based on our position as we walk along the graph itself: if we
+take our graph and we slant it, for example, this doesn't change the visual `bendiness' of the graph but it does change the
+relative position of the graph above the $ x$--axis and thus the values of $ \od[2]{y}{x} $ change.
+
+Let us fix some point on our curve; as we walk along our curve, we measure the distance we travel from this point. After we stick
+our graph into a coordinate system, this length (the \emph{arc length}) becomes a function of our position.
+
+We will begin with a circle, which we might guess behaves very nicely. I will define the curvature $ \kappa $ of the circle to be the rate
+of change of the angle $ \theta $ that our tangent line makes with the $ x$--axis as we walk along the curve, increasing $ s $:
+in other words, $ \kappa = \od{\theta}{s} $.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.6\textwidth]{curvaturecircle}
+  \caption{Calculating the curvature of a circle.\label{fig:curvaturecircle}}
+\end{figure}
+
+Consider figure \ref{fig:curvaturecircle}. We are approximating a tangent line at $ B $ with the line $ AB $, and then
+varying $ \theta $ by a small amount, $ k $. As our secant line $ AB $ approaches a tangent line, the angle at $ B $
+between $ AB $ and the radius becomes a right angle. Similarly, the angle at $ C $ with the radius is a right angle for small $ k $. Thus the
+angle at $ B $ in the triangle $ OBC $ is approximately $ \pi/2 - k $, and the angle at $ C $ is $ \pi/2 $; thus the angle at $ O $ is $ k $.
+
+We therefore have that $ kr \approx s(\theta + k) - s(\theta) $, and so $ \od{s}{\theta} = r $; therefore $ \kappa = 1/r $.
+
+If $ f $ is some arbitrary function, and we consider the graph $ y = f(x) $, we can calculate $ \od{\theta}{s} $ at each point (we will
+do this calculation in a second). At each point, we can associate a circle with the same curvature; this circle is called the \emph{osculating
+circle}, the radius $ r $ of the circle is the \emph{radius of curvature} of our graph at that point, and have will say that the \emph{curvature}
+of the graph at the point $ x $ is $ \kappa = \od{\theta}{s} = 1/r $.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.3\textwidth]{curvaturefunc}
+  \caption{Calculating the curvature of a function.\label{fig:curvaturefunc}}
+\end{figure}
+
+So now we will play the same game as above, but now with an arbitrary curve. Consider the function
+in figure \ref{fig:curvaturefunc}; we will again denote the angle at $ x $ with the horizontal by $ \theta $.
+As we increase $ x $ by $ h $, we increase $ s $ by $ s(x + h) - s(x) $. By definition of the
+derivative, $ \od{s}{x} h \approx s(x + h) - s(x) = \sqrt{h^2 + (f(x+h) -f(x))^2} $; dividing through,
+\begin{displaymath}
+  \od{s}{x} \approx \sqrt{1 + \left(\frac{f(x + h) - f(x)}{h}\right)^2};
+\end{displaymath}
+and taking the limit $ h \to 0 $, we obtain
+\begin{equation}
+  \od{s}{x} = \sqrt{1 + \left(\od{y}{x}\right)^2} = \sqrt{1 + \tan^2 \theta} = \sec \theta.\label{eqn:sbyx}
+\end{equation}
+
+Furthermore, since $ \od{y}{x} = \tan \theta $ we have
+\begin{displaymath}
+  \od[2]{y}{x} = \od{}{x} \od{y}{x} = \od{}{x} \tan \theta = \od{\theta}{x} \sec^2 \theta
+\end{displaymath}
+and hence
+\begin{equation}
+  \od{x}{\theta} = \frac{\sec^2 \theta}{\left(\od[2]{y}{x}\right)}.\label{eqn:xbyth}
+\end{equation}
+
+Finally, by definition we have that the radius of curvature is (combining equations \ref{eqn:sbyx} and \ref{eqn:xbyth})
+\begin{displaymath}
+  r = \od{s}{\theta} = \od{s}{x} \od{x}{\theta} = \frac{\sec^3 \theta}{\left(\od[2]{y}{x}\right)};
+\end{displaymath}
+and the curvature is therefore (again by definition)
+\begin{displaymath}
+  \kappa(x) = \frac{1}{r} = \frac{\od[2]{y}{x}}{\sec^3\theta} = \frac{\od[2]{y}{x}}{\left(\sqrt{1 + \tan^2 \theta}\right)^3}
+            = \frac{\od[2]{y}{x}}{\left(1 + \left(\od{y}{x}\right)^2\right)^{3/2}}.
+\end{displaymath}
+
+
 \subsection{Exercises and Problems}
 \begin{enumerate}
   \item The following function is known as the \textit{logistic curve} and is used for population modelling. Find the intervals of
@@ -290,6 +359,48 @@ are studied in exercise \ref{exercise:contnotdif}.
               \mathrm{sgn}(x) = \begin{cases} -1 & x < 0 \\ 0 & x = 0 \\ 1 & x > 0. \end{cases}
             \end{displaymath}
     \end{enumerate}
+  \item One may recall from one of the L1 externals that we can recover a quadratic equation given a table of its values. Suppose
+        we know that the following table gives points on the graph of $ f(x) = ax^2 + bx + c $.
+
+        \begin{tabular}{c|c}
+          $ x $ & $ f(x) $ \\
+          $ 0 $ & $ -5 $ \\
+          $ 1 $ & $ 2 $ \\
+          $ 2 $ & $ 15 $
+        \end{tabular}
+
+        Define the \emph{discrete first and second derivatives} of $ f $ by $ \Delta f(x) = f(x + 1) - f(x) $ and $ \Delta^2 f(x) = \Delta f(x + 1) - \Delta f(x)  $.
+        According to the god-given material in L1, we know that if $ f $ is a quadratic, then $ a = \frac{1}{2} \Delta^2 f(x) $ (for any choice of $ x $); in this
+        example, we can fill in the table as follows:-
+
+        \begin{tabular}{c|c|c|c}
+          $ x $ & $ f(x) $ & $ \Delta f(x) $ & $ \Delta^2 f(x) $\\
+          $ 1 $ & $ -5 $ & $ 7 $ & $ 6 $\\
+          $ 2 $ & $ 2 $ & $ 13 $ & \\
+          $ 3 $ & $ 15 $ &&
+        \end{tabular}
+
+        Hence $ a = 3 $. We can then write (since we know $ f $ is a quadratic) $ bx + c = f(x) - 3x^2 $, which tells us that $ b\cdot 1 + c = -8 $
+        and $ b \cdot 2 + c = -10 $; hence $ b = (-10 - {}^{-}8)/1 = -2 $ and $ c = -6 $. \label{exercise:funtimeswithcalculus}
+
+        \begin{enumerate}
+          \item Justify the above steps. (Possible approach: $ hf''(x) \approx f'(x + h) - f'(x) $; set $ h = 1 $, and work out what fudge
+                factor $ \vartheta(h) $ we have.)
+          \item Develop a theory of discrete first and second derivatives. (Possible routes of study could include: finding a geometric
+                meaning of the discrete derivatives; defining discrete $ n$th derivatives; studying the relationship between the discrete
+                derivatives and the usual derivatives. You may also want to generalise my definition: instead of $ f(x + 1) - f(x) $,
+                perhaps one might like to look at $ [f(x + k) - f(x)]/k $ (sans limit).)
+        \end{enumerate}
+  \item These problems relate to the optional section on curvature and arc length.
+    \begin{enumerate}
+      \item If $ y = f(x) $, formula \ref{eqn:sbyx} gives us the derivative of arc length with respect to distance
+            along the $ x$-axis. What is the arc length along the graph of the function $ f(x) = \frac{1}{3}x^3 - x $
+            between the vertical lines $ x = 0 $ and $ x = 5 $?
+      \item Repeat (a) for the function $ g(x) = \ln \abs{\sec x} $.
+      \item What is the curvature of a straight line?
+      \item Calculate the curvature $ \kappa(x) $ of the function $ f(x) = x^2 $ at the points $ x = 0 $, $ x = 2 $, and $ x = 4 $.
+            Draw the osculating circles at each of these points. What happens to $ \kappa(x) $ as $ x \to \infty $?
+    \end{enumerate}
   \item Define $ f $ by
         \begin{displaymath}
           f(x) = \begin{cases} e^{-1/x^2} & x \neq 0 \\ 0 &x = 0 \end{cases}.
@@ -311,8 +422,29 @@ For a discussion of the history of continuity, see J F Harper (2016): Defining c
 real functions of real variables, BSHM Bulletin: Journal of the British Society for the History
 of Mathematics, DOI:10.1080/17498430.2015.1116053 (\url{http://homepages.ecs.vuw.ac.nz/~harper/harper16.pdf}).
 
+Discrete derivatives (see exercise \ref{exercise:funtimeswithcalculus}) are useful when taking
+derivatives numerically (say we have a table of numbers defining a function $ f $, but we don't
+have a nice formula for it). The kinds of things one may want to search for in a library catalogue
+are ``difference calculus'' or ``discrete calculus''.
+
 \subsection{Homework}
 \paragraph{Reading}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.2\textwidth]{riemann}
+  \caption{Bernhard Riemann (public domain)}
+\end{figure}
+Bernhard Riemann (born September 17, 1826, Breselenz, Hanover [Germany] --- died July 20, 1866, Selasca, Italy) was a German mathematician whose profound and novel approaches to the study of geometry laid the mathematical foundation for Albert Einstein's theory of relativity. He also made important contributions to the theory of functions, complex analysis, and number theory.
+
+Riemann was born into a poor Lutheran pastor's family, and all his life he was a shy and introverted person. He was fortunate to have a schoolteacher who recognized his rare mathematical ability and lent him advanced books to read, including Legendre's \textit{Number Theory} (1830). Riemann read the book in a week and then claimed to know it by heart. He went on to study mathematics at the University of Göttingen in 1846--47 and 1849--51 and at the University of Berlin (now the Humboldt University of Berlin) in 1847--49. He then gradually worked his way up the academic profession, through a succession of poorly paid jobs, until he became a full professor in 1859 and gained, for the first time in his life, a measure of financial security. However, in 1862, shortly after his marriage to Elise Koch, Riemann fell seriously ill with tuberculosis. Repeated trips to Italy failed to stem the progress of the disease, and he died in Italy in 1866.
+
+Riemann's visits to Italy were important for the growth of modern mathematics there; Enrico Betti in particular took up the study of Riemannian ideas. Ill health prevented Riemann from publishing all his work, and some of his best was published only posthumously --- e.g., the first edition of Riemann's \textit{Gesammelte mathematische Werke} (1876; ``Collected Mathematical Works''), edited by Richard Dedekind and Heinrich Weber.
+
+In 1854 Riemann presented his ideas on geometry for the official postdoctoral qualification at Göttingen; the elderly Gauss was an examiner and was greatly impressed. Riemann argued that the fundamental ingredients for geometry are a space of points (called today a manifold) and a way of measuring distances along curves in the space. He argued that the space need not be ordinary Euclidean space and that it could have any dimension (he even contemplated spaces of infinite dimension). Nor is it necessary that the surface be drawn in its entirety in three-dimensional space. A few years later this inspired the Italian mathematician Eugenio Beltrami to produce just such a description of non-Euclidean geometry, the first physically plausible alternative to Euclidean geometry. Riemann's ideas went further and turned out to provide the mathematical foundation for the four-dimensional geometry of space-time in Einstein's theory of general relativity. It seems that Riemann was led to these ideas partly by his dislike of the concept of action at a distance in contemporary physics and by his wish to endow space with the ability to transmit forces such as electromagnetism and gravitation.
+
+\begin{flushright}
+  Adapted from \textit{Bernhard Riemann} (by Jeremy John Gray) in the Encyclopaedia Britannica, \url{https://www.britannica.com/biography/Bernhard-Riemann}.
+\end{flushright}
 
 \paragraph{Problems}
 \begin{enumerate}

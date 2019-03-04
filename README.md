@@ -86,6 +86,7 @@ to bend under the weight of three or four years of constant bolting-on of new pi
  * Waves (91170), mechanics (91171), and electromagnetism (91172): [full set of notes](L2%20Physics/externals.pdf), including many diagrams and links to youtube videos,
    but (by design) with limited exercises. To be used with a workbook or similar set of problems.
  * Practice exams: [mechanics](L2%20Physics/Exams/mech.pdf), [electromagnetism](L2%20Physics/Exams/edyn.pdf), and [waves](L2%20Physics/Exams/waves.pdf).
+ * Problem sets: [mechanics](L2%20Physics/problems/problems-mech.pdf), [waves](L2%20Physics/problems/problems-waves.pdf)
 
 I do not intend to write modern physics notes for L2 at this point in time; my L3 notes revise this material and so can be used for this purpose.
 
