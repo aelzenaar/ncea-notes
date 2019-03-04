@@ -1,0 +1,177 @@
+\documentclass[a4paper]{exam}
+
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.11}
+
+\usepackage{siunitx}
+\DeclareSIUnit{\revolution}{rev}
+\DeclareSIUnit{\rpm}{\revolution\per\minute}
+\DeclareSIUnit{\lightyear}{ly}
+
+\begin{document}
+  \section*{L2 Physics: Problems on mechanics}
+  See the final page for useful formulae and constants.
+  \subsection*{Sections 2.1-2.2}
+  Main concepts you should understand: vector, displacement, velocity, acceleration
+  \begin{questions}
+    \question Below are drawn vectors $ \vec{a} $ and $ \vec{b} $. Draw (a) $ \vec{a} + \vec{b} $; (b) $ \vec{a} - \vec{b} $.
+
+      \begin{tikzpicture}
+        \begin{axis}[axis lines = center, xmin=-5,xmax=5,ymin=-5,ymax=5]
+          \draw[->] (0,0) --  (3,2) node[above]{$\vec{a}$};
+          \draw[->] (0,0) --  (-1,4) node[above]{$\vec{b}$};
+        \end{axis}
+      \end{tikzpicture}
+    \question A car decelerates from $ \vec{v}_0 = \SI{5}{\metre\per\second} $ to $ \vec{v}_1 = \SI{1}{\metre\per\second} $.
+              Draw a vector diagram depicting the two velocity vectors, and the change in velocity.
+    \question Suppose one starts from point $ A $ and walks south \SI{230}{\metre} and then walks \SI{350}{\metre}
+              west of north to a point $ B $. Find the distance from $ A $ to $ B $ as the crow flies.
+    \question A runner runs \SI{3400}{\metre} in 10 minutes and 33 seconds; what was her average speed in metres per second?
+    \question A car moving at \SI{25}{\metre\per\second} stops suddenly in \SI{14.0}{\second}. What was average acceleration
+              of the car during this time, and how far did the car travel before stopping?
+    \question A bullet moving at a speed of \SI{150}{\metre\per\second} travels \SI{3.5}{\centi\metre} into a block of glass
+              before stopping. Find the average acceleration of the bullet, and the time taken for it to stop.
+    \question A stone is thrown straight upwards from the ground, and goes as high as a nearby building. The stone
+              reaches the ground \SI{3.0}{\second} after it is thrown. How tall is the building?
+    \question A piano is pushed out of a window that is \SI{8}{\metre} above a person sitting below. How
+              fast is it moving when it hits the person, and how long do they have to get out of the way?
+    \question A train blocks a crossing; it takes \SI{20}{\second} for a carriage to pass through a distance
+              equal to the length of one carriage as the train starts to move. Assuming the length of a carriage is $ L $
+              and the acceleration of the train is constant, how long will it take for the next twenty railway carriages
+              to pass by?
+    \question A car is moving at \SI{30}{\metre\per\second}. Assuming an average deceleration of \SI{7.0}{\metre\per\second\per\second},
+              how long will it take for the car to stop?
+    \question A ball is thrown straight upwards with a speed $ v $ from a point $ h $ metres above the ground. Show that the time
+              taken for the ball to strike the ground is
+              \[ \frac{v}{g}\left( 1 + \sqrt{1 + \frac{2hg}{v^2}} \right). \]
+  \end{questions}
+  \subsection*{Section 2.3}
+  Main concepts you should understand: force, torque, acceleration
+  \begin{questions}
+    \question A \SI{7.0}{\gram} bullet is given an acceleration of \SI{40,000}{\metre\per\second\per\second} as it is shot from
+              a gun with a \SI{6.0}{\centi\metre} barrel. How large is the average force on the bullet during this process?
+    \question How much force does an \SI{70}{\kilo\gram} person exert on the earth due to gravity?
+    \question A \SI{1300}{\kilo\gram} car must be stpped in a distance of \SI{80}{\metre}. The initial speed of the car
+              is \SI{20}{\metre\per\second}. What force needs to be exerted, assuming constant deceleration?
+    \question (NCEA 2012) Hannah (55 kg) stands on a see-saw. The see-saw has a weight of \SI{210}{\newton}. Calculate the
+              size and direction of the force that the floor exerts on the right hand end of the see-saw.
+
+              \includegraphics[width=0.4\textwidth]{nzqa20121}
+    \question (NCEA 2013) Jason is at a fair of some description.
+      \begin{parts}
+        \part Jason goes for a ride on a go-kart. Towards the end of the ride, he decelerates at \SI{2.5}{\metre\per\second\per\second}
+              and comes to a stop in 4.2 seconds.  By calculating Jason’s initial velocity, determine the distance he travels
+              while coming to a stop.
+        \part Jason sits on a slide. He is sliding down at constant speed.
+
+              \includegraphics[width=0.4\textwidth]{nzqa20131}
+          \begin{subparts}
+            \subpart State the size of the net force on Jason. Explain your answer.
+            \subpart On the diagram on the right, draw the remaining
+                     forces (as labelled vectors) acting on Jason.
+            \subpart Complete and label the vector addition
+                     diagram of the forces acting on Jason.
+          \end{subparts}
+      \end{parts}
+    \question (NCEA 2013) The diagram below represents a see-saw on a pivot at its centre with Jane and her dad sitting on
+              opposite sides such that the see-saw is in equilibrium. The mass of the see-saw itself is \SI{60}{\kilo\gram}.
+
+              \includegraphics[width=0.4\textwidth]{nzqa201321}
+      \begin{parts}
+        \part On the diagram above, draw labelled vectors to show all the forces acting on the see-saw.
+        \part Jane and her dad move to opposite ends of the see-saw.
+              The diagram below shows what happens when Jane sits at one end of the see-saw while her
+              dad sits at the other end.
+
+              \includegraphics[width=0.4\textwidth]{nzqa201322}
+
+              If Jane's mass is \SI{30}{\kilo\gram} and Jane's dad's mass is \SI{72}{\kilo\gram}, calculate the
+              size of the support force from the ground at the end where Jane's dad is sitting. Round your answer
+              to the correct number of significant figures.
+      \end{parts}
+    \question A box of mass $ m $ slides down an incline that makes an angle $ \theta $ with the vertical, with an acceleration $ a $.
+              A friction force $ f $ impedes its motion. (a) Draw a free body (force) diagram; (b) find the acceleration $ m $
+              in terms of $ \theta $, $ m $, and $ f $.
+    \question The weight of an object is defined to be the force exerted on it by gravity; so $ W = mg $, where $ m $ is the
+              mass of the object. If a three ton (\SI{3000}{\kilo\gram}) car is travelling at \SI{40}{\kilo\metre\per\hour}
+              and the brakes are suddenly applied, and it skids to rest, how far does the car skid given that the friction
+              force experienced by the tires is around 0.7 times the weight of the car?
+    \question Newton's law of gravity tells us that if we have two objects $ A $ and $ B $, with masses $ m_A $ and $ m_b $,
+              such that the distance between them is $ r $, then the force that $ A $ exerts on $ B $ due to gravity is
+              \begin{displaymath}
+                F = \frac{Gm_A m_B}{r^2}.
+              \end{displaymath}
+              Given that $ F = ma $, the units of force are $ \si{\newton} = \si{\kilo\gram\metre\per\second\per\second} $. What
+              are the units of the gravitational constant $ G $?
+  \end{questions}
+  \section*{Sections 2.4-2.5}
+  Main concepts you should understand: momentum, energy (kinetic, gravitational potential, elastic potential), conservation laws of momentum and energy,
+  impulse, elastic/inelastic collision.
+  \begin{questions}
+    \question A \SI{1500}{\kilo\gram} car, travelling at 20 metres per second, reduces its speed over \SI{3.0}{\second}
+              to \SI{15}{\metre\per\second}. Calculate the impulse felt by the car. What was the average force causing the deceleration?
+    \question Find the momentum of an \SI{800}{\gram} object after it falls freely from rest a height of \SI{60}{\centi\metre}.
+    \question A \SI{120}{\gram} ball moving at \SI{18}{\metre\per\second} hits a wall perpendicularly and rebounds with the same
+              speed. After intially touching the wall, the centre of the ball moves an extra \SI{0.27}{\centi\metre} towards it
+              before rebounding. (a) Assuming constant deceleration, show that the total time the ball is in contact with the
+              wall is $ 2 \times 0.00030 \si{\second} $. (b) What is the average force the ball exerts on the wall?
+    \question A \SI{60}{\kilo\gram} astronaut becomes seperated from her ship; she is \SI{15.0}{\metre} away and at rest
+              relative to it. She throws a \SI{500}{\gram} spanner at a speed of \SI{8.0}{\metre\per\second} in a direction
+              away from the ship; how long does it take her to get back to the ship?
+    \question An object of mass \SI{2.0}{\kilo\gram} falls, from rest, through a height $ h $. When it reaches the bottom, its
+              speed is measured as \SI{4}{\metre\per\second}. Calculate $ h $. How long did the object take to fall through the height?
+    \question A \SI{2000}{\kilo\gram} car is travelling at \SI{20}{\metre\per\second} up a frictionless hill when the motor stops. (a) If the car
+              is a vertical distance of \SI{8}{\metre} from the top of the hill at that point, will it be able to reach the top? (b) How far below
+              the top of the hill could the car be to still reach the top?
+    \question What power does a \SI{60}{\kilo\gram} person develop when they lift themselves \SI{12.0}{\metre} in \SI{20.0}{\second} using
+              a flight of stairs?
+    \question A \SI{20.0}{\kilo\gram} crate is pushed \SI{6.0}{\metre} along the floor at a constant speed by a force
+              inclined \ang{30} below the horizontal. (a) Describe the changes of energy occuring as the crate
+              moves along the floor. (b) If the friction force retarding the motion is \SI{140}{\newton},
+              draw a free body diagram and calculate the net force acting on the crate. (c) How much work is done by
+              the pushing force?
+    \question (NCEA 2012) A trapeze artist, Hannah, flies through the air and lands on an elastic rope, which is held
+              under tension between two supports.
+      \begin{parts}
+        \part Name the main energy changes that occur as Hannah is falling AND as she is coming to a stop.
+        \part Hannah doesn’t like the rope to be too tight when she lands on it.
+              State the direction of the force on her from the rope.
+              Explain, in terms of the force acting on Hannah, why the rope should not be too tight when
+              she lands on it.
+        \part An elastic rope is suspended from a beam so that it is
+              hanging vertically down. Hannah hangs vertically down
+              on the elastic rope. The rope is stretched 0.60 m below its
+              normal position when Hannah hangs from it.
+              Calculate the elastic potential energy stored in the elastic
+              rope.
+              (Hannah has a mass of  55 kg.)
+      \end{parts}
+    \question (NCEA 2013) Jason is still at some kind of fair. Each bumper car in the fair has a rubber bumper all round it.
+      \begin{parts}
+        \part The mass of a bumper car is \SI{240}{\kilo\gram}. Jason has a mass of \SI{65}{\kilo\gram} and is
+              travelling at a speed of \SI{2.4}{\metre\per\second}. Calculate the size of the momentum of Jason and his bumper car.
+        \part The bumper cars are designed to minimise injury.
+              Discuss the reasons for the bumper cars having rubber bumpers all round them.
+              Assume cars with and without bumpers have the same mass. Assume change in velocity is the
+              same with and without bumpers.
+        \part Jason collides head-on with Janet who is in another bumper car. The bumpers don’t work
+               properly and after collision both cars lock together. The mass of each bumper car is \SI{240}{\kilo\gram}.
+               Jason has a mass of \SI{65}{\kilo\gram} and Janet has a mass of \SI{58}{\kilo\gram}. They are travelling towards each
+               other in opposite directions, Jason with a speed of \SI{2.4}{\metre\per\second}
+               to the right and Janet with a speed of \SI{2.7}{\metre\per\second} to the left.
+               Calculate their combined velocity after collision, as a vector.
+        \part The rubber bumper in Jason’s bumper car has a spring constant of \SI{78000}{\newton\per\metre}.
+               On one occasion he collides with the wall, causing a compression of \SI{15}{\centi\metre}. Calculate the elastic potential
+               energy stored in the rubber bumper, and determine the impulse if the collision lasted for \SI{0.80}{\second} (making sure
+               you include a unit with your answer).
+      \end{parts}
+    \question A car of mass $ m $ rolls from rest down a hill of height $ h $ and length $ L $. Show that when the
+              car reaches the bottom it has a speed of
+              \[ v = \sqrt{2gh - \frac{2Lf}{m}}. \]
+  \end{questions}
+
+  \clearpage
+  \section*{Formulae}
+  \includegraphics{mechanics}
+\end{document}
