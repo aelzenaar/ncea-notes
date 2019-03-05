@@ -592,37 +592,57 @@ goal in this section is to derive similar rules for the basic trigonometric func
     \item $ \cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta $
   \end{enumerate}
 \end{thm}
+% \begin{proof}
+%   We prove the formulae for angles in the range $ 0 \leq \alpha < \pi/2 $ and $ 0 \leq \beta \pi/2 $, and this
+%   result can be generalised to all $ \theta $ using the same methods we have used before.
+%
+%   For cosine, consider the following diagram.\footnote{Both this proof and the one given in the exercise below are due to Leonard M. Smiley, University of Alaska Anchorage, \url{http://math.uaa.alaska.edu/~smiley/trigproofs.html} (retrieved via Archive.org on 14 Sept 2018).}
+%   \begin{center}
+%     \includegraphics[width=0.3\textwidth]{cosinesum}
+%   \end{center}
+%   We have two triangles, where $ ABC $ has an angle $ \beta $ and hypotenuse $ \abs{AC} = 1 $. From $ C $ we measure an angle $ \alpha + \beta $,
+%   and extend this line to meet a line from $ C $ at a right angle (so both interior angles at $ F $ are right). Hence $ \abs{AB} = \cos\beta $,
+%   $ \abs{BC} = \sin \beta $, and $ \abs{FC} = \cos(\alpha + \beta) $. I claim that the interior angle at $ E $ is simply $ \alpha $; this
+%   can be seen by writing the interior angle of $ EFC $ at $ C $ as $ \pi - (\alpha + \beta) + (\pi/2 - \beta) = \pi/2 - \alpha $ and then
+%   using the fact that the angle sum of a triangle is $ \pi $. Using this fact and the length of $ FC $, we have that
+%   \begin{displaymath}
+%     \abs{EC} = \frac{\cos (\alpha + \beta)}{\sin \alpha}.
+%   \end{displaymath}
+%   Then by taking side ratios of the large triangle $ ABE $ we have $ \frac{\abs{AB}}{\abs{BE}} = \frac{\sin \alpha}{\cos \alpha} $, and hence
+%   \begin{displaymath}
+%     \frac{\sin \alpha}{\cos \alpha} = \frac{\cos \beta}{\frac{\cos (\alpha + \beta)}{\sin \alpha} + \sin \beta},
+%   \end{displaymath}
+%   which is rearranged to obtain $ \cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta $ as required.
+% \end{proof}
 \begin{proof}
   We prove the formulae for angles in the range $ 0 \leq \alpha < \pi/2 $ and $ 0 \leq \beta \pi/2 $, and this
   result can be generalised to all $ \theta $ using the same methods we have used before.
 
-  For cosine, consider the following diagram.\footnote{Both this proof and the one given in the exercise below are due to Leonard M. Smiley, University of Alaska Anchorage, \url{http://math.uaa.alaska.edu/~smiley/trigproofs.html} (retrieved via Archive.org on 14 Sept 2018).}
+  For the sine law, consider the following triangle:
   \begin{center}
-    \includegraphics[width=0.3\textwidth]{cosinesum}
+    \includegraphics[width=0.3\textwidth]{sinesum2}
   \end{center}
-  We have two triangles, where $ ABC $ has an angle $ \beta $ and hypotenuse $ \abs{AC} = 1 $. From $ C $ we measure an angle $ \alpha + \beta $,
-  and extend this line to meet a line from $ C $ at a right angle (so both interior angles at $ F $ are right). Hence $ \abs{AB} = \cos\beta $,
-  $ \abs{BC} = \sin \beta $, and $ \abs{FC} = \cos(\alpha + \beta) $. I claim that the interior angle at $ E $ is simply $ \alpha $; this
-  can be seen by writing the interior angle of $ EFC $ at $ C $ as $ \pi - (\alpha + \beta) + (\pi/2 - \beta) = \pi/2 - \alpha $ and then
-  using the fact that the angle sum of a triangle is $ \pi $. Using this fact and the length of $ FC $, we have that
-  \begin{displaymath}
-    \abs{EC} = \frac{\cos (\alpha + \beta)}{\sin \alpha}.
-  \end{displaymath}
-  Then by taking side ratios of the large triangle $ ABE $ we have $ \frac{\abs{AB}}{\abs{BE}} = \frac{\sin \alpha}{\cos \alpha} $, and hence
-  \begin{displaymath}
-    \frac{\sin \alpha}{\cos \alpha} = \frac{\cos \beta}{\frac{\cos (\alpha + \beta)}{\sin \alpha} + \sin \beta},
-  \end{displaymath}
-  which is rearranged to obtain $ \cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta $ as required.
+  The area of the large triangle can be calculated in two ways:
+  \begin{align*}
+    \mathrm{area} &= \frac{1}{2}kb = \frac{1}{2} ab \sin(\alpha + \beta)\\
+    \mathrm{area} &= \frac{1}{2}h(a\sin\alpha) + \frac{1}{2}h(b\sin\beta) = \frac{1}{2}(b \cos \beta)(a\sin\alpha) + \frac{1}{2}(a \cos \alpha)(b\sin\beta)\\
+                  &= \frac{1}{2} ab (\sin \alpha \cos \beta + \cos \alpha \sin \beta);
+  \end{align*}
+  comparing the two, $ \sin (\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta $.
 \end{proof}
-
 \begin{exercise}
-  Use the following diagram and an analagous argument to derive the sum formula for sine.\marginsymbol
-  \begin{center}
-    \includegraphics[width=0.3\textwidth]{sinesum}
-  \end{center}
-  Hint: write down $ \abs{AF} $, $ \abs{FC} $, and $ \abs{AB} $. Then show that the interior angle at $ E $ is still $ \alpha $,
-  and that $ \abs{EF} = \frac{\sin\beta \cos\alpha}{\sin \alpha} $. Finally, $ \sin \alpha = \frac{\abs{AB}}{\abs{EF}} $.
+  Use the identity $ \cos(\alpha + \beta) = \sqrt{1 - [\sin(\alpha + \beta)]^2} $ to derive the sum formula for cosine.
+  (Note that you need to pick the correct sign for the square root.)
 \end{exercise}
+
+% \begin{exercise}
+%   Use the following diagram and an analagous argument to derive the sum formula for sine.\marginsymbol
+%   \begin{center}
+%     \includegraphics[width=0.3\textwidth]{sinesum}
+%   \end{center}
+%   Hint: write down $ \abs{AF} $, $ \abs{FC} $, and $ \abs{AB} $. Then show that the interior angle at $ E $ is still $ \alpha $,
+%   and that $ \abs{EF} = \frac{\sin\beta \cos\alpha}{\sin \alpha} $. Finally, $ \sin \alpha = \frac{\abs{AB}}{\abs{EF}} $.
+% \end{exercise}
 
 \begin{cor}
   We also have the following identities:-\marginsymbol
