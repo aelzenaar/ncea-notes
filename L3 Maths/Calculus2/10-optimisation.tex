@@ -19,28 +19,56 @@ We were able to solve this problem because it ended up being equivalent to findi
 which is easy to solve in this way with only a little effort. However, consider the following problem, which is
 essentially the same but now in three dimensions:
 \begin{pro}
-  Find $ x $, $ y $, and $ z $, such that a rectangular prism with perimeter (sum of all 16 sides) $ \mathcal{P} $
-  and surface area $ \mathcal{S} $ has maximal volume.
+  Suppose a rectangular prism has two square faces of side length $ x $, and four rectangular faces with side lengths $ x $
+  and $ y $; so the volume of the prism is $ x^2 y $. Let the perimeter $ \mathcal{P} = 8x + 4y $ of the prism be fixed.
+  Find $ x $ and $ y $ satisfying this constraint such that the volume is maximised.
 \end{pro}
-We write $ \mathcal{P} = 4x + 4y + 4z $ and $ \mathcal{S} = 2xy + 2yz + 2zx $; considering $ V = xyz $, we substitute
-in our constraints:
+Considering $ V = x^2y $, we substitute in our constraints:
 \begin{displaymath}
-  V = x(yz) = x\left(\frac{\mathcal{S} - 2xy - 2zx}{2}\right) = \frac{1}{2}\mathcal{S}x - x^2 y - x^2 z
-    = \frac{1}{2}\mathcal{S}x - x^2 (y + z) = \frac{1}{2}\mathcal{S}x - x^2 \left(\frac{\mathcal{P} - 4x}{4}\right);
+  V = x^2 \left( \frac{\mathcal{P} - 8x}{4} \right) = \frac{\mathcal{P}}{2} x^2 - 2x^3
 \end{displaymath}
-hence $ V = (\mathcal{S}/2)x - (\mathcal{P}/4)x^2 + x^3 $, and now we need to find the maximum value of a cubic --- which
-is not something we can do geometrically. (Furthermore, it turns out that the `obvious' solution --- sending $ x $ to
-infinity makes $ V $ tend to infinity --- does not work here, because for large enough $ x $, $ y $ and $ z $ turn out to be
-undefined; the problem is actually even more interesting than this.)
+and now we need to find the maximum value of a cubic --- which is not something we can do easily geometrically.
 
+These types of problems are our motivation for the study in this section.
 
-Recall from Level 2 that a \emph{local maximum} of a function $ f $ is some point $ (x, f(x)) $ such that, for a sufficiently
-small interval around $ x $, whenever $ y $ is in the interval then $ f(y) \leq f(x) $. A \textbf{local minimum} is defined in
-a similar way. Local extrema are also sometimes called \textbf{relative extrema}.
+\begin{defn}
+  If $ f $ is a function, then $ f $ is said to have a \emph{local maximum} at $ x_0 $ if there exists some (small)
+  number $ \delta $ such that, for all $ x $ between $ x_0 - \delta $ and $ x_0 + \delta $, $ f(x) \leq f(x_0) $.
+
+  Similarly, $ f $ is said to have a \emph{local minimum} at $ x_0 $ if there exists some number $ \delta $ such that,
+  for all $ x $ between $ x_0 - \delta $ and $ x_0 + \delta $, $ f(x) \geq f(x_0) $.
+
+  Local maxima and local minima are, collectively, called \emph{local extrema}. If we can take $ \delta $ as large
+  as we like in either definition (e.g. if $ f(x) \geq f(x_0) $ for all possible $ x $ anywhere in the real numbers),
+  we replace `local' with \emph{global}.
+
+  For an illustration, see figure \ref{fig:localmin}.
+\end{defn}
 
 Many optimisation problems in applied mathematics can be reduced to finding relative extrema.
 
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      axis lines = none,
+      xlabel = $ x $,
+      ylabel = {$ y = f(x) $}
+    ]
+      \addplot[domain = -3:3, color = black, samples = 100] {(1/6)*x^3 - (1/2)*x};
+      \node[circle,fill,inner sep=2pt] at (axis cs:1,-1/3) {};
+      \node[label={above:{$\left(x_0,f(x_0)\right)$}},circle,fill,inner sep=2pt] at (axis cs:1,-1/3) {};
+      \draw[color=black!40, style=dotted] (0.15,-2) -- (0.15,2);
+      \draw[color=black!40, style=dotted] (1.85,-2) -- (1.85,2);
+      \node[label={below:{$x_0 - \delta$}}] at (axis cs:0.15,-2) {};
+      \node[label={below:{$x_0 + \delta$}}] at (axis cs:1.85,-2) {};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{A local minimum of $ f $ at $ x_0 $ is a point lower than every other point in some interval around it.\label{fig:localmin}}
+\end{figure}
+
 \begin{exs}\leavevmode
+  As in our first example above, many functions have local extrema that can be found with a little intelligent thought.
   \begin{enumerate}
     \item The function $ x \mapsto x^2 $ has a local minimum at $ (0, 0) $.
     \item The function $ x \mapsto 2x^3 + 15x^2 + 36x + 2 $ has a local maximum at $ (-3, -25) $ and a local minimum at $ (-2, -26) $.
@@ -49,30 +77,33 @@ Many optimisation problems in applied mathematics can be reduced to finding rela
   \end{enumerate}
 \end{exs}
 
-For classification, we have the following theorem which links the location of relative extrema to the value of the derivative. Rather than
-memorising the proof, you should remember the geometric idea:- the derivative is changing from a positive value to a negative value (or vice
-versa), and so must pass through zero.
+The main theorem is the following, which is a simple extension of the ideas from the last section on the geometry of the graphs
+of functions. The basic geometric idea is that at a local extrema, the graph is changing from increasing to decreasing (or vice versa)
+and thus the derivative is changing from a positive value to a negative value (or vice versa), and so must pass through zero.
 
-\begin{thm}[Fermat's theorem]
-  Let $ f $ be a function; suppose $ x_0 $ is a point in the interior of the domain of $ f $, and that $ f $ has a relative extremum
-  at $ (x_0, f(x_0)) $. Then $ f'(x_0) = 0 $.
+\begin{thm}[Fermat]
+  Let $ f $ be a function; suppose $ x_0 $ is a point in the interior of the domain of $ f $ (i.e. $ f(x) $ is defined for all $ x $ close
+  to $ x_0 $ on both sides), that $ f $ is differentiable at $ x_0 $, and that $ f $ has a relative extremum  at $ x_0 $. Then $ f'(x_0) = 0 $.
 \end{thm}
 \begin{proof}
-  Suppose $ f $ attains a relative maximum at $ x_0 $. Then for all $ h $ sufficiently close to zero, we have $ f(x_0 + h) - f(x_0) \leq 0 $.
-  Hence, if $ h < 0 $, we have $ \frac{f(x_0 + h) - f(x_0)}{h} \geq 0 $ (i.e. the derivative to the left is positive) and if $ h > 0 $, we
-  have $ \frac{f(x_0 + h) - f(x_0)}{h} \leq 0 $ (i.e. the derivative to the right is negative). Taking left- and right-hand limits around
-  zero, we have the following chain of inequalities:
+  Suppose $ x_0 $ is a local maximum of $ f $. Then for all $ x < x_0 $ such that $ x $ is `sufficiently close'\footnote{i.e. $ x $ lies
+  within the $ \delta$-interval in the definition of a local maximum} to $ x_0 $, $ f(x) \leq f(x_0) $. Thus
   \begin{displaymath}
-    f'(x_0) = \lim_{h \to 0-} \frac{f(x_0 + h) - f(x_0)}{h} \geq 0 \geq \lim_{h \to 0+} \frac{f(x_0 + h) - f(x_0)}{h} = f'(x_0).
+    \frac{f(x_0) - f(x)}{x_0 - x} \geq 0,
   \end{displaymath}
-  Note that we use the fact that the derivative exists at $ x_0 $ and so the left- and right-hand limits both tend to the same value. Then the
-  desired result, $ f'(x) = 0 $, follows directly.
+  since it is the quotient of two non-negative numbers.
 
-  For a relative minimum, the proof is essentially the same but with some inequalities swapped.
+  Similarly, for all $ x > x_0 $ sufficiently close to $ x_0 $, $ f(x) \leq f(x_0) $ and so
+  \begin{displaymath}
+    \frac{f(x_0) - f(x)}{x_0 - x} \leq 0.
+  \end{displaymath}
+
+  Since $ \lim_{x \to x_0} \frac{f(x_0) - f(x)}{x_0 - x} $ exists, the quantity $ \frac{f(x_0) - f(x)}{x_0 - x} $ must
+  tend to the same value whether we approach from the left or from the right; and the only possible such value is zero.
 \end{proof}
 
-Motivated by this theorem, we define a \textbf{critical point} of a function $ f $ to be some value $ x $ in the domain of $ f $ such
-that either $ f'(x) = 0 $, or $ f'(x) $ is undefined. In the first case, we also call the value a \textbf{stationary point}. All local
+Motivated by this theorem, we define a \emph{critical point} of a function $ f $ to be some value $ x $ in the domain of $ f $ such
+that either $ f'(x) = 0 $, or $ f'(x) $ is undefined. In the first case, we also call the value a \emph{stationary point}. All local
 extrema occur at critical points, but not all critical points occur at extrema.
 
 \begin{exs}\leavevmode
@@ -80,11 +111,26 @@ extrema occur at critical points, but not all critical points occur at extrema.
     \item The function $ x \mapsto 2x^3 + 15x^2 + 36x + 2 $ above has critical points $ x = -2 $ and $ x = -3 $. Both of
           these are local extrema.
     \item The function $ x \mapsto x^3 $ above has a critical point at $ x = 0 $, but does not have a local extrema there.
-    \item The function $ x \mapsto \frac{1}{x} $ \textit{does not} have a critical point at $ x = 0 $, \textbf{because it is not defined there}.
+    \item The function $ x \mapsto \frac{1}{x} $ \textbf{does not} have a critical point at $ x = 0 $, \textbf{because it is not defined there}.
   \end{enumerate}
 \end{exs}
 
-\subsection*{Classifying Critical Points}
+Utilising this technique, we can write down a recipe like the following to find extrema of a function $ f $ mechanically:
+\begin{enumerate}
+  \item Compute $ f' $.
+  \item Find the points where $ f $ is defined but $ f' $ is not
+  \item Find all the points where $ f' $ is zero.
+  \item Find all the points $ x $ where $ f $ is defined at $ x $ and all points on one side of $ x $, but not the other.
+  \item Then all the local extrema of $ f $ will be included in the lists of points in (2)--(3), and so we check each
+        manually.
+\end{enumerate}
+
+There are two problems with this recipe. Firstly, the list of possible extrema may include points which are not actually
+extrema and so we need a way to decide quickly whether a point is an extrema or a false alarm. This is something we will
+address in a moment, so a more pressing concern is the second: finding zeroes of a function, in this case $ f' $, is just
+as hard as finding extrema --- so we are only replacing one difficult problem with another.
+
+\subsection{The geometry of critical points}
 We can use the first derivative to classify extrema as either maxima or minima.
 \begin{enumerate}
   \item Determine all critical points of $ f $.
@@ -96,15 +142,15 @@ We can use the first derivative to classify extrema as either maxima or minima.
     \end{itemize}
 \end{enumerate}
 
-On the other hand, using the second derivative, we can come up with a second test:
+On the other hand, using the second derivative, we can come up with a different test:
 \begin{enumerate}
   \item Compute $ f'(x) $ and $ f''(x) $.
   \item Find all the stationary points of $ f $ by finding all the points $ x_0 $ such that $ f'(x_0) = 0 $.
   \item Determine the sign of $ f''(x) $ for each stationary point $ x_0 $:
     \begin{itemize}
-      \item If $ f''(x_0) < 0 $, then $ f(x) $ has a relative maximum at $ x_0 $.
-      \item If $ f''(x_0) > 0 $, then $ f(x) $ has a relative minimum at $ x_0 $.
-      \item If $ f''(x_0) = 0 $, then $ f(x) $ could have a relative maximum, a relative minimum, or neither.
+      \item If $ f''(x_0) < 0 $ (i.e. $ f $ is concave down), then $ f(x) $ has a relative maximum at $ x_0 $.
+      \item If $ f''(x_0) > 0 $ (i.e. $ f $ is concave up), then $ f(x) $ has a relative minimum at $ x_0 $.
+      \item If $ f''(x_0) = 0 $ (i.e. $ f $ has an inflection point at $ x_0 $), then $ f(x) $ could have a relative maximum, a relative minimum, or neither.
     \end{itemize}
 \end{enumerate}
 
@@ -149,190 +195,100 @@ On the other hand, using the second derivative, we can come up with a second tes
 
 \subsection{Exercises and Problems}
 \begin{enumerate}
-  \item The following function is known as the \textit{logistic curve} and is used for population modelling. Find the intervals of
-        concavity, and label any inflection points.
+  \item Describe the advantages and disadvantages of the first and second derivative tests for local extrema.
+  \item Describe the local extrema, concavity, and points of inflection of the function $ f(x) = x^4 - 4x^3 $.
+  \item Consider the following graph:
         \begin{center}
-          \includegraphics[width=0.4\textwidth]{logistic}
+          \begin{tikzpicture}[scale=.8]
+            \begin{axis}[
+              axis lines = center,
+              xlabel = $ x $,
+              ylabel = {$ y = f(x) $}
+            ]
+              \addplot[domain = -0.5:4, color = black, samples = 100] {x^3 - 4*x^2 + 3*x};
+              \node[label={above:{$C$}},circle,fill,inner sep=2pt] at (axis cs:2.22,-2.11) {};
+              \node[label={below:{$B$}},circle,fill,inner sep=2pt] at (axis cs:1.33,-0.74) {};
+              \node[label={above:{$A$}},circle,fill,inner sep=2pt] at (axis cs:0.45,0.63) {};
+            \end{axis}
+          \end{tikzpicture}
         \end{center}
-  \item Find the second derivative of the following functions.
+        Find the signs of $ \od{y}{x} $ and $ \od[2]{y}{x} $ at the three points $ A $, $ B $, and $ C $.
+  \item Find all the local extrema of the following curves in the given intervals, and classify them as maxima, minima, or neither.
     \begin{enumerate}
-      \item $ y = x^2 + x $
-      \item $ f(x) = \sin x $
-      \item $ g(x) = \cot(3x^2 + 5) $
-      \item $ y = \frac{\sin mx}{x} $
-      \item $ y = 4 \sin^2 x $
-      \item $ y = \tan^2 (\sin \theta) $
-      \item $ y = \tan \sqrt{1 - x} $
+      \item $ f(x) = \sin x - \cos x $ on the interval $ 0 < x < \pi $
+      \item $ g(x) = x^3 - x^2 + x - 1 $ on the interval $ -\infty < x < \infty $
     \end{enumerate}
-  \item Find the concavity of the function $ y = \frac{x^2 - 1}{x^2 + 1} $ at $ (0, -1) $.
-  \item Find the intervals on which the following functions are increasing or decreasing, and
-        find their intervals of concavity.
+  \item The sum of two positive numbers $ x $ and $ y $ is 16. Find the smallest possible value for $ S = x^2 + y^2 $.
+  \item A box with an open top is to be constructed from a square piece of cardboard with a side length of \SI{3}{\metre}
+        by cutting out a square from each of the four corners and bending up the sides. Find the dimensions of the resultant
+        box of maximum volume.
+  \item Find the dimensions of a rectangle with area \SI{1000}{\metre\squared} such that the perimeter is minimised.
+  \item A window consisting of a rectangle topped with a semicircle is to have a fixed perimeter $ p $. Find the radius
+        of the semicircle in terms of $ p $ if the total area is to be maximised.
+  \item A thin wire of length $ L $ is cut in two and the resulting lengths are bent to make a square and an equilateral triangle. Where
+        should the wire be cut to make the total area of the shapes (a) a maximum and (b) a minimum?
+  \item Find the point on the line $ y = 2x + 3 $ closest to the origin.
+  \item Find the point on the curve $ y = \sqrt{x} $ closest to $ (3, 0) $.
+  \item By finding the $ x$-- and $ y$-- intercepts, the asymptotes, the critical points, the
+        intervals of increase and decrease, the intervals of concavity, and any other important
+        points, sketch the following functions (199):
     \begin{enumerate}
-      \item $ y = x^2 + 1 $
-      \item $ y = 2x^3+ 3x^2 - 36x $
-      \item $ G(x) = x - 4\sqrt{x} $
+      \item $ f(x) = \frac{x^2}{4 - x^2} $
+      \item $ f(x) = \frac{4x}{x^2 + 1} $ [\textit{Hint: consider what happens to $ f(x) $ as $ x \to \pm\infty $.}]
+      \item $ f(x) = \frac{x^2 - 4x + 5}{x - 2} = x - 2 + \frac{1}{x - 2} $ [\textit{Hint: consider what happens to $ f(x) - (x - 2) $ as $ x \to \pm\infty $.}]
     \end{enumerate}
-  \item The graph of $ y = f(x) $ (where $ f $ is a continuous function) is concave up for all $ x < 0 $, concave down for $ x > 0 $, and decreasing everywhere.
+  \item A cone with height $ h $ is inscribed in a larger cone of height $ H $ such that the vertex of the small cone
+        is at the centre of the base of the larger cone. Show that the maximum volume of the smaller cone occurs when $ h = \frac{1}{3} H $.
+  \item Show that the polynomial $ p(x) = 10x^3 + x^2 + x - 34 $ has exactly one real zero.
+  \item A rain gutter is to be constructed from a metal sheet of width \SI{30}{\centi\metre} by bending up
+        one third of the sheet on each side by an angle $ \theta $. What angle should be chosen in order to
+        obtain the maximum possible volume?
+  \item A steel pipe is carried around a right-angled corner from a hallway \SI{3}{\metre} wide into a hallway \SI{2}{\metre}
+        wide. What is the length of the longest pipe that can be carried horizontally around the corner? [\textit{Hint: this is actually
+        a minimisation problem, despite the wording.}]
+  \item A large orange rectangle is to be drawn with one corner sitting on the origin and the opposite corner lying on
+        the curve $ y = 0.2(x - 10)^2 $. What is the maximum possible area of the rectangle?
+        \begin{center}
+          \begin{tikzpicture}[scale=.8]
+            \begin{axis}[
+              axis lines = center,
+              xlabel = $ x $,
+              ylabel = {$ y = f(x) $}
+            ]
+              \draw[fill = orange] (0,0) rectangle (3,9.8);
+              \addplot[domain = -1:15, color = black, samples = 100] {0.2*(x - 10)^2};
+            \end{axis}
+          \end{tikzpicture}
+        \end{center}
+  \item Show that $ \frac{x^2 + 1}{x} \geq 2 $; hence (or otherwise) show that $ \frac{(x^2 + 1)(y^2 + 1)(z^2 + 1)}{xyz} \geq 8 $.
+  \item Scholarship 2013: Prince Ruperts drops are made by dropping molten glass into cold water. A mathematical model for a drop
+        as a volume of revolution uses $ y = \sqrt{\phi (e^{-x} - e^{-2x})} $ for $ x \geq 0 $, where $ \phi $ is the golden
+        ratio $ \phi = \frac{1 + \sqrt{5}}{2} $.
     \begin{enumerate}
-      \item Sketch the graph of $ y = f(x) $.
-      \item What can you say about $ f'(x) $ and $ f''(x) $ for $ x < 0 $ and $ x > 0 $?
-      \item What about $ x = 0 $?
-    \end{enumerate}
-  \item Find a value of $ k $ such that the function $ F $ is continuous at $ x = -3 $, where
-        \begin{displaymath}
-          F(x) =
-          \begin{cases}
-            \frac{x^2 - 9}{x+3} & \text{if } x \neq -3,\\
-            k                   & \text{if } x = -3.
-          \end{cases}
-        \end{displaymath}
-  \item Show whether or not the function $ g $ is continuous at the three points $(2, g(2)) $, $ (3,g(3)) $, and  $(4,g(4)) $, where
-        \begin{displaymath}
-          g(x) =
-          \begin{cases}
-            2x-x^2              & \text{if } 0 \leq 2,\\
-            2-x                 & \text{if } 2 < x \leq 3,\\
-            x-4                 & \text{if } 3 < x \leq 4,\\
-            \pi                 & \text{if } x \geq 4.
-          \end{cases}
-        \end{displaymath}
-  \item Find all values of $ \alpha $ such that $ \Phi $ is continuous everywhere, where
-        \begin{displaymath}
-          \Phi(x) =
-          \begin{cases}
-            x+1                 & \text{if } x \leq \alpha, \\
-            x^2                 & \text{if } x > \alpha.
-          \end{cases}
-        \end{displaymath}
-  \item Sketch a function satisfying the given criteria.
-    \begin{enumerate}
-      \item
-        \begin{itemize}
-          \item Vertical asymptote at $ x = 0 $,
-          \item $ f'(x) > 0 $ if $ x < -2 $,
-          \item $ f'(x) < 0 $ if $ x > -2 $ ($ x \neq 0 $),
-          \item $ f''(x) < 0 $ if $ x < 0 $, $ f''(x) > 0 $ if $ x > 0 $.
-        \end{itemize}
-      \item
-        \begin{itemize}
-          \item $ f'(0) = f'(2) = f'(4) = 0 $,
-          \item $ f'(x) > 0 $ if $ x < 0 $ or $ 2 < x < 4 $,
-          \item $ f'(x) < 0 $ if $ 0 < x < 2 $ or $ x > 4 $,
-          \item $ f''(x) > 0 $ if $ 1 < x < 3 $,
-          \item $ f''(x) < 0 $ if $ x < 1 $ or $ x > 3 $.
-        \end{itemize}
-    \end{enumerate}
-  \item A curve is defined by the function $ f(x) = e^{-(x-k)^2} $. Find, in terms of $ k $, the $ x$-ordinates for which $ f''(x) = 0 $.
-  \item It turns out that if a function $ f $ is differentiable at $ a $ then $ f $ is always continuous at $ a $, but the converse
-        is not true: there exist continuous functions that are not differentiable. (In fact, there exist functions that are continuous
-        everywhere but differentiable nowhere.) \label{exercise:contnotdif}
-    \begin{enumerate}
-      \item We will prove that differentiability of $ f $ at $ a $ implies continuity of $ f $ at $ a $; expand the following
-            and use the limit laws to show that $ \lim_{x \to a} f(x) - f(a) = 0 $, carefully indicating where you use the existence
-            of the derivative.
+      \item Where is the modelled drop widest, and how wide is it there?
+      \item The drop changes shape at a point $ B $, where the concavity of the function is zero. Use
             \begin{displaymath}
-              \left[\lim_{a \to x} f(x) - f(a)\right]\left[\lim_{a \to x} \frac{x - a}{x - a}\right]
+              \od[2]{y}{x} = \sqrt{\phi} \frac{e^{2x} - 6e^x + 4}{y^2 e^{4x}}
             \end{displaymath}
-      \item Give an example of a function which is continuous but not differentiable at some point.
+            to find the exact $ x$-ordinate of $ B $.
     \end{enumerate}
-  \item We will do some studies of convexity that may be familiar to students who have looked at the exercises on convexity
-        in the algebra notes. We assume that all functions are continuous and differentiable everywhere for simplicity.
-    \begin{enumerate}
-      \item Show that if $ f $ is a convex function, and if $ P = (p,f(p)) $ and $ Q = (q,f(q)) $ are any two distinct points
-            on the graph of $ f $, then for every point $ X = (x_1, x_2) $ on the line segment $ \overline{PQ} $, $ x_2 \geq f(x_1) $
-            and equality is only obtained at the endpoints.
-      \item Show that if $ f $ is a convex function, and if $ P = (p,f(P)) $ is a point on the graph of $ f $, then for every
-            point $ (x_1,x_2) $ on the tangent line to $ f $ at $ P $, $ x_2 \leq f(x_1) $ and equality is only obtained at $ P $.
-      \item Prove similar statements to (a) and (b) in the case that $ f $ is a concave function. [Hint: there is not much work
-            involved, as long as one ponders the function $ -f $.]
-    \end{enumerate}
-  \item Scholarship 2010: Recall that the points of inflection of a curve are places where the second derivative
-        changes sign. These are typically, \textbf{but not always}, points at which the second derivative is zero.
+  \item Scholarship 2014: A family of functions is built from two functions $ f $ and $ g $, with a new function $ h_p $ defined
+        for each value of $ p $, $ 0 \leq p \leq 1 $:
+        \begin{gather*}
+          f(x) = 2 + \sin x\\
+          g(x) = 26 + \sin x\\
+          h_p(x) = [f(x)]^{1 - p} [g(x)]^p.
+        \end{gather*}
+        Define a fourth function $ S $, where $ S(p) $ is the difference between the maximum and the minimum values of $ h_p $. Find
+        the exact value of $ p $ that maximises $ S $.
 
-        Consider the curve $ y = \sqrt[3]{x} e^{-x^2} $.
+        Note that if $ a $ is constant, $ \od{}{x} a^x = (\ln a) a^x $.
+  \item Note that the second-derivative test may be inconclusive: if $ f'(x_0) = 0 $, and $ f''(x_0) = 0 $, then we may have
+        an inflection point (like in the case of $ x \mapsto x^3 $), or a local extrema (like $ x \mapsto x^4 $). Looking at
+        the second example here, one might conjecture that if we have a local extrema then $ f^{(n)}(x_0) > 0 $ for some large
+        enough $ n $ (in the case of $ x^4 $, the fourth derivative is positive).
 
-        Write the second derivative in the form $ \od[2]{y}{x} = (ax^4 + bx^2 + x)e^{-x^2} x^{-5/3} $, and hence
-        find the $ x$-ordinates of the points of inflection of the curve.
-  \item Scholarship 2004: (You may wish to remind yourself how to perform long division of polynomials.) Consider the function
-        \begin{displaymath}
-          y = \frac{x^2}{1 + x^2},
-        \end{displaymath}
-        where $ -1 \leq x \leq 1 $. The gradient at the point $ x = 1 $ is $ \frac{1}{2} $.
-
-        Hence show that there is a point with $ \frac{1}{4} \leq x \leq \frac{1}{2} $ where the gradient is also $ \frac{1}{2} $.
-  \item Scholarship 2013: A function $ f $ is \textbf{even} if $ f(-x) = f(x) $ for all $ x $ in its domain, and \textbf{odd} if $ f(-x) = f(-x) $
-        for all $ x $ in its domain.
-    \begin{enumerate}
-      \item Describe which polynomials are even, which are odd, and which are neither.
-      \item Suppose that $ g $ is any even differentiable function defined for all real numbers (not necessarily a polynomial). Use the
-            limit definition of the derivative to prove that $ g' $ is odd.
-    \end{enumerate}
-  \item Recall that we can define the derivative of $ f $ by $ \mathsf{D}f(x) = \lim_{y \to x} \frac{f(y) - f(x)}{y - x} $.
-        We will generalise this, by writing $ \mathsf{SD}f(x) = \lim_{h \to 0} \frac{f(x + h) - f(x - h)}{2h} $.
-        This is called the \emph{symmetric derivative} of $ f $.
-    \begin{enumerate}
-      \item In fact, we defined the derivative of $ f $ at $ x $ to be the unique $ f' $ such that $ f(x + h) \approx f(x) + hf'(x) $
-            for small $ h $.\footnote{Then we defined the notation $ \varphi(x,h) \approx \psi(x,h) $ to mean that $ \varphi(x) = \psi(x) + \vartheta(h) $
-            for some function $ \vartheta $ satisfying $ \vartheta(h)/h \to 0 $ as $ h \to 0 $.}
-
-            Show that, for small $ h $, if $ f'(x) $ exists then $ f(x + h) - f(x - h) \approx 2hf'(h) $. Hence
-            conclude that $ \mathsf{SD}f(x) = \mathsf{D}f(x) $ whenever the latter exists.
-      \item The converse is not true: show that if we define $ f(x) = \abs{x} $, then $ \mathsf{SD} f(0) $ exists
-            but $ \mathsf{D} f(0) $ does not.
-      \item Define the \emph{second} symmetric derivative of $ f $ by
-            \begin{displaymath}
-              \mathsf{SD}^2 f(x) = \lim_{h \to 0} \frac{\frac{f(x + h) - f(x)}{h} - \frac{f(x) - f(x - h)}{h}}{h} = \lim_{h \to 0} \frac{f(x + h) - 2f(x) + f(x - h)}{h^2}.
-            \end{displaymath}
-            Show that whenever $ f''(x) = \mathsf{D}^2 f(x) $ exists then $ \mathsf{SD}^2 f(x) $ exists and has the same value; show that the converse
-            does not hold (i.e. the existence of the second symmetric derivative does not imply the existence of the usual second derivative)
-            by considering a suitable function, such as
-            \begin{displaymath}
-              \mathrm{sgn}(x) = \begin{cases} -1 & x < 0 \\ 0 & x = 0 \\ 1 & x > 0. \end{cases}
-            \end{displaymath}
-    \end{enumerate}
-  \item One may recall from one of the L1 externals that we can recover a quadratic equation given a table of its values. Suppose
-        we know that the following table gives points on the graph of $ f(x) = ax^2 + bx + c $.
-
-        \begin{tabular}{c|c}
-          $ x $ & $ f(x) $ \\
-          $ 0 $ & $ -5 $ \\
-          $ 1 $ & $ 2 $ \\
-          $ 2 $ & $ 15 $
-        \end{tabular}
-
-        Define the \emph{discrete first and second derivatives} of $ f $ by $ \Delta f(x) = f(x + 1) - f(x) $ and $ \Delta^2 f(x) = \Delta f(x + 1) - \Delta f(x)  $.
-        According to the god-given material in L1, we know that if $ f $ is a quadratic, then $ a = \frac{1}{2} \Delta^2 f(x) $ (for any choice of $ x $); in this
-        example, we can fill in the table as follows:-
-
-        \begin{tabular}{c|c|c|c}
-          $ x $ & $ f(x) $ & $ \Delta f(x) $ & $ \Delta^2 f(x) $\\
-          $ 1 $ & $ -5 $ & $ 7 $ & $ 6 $\\
-          $ 2 $ & $ 2 $ & $ 13 $ & \\
-          $ 3 $ & $ 15 $ &&
-        \end{tabular}
-
-        Hence $ a = 3 $. We can then write (since we know $ f $ is a quadratic) $ bx + c = f(x) - 3x^2 $, which tells us that $ b\cdot 1 + c = -8 $
-        and $ b \cdot 2 + c = -10 $; hence $ b = (-10 - {}^{-}8)/1 = -2 $ and $ c = -6 $. \label{exercise:funtimeswithcalculus}
-
-        \begin{enumerate}
-          \item Justify the above steps. (Possible approach: $ hf''(x) \approx f'(x + h) - f'(x) $; set $ h = 1 $, and work out what fudge
-                factor $ \vartheta(h) $ we have.)
-          \item Develop a theory of discrete first and second derivatives. (Possible routes of study could include: finding a geometric
-                meaning of the discrete derivatives; defining discrete $ n$th derivatives; studying the relationship between the discrete
-                derivatives and the usual derivatives. You may also want to generalise my definition: instead of $ f(x + 1) - f(x) $,
-                perhaps one might like to look at $ [f(x + k) - f(x)]/k $ (sans limit).)
-        \end{enumerate}
-  \item These problems relate to the optional section on curvature and arc length.
-    \begin{enumerate}
-      \item If $ y = f(x) $, formula \ref{eqn:sbyx} gives us the derivative of arc length with respect to distance
-            along the $ x$-axis. What is the arc length along the graph of the function $ f(x) = \frac{1}{3}x^3 - x $
-            between the vertical lines $ x = 0 $ and $ x = 5 $?
-      \item Repeat (a) for the function $ g(x) = \ln \abs{\sec x} $.
-      \item What is the curvature of a straight line?
-      \item Calculate the curvature $ \kappa(x) $ of the function $ f(x) = x^2 $ at the points $ x = 0 $, $ x = 2 $, and $ x = 4 $.
-            Draw the osculating circles at each of these points. What happens to $ \kappa(x) $ as $ x \to \infty $?
-    \end{enumerate}
-  \item Define $ f $ by
+        Define $ f $ by
         \begin{displaymath}
           f(x) = \begin{cases} e^{-1/x^2} & x \neq 0 \\ 0 &x = 0 \end{cases}.
         \end{displaymath}
@@ -341,64 +297,33 @@ On the other hand, using the second derivative, we can come up with a second tes
       \item Show that, for all $ n > 0 $, $ f^{(n)}(0) = 0 $. (Implicit here is the existence of the $ n$th derivative.)
       \item Show that $ f $ has a global minimum at zero.
       \item Justify that there can thus never be a rule, based simply on checking $ n$th derivatives, for proving
-            that any function has a local minimum or maximum at a point.
+            that any function has a local minimum or maximum at a point. Hence our conjecture is false.
       \end{enumerate}
+  \item Find $ x $, $ y $, and $ z $ positive real numbers such that the volume $ V = xyz $
+        of the rectangular prism with these sidelengths is maximised, given that the perimeter
+        of the prism is $ 4x + 4y + 4z = 12 $ and the surface area is $ 2xy + 2yz + 2zx = 6 $.
 \end{enumerate}
 
 \subsection{References}
-A good introduction to the geometry of curves, and differential geometry in general, is \emph{Differential Geometry
-of Curves and Surfaces} by Manfredo P. do Carmo.
+For a significant number of optimisation exercises of the mechanical sort, see Stewart sections 4.1 and 4.7.
 
-For a discussion of the history of continuity, see J F Harper (2016): Defining continuity of
-real functions of real variables, BSHM Bulletin: Journal of the British Society for the History
-of Mathematics, DOI:10.1080/17498430.2015.1116053 (\url{http://homepages.ecs.vuw.ac.nz/~harper/harper16.pdf}).
+For more interesting problems, see Spivak chapter 11.
 
-Discrete derivatives (see exercise \ref{exercise:funtimeswithcalculus}) are useful when taking
-derivatives numerically (say we have a table of numbers defining a function $ f $, but we don't
-have a nice formula for it). The kinds of things one may want to search for in a library catalogue
-are ``difference calculus'' or ``discrete calculus''.
+One avenue for further reading is the subject of the calculus of variations. See, for example, L\&S section 3.15,
+as well as (for example) \emph{An introduction to the Calculus of Variations}, by Hans Sagan (Dover, 1992).
 
 \subsection{Homework}
 \paragraph{Reading}
-\begin{figure}
-  \centering
-  \includegraphics[width=0.2\textwidth]{riemann}
-  \caption{Bernhard Riemann (public domain)}
-\end{figure}
-Bernhard Riemann (born September 17, 1826, Breselenz, Hanover [Germany] --- died July 20, 1866, Selasca, Italy) was a German mathematician whose profound and novel approaches to the study of geometry laid the mathematical foundation for Albert Einstein's theory of relativity. He also made important contributions to the theory of functions, complex analysis, and number theory.
 
-Riemann was born into a poor Lutheran pastor's family, and all his life he was a shy and introverted person. He was fortunate to have a schoolteacher who recognized his rare mathematical ability and lent him advanced books to read, including Legendre's \textit{Number Theory} (1830). Riemann read the book in a week and then claimed to know it by heart. He went on to study mathematics at the University of Göttingen in 1846--47 and 1849--51 and at the University of Berlin (now the Humboldt University of Berlin) in 1847--49. He then gradually worked his way up the academic profession, through a succession of poorly paid jobs, until he became a full professor in 1859 and gained, for the first time in his life, a measure of financial security. However, in 1862, shortly after his marriage to Elise Koch, Riemann fell seriously ill with tuberculosis. Repeated trips to Italy failed to stem the progress of the disease, and he died in Italy in 1866.
-
-Riemann's visits to Italy were important for the growth of modern mathematics there; Enrico Betti in particular took up the study of Riemannian ideas. Ill health prevented Riemann from publishing all his work, and some of his best was published only posthumously --- e.g., the first edition of Riemann's \textit{Gesammelte mathematische Werke} (1876; ``Collected Mathematical Works''), edited by Richard Dedekind and Heinrich Weber.
-
-In 1854 Riemann presented his ideas on geometry for the official postdoctoral qualification at Göttingen; the elderly Gauss was an examiner and was greatly impressed. Riemann argued that the fundamental ingredients for geometry are a space of points (called today a manifold) and a way of measuring distances along curves in the space. He argued that the space need not be ordinary Euclidean space and that it could have any dimension (he even contemplated spaces of infinite dimension). Nor is it necessary that the surface be drawn in its entirety in three-dimensional space. A few years later this inspired the Italian mathematician Eugenio Beltrami to produce just such a description of non-Euclidean geometry, the first physically plausible alternative to Euclidean geometry. Riemann's ideas went further and turned out to provide the mathematical foundation for the four-dimensional geometry of space-time in Einstein's theory of general relativity. It seems that Riemann was led to these ideas partly by his dislike of the concept of action at a distance in contemporary physics and by his wish to endow space with the ability to transmit forces such as electromagnetism and gravitation.
-
-\begin{flushright}
-  Adapted from \textit{Bernhard Riemann} (by Jeremy John Gray) in the Encyclopaedia Britannica, \url{https://www.britannica.com/biography/Bernhard-Riemann}.
-\end{flushright}
 
 \paragraph{Problems}
 \begin{enumerate}
-  \item Explain, with sketches, the geometric meaning of the second derivative.
-  \item Find the second derivative of the following functions.
-    \begin{enumerate}
-      \item $ f(x) = x^5 - 5x + 3 $
-      \item $ f(x) = \frac{x^2}{x - 1} $
-      \item $ f(x) = \sqrt{x} - \sqrt[4]{x} $
-    \end{enumerate}
-  \item Sketch a function satisfying the given criteria.
-    \begin{enumerate}
-      \item (hint: your result should be an odd function)
-        \begin{itemize}
-           \item $ f'(1) = f'(-1) = 0 $,
-           \item $ f'(x) < 0 $ if $ \abs{x} < 1 $,
-           \item $ f'(x) > 0 $ if $ 1 < \abs{x} < 2 $,
-           \item $ f'(x) = -1 $ if $ \abs{x} > 2 $.
-        \end{itemize}
-      \item
-        \begin{itemize}
-          \item $ f'(x) < 0 $,
-          \item $ f''(x) < 0 $.
-        \end{itemize}
-    \end{enumerate}
+  \item What is the minimum vertical distance between the parabolae $ y = x^2 + 1 $ and $ y = x - x^2 $?
+  \item Show that $ 3x + 2\cos x + 5 = 0 $ has exactly one real root by showing that it
+        is increasing everywhere and crosses the $ x$-axis somewhere between two values of $ x $.
+  \item Find the area of the largest rectangle that can be inscribed in the ellipse $ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $.
+  \item Let $ ABCD $ be a square piece of paper with sides of length \SI{1}{\metre}. A
+        quarter-circle is drawn from $ B $ to $ D $ with centre $ A $. The piece of paper is folded along $ EF $, with $ E $ on $ AB $
+        and $ F $ on $ AD $, so that $ A $ falls on the quarter-circle. Determine the maximum and minimum areas that the triangle $ AEF $
+        can have. [\textit{Hint: you may want to introduce a coordinate system.}]
 \end{enumerate}
