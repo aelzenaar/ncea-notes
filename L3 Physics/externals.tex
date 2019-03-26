@@ -118,7 +118,7 @@
 \DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
 
 % Make image counter count up everywhere.
-% \usepackage{chngcntr}
+\usepackage{chngcntr}
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
 
@@ -1090,14 +1090,6 @@ correct:\footnote{~We can also derive this expression by integrating torque over
   \ekr = \frac{1}{2} I \omega^2.
 \end{equation}
 We write $ \ekl $ for linear kinetic energy to avoid confusion.
-
-\marginsymbol An interesting problem now presents itself: what is the total kinetic energy of a particle moving around in a circle? Surely if
-we just add together the linear kinetic energy and rotational kinetic energy we would be `double-dipping' the velocity somehow?
-
-\begin{exercise}
-  Convince yourself that this is not the case (i.e. think of a scenario where an object could have rotational kinetic energy and not
-  linear kinetic energy, and vice versa).
-\end{exercise}
 
 \begin{example}
   Suppose that a particle of mass $ m $ is moving at a speed $ v $ around a circle of radius $ r $. Then it has linear kinetic
