@@ -50,7 +50,7 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
  * Carl E Linderholm, _Mathematics Made Difficult_. This book needs no introduction and no recommendation, it is a classic. (510 L74)
  * William Frucht, _Imaginary Numbers: An Anthology..._. Poems and short stories with a mathematical or physical flavour. I enjoyed parts of it. (808.80356 F94)
 
-## Stage I: MATHS 150/250
+## Stage I
 
 **Texts used by all 8 NZ universities for first year.**
 (A) indicates courses are mainly service courses for the sciences or engineering, (P) indicates pure mathematics focus available, (C) indicates compsci
@@ -69,7 +69,7 @@ represent any of the listed universities.*
 | Victoria   | (C) | MATH 141, Calculus 1A: Lecture notes, with Anton recommended; MATH 151, Algebra: Easdown(?) recommended; MATH 161, Discrete Mathematics and Logic: No recommended text. |
 | Waikato    | (A) | MATHS 101, Intro. to Calculus: Schaum’s Outlines 'Calculus' (!); MATHS 102, Intro. to Algebra: Anton recommended |
 
-### Calculus
+### Calculus (130, 250)
 
  * James Stewart, _Calculus_. This is the "recommended" textbook for the calculus portion of 150 (and 250, and 253). If you're an engineering student, this book
    is probably fine; it's full of routine problems. If you're a mathematics student, I wouldn't bother buying a copy (there are plenty in the library) - for the
@@ -97,7 +97,7 @@ represent any of the listed universities.*
    not really, but cheaper than the shiny calculus books that the book shop sells) and concise (again, it is a doorstop, but much more concise than the texts
    that try to include absolutely everything from biology examples to Stoke's theorem). ([Some comments](http://www.math.toronto.edu/~drorbn/classes/0405/157AnalysisI/SpivakComments/SpivakComments.html)) (515 S76)
 
-### Linear Algebra
+### Linear Algebra (120, 250)
 
  * David Poole, _Linear Algebra: A modern introduction_. This is the "recommended" textbook for the linear algebra portion of the 150-250-253 series. It's fine,
    I guess. Lots of routine exercises. Very chatty. Lots of random applications that aren't covered in lectures; nice to take out of the library to flick through.
@@ -111,6 +111,10 @@ represent any of the listed universities.*
    theorem for a linear transformation (he calls it the 'fundamental theorem of linear algebra') but it's not enough to ruin the book. It's probably very
    good for compsci students, there's a lot of algorithm stuff and optimisation and efficiency stuff in here (my edition gives all the computer code in FORTRAN
    and some flavour of BASIC, but it's an old edition). (512.5 S89)
+
+### Discrete/computational mathematics (162)
+ * Donald Knuth, _Concrete Mathematics: A Foundation for Computer Science_. Apparently this is the one true elementary computational mathematics
+   book. I am yet to subject myself to it. (510 G74)
 
 ## Stage II
 
@@ -264,7 +268,7 @@ If you're looking for 328, see also [the section on number theory](#number-theor
    to pick up a shiny book like Davidson & Donsig above as well for historical details and more examples.
 
    I prefer L&S (see 253) for multivariable analysis. (I did try to work through chapter 9, and despite knowing what he was trying to do at every
-   point - it's just material from 253 - it's incredibly clunkly and awful. Belive me, I thought the Chicago bibliography was exaggerating on this
+   point - it's just material from 253 - it's incredibly clunkly and awful. Belive me, I thought the Chicago bibliography would be exaggerating on this
    point, but it turns out that they were entirely correct.)  ([Errata and notes](https://math.berkeley.edu/~gbergman/ug.hndts/#Rudin)) (515.8 R91)
  * A.N. Kolmogorov and S.V. Fomin, _Introductory Real Analysis_. Higher level than Rudin, covers Lebesgue integration in a much nicer way in my opinion. Includes
    a semi-detailed chapter on set theory from the point of view of analysis which is quite interesting for a different perspective. Lots of topology and
@@ -279,23 +283,28 @@ If you're looking for 328, see also [the section on number theory](#number-theor
    ([Errata](http://drorbn.net/index.php?title=10-327/Errata_to_Munkres%27_Book)) (514.3 M96)
 
  * Klaus Jänich, _Topology_. An easier introduction to topology which isn't rigorous enough for a third- or fourth-year course (and probably not appropriate
-   for anyone that's actually done any analysis at all yet, it's very handwavy), but it does have some very nice pictures. I liked it in first year when I
+   for anyone that's actually done any proper analysis, it's very handwavy), but it does have some very nice pictures. I liked it in first year when I
    wanted to learn more about topology. (514.3 J22Y)
 
 ### Algebraic geometry (334)
 To add in 2019.
 
 ### Complex calculus and analysis (340, 341?)
-To do: do a course in complex analysis.
+#### Calculus
  * Stephen D. Fisher, _Complex Variables_. This is the book we used in 2018 for complex calculus, I found it a little weird because it tries to be both
-   an accessible calculus book and a book with proofs. To quote myself, ``the main problem with Fisher is it's trying to be both a rigorous book and a
-   calculus book and failing miserably at both''. I don't hate the sections on the geometry of analytic functions (chapter 3). (515.93 F53)
+   an accessible calculus book and a book with proofs. The main problem with this book is that it's trying to be both a rigorous book and a
+   calculus book and failing miserably at both. I don't hate the sections on the geometry of analytic functions (chapter 3). (515.93 F53)
  * E.B. Saff and A.D. Snider, _Fundamentals of Complex Analysis for Mathematics, Sci...etc._ I own this book, it's basically a calculus book, so if
    you like Stewart or Anton you'll probably like this. I don't hate it, and I found it useful for complex calculus, if a little dry. It's a bit expensive,
    because it's a calculus book... (515.9 S12)
  * Tristan Needham, _Visual Complex Analysis_. Now this is actually a complex analysis book rather than a calculus book. It is very geometric. I quite
    like it. (I have no strong opinions on the books in this section, but this is perhaps the book I have the least not strong opinion about.) There is
    also quite a lot of physical motivation, which is very good. Issue: I'm not entirely sure there are any proofs... (515.9 N37)
+
+#### Analysis (341)
+ * Walter Rudin, _Real and Complex Analysis_. (515.7 R916)
+ * John Conway, _Functions of One Complex Variable I_. (515.93 C76)
+ * L. I. Volkovyskii, G. L. Lunts, I. G. Aramanovich, _A Collection of Problems on Complex Analysis_. (515.9 V91)
 
 ### Geometry (353?)
 See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326) above.
