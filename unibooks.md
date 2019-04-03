@@ -14,25 +14,27 @@ a lot of stuff under 353, and that course hasn't run at all since I've been at A
 
 ## Contents
  * [Culture](#culture)
- * [Stage I: MATHS 150/250](#stage-i-maths-150250)
-    * [Calculus](#calculus)
-    * [Linear Algebra](#linear-algebra)
+ * [Stage I](#stage-i)
+   + [Calculus (130, 250)](#calculus--130--250-)
+   + [Linear Algebra (120, 250)](#linear-algebra--120--250-)
+   + [Discrete/computational mathematics (162)](#discrete-computational-mathematics--162-)
  * [Stage II](#stage-ii)
-    * [Calculus (253)](#calculus-253)
-    * [Linear Algebra (253/255)](#linear-algebra-253255)
-    * ["Proofs" (255)](#proofs-255)
-    * [Number Theory (255)](#number-theory-255)
-    * [Set Theory (255)](#set-theory-255)
-    * [Differential Equations (260)](#differential-equations-260)
+   + [Calculus (253)](#calculus--253-)
+   + [Linear Algebra (253/255)](#linear-algebra--253-255-)
+   + ["Proofs" (255)](#-proofs---255-)
+   + [Number Theory (255)](#number-theory--255-)
+   + [Set Theory (255)](#set-theory--255-)
+   + [Differential Equations (260)](#differential-equations--260-)
  * [Stage III](#stage-iii)
-    * [Mathematical logic (315)](#mathematical-logic-315)
-    * [Algebra (320)](#algebra-320)
-    * [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326)
-    * [Analysis (332/333), Topology (353?, 750)](#analysis-332333-topology-353-750)
-    * [Algebraic geometry (334)](#algebraic-geometry-334)
-    * [Complex calculus and analysis (340, 341?)](#complex-calculus-and-analysis-340-341)
-    * [Geometry (353?)](#geometry-353)
- * [Books I want to get around to reading and/or writing about here](#books-i-want-to-get-around-to-reading-andor-writing-about-here)
+   + [Mathematical logic (315)](#mathematical-logic--315-)
+   + [Algebra (320+)](#algebra--320--)
+   + [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry--326-)
+   + [Analysis (332/333), Topology (353?, 750)](#analysis--332-333---topology--353---750-)
+   + [Algebraic geometry (334)](#algebraic-geometry--334-)
+   + [Complex calculus and analysis (340, 341?)](#complex-calculus-and-analysis--340--341--)
+   + [Classical geometry (353?)](#classical-geometry--353--)
+   + [Differential geometry](#differential-geometry)
+ * [Books I want to get around to reading and/or writing about here](#books-i-want-to-get-around-to-reading-and-or-writing-about-here)
  * [My favourite books](#my-favourite-books)
 
 ## Culture
@@ -270,9 +272,9 @@ If you're looking for 328, see also [the section on number theory](#number-theor
    I prefer L&S (see 253) for multivariable analysis. (I did try to work through chapter 9, and despite knowing what he was trying to do at every
    point - it's just material from 253 - it's incredibly clunkly and awful. Belive me, I thought the Chicago bibliography would be exaggerating on this
    point, but it turns out that they were entirely correct.)  ([Errata and notes](https://math.berkeley.edu/~gbergman/ug.hndts/#Rudin)) (515.8 R91)
- * A.N. Kolmogorov and S.V. Fomin, _Introductory Real Analysis_. Higher level than Rudin, covers Lebesgue integration in a much nicer way in my opinion. Includes
-   a semi-detailed chapter on set theory from the point of view of analysis which is quite interesting for a different perspective. Lots of topology and
-   metric space theory as well, with an abundance of linear algebra. (515.8 K81eYs)
+ * A.N. Kolmogorov and S.V. Fomin, _Introductory Real Analysis_. This is not an introductory textbook; it is a high-level geometric (in the Russian
+   sense) view of real analysis (in particular, metric space theory). There is plenty of topology, some nice differential equations, and a lot of very
+   pretty mathematics. (515.8 K81eYs)
  * James R. Munkres, _Topology_. This is the standard topology book, it's very clear with lots of examples and pictures. I didn't like the section on
    metric spaces, though - use Rudin here, it's a good supplement. Kolmogorov & Fomin is also nice to read alongside.
 
@@ -302,20 +304,23 @@ To add in 2019.
    also quite a lot of physical motivation, which is very good. Issue: I'm not entirely sure there are any proofs... (515.9 N37)
 
 #### Analysis (341)
- * Walter Rudin, _Real and Complex Analysis_. (515.7 R916)
- * John Conway, _Functions of One Complex Variable I_. (515.93 C76)
- * L. I. Volkovyskii, G. L. Lunts, I. G. Aramanovich, _A Collection of Problems on Complex Analysis_. (515.9 V91)
+ * Walter Rudin, _Real and Complex Analysis_. This book is soul-destroying and crushes all your hopes and dreams. Dystopia is beautiful. (515.7 R916)
+ * John Conway, _Functions of One Complex Variable I_. He uses 'analytic' to mean 'holomorphic', and there are too many integrals. (515.93 C76)
 
-### Geometry (353?)
+### Classical geometry (353?)
 See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326) above.
  * Alfred S. Posamentier and Charles S. Salkind, _Challenging Problems in Geometry_. Buy this (cheap) book and do all the problems. Difficulty from school
    level upwards. (*)
  * Harold Coxeter, _Introduction to Geometry_ and _Geometry Revisited_. These books are both full of a lot of nice university geometry with some quite
    nice links to other subjects: for example, crystallography and biology. _Revisited_ doesn't require any more than basic school geometry, but _Introduction_
-   is quite sophisticated (you need group theory). It is very easy to expand a lot of what Coxeter says in half a page into hours of
-   fruitful ~~messing about with a blackboard~~ thinking. (516 C87, 516 C87g)
+   is quite sophisticated and difficult to read cover-to-cover as he uses a wide variety of techniques from different fields (group theory, linear algebra,
+   calculus) without any warning. It is very easy to expand a lot of what Coxeter says in half a page into hours of
+   fruitful ~~messing about with a blackboard~~ thinking. (I have used part of _Intro._ as a basis for a set of NCEA level 3 geometry notes,
+   and managed to expand three pages of Coxeter into around thirty pages of notes.) (516 C87, 516 C87g)
  * Marcel Berger, _Geometry_. But this is my favourite geometry book.  It is a little long (two volumes), but you can dip in and out of it rather than
-   reading linearly. There are a lot of very pretty results in both affine and projective geometry. Linear algebra is used extensively (of course). (516 B49)
+   reading linearly. There are many nice pictures, including of physical models; in addition, almost every geometric theorem I've ever seen in any paper
+   is included here (although often under a different name). There are a lot of very pretty results in both affine and projective geometry. Linear algebra
+   and group theory are used extensively (of course). (516 B49)
  * John M. Lee, _Axiomatic Geometry_. This book is like Hartshorne but in a much more formal style; it's written for future teachers, but it develops Euclidean
    geometry (and only Euclidean geometry, although there is some hyperbolic stuff at the end) in a synthetic and formal way. I secretly quite like this book,
    but I will never admit it. This is the book I use to look things up if I feel the urge to know how (for example) the inscribed angle theorem is proved. (516 L47)
@@ -327,6 +332,14 @@ See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geo
    be accessible to the layperson. What I would like to see is a book like this that makes explicit the actual links with point-set topology. (514.3 W39)
  * Marta Sved, _Journey into Geometries_. This is a very strange book which motivates non-Euclidean geometry (hyperbolic geometry in particular) with
    the characters of Alice in Wonderland. It's well worth the read. (516.0076 S96)
+ * Serge Lang and Gene Murrow, _Geometry: A High School Course_. Wait, a Lang book for high school students?! (Please allow me to repeat the standard
+   joke: the reason Bourbaki stopped writing new textbooks is that he realised Lang was just one person.) In all seriousness, all high school geometry
+   texts that I know of are terrible, but this is the least so. (516 L27)
+
+## Differential geometry
+ * Manfred do Carmo, _Differential Geometry of Curves and Surfaces_. Differential geometry, without any more machinery than multivariable
+   calculus. Quite dry and very computational. This is actually useful for physics (in particular, PHYSICS 201). (516.36 C28Y)
+ * Michael Spivak, _A Comprehensive Introduction to Differential Geometry_. Five volumes of painfully typeset beautiful geometry. 10/10 would etc. etc. (516.36 S76)
 
 ## Books I want to get around to reading and/or writing about here
  * George F. Simmons, _Differential Equations with Applications and Historical Notes_.
