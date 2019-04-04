@@ -1,0 +1,91 @@
+\documentclass[answers]{exam}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{microtype}
+\usepackage{siunitx}
+\DeclareSIUnit\year{yr}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{commath}
+
+\newtheorem*{thm}{Theorem}
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+
+% \qformat{Question \thequestion: \thequestiontitle\hfill}
+
+\begin{document}
+
+\section*{NCEA Level 2 Physics, assignment on energies}
+
+\textbf{Note.} Some of these questions may appear to give less information than you think you need. Nonetheless,
+they are all possible! This is illustrative of the power of energy conservation as a tool. You will find it particularly
+useful, for each scenario, to begin by thinking about any forces that are acting and any energy changes that are
+taking place. Diagrams are often helpful; as well as pictures of the scenario and force diagrams, you might also
+want to draw rough flowcharts showing energy changes.
+
+\begin{questions}
+  \question Describe as many energy changes as you can that are associated with an aeroplane during a flight,
+            from the moment the doors close at one airport to the moment the doors open
+            at the destination. \emph{Do not perform any calculations.} (Hint: every time a force acts, there is an energy change
+            going on. Remember air resistance!)
+  \question Suppose I have a spring of (unstretched) length \SI{5.00}{\centi\metre}.
+    \begin{parts}
+      \item I hang my spring vertically, so the top is fixed and the bottom is free to
+            move up and down; I hang a \SI{100}{\gram} mass on the bottom. The new
+            length of the spring is \SI{6.50}{\centi\metre}.
+        \begin{subparts}
+          \subpart Draw a diagram showing both forces acting on the hanging mass. Given that
+                   the mass is not accelerating (it is stationary), what can you say about these
+                   two forces?
+          \subpart Show that the spring constant of the spring is $ k = \SI{15.1}{\kilo\gram\per\second\squared} $.
+        \end{subparts}
+      \item Suppose now I align the \emph{same} spring horizontally, with the \emph{same} mass still attached at one end and the other end fixed.
+            The mass is lying on a frictionless surface and is free to move backwards and forwards. I pull the mass a distance \SI{3.00}{\centi\metre}
+            from its resting place, stretching the spring; I then let the mass go.
+        \begin{subparts}
+          \subpart Draw a diagram showing the direction of the forces on the mass and the velocity of the mass at various points in time. (Hint: the
+                   only force acting is the elastic force, and it always acts in the opposite direction to the velocity.) In particular, note
+                   on your diagram the point where the velocity of the mass is largest.
+          \subpart Show that the maximum velocity of the mass is \SI{0.369}{\metre\per\second}.
+        \end{subparts}
+    \end{parts}
+  \question Petrol, as used in cars, has an energy content of roughly \SI{46.7e6}{\joule\per\liter}. (This is something that one
+            would measure in chemistry: if you have done the level 2 chemistry topic on chemical reaction rates, this is the standard
+            enthalpy of combustion of petrol. It can be measured by burning a set amount of petrol under a beaker containing water
+            and measuring the temperature change of the water. As physicists, we just care what the number is, not the way we get it!)
+    \begin{parts}
+      \part A car (mass \SI{1350}{\kilo\gram}) accelerates smoothly from rest to a speed of \SI{50}{\kilo\metre\per\hour}. Assuming
+            that only negligible energy is lost to friction, how many litres of petrol did the car burn? (You should obtain
+            a number that is very small. One litre of petrol has a rough mass of \SI{1}{\kilo\gram}, so the amount of mass lost by
+            burning the petrol is very small compared to the total mass of the car, and so we don't need to take it into account.)
+      \part The car travels in a straight line for 100 kilometres, at a constant speed of \SI{50}{\kilo\metre\per\hour}
+            (i.e. it does not accelerate at all); it burns \SI{5.3}{\liter} of petrol.
+        \begin{subparts}
+          \subpart Assuming that the only energy loss is due to friction, how much energy is converted from chemical energy
+                   to heat and sound energy by the friction force? (In other words, how much work does the friction force do to the car?)
+          \subpart Assuming the friction force is constant, calculate its magnitude.
+        \end{subparts}
+    \end{parts}
+  \question Two toy cars are initially moving in the same direction at different speeds. One has a mass \SI{100}{\gram} and is moving
+            at a speed \SI{1.0}{\metre\per\second}, the other, behind it, has a mass \SI{50}{\gram} and is moving at a speed \SI{2.0}{\metre\per\second}.
+            When the faster car catches up and the two cars collide, they stick together and move as one mass.
+    \begin{parts}
+      \part Using conservation of momentum, show that the final speed of the clumped cars is \SI{1.3}{\metre\per\second}.
+      \part Show that kinetic energy is \emph{not} conserved in this collision. How much kinetic energy is lost during the collision?
+      \part Explain why we have not just disproved the law of conservation of energy.
+    \end{parts}
+\end{questions}
+
+\end{document}
