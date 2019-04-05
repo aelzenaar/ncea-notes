@@ -4,8 +4,10 @@ This list is an effort to make a list similar and supplementary to the [Chicago 
 but with a less useful organisational structure based vaguely on the University of Auckland mathematics courses. Library call numbers listed in brackets after
 review; (*) denotes a book that the library does not own.
 
-To do: reorganise because MATHS 150 no longer exists and a lot of the stuff in MATHS 255 could be moved into MATHS 315, maybe. Also, there's
-a lot of stuff under 353, and that course hasn't run at all since I've been at Auckland. No better place to put it, though...
+It is less a list of reviews, and more a reminder to me about which books I have enjoyed reading and which books I would like to read more of.
+
+**Note.** The university course numbers listed below are indicative of the content only; I make no claims about difficulty or relevance to
+the course as it is usually taught!
 
 **Disclaimers.** The presence of a book on this list does not mean:
  * That you should buy it.
@@ -115,6 +117,7 @@ represent any of the listed universities.*
    and some flavour of BASIC, but it's an old edition). (512.5 S89)
 
 ### Discrete/computational mathematics (162)
+See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326) below.
  * Donald Knuth, _Concrete Mathematics: A Foundation for Computer Science_. Apparently this is the one true elementary computational mathematics
    book. I am yet to subject myself to it. (510 G74)
 
@@ -185,7 +188,11 @@ stuff in first semester linear algebra. The material in 250/253/255 is covered i
    semanticky stuff. I liked the style. (511.32 R74)
 
 ### Differential Equations (260)
-To add in 2019.
+ * George F. Simmons, _Differential Equations with Applications and Historical Notes_. I have a feeling that most differential equations books tend to be
+   a list of one unmotivated trick after another; this is another such book, but it is well-written, includes some fairly nice examples, and some pretty
+   geometry. So sharing [Rota's opinions](https://web.williams.edu/Mathematics/lg5/Rota.pdf) on a superficial level, I have had some good times with
+   this book.
+ * Lynn Loomis and Shlomo Sternberg, _Advanced Calculus_. The One True Multivariable Analysis Book strikes again. (See above.) (515.8 L86)
 
 ## Stage III
 
@@ -336,18 +343,17 @@ See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geo
    joke: the reason Bourbaki stopped writing new textbooks is that he realised Lang was just one person.) In all seriousness, all high school geometry
    texts that I know of are terrible, but this is the least so. (516 L27)
 
-## Differential geometry
+### Differential geometry
  * Manfred do Carmo, _Differential Geometry of Curves and Surfaces_. Differential geometry, without any more machinery than multivariable
    calculus. Quite dry and very computational. This is actually useful for physics (in particular, PHYSICS 201). (516.36 C28Y)
  * Michael Spivak, _A Comprehensive Introduction to Differential Geometry_. Five volumes of painfully typeset beautiful geometry. 10/10 would etc. etc. (516.36 S76)
 
 ## Books I want to get around to reading and/or writing about here
- * George F. Simmons, _Differential Equations with Applications and Historical Notes_.
  * Coxeter, _Regular Polytopes_.
  * O'Rourke, _Geometric folding algorithms_.
  * Something on knot theory? (Cromwell, _Knots and Links_ ?)
  * Something on matroids?
- * David Gould, _Differential Topology_.
+ * Arnold', _Ordinary differential equations_.
 
 ## My favourite books
  * Artin, _Algebra_
