@@ -84,6 +84,42 @@ These values are called the \emph{solutions}, the \emph{roots}, or the \emph{zer
 \end{ex}
 
 \clearpage
+\subsection*{Forms of a Quadratic}
+We have seen that there are three complementary ways of viewing the equation $ y = ax^2 + bx + c $, each of which
+exhibits one particular characteristic of the function:
+\begin{center}
+  \begin{tabular}{l|l|l}
+    \textbf{Form} & \textbf{Exhibits} & \textbf{Example}\\\hline
+    Expanded &  & $ y = ax^2 + bx + c $ \\
+    Factorised & roots/zeroes are $ \alpha $ and $ \beta $ & $ y = a(x - \alpha)(x - \beta)$ \\
+    Completed square & vertex is at $ (x_0, y_0) $ & $ y = a(x - x_0)^2 + y_0 $
+  \end{tabular}
+\end{center}
+
+For example, consider the following equation:
+\begin{displaymath}
+  y = {\color{blue}(x - 1)(x - 3)} = {\color{red}(x - 2)^2 - 1} = x^2 - 4x + 3.
+\end{displaymath}
+
+The function is graphed below, so that we can see graphically that each coloured form is
+an important geometric feature of the parabola described by the equation.
+
+\begin{center}
+  \fbox{\begin{tikzpicture}
+    \begin{axis}[
+      axis lines = center,
+      xlabel = $ x $,
+      ylabel = $ y $,
+      ymin = -2
+    ]
+      \addplot[domain = -1:5, color = black] {x^2 - 4*x + 3};
+      \node[label={below:{$(2, -1)$}},circle,fill,inner sep=2pt, color=red] at (axis cs:2,-1) {};
+      \node[label={above right:{$(1, 0)$}},circle,fill,inner sep=2pt, color=blue] at (axis cs:1,0) {};
+      \node[label={above left:{$(3, 0)$}},circle,fill,inner sep=2pt, color=blue] at (axis cs:3,0) {};
+    \end{axis}
+  \end{tikzpicture}}
+\end{center}
+
 \subsection*{Classifying Roots}
 Let us look again at the vertex form of the general quadratic equation,
 \begin{displaymath}

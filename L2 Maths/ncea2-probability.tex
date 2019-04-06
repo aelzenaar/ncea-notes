@@ -1,0 +1,243 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+% \usepackage{lmodern}
+\usepackage{OldStandard}
+\usepackage{fontspec}
+\usepackage{microtype}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{commath}
+\usepackage{mathtools}
+
+\usepackage{stmaryrd}
+
+% \usepackage[parfill]{parskip}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{siunitx}
+\DeclareSIUnit\year{yr}
+\DeclareSIUnit\foot{ft}
+\DeclareSIUnit\litre{\liter}
+
+\usepackage{lastpage}
+
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.14}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{wasysym}
+\usepackage{multicol}
+\usepackage[version=4]{mhchem}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\linespread{0.8}\small}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\makeatletter
+\newcommand{\proofpart}[2]{%
+  \par
+  \addvspace{\medskipamount}%
+  \noindent\emph{Part #1: #2}\par\nobreak
+  \addvspace{\smallskipamount}%
+  \@afterheading
+}
+\makeatother
+
+\newcommand{\df}{\textbf}
+
+\newcommand{\union}{\cup}
+\newcommand{\inter}{\cap}
+\DeclarePairedDelimiter\aabs{\lVert}{\rVert}%
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\inpr{\langle}{\rangle}%
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\from}{\leftarrow}
+
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\mesh}{mesh}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Lim}{Lim}
+\DeclareMathOperator{\proj}{proj}
+
+\newcommand{\rand}{\mathsf{Rand}}
+
+% legendre symbol
+\newcommand{\genlegendre}[4]{%
+  \genfrac{(}{)}{}{#1}{#3}{#4}%
+  \if\relax\detokenize{#2}\relax\else_{\!#2}\fi
+}
+\newcommand{\legendre}[3][]{\genlegendre{}{#1}{#2}{#3}}
+\newcommand{\dlegendre}[3][]{\genlegendre{0}{#1}{#2}{#3}}
+\newcommand{\tlegendre}[3][]{\genlegendre{1}{#1}{#2}{#3}}
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+
+\swapnumbers
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{iden}[thm]{Identity}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prp}[thm]{Proposition}
+\newtheorem{obs}[thm]{Observation}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{claim}[thm]{Claim}
+\newtheorem{triviality}[thm]{Triviality}
+\newtheorem*{thm*}{Theorem}
+\newtheorem*{iden*}{Identity}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{lem*}{Lemma}
+\newtheorem*{prp*}{Proposition}
+\newtheorem*{obs*}{Observation}
+\newtheorem*{cor*}{Corollary}
+\newtheorem*{claim*}{Claim}
+\newtheorem*{triviality*}{Triviality}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{con}[thm]{Construction}
+\newtheorem{alg}[thm]{Algorithm}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem*{defn*}{Definition}
+\newtheorem*{ex*}{Example}
+\newtheorem*{con*}{Construction}
+\newtheorem*{alg*}{Algorithm}
+\newtheorem*{exercise*}{Exercise}
+\newtheorem*{rem*}{Remark}
+
+\title{NCEA Probability}
+\author{Alex Elzenaar}
+\date{\today}
+
+\setcounter{section}{-1}
+
+\begin{document}
+
+\maketitle
+
+\section{Preliminaries: sets}
+A set is a collection of objects. We will write a set by either listing its objects inside curly braces; so
+the set of the first three whole numbers is $ \{1,2,3\} $, or by giving a rule that can be used to decide
+whether a given object is in the set or not, like $ \{ p : \text{ where $ p $ is a prime}\} $. Two sets
+are equal if (and only if) they contain the same elements (objects, members). The order of elements in a set does not matter, and
+elements can only occur once in a set (so $ \{1,2,3\} = \{1,2,3,2\} = \{3, 2, 1\} $).
+If $ A $ is a set, the number of distinct elements in $ A $ is denoted by $ \abs{A} $.
+
+The set with no elements is called the \emph{empty set}, denoted $ \emptyset $. Caution: $ \emptyset \neq \{\emptyset\} $!
+
+If $ A $ and $ B $ are two sets, then the union $ A \cup B $ is the set consisting of every object that is
+in either $ A $ or $ B $ (or both); so $ \{1, 2\} \cup \{ \gamma, \omega\} = \{1, 2, \gamma, \omega \} $.
+The intersection $ A \cap B $ is the set of all elements that are in both $ A $ and $ B $; so $ \{1,2,3\} \cap \{3,4,5\} = \{3\} $,
+and $ \{\text{odd numbers}\} \cap \{\text{even numbers}\} = \emptyset $.
+
+If every element of $ A $ is also in $ B $, then $ A $ is called a subset of $ B $ and we write $ A \subseteq B $.
+
+\section{Random processes}
+Suppose we have some process that produces a set of outcomes, such that even when
+the same inputs are given to the process different outputs might occur. We will call
+such a process a \emph{random process}. We will denote random processes by names
+in sans-serif fonts, like $ \rand $.
+
+Random processes occur naturally in a variety of situations.
+
+\begin{ex}\leavevmode
+  \begin{enumerate}
+    \item When we toss an ideal coin, there are two different outcomes that may occur, and given the
+          same initial conditions both outcomes are possible and both will occur as we toss the coin
+          multiple times. Thus we can model the coin toss as a random process $ \mathsf{Coin} $.
+    \item In cryptography, one of the major components of any encryption/decryption system is a process
+          that produces a large prime number that should be unknown to any attacker (or to anyone
+          who should not be able to decrypt the data). Such a process should be a random process.
+  \end{enumerate}
+\end{ex}
+
+One of the fundamental things we would like to be able to do is predict `how likely' a
+random process is to produce a given output. To do this, we will need to model outputs
+of random processes.
+
+\begin{defn}
+  Suppose $ \rand $ is a random process. The set $ \Omega(\rand) $ of possible outcomes
+  is called the \emph{sample space} of the process. The size $ \abs{\Omega{\rand}} $ of
+  the sample space is denoted $ N(\rand) $.
+\end{defn}
+
+For the time being, we are only interested in random processes $ \rand $ such that $ N(\rand) < \infty $ --- i.e.
+such that the sample space is finite.
+
+\begin{ex}\leavevmode
+  \begin{enumerate}
+    \item For the random process $ \mathsf{Coin} $ of tossing an ideal coin, the sample space
+          is $ \Omega(\mathsf{Coin}) = \{H, T\} $.
+    \item For the random process of tossing an ideal coin three times, the sample space
+          is $ \{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\} $.
+    \item For the random process of tossing a coin three times and counting the number
+          of tails, the sample space is $ \{0, 1, 2, 3\} $.
+    \item Define a random process as follows: toss a coin; if the result is $ H $ then toss a six-sided die; otherwise
+          if the result is $ T $ flip the coin again. Then the sample space is $ \{ H1, H2, H3, H4, H5, H6, TH, TT\} $.
+  \end{enumerate}
+\end{ex}
+
+\begin{exercise}
+  Consider a bag with five coloured balls, three red and two black. Let $ \mathsf{Pick} $ be the random
+  process ``take a ball from the bag without looking, note the colour, replace it, and pick out another ball and note the colour''.
+  What is the sample space of the random process if (a) the order matters, and if (b) the order doesn't.
+\end{exercise}
+
+Note that in the previous examples we are very interested in performing two random processes one after the other, and that
+sometimes a random process may depend on the result of a previous process.
+
+% \begin{defn}
+%   Let $ \mathsf{First} $ and $ \mathsf{Second} $ be random processes. Then the random process ``do $ \mathsf{First} $ and
+%   then do $ \mathsf{Second} $'' is called the \emph{composition} of the two, and we denote it $ \mathsf{Second} \circ \mathsf{First} $.
+% \end{defn}
+
+In reality, we are less interested in the particular outcomes, and more interested in whether an outcome lies
+in a particular subset of the sample space: if a die is thrown, is the result even?
+
+\begin{defn}
+  If $ \rand $ is a random process, then an \emph{event} $ E $ is a subset of $ \Omega(\rand) $  such that, under the conditions
+  of the random process, it is possible to decide whether a given output is in $ E $.
+\end{defn}
+
+\begin{ex}
+  Let us toss a coin three times; the sample space is
+  \begin{displaymath}
+    \{HHH, HHT, HTH, THH, HTT, THT, TTH, TTT\},
+  \end{displaymath}
+  and the set
+  \begin{displaymath}
+    A = \{HHT, HTH, THH, HHH\}
+  \end{displaymath}
+  is the event ``at least two heads are seen''.
+\end{ex}
+
+Now consider the following experiments:
+\begin{ex}\leavevmode
+  \begin{enumerate}
+    \item We toss a coin five times; we are interested in the event ``the first toss is heads \emph{or} the third toss is heads (or both)''.
+    \item We roll two dice simultaneously, and we are interested in the event ``both dice roll a six''.
+    \item We roll six dice, and we are interested in the event ``at least three rolls are even, but the third dice comes up odd''.
+  \end{enumerate}
+\end{ex}
+
+\end{document}

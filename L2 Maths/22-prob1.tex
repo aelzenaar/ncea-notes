@@ -5,6 +5,9 @@
 
 \mainHeader{22}{Probability and Risk}
 
+\renewcommand{\vee}{\text{ or }}
+\renewcommand{\wedge}{\text{ and }}
+
 \subsection*{Basic probability}
 
 Suppose we are performing an experiment where the outcome is uncertain. Some examples
@@ -114,8 +117,68 @@ is a 1 in 12 chance ($ P = \frac{1}{12} $) that I flip a heads and roll a 6.
 
 Further experimentation should convince you that, if $ A $ and $ B $ are independent, then $ P(A \wedge B) = P(A) P(B) $.
 
-If two events are \emph{not} independent, we can't apply this rule. We \emph{can} discuss the probability that $ A $ occurs
-given $ B $: if $ P(A | B) $ is the probability that $ A $ occurs if it is known that $ B $ has occurred, then $ P(A \wedge B) = P(B) P(A | B) $.
+If two events are \emph{not} independent, we can't apply this rule. We can, however, discuss the probability that $ A $ occurs
+given that we know $ B $ has happened; we write $ P(A | B) $, read \emph{the probability of $ A $ given $ B $}, for this.
+
+Formally, what we want to know is the proportion of times that $ A $ happens, out of all the times that $ B $ happens; writing
+this down, we have
+\begin{displaymath}
+  P(A | B) = \frac{P(B \wedge A)}{P(B)}.
+\end{displaymath}
+Instead of our sample space being the entire set of possibilities, we restrict our sample space to just being the set of times $ B $
+has occurred, and then we calculate this probability in the usual way.
+
+It is often easier to work out relative probabilities using either a table or a tree diagram.
+
+\begin{ex}[NZQA, 2012]
+  BigGen power company keeps track of complaints made to the company by its customers.
+  \begin{itemize}
+    \item 12\% of customers have made a complaint in the last 12 months.
+    \item If a customer made a complaint, there was a 0.7 chance that they left BigGen.
+    \item The percentage of customers leaving BigGen over the last 12 months was 10\%.
+  \end{itemize}
+  Calculate the following:
+  \begin{enumerate}
+    \item The proportion of customers that complained and left BigGen.
+    \item The number of customers that would be expected to complain, but stay with BigGen, given that there were 250,000 customers in total at the start of the year.
+    \item The probability that a customer who didn’t complain left BigGen.
+    \item If a customer left BigGen, the probability that they complained.
+  \end{enumerate}
+
+  \textit{Solution.}
+  Consider (1) first. The probability that a customer complained and left can be calculated directly, since
+  \begin{displaymath}
+    P(\text{complained and left}) = P(\text{left} | \text{complained}) \cdot P(\text{complained}) = 0.7 \cdot 0.12 = 0.084.
+  \end{displaymath}
+  On the other hand, consider the tree diagram drawn below; the probability $ P(\text{complained and left}) $ can be calculated
+  from it by just multiplying down the branch.
+
+  For (2), we need the probability $ P(\text{complained and not left}) $; we can fill in the probability $ P(\text{not left} | \text{complained}) $,
+  as it will be $ 1 - P(\text{left} | \text{complained}) = 1 - 0.7 = 0.3 $. Then $ P(\text{complained and not left}) = 0.3 \cdot 0.12 = 0.036 $.
+
+  For (3), we need $ P(\text{left} | \text{not complained}) $. We know that $ P(\text{left}) = 0.1 $ (it was given); and
+  \begin{displaymath}
+    P(\text{left and not complained}) + P(\text{left and complained}) = P(\text{left})
+  \end{displaymath}
+  so $ P(\text{left and not complained}) = 0.1 - 0.084 = 0.016 $; then
+  \begin{displaymath}
+    P(\text{left} | \text{not complained}) = 0.016/P(\text{not complained}) = 0.016/0.88 = 0.018.
+  \end{displaymath}
+
+  Finally, for (4) we want $ P(\text{complained} | \text{left}) $. This is given by $ P(\text{complained and left})/P(\text{left}) $;
+  filling this in, $ P(\text{complained} | \text{left}) = 0.084/0.1 = 0.84 $.
+
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{powerco}
+  \end{center}
+
+  All this information is summarised in the tree diagram above; the circled pieces of information are the ones given, and they
+  are sufficient to reproduce the rest. Cover up the example above, and attempt to reproduce the tree diagram yourself using only
+  the information given and the probability laws.
+
+  Note that $ P(A | B) \neq P(B | A) $ in general: the probability that someone complained given that they left was 0.84, while
+  the probability that someone left given that they complained was 0.7.
+\end{ex}
 
 \subsection*{Relative risk}
 
@@ -318,10 +381,10 @@ so it is important to understand how they are calculated and the assumptions mad
         \begin{subparts}
           \subpart The probability of driving a van ($P(V)$).
           \subpart The probability of making insulting gestures ($P(G)$).
-          \subpart The probability of driving a van \textit{and} making insulting gestures ($P(V \cap G)$).
+          \subpart The probability of driving a van \textit{and} making insulting gestures ($P(V \wedge G)$).
         \end{subparts}
-      \part Check if $ P(V \cap G) = P(V) \times P(G) $ to see if the events $ V $ and $ G $ are independent. Explain the outcome.
-      \part You found $ P(G | V) $ in part (b). Check if $ P(V \cap G) = P(V) \times P(G | V) $, and explain the outcome.
+      \part Check if $ P(V \wedge G) = P(V) \times P(G) $ to see if the events $ V $ and $ G $ are independent. Explain the outcome.
+      \part You found $ P(G | V) $ in part (b). Check if $ P(V \wedge G) = P(V) \times P(G | V) $, and explain the outcome.
       \part Find the overall probability of driving an economy car, a family car, a luxury car, or a van.
       \part Find the probability of making insulting gestures, given that someone drives an economy car, a family car, a luxury car, or a van.
       \part Are drivers of economy cars, family cars, luxury cars, or vans less likely in general to make insulting gestures?
