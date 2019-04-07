@@ -769,7 +769,7 @@ exposition of this derivation, see Simmons \S21.}
 \begin{center}
   \emph{You know, for a mathematician, he did not have enough imagination. But he has become a poet and now he is fine.} --- Hilbert (on an ex-student)
 \end{center}
-We will study in this topic precisely equations of the form
+We have studied in these notes precisely the graphs of those algebraic equations of the form
 \begin{equation}\label{eqn:prototype}
   ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0;
 \end{equation}
@@ -793,7 +793,7 @@ in the complex plane $ \mathbb{C}^2 $. In some sense, then, we are doing geometr
 other hand, in many places we will only be interested in real coordinates. For example, the graph of a four-dimensional
 object is a little tricky to draw if we only have three dimensions available!
 
-The proof of the theorem will take a few pages; the theorem is quite `deep',\footnote{The mathematical meaning of `deep' is hard to pin down: it sometimes
+The proof of the theorem will take a few pages, and the theorem is quite `deep',\footnote{The mathematical meaning of `deep' is hard to pin down: it sometimes
 means ``I know this proof and you don't'', or perhaps ``I don't really understand this proof'', or even ``some celebrity/lecturer/textbook author once
 told me it was deep''. In this case, I am using it to mean that the proof is difficult and is something of a gateway into an entirely new type of geometry.}
 and so it is absolutely normal to expect the going to be slow.
@@ -836,18 +836,19 @@ The next example, though, is both more fundamental and more worrying.
   up to multiplicity.
 \end{ex}
 
-Does this mean that we have to abandon the beautiful intersection theorem?
+Do these frustrations mean that we have to abandon the beautiful intersection theorem?
 
 It turns out that, like how we expanded our number system to make the fundamental theorem of algebra work
 nicely, we can expand our plane $ \mathbb{C}^2 $ further to make our intersection theorem work.
 
 We will not make this precise, but the method we will use is some kind of limiting process; the result, and the
-system we will work in from now on, is the projective plane over $ \mathbb{C} $. Let us see how we climb to it.
+system we will work in from now on, is called the \emph{projective plane} over $ \mathbb{C} $. We will first place
+this mathematical concept in its proper historical place, and then we will look at it in detail.
 
 \subsection{Euclidean geometry}
-It turns out that in order to approach some kind of resolution, we need to mention the elephant in the room: the
-foundation of all the geometry which we have been doing thus far in our mathematical lives. (This might seem at first
-glance completely unrelated to the algebraic problem we're trying to solve, but bear with me.)
+It turns out that in order to approach some kind of resolution to our problems, we need to finally consider the
+elephant in the room: the foundations of geometry. (This might seem at first glance completely unrelated to the
+algebraic problem we're trying to solve, but bear with me.)
 
 As I mentioned in the historical introduction, Euclid of Alexandria set down in around 300~BCE a set of basic results
 which can be proved true about circles and lines on a plane in his treatise \textit{Elements}.
@@ -958,7 +959,7 @@ curves of the second degree intersect any line at exactly two places, unless it'
 invented a geometry in which this property is true. It turns out that this geometry has a lot of other beautiful
 properties, most of which we don't have time to look at --- but at this stage, it's completely synthetic. We simply
 arbitrarily added a bunch of points (and we're honestly lucky we didn't get any contradictions). In fact, eventually
-we will see that there is an incredibly natural way to construct a projective plane without having to worry about
+it is possible to see that there is an incredibly natural way to construct a projective plane without having to worry about
 sticking in a bunch more points and cooking it ourselves.
 
 For now, we will content ourselves with proving our motivational theorem.
@@ -1022,8 +1023,8 @@ otherwise the right hand side couldn't stay at zero. Therefore, both the top and
 limit go to infinity; we can apply the following theorem about limits:
 
 \begin{thm}[l'Hopital's Rule]
-  If $ \lim_{x \to \infty} f(x) = \infty $ and $ \lim_{x \to \infty} g(x) = \infty $, and if $ \lim_{x\to\infty} f'(x)/g'(x) = l $,
-  then $ \lim_{x\to\infty} f(x)/g(x) = l $.
+  If $ \lim_{x \to \infty} f(x) = \infty $ and $ \lim_{x \to \infty} g(x) = \infty $, and if $ \lim_{x\to\infty} f'(x)/g'(x) = L $,
+  then $ \lim_{x\to\infty} f(x)/g(x) = L $.
 \end{thm}
 \begin{proof}
   Omitted. See any book on single-variable calculus, for example Spivak, chapter 11, theorem 9 and exercises 36--38.
