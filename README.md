@@ -52,7 +52,7 @@ to be used broadly in the given logical order and aligned with the L2 notes abov
 2. Linear programming (91574) and simultaneous equations (91587). a [set of notes](L3%20Maths/Linear/linear.pdf) from a proof-based
    perspective, although most non-easy proofs are clearly marked and optional. Some exercises are included.
 3. Trigonometry (91575). a [set of notes](L3%20Maths/Trigonometry/trigonometry.pdf) which covers the definition of the trigonometric functions
-   and proves various identities, with a view towards mix of geometric and analytical thinking.
+   and proves various identities, with a view towards mix of geometric and analytical thinking. (Problem sets: [1](L3%20Maths/Trigonometry/exercises-1.pdf))
 4. Calculus (91578 and 91579). a [set of notes](L3%20Maths/Calculus/bookform.pdf) containing both tutorial session material and homeworks
    with material ranging in difficulty from achieved to outstanding scholarship.
 5. Algebra (91577). a set of notes entitled [_Solutions_](L3%20Maths/Algebra/solutions.pdf) designed for self-study for scholarship students
@@ -85,6 +85,7 @@ to bend under the weight of three or four years of constant bolting-on of new pi
 ### Level Two
  * Waves (91170), mechanics (91171), and electromagnetism (91172): [full set of notes](L2%20Physics/externals.pdf), including many diagrams and links to youtube videos,
    but (by design) with limited exercises. To be used with a workbook or similar set of problems.
+   (Assignments: [1](L2%20Physics/problems/asst-mech-1.pdf), [2](L2%20Physics/problems/asst-mech-2.pdf))
  * Practice exams: [mechanics](L2%20Physics/Exams/mech.pdf), [electromagnetism](L2%20Physics/Exams/edyn.pdf), and [waves](L2%20Physics/Exams/waves.pdf).
  * Problem sets: [mechanics](L2%20Physics/problems/problems-mech.pdf), [waves](L2%20Physics/problems/problems-waves.pdf)
 
