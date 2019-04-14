@@ -184,7 +184,7 @@ The second proof involves using similar triangles.
   \includegraphics[width=0.3\textwidth]{pythag3}
 \end{center}
 \begin{proof}[Proof II]
-  First, note that the three triangles $ ABC $, $ CBD $, and $ ACD $ are similar. Thus, considering $ CBD $ and $ ABD $, $ c/a = a/x $; so $ cx = a^2 $.
+  First, note that the three triangles $ ABC $, $ CBD $, and $ ACD $ are similar. Thus, considering $ CBD $ and $ ABC $, $ c/a = a/x $; so $ cx = a^2 $.
   Similarly, considering $ ACD $ and $ ABC $, $ c/b = b/(c - x) $; so $ c(c - x) = b^2 $. Adding the two expressions we have obtained, we
   have $ a^2 + b^2 = cx + c(c - x) = c^2 $, which is the statement of the theorem.
 \end{proof}
@@ -391,7 +391,8 @@ The following theorem is useful in calculus.
   \includegraphics[width=0.3\textwidth]{sinelimit}
 \end{center}
 \begin{proof}
-  For $ \theta > 0 $, we can use the diagram above. We have that $\mathcal{A}(\triangle ABC) = \frac{1}{2} \sin \theta $,
+  For $ \theta > 0 $, we can use the diagram above (where $ BD $ is tangent to the circle).
+  We have that $\mathcal{A}(\triangle ABC) = \frac{1}{2} \sin \theta $,
   that $ \mathcal{A}(\sector ABC) = \frac{\theta}{2} $, and that $ \mathcal{A}(ADE) = \frac{1}{2}\tan \theta $. By comparison
   of these areas, we have $ \frac{1}{2}\sin \theta \leq \frac{1}{2}\theta \leq \frac{1}{2}\tan \theta $ and
   hence $ 1 \leq \frac{\theta}{\sin \theta} \leq \cos \theta $.
@@ -615,7 +616,7 @@ goal in this section is to derive similar rules for the basic trigonometric func
 %   which is rearranged to obtain $ \cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta $ as required.
 % \end{proof}
 \begin{proof}
-  We prove the formulae for angles in the range $ 0 \leq \alpha < \pi/2 $ and $ 0 \leq \beta \pi/2 $, and this
+  We prove the formulae for angles in the range $ 0 \leq \alpha < \pi/2 $ and $ 0 \leq \beta \leq \pi/2 $, and this
   result can be generalised to all $ \theta $ using the same methods we have used before.
 
   For the sine law, consider the following triangle:
@@ -693,8 +694,8 @@ goal in this section is to derive similar rules for the basic trigonometric func
   relevant cases. (For which $ \alpha $ is $ \sin \alpha/2 $ positive, and for which $ \alpha $ is it negative? Repeat for all three.)
 \end{exercise}
 
-\begin{exercise}\marginsymbol
-  Show the following sum identities hold.
+\begin{exercise}
+  Show the following sum identities hold.\marginsymbol
   \begin{enumerate}
     \item $ \sin \alpha + \sin \beta = 2\sin \frac{\alpha + \beta}{2} \cos \frac{\alpha - \beta}{2} $
     \item $ \sin \alpha - \sin \beta = 2\cos \frac{\alpha + \beta}{2} \sin \frac{\alpha - \beta}{2} $
