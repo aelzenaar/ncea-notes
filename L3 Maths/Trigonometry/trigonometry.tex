@@ -754,19 +754,25 @@ We can calculate the chord function from definition \ref{defn:chord} in a differ
 Rather than repeat the standard proof, I will give one based on the following intersecting chord theorem.
 \begin{thm}
   Suppose that $ A $, $ B $, $ C $, and $ D $ lie on a circle, and the lines $ AB $ and $ CD $ intersect at
-  some point $ X $ inside the circle. Then $ \abs{AX} \abs{XB} = \abs{CX} \abs{XD} $.
+  some point $ X $. Then $ \abs{AX} \abs{XB} = \abs{CX} \abs{XD} $.
 \end{thm}
 \begin{center}
   \includegraphics[width=0.3\textwidth]{ichords}
 \end{center}
 \begin{proof}
+  Suppose that $ X $ lies inside the circle.
   I claim that $ BXD $ and $ CXA $ are similar. Clearly the two angles $ \angle DXB $ and $ \angle CXA $ are
   equal, because they are opposite. By the inscribed angle theorem, $ \angle BOC = 2\angle BDC = 2\angle BAC $
   because all three are subtended by the chord $ BC $. Hence both triangles have two equal angles, and are similar.
   The result follows from taking the side ratios $ \frac{AX}{CX} = \frac{XD}{XB} $.
 \end{proof}
 
-The law of cosines now follows immediately from the following diagram, due to Kung.\footnote{``Proof without Words: The law of cosines via Ptolemy's Theorem.'' \textit{Mathematics Magazine}, 65(2), p. 103. doi:10.1080/0025570X.1992.11995990}
+\begin{exercise}
+  Complete the proof of the above theorem for the case that $ X $ lies on or outside the circle.
+\end{exercise}
+
+The law of cosines now follows immediately from the following application of the intersecting chord theorem,
+due to Kung.\footnote{``Proof without Words: The law of cosines.'' \textit{Mathematics Magazine}, 1 December 1990, Vol.63(5), pp.342--342.}
 \begin{center}
   \includegraphics[width=0.4\textwidth]{cosinelawproof}
 \end{center}

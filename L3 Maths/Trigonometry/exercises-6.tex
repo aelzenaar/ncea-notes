@@ -1,0 +1,74 @@
+\documentclass[answers]{exam}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{siunitx}
+\DeclareSIUnit\year{yr}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{commath}
+\usepackage{steinmetz}
+
+\newtheorem*{thm}{Theorem}
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arcversin}{arcversin}
+
+% \qformat{Question \thequestion: \thequestiontitle\hfill}
+
+\begin{document}
+
+\section*{NCEA Level 3 Trigonometry (exercise set)\\6. Inverse Functions}
+\paragraph{Goal} To continue studying the relationships between the trig functions in the form of identities.
+
+\begin{questions}
+  \question
+    \begin{parts}
+      \part Show that $ \displaystyle \arcsin x = 2\arctan \left( \frac{x}{1 + \sqrt{1 + x^2}} \right) $ for $ -1 \leq x \leq 1 $.
+      \part Show that $ \displaystyle \arcversin y = \arctan \left(\frac{\sqrt{2y - y^2}}{1 - y}\right) $ for $ 0 \leq y \leq 2 $.
+    \end{parts}
+  \question
+    \begin{parts}
+      \part Use corollary 4.3.3 to show that $ \arctan a + \arctan b = \arctan \left[(a + b)/(1 - ab)\right] $.
+      \part Show that $ \arctan 1 + \arctan 2 + \arctan 3 = \pi $.
+      \part Show that if $ \tau > 0 $ then $ \arctan \tau + \arctan 1/\tau = \pi/2 $. What if $ \tau < 0 $?
+    \end{parts}
+  \question Suppose $ p = b/a $ and $ q = y/x $ are rational numbers in simplest form (i.e. $ a, b, x, y $ are integers, $ a $ and $ x $ are nonzero,
+            and the fractions cannot be simplified further).
+
+            Define a new operation $ \otimes $ by
+            \begin{displaymath}
+              p \otimes q = \frac{ay + bx}{ax + by}.
+            \end{displaymath}
+    \begin{parts}
+      \part Suppose $ p $ and $ q $ are rational. Show that $ p \otimes q = q \otimes p $.
+      \part Is there a rational number $ \vartheta $ such that $ \vartheta \otimes k = \vartheta $ for all rational numbers $ k $?
+      \part Is there a rational number $ \digamma $ such that $ \digamma \otimes k = k $ for all rational numbers $ k $?\footnote{See also \url{https://www.youtube.com/watch?v=GFLkou8NvJo}.} (Hint: yes.)
+      \part Fix some rational number $ k $; does there exist a rational number $ k' $ such that $ k \otimes k' = \digamma $?
+      \part Show that
+            \begin{displaymath}
+              \arctan \left( p \otimes q \right) = \arctan\left(p\right) + \arctan\left(q\right).
+            \end{displaymath}
+            Compare with the identity $ \log ab = \log a + \log b $. (Note: you may wish to complete 2(a) above first.)
+    \end{parts}
+  \question Find an expression analogous to those in theorem 6.3 for $ \tan(\arcsec x) $.
+  \question Find $ a $ such that $ \arcsin a = 2\arccos a $.
+\end{questions}
+
+\paragraph{Additional reading} Hobson chapter III.
+
+\end{document}
