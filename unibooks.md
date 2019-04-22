@@ -51,12 +51,13 @@ the course as it is usually taught!
    _Cranks_ is a short collection of random stories. (516.204 D84 and 510 D84)
  * Stephen Krantz, _Mathematical Apocrypha_ and _More Mathematical Apocrypha_. "If it's the quotient rule you wish to know,/It's low-de-high
    less high-de-low./Then draw the line and down below,/Denominator squared will go." (510 K897m and 510 K897ma)
- * Carl E Linderholm, _Mathematics Made Difficult_. This book needs no introduction and no recommendation, it is a classic. (510 L74)
- * William Frucht, _Imaginary Numbers: An Anthology..._. Poems and short stories with a mathematical or physical flavour. I enjoyed parts of it. (808.80356 F94)
+ * Carl E. Linderholm, _Mathematics Made Difficult_. This book needs no introduction and no recommendation, it is a classic. (510 L74)
+ * Norman E. Steenrod; Paul R. Halmos; Menahem M Schiffer; and Jean A. Dieudonné, _How to Write Mathematics_. This is a collection of four essays,
+   the theme being mathematical writing (planning structure, style of writing, etc.). Well worth the read. (510.149 H84)
 
 ## Stage I
 
-**Texts used by all 8 NZ universities for first year.**
+<!--**Texts used by all 8 NZ universities for first year.**
 (A) indicates courses are mainly service courses for the sciences or engineering, (P) indicates pure mathematics focus available, (C) indicates compsci
 and/or discrete mathematics focus, (X) indicates mathematics is not offered as a subject. *Do not use this page as course or enrollment advice. I do not
 represent any of the listed universities.*
@@ -71,18 +72,18 @@ represent any of the listed universities.*
 | Massey     | (A) | 160.101, Calculus I: Stewart; 160.102, Linear Mathematics: Poole |
 | Otago      | (A) | MATH 160/170, Mathematics 1/2: Lecture notes, Stewart recommended for calculus section |
 | Victoria   | (C) | MATH 141, Calculus 1A: Lecture notes, with Anton recommended; MATH 151, Algebra: Easdown(?) recommended; MATH 161, Discrete Mathematics and Logic: No recommended text. |
-| Waikato    | (A) | MATHS 101, Intro. to Calculus: Schaum’s Outlines 'Calculus' (!); MATHS 102, Intro. to Algebra: Anton recommended |
+| Waikato    | (A) | MATHS 101, Intro. to Calculus: Schaum’s Outlines 'Calculus' (!); MATHS 102, Intro. to Algebra: Anton recommended |-->
 
 ### Calculus (130, 250)
 
- * James Stewart, _Calculus_. This is the "recommended" textbook for the calculus portion of 150 (and 250, and 253). If you're an engineering student, this book
+ * James Stewart, _Calculus_. This is the "recommended" textbook for every UoA calculus course. If you're an engineering student, this book
    is probably fine; it's full of routine problems. If you're a mathematics student, I wouldn't bother buying a copy (there are plenty in the library) - for the
    actual mathematics, see the lecture notes (I haven't taken 150, but the notes for 250 and 253 are high-quality). Note that the content of the courses does not
    necessarily reflect the content of this textbook! (515.15 S84e 2012)
  * Howard Anton, _Calculus_. Isomorphic to Stewart. (515 A63)
  * Silvanus Thompson, _Calculus Made Easy_. This is the book I originally learned calculus from (in year 11, or around 2013-4). It is a little old fashioned,
-   but the intuition in here is very clear and the author has a sense of humour! This is perhaps the book I would recommend to the Y12 student or the less
-   able Y13 student if they want some reading material. It covers various integration tricks (or 'dodges', as Thompson calls them), as well as some geometry
+   but the intuition in here is very clear and the author has a sense of humour! This is perhaps the book I would recommend to the motivated Y12 student or the
+   interested Y13 student if they want some reading material. It covers various integration tricks (or 'dodges', as Thompson calls them), as well as some geometry
    (lengths of curves, and curvature) and gives reasonable intuitive justifications for the rules.
 
    Thompson is unsuitable for even first year university, because it is far from rigorous (it doesn't mention limits, although the recent editions have a
@@ -110,7 +111,7 @@ represent any of the listed universities.*
    this isn't part of any course AFAIK, but is vaguely interesting). Spends a very long time on computations. Not even in the UoA library; don't bother buying a
    copy. (I had a copy given to me.) I actually use this if I need an algorithm/computation notes. (*)
  * Howard Anton: _Elementary Linear Algebra_. Isomorphic to Venit & Bishop. (512.5 A63)
- * Gilbert Strang: _Linear Algebra and its Applications_. I like this book, it would probably be (read: actually is) the book I would recommend someone use
+ * Gilbert Strang: _Linear Algebra and its Applications_. I like this book, it is the the book I would recommend someone use
    during a stage I course. Lots of intuition, so you can move on to something more rigorous like Halmos for stage II. He does somewhat fetishise the dimension
    theorem for a linear transformation (he calls it the 'fundamental theorem of linear algebra') but it's not enough to ruin the book. It's probably very
    good for compsci students, there's a lot of algorithm stuff and optimisation and efficiency stuff in here (my edition gives all the computer code in FORTRAN
@@ -298,21 +299,24 @@ If you're looking for 328, see also [the section on number theory](#number-theor
 ### Algebraic geometry (334)
 To add in 2019.
 
-### Complex calculus and analysis (340, 341?)
-#### Calculus
- * Stephen D. Fisher, _Complex Variables_. This is the book we used in 2018 for complex calculus, I found it a little weird because it tries to be both
-   an accessible calculus book and a book with proofs. The main problem with this book is that it's trying to be both a rigorous book and a
-   calculus book and failing miserably at both. I don't hate the sections on the geometry of analytic functions (chapter 3). (515.93 F53)
- * E.B. Saff and A.D. Snider, _Fundamentals of Complex Analysis for Mathematics, Sci...etc._ I own this book, it's basically a calculus book, so if
-   you like Stewart or Anton you'll probably like this. I don't hate it, and I found it useful for complex calculus, if a little dry. It's a bit expensive,
-   because it's a calculus book... (515.9 S12)
- * Tristan Needham, _Visual Complex Analysis_. Now this is actually a complex analysis book rather than a calculus book. It is very geometric. I quite
-   like it. (I have no strong opinions on the books in this section, but this is perhaps the book I have the least not strong opinion about.) There is
-   also quite a lot of physical motivation, which is very good. Issue: I'm not entirely sure there are any proofs... (515.9 N37)
-
-#### Analysis (341)
- * Walter Rudin, _Real and Complex Analysis_. This book is soul-destroying and crushes all your hopes and dreams. Dystopia is beautiful. (515.7 R916)
- * John Conway, _Functions of One Complex Variable I_. He uses 'analytic' to mean 'holomorphic', and there are too many integrals. (515.93 C76)
+### Complex calculus and analysis (340, 341)
+ * Stephen D. Fisher, _Complex Variables_. The main problem with this book is that it's trying to be both a rigorous book and a
+   calculus book and failing miserably at both. I don't hate the sections on the geometry of analytic functions (chapter 3), but
+   chapters 1 and 2 attempt to build the basic theory of analytic and holomorphic functions without using phrases like 'uniformly convergent'.
+   The main mechanism used for this is Green's Theorem (for double integrals), and I found it unsatisfying and insufficient. Further,
+   a non-negligible number of the problems seem to be pitched at a higher level of rigour than the proofs in the text (either that, or
+   one must hand-wave away enough topology that they become trivial). There are a minimum of examples. (515.93 F53)
+ * E.B. Saff and A.D. Snider, _Fundamentals of Complex Analysis for Mathematics, Sci...etc._ Basically a calculus book, so if you like Stewart
+   or Anton you'll probably like this. I don't hate it, and I found it useful for complex calculus, if a little dry. The problems are much better
+   than Fisher (in that they fit the style of the book). More examples than Fisher. It's a bit expensive, because it's a calculus book... (515.9 S12)
+ * Tristan Needham, _Visual Complex Analysis_. This book attempts to construct complex analysis purely geometrically. It is quite successful
+   in building intuition, but there are no proofs at all and a number of theorems are only (strongly) hinted at rather than stated - even important ones
+   like Cauchy's theorem. (515.9 N37)
+ * Walter Rudin, _Real and Complex Analysis_. From chapter 10, the best book on complex analysis I have found. It is possible to read
+   the complex analysis half, broadly speaking, without having read the real analysis half; one just needs to replace all the integration
+   theorems with less general theorems involving the Riemann integral. (515.7 R916)
+ * John Conway, _Functions of One Complex Variable I_. He uses 'analytic' to mean 'holomorphic'. Beyond this, I found the book to be readable,
+   if a little slow. (515.93 C76)
 
 ### Classical geometry (353?)
 See also [Combinatorics and Finite Geometry (326)](#combinatorics-and-finite-geometry-326) above.
