@@ -283,10 +283,13 @@ The first few books here, broadly speaking, are complex calculus books; the latt
    in building intuition, but there are no proofs at all and a number of theorems are only (strongly) hinted at rather than stated - even important ones
    like Cauchy's theorem. (515.9 N37)
  * John Conway, _Functions of One Complex Variable I_. He uses 'analytic' to mean 'holomorphic'. Beyond this, I found the book to be readable,
+   if a little slow. (515.93 C76)
+ * Lars Ahlfors, _Complex Analysis_. This is a little old-fashioned, but very geometric. My main issue is that everything is done by partial
+   differentiation and differential forms; there is also not a lot of emphasis on series representations (analyticity) in the first
+   half of the book. (515.93 A28 1966)
  * Walter Rudin, _Real and Complex Analysis_. From chapter 10, the best book on complex analysis I have found. It is possible to read
    the complex analysis half, broadly speaking, without having read the real analysis half; one just needs to replace all the integration
    theorems with less general theorems involving the Riemann integral. (515.7 R916)
-   if a little slow. (515.93 C76)
 
 ### Classical geometry
  * Serge Lang and Gene Murrow, _Geometry: A High School Course_. Wait, a Lang book for high school students?! (Please allow me to repeat the standard
