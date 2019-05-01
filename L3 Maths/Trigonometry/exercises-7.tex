@@ -1,0 +1,74 @@
+\documentclass[answers]{exam}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{siunitx}
+\DeclareSIUnit\year{yr}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{commath}
+\usepackage{steinmetz}
+
+\newtheorem*{thm}{Theorem}
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arcversin}{arcversin}
+
+% \qformat{Question \thequestion: \thequestiontitle\hfill}
+
+\begin{document}
+
+\section*{NCEA Level 3 Trigonometry (exercise set)\\7. Trigonometric Equations}
+\paragraph{Goal} To understand the roots of the trigonometry functions.
+
+\begin{questions}
+  \question Let $ a $ and $ b $ be real and define a function $ f $ by $ f(\theta) = a \cos \theta + b \sin \theta $. We will study the behaviour of $ f $.
+    \begin{parts}
+      \item Show that if $ \alpha $ and $ \beta $ satisfy $ f(\alpha) = f(\beta) $ then $ \frac{b}{a} = \tan \frac{\alpha + \beta}{2} $.
+      \item Find all $ \alpha $ such that $ f(\alpha) = 0 $.
+      \item Show that $ f(\theta) \leq \sqrt{a^2 + b^2} $ for all $ \theta $. Is equality ever attained?
+    \end{parts}
+  \question Find all $ \theta $ such that:
+    \begin{parts}
+      \part $ 64 \sin^7 \theta + \sin 7\theta = 0 $.
+      \part $ \cot^2 \theta - 3\cot \theta + 2 = 0 $. (Note: there is no exact value for $ \arctan 1/2 $, so leave your answer in this form.)
+      \part $ \frac{\cos 3\theta}{\sec \theta} + \frac{\sin 3\theta}{\csc \theta} = \cos 2\theta $.
+    \end{parts}
+  \question Find sine and cosine of $ \ang{15} $ and $ \ang{150} $ exactly.
+  \fullwidth{We studied exact values of some trig functions in this section; we will now look at some exact formulae for $ \pi $.}
+  \question Prove \emph{Machin's formula}, $ \pi/4 = 4\arctan (1/5) - \arctan (1/239) $.
+  \question The formula we will consider here was discovered by John Wallis in 1655.
+    \begin{parts}
+      \part Recall that if a polynomial $ p(x) = p_0 + p_1 x + \cdots + p_n x^n $ has roots $ \alpha_1 , ..., \alpha_n $ then
+            we can write $ p(x) = (x - \alpha_1)\cdots(x - \alpha_n) $.
+
+            Convince yourself that the following infinite product (due to Euler) is plausible.
+            \begin{displaymath}
+              \frac{\sin x}{x} = \left(1 - \frac{x^2}{\pi^2}\right)\left(1 - \frac{x^2}{2^2\pi^2}\right)\left(1 - \frac{x^2}{3^2\pi^2}\right)\cdots
+            \end{displaymath}
+            [One can prove this rigorously: it is a special case of the so-called \emph{Weierstra\ss\ factorisation theorem}.]
+      \part Let $ x = \pi/2 $, and use the formula in (a) to show that
+            \begin{displaymath}
+              \frac{\pi}{2} = \frac{2}{1} \cdot \frac{2}{3} \cdot \frac{4}{3} \cdot \frac{4}{5} \cdot \frac{6}{5} \cdot \frac{6}{7} \cdots.
+            \end{displaymath}
+      \part Calculate $ \pi $ by hand to a few decimal places.
+    \end{parts}
+\end{questions}
+
+\paragraph{Additional reading} Hobson chapter VI.
+
+\end{document}
