@@ -751,11 +751,13 @@ that we like.
 \begin{ex}
   The following system is in row echelon form:
   \begin{equation*}
-    \begin{cases}
-      x +  y + 2z + w = 0\\
-        + 3y      - w = 4\\
-                  + w = 2
-    \end{cases}
+    \left\{
+      \begin{array}{rcrcrcrc}
+        x &+ & y &+ &2z &+ &w &= 0\\
+          &+ &3y &  &   &- &w &= 4\\
+          &  &   &  &   &+ &w &= 2
+      \end{array}
+    \right.
   \end{equation*}
   Here $ x $, $ y $, and $ w $ are pivots; $ z $ is a free variable.
 \end{ex}
@@ -852,9 +854,10 @@ We now know some things about systems of linear equations. Can we also know some
 \begin{ex}\leavevmode
   \begin{center}
     \itshape\parbox{0.8\textwidth}{
-      Arthur is selling bracelets and stuffed animals in order to fund a holiday. Return flights from WLG to PVG cost \$1610 in total, but
-      he secretly wants to make less money than this to avoid some kind of tax on fun. He makes a profit of \$2 per bracelet, and of \$5 per stuffed
-      animal. He needs to sell more than 20 stuffed animals.
+      A group of students decide to start a roadside stall selling small bracelets and stuffed animals. They
+      put all their money together and have a starting capital of \$1610. They have already received an order
+      for twenty stuffed animals; it costs \$2 to produce bracelet, and \$5 to produce a stuffed animal. What
+      possible starting inventories do the students have?
     }
   \end{center}
 
@@ -863,9 +866,10 @@ We now know some things about systems of linear equations. Can we also know some
     \begin{cases}
       2x + 5y \leq 1610\\
       x > 0\\
-      y > 20.
+      y > 20
     \end{cases}
   \end{equation}
+  (where $ x $ represents the initial inventory of bracelets, and $ y $ the inventory of stuffed animals.)
 
   We can graph these constraints, as we did with linear equations.
   \begin{center}
@@ -930,11 +934,11 @@ sign with an equality sign.
     \begin{enumerate}
       \item Hayden is taking a mathematics exam and needs to complete at least ten geometry problems and algebra problems within three hours. It
             will take him thirty minutes to complete a geometry problem and ten minutes to complete an algebra problem.
-      \item Fuel from petrol pump A costs \$2.19 per litre and from petrol pump B costs \$1.69 per litre. Richard Seddon has at most \$20 to spend on fuel.
+      \item Fuel from petrol pump A costs \$2.19 per litre and from petrol pump B costs \$1.69 per litre. Georgia has at most \$20 to spend on fuel.
       \item John is packing apples and oranges into boxes. Each box can hold either 15 apples or 8 oranges. He needs to pack at least 40 boxes and
             at least 360 pieces of fruit.
     \end{enumerate}
-  \item During a family trip, Andr\'e Weil shared the driving with his father. At most, he was allowed to drive for three hours in total. While driving, his
+  \item During a family trip, Jacob shared the driving with his mother. At most, he was allowed to drive for three hours in total. While driving, his
         maximum speed was eighty kilometres per hour. Write a system of inequalities describing the possible number of hours $ t $ and distance $ d $ that
         he may have driven; is it possible that he drove for 160 kilometres?
 \end{enumerate}
