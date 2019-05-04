@@ -53,6 +53,8 @@ the course as it is usually taught!
    _Cranks_ is a short collection of random stories. (516.204 D84 and 510 D84)
  * Stephen Krantz, _Mathematical Apocrypha_ and _More Mathematical Apocrypha_. "If it's the quotient rule you wish to know,/It's low-de-high
    less high-de-low./Then draw the line and down below,/Denominator squared will go." (510 K897m and 510 K897ma)
+ * Richard Feynman, _Surely You're Joking, Mr. Feynman!_ and _What Do You Care What Other People Think?_. These books are classic, but they
+   are a little old-fashioned (sorry, what I mean to say is that they are quite sexist). (530.0973 F43Y and 530.0973 F43Yw)
  * Carl E. Linderholm, _Mathematics Made Difficult_. This book needs no introduction and no recommendation, it is a classic. (510 L74)
  * Norman E. Steenrod; Paul R. Halmos; Menahem M Schiffer; and Jean A. Dieudonné, _How to Write Mathematics_. This is a collection of four essays,
    the theme being mathematical writing (planning structure, style of writing, etc.). Well worth the read. (510.149 H84)
@@ -87,6 +89,8 @@ the course as it is usually taught!
    not really, but cheaper than the shiny calculus books that the book shop sells) and concise (again, it is a doorstop, but much more concise than the texts
    that try to include absolutely everything from biology examples to Stoke's theorem). ([Some comments](http://www.math.toronto.edu/~drorbn/classes/0405/157AnalysisI/SpivakComments/SpivakComments.html)) (515 S76)
 
+**Other books people recommend but I've not read:** Apostol, _Calculus_.
+
 ### Multi-variable calculus (253, 340)
  * Peter Baxandall & Hans Liebeck, _Vector Calculus_. This book covers the same content as 253 but in much greater detail. It is very geometric, contains
    proofs similar in level and style to those in 253, requires the same level of linear algebra, and covers Gauss' and Stokes' theorems after Green's
@@ -119,6 +123,8 @@ My favourite multi-dimensional calculus book, is, in fact, Loomis & Sternberg, _
    algebra and determinants. The exercises are actually quite similar to those that you should be solving for 253 anyway, just take note of his
    preface (some exercises are introduced before the material that makes them easy). Like _Naive Set Theory_ below, the theorems themselves are
    the real exercises. (515.5 H19f)
+
+**Other books people recommend but I've not read:** Curtis, _Linear Algebra: An Introductry Approach_; Axler, _Linear Algebra Done Right_; Treil, _Linear Algebra Done Wrong_.
 
 ### Discrete/computational mathematics (162)
 
@@ -154,6 +160,8 @@ My favourite multi-dimensional calculus book, is, in fact, Loomis & Sternberg, _
  * Vladimir Arnol'd, _Ordinary Differential Equations_. This book is a very nice treatment of the geometry of differential equations, especially those
    forms which one would expect to see in physical situations.
 
+**Other books people recommend but I've not read:** Blanchard, Devaney and Hall, _Differential Equations_.
+
 ## Upper-level undergraduate texts: Stage III
 
 ### Mathematical logic (315)
@@ -185,6 +193,8 @@ To add in 2019.
    introduction to Galois theory. Famously full of typos. Later editions (3rd and 4th) start by proving everything over ***C*** before moving to arbitrary fields.
    Covers all the basic material (field extensions, proof of impossibility of general solutions to the quintic using radicals). Plenty of exercises, computational
    ones as well. (512.32 S84)
+
+**Other books people recommend but I've not read:** Vinberg, _A Course in Algebra_.
 
 ### Combinatorics and finite geometry (326)
  * Robin Wilson, _Introduction to Graph Theory_. Elementary book. Easy exercises. Use to study before exam if you're into that kind of thing. (511.6 W75)
@@ -238,6 +248,8 @@ To add in 2019.
  * A.N. Kolmogorov and S.V. Fomin, _Introductory Real Analysis_. This is not an introductory textbook; it is a high-level geometric (in the Russian
    sense) view of real analysis (in particular, metric space theory). There is plenty of topology, some nice differential equations, and a lot of very
    pretty mathematics. (515.8 K81eYs)
+
+**Other books people recommend but I've not read:** Pugh, _Real Mathematical Analysis_.
 
 ### Topology
  * Klaus Jänich, _Topology_. An easy introduction to topology which isn't rigorous enough for a third- or fourth-year course (and probably not appropriate
