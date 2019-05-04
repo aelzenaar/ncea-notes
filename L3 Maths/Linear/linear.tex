@@ -351,10 +351,11 @@ system with exactly one solution, or exactly no solutions, or so forth), and sec
 two solutions, then there are infinitely many).
 
 \begin{lem}
-  Consider any system of a single variable. Then we have exactly two possibilities:
+  Consider any system of a single variable. Then we have exactly three possibilities:
   \begin{itemize}
     \item The system is inconsistent (that is, it has no solutions).
     \item The system is consistent and has a single unique solution.
+    \item The system has infinitely many solutions.
   \end{itemize}
 \end{lem}
 \begin{proof}
@@ -364,12 +365,18 @@ two solutions, then there are infinitely many).
       a_1 x = b_1\\
       a_2 x = b_2\\
         \hspace{0.15em}\qquad\vdots\\
-      a_m x = b_x.
+      a_m x = b_m.
     \end{cases}
   \end{equation}
 
-  It is clear that it is possible for such a system to have either no solutions (e.g. take $ a_1 = 0 $ and $ b_1 = 1 $) or exactly one solution. Now,
-  suppose that the system has two solutions $ x $ and $ x' $. Then, in particular, we have $ a_1 x = b_1 $ and $ a_1 x' = b_1 $; so $ x = x' $.
+  If all the $ a$'s and $ b$'s are zero, then clearly every $ x $ satisfies the system and we have infinitely many solutions.
+  Further, the system of a single equation $ 0x = 1 $ has no solutions; and the system $ 1x = 1 $ has one solution. Thus all
+  the scenarios given are indeed possible.
+
+  We need to show that it is impossible for any other scenarios to occur. So suppose a system of a single variable has at least two
+  solutions, $ x_1 $ and $ x_2 $. Suppose further that it does not have infinitely many solutions; so in particular there
+  is some equation $ a_i x = b_i $ with only finitely many solutions. We have $ a_i x_1 = b_i $ and $ a_i x_2 = b_i $;
+  so $ x_1 = b_i/a_i = x_2 $, and the two solutions must be identical --- and hence the system must have only one unique solution.
 \end{proof}
 
 Geometrically, each equation in a system of a single variable is a single point on a line, and two points can only intersect if they
