@@ -279,6 +279,8 @@ as drawn above can be extended as far as we like in either direction by just mak
   \end{tikzpicture}}
 \end{center}
 
+Our goal is to understand the behaviour of these functions, and how their analytic properties relate to
+their geometric properties.
 
 \begin{exercise}\label{ex:geomdefn}
   Consider the unit circle again, call $ PX $ positive whenever $ X $ lies above the $ OR $ axis and negative whenever $ X $ lies below that
@@ -383,9 +385,8 @@ Motivated by this theorem, we make the following
   for all $ \theta \neq \frac{\pi}{2}n $ where $ n $ is an odd integer (since $ \cos \frac{\pi}{2}n $ is zero for odd $ n $).
 \end{defn}
 
-The following theorem is useful in calculus.
 \begin{thm}
-  For $ -\pi/2 < \theta < \pi/2 $, $ 1 < \frac{\sin x}{x} < \cos x $. In particular, as $ x \to 0 $, $ \frac{\sin x}{x} \to 1 $.
+  For $ -\pi/2 < \theta < \pi/2 $, $ 1 < \frac{\sin x}{x} < \cos x $.
 \end{thm}
 \begin{center}
   \includegraphics[width=0.3\textwidth]{sinelimit}
@@ -401,6 +402,9 @@ The following theorem is useful in calculus.
   the part we have already proved, we have $ 1 \leq \frac{-\theta}{\sin(-\theta)} \leq \frac{1}{\cos(-\theta)} $. Replacing $ \cos(-\theta) $
   with $ \cos \theta $, allowed because of proposition \ref{thm:basicids}, we have the desired result for negative $ \theta $.
 \end{proof}
+
+Note that as $ x $ becomes small, $ \cos x $ approaches 1. Thus for $ x $ very close to zero, we have $ \frac{\sin x}{x} \approx 1 $. This
+concept of `limiting behaviour' is the fundamental concept of calculus, and this result in particular will be useful for us in that subject.
 
 \begin{exercise}
   Here are some revision problems from your earlier studies that should help you remember
@@ -704,7 +708,7 @@ goal in this section is to derive similar rules for the basic trigonometric func
   \end{enumerate}
 \end{exercise}
 
-Finally, we prove the following aesthetic identity.
+Finally, we prove the following purely aesthetic identity.
 \begin{thm}
   If $ x + y + z = \pi $, then $ \sin 2x + \sin 2y + \sin 2z = 4\sin x \sin y \sin z $.
 \end{thm}
@@ -726,6 +730,9 @@ Finally, we prove the following aesthetic identity.
                                 &= 4\sin x \sin y \sin z.
   \end{align*}
 \end{proof}
+
+It is often possible to write down symmetric identities like this analytically; it is somewhat
+more difficult to associate a geometric reason for them.
 
 \begin{exercise}
   Prove the following identities.
@@ -1082,13 +1089,13 @@ with respect to these parameters due to being bounded (in the case of $ \sin $ a
   The real reason that trigonometric functions (and exponential functions) show up in so many
   physical applications is that they satisfy particularly simple differential equations; in particular
   we have that if $ x = A\sin(\omega t + \phi) $ then $ \od[2]{x}{t} = -\omega^2 x $; so any differential
-  equation of the form $ a = \od[2]{y}{t} = -Zx $ for some constant $ Z $ will obey a trigonometric
-  model with angular frequency $ \omega = \sqrt{Z} $. Such equations show up when modelling exponential
-  growth (in this case we end up with an exponential function as our solution), or when modelling oscillating
-  motion.
+  equation of the form $ \od[2]{y}{t} = -kx $ for some constant $ k $ will obey a trigonometric
+  model with angular frequency $ \omega = \sqrt{k} $. Such equations occur naturally when describing phenomena like
+  oscillating motion or the flow of electrons in circuits.
 
-  These applications are ones that we will study in the calculus topics this year, and are ones that will
-  also show up in NCEA L3 physics (simple harmonic motion and RCL circuits are examples of this kind of phenomena).
+  Further, it turns out that even when the constant $ k $ is negative (i.e. $ \sqrt{k} $ is not real) then
+  it is possible to solve the above equation, and in fact one obtains an exponential equation. This relationship
+  between the families of exponential and trigonometric functions is surprisingly important and deep.
 \end{rem}
 
 \section{Epilogue: Hyperbolic Trigonometric Functions}
