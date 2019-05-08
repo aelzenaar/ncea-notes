@@ -198,21 +198,24 @@ paths in the shape of conic sections.
   \end{itemize}
 
   \begin{center}
-    \includegraphics[width=0.3\textwidth]{polar}
+    \includegraphics[width=0.25\textwidth]{polar}
   \end{center}
 \end{defn}
 
 \begin{exercise}[Polar form]
-  Show that, if $ X $ is on the directrix of a conic such that $ OX \perp \ell $, then the polar equation of the
-  conic with respect to this axis and origin $ O $ is
+  Show that, if $ X $ is the point on the directrix $ \ell $ of a conic such that $ OX \perp \ell $, then the polar equation of the
+  conic with respect to the axis $ OX $ and origin $ O $ is
   \begin{displaymath}
     \frac{l}{r} = 1 + \varepsilon \cos \theta.
   \end{displaymath}
   Conclude that:
   \begin{enumerate}
-    \item Every conic is symmetric with respect to $ OX $.
-    \item The ellipse is a closed and bounded curve (i.e. it does not extend towards infinity).
-    \item The parabola is unbounded, but is connected.
+    \item Every conic is symmetric with respect to $ OX $. (A curve is symmetric with respect to a line if it is
+          unchanged after reflection across that line.)
+    \item The ellipse is a closed and bounded curve. (A curve is closed if when one walks along it, one eventually
+          returns to one's starting place. A curve is bounded if there is some large square containing the entire curve.)
+    \item The parabola is unbounded, but is connected. (A curve is connected if, whenever $ P $ and $ Q $ are two
+          points on the curve, one can walk from $ P $ to $ Q $ without leaving the curve.)
     \item The hyperbola consists of two seperate branches, each extending to infinity, given by $ -\alpha < \theta < \alpha $
           and $ \alpha < \theta < 2\pi - \alpha $ (where $ \alpha = \arcsec(-\varepsilon) $).
   \end{enumerate}
@@ -233,7 +236,7 @@ paths in the shape of conic sections.
             \item Both the ellipse and hyperbola are symmetric across both Cartesian axes.
             \item For an ellipse, the values $ 2a $ and $ 2b $ are the lengths of the chords through the origin along the $ x$- and $ y$-axes respectively. (The
                   longer of these is called the \df{major axis}, and the shorter the \df{minor axis}.)
-            \item The two branches of a hyperbola lie in opposite regions formed by the two lines (\df{asymptotes})
+            \item The two branches of a hyperbola lie in opposite regions bounded by the two lines (\df{asymptotes})
                     \begin{displaymath}
                       \left(\frac{x}{a} - \frac{y}{b} \right)\left(\frac{x}{a} + \frac{y}{b} \right) = 0.
                     \end{displaymath}
@@ -294,6 +297,14 @@ paths in the shape of conic sections.
           application of this property related to, say, torches.
   \end{enumerate}
 \end{exercise}
+
+\begin{rem}
+  There is at least one interesting generalisation of the above exercise, known as the `elliptical billiards problem':
+  it is possible to show that the lines of the trajectory of a billiard ball on an elliptical table (or, more generally, a table with
+  a conic boundary) are all tangent to a conic with the same focii as the table.
+
+  For a precise statement of the result, and a proof, see chapter 13 and appendix E of Leopold Flatto, \emph{Poncelet's theorem}. AMS (2009).
+\end{rem}
 
 \section{Isometries}
 In the previous section, we saw geometrically that every ellipse or hyperbola is just a translated and rotated version of the graph of
@@ -483,7 +494,7 @@ is to show that the conics are just slices of a cone (hence the name), as in the
   \end{itemize}
 \end{exercise}
 
-\begin{exercise}[Geometric cone-slicing: the icecream proof]
+\begin{exercise}[Geometric cone-slicing: the ellipse]
   In the previous exercise, we had to use coordinates to prove that every slice of a cone is a conic. We will now
   discover a geometric proof that an ellipse is just a slice of a right circular cone, in such a way that we will
   understand why such slices obey the focii properties of the ellipse.\footnote{~Tom M. Apostol, \emph{Linear Algebra: A first course} (pp.78--9). John Wiley \& Sons (1997).}
@@ -509,7 +520,23 @@ is to show that the conics are just slices of a cone (hence the name), as in the
   \end{enumerate}
 \end{exercise}
 
-\emph{To do: same result but for hyperbolae.}
+\begin{exercise}[Geometric cone-slicing: other conics]
+  The method of proof in the previous exercise is called the \df{method of Dandelin spheres}, after the Belgian mathematician Germinal Dandelin.
+  \begin{center}
+    \includegraphics[width=0.2\textwidth]{dandelin}\\
+    \small{By Unknown - www-history.mcs.st-andrews.ac.uk, Public Domain, \url{https://commons.wikimedia.org/w/index.php?curid=958124}}
+  \end{center}
+
+  \begin{enumerate}
+    \item Adapt the proof in the previous exercise to show that hyperbolae and parabolae are slices of right circular cones.
+    \item Show that the degenerate conics are also slices of right circular cones.
+    \item Let us construct the Dandelin spheres for a conic lying in a plane $ \mathcal{P} $. Pick one of the two spheres arbitrarily; call the circle
+          of tangency of this sphere to the cone $ \mathcal{Q} $. Show that $ \mathcal{P} $ and $ \mathcal{Q} $ intersect in a line, and that this
+          line is a directrix of the conic.
+  \end{enumerate}
+
+  For additional details, references, and diagrams, see Berger \S17.3.
+\end{exercise}
 
 \section{Orthogonal families of conics}
 In this section, we will consider families of conics with the same focii, and we will find all the curves which are orthogonal
@@ -638,13 +665,13 @@ Finally, we have one rather pretty example.
             \end{cases}
           \end{displaymath}
     \item Identifying the plane $ \mathbb{R}^2 $ with the complex numbers $ \mathbb{C} $, show that this is
-          equivalent to $ x + iy = ai \cot \left(\frac{\sigma + i\tau}{2}\right) $. (Recall that we define $ \cot z = \frac{e^{iz} - e^{-iz}}{ie^{iu} + ie^{-iu}} $.)
+          equivalent to $ x + iy = ai \cot \left(\frac{\sigma + i\tau}{2}\right) $. (Recall that we define $ \cot z = i\frac{e^{iz} + e^{-iz}}{e^{iz} - e^{-iz}} $.)
     \item Identify the locus of all $ P = (\sigma, \tau) $ such that (a) $ \sigma $ is held constant, or (b) $ \tau $ is held constant.
     \item Translate the standard equations of the conics into bipolar coordinates.
   \end{enumerate}
 \end{exercise}
 
-\section{Applications to physics}
+\section{Orbital mechanics}
 We will now look briefly at some applications to the theory of gravity. Recall from stage 2 physics (or earlier)
 the following definitions and results:
 
@@ -737,7 +764,7 @@ exposition of this derivation, see Simmons \S21.}
         \item Solve the differential equation in (b). (Hint: the general solution is $ z = A \sin \theta + B \cos \theta + \frac{GM}{h^2} $.)
         \item Let us shift and rotate our coordinate axis such that $ \vec{r} $ is minimised when $ \theta = 0 $: in other words, we pick
               our axis such that the mass $ m $ is closest to the origin at $ \theta = 0 $. Since $ 1/r $ is maximised when $ r $ is minimised,
-              we have that $ \eval{\od{z}{\theta}}_{\theta = 0} = 0 $ and $ \eval{\od[2]{z}{\theta}}_{\theta = 0} < 0 $. Show that $ A = 0 $
+              we have that $ \eval[2]{\od{z}{\theta}}_{\theta = 0} = 0 $ and $ \eval[2]{\od[2]{z}{\theta}}_{\theta = 0} < 0 $. Show that $ A = 0 $
               and $ B > 0 $.
         \item Further, show that
               \begin{displaymath}
@@ -856,8 +883,8 @@ Euclid was influential because he was the first author (or, more likely, the fir
 attempt to rigorously prove all his results based on a set of `universal truths': a set of simple statements (called
 \df{axioms}) whose truth is self-evident. In some sense, the goal of mathematics is to deduce the behaviour of the
 most complicated systems possible from the simplest axioms possible.\footnote{The axiom system which most of modern
-mathematics is done within is called ZFC (Zermelo-Fraenkel with Choice, named after two mathematicians working on the
-area in the early 1900s).} Euclid's axioms were as follows:
+mathematics is done within is called ZFC, and was constructed in the early 20th century to deal with various foundational
+crises in mathematics.} Euclid's axioms were as follows:
 \begin{enumerate}
   \item A straight line segment can be drawn joining any two points.
   \item Any straight line segment can be extended indefinitely in a straight line.
@@ -869,7 +896,8 @@ area in the early 1900s).} Euclid's axioms were as follows:
 Putting aside the fact that these axioms are in fact insufficient for the purpose of constructing plane geometry, it is
 clear that the fifth axiom is both far less elegant than the others and far more complicated. Indeed, Euclid himself avoided
 using it in his proofs except where necessary (he avoids it completely for the first 28 propositions, for example) and for
-many years mathematicians believed that it was in fact a theorem: that it could be proved from the previous four axioms.
+many years mathematicians believed that it was in fact a theorem: that it could be proved from the previous four axioms.\footnote{For
+further discussion, see chapter 1 of Lee.}
 
 It turns out that this is false: there exist geometries for which the fifth axiom is false (for example, on a sphere).
 
@@ -891,7 +919,7 @@ When we think about it, we find that the only reason that Euclidean geometry doe
 We will therefore \emph{define them not to exist}!
 
 More precisely, given every set of parallel lines with slope $ m $, we will take our plane and add on a new point $ \infty_m $ called
-a \emph{point at infinity}, and then define this new point to be on all the lines with slope $ m $. Thus, these parallel lines now
+a \df{point at infinity}, and then define this new point to be on all the lines with slope $ m $. Thus, these parallel lines now
 intersect at exactly one point (the point at infinity related to their slope) and all other lines intersect in exactly one point (the
 same place they did before).
 
@@ -960,7 +988,7 @@ invented a geometry in which this property is true. It turns out that this geome
 properties, most of which we don't have time to look at --- but at this stage, it's completely synthetic. We simply
 arbitrarily added a bunch of points (and we're honestly lucky we didn't get any contradictions). In fact, eventually
 it is possible to see that there is an incredibly natural way to construct a projective plane without having to worry about
-sticking in a bunch more points and cooking it ourselves.
+sticking in a bunch more points and cooking it ourselves.\footnote{See, for example, Kendig.}
 
 For now, we will content ourselves with proving our motivational theorem.
 
@@ -1066,6 +1094,7 @@ Thus we have shown that if the derivative $ \od{y}{x} $ tends to any value, it m
 \section{Further reading}
 See references in text, as well as:
 \begin{itemize}
+  \item Marcel Berger, \emph{Geometry I} and \emph{II}. Springer-Verlag (1987).
   \item H.S.M. Coxeter, \emph{Introduction to geometry}. John Wiley \& Sons (1961).
   \item Stephen D. Fisher, \emph{Complex variables}. Dover (1999).
   \item Robin Hartshorne, \emph{Geometry: Euclid and beyond}. Springer (2000).
