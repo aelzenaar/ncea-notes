@@ -83,6 +83,8 @@
 \renewcommand{\thechapter}{\Roman{chapter}}
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 
+\setlength\cftsectionnumwidth{1.7em}
+
 \newlength\drop
 \newcommand*{\titleGM}{\begingroup% Gentle Madness
 \drop = 0.1\textheight
@@ -224,17 +226,18 @@ Let us begin.
 
 \chapter{The basics}
 
-\include{01-tangents}
-\include{02-limits}
-\include{03-derivatives}
-\include{04-antidifferentiation}
-\include{05-chainrule}
-\include{06-substitution}
-\include{07-products}
-\include{08-parts}
-
-\chapter{The geometry of curves}
-\include{09-curvature}
-\include{10-optimisation}
+% \include{01-tangents}
+% \include{02-limits}
+% \include{03-derivatives}
+% \include{04-antidifferentiation}
+% \include{05-chainrule}
+% \include{06-substitution}
+% \include{07-products}
+% \include{08-parts}
+%
+% \chapter{The geometry of curves}
+% \include{09-curvature}
+% \include{10-optimisation}
+\include{11-approximations}
 
 \end{document}

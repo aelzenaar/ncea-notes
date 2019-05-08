@@ -193,6 +193,22 @@ On the other hand, using the second derivative, we can come up with a different 
                     of the other side will be $ \frac{1}{2}(1200 - 600) = 300 $, and so the maximum area is $ 300 \times 200 = 60000 $ square metres.
 \end{ex}
 
+\begin{ex}[Electric circuits]
+  A battery of constant voltage $ \mathcal{E} $ and internal resistance $ \mathfrak{r} $ is connected to an external resistance $ R_\text{load} $.
+  For what external resistance will the power $ P $ dissipated by the external resistance be maximal? (Possible application: we want to build a
+  lamp to be connected to a particular voltage; what resistance should the filament be for maximum brightness?)
+
+  \textit{Solution.} We have that $ P = I^2 R $, where $ I $ is the current through the circuit. Then $ I = \frac{\mathcal{E}}{\mathfrak{r} + R} $,
+                     so $ P = \mathcal{E}^2 \frac{R}{(\mathfrak{r} + R)^2} $. In order to maximise this we will compute $ \od{P}{R} $:
+                     \begin{displaymath}
+                       \od{P}{R} = \mathcal{E}^2\frac{\mathfrak{r} - R}{(\mathfrak{r} + R)^3}, \qquad \od[2]{P}{R} = \mathcal{E}^2 \frac{3R - 3\mathfrak{r} - \mathfrak{r}R - R^2}{(\mathfrak{r} + R)^4}.
+                     \end{displaymath}
+
+                     Clearly $ \od{P}{R} = 0 $ precisely when $ R = \mathfrak{r} $; and in this case, $ \od[2]{P}{R} = \mathcal{E}^2(-2\mathfrak{r}^2)((2\mathfrak{r})^4) < 0 $, so this point is indeed a maximum for $ P $.
+
+                     Thus the load should be given resistance equal to the internal resistance of the battery.
+\end{ex}
+
 \subsection{Exercises and Problems}
 \begin{enumerate}
   \item Describe the advantages and disadvantages of the first and second derivative tests for local extrema.
@@ -312,11 +328,7 @@ For more interesting problems, see Spivak chapter 11.
 One avenue for further reading is the subject of the calculus of variations. See, for example, L\&S section 3.15,
 as well as (for example) \emph{An introduction to the Calculus of Variations}, by Hans Sagan (Dover, 1992).
 
-\subsection{Homework}
-\paragraph{Reading}
-
-
-\paragraph{Problems}
+\subsection{Homework problems}
 \begin{enumerate}
   \item What is the minimum vertical distance between the parabolae $ y = x^2 + 1 $ and $ y = x - x^2 $?
   \item Show that $ 3x + 2\cos x + 5 = 0 $ has exactly one real root by showing that it

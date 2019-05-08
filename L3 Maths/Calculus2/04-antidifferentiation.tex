@@ -97,6 +97,38 @@ way until it looks like something that we know how to deal with.
   says ``one third $x$ cubed'' and while walking away, turns back and says over his shoulder, ``plus a constant!''
 \end{joke}
 
+\subsection{Inverse problems (optional)}
+In mathematics there are a lot of examples of operations which are easy to perform
+in one direction, but harder to reverse.
+
+\begin{center}
+  \begin{tabular}{c|c}
+    \textbf{Easy} & \textbf{Hard}\\
+    addition & subtraction\\
+    multiplication & division\\
+    expanding & factorising\\
+    exponents & logarithms\\
+    tying a knot & unravelling a knot\\
+    differentiation & anti-differentiation
+  \end{tabular}
+\end{center}
+
+One very important application of this idea is in cryptography. Most modern computer
+systems are dependent on something known as the RSA cipher, which essentially relies
+on the fact that it's much easier to multiply large primes together than it is to
+work out what primes divide a large integer.
+
+Anti-differentiation in particular is very difficult, in the sense that there are
+rules that enable us to take the derivative of every combination of `simple' functions
+(polynomials, exponentials, logarithms, trig functions, sums, products, functions of
+functions) --- but there are some functions, made up of these building blocks, which
+do not have anti-derivatives of the same type.
+
+For example, there is no anti-derivative of $ x^x $ which can be produced with simple
+functions. There is a function $ f $ such that $ f'(x) = x^x $, we just can't write it
+down at all using any combination of these building blocks despite the function $ x \mapsto x^x $
+being made up of them.
+
 \subsection{Exercises and Problems}
 \begin{enumerate}
   \item For each expression, find the most general anti-derivative with respect to $ x $.
@@ -153,43 +185,10 @@ way until it looks like something that we know how to deal with.
 
 \subsection{References}
 Because of the way we're covering integration, most books will have problems which we can't
-do yet (for example, $ \rint 1/x \dif{x} $). That said, many more anti-differentiation problems
+do yet (for example, $ \rint \tan x \dif{x} $). That said, many more anti-differentiation problems
 can be found in the following: Stewart, section 4.4; Thompson, chapter XVIII.
 
-\subsection{Homework}
-\paragraph{Reading}
-In mathematics there are a lot of examples of operations which are easy to perform
-in one direction, but harder to reverse.
-
-\begin{center}
-  \begin{tabular}{c|c}
-    \textbf{Easy} & \textbf{Hard}\\
-    addition & subtraction\\
-    multiplication & division\\
-    expanding & factorising\\
-    exponents & logarithms\\
-    tying a knot & unravelling a knot\\
-    differentiation & anti-differentiation
-  \end{tabular}
-\end{center}
-
-One very important application of this idea is in cryptography. Most modern computer
-systems are dependent on something known as the RSA cipher, which essentially relies
-on the fact that it's much easier to multiply large primes together than it is to
-work out what primes divide a large integer.
-
-Anti-differentiation in particular is very difficult, in the sense that there are
-rules that enable us to take the derivative of every combination of `simple' functions
-(polynomials, exponentials, logarithms, trig functions, sums, products, functions of
-functions) --- but there are some functions, made up of these building blocks, which
-do not have anti-derivatives of the same type.
-
-For example, there is no anti-derivative of $ x^x $ which can be produced with simple
-functions. There is a function $ f $ such that $ f'(x) = x^x $, we just can't write it
-down at all using any combination of these building blocks despite the function $ x \mapsto x^x $
-being made up of them.
-
-\paragraph{Problems}
+\subsection{Homework problems}
 \begin{enumerate}
   \item Find the most general anti-derivative.
     \begin{enumerate}

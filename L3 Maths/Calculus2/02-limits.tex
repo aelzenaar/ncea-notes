@@ -139,6 +139,24 @@ sides as $ h \to 0 $.)
   \end{align*}
 \end{ex}
 
+\subsection{Another view of limits (optional)}
+The notion of limits is incredibly fundamental to mathematics. In fact, the difference between the rational numbers and the real
+numbers is that, in the real numbers, every function which should have a limit at a point does have a limit at that point.
+
+What do I mean by this?
+
+Well, consider $ f(x) = \sqrt{x} $. Clearly we want this function to be continuous. If we apply $ f $ to the sequence
+\begin{displaymath}
+  x_0 = \frac{1}{1}, x_1 = \frac{14}{10^1}, x_2 = \frac{141}{10^2}, x_3 = \frac{1414}{10^3}, ..., x_n = \frac{\lfloor 10^n \sqrt{2} \rfloor}{10^n}, ...
+\end{displaymath}
+(where $ \lfloor x \rfloor $ is the largest integer not larger than $ x $) then each output is a rational number: $ f(x_1) = 14/10 $,
+for example. Furthermore, these outputs get closer and closer together so $ \lim_{n \to \infty} f(x_n) $ should exist. But the limit
+cannot exist in the rationals, because $ \lim_{n \to \infty} f(x_n) = \sqrt{2} $, which is not rational!
+
+Formally, the way we get from the rational numbers (the numbers of the form $ a/b $, where $ a $ and $ b $ are integers)
+to the real numbers is by taking the set of rationals and adding to it all the limits of Cauchy sequences --- sequences
+where the adjacent terms get arbitrarily close together as we walk further along them.
+
 \subsection{Exercises and Problems}
 \begin{enumerate}
   \item Consider the function $ f $ graphed below.
@@ -207,26 +225,7 @@ see Loomis and Sternberg, sections 3.5 and 3.6. We will use the notation $ f(x +
 for the next few sections, but won't stop to make it too rigorous; in order to do so, replace it with the equivalent equality involving $ \vartheta(h) $
 and remember that $ \vartheta(h)/h \to 0 $ as $ h \to 0 $ by definition. (L \& S calls functions like $ \vartheta $ the `little-oh' class of infinitesimals.)
 
-\subsection{Homework}
-\paragraph{Reading}
-The notion of limits is incredibly fundamental to mathematics. In fact, the difference between the rational numbers and the real
-numbers is that, in the real numbers, every function which should have a limit at a point does have a limit at that point.
-
-What do I mean by this?
-
-Well, consider $ f(x) = \sqrt{x} $. Clearly we want this function to be continuous. If we apply $ f $ to the sequence
-\begin{displaymath}
-  x_0 = \frac{1^2}{1^2}, x_1 = \frac{14^2}{10^2}, x_2 = \frac{141^2}{100^2}, x_3 = \frac{1414^2}{1000^2}, ..., x_n = \frac{\lfloor 10^n \sqrt{2} \rfloor}{10^n}, ...
-\end{displaymath}
-(where $ \lfloor x \rfloor $ is the largest integer not larger than $ x $) then each output is a rational number: $ f(x_1) = 14/10 $,
-for example. Furthermore, these outputs get closer and closer together so $ \lim_{n \to \infty} f(x_n) $ should exist. But the limit
-cannot exist in the rationals, because $ \lim_{n \to \infty} f(x_n) = \sqrt{2} $, which is not rational!
-
-Formally, the way we get from the rational numbers (the numbers of the form $ a/b $, where $ a $ and $ b $ are integers)
-to the real numbers is by taking the set of rationals and adding to it all the limits of Cauchy sequences --- sequences
-where the adjacent terms get arbitrarily close together as we walk further along them.
-
-\paragraph{Problems}
+\subsection{Homework problems}
 Derivatives and limits allow us to classify functions and their behaviour. Consider the following geometric properties:
 \begin{itemize}
   \item A function is \emph{increasing} if its derivative is positive.
