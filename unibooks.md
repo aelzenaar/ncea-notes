@@ -17,6 +17,7 @@ the course as it is usually taught!
  * That I know what I am talking about.
 
 ## Contents
+ * [Contents](#contents)
  * [Culture](#culture)
  * [Elementary texts: stage I and II](#elementary-texts--stage-i-and-ii)
    + [Single-variable calculus (130, 250)](#single-variable-calculus--130--250-)
@@ -38,6 +39,10 @@ the course as it is usually taught!
    + [Complex calculus and analysis (340, 341)](#complex-calculus-and-analysis--340--341-)
    + [Classical geometry](#classical-geometry)
    + [Differential geometry](#differential-geometry)
+ * [Postgraduate texts](#postgraduate-texts)
+   + [Algebra](#algebra)
+   + [Analysis](#analysis)
+ * [Physics books](#physics-books)
  * [Books I want to get around to reading and/or writing about here](#books-i-want-to-get-around-to-reading-and-or-writing-about-here)
  * [My favourite books](#my-favourite-books)
 
@@ -53,11 +58,11 @@ the course as it is usually taught!
    _Cranks_ is a short collection of random stories. (516.204 D84 and 510 D84)
  * Stephen Krantz, _Mathematical Apocrypha_ and _More Mathematical Apocrypha_. "If it's the quotient rule you wish to know,/It's low-de-high
    less high-de-low./Then draw the line and down below,/Denominator squared will go." (510 K897m and 510 K897ma)
- * Richard Feynman, _Surely You're Joking, Mr. Feynman!_ and _What Do You Care What Other People Think?_. These books are classic, but they
-   are a little old-fashioned (sorry, what I mean to say is that they are quite sexist). (530.0973 F43Y and 530.0973 F43Yw)
  * Carl E. Linderholm, _Mathematics Made Difficult_. This book needs no introduction and no recommendation, it is a classic. (510 L74)
  * Norman E. Steenrod; Paul R. Halmos; Menahem M Schiffer; and Jean A. Dieudonné, _How to Write Mathematics_. This is a collection of four essays,
    the theme being mathematical writing (planning structure, style of writing, etc.). Well worth the read. (510.149 H84)
+ * G. H. Hardy, _A Mathematician's Apology_. This is a classic book, but should be read with the understanding that many of the philosophical ideas
+   put forward by Hardy are old-fashioned at best and damaging at worst. (510 H26)
 
 ## Elementary texts: stage I and II
 
@@ -97,10 +102,6 @@ the course as it is usually taught!
    theorem (useful for physics - and in fact it uses electromag and fluid flow as motivational examples throughout). It even ends up stating the real Stokes'
    theorem, the one involving differential forms:- however, it does so in  around twenty pages right at the end, only does it in three dimensions, and
    doesn't really motivate it that well. Oh well, at least it's there...! (It really is a very good book though, apart from that.) (151.84 B35v)
- * Michael Spivak, _Calculus on Manifolds_ or James Munkres, _Analysis on Manifolds_. Vector calculus with rigor, leading to differential forms. Baby
-   Spivak doesn't include multi-variable calculus; the "standard" sequel to Spivak in this regard is Daddy Spivak (_Calculus on Manifolds_). However,
-   I find this concise introduction a little too concise (and that it introduces technicalities in all the wrong places). Munkres' _Analysis on Manifolds_
-   is an expanded and updated book which is (anecdotally) based on Spivak; but I have never liked it that much either. (515.84 S76, 515.84 M96)
 
 My favourite multi-dimensional calculus book, is, in fact, Loomis & Sternberg, _Advanced Calculus_; see below.
 
@@ -156,9 +157,11 @@ My favourite multi-dimensional calculus book, is, in fact, Loomis & Sternberg, _
  * George F. Simmons, _Differential Equations with Applications and Historical Notes_. I have a feeling that most differential equations books tend to be
    a list of one unmotivated trick after another; this is another such book, but it is well-written, includes some fairly nice examples, and some pretty
    geometry. So despite sharing [Rota's opinions](https://web.williams.edu/Mathematics/lg5/Rota.pdf) on a superficial level, I have had some good times with
-   this book.
+   this book. (515.312 S59)
+ * Wolfgang Walter, _Ordinary Differential Equations_. A more modern book; quite geometric, quite physical but mathematically rigorous. The exercises
+   are quite difficult. (515.352 W23)
  * Vladimir Arnol'd, _Ordinary Differential Equations_. This book is a very nice treatment of the geometry of differential equations, especially those
-   forms which one would expect to see in physical situations.
+   forms which one would expect to see in physical situations. (515.312 A75)
 
 **Other books people recommend but I've not read:** Blanchard, Devaney and Hall, _Differential Equations_.
 
@@ -168,7 +171,7 @@ My favourite multi-dimensional calculus book, is, in fact, Loomis & Sternberg, _
 To add in 2019.
 
 ### Algebra (320)
- * M. A. Armstrong, _Groups and Symmetry_. A very geometric book, especially if you liked the algebraic parts of 326. It's similar in philosophy
+ * M. A. Armstrong, _Groups and Symmetry_. A very geometric book; it is decent if you liked the algebraic parts of 326. It's similar in philosophy
    to Jänich's topology book below, in that it's less rigorous than one would really like for third year. I have actually used some parts for scholarship
    calculus students in the past. (512.2 A73)
  * Nathan Carter, _Visual Group Theory_. This book is worth finding in the library for the pictures, which simply do not exist in most other books. However,
@@ -181,18 +184,20 @@ To add in 2019.
  * Charles Pinter, _A Book of Abstract Algebra_. This is the book that 320 *should* be using, in my opinion. Very readable, lots of interesting
    exercises (both applications, if you're into that kind of thing, and pure mathematics: the proof of the structure theorem for abelian groups
    is left as a structured set of exercises, for example). Also very cheap. Buy this book. (512 P65)
- * Michael Artin, _Algebra_. This is the best introductory algebra book ever written. Lots of geometry (e.g. he classifies all of the motions of the plane).
+ * Michael Artin, _Algebra_. This is the best introductory algebra book I know of. Lots of geometry (e.g. he classifies all of the motions of the plane).
    Focuses heavily on linear algebra. Maybe a little light on the proofs (not that he's not rigorous, but make sure you do the exercises, or you'll miss out
    on stuff). Highlights include a chapter on Galois theory (first edition only) and a chapter on group representations. (512 A79)
  * John Dixon, _Problems in Group Theory_. Pitched at higher level than 320, but I like it and it should be good for 720 and 721 as well, so well worth the
    cheap price. (512.22 D62)
- * Grigore Călugăreanu and Peter Hamburg, _Exercises in Basic Ring Theory_. Basically what it says on the tin. [512.4 C16]
+ * Grigore Călugăreanu and Peter Hamburg, _Exercises in Basic Ring Theory_. Basically what it says on the tin. (512.4 C16)
  * David Bishop, _Group Theory and Chemistry_. Not actually a maths text, it's cute that he tries to prove some of the theorems of elementary group theory but
    I'm not entirely sure why he bothers. If you want applications of the 320 material, look here (but don't look too deep, you might catch chemistry germs). (*)
  * Ian Stewart, _Galois Theory_. Once you have an OK grounding of the material in 320 (basic facts about groups, rings, and fields) then this book is a readable
-   introduction to Galois theory. Famously full of typos. Later editions (3rd and 4th) start by proving everything over ***C*** before moving to arbitrary fields.
+   introduction to Galois theory. Famously full of typos. Later editions (3rd and 4th) start by proving everything over ℂ before moving to arbitrary fields.
    Covers all the basic material (field extensions, proof of impossibility of general solutions to the quintic using radicals). Plenty of exercises, computational
    ones as well. (512.32 S84)
+ * Harold M. Edwards, _Galois Theory_. This is very classical. I have not read it in detail, though I found the first few chapters enlightening. I would like
+   to find the time to read it at some point, but likely as part of a reading group with other people. (512.32 E26)
 
 **Other books people recommend but I've not read:** Vinberg, _A Course in Algebra_.
 
@@ -222,7 +227,7 @@ To add in 2019.
    gave all the proofs via ring theory; if you know some algebra, write down these proofs yourself (they follow from the fact that a cyclic ring can be
    decomposed into a product of cyclic rings of prime power order; see, for example, Ireland & Rosen) and compare with the ones in here. (512.7 J77)
  * Kenneth Ireland and Michael Rosen, _A Classical Introduction to Modern Number Theory_. This book develops number theory with algebra at about the
-   level of 320. (512.7 I65)
+   level of 320. It does start a little slowly (is this a feature of most number theory books?). (512.7 I65)
 
 ### Single-variable analysis (332)
  * Kenneth R. Davidson and Allan P. Donsig, _Real Analysis and Applications_. For an introduction to real analysis for someone who understands calculus
@@ -238,6 +243,14 @@ To add in 2019.
 
    Like Jones & Jones above, this is another new Springer book with really annoying typesetting, but to a lesser degree. (*)
 
+ * Terence Tao, _Analysis I_. This might be a good alternative to Davidson & Donsig for concrete real analysis (everything is done in one dimension
+   over ℝ); Tao is a very good writer, but I personally found this book to be a little slow. (It might actually work as an alternative
+   to Spivak's _Calculus_ for good first-year students.) The construction of ℝ is done via the equivalence-class-of-Cauchy-sequences method, which
+   is my personal favourite; it is well-motivated and done in detail, and in fact takes a significant part of the book. The reasoning for this is
+   explained in some detail in the preface. (515 T17, but a new edition is available online through the library.)
+ * Terence Tao, _Analysis II_. This is the sequel (obviously) to _Analysis I_, and covers analysis on metric spaces through to a construction of
+   Lebesgue integration. I have not read it, but judging from the first volume it will likely be a good alternative to the post-chapter-9 section
+   of baby Rudin. (Available online through the library)
  * Walter Rudin, _Principles of Mathematical Analysis_. The first eight chapters are an incredibly clean and terse exposition of metric space theory.
    People I know have called it dry, but I didn't actually find it that bad - it is a little lacking in motivation, so maybe it would be a good idea
    to pick up a shiny book like Davidson & Donsig above as well for historical details and more examples.
@@ -268,14 +281,20 @@ To add in 2019.
    ([Errata](http://drorbn.net/index.php?title=10-327/Errata_to_Munkres%27_Book)) (514.3 M96)
 
 ### Multi-variable analysis (333)
+ * Michael Spivak, _Calculus on Manifolds_ or James Munkres, _Analysis on Manifolds_. Vector calculus with rigor, leading to differential
+   forms. Spivak's _Calculus_ doesn't include multi-variable calculus; the "standard" sequel to Spivak in this regard is _Calculus on Manifolds_
+   by the same author. However, I find this concise introduction a little too concise (and that it introduces technicalities in all the
+   wrong places). Munkres' _Analysis on Manifolds_ is an expanded and updated book which is (anecdotally) based on Spivak; but I have
+   never liked it that much either. (515.84 S76, 515.84 M96)
  * Lynn Loomis and Shlomo Sternberg, _Advanced Calculus_. This book started off as notes for the legendary Math 55 at Harvard (a first year course!);
    it starts off with a recap of linear algebra (really one of the best `second courses in linear algebra' I've looked at), and ends up around 500
    pages later with a very nice approach to differential forms. This is my favourite calculus text of all time, but it is probably a little too much
-   for students in first year! (Or even students who have completed 253 to be honest... perhaps 255 is enough preparation? The preface recommends baby
-   Spivak as prep, so maybe 332 is the best prerequisite course.) Highlights include a rigorous (and clear) treatment of infinitesimal functions and
-   differentials, and a final chapter on applications to theoretical physics. The exposition tries to explain a great
-   deal of the 'philosophy of doing mathematics', which I quite like - see, for example, the chapter on uniformity and compactness. (515.8 L86)
+   for students in first year! The preface recommends Spivak's _Calculus_ as prep, but I think it likely that a little more maturity is required that
+   that for reading this book.
 
+   Highlights include a rigorous (and clear) treatment of infinitesimal functions and differentials, and a final chapter on applications to theoretical
+   physics. The exposition tries to explain a great deal of the 'philosophy of doing mathematics', which I quite like - see, for example, the chapter
+   on uniformity and compactness. (515.8 L86)
 
 ### Algebraic geometry (334)
 To add in 2019.
@@ -294,8 +313,7 @@ The first few books here, broadly speaking, are complex calculus books; the latt
  * Tristan Needham, _Visual Complex Analysis_. This book attempts to construct complex analysis purely geometrically. It is quite successful
    in building intuition, but there are no proofs at all and a number of theorems are only (strongly) hinted at rather than stated - even important ones
    like Cauchy's theorem. (515.9 N37)
- * John Conway, _Functions of One Complex Variable I_. He uses 'analytic' to mean 'holomorphic'. Beyond this, I found the book to be readable,
-   if a little slow. (515.93 C76)
+ * John Conway, _Functions of One Complex Variable I_. I found this book to be readable, if a little slow. (515.93 C76)
  * Lars Ahlfors, _Complex Analysis_. This is a little old-fashioned, but very geometric. My main issue is that everything is done by partial
    differentiation and differential forms; there is also not a lot of emphasis on series representations (analyticity) in the first
    half of the book. (515.93 A28 1966)
@@ -338,10 +356,42 @@ The first few books here, broadly speaking, are complex calculus books; the latt
    calculus. Quite dry and very computational. This is actually useful for physics (in particular, PHYSICS 201). (516.36 C28Y)
  * Michael Spivak, _A Comprehensive Introduction to Differential Geometry_. Five volumes of painfully typeset beautiful geometry. 10/10 would etc. etc. (516.36 S76)
 
+## Postgraduate texts
+Please see also the Stage III section above; these books are split out simply because they do not fit
+nicely into a category above.
+
+### Algebra
+ * Joseph Rotman, _Advanced Modern Algebra_. This book is supposed to be very good, but something about it rubs me the wrong way. I'm
+   not too sure what the problem is: maybe it's a little too chatty, and it motivates everything (at least initially) with number theory?
+   I will come back to it at some point, maybe I will like it better. (512 R84a)
+ * Lang, _Algebra_. Please, make it stop. (512 L26a)
+
+### Analysis
+ * See _Real and Complex Analysis_ by Rudin above.
+ * Terrence Tao, _An Introduction to Measure Theory_. (515.42 T17)
+
+## Physics books
+Here are some physics books. I do not read as much physics as I do mathematics, but nonetheless here are some book
+recommendations that are likely embarrassing.
+ * Daniel Kleppner and Robert J. Kolenkow, _An Introduction to Mechanics_. This is a nice introduction to mechanics
+   for first-years. (531 K64)
+ * Michael Spivak, _Physics for Mathematicians: Mechanics I_. (531 S76)
+ * David Griffiths, _Introduction to Electrodynamics_. This is the text for 202. I didn't enjoy 202; is this book
+   any good? Please tell me, I'm not sure. (537.6 G84)
+ * T. W. B. Kibble, _Classical Mechanics_. This is the text for the mechanics papers; I have the third edition (with
+   the black and pink cover), and it is almost comically concise (this complaint coming from someone who likes baby
+   Rudin). I think the later editions, which include F. H. Berkshire as an additional author, are somewhat less concise.
+   Perhaps it is a good book for people who have better physical intuition than I. (531 K46)
+ * Richard Feynman, _Surely You're Joking, Mr. Feynman!_ and _What Do You Care What Other People Think?_. These books are classic, but they
+   are a little old-fashioned (sorry, what I mean to say is that they are quite sexist). (530.0973 F43Y and 530.0973 F43Yw)
+ * Richard Feynman, _The Feynman Lectures on Physics_ These are the "classic" undergraduate physics books. If you like Feynman's style,
+   you will probably enjoy these books more than I do. (540 F43)
+
 ## Books I want to get around to reading and/or writing about here
  * Coxeter, _Regular Polytopes_.
  * O'Rourke, _Geometric folding algorithms_.
  * Something on knot theory? (Cromwell, _Knots and Links_ ?)
+ * Aluffi, _Algebra: Chapter 0_
 
 ## My favourite books
  * Artin, _Algebra_
@@ -351,4 +401,5 @@ The first few books here, broadly speaking, are complex calculus books; the latt
  * Landau, _Foundations of Analysis_
  * Loomis and Sternberg, _Advanced Calculus_
  * Rudin, _Principles of Mathematical Analysis_
+ * Rudin, _Real and Complex Analysis_
  * Wallis, _Combinatorial Designs_
