@@ -242,7 +242,7 @@ and are exactly an odd number of half-wavelengths apart.
 If we place two identical point sources close to each other, as in figure \ref{fig:pointsource2}, we see areas where the waves meet and exactly cancel
 each other out and the water does not move. This is because the two waves are cancelling each other out --- they are out of phase with each other at
 that point. These points of \textit{total destructive interference} are called \textbf{nodes}, and they occur exactly where the difference between the
-distances travelled by the waves from their respective sources (the path difference) is an odd number of half-wavelengths.
+distances travelled by the waves from their respective sources (the \textbf{path difference}) is an odd number of half-wavelengths.
 
 This suggests that when waves pass across each other, the net displacement at that point due to the \textbf{superposition} of the waves is just the sum
 of the displacements of the individual waves --- when two waves are exactly out of phase, the displacement of one is the negative of the displacement
@@ -272,8 +272,8 @@ Figure \ref{fig:pathdifference2} summarises this.
   \caption{The refraction of water waves. \capcite{http://www.school-for-champions.com/science/images/waves_obstacles_refraction.gif}\label{fig:refraction}}
 \end{figure}
 Let us now consider what happens when water waves hit a solid boundary, like a wall. We see that flat waves incident on a flat wall are reflected
-at an angle (the angle of reflection) equal to the angle that they approach the wall at (the angle of incidence), but and that circular waves
-on a flat wall are reflected in such a way that the individual rays of light are also reflected at the same angle that they are incident on
+at an angle (the angle of reflection) equal to the angle with which they approach the wall (the angle of incidence), and that circular waves
+on a flat wall are reflected in such a way that the individual elements of wave are also reflected at the same angle with which they were incident
 (see figure \ref{fig:watreflect}).
 
 On the other hand, when flat waves approach a curved concave surface then the waves are all directed inwards to a single point (the focus)
@@ -292,17 +292,40 @@ When we move on to discussing light, we will develop this idea (known as \textbf
 \end{figure}
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{diffraction14}
-  \caption{NZQA 91170 2014. \label{fig:diffraction-exam}}
+  \includegraphics[width=0.5\textwidth]{huygens2}
+  \caption{Diffraction modelled as two point sources.\label{fig:huygens2}}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.3\textwidth]{huygens}
+  \caption{Christiaan Huygens.\label{fig:huygens}}
 \end{figure}
 When water waves pass through a gap, they are compressed into a small width and then fan out again. This phenomenon, depicted in
 figure \ref{fig:diffraction}, is known as \textbf{diffraction}. The angle of the fanning depends on the ratio between the width of the
-gap and the wavelength; if the wavelength is large compared to the width of the gap, then the diffraction effect is much more pronounced
-than if the wavelength is small compared to the width of the gap.
+gap and the wavelength; if the wavelength is large compared to the width of the gap then the wave fans out more than if the wavelength
+is small compared to the width of the gap.
 
-Consider the question given in figure \ref{fig:diffraction-exam}. This is an excellent illustration of the kind of thing we can explain using
-the phenomenon which we discuss in the waves standard: sound waves have a much higher wavelength than the light waves and so diffract
-much more (the diffraction of the light is negligible), which is why we can hear around corners but not see around them.
+In order to justify this, consider figure \ref{fig:huygens2}. We have waves incident on the left with a wavelength $ \lambda $, and we model
+the opening, of width $ a $, as two point sources a distance $ a $ apart with wavelength $ \lambda $. Our goal is to find the width of the
+constructive interference that we will see on the other side of the gap, and in particular to show that this width is smaller if the incident
+wavelength is larger.
+
+Now the width of the constructive interference at a distance $ L $ from the gap is simply the distance $ d $ between the adjacent nodal
+lines. We can calculate the angle $ \theta $ of these nodal lines: they occur when the path difference $ \abs{r_1 - r_2} $ is $ \lambda/2$. In
+particular, if $ L $ is large and $ \theta $ is small, $ \abs{r_1 - r_2} \approx a \sin \theta $; hence the nodal lines occur
+when $ \sin \theta = \frac{\lambda}{2a} $. We can now calculate $ d $: by considering the large triangle,
+\begin{displaymath}
+  d \approx L \tan \theta \approx L \sin \theta = \frac{L}{2} \frac{\lambda}{a}
+\end{displaymath}
+(here we use that $ \sin \theta \approx \tan \theta $ when $ \theta $ is small) and so $ d $ is small when $ \lambda $ is large compared to $ a $.
+
+This is only an approximation: a much better model would be that each point in the opening acts as a point source; this better model is known as
+the \textbf{Huygens model}, after Dutch physicist Christiaan Huygens (figure \ref{fig:huygens}), but it would require a more sophisticated argument.
+
+The phenomenon of diffraction allows us to solve the following puzzle: if light and sound are both waves, why can we hear around corners but
+not see around them? The reason is that sound waves have a much higher wavelength (on the order of mm, cm, and m) than the light waves (which
+have wavelengths on the order of nm); this means that the sound waves diffract much more (and in fact the diffraction of the light is negligible)
+and can reach around corners.
 
 \begin{center}
 \begin{tcolorbox}[width=0.8\textwidth,colback={red},title={\textbf{Go and watch...}},colbacktitle=yellow,coltitle=blue]
@@ -382,7 +405,8 @@ in-phase point sources. We can project the resulting wave onto a screen, and we 
 figure \ref{fig:doubleslit}. This experiment was first performed by Thomas Young (figure \ref{fig:young}) in 1801, and exhibits
 both the diffraction and interference of light --- the bright patches are areas of total constructive interference, and the
 dark patches are regions of total destructive interference. Next year, we will analyse this two dimensional case mathematically,
-and we will be able to calculate the locations of the observed fringes.
+and we will be able to calculate the locations of the observed fringes; note that our analysis of diffraction above (when we
+discussed water waves) is a rudimentary argument of this kind.
 
 If we use two \textbf{independent} sources (e.g. two bulbs rather than one) then no interference pattern is seen due to the point
 sources being randomly out-of-phase --- in this situation, the two sources are called \textit{incoherent}.
@@ -669,7 +693,7 @@ in contrast, is called a \textit{scalar}.
   Mass &\\
   & Momentum\\
   & Force\\
-  Area (well...) &\\
+  Frequency&\\
   Work &\\
   Power &\\
   Density &\\
@@ -751,7 +775,7 @@ initial velocities are $ v_f $ and $ v_i $ respectively. We then have the follow
   d &= v_i t + \frac{1}{2} at^2\\
   v_f^2 &= v_i^2 + 2ad
 \end{align}
-These equations are immensely useful for problem solving.
+These equations are useful for problem solving, as long as we know that the acceleration is constant.
 \paragraph{Exercise.} A ball, initially moving at \SI{4.0}{\metre\per\second}, rolls up a slope and slows uniformly
 to a stop \SI{16.0}{\metre} up the slope. Find the ball's acceleration, and calculate how long it takes for the ball
 to come to a halt.
@@ -1619,7 +1643,7 @@ the filiment of a lightbulb, since higher currents induce heating and therefore 
 is known as \textbf{non-Ohmic}. However, at any given point the resistance $ R $ is \textit{still given by Ohm's law}.
 
 \subsection{Power}
-In the mechanics chapter, we defined the rate at which energy is transformed (work is done) to be the \textit{power dissipated}
+In the mechanics chapter, we defined the rate at which energy is transformed (work is done) to be the \textbf{power dissipated}
 by a process (equation \ref{eqn:power}). Since work is done by resistors, the same concept applies here. Consider a charge $ q $
 which does work $ \Delta U $ when it crosses a resistor. Recall that $ V = \frac{\Delta U}{q} $, and so $ \Delta U = Vq $:
 \begin{equation}
