@@ -125,6 +125,7 @@ You need to be comfortable transforming between these three forms.
 Note that some quadratics, like $ x^2 + 1 $, cannot be transformed into the factorised form: there
 are \emph{no} real numbers $ \alpha $ and $ \beta $ such that $ x^2 + 1 = (x - \alpha)(x - \beta) $.
 
+\clearpage
 \subsection*{Classifying Roots}
 Let us look again at the vertex form of the general quadratic equation,
 \begin{displaymath}
@@ -264,7 +265,14 @@ notice that the discriminant appears underneath the square root sign and so it d
               x = \frac{-b + \sqrt{b^2 - 4ac}}{2a} \text{ and } x = \frac{-b - \sqrt{b^2 - 4ac}}{2a}
             \end{displaymath}
             are solutions of $ ax^2 + bx + c = 0 $.
-  \question Let $ AB $ be the diameter of a circle centred at $ O $. Draw the circles with diameters $ AO $ and $ OB $; draw a
+  \question
+    \begin{parts}
+      \part Suppose that it is known that one solution of $ x^2 + bx + c $ is four times the other (i.e. the two solutions are $ \alpha $ and $ 4\alpha $).
+            Show that $ c = 4b^2/25 $.
+      \part Conversely, show that one solution of $ x^2 + bx + \frac{4b^2}{25} $ is four times the other, no matter the value of $ b $.
+      \part Show that one solution of $ 3x^2 + 15x + 12 $ is four times the other.
+    \end{parts}
+  \question (Challenge problem.) Let $ AB $ be the diameter of a circle centred at $ O $. Draw the circles with diameters $ AO $ and $ OB $; draw a
             third circle centred at $ T $, tangent to all three existing circles. If the radius of the circle at $ T $ is 8,
             what is the length $ d(A,B) $?
 
@@ -277,9 +285,9 @@ notice that the discriminant appears underneath the square root sign and so it d
       \part $ 1 = -x^2 - 2x $
       \part $ 0 = 2x^2 - 12x + 18 $
     \end{parts}
-  \question Find $ k $ such that $ x^2 + 3kx = 2 $ has precisely one solution.
+  \question Find $ k $ such that $ x^2 + 3kx - 2 = 0 $ has precisely one solution.
   \question The equation $ (2x - 3)(x + 4) = k $ has only one real solution; find the value of $ k $.
-  \question Find all $ t $ such that the parabolae described by $ tx^2 + x + 1 $ and $ -2x - tx + 1 $ meet at precisely one point.
+  \question Find all $ t $ such that the parabolae described by $ y = tx^2 + x + 1 $ and $ y = -2x^2 - tx + 1 $ meet at precisely one point.
   \question By considering the quadratic formula, give another proof that the discriminant `encodes' the nature of the roots of the quadratic.
   \question The quadratic equation $ mx^2 - (m + 2)x + 2 = 0 $ has two positive real roots. Find the possible
             value(s) of $ m $, and the roots of the equation.
@@ -290,11 +298,22 @@ notice that the discriminant appears underneath the square root sign and so it d
             never touch the $x$-axis?
   \question Find the possible values of $ d $ if one or more real solutions exist for $ x^2 + 5x - 1 = d(x^2 + 1) $. Interpret
             your answer geometrically.
+  \question How many real roots does $ x^3 - 4x^2 + 7x - 4 $ have?
   \question Find expressions in terms of $ m $ and $ n $ for the roots of the equation
             \begin{displaymath}
               \frac{x - m}{x - n} = \frac{2(x + m)}{x + n}.
             \end{displaymath}
-            Give an inequality in terms of $ m $ and $ n $, so that the equation has two distinct roots.
+            Give an inequality, in terms of $ m $ and $ n $, so that the equation has two distinct roots.
+  \question
+    \begin{parts}
+      \part Two positive numbers have sum 25 and product 136. What are the two numbers?
+      \part For which numbers $ S $ and $ P $ is it possible to find at least one pair of real numbers with sum $ S $ and product $ P $?
+    \end{parts}
+  \question Let $ \alpha $ and $ \beta $ be the roots of $ x^2 + bx + c $.
+    \begin{parts}
+      \part Show that $ \alpha^2 + \beta^2 = (-b)^2 - 2c $.
+      \part Conclude that $ \Delta_2[x^2 + bx + c] = (\alpha - \beta)^2 $.
+    \end{parts}
 \end{questions}
 
 \end{document}
