@@ -50,6 +50,7 @@
 \newtheorem{exs}[thm]{Examples}
 \newtheorem{con}[thm]{Construction}
 \newtheorem{axs}[thm]{Axioms}
+\newtheorem{ax}[thm]{Axiom}
 \newtheorem{alg}[thm]{Algorithm}
 \newtheorem{exercise}[thm]{Exercise}
 \newtheorem{rem}[thm]{Remark}
@@ -90,7 +91,7 @@
   an axiomatic study to be motivated by --- or at the very least not precluded by --- the material within. One good modern axiomatic treatment
   is given in \autocite{lee}.
 
-  There are no diagrams in these notes; this is by design, as I feel that any diagrams which I provide would be far inferior in terms of actual
+  There are not many diagrams in these notes; this is by design, as I feel that any diagrams which I provide would be far inferior in terms of actual
   learning content than diagrams drawn by students themselves. The formatting of these notes, with a far wider margin than even \LaTeX{} normally
   includes, is designed with copious note-taking in mind.
 
@@ -105,13 +106,44 @@
   mainly because I usually feel the need to include a lot of extra content in higher level notes that would be better placed here.
 
   \section*{Recommendations for suplementary and further reading}
+  References are given throughout the notes when something of particular historical or mathematical interest is discussed; however, many
+  of the references are intended more for the teacher than for the student. I would like to take this opportunity to highlight a few of
+  my favourites.
+
   If one is interested in classical geometry, then books like \autocite{sved} or \autocite{coxeterRevisited} are highly recommended.
-
   For more modern geometry, especially for students who have the basics of calculus available, \autocite{coxeterIntro} is a classic.
-
   There are a variety of problem books available: one such book is \autocite{challenging}, though there are many others.
 
+  The author's favourite geometry book, however, is \autocite{berger}.
+
   \newgeometry{left=2cm,right=8cm}
+  \setcounter{chapter}{-1}
+  \chapter{Proof in mathematics}
+  \begin{center}
+    \begin{minipage}{0.7\textwidth}\itshape
+      A mathematician does not want to be told something: they want to find it out for themself. \autocite[19]{sawyerPrelude}
+    \end{minipage}
+  \end{center}
+  In this topic, we are going to prove things. This is a simple statement, but one it is worth spending a bit of time
+  thinking about.
+
+  First of all, what is \df{mathematical proof}? The most simple definition is that a proof is an explanation of why a
+  statement is true. More precisely, one starts from a set of accepted assumptions (the \df{hypotheses} of the proof), and one argues
+  why certain conclusions \emph{must} be true.
+
+  Proof is what sets mathematics apart from the sciences --- in physics and chemistry, for example, one does not prove
+  things simply by thought (a physical theory is incorrect if it disagrees with experiment, no matter how logically
+  sound it is). In all fields of mathematics, things must be proved before they are used.
+
+  Here are some more words:
+  \begin{itemize}
+    \item A \df{theorem} is a true statement that has been deduced (via a mathematical proof) from
+          some agreed assumptions. (For example, Pythagoras' theorem.)
+    \item A \df{proposition} is a small theorem.
+    \item An \df{axiom} or \df{postulate} is a basic assumption that is accepted without proof. (For example, `all right
+          angles are equal'.)
+  \end{itemize}
+
   \chapter{Basic theory}
   The first known systematic treatment of geometry is Euclid's \emph{Elements} (one particularly nice
   edition is \autocite{euclid}). Euclid lived in Alexandria (in Greek Egypt) in around 300 BCE; his
@@ -149,10 +181,32 @@
     two points; hence $ \ell $ and $ m $ must both be this unique line, and must therefore be the same.
   \end{proof}
 
+  Let $ \ell $ and $ m $ be lines.  Then $ \ell $ and $ m $ are said to be \df{parallel} if they do not intersect in exactly one point; by
+  the above proposition, this means that they must intersect either zero times or they must be the same line. If $ \ell $ and $ m $ are
+  parallel, we will write $ \ell \parallel m $.
+
+  It is necessary for us to assume one thing about parallel lines without proof:
+
+  \begin{ax}[Parallel postulate]\index{Parallel postulate}
+    If $ \ell $ is a line, and $ P $ is any point that does not lie on $ \ell $, then there is a unique line through $ P $
+    parallel to $ \ell $.
+  \end{ax}
+
+  This postulate was Euclid's fifth axiom, and is of a much more sophisticated nature than the other four (which stated
+  things like `it is possible to draw a unique line through two points' and `all right angles are equal'); it was thought
+  for over a thousand years that this postulate was so much more complex than the others that it must follow from them
+  as a theorem. A later commentator, Proclus, wrote in fifth century Athens that ``[the parallel postulate] ought to be
+  struck from the postulates altogether. For it is a theorem --- one that invites many questions, which Ptolemy proposed
+  to resolve in one of his books --- and requires for its demonstration a number of definitions as well as theorems''
+  (quoted in \autocite[296-297]{hartshorne}).
+
+  It turns out that proving the parallel postulate from Euclid's other four axioms is impossible, for a fairly simple reason:
+  it is possible to exhibit a perfectly reasonable geometry that satisfies the first four but not the fifth. The most familiar example is a
+  sphere. Dix a line of latitude and a point not on that line. Then all the lines through that point intersect
+  the original line, so there are no parallel lines!
 
   \begin{exercise}
-    Let $ \ell $ and $ m $ be lines.  Then $ \ell $ and $ m $ are said to be \df{parallel} if they do not intersect in exactly one point;
-    in this case we will write $ \ell \parallel m $. Show that:
+    Show that, if $ \ell $ and $ m $ are lines, then:
     \begin{enumerate}
       \item $ \ell \parallel \ell $;
       \item if $ \ell \parallel m $ then $ m \parallel \ell $;
@@ -325,7 +379,7 @@
   A point which is not moved by a transformation is called a \df{fixed point}.
 
   It is non-trivial to prove the following theorem, within which we will intermix some definitions.
-  \begin{thm}[Classification of plane isometries]
+  \begin{thm}[Classification of plane isometries]\label{thm:classisom}
     There are precisely five kinds of isometry.
     \begin{enumerate}
       \item The \df{identity transformation} $ \mathsf{Id} $, which leaves everything where it is. (In other words, every point is a fixed point.)
@@ -484,7 +538,7 @@
             numbers we assigned to $ \mathscr{F}_1, ..., \mathscr{F}_n $.
       \item The method assigns to every square $ \mathscr{S} $ the number $ \mathcal{A}(\mathscr{S}) $ as already established.
       \item The method assigns to every figure with no inside (e.g. a line, or a collection of lines, or a single point,...) the number 0.
-      \item If $ \mathscr{G} \cong \mathscr{G} $, then the numbers assigned to $ \mathscr{F} $ and $ \mathscr{G} $ are equal.
+      \item If $ \mathscr{F} \cong \mathscr{G} $, then the numbers assigned to $ \mathscr{F} $ and $ \mathscr{G} $ are equal.
     \end{enumerate}
   \end{axs}
   It turns out that there is only one way of assigning area to all the things we are used to which satisfies these properties in a nice
@@ -767,7 +821,7 @@
         \end{enumerate}
       \item Baldwin Street in Dunedin is often cited as the `steepest street in the world' (for example, by Guinness World Records).
             It has a slope of \ang{19}; if you walk along the street so you have travelled one metre horizontally, how far have you
-            travelled vertically? How far do you have to travel vertically in order to rise by one metre?
+            travelled vertically? How far do you have to travel horizontally in order to rise by one metre?
       \item The James Webb Space Telescope, the replacement for the Hubble Telescope due to launch in 2021, has a resolution of \ang{0;0;0.32} ---
             when the lines drawn between two stars and the telescope make this angle or greater, then it will be able to distinguish between them.\footnote{\textit{Tweet Chat with John Mather} (James Webb Space Telescope project scientist), retrieved from \url{https://jwst.nasa.gov/faq_tweetchat1.html} on 21 May 2019.}
 
@@ -777,7 +831,7 @@
                 Toliman, and Proxima Centauri). The naked eye sees one single blob of light. The distance between the stars is approximately \SI{0.21}{\lightyear},
                 and the system lies around \SI{4.37}{\lightyear} away from the Sun. Will the telescope see three seperate stars, or one blob of light?
           \item How far apart do two stars in the Andromeda Galaxy (2.537 million light years away) need to be for the telescope to be able to
-                distingush between them? Given that the Andromeda Galaxy is roughly circular and has a radius of \SI{110000}{\lightyear} away,
+                distingush between them? Given that the Andromeda Galaxy is roughly circular and has a radius of \SI{110000}{\lightyear},
                 will the telescope be able to distinguish between \emph{any} stars in that galaxy?
         \end{enumerate}
     \end{enumerate}
@@ -811,6 +865,11 @@
             \begin{center}
               \includegraphics[width=0.5\textwidth]{roads}
             \end{center}
+      \item At 7 o'clock in the morning a passenger plane took off from a town $ A $ and after thirty minutes stay in the town $ B $
+            it took off again at 8.10, turned \ang{35} to the right, and landed in town $ C $ at 9.00. Determine the distance as-the-crow-flies
+            between towns $ A $ and $ C $ if the average speed of the plane was \SI{320}{\kilo\metre\per\hour}.
+      \item Two sides of a triangle are equal to \SI{5}{\centi\metre} and \SI{6}{\centi\metre}, and its area to \SI{5.28}{\centi\metre\squared}.
+            Find the third side.
     \end{enumerate}
   \end{exercise}
 
@@ -835,6 +894,46 @@
   \end{exercise}
 
   \chapter{Tilings and wallpaper patterns}
+  Early in our studies we defined the concept of a \df{transformation}: a way of moving points around. We defined a \df{isometry}
+  to be a transformation that preserved distance, and theorem \ref{thm:classisom} told us that there were only five kinds.
+
+  \section{Symmetries}
+  We call a figure \df{symmetric} if there is an isometry that transforms the figure to itself. If we can draw a line through
+  a figure such that reflection through the line leaves the figure unchanged, then the line is called a \df{line of symmetry}.
+
+  \begin{exercise}
+    Find lines of symmetry for all the capital letters:
+
+    \begin{center}
+      \includegraphics[width=\textwidth]{alphabet}
+    \end{center}
+
+    How many letters have no lines of symmetry? Which has the most?
+  \end{exercise}
+
+  \begin{exercise}
+    The word BEE is made up of letters which are symmetric, and the word itself has
+    a line of symmetry (horizontally through the middle). The word MUM has a vertical
+    line of symmetry through the middle. Explain the differences between BEE, MUM, TOO, and EYE:
+    all three are made up of symmetric letters, but not all have the same symmetries as words.
+  \end{exercise}
+
+  \begin{exercise}
+    A figure is said to have a \df{centre of symmetry} $ O $ if we can rotate the figure around the
+    point $ O $ by some angle (less than a full turn) so that the figure seems unchanged.
+
+    Which letters have centres of symmetry, and through which angles can we rotate them?
+  \end{exercise}
+
+  Imagine that the following sequence of letters goes on to infinity in both
+  directions.
+  \begin{center}
+    \includegraphics[width=\textwidth]{translational}
+  \end{center}
+
+  If we translate the image left or right by a length which is a multiple of the distance
+  between K's then the image appears unchanged. This is an example of a \df{translational
+  symmetry}.
 
   \chapter{Circle inversion}
   Reflection is an important transformation in geometry; but why do we limit ourselves
