@@ -65,6 +65,8 @@
 \newcommand{\df}[1]{\textbf{#1}\index{#1}}
 \newcommand{\ray}{\overrightarrow}
 \renewcommand\qedsymbol{$\vrectangleblack$}
+\DeclareMathOperator{\Pow}{\mathrm{Pow}}
+\DeclareMathOperator{\Inv}{\mathrm{Inv}}
 
 \title{Topics in Geometry}
 \author{Alex Elzenaar}
@@ -313,8 +315,18 @@
     all four are right angles.
 
     Such lines are called \df{perpendicular}, and we write $ \ell \perp m $.
+  \end{exercise}
 
-    If two lines are parallel, and a third line is perpendicular to one of them, then it is perpendicular to both.
+  \begin{exercise}
+    Let $\ell $ and $ m $ be parallel lines, let $ A $ and $ B $ are any two points on $ \ell $, draw the lines through $ A $ and $ B $ perpendicular
+    to $ \ell $, and let $ A' $ and $ B' $ be the points of intersection of these perpendicular lines with $ m $.
+
+    \begin{itemize}
+      \item Show that $ \abs{AA'} = \abs{BB'} $. [You will need the parallel postulate.]
+      \item Show that if two lines are parallel, and a third line is perpendicular to one of them, then it is perpendicular to both.
+    \end{itemize}
+
+    Note: it may be easier to prove these in the opposite order and/or at the same time as each other.
   \end{exercise}
 
 
@@ -418,10 +430,19 @@
   whenever $ Y $ is a point on $ \mathscr{G} $ then there is a point $ X $ on $ \mathscr{F} $ such that $ \mathsf{Isom}(X) = Y $.
   (In other words, if $ \mathsf{Isom} $ is a one-to-one correspondence between the two figures.)
 
-  \begin{exercise}
-    Convince yourself (no rigorous proof necessary, but \emph{convince yourself}) that two triangles are congruent
-    precisely when they have equal edge lengths.
-  \end{exercise}
+  It turns out that for triangles we have a number of different ways to talk about congruence.
+
+  \begin{prp}\label{ex:congruent}
+    Two triangles $ ABC $ and $ DEF $ are congruent if one of the following is true (and therefore all are true):
+    \begin{enumerate}
+      \item (SSS)~ $ \abs{AB} = \abs{DE} $, $ \abs{BC} = \abs{EF} $, and $ \abs{CA} = \abs{FD} $.
+      \item (SAS)~ The angles at $ A $ and $ D $ are congruent, and $ \abs{AB} = \abs{DE} $ and $ \abs{CA} = \abs{FD} $.
+      \item (ASA)~ The angles at $ A $ and $ D $ are congruent, the angles at $ B $ and $ E $ are congruent, and $ \abs{AB} = \abs{DE} $.
+    \end{enumerate}
+  \end{prp}
+  \begin{proof}
+    See \autocite{lee}.
+  \end{proof}
 
   It is possible that two figures can be the same shape even if they are not the same size. For example, all
   circles centred at a given point can be transformed into each other by shrinking and stretching equally in
@@ -893,6 +914,63 @@
     Compare this with exercise \ref{ex:ngonarea1}.
   \end{exercise}
 
+  \section{Analytic geometry}
+  Let us now fix a point $ O $, and a second point $ 1 $. Draw a line through $ O1 $ (this will be the \df{$ x$--axis}, or the \df{primary axis});
+  then draw a point $ 2 $ such that $ \abs{12} = \abs{O1} $, draw a point $ 3 $ such that $ \abs{23} = \abs{O1} $, and so forth. We can add negative
+  numbers in the natural fashion as well. (It is customary to pick the line and points such that the primary axis is horizonal and 1 is to the right of $ O $.)
+
+  Draw the line through $ O $ perpendicular to the primary axis; this will be the \df{secondary axis}, or \df{$ y$--axis}. Pick a point on the
+  line a distance $ \abs{O1} $ from $ O $ (it is customary to draw it above the point $ O $) and call it $ 1 $; then draw $ 2 $, $ 3 $, $ -72 $, and so
+  forth on this secondary axis in the normal way.
+
+  It is clear that we can add all the real numbers onto our two number lines in a natural way so that if $ a < b < c $ then the point corresponding
+  to $ b $ lies between $ a $ and $ c $, and such that $ \abs{ac} = (c - a)\abs{O1} $. Once we have chosen all these points, we have obtained what
+  is known as a \df{Cartesian coordinate system}. To every point $ P $ on the plane we can now assign two numbers: the \df{$ x$--coordinate} (or \df{abscissa})
+  and the \df{$ y$--coordinate} (or \df{ordinate}). This is done by drawing perpendicular lines from $ P $ to the $ x$--axis and $ y$--axis respectively,
+  and choosing the number on the axis assigned to the intersection point as the relevant coordinate. If $ P $ has coordinates $ x $ and $ y $,
+  we write $ P = (x,y) $.
+
+  Given any equation relating two variables, say $ x^2 + y^2 = 1 $, we can now colour in all the points $ (x,y) $ such that the equation becomes
+  true; this is called the \df{graph} of the equation.
+
+  \begin{exercise}
+    Plot graphs of the following equations:
+    \begin{enumerate}
+      \item $ x^2 + y^2 = 1 $
+      \item $ x^2 + y^2 = 4 $
+      \item $ x^2 - y^1 = 1 $
+      \item $ x = y $
+      \item $ x = -y $
+      \item $ x = (1/2)y $
+      \item $ y = x^3 $
+      \item $ x = y^3 $
+      \item $ y = (x - 3)(x - 2)(x + 1) $ (remember there are invisible $ \times $ signs between the brackets)
+      \item $ x = (y - 3)(y - 2)(y + 1) $
+      \item $ 0 = (x + y)(x - y) $
+    \end{enumerate}
+  \end{exercise}
+
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{descartes}
+  \end{center}
+
+  This relation between algebraic quantities (namely equations) and geometry was first developed by Ren\'e Descartes (pictured)
+  in the early 1600s, and was one of the great early breakthroughs in thought of modern European mathematics.
+
+  Another method of depicting geometric objects in the coordinate plane is the so-called \df{method of locii}. We
+  define a set of points $ P $ satisfying certain restrictions; the resulting figure is called the \df{locus} of the point $ P $.
+  \begin{exercise}
+    Consider the locii of all the points $ P $ such that:
+    \begin{enumerate}
+      \item For some fixed point $ O $, $ \abs{OP} = k $ for some fixed number $ k $. (The circle.)
+      \item For two fixed points $ A $ and $ B $, $ \abs{PA} + \abs{PB} = k $ for some fixed number $ k $. (An \df{ellipse}.)
+      \item For two fixed points $ A $ and $ B $, $ \abs{PA} - \abs{PB} = k $ for some fixed number $ k $. (A \df{hyperbola}.)
+      \item For two fixed points $ A $ and $ B $, $ \abs{PA} = \abs{PB} $.
+      \item For two fixed points $ A $ and $ B $, and some number $ 0 < \rho < 1 $, $ \abs{PA} = \rho\abs{PB} $. (If $ A $ and $ B $
+            are held fixed but $ \rho $ is changed, we obtain a family of circles called the \df{circles of Appolonius}.)
+    \end{enumerate}
+  \end{exercise}
+
   \chapter{Tilings and wallpaper patterns}
   Early in our studies we defined the concept of a \df{transformation}: a way of moving points around. We defined a \df{isometry}
   to be a transformation that preserved distance, and theorem \ref{thm:classisom} told us that there were only five kinds.
@@ -935,11 +1013,72 @@
   between K's then the image appears unchanged. This is an example of a \df{translational
   symmetry}.
 
+  \begin{exercise}
+    Draw a picture which possesses \df{glide symmetry}: it is mapped onto itself by a glide
+    reflection.
+  \end{exercise}
+
+  \section{Tilings of the plane}
+  \begin{defn}
+    A figure $ \mathscr{F} $ is said to \df{tile} the plane if an arrangement of copies of
+    the figure can be found such that:
+    \begin{enumerate}
+      \item each point in the plane lies within one of the copies, and
+      \item no two copies overlap.
+    \end{enumerate}
+  \end{defn}
+
+  It turns out that there are only seventeen different `types' of tilings of the plane. The
+  following illustrations are from \autocite[13,19]{berger}, but were cited there as originating
+  from [Y. Brossard. \textit{Rosaces, Frises et Pavages}. CEDIC, Paris, 1977].
+
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{tilings0}
+    \includegraphics[width=0.8\textwidth]{tilings1}
+    \includegraphics[width=0.8\textwidth]{tilings2}
+  \end{center}
+
+  \begin{exercise}
+    Imagining each tiling to continue forever in each direction, what symmetries does each possess?
+  \end{exercise}
+
+  \begin{exercise}\index{Escher}
+    Here are some tilings of the plane --- or parts of tilings --- all due to M. C. Escher \autocite{escher}. Explore
+    the symmetries used.
+  \end{exercise}
+
+%   \restoregeometry
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{escher1}
+    \includegraphics[width=0.8\textwidth]{escher2}
+    \includegraphics[width=0.8\textwidth]{escher3}
+    \includegraphics[width=0.8\textwidth]{escher4}
+    \includegraphics[width=0.8\textwidth]{escher5}
+    \includegraphics[width=0.8\textwidth]{escher6}
+    \includegraphics[width=0.8\textwidth]{escher7}
+    \includegraphics[width=0.8\textwidth]{escher8}
+    \includegraphics[width=0.8\textwidth]{escher9}
+    \includegraphics[width=0.8\textwidth]{escher10}
+  \end{center}
+%   \newgeometry{left=2cm,right=8cm}
+
+  \begin{exercise}
+    Design your own Escher-style tilings, and analyse their symmetries. Recall that we have (at least):
+    \begin{itemize}
+      \item Translations
+      \item Rotations
+      \item Reflections
+      \item Glide reflections
+      \item Dilations
+    \end{itemize}
+  \end{exercise}
+
   \chapter{Circle inversion}
   Reflection is an important transformation in geometry; but why do we limit ourselves
   to reflection across lines?
 
-  \section{The power of a circle}
+  \section{The power of a point}
+  See \autocite[chapter 1]{sved}.
   \begin{exercise}\label{ex:pythviapower}
     Suppose $ \mathscr{C} $ is a circle.
     \begin{enumerate}
@@ -950,18 +1089,138 @@
             respectively. Show that $ \abs{P A_\ell} \abs{P B_\ell} = \abs{P A_m} \abs{P B_m} $. So this
             quantity is independent of which line we choose: it only depends on $ P $ and $ \mathscr{C} $. This
             quantity is called the \df{power of the point} $ P $ with respect to $\mathscr{C} $, and we
-            will write $ \mathrm{Pow}_\mathscr{C} P $ for this number.
+            will write $ \Pow_\mathscr{C} P $ for this number.\footnote{According to \autocite[81]{coxeterIntro}, this terminology
+            is due to Jacob Steiner (1796--1863).}
       \item Let $ r $ be the radius of $ \mathscr{C} $, and let $ O $ be its centre. Pick a line through $ P $ that intersects the circle at
             a single point $ T $, and pick the point of the circle $ X $ that lies on $ [P,O] $; let $ d = \abs{PX} $. Show that
-            $ \abs{PT}^2 = d^2 - r^2 $.
+            $ \Pow_\mathscr{C} P = \abs{PT}^2 = d^2 - r^2 $.
       \item Prove Pythagoras' theorem. \index{Pythagoras' theorem}
     \end{enumerate}
-    See \autocite[14-15]{sved}.
   \end{exercise}
 
-  \chapter{Spirals}
+  \begin{exercise}
+    Let $ P $ be a point \emph{inside} a circle $ \mathscr{C} $. Show that, if $ \Pow_\mathscr{C} P $ is still defined by $ d^2 - r^2 $ where $ d $
+    is the distance from $ P $ to $ \mathscr{C} $, then $ \Pow_\mathscr{C} P $ is negative or zero (when?). Further, $ \abs{\Pow_\mathscr{C} P} $
+    is the product $ \abs{PA_1} \abs{PA_2} $ where $ [A_1,A_2] $ is any chord of the circle passing through $ P $.
+  \end{exercise}
 
-  \chapter{Three-dimensional geometry}
+  \begin{exercise}
+    Pick two points $ A $ and $ B $. Consider the family of circles which pass through both points (there are infinitely many such
+    circles, all with $ [A,B] $ as a common chord; we have a so-called \df{coaxial family of circles}).
+    \begin{enumerate}
+      \item Show that the centres of the family all lie on one line.
+      \item Show that, if $ P $ is \emph{any} point on $ \overline{AB} $, then for any two circles $ \mathscr{C}$ and $ \mathscr{D} $ in the family,
+            $ \Pow_\mathscr{C} P = \Pow_\mathscr{D} P $. The line $ \overline{AB} $ is the \df{radical axis of the coaxial family of circles}.
+      \item What if the two points $ A $ and $ B $ are the same (i.e. we consider the family of circles which are tangent to each other at some point $ A = B $).
+    \end{enumerate}
+  \end{exercise}
+
+  \begin{exercise}\leavevmode
+    \begin{enumerate}
+      \item Do two circles $ \mathscr{C}_1 $ and $ \mathscr{C}_2 $ that never intersect have a radical axis --- a line,
+            all of whose points have equal power with respect to the two circles? (Hint: yes. Further,
+            you can show that \emph{all} the points of equal power must lie on this line.)
+      \item Can you find a third circle $ \mathscr{C}_3 $ that shares the same radical axis? (Hint: yes.)
+      \item Can you find infinitely many such circles? (Hint: what do you think?)
+    \end{enumerate}
+  \end{exercise}
+
+  \begin{exercise}
+    Let $ [A,B] $ be the chord of a radical family of circles (the \df{elliptical family} $ \mathscr{C}_1 $, $ \mathscr{C}_2, $...; let $ P $ be a
+    point on the     radical axis $ \overline{AB} $. The power of $ P $ with respect to all the elliptical family is constant, and so the lengths
+    of the tangents $ [P,T_1] $, $ [P,T_2] $, ... to the elliptical family are constant. Thus the points $ T_1 $, $ T_2 $, and so on lie on some
+    circle. We can draw such a circle for each point $ P $, and we obtain a second family of circles, the \df{hyperbolic family}. Here are some facts:
+    \begin{itemize}
+      \item The circles of the two families cut each other at right angles (they are \df{orthogonal}).
+      \item The line joining the centres of the circles in the elliptical family is the radical axis of the hyperbolic family.
+      \item These circles are precisely the \df{circles of Appolonius}!!!
+    \end{itemize}
+  \end{exercise}
+
+  \section{Inversion proper}
+  The transformation we will now discuss, which is a combination of dilation and isometry, is the so-called \df{circle inversion};
+  it was (according to \autocite[77]{coxeterIntro}) invented by one L. J. Magnus in 1831. Like the reflection, if we do it twice
+  then we get the identity transformation; but unlike reflection, we fix a circle and not a line!' Our theory broadly follows chapter
+  6 of that reference.
+
+  \begin{defn}
+    Let $ O $ be the centre of a circle $ \mathscr{C} $ of radius $ k $. Given any point $ P $ distinct from $ O $ we define the \df{inverse} of $ P $
+    (with respect to $ \mathscr{C} $) to be the point $ P' = \Inv_{\mathscr{C}} P $ such that $ \abs{OP}\abs{OP'} = k^2 $.
+  \end{defn}
+
+  \begin{exercise}
+    Here are some basic properties of inversion:
+    \begin{enumerate}
+      \item If $ P' = \Inv_{\mathscr{C}} P $ then $ P = \Inv_{\mathscr{C}} P' $.
+      \item If $ P $ lies on the circle $ \mathscr{C} $ then $ P = \Inv_{\mathscr{C}} P $.
+      \item If $ P $ lies inside the circle then $ \Inv_{\mathscr{C}} P $ lies outside the circle.
+      \item If $ P $ lies outside the circle then $ \Inv_{\mathscr{C}} P $ lies inside the circle.
+    \end{enumerate}
+  \end{exercise}
+
+  \begin{exercise}
+    Show that if $ \mathscr{C} $ and $ \mathscr{D} $ are concentric circles with radii $ k $ and $ k' $
+    then inversion through $ \mathscr{C} $ followed by inversion through $ \mathscr{D} $ is just a dilation
+    through the centre of the circles of magnification $ \mu = (k/k')^2 $.
+  \end{exercise}
+
+  \begin{exercise}[Euclid III.35]
+    Let two chords $ [P,P'] $ and $ [Q,Q'] $ of a circle intersect at a point $ O $ (not necessarily the centre).
+    Then the rectangle contained by the segments of one is the rectangle contained by the segments of the other
+    (more precisely, $ \abs{OP}\abs{OP'} = \abs{OQ}\abs{OQ'} $).
+  \end{exercise}
+
+  \begin{exercise}
+    The inverse of a given point $ P $ in a circle $ \mathscr{C} $ is the second intersection of any two circles
+    through $ P $ orthogonal to the $\mathscr{C} $. (Hint: use the previous exercise.)
+  \end{exercise}
+
+  \begin{exercise}
+    Through a given point $ P $, draw a circle orthogonal to two given circles.
+  \end{exercise}
+
+  \begin{exercise}
+    Fix a circle of inversion centred at $ O $ with radius $ k $.
+    \begin{enumerate}
+      \item Any line through $ O $ inverts to itself.
+      \item Any line not through $ O $ inverts to a circle through $ O $.
+      \item Any circle through $ O $ inverts to a line not through $ O $.
+    \end{enumerate}
+  \end{exercise}
+
+  \begin{exercise}
+    Fix a circle of inversion $ \mathscr{C} $ centred at $ O $ with radius $ k $; fix another circle $ \mathscr{K} $,
+    not through $ O $, with centre $ C $. Let $ \overline{OP} $ meet the circle $ \mathscr{K} $ at the second point $ Q $.
+    Let $ p $ be the power of $ O $ with respect to $ \mathscr{K} $.
+
+    \begin{enumerate}
+       \item The dilation centred at $ O $ with magnification $ k^2/p $ transforms $ \mathscr{K} $ and the radius $ [C,Q] $ into
+             another circle $ \mathscr{L} $ with centre $ D $ and (parallel) radius $ [D,R] $, so that
+             \begin{equation}
+               \frac{\abs{OR}}{\abs{OQ}} = \frac{\abs{OD}}{\abs{OC}} = \frac{k^2}{p}.
+             \end{equation}
+       \item Show that $ R $ is the inverse of $ P $ with respect to the circle of inversion $ \mathscr{C} $.
+       \item Show that $ \mathscr{K} $ and $ \mathscr{L} $ are inverses with respect to $ \mathscr{C} $.
+    \end{enumerate}
+  \end{exercise}
+
+  One incredibly beautiful and striking application of inversion is \df{Steiner's porism} \autocite[87]{coxeterIntro}.
+
+  \begin{exercise}[Steiner's porism]
+    If we have two nonconcentric circles, one inside the other, and we draw circles successively touching them and one
+    another, it may happen that the ring of circles closes: that is, the last circle in the ring exactly touches the first.
+
+    Claim: if this happens once, it will always happen, whatever the position of the first circle.
+
+    Proof: invert the two original circles into concentric circles.
+  \end{exercise}
+
+%   \chapter{Spirals}
+%
+%   \chapter{Three-dimensional geometry}
+%   \section{Spheres, cylinders, and cones}
+%   \section{The Platonic solids}
+%   \section{M\:obius bands and Klein bottles}
 
   \restoregeometry
 
