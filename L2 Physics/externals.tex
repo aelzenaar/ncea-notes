@@ -1352,10 +1352,10 @@ Like gravity, Coulomb's law is an inverse-square law. It is not examinable at Le
 \section{Electric Potential Energy and Voltage}
 Electric fields are similar to gravitational fields in several ways. For example, both have some notion of potential energy associated
 with them. Consider a particle of mass $ q $ in a uniform electric field of strength $ E $. If we move this particle against the field
-for a distance $ \Delta x $, we do work on the particle of magnitude $ W = F \Delta x $.  But we know that $ F = Eq $, and so the work
-done is $ W = Eq \Delta x $. Hence the change in potential energy of the particle is
+for a distance $ \Delta x $, we do work on the particle of magnitude $ W = -F \Delta x $ (why is there a minus sign?).  But we know that $ F = Eq $, and so the work
+done is $ W = -Eq \Delta x $. Hence the change in potential energy of the particle is
 \begin{equation}
-  \Delta U_{\text{electric}} = E q \Delta x.
+  \Delta U_{\text{electric}} = -E q \Delta x.
 \end{equation}
 The similarity to the equation for $ E_g $ is apparent: $ \Delta x $ corresponds to height, $ q $ to mass, and $ E $ to the acceleration
 due to gravity.
@@ -1363,7 +1363,7 @@ due to gravity.
 The change in energy per unit charge over a given distance is called the \textbf{electric potential difference} or \textbf{voltage difference}
 between those points. The units of voltage are volts (V), and by definition the voltage difference over a distance $ \Delta x $ is
 \begin{equation}
-  \Delta V = E \Delta x
+  \Delta V = -E \Delta x
 \end{equation}
 This allows us to define another unit for electric field strength, \si{\volt\per\metre}.
 
@@ -1387,7 +1387,7 @@ down a field line the voltage will decrease.
 
 Noting that we have
 \begin{equation}
-  E = \frac{\Delta V}{\Delta x} = \od{V}{x},
+  E = -\frac{\Delta V}{\Delta x} = -\od{V}{x},
 \end{equation}
 we have another intuitive viewpoint of a field: the rate of change of potential difference. As we move from points of low voltage
 to points of high voltage, we move up the field; so the electric field points in the opposite direction to that in which the potential
