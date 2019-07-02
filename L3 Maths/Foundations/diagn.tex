@@ -1,0 +1,143 @@
+\documentclass{exam}
+\usepackage[utf8]{inputenc}
+
+\usepackage[parfill]{parskip}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{microtype}
+\usepackage{siunitx}
+\DeclareSIUnit\year{yr}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+\usepackage{sidecap}
+\sidecaptionvpos{figure}{c}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{commath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{wasysym}
+\usepackage{tabularx}
+
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{iden}{Identity}
+\newtheorem*{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem*{defn}{Definition}
+\newtheorem*{ex}{Example}
+
+% russian integral
+\usepackage{scalerel}
+\DeclareMathOperator*{\rint}{\scalerel*{\rotatebox{17}{$\!\int\!$}}{\int}}
+
+\pgfplotsset{vasymptote/.style={
+    before end axis/.append code={
+        \draw[densely dashed] ({rel axis cs:0,0} -| {axis cs:#1,0})
+        -- ({rel axis cs:0,1} -| {axis cs:#1,0});
+    }
+}}
+
+% \qformat{Question \thequestion: \thequestiontitle\hfill}
+
+\begin{document}
+
+\section*{NCEA Level 3 Calculus\\Prerequisite Knowledge}
+
+I am often asked by Y12 students, `what should I know for Y13?'. This is a list of the \emph{absolute minimum}
+knowledge required for L3 calculus: and by `minimum knowledge', I mean that you should be able to do the following
+things (a) \emph{without} a calculator, (b) without too much thought (i.e. they should be second nature), and (c)
+understanding what you are doing at each step.
+
+If you cannot do the following things without a calculator, or if they take you more than about five minutes each,
+you will struggle significantly with getting a bare pass in NCEA L3 calculus. That being said, I normally give this
+sheet out at the end of term 2 of Y12, and so you have the time to get up to speed before next year.
+
+\begin{enumerate}
+  \item Write the following expression as a single fraction:
+    \begin{displaymath}
+      \frac{y + x}{3x + 2} + \frac{x^2 - xy}{y}
+    \end{displaymath}
+  \item Fully expand the following expression:
+    \begin{displaymath}
+      (x + 2)(x - 1)(x + y)(y + 3)
+    \end{displaymath}
+  \item Draw the graph of $ (x - 3)^2 + 4 = y $.
+  \item Draw the graph of $ -x^2 - 7x - 12 = y $.
+  \item Draw the graph of $ 10^{x + 1} = y + 2 $.
+  \item Draw the graph of $ (x - 3)(x - 2)(x - 1) = y $.
+  \item Find the vertex of $ (x - 3)^2 + 1 = y $.
+  \item Find the vertex of $ x^2 + px + q = y $.
+  \item If $ -1 < x < 1 $, what values can $ x^2 + 2x $ assume?
+  \item Find all $ x $ such that $ \frac{x}{x - 4} < \frac{-1}{x + 2} $.
+  \item Find $ \log_{10} (100000) $ and $ \log_{10} (0.00001) $.
+  \item The following illustrate properties of logarithms; identify the property and the corresponding rule for
+        exponents. As an example the first is done for you.
+    \begin{parts}
+      \part $ \log_{10} 710 = \log_{10} 7.1 + \log_{10} 100 $. \emph{Solution:} This illustrates the property $ \log_b xy = \log_b x + \log_b y $,
+            which corresponds to the exponent property $ b^{x + y} = b^x b^y $.
+      \part $ \log_3 2^{7.1} = 7.1 \log_3 2 $
+      \part $ \log_7 1 = 0 $
+      \part $ \log_{37} 37 = 1 $
+      \part $ \log_{37} \frac{(37)(59)}{67} = \log_{37} 37 + \log_{37} 59 - \log_{37} 67 $
+      \part $ \log_{18} \sqrt[18]{318} = \frac{1}{18} \log_{18} 318 $
+    \end{parts}
+  \item Solve for $ x $, if $ \log_x \frac{1}{x^4} = -4 $.
+  \item Write $ \frac{\log_{10} x}{\log_{10} b} $ as a single logarithm.
+  \item Solve for $ x $ if $ 3^{x^2 - 2x + 1} = 9 $.
+  \item Find the equation of a line through $ (3,2) $ and $ (6,3) $. What is the slope of this line?
+  \item Prove that there is no line passing through all three points $ (0,1) $, $ (1,0) $, and $ (1,1) $.
+  \item If a right angled triangle has side lengths 5, 12, and 13:
+        \begin{parts}
+          \item State Pythagoras' theorem in general, and check that it `works' in this specific case.
+          \item What are the sines of the three angles of the triangle?
+        \end{parts}
+  \item Draw $ y = \sin x $, $ y = \tan x $, and $ y = \cos x $ on the same pair of axes, labelling the important points (maxima, minima, roots, asymptotes).
+  \item Prove that the distance between $ (x_0, y_0) $ and $ (x_1, y_1) $ is $ \left((x_0 - x_1)^2 + (y_0 - y_1)\right)^{1/2} $.
+  \item On a number line indicate the values of $ x $ which satisfy $ (x + 2)^2 \geq 0 $.
+  \item Find explicitly all values of $ x $ that satisfy $ 2x^2 - 13 \leq x^2 + 12 $.
+  \item Find all points $ (x,y) $ that lie on both the following lines:
+    \begin{gather*}
+      y = x - 9\\
+      2x + y = 3
+    \end{gather*}
+  \item Solve the following system of equations:
+    \begin{gather*}
+      x - 2y + 3z = 9\\
+      -x + 3y - z = -6\\
+      2x - 5y + 5z = 17.
+    \end{gather*}
+  \item If $ f $ is a function defined by $ f(x) = (x + 3)(x - 2)(10^{x - 3}) $, find (a) $ f(3) $; (b) $ f(z) $; (c) $ f(x + 3) $.
+\end{enumerate}
+
+\paragraph{References.}
+\begin{itemize}
+  \item David Crowdis and Brendon Wheeler, \textit{Precalculus Mathematics}. Benziger Bruce and Glencoe (1976). In particular chapters 2, 4, 5, 6, 7.
+\end{itemize}
+
+\section*{Where can I go with L3 calculus?}
+Calculus is \emph{required} for the following:
+\begin{itemize}
+  \item Engineering
+  \item Physics
+  \item Pure mathematics
+  \item Applied mathematics
+  \item Economics
+\end{itemize}
+
+Calculus is \emph{strongly recommended} for the following (i.e. you should take it, and if you don't
+then you will find the first year university calculus paper they make you take very difficult indeed):
+\begin{itemize}
+  \item Chemistry
+  \item Medicine
+  \item Computer science
+  \item Biology
+  \item Statistics
+\end{itemize}
+
+\end{document}

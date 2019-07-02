@@ -43,6 +43,8 @@ My new Level Two Mathematics notes are available [here](L2%20Maths/bookform.pdf)
  22. (2.12/2.13)	Probability and risk
  23. (2.12)			Probability distributions
 
+There is also a [sheet](L3%20Maths/Foundations/diagn.pdf) of diagnostic questions that assess the bare minimum of skills and knowledge required for the transition to L3.
+
 ### Level Three and Scholarship Calculus
 I have almost completed the process of reworking and reorganising my L3/Scholarship maths notes; I have written the following sets of notes, designed
 to be used broadly in the given logical order and aligned with the L2 notes above.
