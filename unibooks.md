@@ -127,11 +127,6 @@ My favourite multi-dimensional calculus book, is, in fact, Loomis & Sternberg, _
 
 **Other books people recommend but I've not read:** Curtis, _Linear Algebra: An Introductry Approach_; Axler, _Linear Algebra Done Right_; Treil, _Linear Algebra Done Wrong_.
 
-### Discrete/computational mathematics (162)
-
- * Donald Knuth, _Concrete Mathematics: A Foundation for Computer Science_. Apparently this is the one true elementary computational mathematics
-   book. I am yet to subject myself to it. (510 G74)
-
 ### Logic, "proofs", and naive set theory (255)
  * Kevin Houston, _How to Think Like a Mathematician_. I'm philosophically opposed to a book that tries to teach "proofs" without teaching mathematics, but
    if I had to pick a book to do it it would be this one. It's very slow, very friendly, and incredibly fluffy. I photocopy some parts for college students
@@ -156,8 +151,7 @@ My favourite multi-dimensional calculus book, is, in fact, Loomis & Sternberg, _
 ### Differential Equations (260)
  * George F. Simmons, _Differential Equations with Applications and Historical Notes_. I have a feeling that most differential equations books tend to be
    a list of one unmotivated trick after another; this is another such book, but it is well-written, includes some fairly nice examples, and some pretty
-   geometry. So despite sharing [Rota's opinions](https://web.williams.edu/Mathematics/lg5/Rota.pdf) on a superficial level, I have had some good times with
-   this book. (515.312 S59)
+   geometry. (515.312 S59)
  * Wolfgang Walter, _Ordinary Differential Equations_. A more modern book; quite geometric, quite physical but mathematically rigorous. The exercises
    are quite difficult. (515.352 W23)
  * Vladimir Arnol'd, _Ordinary Differential Equations_. This book is a very nice treatment of the geometry of differential equations, especially those
@@ -181,17 +175,13 @@ To add in 2019.
    algebra as a modern and up-to-date subject, but he doesn't do enough group and field theory to be able to introduce anything beyond a short historical sketch).
    I can't stand this book: he spends so much time doing computational examples that he hardly gets around to the algebra! Worth buying? No. (Also, it's disgustingly
    expensive.) The library has copies if you feel you need it. (512 G16)
- * Charles Pinter, _A Book of Abstract Algebra_. This is the book that 320 *should* be using, in my opinion. Very readable, lots of interesting
-   exercises (both applications, if you're into that kind of thing, and pure mathematics: the proof of the structure theorem for abelian groups
-   is left as a structured set of exercises, for example). Also very cheap. Buy this book. (512 P65)
+ * Charles Pinter, _A Book of Abstract Algebra_. Introductory book at the level of 320. Lots of interesting exercises covering both applications
+   and pure mathematics: the proof of the structure theorem for abelian groups is left as a structured set of exercises, for example. Also very cheap. (512 P65)
  * Michael Artin, _Algebra_. This is the best introductory algebra book I know of. Lots of geometry (e.g. he classifies all of the motions of the plane).
    Focuses heavily on linear algebra. Maybe a little light on the proofs (not that he's not rigorous, but make sure you do the exercises, or you'll miss out
    on stuff). Highlights include a chapter on Galois theory (first edition only) and a chapter on group representations. (512 A79)
  * John Dixon, _Problems in Group Theory_. Pitched at higher level than 320, but I like it and it should be good for 720 and 721 as well, so well worth the
    cheap price. (512.22 D62)
- * Grigore Călugăreanu and Peter Hamburg, _Exercises in Basic Ring Theory_. Basically what it says on the tin. (512.4 C16)
- * David Bishop, _Group Theory and Chemistry_. Not actually a maths text, it's cute that he tries to prove some of the theorems of elementary group theory but
-   I'm not entirely sure why he bothers. If you want applications of the 320 material, look here (but don't look too deep, you might catch chemistry germs). (*)
  * Ian Stewart, _Galois Theory_. Once you have an OK grounding of the material in 320 (basic facts about groups, rings, and fields) then this book is a readable
    introduction to Galois theory. Famously full of typos. Later editions (3rd and 4th) start by proving everything over ℂ before moving to arbitrary fields.
    Covers all the basic material (field extensions, proof of impossibility of general solutions to the quintic using radicals). Plenty of exercises, computational
@@ -202,8 +192,7 @@ To add in 2019.
 **Other books people recommend but I've not read:** Vinberg, _A Course in Algebra_.
 
 ### Combinatorics and finite geometry (326)
- * Robin Wilson, _Introduction to Graph Theory_. Elementary book. Easy exercises. Use to study before exam if you're into that kind of thing. (511.6 W75)
- * Rudolf and Gerda Fritsch, _The Four Colour Theorem_. Nice little book for context. (511.5 F919)
+ * Robin Wilson, _Introduction to Graph Theory_. Elementary book. Easy exercises. (511.6 W75)
  * Robert Wilson, _Graphs, Colourings, and the Four-Colour Theorem_. Proves most of the results for planar graphs and graph colourings that are needed for 326; no
    exercises. (511.5 W74)
  * Miklos Bona, _A Walk Through Combinatorics_. This is the only book you need for 326; it covers everything (bits with more detail than needed, bits with slightly
@@ -211,10 +200,10 @@ To add in 2019.
    does cover a lot of random topics that should be of interest both for computer science and mathematics. (511.6 B697)
  * Bela Bollobas, _Modern Graph Theory_; Reinhard Diestel, _Graph Theory_. First couple of chapters from these are good for the graph theory part of 326. Nice
    exercises, but take care that these books are harder than you need. (511.6 B69m and 511.5 D56)
- * W.D. Wallis, _Combinatorial Designs_. This book is the must-have book for the block designs section of 326, IMHO. I really like the tone, it goes through a lot
-   of different examples and explicit constructions, and it has plenty of literature references. The book is quite good for proofs, and he presents some of the
-   arguments in a more explicit way than the lecture notes. The exercises are fine but nothing special (not very many, often computational). The typesetting isn't
-   that great. (511.6 W21)
+ * W.D. Wallis, _Combinatorial Designs_. This book is the must-have book for the block designs section of 326, in my opinion. I really like the tone, it
+   goes through a lot    of different examples and explicit constructions, and it has plenty of literature references. The book is quite good for proofs,
+   and he presents some of the arguments in a more explicit way than the lecture notes. The exercises are fine but nothing special (not very many, often
+   computational). The typesetting isn't that great. (511.6 W21)
  * Martin Aigner, _Combinatorial Theory_; Jack Graver and Mark Watkins, _Combinatorics with emphasis on the theory of graphs_. These books are far too difficult
    for 326, but I found the more abstract perspectives in the first few chapters rather enlightening; Aigner, for example, develops the theory of counting entirely
    via counting bijections and surjections and so forth; and G&W develops graph theory in a much more abstract way first. (511.6 A28Y) and (511.6 G77)
@@ -237,7 +226,7 @@ To add in 2019.
 
    Let me compare it directly with Rudin: Rudin is shorter, denser, and deeper; D&D is longer, friendlier, more detailed, and covers slightly less material.
 
-   One major complaint: there is no explicit construction of the real numbers. (They try to explain a construction via decimal expansions in a very
+   One complaint: there is no explicit construction of the real numbers. (They try to explain a construction via decimal expansions in a very
    handwavy way; there is also almost an outline of a construction via Cauchy sequences in exercise 2.8.L; I know that Tao does this same construction
    in the same kind of detail as the rest of D&D, so it might be an idea to look there for this material. Or in Rudin, or Landau.)
 
@@ -247,13 +236,14 @@ To add in 2019.
    over ℝ); Tao is a very good writer, but I personally found this book to be a little slow. (It might actually work as an alternative
    to Spivak's _Calculus_ for good first-year students.) The construction of ℝ is done via the equivalence-class-of-Cauchy-sequences method, which
    is my personal favourite; it is well-motivated and done in detail, and in fact takes a significant part of the book. The reasoning for this is
-   explained in some detail in the preface. (515 T17, but a new edition is available online through the library.)
+   explained in some detail in the preface. (515 T17, but a new edition is available online through the library)
  * Terence Tao, _Analysis II_. This is the sequel (obviously) to _Analysis I_, and covers analysis on metric spaces through to a construction of
    Lebesgue integration. I have not read it, but judging from the first volume it will likely be a good alternative to the post-chapter-9 section
    of baby Rudin. (Available online through the library)
  * Walter Rudin, _Principles of Mathematical Analysis_. The first eight chapters are an incredibly clean and terse exposition of metric space theory.
    People I know have called it dry, but I didn't actually find it that bad - it is a little lacking in motivation, so maybe it would be a good idea
-   to pick up a shiny book like Davidson & Donsig above as well for historical details and more examples.
+   to pick up a shiny book like Davidson & Donsig above as well for historical details and more examples. (I personally used a mixture of the two when
+   I learned real analysis.)
 
    I prefer Loomis & Sternberg (see below) for multivariable analysis. (I did try to work through chapter 9, and despite knowing what he was trying to do at every
    point - it's just material from 253 - it's incredibly clunkly and awful. Belive me, I thought the Chicago bibliography would be exaggerating on this
@@ -275,8 +265,7 @@ To add in 2019.
    metric spaces, though - use Rudin here, it's a good supplement. Kolmogorov & Fomin is also nice to read alongside.
 
    Having thought about it for a while, I think it's incredibly likely that this is the textbook I have spent the most time with over the past year:-
-   it was used in the topology course I took in 2018 (MAT 327 at UofT), and I must have spent at least an hour a day with it, doing readings or assignment
-   questions. (Perhaps Griffith's _Intro. to Electromagnetism_ is another strong contender; or Halmos' set theory book.)
+   it was used in the topology course I took in 2018, and I must have spent at least an hour a day with it, doing readings or problems.
 
    ([Errata](http://drorbn.net/index.php?title=10-327/Errata_to_Munkres%27_Book)) (514.3 M96)
 
@@ -313,6 +302,12 @@ The first few books here, broadly speaking, are complex calculus books; the latt
  * Tristan Needham, _Visual Complex Analysis_. This book attempts to construct complex analysis purely geometrically. It is quite successful
    in building intuition, but there are no proofs at all and a number of theorems are only (strongly) hinted at rather than stated - even important ones
    like Cauchy's theorem. (515.9 N37)
+ * Elias Wegert, _Visual Complex Functions_. Another visual book, of a different style to Needham. This book develops the theory with proper
+   proofs, and has a much more mathematical flavour. The tool of choice here is the `graph' (in some sense) of the complex function; this is in
+   contrast to Needham's approach via differentiation. (Available through SpringerLink)
+
+ * Joseph L. Taylor, _Complex Variables_. This is a new and shiny (2011) book that is roughly at the level of 341. (515.9 T23)
+
  * John Conway, _Functions of One Complex Variable I_. I found this book to be readable, if a little slow. (515.93 C76)
  * Lars Ahlfors, _Complex Analysis_. This is a little old-fashioned, but very geometric. My main issue is that everything is done by partial
    differentiation and differential forms; there is also not a lot of emphasis on series representations (analyticity) in the first
@@ -322,22 +317,32 @@ The first few books here, broadly speaking, are complex calculus books; the latt
    theorems with less general theorems involving the Riemann integral. (515.7 R916)
 
 ### Classical geometry
+Elementary books.
+
+ * George Birkhoff and Ralf Beatley, _Basic Geometry_. This is perhaps the best high school geometry book I know of, although much of it is quite
+   dated in style and culturally USA-centric. (516.2 B61)
+
  * Serge Lang and Gene Murrow, _Geometry: A High School Course_. Wait, a Lang book for high school students?! (Please allow me to repeat the standard
-   joke: the reason Bourbaki stopped writing new textbooks is that he realised Lang was just one person.) In all seriousness, all high school geometry
-   texts that I know of are terrible, but this is the least so. (516 L27)
+   joke: the reason Bourbaki stopped writing new textbooks is that he realised Lang was just one person.) (516 L27)
+
+Axiomatic geometry books.
 
  * Robin Hartshorne, _Geometry: Euclid and Beyond_.  Hartshorne follows Euclid, putting him on a firm axiomatic foundation. The capstone of the book is a discussion
    of polyhedra. You should have a little algebra for the last stretch, but the rest should actually be accessible to a high-school student! (516 H33)
  * John M. Lee, _Axiomatic Geometry_. This book is like Hartshorne but in a much more formal style; it's written for future teachers, but it develops Euclidean
    geometry (and only Euclidean geometry, although there is some hyperbolic stuff at the end) in a synthetic and formal way. I secretly quite like this book,
    but I will never admit it. This is the book I use to look things up if I feel the urge to know how (for example) the inscribed angle theorem is proved. (516 L47)
+ * Alfred S. Posamentier and Charles S. Salkind, _Challenging Problems in Geometry_. Heard of Ceva's theorem and want to know more? Want to learn some
+   geometry? Buy this (cheap) book and do all the problems. All are very good. Difficulty from school level upwards. (*)
+
+Conic sections.
 
  * Kieth Kendig, _Conics_. This book is everything you always suspected about conic sections and it is amazing. Please read it. (516.352 K33)
  * George Salmon, _A Treatise on Conic Sections_. If you read Kendig and want to know more, this book (from the 1800s) is very good but a little difficult to read
    due to its age. Serving recommendation: read and try to make Salmon's statements precise with projective geometry and/or complex algebra. (516.3 S17)
 
- * Alfred S. Posamentier and Charles S. Salkind, _Challenging Problems in Geometry_. Heard of Ceva's theorem and want to know more? Want to learn some
-   geometry? Buy this (cheap) book and do all the problems. All are very good. Difficulty from school level upwards. (*)
+Modern geometry.
+
  * Marta Sved, _Journey into Geometries_. This is a very strange book which motivates non-Euclidean geometry (hyperbolic geometry in particular) with
    the characters of Alice in Wonderland. It's well worth the read. (516.0076 S96)
  * Harold Coxeter, _Introduction to Geometry_ and _Geometry Revisited_. These books are both full of a lot of nice university geometry with some quite
@@ -357,35 +362,26 @@ The first few books here, broadly speaking, are complex calculus books; the latt
  * Michael Spivak, _A Comprehensive Introduction to Differential Geometry_. Five volumes of painfully typeset beautiful geometry. 10/10 would etc. etc. (516.36 S76)
 
 ## Postgraduate texts
-Please see also the Stage III section above; these books are split out simply because they do not fit
-nicely into a category above.
 
 ### Algebra
- * Joseph Rotman, _Advanced Modern Algebra_. This book is supposed to be very good, but something about it rubs me the wrong way. I'm
-   not too sure what the problem is: maybe it's a little too chatty, and it motivates everything (at least initially) with number theory?
-   I will come back to it at some point, maybe I will like it better. (512 R84a)
- * Lang, _Algebra_. Please, make it stop. (512 L26a)
+General algebra.
+ * Joseph Rotman, _Advanced Modern Algebra_. This book is supposed to be very good, but something about it annoys me.
+   I'm not too sure what the problem is: maybe it's a little too chatty, and it motivates everything (at least initially)
+   with number theory? I will come back to it at some point, maybe I will like it better. (512 R84a)
+ * Serge Lang, _Algebra_. I am currently spending a significant amount of time with this book as I relearn
+   a lot of the algebra I haven't used for a couple of years. I like the ability to open up at a random page
+   and begin to work without needing to read the previous hundred pages; I dislike the confusing text and
+   the inconsistent leaps of logic. (512 L26a)
 
-### Analysis
- * See _Real and Complex Analysis_ by Rudin above.
- * Terrence Tao, _An Introduction to Measure Theory_. (515.42 T17)
+Category theory.
+ * William Lawvere and Stephen Schanuel, _Conceptual Mathematics_. The ambiguous title hides that this is a book on
+   category theory, written primarily to appeal to undergraduates with limited experience with the traditional motivating
+   topics like algebraic topology. I remember trying to read it a couple of years ago and being annoyed by the lack of
+   examples (the main theatre of examples used is the study of diagrams themselves); but if you can come up with your
+   own examples then it is likely a nice friendly introduction. For this reason it would be nice to have this book as
+   an alternative, but not as a replacement, for something like Mac Lane. (511.3 L42)
 
-## Physics books
-Here are some physics books. I do not read as much physics as I do mathematics, but nonetheless here are some book
-recommendations that are likely embarrassing.
- * Daniel Kleppner and Robert J. Kolenkow, _An Introduction to Mechanics_. This is a nice introduction to mechanics
-   for first-years. (531 K64)
- * Michael Spivak, _Physics for Mathematicians: Mechanics I_. (531 S76)
- * David Griffiths, _Introduction to Electrodynamics_. This is the text for 202. I didn't enjoy 202; is this book
-   any good? Please tell me, I'm not sure. (537.6 G84)
- * T. W. B. Kibble, _Classical Mechanics_. This is the text for the mechanics papers; I have the third edition (with
-   the black and pink cover), and it is almost comically concise (this complaint coming from someone who likes baby
-   Rudin). I think the later editions, which include F. H. Berkshire as an additional author, are somewhat less concise.
-   Perhaps it is a good book for people who have better physical intuition than I. (531 K46)
- * Richard Feynman, _Surely You're Joking, Mr. Feynman!_ and _What Do You Care What Other People Think?_. These books are classic, but they
-   are a little old-fashioned (sorry, what I mean to say is that they are quite sexist). (530.0973 F43Y and 530.0973 F43Yw)
- * Richard Feynman, _The Feynman Lectures on Physics_ These are the "classic" undergraduate physics books. If you like Feynman's style,
-   you will probably enjoy these books more than I do. (540 F43)
+ * Mac Lane, _Categories for the Working Mathematician_. This is the standard introductory text. (512.55 M16)
 
 ## Books I want to get around to reading and/or writing about here
  * Coxeter, _Regular Polytopes_.
@@ -396,10 +392,7 @@ recommendations that are likely embarrassing.
 ## My favourite books
  * Artin, _Algebra_
  * Berger, _Geometry_
+ * Coxeter, _Introduction to Geometry_
  * Halmos, _Naive Set Theory_
- * Hartshorne, _Geometry: Euclid and Beyond_
- * Landau, _Foundations of Analysis_
  * Loomis and Sternberg, _Advanced Calculus_
  * Rudin, _Principles of Mathematical Analysis_
- * Rudin, _Real and Complex Analysis_
- * Wallis, _Combinatorial Designs_
