@@ -5,6 +5,7 @@
 \usepackage{OldStandard}
 \usepackage{microtype}
 \usepackage[inline]{enumitem}
+\usepackage{multicol}
 \usepackage{tabu}
 \usepackage[english]{babel}
 \usepackage[autostyle, english=british]{csquotes}
@@ -288,11 +289,10 @@
     away, around the Earth, is Wellington from the nearest point on the Equator?
   \end{exercise}
 
-  Two angles who share a common vertex are called \df{adjacent}. If $ \angle{AOB} $ and $ \angle{BOC} $ are adjacent,
+  Two angles which share a common ray are called \df{adjacent}. If $ \angle{AOB} $ and $ \angle{BOC} $ are adjacent,
   then $ \angle{AOC} = \angle{AOB} + \angle{BOC} $.
 
-  The following terms are standard, but basically unimportant. We will not use them in these notes, but
-  they are included for reference purposes.
+  The following terms are standard, but basically unimportant. We will use them only occasionally in these notes.
   \begin{enumerate}
     \item Two angles whose measure sum to \ang{180} are called \df{supplementary}.
     \item Two angles whose measure sum to \ang{90} are called \df{complementary}.
@@ -350,7 +350,7 @@
   that lies inside the polygon is cut off by one of the angles at the vertex whose rays include the edges of the polygon, and this
   angle is called the \df{interior angle} of the polygon. The other angle is called the \df{exterior angle}. If a polygon's interior
   angles are all acute, then the polygon is called \df{convex}. If all the interior angles of a polygon are equal, the polygon is
-  called \df{equiangular}. If a polygon is both equiangular and equilateral, it is called \df{regular}.
+  called \df{equiangular}. If a polygon is both equiangular and equilateral, it is called a \df{regular polygon}.
 
   \begin{exercise}
     The internal angles of a triangle add to \ang{180}. The internal angles of a normal quadrilateral add to \ang{360}. What do the internal
@@ -377,6 +377,11 @@
     Draw a circle with centre $ O $; let $ AB $ be a diameter of the circle, and pick a point $ X $ on the circle.
     Then $ AXB $ is a right-angled triangle with right angle at $ X $.
   \end{exercise}
+
+  Thales is, according to classical sources, the mathematician credited with first introducing geometry to Greece (from
+  ancient Egypt, where he measured the heights of the pyramids); according to Proclus, ``[Thales] first went to Egypt and
+  thence introduced this study into Greece. He discovered many propositions himself, and instructed his successors in the
+  principles underlying many others.'' (quoted in \autocite[128-129]{heathHistory}).
 
   \section{Congruence and similarity}
   Suppose $ \mathscr{F} $ and $ \mathscr{G} $ are \df{figures} (complicated collections of points, like polygons or circles). It is
@@ -492,6 +497,23 @@
     If one (and therefore both) hold, then $ ABC $ is called \df{isosceles}.
   \end{exercise}
 
+  \begin{exercise}
+    Prove the following:
+    \begin{enumerate}
+      \item The opposite sides of a parallelogram have equal length. [Hint: consider a diagonal of the parallelogram.]
+      \item The opposite angles of a parallelogram are equal.
+      \item The diagonals of a parallelogram intersect each other.
+      \item If the opposite sides of a quadrilateral are equal, then the figure is a parallelogram. [Hint: consider a diagonal again.]
+    \end{enumerate}
+  \end{exercise}
+
+  \begin{exercise}
+    Let $ ABC $ be a triangle, let $ M $ be the midpoint of $ [A,B] $, and consider the lines through $ M $
+    parallel to the other two sides of the triangle. The large triangle $ ABC $ is now cut into two smaller
+    triangles, and a quadrilateral. Show that the two smaller triangles are congruent to each other, and similar
+    to $ ABC $.
+  \end{exercise}
+
   \section{Perimeter and circumference}
   The \df{perimeter} of a polygon $ \mathscr{F} = A_1 A_2 \cdots A_n $ is defined to be the sum
   \begin{equation}
@@ -547,7 +569,7 @@
   The \df{area} of a square $ \mathscr{S} $ of side length $ x $ is defined to be $ \mathcal{A}(\mathscr{S}) = x^2 $.
 
   We will now extend the idea of area to more complicated figures; the basic ideas we want are the following:
-  \begin{axs}[Area function]
+  \begin{axs}[Area function]\label{defn:area}
     Suppose we define some way of assigning a number to a collection of different figures (for example, we have just assigned a
     number --- area --- to every figure in the collection of squares). We will say that this method of assigning numbers is a \df{Jordan
     area method} if the following are true:
@@ -597,7 +619,7 @@
     \end{enumerate}
   \end{exercise}
 
-  \begin{exercise}
+  \begin{exercise}\label{ex:areasofquadrilaterals}
     In exercise \ref{ex:typesofquadrilaterals} we named several different types of quadrilaterals. Find the area of each.
   \end{exercise}
 
@@ -614,7 +636,7 @@
     Let $ ABC $ be a triangle and let $ \ell $ be a line parallel to $ \overline{BC} $ intersecting $ [A,B] $
     at $ D $ and $ [A,C] $ at $ E $. Then the following proportions hold:
     \begin{equation}\label{eqn:sidesplitter}
-      \frac{\abs{AD}}{\abs{AB}} = \frac{AE}{AC} \text{ and } \frac{\abs{AD}}{\abs{DB}} = \frac{\abs{AE}}{\abs{EC}}.
+      \frac{\abs{AD}}{\abs{AB}} = \frac{\abs{AE}}{\abs{AC}} \text{ and } \frac{\abs{AD}}{\abs{DB}} = \frac{\abs{AE}}{\abs{EC}}.
     \end{equation}
   \end{prp}
   \begin{proof}
@@ -632,7 +654,7 @@
     Hints:
     \begin{itemize}
       \item There is a point inside the polygon which is equidistant from every vertex. You may assume this without proof. Try rearranging
-            the triangles you can form using this point, and apply the previous exercise.
+            the triangles you can form using this point, and apply exercise \ref{ex:areasofquadrilaterals}.
       \item You should get a slightly different answer for odd $ n $ than for even $ n $.
     \end{itemize}
 
@@ -971,6 +993,35 @@
     \end{enumerate}
   \end{exercise}
 
+  \section{Origami}
+  We want to consider a square piece of paper (with side length 1, say). We will allow ourselves to fold
+  only creases that are reproducable: that is, we will not allow ourselves to carry out a folding procedure
+  that does not produce consistent results.
+
+  We therefore must start with either a side-to-side fold, or a corner-to-corner fold; the first will give
+  us the midpoints of two opposite sides (and the line joining them), and the second will give us a diagonal
+  of the square.
+
+  To be consistent, we will label our paper $ ABCD $ anticlockwise from the top left.
+
+  \begin{exercise}\leavevmode
+    \begin{enumerate}
+      \item Using only reproducable folds, fold $ C $ to the midpoint, $ E $ of $ [A,B] $.
+      \item Let $ F $ be the point marked off from $ [C,D] $. Show that $ DEF $ is a right triangle
+            with side lengths in the ratio $ 3 : 4 : 5 $.
+      \item Prove \df{Haga's first theorem} \autocite[7]{haga}: if the folds are performed in this way then:
+        \begin{enumerate}
+          \item The edge $ [C,D] $ is divided in the ratio $ 3 : 5 $.
+          \item The edge $ [A,B] $ is divided in the ratios $ 2 : 1 $ and $ 7 : 1 $.
+          \item The edge $ [B,C] $ is divided in the ratio $ 3 : 5 $.
+        \end{enumerate}
+    \end{enumerate}
+  \end{exercise}
+
+  \begin{exercise}
+    Prove \df{Haga's second theorem}
+  \end{exercise}
+
   \chapter{Tilings and wallpaper patterns}
   Early in our studies we defined the concept of a \df{transformation}: a way of moving points around. We defined a \df{isometry}
   to be a transformation that preserved distance, and theorem \ref{thm:classisom} told us that there were only five kinds.
@@ -1215,12 +1266,181 @@
     Proof: invert the two original circles into concentric circles.
   \end{exercise}
 
-%   \chapter{Spirals}
-%
-%   \chapter{Three-dimensional geometry}
-%   \section{Spheres, cylinders, and cones}
-%   \section{The Platonic solids}
-%   \section{M\:obius bands and Klein bottles}
+
+  \chapter{Three-dimensional geometry}
+  Solid geometry was also studied by the Greeks, and indeed it has often been said (sometimes even jokingly)
+  that Euclid's goal was not to write a book on elementary geometry; it was to write an admittedly longwinded
+  book on the platonic solids \autocite[13]{coxeterPoly}.
+
+  \section{Spheres, cylinders, and cones}
+  The most basic kinds of solids are the \df{prisms}: we take a polygon and stretch it ``upwards'', out of the plane it lies in. A rectangular
+  prism is a brick shape, which is obtained by taking a rectangle (one of the ends) and stretching it to create depth.
+
+  \begin{exercise}
+    Draw triangular and pentagonal prisms.
+  \end{exercise}
+
+  In three dimensions, there are a variety of analogues for circles. They are all familiar objects in everyday life:
+  \begin{defn}\leavevmode\label{defn:solids}
+    \begin{enumerate}
+      \item If $ O $ is a fixed point and $ \rho $ is a fixed positive number, the locus of all points $ X $ in three-dimensional
+            space such that $ \abs{OX} = \rho $ is called the \df{sphere} centred at $ O $ with radius $ \rho $. The sphere together
+            with its interior is called a \df{ball}.
+      \item If $ \mathcal{C} $ is a circle with centre $ O $ and radius $ \rho $, and $ P $ is a point on the line through $ O $ perpendicular to
+            the plane containing $ \mathcal{C} $, then the \df{right circular cylinder} with height $ [O,P] $ and base $ \mathcal{C} $
+            is the set of all points that lie on circles with radius $ \rho $ centred on $ [O,P] $.
+      \item if $ \mathcal{C} $ is a circle with centre $ O $ and radius $ \rho $, and $ P $ is a point that does not lie in the plane
+            containing $ \mathcal{C} $, then the \df{circular cone} with base $ \mathcal{C} $ and apex $ P $ is the set of all points
+            that lie on segments $ [P,X] $ where $ X $ is a point inside $ \mathcal{C} $.
+    \end{enumerate}
+  \end{defn}
+
+  \begin{exercise}
+    Draw pictures of all three types of figure from the above definition. What do you get if you intersect them with each other?
+  \end{exercise}
+
+  Our main goal is to calculate the \df{volume} enclosed by each of the three objects in definition \ref{defn:solids}. A formal
+  definition of volume would go somewhat like the definition of area in \ref{defn:area}; I will not write down the full definition
+  here. Rather than being too precise, we will use informal reasoning like in the following proposition.
+
+  \begin{prp}
+    A rectangular prism $ \mathcal{RP} $ with side lengths $ x $, $ y $, and $ z $ has volume $ \mathcal{V}(\mathcal{RP}) = xyz $.
+  \end{prp}
+  \begin{proof}[``Proof'']
+    The base of the rectangular prism has area $ xy $. If the height was 1, then the volume would be $ 1 \cdot xy $;
+    but we have a height of $ z $, and so we stretch the short prism by $ z $; since we have stretched in one direction
+    we need to multiply the volume by the stretch factor, and the new volume is $ z \cdot 1 \cdot xy = xyz $.
+  \end{proof}
+
+
+  (Note we often abuse language and say that an object \emph{has} a volume, rather than the more correct statement that
+  the object \emph{encloses} a volume.)
+
+  \begin{exercise}
+    Use similar reasoning to justify the formula for the volume of a cylinder $ \mathcal{CY} $ with height $ h $ and radius $ \rho $:
+    \begin{equation}
+      \mathcal{V}(\mathcal{CY}) = \pi r^2 h.
+    \end{equation}
+  \end{exercise}
+
+  We will require the following principle.
+  \begin{thm}[Cavalieri's principle]\index{Cavalieri's principle}
+    If a family of parallel planes gives equal cross-sectional areas when slicing two different
+    solids, then the two solids have equal area.
+  \end{thm}
+  \begin{proof}
+    See a future course on calculus \autocite[page 362, exercise 5.2.63]{stewart}.
+  \end{proof}
+
+  To illustrate the above principle, it is productive to consider a stack of coins forming a cylinder;
+  then Cavalieri's principle simply states that if you push your stack to form a slanted cylinder then
+  the volume stays the same.
+
+
+  \begin{exercise}
+    We will now calculate the volume of a cone. You will need to use Cavalieri's principle several times
+    in this exercise.
+    \begin{enumerate}
+      \item Show that a cube of side length $ u $ can be cut into six pyramids, with square bases of area $ u^2 $
+            and heights $ u/2 $. Thus the volume of such a pyramid is $ \frac{1}{3} \frac{u}{2} u^2 $. Conclude that a pyramid
+            with square base of area $ u^2 $ and height $ h $ is $ \frac{1}{3} h u^2 $.
+      \item Consider now a cone $ \mathcal{CO} $ with height $ h $ and radius $ \rho $. Apply Cavalieri's principle to this cone
+            and to the square pyramid with base $ \rho \sqrt{\pi} $ and height $ h $ to conclude that the volume
+            of the cone is
+            \begin{equation}
+               \mathcal{V}(\mathcal{CO}) = \frac{\pi}{3}h \rho^2.
+            \end{equation}
+    \end{enumerate}
+  \end{exercise}
+
+  Now we give the classical Greek proof for the volume of a sphere.
+  \begin{exercise}
+    Consider a sphere $ \mathcal{S} $ of radius $ \rho $. Slice it in half, forming a \df{hemisphere} with radius $ \rho $ and height $ \rho $.
+    Fit about this hemisphere a cylinder of radius $ \rho $ and height $ \rho $, and form a cone whose base is the end of the cylinder
+    and whose apex is the centre of the hemisphere's base.
+
+    \begin{center}
+      \includegraphics[width=0.3\textwidth]{sphere1}
+    \end{center}
+
+    Prove that for any horizontal slice, the areas of the hemisphere cross-section $ H $,
+    the cone cross-section $ N $, and the cylinder cross-section $ L $ satisfy the
+    relation $ H^2 = L^2 - N^2 $.
+
+    Hence apply your knowledge of the volumes for a cylinder and a cone, and Cavalieri's
+    principle, to conclude that
+    \begin{equation}
+      \mathcal{V}(\mathcal{S}) = \frac{4}{3} \pi R^3.
+    \end{equation}
+  \end{exercise}
+
+  \begin{exercise}
+    Show that a sphere takes up two-thirds of the volume of the smallest cylinder enclosing it.
+
+    (A sketch of the resulting object was requested by Archimedes, the Greek mathematician who
+    was the first to write arguments like those in this section, to be drawn on his tombstone.)
+  \end{exercise}
+
+  A classic piece of mathematical fiction that asks how we can think about higher dimensions beyond our familiar
+  three is \autocite{abbott}.
+
+  \section{The Platonic solids}
+  Recall that a \df{regular polygon} is a polygon which is both equiangular and equilateral. There are infinitely
+  many regular polygons: for every whole number $ n $, draw $ n $ equally spaced points around a circle and join
+  adjacent points with segments. It will turn out that in three dimensions the equivalent notion to a regular polygon
+  is much more rare.
+
+
+  \begin{defn}
+    A \df{polyhedron} (plural: polyhedra) is an object (living in three dimensions) that is made up of a finite connected set of polygons
+    (each lying in a plane called a \df{bounding plane} for the polyhedron) such that:
+      \begin{enumerate}
+        \item every side of each polygon belongs to just one other polygon;
+        \item and at any vertex, you can walk from the inside of one polygon
+              to the inside of any other polygon at that vertex by crossing edges
+              and interiors of polygons that touch at that vertex and without crossing
+              the vertex itself.\footnote{This second condition can be more
+              concisely stated as ``the polygons at each vertex form a single circuit'',
+              and its purpose is simply to prevent things like a pair of pyramids joined
+              only at their tips from being called a polyhedron.}
+      \end{enumerate}
+
+      The polygons are called the \df{faces} of the polyhedron, and the sides of the polygons
+      are called (unsurprisingly) the \df{sides} of the polyhedron.
+  \end{defn}
+
+  Using the above definition one can see that a polyhedron must separate space into two
+  pieces, one infinite (the \df{exterior} of the polyhedron) and the other bounded (the
+  \df{interior} of the polyhedron). A polyhedron is called \df{convex} if none of the bounding
+  planes intersect the interior.
+
+  \begin{ex}
+    The following figure, from \autocite[plate I]{coxeterPoly}, displays five polyhedra.
+    \begin{center}
+      \includegraphics[width=0.8\textwidth]{polyhedra}
+    \end{center}
+
+    They are named as follows:
+    \begin{multicols}{2}\begin{enumerate}
+      \item tetrahedron;
+      \item octahedron;
+      \item cube;
+      \item icosahedron;
+      \item pentagonal dodecahedron;
+      \item two tetrahedra cutting each other;
+      \item a cube and an octahedron cutting each other;
+      \item an icosahedron and a dodecahedron cutting each other;
+      \item cuboctahedron;
+      \item icosidodecahedron;
+      \item rhombic dodecahedron;
+      \item tricontahedron.
+    \end{enumerate}\end{multicols}
+  \end{ex}
+
+  A very nice reference for this subject is \autocite[\S\S 1.2-1.3]{coxeterPoly}
+
+
+  \section{M\"obius bands and Klein bottles}
 
   \restoregeometry
 
