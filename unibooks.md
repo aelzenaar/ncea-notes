@@ -286,7 +286,8 @@ To add in 2019.
    on uniformity and compactness. (515.8 L86)
 
 ### Algebraic geometry (334)
-To add in 2019.
+ * Audun Holme, _A Royal Road to Algebraic Geometry_. This is a very gentle introduction to the subject that is very well-motivated if you have some
+   experience with projective geometry and classical algebraic geometry (c.f. Kendig's _Conics_ below). (*)
 
 ### Complex calculus and analysis (340, 341)
 The first few books here, broadly speaking, are complex calculus books; the latter books are complex analysis books.
@@ -359,12 +360,12 @@ Modern geometry.
 ### Differential geometry
  * Manfred do Carmo, _Differential Geometry of Curves and Surfaces_. Differential geometry, without any more machinery than multivariable
    calculus. Quite dry and very computational. This is actually useful for physics (in particular, PHYSICS 201). (516.36 C28Y)
- * Michael Spivak, _A Comprehensive Introduction to Differential Geometry_. Five volumes of painfully typeset beautiful geometry. 10/10 would etc. etc. (516.36 S76)
+ * Michael Spivak, _A Comprehensive Introduction to Differential Geometry_. Five volumes of painfully typeset beautiful geometry. (516.36 S76)
 
 ## Postgraduate texts
 
 ### Algebra
-General algebra.
+**General algebra.**
  * Joseph Rotman, _Advanced Modern Algebra_. This book is supposed to be very good, but something about it annoys me.
    I'm not too sure what the problem is: maybe it's a little too chatty, and it motivates everything (at least initially)
    with number theory? I will come back to it at some point, maybe I will like it better. (512 R84a)
@@ -373,7 +374,7 @@ General algebra.
    and begin to work without needing to read the previous hundred pages; I dislike the confusing text and
    the inconsistent leaps of logic. (512 L26a)
 
-Category theory.
+**Category theory.**
  * William Lawvere and Stephen Schanuel, _Conceptual Mathematics_. The ambiguous title hides that this is a book on
    category theory, written primarily to appeal to undergraduates with limited experience with the traditional motivating
    topics like algebraic topology. I remember trying to read it a couple of years ago and being annoyed by the lack of
@@ -381,7 +382,12 @@ Category theory.
    own examples then it is likely a nice friendly introduction. For this reason it would be nice to have this book as
    an alternative, but not as a replacement, for something like Mac Lane. (511.3 L42)
 
- * Mac Lane, _Categories for the Working Mathematician_. This is the standard introductory text. (512.55 M16)
+ * Horst Herrlich and George E. Strecker, _Category Theory_. This book is very well-motivated with lots of examples. (512.55 H56)
+
+ * Jiří Adámek; Horst Herrlich; and George E Strecker, _Abstract and Concrete Categories_. This book is also well-motivated but in
+   a different sense. The illustrations are amusing and the book has a sense of humour. (512.55 A19)
+
+ * Saunders Mac Lane, _Categories for the Working Mathematician_. This is the standard introductory text. (512.55 M16)
 
 ## Books I want to get around to reading and/or writing about here
  * Coxeter, _Regular Polytopes_.
