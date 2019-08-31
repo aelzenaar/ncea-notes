@@ -83,6 +83,9 @@ older notes above, and I am no longer happy with them.
 If the rewriting goes successfully, I will likely give a similar treatment to the algebra notes, as _Solutions_ is beginning
 to bend under the weight of three or four years of constant bolting-on of new pieces of random mathematics.
 
+### Level Three Statistics
+I have written a set of very terse [notes](L3%20Statistics/stats.pdf).
+
 ## Physics
 ### Level Two
  * Waves (91170), mechanics (91171), and electromagnetism (91172): [full set of notes](L2%20Physics/externals.pdf), including many diagrams and links to youtube videos,
