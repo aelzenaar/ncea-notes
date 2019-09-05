@@ -162,7 +162,8 @@ My favourite multi-dimensional calculus book, is, in fact, Loomis & Sternberg, _
 ## Upper-level undergraduate texts: Stage III
 
 ### Mathematical logic (315)
-To add in 2019.
+ * A. G. Hamilton, _Logic for Mathematicians_. This is the text for 315, it failed to keep my attention but I think that's a feature of most
+   logic books. (164 H21 1988)
 
 ### Algebra (320)
  * M. A. Armstrong, _Groups and Symmetry_. A very geometric book; it is decent if you liked the algebraic parts of 326. It's similar in philosophy
@@ -286,8 +287,12 @@ To add in 2019.
    on uniformity and compactness. (515.8 L86)
 
 ### Algebraic geometry (334)
+ * Miles Reid, _Undergraduate algebraic geometry_. I find this book overly informal and chatty to the point of annoyance, but it is a very easy
+   read if you like that kind of book. (516.35 R35)
  * Audun Holme, _A Royal Road to Algebraic Geometry_. This is a very gentle introduction to the subject that is very well-motivated if you have some
    experience with projective geometry and classical algebraic geometry (c.f. Kendig's _Conics_ below). (*)
+ * Joe Harris, _Algebraic Geometry: A first course_. This is my favourite introductory book, it is faster and less chatty than the 334/734 notes
+   but it has many more examples and exercises. It includes none of the background commutative algebra, see below for useful references. (516.35 H31)
 
 ### Complex calculus and analysis (340, 341)
 The first few books here, broadly speaking, are complex calculus books; the latter books are complex analysis books.
@@ -360,7 +365,7 @@ Modern geometry.
 ### Differential geometry
  * Manfred do Carmo, _Differential Geometry of Curves and Surfaces_. Differential geometry, without any more machinery than multivariable
    calculus. Quite dry and very computational. This is actually useful for physics (in particular, PHYSICS 201). (516.36 C28Y)
- * Michael Spivak, _A Comprehensive Introduction to Differential Geometry_. Five volumes of painfully typeset beautiful geometry. (516.36 S76)
+ * Michael Spivak, _A Comprehensive Introduction to Differential Geometry_. More differential geometry than you need in your life. (516.36 S76)
 
 ## Postgraduate texts
 
@@ -373,6 +378,11 @@ Modern geometry.
    a lot of the algebra I haven't used for a couple of years. I like the ability to open up at a random page
    and begin to work without needing to read the previous hundred pages; I dislike the confusing text and
    the inconsistent leaps of logic. (512 L26a)
+
+**Commutative algebra.**
+ * M. F. Atiyah and I. G. Macdonald, _Introduction to Commutative Algebra_. Contains most (all?) of the commutative algebra
+   needed for 334/734. (512.24 A87i)
+ * David Eisenbud, _Commutative Algebra with a View Toward Algebraic Geometry_. Behold, more commutative algebra (512.24 E36).
 
 **Category theory.**
  * William Lawvere and Stephen Schanuel, _Conceptual Mathematics_. The ambiguous title hides that this is a book on
@@ -402,3 +412,4 @@ Modern geometry.
  * Halmos, _Naive Set Theory_
  * Loomis and Sternberg, _Advanced Calculus_
  * Rudin, _Principles of Mathematical Analysis_
+ * Wallis, _Combinatorial Designs_
