@@ -145,7 +145,7 @@ geometry because there are a number of results from there about triangles, circl
 revise a number of these results, and so the reader is directed there initially.
 
 \begin{center}
-  \includegraphics[width=0.6\textwidth]{conics}
+  \includegraphics[width=0.5\textwidth]{conics}
 \end{center}
 
 \titleformat{\section}{\clearpage\titlerule[0.8pt]\vspace{0.5ex}\normalfont\Large\bfseries\centering}{Section~\thesection:}{1em}{}[{\titlerule[0.8pt]}]
@@ -497,12 +497,13 @@ is to show that the conics are just slices of a cone (hence the name), as in the
 \begin{exercise}[Geometric cone-slicing: the ellipse]
   In the previous exercise, we had to use coordinates to prove that every slice of a cone is a conic. We will now
   discover a geometric proof that an ellipse is just a slice of a right circular cone, in such a way that we will
-  understand why such slices obey the focii properties of the ellipse.\footnote{~Tom M. Apostol, \emph{Linear Algebra: A first course} (pp.78--9). John Wiley \& Sons (1997).}
+  understand why such slices obey the focii properties of the ellipse.
 
   Let us take our plane and slice our cone with it. Pick any point $ P $ in the intersection of the two surfaces (i.e.
   on the curve we wish to show is an ellipse). In addition, we will place two spheres $ S_1 $ and $ S_2 $ into our cone
   such that they are tangent to both the cone and to the plane. Let $ F_1 $ and $ F_2 $ be the two points of contact between
-  the plane and the spheres, and let $ C_1 $ and $ C_2 $ be the circles of contact between the cone and the spheres.
+  the plane and the spheres, and let $ C_1 $ and $ C_2 $ be the circles of contact between the cone and the spheres. The
+  setup is illustrated below.\footnote{~Tom M. Apostol, \emph{Linear Algebra: A first course} (pp.78--9). John Wiley \& Sons (1997).}
 
   \begin{center}
     \includegraphics[width=0.5\textwidth]{apostol}
@@ -718,359 +719,208 @@ object and so would feel a negligible force due to it.
 
 We will now relax the first of these two approximations, and consider the new path followed.\footnote{For a detailed
 exposition of this derivation, see Simmons \S21.}
-\begin{exercise}[Kepler's laws]
-  In order to make our discussion more concrete, we will fix some large mass $ M $ at the origin $ O $, and we
-  will consider some smaller planet, located at $ \vec{r} $ with mass $ m $. The planet $ P $ will accelerate due to
-  the gravitational force exerted on it by $ O $; we want to study the motion of $ P $. It is convenient to use
-  polar coordinates.
 
+In order to make our discussion more concrete, we will fix some large mass $ M $ at the origin $ O $, and we
+will consider some smaller planet, located at $ \vec{r} $ with mass $ m $. The planet $ P $ will accelerate due to
+the gravitational force exerted on it by $ O $; we want to study the motion of $ P $. It is convenient to use
+polar coordinates.
+
+\begin{exercise}[Kepler's second law]
   \begin{enumerate}
-    \item Kepler's second law.
-      \begin{enumerate}
-        \item Suppose that $ \vec{u}_r = (\cos \theta, \sin \theta) $ is the unit vector in the direction of $ \vec{r} $, so $ \vec{r} = r\vec{u}_r $.
-              Let us define $ \vec{u}_\theta = (-\sin\theta, \cos \theta) $ to be the unit vector perpendicular to $ \vec{u}_r $ in the direction
-              of increasing $ \theta $. Show that $ \od{\vec{u}_r}{\theta} = \vec{u}_\theta $ and $ \od{\vec{u}_\theta}{\theta} = -\vec{u}_r $, and hence (using
-              the product and chain rules) deduce that:
-              \begin{align*}
-                \vec{v} &= \od{\vec{r}}{t} = r \od{\theta}{t} \vec{u}_\theta + \od{r}{t} \vec{u}_r\\
-                \vec{a} &= \od{\vec{v}}{t} = \left( 2\od{r}{t} \od{\theta}{t} + r \od[2]{\theta}{t} \right) \vec{u}_\theta
-                                          + \left( \od[2]{r}{t} - r \left( \od{\theta}{t} \right)^2 \right) \vec{u}_r.
-              \end{align*}
-        \item Hence, using Newton's second law of motion and (a) above, we can write expressions for the components of the
-              force $ \vec{F} = F_\theta \vec{u}_\theta + F_r \vec{u}_r $ acting on an object of mass $ m $:
-              \begin{gather*}
-                F_\theta = m\left( 2\od{r}{t} \od{\theta}{t} + r \od[2]{\theta}{t} \right)\\
-                F_r = m\left( \od[2]{r}{t} - r \left( \od{\theta}{t} \right)^2 \right).
-              \end{gather*}
+    \item Suppose that $ \vec{u}_r = (\cos \theta, \sin \theta) $ is the unit vector in the direction of $ \vec{r} $, so $ \vec{r} = r\vec{u}_r $.
+          Let us define $ \vec{u}_\theta = (-\sin\theta, \cos \theta) $ to be the unit vector perpendicular to $ \vec{u}_r $ in the direction
+          of increasing $ \theta $. Show that $ \od{\vec{u}_r}{\theta} = \vec{u}_\theta $ and $ \od{\vec{u}_\theta}{\theta} = -\vec{u}_r $, and hence (using
+          the product and chain rules) deduce that:
+          \begin{align*}
+            \vec{v} &= \od{\vec{r}}{t} = r \od{\theta}{t} \vec{u}_\theta + \od{r}{t} \vec{u}_r\\
+            \vec{a} &= \od{\vec{v}}{t} = \left( 2\od{r}{t} \od{\theta}{t} + r \od[2]{\theta}{t} \right) \vec{u}_\theta
+                                      + \left( \od[2]{r}{t} - r \left( \od{\theta}{t} \right)^2 \right) \vec{u}_r.
+          \end{align*}
+    \item Hence, using Newton's second law of motion and (a) above, we can write expressions for the components of the
+          force $ \vec{F} = F_\theta \vec{u}_\theta + F_r \vec{u}_r $ acting on an object of mass $ m $:
+          \begin{gather*}
+            F_\theta = m\left( 2\od{r}{t} \od{\theta}{t} + r \od[2]{\theta}{t} \right)\\
+            F_r = m\left( \od[2]{r}{t} - r \left( \od{\theta}{t} \right)^2 \right).
+          \end{gather*}
 
-              Our force of gravity is a \df{central force}: it only acts in the direction of $ \vec{r} $. Hence the $ \theta$-component
-              of the force acting on the mass $ m $ is zero. Show that
-              \begin{displaymath}
-                r^2 \od{\theta}{t} = h
-              \end{displaymath}
-              for some constant $ h $.
-        \item Suppose $ A(t) $ gives the area `swept out' by the radius vector $ \vec{r} $ between some fixed time $ t_0 $
-              and the time $ t $. Using the fact that $ \od{A}{\theta} = \frac{r^2}{2} $ (since $ \dif{A} = \pi r^2 \cdot \frac{\dif{\theta}}{2\pi} $),
-              show that $ A(t_2) - A(t_1) = \frac{1}{2}h(t_2 - t_1) $. Conclude \df{Kepler's second law}: if $ P $ and $ Q $ are
-              planets with associated masses $ m_P $ and $ m_Q $, then over a time $ \Delta t $ the planets will sweep out equal
-              area.
-      \end{enumerate}
-    \item Kepler's first law.
+          Our force of gravity is a \df{central force}: it only acts in the direction of $ \vec{r} $. Hence the $ \theta$-component
+          of the force acting on the mass $ m $ is zero. Show that
+          \begin{displaymath}
+            r^2 \od{\theta}{t} = h
+          \end{displaymath}
+          for some constant $ h $.
+    \item Suppose $ A(t) $ gives the area `swept out' by the radius vector $ \vec{r} $ between some fixed time $ t_0 $
+          and the time $ t $. Using the fact that $ \od{A}{\theta} = \frac{r^2}{2} $ (since $ \dif{A} = \pi r^2 \cdot \frac{\dif{\theta}}{2\pi} $),
+          show that $ A(t_2) - A(t_1) = \frac{1}{2}h(t_2 - t_1) $. Conclude \df{Kepler's second law}: if $ P $ and $ Q $ are
+          planets with associated masses $ m_P $ and $ m_Q $, then over a time $ \Delta t $ the planets will sweep out equal
+          area.
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Kepler's first law]
+  \begin{enumerate}
+    \item Let $ z = 1/r $. Express $ \od{r}{t} $ and $ \od[2]{r}{t} $ in terms of $ \od{z}{\theta} $ and $ \od[2]{z}{\theta} $.
+    \item By Newton's law of gravity, $ F_r = -\frac{GMm}{r^2} $. Thus, we have that $ \od[2]{r}{t} - r \left(\od{\theta}{t}\right)^2 = -\frac{GM}{r^2} $.
+          Use the expression in (1b) above to show that $ \od[2]{r}{t} - \frac{h^2}{r^3} = -\frac{GM}{r^2} $, and then apply
+          the substitution in (a) to show that $ \od[2]{z}{\theta} + z = \frac{GM}{h^2} $.
+    \item Solve the differential equation in (b). (Hint: the general solution is $ z = A \sin \theta + B \cos \theta + \frac{GM}{h^2} $.)
+    \item Let us shift and rotate our coordinate axis such that $ \vec{r} $ is minimised when $ \theta = 0 $: in other words, we pick
+          our axis such that the mass $ m $ is closest to the origin at $ \theta = 0 $. Since $ 1/r $ is maximised when $ r $ is minimised,
+          we have that $ \eval[2]{\od{z}{\theta}}_{\theta = 0} = 0 $ and $ \eval[2]{\od[2]{z}{\theta}}_{\theta = 0} < 0 $. Show that $ A = 0 $
+          and $ B > 0 $.
+    \item Further, show that
+          \begin{displaymath}
+            r = \frac{h^2/GM}{1 + (Bh^2/GM)\cos\theta};
+          \end{displaymath}
+    \item Write $ \varepsilon = Bh^2/GM $ in the equation of (e), and conclude \df{Kepler's first law} by comparison
+          with exercise 1: the locus of $ P $ is a conic section with one focus $ O $.\footnote{It can be shown
+          that $ \varepsilon = \sqrt{1 + E \frac{2h^2}{G^2M^2m}} $, where $ E $ is the potential energy associated with the mass $ m $; so
+          the particular conic traced depends on the energy associated with the mass $ m $. Thus the planets in
+          the solar system, which have negative energy (they are trapped by the sun, and work must be done to them
+          to pull them away), trace elliptical orbits; while bodies like comets trace parabolic and hyperbolic trajectories.}
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}[Kepler's third law]
+  \begin{enumerate}
+    \item Suppose our mass traces an elliptical orbit, such that $ Bh^2/GM < 1 $ in the equation $ r = \frac{h^2/GM}{1 + (Bh^2/GM)\cos\theta} $.
+          Let us write this in rectangular form as $ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $. Using results from exercises 1 and 2 (collected
+          in the appendix), show that $ a = \frac{h^2a^2}{GMb^2} $ and thus that $ b^2 = \frac{h^2a}{GM} $. (Hint: $ a $, the semi-major axis
+          length, is half the sum of the maximum and minimum values for $ r $.)
+    \item If $ T $ is the period of revolution of our mass $ m $, use Kepler's second law (in particular the formula derived in (1c)) to show
+          that $ \pi ab = \frac{hT}{2} $ and thus, using (a), that $ T^2 = \left(\frac{4\pi^2}{GM}\right)a^3 $. Noting that this is independent
+          of the mass $ m $, conclude \df{Kepler's third law}: the square of the period of revolution of any planet is proportional
+          to the cube of its average distance from the sun, where the constant of proportionality depends only on the mass $ M $ and
+          some constants of nature.
+  \end{enumerate}
+\end{exercise}
+
+\section{Unification}
+\begin{center}
+  \emph{You know, for a mathematician, he did not have enough imagination. But he has become a poet and now he is fine.} --- Hilbert (on an ex-student)
+\end{center}
+
+Consider the three regular conics: the ellipse, parabola, and hyperbola. In some sense we would like to be able to say that a parabola is `an
+ellipse `with a focus at infinity', and that a hyperbola is what you get `when you push the focus past infinity and it comes back around'.
+
+In order to make this idea make some kind of sense, we will develop a sequence of maps from the plane to a smaller space that is easier to
+visualise.
+
+We will start with some technical facts.
+\begin{exercise}[The line]
+  The equation of a line in $ \mathbb{R}^2 $ (the plane) is $ ax + by = c $ where at least one of $ a $ or $ b $ is nonzero. Show that the line has
+  slope $ -a/b $, and that it can be parameterised by a function of the form $ \phi(t) = (\lambda t + r, \mu t + s) $ for some real
+  numbers $ \lambda $, $ \mu $, $ r $, and $ s $. (Hint: treat the cases $ a = 0 $ and $ a \neq 0 $ seperately.)
+\end{exercise}
+
+\begin{exercise}[Diffeomorphisms]
+  A function which has the property that for every possible output there is exactly one input producing it is called
+  a \df{bijection}; the properties `$ f $ is a bijection' and `$ f $ has an inverse' are equivalent (every function with
+  either property has both).
+
+  A bijective function which is differentiable and has a differentiable inverse is called a \df{diffeomorphism}; if two
+  sets can be mapped onto each other by a diffeomorphism then they are called \df{diffeomorphic}. We shall write $ X \simeq Y $
+  if $ X $ is diffeomorphic to $ Y $.
+
+  Show that:
+  \begin{enumerate}
+    \item Every set is diffeomorphic to itself. (Reflexivity)
+    \item If $ X \simeq Y $ then $ Y \simeq X $. (Symmetry)
+    \item If $ X \simeq Y $ and $ Y \simeq Z $ then $ X \simeq Z $. (Transitivity)
+    \item The real line $ \mathbb{R} $ is diffeomorphic to the open interval $ -\pi < x < \pi $. (Hint: consider $ \arctan $.)
+    \item The real line $ \mathbb{R} $ is diffeomorphic to the circle $ x^2 + y^2 = 1 $ with a point removed. Here are two methods:
       \begin{enumerate}
-        \item Let $ z = 1/r $. Express $ \od{r}{t} $ and $ \od[2]{r}{t} $ in terms of $ \od{z}{\theta} $ and $ \od[2]{z}{\theta} $.
-        \item By Newton's law of gravity, $ F_r = -\frac{GMm}{r^2} $. Thus, we have that $ \od[2]{r}{t} - r \left(\od{\theta}{t}\right)^2 = -\frac{GM}{r^2} $.
-              Use the expression in (1b) above to show that $ \od[2]{r}{t} - \frac{h^2}{r^3} = -\frac{GM}{r^2} $, and then apply
-              the substitution in (a) to show that $ \od[2]{z}{\theta} + z = \frac{GM}{h^2} $.
-        \item Solve the differential equation in (b). (Hint: the general solution is $ z = A \sin \theta + B \cos \theta + \frac{GM}{h^2} $.)
-        \item Let us shift and rotate our coordinate axis such that $ \vec{r} $ is minimised when $ \theta = 0 $: in other words, we pick
-              our axis such that the mass $ m $ is closest to the origin at $ \theta = 0 $. Since $ 1/r $ is maximised when $ r $ is minimised,
-              we have that $ \eval[2]{\od{z}{\theta}}_{\theta = 0} = 0 $ and $ \eval[2]{\od[2]{z}{\theta}}_{\theta = 0} < 0 $. Show that $ A = 0 $
-              and $ B > 0 $.
-        \item Further, show that
-              \begin{displaymath}
-                r = \frac{h^2/GM}{1 + (Bh^2/GM)\cos\theta};
-              \end{displaymath}
-        \item Write $ \varepsilon = Bh^2/GM $ in the equation of (e), and conclude \df{Kepler's first law} by comparison
-              with exercise 1: the locus of $ P $ is a conic section with one focus $ O $.\footnote{It can be shown
-              that $ \varepsilon = \sqrt{1 + E \frac{2h^2}{G^2M^2m}} $, where $ E $ is the potential energy associated with the mass $ m $; so
-              the particular conic traced depends on the energy associated with the mass $ m $. Thus the planets in
-              the solar system, which have negative energy (they are trapped by the sun, and work must be done to them
-              to pull them away), trace elliptical orbits; while bodies like comets trace parabolic and hyperbolic trajectories.}
-      \end{enumerate}
-    \item Kepler's third law.
-      \begin{enumerate}
-        \item Suppose our mass traces an elliptical orbit, such that $ Bh^2/GM < 1 $ in the equation $ r = \frac{h^2/GM}{1 + (Bh^2/GM)\cos\theta} $.
-              Let us write this in rectangular form as $ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $. Using results from exercises 1 and 2 (collected
-              in the appendix), show that $ a = \frac{h^2a^2}{GMb^2} $ and thus that $ b^2 = \frac{h^2a}{GM} $. (Hint: $ a $, the semi-major axis
-              length, is half the sum of the maximum and minimum values for $ r $.)
-        \item If $ T $ is the period of revolution of our mass $ m $, use Kepler's second law (in particular the formula derived in (1c)) to show
-              that $ \pi ab = \frac{hT}{2} $ and thus, using (a), that $ T^2 = \left(\frac{4\pi^2}{GM}\right)a^3 $. Noting that this is independent
-              of the mass $ m $, conclude \df{Kepler's third law}: the square of the period of revolution of any planet is proportional
-              to the cube of its average distance from the sun, where the constant of proportionality depends only on the mass $ M $ and
-              some constants of nature.
+        \item Define $ \phi $ from the interval $ -\pi < x < \pi $ to the circle minus the point $ (-1,0) $ to be
+              the usual parameterisation $ \phi(t) = (\cos t, \sin t) $. This is differentiable; show it has a
+              differentiable inverse and is therefore a diffeomorphism. Hence the circle and the interval are
+              diffeomorphic; use transitivity and (4) above to finish.
+        \item Show that for every real $ t \neq 0 $ the line $ y = t(x + 1) $ intersects the circle in a single point other than $ (-1,0) $, and intersects
+              the line $ x = 1 $ precisely once as well. Prove that every $ P $ on the circle, except for $ (-1,0) $, corresponds to a distinct point on the
+              line in this way (that is, if $ Q $ is on the line then there is precisely one $ P $ on the circle which corresponds to it). Prove that
+              the function $ \psi $ that sends each $ P $ on the circle to its corresponding point on the line is the required diffeomorphism.
       \end{enumerate}
   \end{enumerate}
 \end{exercise}
 
-\section{The intersection theorem}
-\begin{center}
-  \emph{You know, for a mathematician, he did not have enough imagination. But he has become a poet and now he is fine.} --- Hilbert (on an ex-student)
-\end{center}
-We have studied in these notes precisely the graphs of those algebraic equations of the form
-\begin{equation}\label{eqn:prototype}
-  ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0;
-\end{equation}
-This class of equations is the class of \df{quadratic equations} (in two variables). Note that, without loss
-of generality, we can assume $ c = 1 $ (otherwise, we just divide through by $ c $).
+\begin{exercise}[Projective 2-space]
+  We want to be able to say that a parabola is an ellipse with one point `sent to infinity', and that the hyperbola is an ellipse
+  with two such `points at infinity'. We therefore need to extend our set of points to include points at infinity.
 
-The set of all points $ (x,y) $ satisfying a quadratic equation is called a \df{curve of the second degree}; we
-have already implicitly shown that every conic is a curve of the second degree, and in exercise \ref{exercise:degenerate}
-you classified all the other types of such curve.
+  \begin{enumerate}
+    \item In $\mathbb{R}^3 $, let $ \Pi $ be the \emph{plane} $ z = 1 $. Clearly $ \Pi \simeq \mathbb{R}^2 $. Let $ \Sigma $ be the
+          sphere $ x^2 + y^2 + z^2 = 1 $ centred at $ O = (0,0,0) $.
 
-Our main theorem is a generalisation of the statement from algebra that every quadratic equation in one variable
-(i.e. every equation $ x^2 + px + q = 0 $) has precisely two solutions (if you count correctly).
-\begin{thm}\label{thm:funthmquad}
-  Every line meets a curve of the second degree in precisely two points.
-\end{thm}
+          Show that for every point $ P $ in $ \Pi $ there are precisely two points on the sphere that lie on the line $ OP $, and these
+          points are diametrically opposite. Conversely, for every pair of diametrically opposite points that lie on $ \Sigma $ \emph{but
+          do not lie in the plane $ z = 0 $} there is precisely one point lying in $ \Pi $.
 
-This theorem is very nice, but (like the proof for quadratics in one variable) we do have to make a trade:
-we have to take our coordinate system to be over the complex numbers. Thus, for the remainder of this section,
-we will assume implicitly that rather than living in the real plane $ \mathbb{R}^2 $ we are in fact living
-in the complex plane $ \mathbb{C}^2 $. In some sense, then, we are doing geometry in four dimensions. On the
-other hand, in many places we will only be interested in real coordinates. For example, the graph of a four-dimensional
-object is a little tricky to draw if we only have three dimensions available!
+    \item Further, convince yourself that if a point $ P $ moves in a straight line out from the origin of $ \mathbb{R}^2 $ (that is, the point $ (0,0,1) $ in
+          the plane $ \Pi $) then the corresponding line $ OP $ approaches the $ z = 0 $ plane. More formally, prove that
+          if $ L $ is any line in $ \Pi $, parameterised by $ L(t) = (\lambda t + r, \mu t + s, 1) $ for some real
+          numbers $ \lambda $, $ \mu $, $ r $, and $ s $, then as $ t \to \infty $, $ OL(t) $ (that is, the line joining $ O $ and $ L(t) $)
+          approaches a line in the $ z = 0 $ plane (and the points on $ \Sigma $ corresponding to $ L(t) $ approach a single diametrically opposed pair
+          of points of $ \Sigma $ in the $ z = 0 $ plane).
+  \end{enumerate}
 
-The proof of the theorem will take a few pages, and the theorem is quite `deep',\footnote{The mathematical meaning of `deep' is hard to pin down: it sometimes
-means ``I know this proof and you don't'', or perhaps ``I don't really understand this proof'', or even ``some celebrity/lecturer/textbook author once
-told me it was deep''. In this case, I am using it to mean that the proof is difficult and is something of a gateway into an entirely new type of geometry.}
-and so it is absolutely normal to expect the going to be slow.
+  Hence pairs of diametrically opposed points on the sphere (minus the equator) correspond to points in the plane (by 1.), and diametrically
+  opposed points on the equator correspond to `directions' (possible slopes of lines) in the plane. But this is precisely what we wanted: a
+  new space which `contains' the old space, together with a set of new points that correspond to directions `towards infinity'.
 
-Our first proof attempt looks all right, and indeed it is almost correct;
+  Define $ \mathbb{P}^2 $, \df{projective 2-space}, to be the set of pairs of diametrically opposed points of the sphere $ \Sigma $. If
+  one such pair is $ \{P,Q\} $ we will denote this point of projective 2-space by either $ [P] $ or $ [Q] $. (Clearly if we know $ P $ then
+  we can compute $ Q $ easily, and vice-versa, since we know they are opposite.)
 
-\begin{proof}[Proof attempt]
-  Let $ ax + by = 1 $ be our line. At least one of $ a $ or $ b $ is non-zero; assume that $ a $ is
-  non-zero (but essentially the same proof will work if $ a = 0 $ but $ b $ is non-zero). Then we
-  can substitute $ x = \frac{1 - by}{a} $ into our curve of the second degree to obtain a quadratic
-  equation in the variable $ y $; by the fundamental theorem of algebra, this equation has two solutions;
-  and each of these corresponds with a point of intersection.
-\end{proof}
+  \begin{enumerate}[resume]
+    \item Show that the correspondence described in 1. above is precisely given by
+          \begin{align*}
+            \varphi : \mathbb{R}^2 &\to \mathbb{P}^2\\
+            (x,y) &\mapsto \left[\frac{1}{\sqrt{x^2 + y^2 + 1}} (x,y,1)\right].
+          \end{align*}
 
-The problem with this proof is illustrated by the following example:-
-\begin{ex}
-  Consider the quadratic $ xy + y + x^2 = 1 $. This describes a perfectly good curve in two dimensions, graphed here.
-  \begin{center}
-    \fbox{\begin{tikzpicture}
-      \begin{axis}[
-        axis lines = center,
-        xlabel = $ x $,
-        ylabel = $ y $
-      ]
-        \addplot[domain = -5:5, color = red] {1-x};
-        \draw[color = red] ({axis cs:-1,0}|-{rel axis cs:0,0}) -- ({axis cs:-1,0}|-{rel axis cs:0,1});
-      \end{axis}
-    \end{tikzpicture}}
-  \end{center}
-  If we intersect this curve with the line $ y = 2 - x $, then we obtain a linear equation $ x + 2 = 0 $ instead of a quadratic
-  equation --- and so even counting multiplicities and moving up to $ \mathbb{C} $, we only have one solution.
-\end{ex}
+    \item If we ignore the lower hemisphere (because it doesn't give us any new information)
+          and ignore the equator (because it corresponds to the points at infinity), show that the (restricted) map
+          \begin{align*}
+            \varphi : \mathbb{R}^2 &\to \mathbb{P}^2\\
+            (x,y) &\mapsto \frac{1}{\sqrt{x^2 + y^2 + 1}} (x,y,1)
+          \end{align*}
+          is a diffeomorphism.
 
-The reader might be tempted to discount this example as uninteresting, because it's simply the intersection of a pair of two lines
-with a third line and thus isn't really a problem that affects our programme of studying conics.
+          Hence the embedding of $ \mathbb{R}^2 $ into our new space is a \emph{true} embedding --- it conveys the same
+          information.
+  \end{enumerate}
 
-The next example, though, is both more fundamental and more worrying.
-\begin{ex}
-  If we intersect the parabola $ x^2 = y $ with the line $ x = 0 $, we obtain a single point of intersection, even
-  up to multiplicity.
-\end{ex}
+  Continuing on with the idea of 4. above, we can stop thinking about the lower hemisphere and just focus on the upper
+  hemisphere of $ \Sigma $ (which is an embedding of our usual plane) together with the equator (which contains the points
+  at infinity, as long as we remember that opposite points are `glued together').
 
-Do these frustrations mean that we have to abandon the beautiful intersection theorem?
+  It is clear that can draw the hemisphere `from above' by just collapsing the $ z$--coordinate (setting it to zero so that the
+  entire hemisphere lies in one plane).
 
-It turns out that, like how we expanded our number system to make the fundamental theorem of algebra work
-nicely, we can expand our plane $ \mathbb{C}^2 $ further to make our intersection theorem work.
+  \begin{enumerate}[resume]
+    \item Show that the projection map $ \pi $ from the upper-hemisphere-with-equator to the disc $ x^2 + y^2 \leq 0 $ given
+          by $ \pi(x,y,z) = (x,y) $ is a diffeomorphism. (You simply need to exhibit an inverse: but note that
+          sine $ x^2 + y^2 + z^2 = 1 $ must hold then you can find $ z^2 $ given $ x $ and $ y $; and then take the positive
+          square root, since we care about the upper hemisphere.)
 
-We will not make this precise, but the method we will use is some kind of limiting process; the result, and the
-system we will work in from now on, is called the \emph{projective plane} over $ \mathbb{C} $. We will first place
-this mathematical concept in its proper historical place, and then we will look at it in detail.
+          Since the new disc space is diffeomorphic to $ \mathbb{P}^2 $ we will denote both by the same name (i.e. $ \mathbb{P}^2 $ will
+          be used to refer to the disc as well as to the sphere model).
+  \end{enumerate}
 
-\subsection{Euclidean geometry}
-It turns out that in order to approach some kind of resolution to our problems, we need to finally consider the
-elephant in the room: the foundations of geometry. (This might seem at first glance completely unrelated to the
-algebraic problem we're trying to solve, but bear with me.)
+  We therefore obtain the map from $ \mathbb{R}^2 $ to our new space given by
+  \begin{align*}
+    \psi : \mathbb{R}^2 &\to \mathbb{R}^3\\
+    (x,y) &\mapsto \pi(\varphi(x,y)) = \frac{1}{\sqrt{x^2 + y^2 + 1}} (x,y).
+  \end{align*}
 
-As I mentioned in the historical introduction, Euclid of Alexandria set down in around 300~BCE a set of basic results
-which can be proved true about circles and lines on a plane in his treatise \textit{Elements}.
-Euclid was influential because he was the first author (or, more likely, the first author whose work survives) to
-attempt to rigorously prove all his results based on a set of `universal truths': a set of simple statements (called
-\df{axioms}) whose truth is self-evident. In some sense, the goal of mathematics is to deduce the behaviour of the
-most complicated systems possible from the simplest axioms possible.\footnote{The axiom system which most of modern
-mathematics is done within is called ZFC, and was constructed in the early 20th century to deal with various foundational
-crises in mathematics.} Euclid's axioms were as follows:
-\begin{enumerate}
-  \item A straight line segment can be drawn joining any two points.
-  \item Any straight line segment can be extended indefinitely in a straight line.
-  \item Given any straight line segment, a circle can be drawn having the segment as radius and one endpoint as center.
-  \item All right angles are congruent.
-  \item Given any straight line and a point not on it, there exists one and only one straight line which passes through
-        that point and never intersects the first line, no matter how far they are extended.
-\end{enumerate}
-Putting aside the fact that these axioms are in fact insufficient for the purpose of constructing plane geometry, it is
-clear that the fifth axiom is both far less elegant than the others and far more complicated. Indeed, Euclid himself avoided
-using it in his proofs except where necessary (he avoids it completely for the first 28 propositions, for example) and for
-many years mathematicians believed that it was in fact a theorem: that it could be proved from the previous four axioms.\footnote{For
-further discussion, see chapter 1 of Lee.}
+  This map `collapses' (the `real' term is \df{compactifies}, but the definition is quite technical) the plane-with-points-at-infinity
+  to the disc $ x^2 + y^2 \leq 1 $, and allows us to see all the points on our conics at once.
+\end{exercise}
 
-It turns out that this is false: there exist geometries for which the fifth axiom is false (for example, on a sphere).
+\begin{exercise}[Examples of conics in $ \mathbb{P}^2 $]
+\end{exercise}
 
-\subsection{Projective geometry}
-The mathematical world which we are interested in is known as \df{projective geometry}; the name relates to the original
-applications, which were related to perspective in drawings. We obtain this geometry by replacing Euclid's final axiom with the following axiom:
-\begin{axiom}[Elliptic incidence property]
-  Any two distinct lines in a projective geometry meet at exactly one point.
-\end{axiom}
-This is clearly not true in usual Euclidean geometry. On the other hand, we didn't let this kind of thing stop us in the
-past: the number $ i $ is absolutely useless for counting sheep, for example, but that doesn't stop the complex numbers from
-being an interesting (and useful) mathematical space.
-
-The complex numbers became much clearer once we stopped thinking about numbers as a line and started drawing them as a plane. There
-is an analogous simple way to construct and think about a projective plane by extending the Euclidean plane (and then extending our
-setting, the complex plane, will be done in the same way).
-
-When we think about it, we find that the only reason that Euclidean geometry doesn't satisfy this axiom is that parallel lines exist.
-We will therefore \emph{define them not to exist}!
-
-More precisely, given every set of parallel lines with slope $ m $, we will take our plane and add on a new point $ \infty_m $ called
-a \df{point at infinity}, and then define this new point to be on all the lines with slope $ m $. Thus, these parallel lines now
-intersect at exactly one point (the point at infinity related to their slope) and all other lines intersect in exactly one point (the
-same place they did before).
-
-\begin{center}
-  \includegraphics[width=0.5\textwidth]{vanishingpoint}
-\end{center}
-
-This can be made to make some sense physically, and indeed the first place which projective geometry appeared was when Renaissance artists
-like Leonardo da Vinci began to experiment with perspective drawing --- if you look down two parallel lines in real life, like those in the
-image above,\footnote{© Vespertunes / Wikimedia Commons / ``Vanishing Point of Railway''. \url{https://commons.wikimedia.org/wiki/File:Vanishing_Point_of_Railway.jpg}}
-they appear to meet at the horizon, and lines going in the same direction away from you (i.e. lines with the same slope) meet
-at the same point. We call the line joining all the points at infinity (in this physical case, the horizon) the \df{line at infinity}.
-
-Going back to our problem of curves of the second degree, let us consider our second example: $ x^2 = y $ only intersects the line $ x = 0 $
-at one point.
-
-\begin{center}
-  \fbox{\begin{tikzpicture}
-    \begin{axis}[
-      axis lines = center,
-      xlabel = $ x $,
-      ylabel = $ y $, ymin=-2
-    ]
-      \addplot[domain = -5:5, color = red] {x^2};
-      \draw[color = blue] ({axis cs:0,0}|-{rel axis cs:0,0}) -- ({axis cs:0,0}|-{rel axis cs:0,1});
-    \end{axis}
-  \end{tikzpicture}}
-\end{center}
-
-But notice, as $ x \to \pm \infty $ the curve $ x^2 $ tends towards being vertical! More precisely, we have
-that $ \lim_{x \to \infty} \od{}{x} x^2 = \infty $; thus, the parabola is \df{eventually parallel} to the
-vertical line, and so the two intersect for a second time at the point at infinity $ \infty_\infty $.
-
-This is even more blatant in our first example: we had the following curve (and again, the blue line is the
-line we intersect with our second degree curve):
-
-\begin{center}
-  \fbox{\begin{tikzpicture}
-    \begin{axis}[
-      axis lines = center,
-      xlabel = $ x $,
-      ylabel = $ y $
-    ]
-      \addplot[domain = -5:5, color = red] {1-x};
-      \addplot[domain = -5:5, color = blue] {2-x};
-      \draw[color = red] ({axis cs:-1,0}|-{rel axis cs:0,0}) -- ({axis cs:-1,0}|-{rel axis cs:0,1});
-    \end{axis}
-  \end{tikzpicture}}
-\end{center}
-
-In this case, the curve is not only \emph{eventually} parallel, but in fact it is \emph{actually} parallel!
-
-The picture to keep in mind, for curves of the second degree at least, is the following.
-
-\begin{center}
-  \includegraphics[width=0.3\textwidth]{infiniteparabola}
-\end{center}
-
-Note that this picture does not actually reflect what is \emph{really} going on when we graph second degree
-equations in the plane --- it's a diagrammatic representation of the fact that we've made a fundamental extension
-to our system of geometry (and to our system of algebra, but this isn't visible on a real graph).
-
-Philosophically, all we've done is decided what property we want our algebro-geometric system to have (that
-curves of the second degree intersect any line at exactly two places, unless it's tangent to the line) and then
-invented a geometry in which this property is true. It turns out that this geometry has a lot of other beautiful
-properties, most of which we don't have time to look at --- but at this stage, it's completely synthetic. We simply
-arbitrarily added a bunch of points (and we're honestly lucky we didn't get any contradictions). In fact, eventually
-it is possible to see that there is an incredibly natural way to construct a projective plane without having to worry about
-sticking in a bunch more points and cooking it ourselves.\footnote{See, for example, Kendig.}
-
-For now, we will content ourselves with proving our motivational theorem.
-
-\subsection{Proof of the main theorem}
-
-Let $ y = mx + n $ be our line. Then we can substitute $ y $ into our curve of the second degree to obtain an equation
-in the variable $ x $ which is either of degree 1 or degree 2. (If necessary, let $ m $ be infinite.)
-
-\paragraph{Case I.} If the equation is of degree two, then by the fundamental theorem of algebra it
-has two solutions; and each of these corresponds with a point of intersection. (If the line is tangent
-to our curve, then we still get two solutions but they happen to be the same; in some sense, this is
-just because the tangent line does intersect twice, but at the same point.)
-
-\paragraph{Case II.} We will be done if we can show the following: if a line $ y = mx + n $ intersects
-some quadratic equation $ ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0 $ in exactly one point (i.e. in such a
-way as to produce a linear equation in $ x $ rather than a quadratic) then
-\begin{equation}
-  \lim_{x \to \infty} y'(x) = m.
-\end{equation}
-(where the derivative is of the quadratic equation), because in this case both the conic
-and the line can be said to intersect at the `point at infinity' $ \infty_m $.
-
-\begin{lem}
-  This limit always exists whenever $ x $ can be made to go to infinity.
-\end{lem}
-\begin{proof}
-  This was actually proved in exercise \ref{exercise:rectangular}: in the case of a hyperbola, it tends
-  to its asymptotes. The only other unbounded conics are the degenerate ones from \ref{exercise:degenerate};
-  the unbounded curves here are just unions of lines, and so have constant derivatives at each point.
-\end{proof}
-
-We will begin by finding the condition on the coefficients of our quadratic for $ x^2 $ to vanish upon substitution.
-So let us substitute $ y = mx + c $ into our quadratic; we obtain
-\begin{displaymath}
-  ax^2 + 2hx(mx + c) + b(mx + c)^2 + 2gx + 2f(mx + c) + c = 0.
-\end{displaymath}
-
-Expanding, and setting the coefficient of the $ x^2 $ term to zero, we find that
-\begin{displaymath}
-  a + 2mh + bm^2 = 0.
-\end{displaymath}
-
-We will find the derivative $ y'(x) $; this is a simple exercise in implicit differentiation and we get that
-\begin{displaymath}
-  \od{y}{x} = -\frac{ax + hy + g}{hx + by + f}.
-\end{displaymath}
-Substituting our condition on the coefficients, we have
-\begin{displaymath}
-  \od{y}{x} = -\frac{-2mhx - bm^2x + hy + g}{hx + by + f}.
-\end{displaymath}
-
-Step 3. Taking limits of both sides, we have
-\begin{displaymath}
-  \lim_{x \to \infty} \od{y}{x} = \lim_{x \to \infty} -\frac{-2mhx - bm^2x + hy + g}{hx + by + f}.
-\end{displaymath}
-
-It is not immediately obvious how we should deal with this right-hand side, because $ y $ also depends
-on $ x $. Looking at the equation for the quadratic, we note that as $ x \to \infty $, we must have $ y \to \pm\infty $ ---
-otherwise the right hand side couldn't stay at zero. Therefore, both the top and the bottom of the fraction under our
-limit go to infinity; we can apply the following theorem about limits:
-
-\begin{thm}[l'Hopital's Rule]
-  If $ \lim_{x \to \infty} f(x) = \infty $ and $ \lim_{x \to \infty} g(x) = \infty $, and if $ \lim_{x\to\infty} f'(x)/g'(x) = L $,
-  then $ \lim_{x\to\infty} f(x)/g(x) = L $.
-\end{thm}
-\begin{proof}
-  Omitted. See any book on single-variable calculus, for example Spivak, chapter 11, theorem 9 and exercises 36--38.
-\end{proof}
-
-Let $ \lim_{x \to \infty} \od{y}{x} = L $. Then we have
-\begin{displaymath}
-  L = \lim_{x \to \infty} -\frac{-2mhx - bm^2x + hy + g}{hx + by + f} = \lim_{x \to \infty} -\frac{-2mh - bm^2 + h\od{y}{x}}{h + b\od{y}{x}}
-                                                                      = -\frac{-2mh - bm^2 + hL}{h + bL}
-\end{displaymath}
-and $ 0 = bL^2 + 2hL - 2mh - bm^2 $, so
-\begin{displaymath}
-  L = \frac{-2h + \sqrt{4h^2 + 4b(2mh + bm^2)}}{2b} = \frac{-2h + 2\sqrt{h^2 + 2bmh + bm^2}}{2b}
-                                                    = \frac{-2h + 2(h + bm)}{2b} = m
-\end{displaymath}
-Thus we have shown that if the derivative $ \od{y}{x} $ tends to any value, it must tend to $ m $.
-
-\qed
+\begin{exercise}[Bezout's theorem for conics]
+\end{exercise}
 
 \appendix
 \titleformat{\section}{\clearpage\titlerule[0.8pt]\vspace{0.5ex}\normalfont\Large\bfseries\centering}{Appendix~\thesection:}{1em}{}[{\titlerule[0.8pt]}]
