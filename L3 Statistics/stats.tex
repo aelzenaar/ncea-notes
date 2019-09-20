@@ -29,6 +29,8 @@
 \usetikzlibrary{patterns}
 \usetikzlibrary{arrows}
 \usepgfplotslibrary{statistics}
+\usetikzlibrary{external}
+\tikzexternalize
 
 \newcommand*{\SectorRadius}{1.5ex}
 \newcommand*{\SectorHalfAngle}{45}
@@ -112,8 +114,17 @@
 \tableofcontents
 \section*{Preface}
 These notes are intended to be a basic introduction to statistics for L3 and Scholarship students. Section 1, on probability measures, follows
-Rice\footnote{The references here are to the bibliography at the end of these notes.}; section 2 on distributions follows Wackerly, Mendenhall,
+Rice\footnote{The references here are to the bibliography at the end of these notes.}; the part of section 2 on discrete distributions follows Wackerly, Mendenhall,
 and Sheaffer; and section 3 on inference follows Efron and Tibsirai.
+
+People who know what they are doing will notice a certain disrespect for problems of finiteness and countability; I have tried to avoid dealing
+with these problems and have in places given proofs that are either incomplete or not as rigorous as they could be in order to get across the
+main ideas without getting bogged down in technicalities. For the same reason I have restricted the definitions related to probability density
+functions, as I do not want to deal with such pathological concepts as integration over the Cantor set!
+
+\paragraph{Prerequisites.} A good working knowledge of Level 2 probability is the main prerequisite: although all the results needed are stated
+precisely and proved, a certain amount of familiarity with what the answers `should' look like is important. The language of calculus is also
+occasionally used, but the notes have been written so that such parts can be safely skipped if needed.
 
 \titleformat{\section}{\clearpage\titlerule[0.8pt]\vspace{0.5ex}\normalfont\Large\bfseries\centering}{Section~\thesection:}{1em}{}[{\titlerule[0.8pt]}]
 \let\oldsection\section
@@ -525,9 +536,9 @@ elegantly the need to have any kind of randomness by operating on the set of all
 
 \subsection{Discrete random variables}
 
-\begin{defn}
+\begin{defn}\label{defn:randomvar1}
   Let $ \Omega $ be a sample space, and let $ P $ be a probability measure on $ \Omega $. A \df{random variable} $ X $ is a function defined
-  on $ X $ that can take on values in a set $ S $. The random variable is called \df{discrete} if the elements of $ S $ can be listed in
+  on $ \Omega $ that can take on values in a set $ S $. The random variable is called \df{discrete} if the elements of $ S $ can be listed in
   some way such that no element is left off the list.
 
   The event $ X = x $ is the set of all $ \omega $ in $ \Omega $ such that $ X(\omega) = x $; then $ P(X = x) $ is simply the probability
@@ -569,7 +580,7 @@ The following facts are obvious:
 \end{defn}
 
 The following theorem is obvious from the definition.
-\begin{thm}[Discrete integration theorem]
+\begin{thm}[Discrete integration theorem]\label{thm:discreteintegration}
   If a probability distribution is graphed, as in \ref{ex:pd1}, then $ P(x \leq X \leq y) $ is the area of the histogram
   bounded by $ x $ and $ y $ on the axis. More formally, $ P(x \leq X \leq y) = \rint_x^y X(\omega) \dif{\omega} $.
 \end{thm}
@@ -609,7 +620,7 @@ molecules in space move at varying velocities; the velocity $ V $ is a random va
 a function of the random variable $ V $, and is therefore itself a random variable. Consequently, to find the mean amount of energy we need to
 find the mean value of $ V^2 $.
 
-\begin{thm}
+\begin{thm}\label{thm:meanoffunc}
   Let $ X $ be a real-valued discrete random variable, taking the values $ x_1,...,x_n $, with probability function $ p(x) $.
   Let $ g $ be a real-valued function that is defined on all the values of $ X $ (we will often abuse language and say that $ g $
   is a function defined on $ X $). Then the expected value of $ g(X) $ is
@@ -763,6 +774,33 @@ coin is flipped several times; a sequence of rocket launches either succeeds or 
   such items. Further, the probability of each such item showing up is $ p^x (1 - p)^{n - x} $. The result follows.
 \end{proof}
 
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[
+    declare function={binom(\k,\n,\p)=\n!/(\k!*(\n-\k)!)*\p^\k*(1-\p)^(\n-\k);}
+  ]
+    \begin{axis}[
+      axis lines = center,
+      xlabel = $ x $,
+      ylabel = {$ P(X=x) $},
+      samples at={0,...,100},
+      ybar=0pt, bar width=1,
+      yticklabel style={
+        /pgf/number format/fixed,
+        /pgf/number format/fixed zerofill,
+        /pgf/number format/precision=2
+      }]
+      \addplot [fill=purple, fill opacity=0.5] {binom(x,100,0.1)}; \addlegendentry{$p=0.1$};
+      \addplot [fill=cyan, fill opacity=0.5] {binom(x,100,0.3)}; \addlegendentry{$p=0.3$};
+      \addplot [fill=orange, fill opacity=0.5] {binom(x,100,0.5)}; \addlegendentry{$p=0.5$};
+      \addplot [fill=green, fill opacity=0.5] {binom(x,100,0.8)}; \addlegendentry{$p=0.8$};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Various binomial distributions, $ n = 100 $.\label{fig:binomial}}
+\end{figure}
+
+The binomial distributions for $ n = 100 $ and various success probabilities $ p $ are graphed in figure \ref{fig:binomial}.
+
 \begin{ex}
   If binary information is transmitted across an unreliable or noisy channel, we can model the probability
   that a single bit is incorrectly transmitted as a constant, $ p $. To improve reliability, we repeat each
@@ -785,9 +823,178 @@ coin is flipped several times; a sequence of rocket launches either succeeds or 
   \begin{enumerate}
     \item Which is more likely: 9 heads in 10 tosses of a fair coin, or 18 heads in 20 tosses?
     \item Consider the binomial distribution of $ n $ trials and success probability $ p $, with probability function $ P(X = x) $. For what
-          value $ k $ is $ P(X = k) $ maxmised? (Hint: consider $ P(X = k)/P(X = k+1) $.)
+          value $ k $ is $ P(X = k) $ maximised? (Hint: consider $ P(X = k)/P(X = k+1) $.)
+    \item What are the mean and standard deviation for a binomial distribution?
   \end{enumerate}
 \end{exercise}
+
+\subsection{Continuous distributions}
+We have considered discrete probability distributions, where a given random variable $ X $ can take on discrete
+values $ x_1,...,x_n,... $, and the probability that $ X $ takes on a particular value is predetermined: the
+function $ P(X = x) $ is well-defined. We would now like to extend this to cover situations where the probability
+of any particular value is tiny. For example, consider the set of all heights: since heights are continuous, the
+probability that any particular chosen height is exactly \SI{2.00}{\metre} (say) is essentially zero.
+
+The most profitable method for this generalisation is given by proposition \ref{thm:discreteintegration}, the
+discrete integration theorem. Instead of viewing our probability functions as giving probabilities of particular
+values, we will view probability functions as giving probabilities of \emph{ranges} of values.
+
+We will confine ourselves to sample spaces which are \df{open intervals}: that is, if $ a $ and $ b $ are real numbers
+such that $ a < b $, the open interval $ (a,b) $ is defined to be the set of all $ x $ such that $ a < x < b $. (We will
+allow $ a $ or $ b $ to take the values $ \pm \infty $.)
+
+To avoid pathologies, we will restrict our definition of an `event' in $ \Omega $ to be a \emph{finite} union of sub-intervals of $ \Omega $.
+That is, if $ \Omega = (0,1) $, the set of all rational numbers in $ (0,1) $ will not be considered an event by us. We will even modify the notation
+$ A \subseteq \Omega $ to mean `$ A $ is a subset of $ \Omega $ such that $ A $ is a finite union of subintervals'.
+
+It is possible to make the theory work if we remove these restrictions, but the author is not a measure theorist.
+
+If $ X \subseteq \Omega $ can be written as the finite union $ X = (\alpha_1,\beta_1) \union \cdots \union (\alpha_n, \beta_n) $ then
+we will write
+\begin{displaymath}
+  \rint_X \rho(x) \dif{x} := \rint_{\alpha_1}^{\beta_1} \rho(x) \dif{x} + \cdots + \rint_{\alpha_n}^{\beta_n} \rho(x) \dif{x}.
+\end{displaymath}
+(Recall that $ \rint_\alpha^\beta \rho(x) \dif{x} $ is the \df{definite integral} of $ \rho $ from $ \alpha $ to $ \beta $, and
+measures `the area under the graph of $ y = \rho(x) $ between the bounds $ x = \alpha $ and $ x = \beta $'.)
+
+\begin{defn}\label{defn:density}
+  Let $ \Omega = (a,b) $ be a sample space, and let $ \rho $ be a function from $ (a,b) $ taking real values such that:
+  \begin{enumerate}
+    \item Whenever $ \alpha $ and $ \beta $ satisfy the inequality $ a \leq \alpha \leq \beta \leq b $, $ \rint_\alpha^\beta \rho(x) \dif{x} $
+          exists and is non-negative, and
+    \item The identity $ \rint_a^b \rho(x) \dif{x} = 1 $ holds.
+  \end{enumerate}
+  Then $ \rho $ is called a \df{probability density} (or simply \df{density}) on $ \Omega $. If $ \rho $ is
+  continuous (that is, if $ \lim_{x \to x_0} \rho(x) = \rho(x_0) $ for all $ x_0 $ in $ \Omega $), then $ \rho $
+  is called a \df{continuous probability density}.
+\end{defn}
+
+As is often the case, we will prove a big `this definition actually makes sense' theorem.
+
+\begin{thm}\label{thm:inducedprobability}
+  Let $ \Omega = (a,b) $ be a sample space and let $ \rho $ be a probability density on $ \Omega $. Then
+  the function $ P $ defined on the subsets $ A \subseteq \Omega $ by
+  \begin{displaymath}
+    P(A) = \rint_A \rho(x) \dif{x}
+  \end{displaymath}
+  is a probability measure on $ \Omega $.
+\end{thm}
+\begin{proof}
+  We need to check the three criteria of definition \ref{df:probmeasure}:
+  \begin{enumerate}
+    \item $ P(\Omega) = 1 $: indeed, $ \rint_\Omega \rho(x) = \rint_a^b \rho(x) \dif{x} = 1 $ (guaranteed by definition of a density function).
+    \item If $ A \subseteq \Omega $ then $ P(A) \geq 0 $: this is guaranteed by the non-negativity condition in criterion 1 of the density function
+          definition.
+    \item If $ A $ and $ B $ are disjoint then $ P(A \union B) = P(A) + P(B) $: this follows by additivity of integrals.
+  \end{enumerate}
+\end{proof}
+
+Note that our definition of a continuous random variable will be simply a density function; the probability measure on the sample
+space will be very tightly coupled with the density function (instead of sticking a random variable into an already existing probability
+space, we are defining the probability in terms of the random variable).
+
+\begin{defn}
+  A \df{continuous random variable} $ X $ on a sample space $ \Omega $ is defined to consist of the following data:
+  \begin{enumerate}
+    \item A sample space, $ \Omega = (a,b) $.
+    \item A continuous probability density $ \rho $ on $ \Omega $.
+    \item The probability measure $ P $ induced by $ \rho $, as defined by theorem \ref{thm:inducedprobability}.
+  \end{enumerate}
+
+  We will write $ \alpha < X < \beta $ for the event $ (\alpha, \beta) \subseteq \Omega $. Hence
+  \begin{displaymath}
+    P(\alpha < X < \beta) := \rint_\alpha^\beta \rho(x) \dif{x}.
+  \end{displaymath}
+\end{defn}
+
+We can generalise our concept of expected value.
+\begin{defn}
+  If $ X $ is a continuous random variable on $ (a,b) $ with density $ \rho $, the \df{expected value} $ X $ is defined to be
+  \begin{displaymath}
+    E(X) := \frac{1}{b - a} \rint_a^b x\rho(x) \dif{x}.
+  \end{displaymath}
+\end{defn}
+
+Let $ g $ be a continuous function on $ (a,b) = \Omega $; if $ X $ is a continuous random variable on $ \Omega $, it would be nice to
+define some continuous random variable $ g(X) $ in analogy with the discrete case. In order to do this, we will need to equip $ g(X) $ with a sample space
+and a density function. If $ \Omega $ is the sample space of $ X $ then the natural sample space is $ g(\Omega) $ (i.e. for every $ x $
+in $ \Omega $, $ g(x) $ is in the sample space of $ g(X) $); we just need to pick a density function.
+
+It will turn out that the function $ g $ needs to be \emph{differentiable}, not just continuous, so that we can apply the inverse
+chain rule (also known as $u$--substitution). We also need the function $ g' $ to be continuous (recall that it is possible for
+a differentiable function to have a discontinuous derivative; e.g. $ x \mapsto \rint_0^x \abs{t} \dif{t} $ has derivative $ x\mapsto\abs{x} $
+by the fundamental theorem of calculus). A differentiable function whose derivative is continuous is called \df{continuously differentiable}.
+
+We will first deal with the case where $ g $ is strictly increasing with no stationary points: whenever $ \alpha < \beta $ in $ \Omega $, $ g(\alpha) < g(\beta) $,
+and $ g'(x) \neq 0 $ for all $ x $ in $ \Omega $.
+
+\begin{rem}\label{rem:openmappingthm}
+  It is implicitly assumed that if $ \Omega $ is an open interval then $ g(\Omega) $ is an open interval; this follows by the strictly increasing
+  assumption (it is just the inverse function theorem) but is not true in general (e.g. if $ f(x) = x^2 $ then $ f((-1,1)) = [0,1) $ which is not open).
+\end{rem}
+
+
+\begin{thm}
+  If $ X $ is a continuous random variable with sample space $ \Omega = (a,b) $ and density $ \rho $, and if $ g $ is a strictly increasing
+  real-valued continuously differentiable function on $ \Omega $, then the real-valued function $ \pi $ from $ g(\Omega) $ defined
+  by $ \pi(g(x)) = \rho(x)/g'(x) $ is a continuous probability density on $ g(\Omega) $; hence the object $ g(X) $ consisting of
+  the space $ g(\Omega) $, the function $ \pi $, and the associated probability measure $ Q $ on $ g(\Omega) $, is a continuous random variable.
+\end{thm}
+\begin{proof}
+  We need to check that $ \pi : g(x) \mapsto \rho(x)/g'(x) $ is a continuous probability density: it is continuous since $ \rho $ and $ g' $
+  are continuous, so we need to check the two conditions of definition \ref{defn:density}.
+
+  By remark \ref{rem:openmappingthm}, $ g(\Omega) = (g(a),g(b)) $. Pick $ g(\alpha) $ and $ g(\beta) $ in $ g(\Omega) $
+  such that $ g(a) \leq g(\alpha) \leq g(\beta) \leq g(b) $. Then:
+  \begin{displaymath}
+    0 \leq \rint_\alpha^\beta \rho(x) \dif{x} = \rint_\alpha^\beta \frac{\rho(x)}{g'(x)} g'(x) \dif{x} = \rint_\alpha^\beta \pi(g(x)) g'(x) \dif{x}
+      = \rint_{g(\alpha)}^{g(\beta)} \pi(y) \dif{y},
+  \end{displaymath}
+  and
+  \begin{displaymath}
+    1 = \rint_a^b \rho(x) \dif{x} = \rint_a^b \frac{\rho(x)}{g'(x)} g'(x) \dif{x} = \rint_a^b \pi(g(x)) g'(x) \dif{x}
+      = \rint_{g(a)}^{g(b)} \pi(y) \dif{y}.
+  \end{displaymath}
+\end{proof}
+
+\begin{cor}
+  If $ X $ is a continuous random variable with sample space $ \Omega = (a,b) $ and density $ \rho $, and if $ g $ is a strictly \emph{decreasing}
+  real-valued continuously differentiable function on $ \Omega $, then the real-valued function $ \pi $ from $ g(\Omega) $ defined
+  by $ \pi(g(x)) = \rho(x)/g'(x) $ is a continuous probability density on $ g(\Omega) $; hence the object $ g(X) $ consisting of
+  the space $ g(\Omega) $, the function $ \pi $, and the associated probability measure $ Q $ on $ g(\Omega) $, is a continuous random variable.
+\end{cor}
+\begin{proof}
+  If $ g $ is strictly decreasing then $ -g $ is strictly increasing; thus $ -g(X) $ is a continuous random variable with probability density
+  function $ -\pi $, and so
+  \begin{displaymath}
+    0 \leq \rint_{-g(\alpha)}^{-g(\beta)} -\pi(y) \dif{y} = \rint_{-g(\beta)}^{-g(\alpha)} \pi(y) \dif{y}
+  \end{displaymath}
+  and
+  \begin{displaymath}
+    1 = \rint_{-g(\alpha)}^{-g(\beta)} -\pi(y) \dif{y} = \rint_{-g(\beta)}^{-g(\alpha)} \pi(y) \dif{y}
+  \end{displaymath}
+  (noting that since $ g $ is strictly decreasing, $ g(\Omega) = (g(\beta),g(\alpha)) $).
+\end{proof}
+
+We can extend this now to the case where $ g $ is not too wiggly.
+
+\begin{defn}
+  A real-valued function $ g $ is called \df{hemiwiggly} on an interval $ (a,b) $ if it is continuously
+  differentiable and has only finitely many stationary points on that interval.
+\end{defn}
+
+Let $ X $ be a continuous random variable with sample space $ \Omega = (a,b) $ and density $ \rho $. Suppose $ g $ is a hemiwiggly function on $ \Omega $, with
+staionary points $ p_1, ..., p_n $. Then for all the
+
+then define the real-valued function $ \pi $ from $ g(\Omega) $ by
+\begin{displaymath}
+  \pi(y) = \sum_{\substack{x \text{ in } \Omega\\ \text{ such that } g(x) = y}}
+\end{displaymath}
+
+
+  by $ \pi(g(x)) = \rho(x)/g'(x) $ is a continuous probability density on $ g(\Omega) $; hence the object $ g(X) $ consisting of
+  the space $ g(\Omega) $, the function $ \pi $, and the associated probability measure $ Q $ on $ g(\Omega) $, is a continuous random variable.
+\end{thm}
 
 \section{Inference}
 \textit{The primary reference for this section is Efron and Tibshirani.}
