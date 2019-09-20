@@ -83,7 +83,7 @@
 \renewcommand{\thechapter}{\Roman{chapter}}
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 
-\setlength\cftsectionnumwidth{1.7em}
+\setlength\cftsectionnumwidth{2.5em}
 
 \newlength\drop
 \newcommand*{\titleGM}{\begingroup% Gentle Madness
@@ -143,6 +143,14 @@ I have made a few philosophical changes from the first edition:-
         space the proofs formerly were. Finally, most students at Level 3 are simply not ready for proofs: either
         they don't understand why proof is required, or their level of mathematical sophistication means that
         the proofs seem esoteric. I have included copious references to textbooks where proofs can be found.
+  \item I have dropped one or two rather esoteric and old fashioned topics that I used to teach to scholarship
+        students; most prominently, trig substitution. These have been replaced with a couple of new topics; one
+        in particular is a much expanded explanation of Taylor polynomials (\emph{not} Taylor series!). Note also
+        that the main application of trig substitution is to integrate all rational functions: we expand our
+        expression into its partial fraction form, we can integrate the terms with linear denominators easily, and
+        then we need trig substitution to integrate the quadratic denominators. But after covering the L3 algebra
+        topic (in particular, one needs to justify quickly something like $ \mathrm{cis}(z) = \exp(iz) $) then it
+        is possible to integrate these terms by factorising them into (complex) linear terms.
 \end{itemize}
 
 I feel the need also to point out that these notes are incredibly geometric. \emph{If you don't like teaching geometry, these are not the notes for you.}
@@ -180,8 +188,7 @@ I have used the following textbooks when writing these notes, in roughly increas
         mathematics bibliography}: \url{https://www.ocf.berkeley.edu/~abhishek/chicmath.htm} (somewhat useful, if taken with a grain of salt).} but
         is more properly an introduction to real analysis. As such, it is too diffcult for all but the most motivated high school students.
   \item (For the sake of completeness,) \emph{Advanced Calculus}, by L. H. Loomis and S. Sternberg. This is the author's favourite calculus
-        book, but is eminently unsuitable for high school students of any motivation. It is incredibly geometric, wonderfully well written, and
-        almost impenetrable. This book inspired these notes, philosophically speaking.
+        book, but is eminently unsuitable for high school students of any motivation.
 \end{itemize}
 
 \chapter{Preface for the student}
@@ -226,18 +233,20 @@ Let us begin.
 
 \chapter{The basics}
 
-% \include{01-tangents}
-% \include{02-limits}
-% \include{03-derivatives}
-% \include{04-antidifferentiation}
-% \include{05-chainrule}
-% \include{06-substitution}
-% \include{07-products}
-% \include{08-parts}
-%
-% \chapter{The geometry of curves}
-% \include{09-curvature}
-% \include{10-optimisation}
+\include{01-tangents}
+\include{02-limits}
+\include{03-derivatives}
+\include{04-antidifferentiation}
+\include{05-chainrule}
+\include{06-substitution}
+\include{07-products}
+\include{08-parts}
+
+\chapter{The geometry of curves}
+\include{09-curvature}
+\include{10-optimisation}
 \include{11-approximations}
+\include{12-implicit}
+\include{13-parameterised}
 
 \end{document}

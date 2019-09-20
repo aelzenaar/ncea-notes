@@ -56,6 +56,11 @@ This question is an important one, because if we can answer it then we can alway
 are difficult to calculate --- what is $ \sin(32.341) $?) with polynomials (which only require a finite number of multiplications
 and additions to calculate) with only a small loss of information.
 
+One important use for this is in physics; we will see later on (when we look at differential equations) that in order to
+model something like a swinging pendulum, we need to justify why $ \sin x \approx x $ for small $ x $. In engineering
+applications too, it is often useful to replace complicated sums and products of things like trig functions with quadratics
+and cubics that have the same `shape' around a given point of interest but are much easier to calculate with.
+
 Our plan of attack will be, given a function $ f $ that is differentiable (at least) $ n $ times at some point $ x_0 $,
 to find a polynomial
 \begin{displaymath}
@@ -182,6 +187,9 @@ An introduction to the approximation of sufficiently differentiable functions by
 in Spivak, chapter 19. With a little extra work one can work out what degree of polynomial is needed at a
 point $ x_0 $ to reduce the error to less than a specified amount; to do this one needs integration (which
 we have not yet seen), and the details are in Spivak.
+
+For some discussion on example applications of higher-order (i.e. non-linear) Taylor approximations in
+physics and engineering, see \url{https://matheducators.stackexchange.com/q/2152}.
 
 \subsection{Homework problems}
 \begin{enumerate}
