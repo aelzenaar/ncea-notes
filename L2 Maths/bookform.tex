@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{amsbook}
+\documentclass[a4paper,11pt]{memoir}
 
 \usepackage{pdfpages}
 \usepackage{hyperref}
@@ -13,7 +13,8 @@
 
 \begin{document}
 
-  \begin{titlepage}
+  \frontmatter
+  \begin{titlingpage}
     \centering
 
     \vspace*{\fill}
@@ -28,15 +29,16 @@
 
     \vspace*{2cm}
 
-    \Large\textit{\authors}
+    \Large\textit{\@author}
 
     \vspace*{\fill}
 
-    \url{https://github.com/aelzenaar/ncea-notes}
+    \small\url{https://github.com/aelzenaar/ncea-notes}
 
     \makeatother
-  \end{titlepage}
+  \end{titlingpage}
 
+  \mainmatter
   \tableofcontents
 
   \chapter{Preamble}
