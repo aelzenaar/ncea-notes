@@ -313,9 +313,38 @@ notice that the discriminant appears underneath the square root sign and so it d
       \part Show that $ \alpha^2 + \beta^2 = (-b)^2 - 2c $.
       \part Conclude that $ \Delta_2[x^2 + bx + c] = (\alpha - \beta)^2 $.
     \end{parts}
+  \question Suppose $ \alpha $ and $ \beta $ are the two solutions of $ x^2 + ax + b = 0 $. Write $ (\alpha + \beta)^3 $ in terms
+            of $ a $ and $ b $.
   \question Let $ \rho $ be positive. Suppose $ P $ and $ Q $ are points such that $ \abs{PQ} \leq 2\rho $;
             show that the two circles of radius $ \rho $ with centres $ P $ and $ Q $ intersect;
             show that they intersect in exactly one place if and only if $ \abs{PQ} = 2\rho $.
+  \question (Baby algebraic geometry!) The equation $ (x - 2)^2 + y^2 = 4 $ describes a circle $\mathcal{C}$.
+    \begin{parts}
+      \part Show that $ y = mx $ always intersects $\mathcal{C}$ in precisely two points, no matter the value of $ m $.
+      \part Find all $ t $ such that $ y = t(x - 3) $ intersects the circle $ \mathcal{C} $ precisely once.
+      \part We will now study the intersections of $\mathcal{C}$ with the family of curves $ \mathcal{V}_b $ defined by the equation $ y^2 = x^2 + bx $
+            (where $ b $ is a real number).
+        \begin{subparts}
+          \subpart Show that $ \mathcal{C} $ and $ \mathcal{V}_b $ always have an intersection at $ (0,0) $, no matter what value $ b $ is given.
+          \subpart Show that if $ (x_0,y_0) $ is an intersection point of the two curves, then $ (x_0,-y_0) $ is as well.
+          \subpart Show that there is a real number $ B_1 $ such that:
+            \begin{itemize}
+              \item When $ b < B_1 $, $ (0,0) $ is the only intersection point;
+              \item When $ b = B_1 $, the two curves have exactly two intersection points; and
+              \item When $ B_1 < b $, the two curves have exactly three intersection points.
+            \end{itemize}
+          \subpart Show that the equation of $ \mathcal{V}_b $ can be written in the form
+                   \begin{displaymath}
+                     \frac{\left(x - \frac{b}{2}\right)^2}{(b/2)^2} - \frac{y^2}{(b/2)^2} = 1.
+                   \end{displaymath}
+        \end{subparts}
+      \part Show that if $ \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1 $ (with $ b \leq a $) describes a curve $ \mathcal{E} $ then the two points
+            \begin{displaymath}
+              O_1 = (+\sqrt{a^2 - b^2}, 0) \qquad O_2 = (-\sqrt{a^2 - b^2},0)
+            \end{displaymath}
+            have the property that for all points $ P, Q $ on the curve $ \mathcal{E} $, $ d(P, O_1) + d(P,O_2) = d(Q,O_1) + d(Q, O_2) $.
+            (Compare with the final problem in section 5.)
+    \end{parts}
 \end{questions}
 
 \end{document}
