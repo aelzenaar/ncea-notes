@@ -184,6 +184,79 @@ to read off the answer.
       \part If a sequence of numbers is given by $ a_n = 2^n + 3 $, show that the difference between
             the $ (n - 1)$th and $ n$th terms of the sequence is $ a_n - 3 $.
     \end{parts}
+  \question
+    \begin{parts}
+      \item Draw the graph of $ y = 2^x $ and the graph of $ y = 3^x $ on the same piece of graph paper and compare them. What about $ y = 4^x $? Can you explain any patterns you see in terms of the exponent laws above?
+      \item Draw the graph of $ y = \log_2(x) $ and the graph of $ y = \log_3(x) $ on the same piece of graph paper and compare them.
+      \item Draw the graph of $ y = \log_2(x)/\log_2(3) $ and the graph of $ y = \log_3(x) $ on the same piece of graph paper and compare them. [Look at the final logarithm law above.]
+      \item Draw the graph of $ y = \log_3(x) $, the graph of $ y = \log_4(x) $, and the graph of $ y = \log_5(x) $ on the same piece of graph paper. Are there any
+            intersection points? Can you explain any that occur in terms of the logarithm laws?
+      \item Draw the graph of $ y = \log_5(x + 2) $, the graph of $ y = \log_5(x) $, and the graph of $ y = \log_5(x - 2) $ on the same piece of graph paper. Are there any
+            intersection points? Can you explain any that occur in terms of the logarithm laws?
+    \end{parts}
+  \question Give the equations of the following exponential graphs:
+    \begin{center}
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        axis lines = center,
+        xlabel = $ x $,
+        ylabel = $ y $,
+        xmin = -2, xmax = 4,
+        ymin = -2, ymax = 20,
+        grid = both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=1
+      ]
+        \addplot[domain = -2:4, color = blue, samples = 100] {2^x};
+      \end{axis}
+    \end{tikzpicture}}\quad
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        axis lines = center,
+        xlabel = $ x $,
+        ylabel = $ y $,
+        xmin = -2, xmax = 4,
+        ymin = -2, ymax = 20,
+        grid = both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=1
+      ]
+        \addplot[domain = -2:4, color = purple, samples = 100] {0.5*3^x};
+      \end{axis}
+    \end{tikzpicture}}\\
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        axis lines = center,
+        xlabel = $ x $,
+        ylabel = $ y $,
+        xmin = -2, xmax = 4,
+        ymin = -20, ymax = 2,
+        grid = both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=1
+      ]
+        \addplot[domain = -2:4, color = orange, samples = 100] {-2^(-x-1)};
+      \end{axis}
+    \end{tikzpicture}}\quad
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        axis lines = center,
+        xlabel = $ x $,
+        ylabel = $ y $,
+        xmin = -2, xmax = 8,
+        ymin = -20, ymax = 2,
+        grid = both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=1
+      ]
+        \addplot[domain = -2:8, color = green, samples = 100] {-1/3 * 4^(x-3) - 7};
+      \end{axis}
+    \end{tikzpicture}}
+    \end{center}
   \question How many words with 4 letters of a 26 letter alphabet are possible?
   \question Solve for $ y $, if $ \log_2 (y^{-6}) = (\log_2 y)^2 + 8 $.
   \question Find all values of $ x $ satisfying $ 6(\log_8 x)^2 + 2 \log_8 x - 4 = 0 $.

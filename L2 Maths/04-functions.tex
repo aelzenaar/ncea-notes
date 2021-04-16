@@ -83,9 +83,169 @@ the number in the \emph{domain} that maps to it. If $ f $ is a one-to-one functi
   \end{enumerate}
 \end{ex}
 
-\clearpage
+\subsection*{Transforming graphs}
+We will now look at shifting graphs around. Consider the graph drawn in black in the following; it depicts the function $ f $.
+\begin{center}
+  \fbox{\begin{tikzpicture}
+    \begin{axis}[
+      scale = .8,
+      axis lines = center,
+      xlabel = $ x $,
+      ylabel = $ f(x) $,
+      xmin = -5,
+      ymax = 30,
+      xmax = 5
+    ]
+      \addplot[domain = -5:5, color = black,samples=50] {x^2 - 5*sin(deg(x)) - x};
+    \end{axis}
+  \end{tikzpicture}}
+\end{center}
+Suppose we want to find the function whose graph is the same as the graph of $ f $, but shifted to the left by 2 units, and up by 3 units, as drawn here in red.
+\begin{center}
+  \fbox{\begin{tikzpicture}
+    \begin{axis}[
+      scale = .8,
+      axis lines = center,
+      xlabel = $ x $,
+      ylabel = $ y $,
+      xmin = -5,
+      ymax = 25,
+      xmax = 5
+    ]
+      \addplot[domain = -5:5, color = black,samples=50] {x^2 - 5*sin(deg(x)) - x};
+      \addplot[domain = -5:5, color = red,samples=50] {(x+2)^2 -5*sin(deg(x+2)) - (x+2)+3};
+    \end{axis}
+  \end{tikzpicture}}
+\end{center}
+Suppose a point $ (x,y) $ lies on the new graph. Then the point $ (x+2,y-3) $ lies on the old graph:
+\begin{center}
+  \fbox{\begin{tikzpicture}
+    \begin{axis}[
+      axis lines = center,
+      xlabel = $ x $,
+      ylabel = $ y $,
+      xmin = -5,
+      ymax = 25,
+      xmax = 7
+    ]
+      \addplot[domain = -5:5, color = black,samples=50] {x^2 - 5*sin(deg(x)) - x};
+      \addplot[domain = -5:5, color = red,samples=50] {(x+2)^2 -5*sin(deg(x+2)) - (x+2)+3};
+      \draw[->] (axis cs:3,5.294) -- (axis cs:3,8.294) node[midway,left]{$3$} ;
+      \draw[->] (axis cs:3,8.294) -- (axis cs:1,8.294) node[midway,above]{$2$};
+      \filldraw[red] (axis cs:1,8.294) circle (2pt) node[left]{$(x,y)$};
+      \filldraw[black] (axis cs:3,5.294) circle (2pt) node[right]{$(x+2,y-3)$};
+    \end{axis}
+  \end{tikzpicture}}
+\end{center}
+Since $ (x+2, y-3) $ lies on the graph of $ f $, it must satisfy the equation
+\begin{displaymath}
+  y\text{-ordinate} = f(x\text{-ordinate}).
+\end{displaymath}
+In particular, $ y-3 = f(x+2) $.
+
+Thus, the equation corresponding to the new graph is $ y-3 = f(x+2) $. This illustrates the following general principle:
+\begin{center}\itshape
+  If the graph of $ y = f(x) $ is shifted to the right by a distance $ c $ and up by a distance $ d $, then the resulting
+  graph is the graph of $ y-d = f(x-c) $.
+\end{center}
+
+Here are some examples:
+\begin{center}
+  \fbox{\begin{tikzpicture}
+    \begin{axis}[
+      scale=.8,
+      axis lines = center,
+      xlabel = $ x $,
+      ylabel = $ y $,
+      xmin = -3,
+      ymax = 10,
+      ymin = -10,
+      xmax = 3
+    ]
+      \addplot[domain = -5:5, color = black,samples=50] {x^3};
+      \addplot[domain = -5:5, color = red,samples=50] {(x+2)^3 -1};
+      \draw (2,8) node[right,black] {$y= x^3$};
+      \draw (-0.5,2.375) node[left,red] {$y + 1 = (x+2)^3$};
+    \end{axis}
+  \end{tikzpicture}}
+\end{center}
+
+\begin{center}
+  \fbox{\begin{tikzpicture}
+    \begin{axis}[
+      scale=.8,
+      axis lines = center,
+      xlabel = $ x $,
+      ylabel = $ y $,
+      xmin = -3,
+      ymax = 10,
+      ymin = -10,
+      xmax = 5
+    ]
+      \addplot[domain = -5:5, color = black,samples=50] {2*x};
+      \addplot[domain = -5:5, color = red,samples=50] {2*(x-3)+2};
+      \draw (1,2) node[above left,black] {$y= 2x$};
+      \draw (1,-2) node[below right,red] {$y - 2 = 2(x-3)$};
+    \end{axis}
+  \end{tikzpicture}}
+\end{center}
+
+\begin{center}
+  \fbox{\begin{tikzpicture}
+    \begin{axis}[
+      scale=.8,
+      axis lines = center,
+      xlabel = $ x $,
+      ylabel = $ y $,
+      xmin = -3,
+      ymax = 3,
+      ymin = -3,
+      xmax = 5
+    ]
+      \addplot[domain = -5:5, color = black,samples=50] {cos(deg(x))};
+      \addplot[domain = -5:5, color = red,samples=50] {cos(deg(x + pi/3)) - 0.5};
+      \draw (1.5,1) node[black] {$y= \cos x$};
+      \draw (2.5,-2) node[red] {$y + \frac{1}{2} = \cos(x + \pi/3)$};
+    \end{axis}
+  \end{tikzpicture}}
+\end{center}
+
 \subsection*{Questions}
 \begin{questions}
+  \question Draw the graphs of the following equations. Within each lettered part, compare and contrast the graphs you obtain and explain why the things you observe occur.
+
+            Use a mixture of techniques from: (a) writing down a table of values; (b) using a calculator or computer; (c) recognising the shape from earlier studies (e.g. last year
+            you studied parabolae).
+    \begin{parts}
+      \part
+      \begin{subparts}
+        \item $ y = x^2 $
+        \item $ y = x^2 + 1 $
+        \item $ y = (x+1)^2 $
+        \item $ y - 1 = (x+1)^2 $
+      \end{subparts}
+      \part
+      \begin{subparts}
+        \item $ y = (x-3)^3 $
+        \item $ y = (x-3)^3 + 2 $
+        \item $ y = x^3 $
+      \end{subparts}
+      \part
+      \begin{subparts}
+        \item $ y = 2^x $
+        \item $ y = 2^{x+2} $
+        \item $ y = 2^{x-2} $
+        \item $ y = 5 \times 2^x $
+      \end{subparts}
+      \part
+      \begin{subparts}
+        \item $ y = \sin x$
+        \item $ y = 3\sin x $
+        \item $ y = \cos x $
+        \item $ y = \sin (x-\pi/2) $
+        \item $ y = 1 + \sin x $
+      \end{subparts}
+    \end{parts}
   \question Justify the following statements with mathematical reasoning.
     \begin{parts}
       \part The graph of a function passes the vertical line test: any vertical line drawn on the graph crosses the function in at most one point.
@@ -238,22 +398,6 @@ the number in the \emph{domain} that maps to it. If $ f $ is a one-to-one functi
             \end{center}
       \end{minipage}
     \end{parts}
-  \question We will now look at shifting graphs around.
-    \begin{parts}
-      \part Graph $ f $, if $ f(x) = x^2 $.
-      \part On the same paper, graph $ f(x - 1) $ and $ f(x + 1) $.
-      \part Graph $ f(x) - 1 $ and $ f(x) + 1 $.
-      \part Graph $ 2 f(x) $ and $ f(2x) $.
-      \part Make a conjecture about the relationship between the following graphs, if $ f $ is now any function and $ a $, $ b $, $ c $, and $ d $ are any numbers:
-        \begin{subparts}
-          \subpart $ y = f(x) $
-          \subpart $ y = f(x + a) $
-          \subpart $ y = f(x) + b $
-          \subpart $ y = c f(x) $
-          \subpart $ y = f(dx) $
-        \end{subparts}
-      \part Explain intuitively why, when we add numbers inside the function argument, the graph shifts `the wrong way'.
-    \end{parts}
   \question Graph the following functions.
     \begin{parts}
       \part $ y = 2^{x + 1} - 3 $
@@ -261,6 +405,16 @@ the number in the \emph{domain} that maps to it. If $ f $ is a one-to-one functi
       \part $ y = \cos(x - \pi/2) + 1 $
       \part $ y = (x - 1)(x - 2)(x - 3) $
       \part $ y = 3\sin(\frac{1}{2} x + 1) - 2 $
+    \end{parts}
+  \question Analogous to the discussion explaining what the graph of $ y-c = f(x-d) $ looks like in terms of the graph of $ y = f(x) $, describe what
+    \begin{parts}
+      \part the graph of $ y = 2f(x) $ looks like in terms of the graph of $ y = f(x) $;
+      \part the graph of $ 2y = f(x) $ looks like in terms of the graph of $ y = f(x) $;
+      \part the graph of $ y = -f(x) $ looks like in terms of the graph of $ y = f(x) $;
+      \part the graph of $ y = af(x) $ looks like in terms of the graph of $ y = f(x) $;
+      \part the graph of $ y = f(2x) $ looks like in terms of the graph of $ y = f(x) $;
+      \part the graph of $ y = f((1/2)x) $ looks like in terms of the graph of $ y = f(x) $;
+      \part the graph of $ y = f(bx) $ looks like in terms of the graph of $ y = f(x) $.
     \end{parts}
   \question Is it possible to find $ K $ such that the function
             \begin{displaymath}

@@ -110,7 +110,7 @@ and the equation on the right, when graphed, has a vertex at $ (x_0, y_0) $ (why
 You might want to use a calculator or a computer to help you with some of the calculations: for example, solving
 systems of equations or quadratic equations.
 \begin{questions}
-  \question Give the equation of the following parabola:
+  \question Give the equations of the following parabolae:
     \begin{center}
     \fbox{\begin{tikzpicture}
       \begin{axis}[
@@ -125,6 +125,51 @@ systems of equations or quadratic equations.
         minor tick num=1
       ]
         \addplot[domain = -1:6, color = blue, samples = 100] {2*(x - 3)^2 + 2};
+      \end{axis}
+    \end{tikzpicture}}\quad
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        axis lines = center,
+        xlabel = $ x $,
+        ylabel = $ y $,
+        xmin = -2, xmax = 6,
+        ymin = -6, ymax = 2,
+        grid = both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=1
+      ]
+        \addplot[domain = -2:6, color = purple, samples = 100] {-1*(x -1)^2 -1};
+      \end{axis}
+    \end{tikzpicture}}\\
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        axis lines = center,
+        xlabel = $ x $,
+        ylabel = $ y $,
+        xmin = -2, xmax = 6,
+        ymin = -2, ymax = 6,
+        grid = both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=1
+      ]
+        \addplot[domain = -2:6, color = orange, samples = 100] {3*x^2 +1};
+      \end{axis}
+    \end{tikzpicture}}\quad
+    \fbox{\begin{tikzpicture}
+      \begin{axis}[
+        axis lines = center,
+        xlabel = $ x $,
+        ylabel = $ y $,
+        xmin = -6, xmax = 6,
+        ymin = -10, ymax = 2,
+        grid = both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=1
+      ]
+        \addplot[domain = -6:6, color = green, samples = 100] {-2*(x+3)^2 - 5};
       \end{axis}
     \end{tikzpicture}}
     \end{center}
@@ -145,6 +190,12 @@ systems of equations or quadratic equations.
             \end{displaymath}
     \end{parts}
   \question Show that the equation $ y + 3 = \sqrt{x^2 + (y-1)^2} $ describes a parabola, and find its vertex.
+  \question In each of the following parts, you are given enough information to write down the equation of a parabola; in each case, write the equation of such a parabola.
+    \begin{parts}
+      \part Vertex at $ (0,0) $ and passing through $ (1,2) $.
+      \part Vertex at $ (1,1) $ and passing through $ (0,-1) $.
+      \item Passing through the points $ (-1,-1) $, $ (0,1) $, and $ (1,1) $.
+    \end{parts}
   \question One application of mathematical modelling is in chemical spectroscopy: it is possible to measure the absorbance
             of light by substances, which is proportional to the amount of the substance present.
             \begin{center}
